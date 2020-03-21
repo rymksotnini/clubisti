@@ -18,6 +18,7 @@ import { HistoryComponent } from './pages/history/history.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { CharityProjectsComponent } from './pages/charity-projects/charity-projects.component';
+import {AuthenticationInterceptorProvider} from "./authentication.interceptor";
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import { CharityProjectsComponent } from './pages/charity-projects/charity-proje
     AnonymousLayoutComponent,
     TemplateLayoutComponent,
   ],
-  providers: [],
+  providers: [AuthenticationInterceptorProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
