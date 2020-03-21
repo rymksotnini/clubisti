@@ -3,7 +3,7 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
-  HttpInterceptor, HttpParams, HTTP_INTERCEPTORS
+  HttpInterceptor, HttpParams, HTTP_INTERCEPTORS, HttpHeaders
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {AuthenticationService} from "./authentication.service";
@@ -17,7 +17,9 @@ export class AuthenticationInterceptor implements HttpInterceptor {
     if(this.authenticationService.isLogged()) {
       const newRequest = request.clone(
         {
-          params: new HttpParams().set('token', localStorage.getItem("access_token"))
+          headers: new HttpHeaders({
+            'Content-type': 'application/x-www-form-urlencoded; charset=utf-8',
+            'Authorization': 'Bearer '+localStorage.getItem("access_token")})
         }
       );
       return next.handle(newRequest);
