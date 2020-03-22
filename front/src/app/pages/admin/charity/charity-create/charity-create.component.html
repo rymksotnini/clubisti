@@ -1,0 +1,114 @@
+
+
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+      <!-- Card stats -->  <div class="container-fluid d-flex align-items-center">
+      <div class="row">
+        <div class="col-lg-7 col-md-10">
+          <a [routerLink]="['/add-category']" class="btn btn-info">Add new category</a>
+
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt--7">
+  <div class="container-fluid d-flex align-items-center">
+
+    <div class="col-lg-12 col-lg-12">
+
+      <div class="col-xl-8 order-xl-1">
+        <div class="card bg-secondary shadow">
+          <div class="card-header bg-white border-0">
+            <div class="row align-items-center">
+              <div class="col-8">
+                <h3 class="mb-0">Charity</h3>
+              </div>
+
+            </div>
+          </div>
+          <div class="card-body">
+            <form id=create-book-form [formGroup]="createCharity" >
+              <h6 class="heading-small text-muted mb-4">Information</h6>
+              <div class="pl-lg-4">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-Name">Name</label>
+                      <input  formControlName= "name" type="text" id="input-Name" class="form-control form-control-alternative" placeholder="Name" >
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-genre">Categories</label>
+                      <!-- Category -->
+                      <div class="sidebar-widget">
+                        <select formControlName= "genre" class="selectpicker default input-genre" id="input-genre" name="input-genre" data-selected-text-format="count" title="All Categories" >
+                          <!--<option *ngFor="let item of categories | enumToArray">{{item.name}}</option> -->
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-8">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-amount">Amount</label>
+                      <input  formControlName= "amount" type="text" id="input-amount" class="form-control form-control-alternative" placeholder="Amount" >
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <hr class="my-4" />
+              <!-- Description -->
+              <h6 class="heading-small text-muted mb-4">Description</h6>
+              <div class="pl-lg-4">
+                <div class="form-group">
+                  <label>Description</label>
+                  <textarea formControlName="shortDescription" rows="4" class="form-control form-control-alternative" placeholder="A few words about your project ..."></textarea>
+                </div>
+              </div>
+
+            </form>
+            <div class="col-xl-12">
+              <button type="submit" (click)="onSubmit()" class="btn btn-info" form="create-book-form">
+                <i class="icon-feather-plus"></i>post story</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- create category pop up -->
+<button nz-button nzType="primary" (click)="showModal1()">
+  <span>In Template</span>
+</button>
+<br />
+<br />
+<button nz-button nzType="primary" (click)="showModal2()">
+  <span>In Component</span>
+</button>
+<nz-modal [(nzVisible)]="isVisible" nzTitle="Custom Modal Title" (nzOnCancel)="handleCancel()">
+  <div>
+    <p>Modal Content</p>
+    <p>Modal Content</p>
+    <p>Modal Content</p>
+    <p>Modal Content</p>
+    <p>Modal Content</p>
+  </div>
+  <div *nzModalFooter>
+    <span>Modal Footer: </span>
+    <button nz-button nzType="default" (click)="handleCancel()">Custom Callback</button>
+    <button nz-button nzType="primary" (click)="handleOk()" [nzLoading]="isConfirmLoading">Custom Submit</button>
+  </div>
+</nz-modal>
