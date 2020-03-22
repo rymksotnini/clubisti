@@ -1,0 +1,70 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+      <!-- Card stats -->  <div class="container-fluid d-flex align-items-center">
+      <div class="row">
+        <div class="col-lg-7 col-md-10">
+          <a [routerLink]="['/add-charity']" class="btn btn-info">Add new project</a>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+
+  <!-- Table -->
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <h3 class="mb-0">My stories</h3>
+        </div>
+        <div class="table-responsive">
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+            <tr>
+              <th scope="col">Story</th>
+              <th scope="col">Genre</th>
+              <th scope="col">Created at</th>
+              <th scope="col">add chapter</th>
+            </tr>
+            </thead>
+            <tbody *ngIf="stories">
+            <tr *ngFor="let story of stories.content">
+              <th scope="row">
+                <div class="media align-items-center">
+
+                  <div class="media-body">
+                    <span class="mb-0 text-sm">{{story.name}}</span>
+                  </div>
+                </div>
+              </th>
+              <td>
+                {{story.genre}}
+              </td>
+              <td>
+
+                {{story.createdAt | date}}
+
+              </td>
+              <td>
+                <a (click)="viewChapter(story)"  class="btn btn-info">View chapter</a>
+              </td>
+
+
+            </tr>
+
+            </tbody>
+          </table>
+        </div>
+        <div class="card-footer py-4" *ngIf="stories">
+          <nz-pagination [nzPageIndex]=currentPage  [nzTotal]=stories.totalElements  [nzPageSize]=sizePage (nzPageIndexChange)="paginate($event)"></nz-pagination>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
