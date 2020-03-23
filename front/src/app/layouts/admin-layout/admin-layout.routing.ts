@@ -5,11 +5,15 @@ import {LandingComponent} from '../../pages/landing/landing.component';
 import {ProductsComponent} from '../../pages/products/products.component';
 import {CharitiesListComponent} from '../../pages/admin/charity/charities-list/charities-list.component';
 import {CharityCreateComponent} from '../../pages/admin/charity/charity-create/charity-create.component';
+import {ListCategoryComponent} from '../../pages/admin/category/list-category/list-category.component';
+
 
 
 export const AdminLayoutRoutes: Routes = [
-  { path: 'landing',          component: LandingComponent },
-  { path: 'charity',          component: CharitiesListComponent },
-  { path: 'products',          component: ProductsComponent },
-  {path: 'add-charity', component: CharityCreateComponent}
+  { path: 'admin/landing',          component: LandingComponent },
+  { path: 'admin/variable',          component: ListCategoryComponent },
+  { path: 'admin/charity',          component: CharitiesListComponent },
+  { path: 'admin/products',          component: ProductsComponent },
+  {path: 'admin/add-charity', component: CharityCreateComponent},
+
 ];
