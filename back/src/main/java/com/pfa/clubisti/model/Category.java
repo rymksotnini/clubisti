@@ -26,21 +26,10 @@ public class Category extends Audit implements Serializable {
    @NotBlank
    private String name;
 
-    @ManyToMany(fetch = FetchType.LAZY,
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            },
-            mappedBy = "categories")
-    private Set<Product> products = new HashSet<>();
 
-    @ManyToMany(fetch = FetchType.LAZY,
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            },
-            mappedBy = "categories")
-    private Set<Project> projects = new HashSet<>();
+    @Enumerated(EnumType.STRING)
+    @Column(length = 60)
+    private CategoryType type;
 
 
 
@@ -49,7 +38,29 @@ public class Category extends Audit implements Serializable {
     public  Category() {
     }
 
-    public Category(@NotBlank String name) {
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
         this.name = name;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public CategoryType getType() {
+        return type;
+    }
+
+    public void setType(CategoryType type) {
+        this.type = type;
     }
 }
