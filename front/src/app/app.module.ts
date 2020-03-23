@@ -26,11 +26,15 @@ import { CharitiesListComponent } from './pages/admin/charity/charities-list/cha
 import { CharityCreateComponent } from './pages/admin/charity/charity-create/charity-create.component';
 import { NzModalModule } from 'ng-zorro-antd/modal';
 import { CreateCategoryComponent } from './pages/admin/category/create-category/create-category.component';
+import { ListCategoryComponent } from './pages/admin/category/list-category/list-category.component';
+import { EnumToArrayPipe } from './pipes/enum-to-array.pipe';
 
 
 import {AuthenticationInterceptorProvider} from "./authentication.interceptor";
 
 
+
+// @ts-ignore
 @NgModule({
   imports: [
     NzModalModule,
@@ -54,6 +58,9 @@ import {AuthenticationInterceptorProvider} from "./authentication.interceptor";
     CharitiesListComponent,
     CharityCreateComponent,
     CreateCategoryComponent,
+    ListCategoryComponent,
+    EnumToArrayPipe,
+
 
 
 

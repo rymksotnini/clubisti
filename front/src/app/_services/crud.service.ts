@@ -18,6 +18,7 @@ export class CrudService {
     return this.http.get<any>(url + '/' + id);
   }
   post(url, body) {
+    console.log(url)
     return this.http.post<any>(url, body);
   }
   postOpt(url, body, option) {
