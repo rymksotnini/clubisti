@@ -23,6 +23,10 @@ public class UserController {
 
     private UserRepository userRepository;
 
+    public UserController(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/register")
     public ResponseEntity<?> createUser(@RequestBody User newUser) {
@@ -52,6 +56,10 @@ public class UserController {
         return userRepository.findAll(pageable);
     }
 
+    @GetMapping("/users/{userId}")
+    public User getUser(@PathVariable Long userId) {
+        return userRepository.findById(userId).get();
+    }
     @PutMapping("/users/{userId}")
     public User updateUser(@PathVariable Long userId, @Valid @RequestBody User userRequest) {
         return userRepository.findById(userId).map(user -> {
@@ -59,7 +67,6 @@ public class UserController {
             return userRepository.save(user);
         }).orElseThrow(() -> new ResourceNotFoundException("UserId " + userId + " not found"));
     }
-
 
     @DeleteMapping("/users/{userId}")
     public ResponseEntity<?> deleteUser(@PathVariable Long userId) {
