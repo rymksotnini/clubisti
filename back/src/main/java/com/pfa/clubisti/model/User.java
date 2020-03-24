@@ -2,12 +2,10 @@ package com.pfa.clubisti.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.pfa.clubisti.DTOs.UserDTO;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -49,8 +47,8 @@ public class User extends Audit implements Serializable{
     @Email
     private String email;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "badge_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "badge_id")
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
     private Badge badge;
@@ -59,7 +57,7 @@ public class User extends Audit implements Serializable{
     private boolean isDeleted = false;
 
     @NotBlank
-    @JsonIgnore
+    //@JsonIgnore else it won't add password to database
     @Size(min = 6, max = 100)
     private String password;
 
@@ -70,24 +68,28 @@ public class User extends Audit implements Serializable{
     private Profile profile;
 
 
-    @ManyToMany(fetch = FetchType.LAZY)
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade =  CascadeType.ALL
+    )
     @JoinTable(name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
 
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "address_id", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "address_id")
+    @JsonIgnore
     private Address address;
+
 
     public User() {
     }
 
-    public User( String username, String email,  String password) {
+    /*public User( String username, String email,  String password) {
         this.username = username;
         this.email = email;
         this.password = password;
-    }
+    }*/
 
     public boolean getDeleted() {
         return isDeleted;
@@ -150,5 +152,17 @@ public class User extends Audit implements Serializable{
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public Badge getBadge() {
+        return badge;
+    }
+
+    public void setBadge(Badge badge) {
+        this.badge = badge;
+    }
+
+    public UserDTO createUserDTO() {
+        return new UserDTO(this.id,this.username,this.email);
     }
 }

@@ -18,7 +18,7 @@ public class Role {
     private Long id;
 
     @Enumerated(EnumType.STRING)
-    @NaturalId
+    //@NaturalId doesn't allow to use user_role multiple times
     @Column(length = 60)
     private RoleName name;
 

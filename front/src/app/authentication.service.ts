@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
 import {HttpClient, HttpHeaders, HttpResponse} from "@angular/common/http";
+import {User} from "./models/user";
 
 @Injectable({
   providedIn: 'root'
@@ -10,14 +11,17 @@ export class AuthenticationService {
   private resourceUrl =  'http://localhost:8081/';
   private redirectUri = 'http://localhost:4200/';
   private currentUser = null;
+
   constructor(private http: HttpClient ) { }
 
   public signup(user :User):Observable<HttpResponse<any>>{
-    return this.http.post<any>(this.resourceUrl+'/register', JSON.parse(JSON.stringify(user)), { observe: 'response' });
+    return this.http.post<any>(this.resourceUrl+'register', JSON.parse(JSON.stringify(user)),{observe: 'response' });
   }
 
-  public login(user: User): Observable<HttpResponse<any>> {
-    return this.http.post<any>(this.resourceUrl+'/login', JSON.parse(JSON.stringify(user)), { observe: 'response' });
+  public login(user: User): Observable<HttpResponse<User>> {
+    const headers = { 'Content-Type':'application/json'}
+    console.log(JSON.stringify(user));
+    return this.http.post<User>(this.resourceUrl+'login', JSON.stringify(user) , { headers:headers, observe: 'response' });
   }
   //method get for current user!
   public retrieveToken() {
@@ -53,5 +57,17 @@ export class AuthenticationService {
   }
   public isLogged(): boolean{
     return localStorage.getItem("access_token")!=null;
+  }
+
+  public getRedirectUri(): string{
+    return this.redirectUri;
+  }
+
+  public setCurrentUser(currentUser: User){
+    this.currentUser = currentUser;
+  }
+
+  public getCurrentUser():User{
+    return this.currentUser
   }
 }
