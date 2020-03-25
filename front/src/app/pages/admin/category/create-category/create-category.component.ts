@@ -15,7 +15,7 @@ import {API_URL, CATEGORY} from '../../../../_globals/global-variables';
 export class CreateCategoryComponent implements OnInit {
 
   keys = Object.keys;
-  categories = CategoryType;
+  categories: Category;
   createCategory: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
@@ -34,6 +34,7 @@ export class CreateCategoryComponent implements OnInit {
 
   onSubmit() {
     console.log(this.createCategory.value);
+
     this.crudService.post(API_URL + CATEGORY, this.createCategory.value).subscribe(
       (response) => {
         console.log(response);

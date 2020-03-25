@@ -9,12 +9,22 @@ export class Project{
 
   name: string;
 
+  lastUpdatedSum: number;
+
   shortDescription: string;
 
   amount: number;
 
+  createdAt: Date;
+
+  updatedAt: Date;
+
   status: ProjectStatus;
 
   categories: Category[];
+
+   minDonationAmount: number;
+
+  maxDonationAmount: number;
 
 }
