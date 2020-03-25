@@ -41,6 +41,10 @@ public class User extends Audit implements Serializable{
     @Size(min = 3, max = 50)
     private String username;
 
+    @NotBlank
+    @Size(min = 3, max = 50)
+    private String name;
+
 
     @NotBlank
     @Size(max = 50)
@@ -85,11 +89,15 @@ public class User extends Audit implements Serializable{
     public User() {
     }
 
-    /*public User( String username, String email,  String password) {
+
+
+    public User(String name, String email, String username, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
-    }*/
+        this.name = name;
+    }
+
 
     public boolean getDeleted() {
         return isDeleted;
