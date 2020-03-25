@@ -13,7 +13,7 @@ import java.util.Set;
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 @Table(name = "project")
-public class Project implements Serializable {
+public class Project extends Audit implements Serializable  {
 
 
     @Id
@@ -23,15 +23,20 @@ public class Project implements Serializable {
     private double lastUpdatedSum;
 
 
-    @NotBlank
+
     private String name;
 
-    @NotBlank
+
     private String shortDescription;
 
 
-    @NotBlank
     private double amount;
+
+
+    private double minDonationAmount;
+
+
+    private double maxDonationAmount;
 
 
     @Enumerated(EnumType.STRING)
@@ -47,6 +52,30 @@ public class Project implements Serializable {
             joinColumns = { @JoinColumn(name = "offer_id") },
             inverseJoinColumns = { @JoinColumn(name = "category_id") })
     private Set<Category> categories = new HashSet<>();
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public double getMinDonationAmount() {
+        return minDonationAmount;
+    }
+
+    public void setMinDonationAmount(double minDonationAmount) {
+        this.minDonationAmount = minDonationAmount;
+    }
+
+    public double getMaxDonationAmount() {
+        return maxDonationAmount;
+    }
+
+    public void setMaxDonationAmount(double maxDonationAmount) {
+        this.maxDonationAmount = maxDonationAmount;
+    }
 
     public double getLastUpdatedSum() {
         return lastUpdatedSum;
