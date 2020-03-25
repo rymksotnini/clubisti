@@ -8,6 +8,7 @@ export class CrudService {
 
   constructor(private http: HttpClient) { }
   getAll(url) {
+    console.log(url)
     return this.http.get<any>(url);
   }
   getAllWithParams(url, params) {
@@ -15,6 +16,7 @@ export class CrudService {
     return this.http.get<any>(url, {params});
   }
   getOne(url, id) {
+    console.log(url)
     return this.http.get<any>(url + '/' + id);
   }
   post(url, body) {
@@ -22,15 +24,19 @@ export class CrudService {
     return this.http.post<any>(url, body);
   }
   postOpt(url, body, option) {
+    console.log(url)
     return this.http.post<any>(url, body, option);
   }
   update(url, id, body) {
+    console.log(url)
     return this.http.put<any>(url + '/' + id, body);
   }
   delete(url, id) {
+    console.log(url)
     return this.http.delete<any>(url + '/' + id);
   }
   put(url, body) {
+    console.log(url)
     return this.http.put<any>(url, body);
   }
 }

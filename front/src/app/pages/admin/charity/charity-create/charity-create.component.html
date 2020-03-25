@@ -47,8 +47,8 @@
                       <label class="form-control-label" for="input-genre">Categories</label>
                       <!-- Category -->
                       <div class="sidebar-widget">
-                        <select formControlName= "genre" class="selectpicker default input-genre" id="input-genre" name="input-genre" data-selected-text-format="count" title="All Categories" >
-                          <!--<option *ngFor="let item of categories | enumToArray">{{item.name}}</option> -->
+                        <select formControlName= "categoriesIds" class="selectpicker default input-genre" id="input-genre" name="input-genre" data-selected-text-format="count" title="All Categories" >
+                          <option *ngFor="let item of categories " [value]="item.id">{{item.name}}</option>
                         </select>
                       </div>
                     </div>
@@ -59,6 +59,21 @@
                     <div class="form-group">
                       <label class="form-control-label" for="input-amount">Amount</label>
                       <input  formControlName= "amount" type="text" id="input-amount" class="form-control form-control-alternative" placeholder="Amount" >
+                    </div>
+                  </div>
+
+                </div>
+                <div class="row">
+                  <div class="col-lg-4">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-min">Min donation amount</label>
+                      <input  formControlName= "minDonationAmount" type="text" id="input-min" class="form-control form-control-alternative" placeholder="Amount" >
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-max">Max donation amount</label>
+                      <input  formControlName= "maxDonationAmount" type="text" id="input-max" class="form-control form-control-alternative" placeholder="Amount" >
                     </div>
                   </div>
 
@@ -78,7 +93,7 @@
             </form>
             <div class="col-xl-12">
               <button type="submit" (click)="onSubmit()" class="btn btn-info" form="create-book-form">
-                <i class="icon-feather-plus"></i>post story</button>
+                <i class="icon-feather-plus"></i>post project</button>
             </div>
           </div>
         </div>

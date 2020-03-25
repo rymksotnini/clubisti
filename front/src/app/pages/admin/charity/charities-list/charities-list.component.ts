@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {CrudService} from "../../../../_services/crud.service";
-import {ActivatedRoute, Router} from "@angular/router";
-import {HttpParams} from "@angular/common/http";
-import {API_URL} from '../../../../_globals/global-variables';
+import {CrudService} from '../../../../_services/crud.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {HttpParams} from '@angular/common/http';
+import {ACTIVATE, API_URL, CHARITY, PAUSE, TERNINATE} from '../../../../_globals/global-variables';
+import {Project} from '../../../../_models/Project';
+import {ListReq} from '../../../../_models/requests/ListReq';
+import {ProjectStatus} from '../../../../_models/enum/ProjectStatus';
+import {NzModalService} from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-charities-list',
@@ -12,15 +16,17 @@ import {API_URL} from '../../../../_globals/global-variables';
 export class CharitiesListComponent implements OnInit {
 
   isVisible = false;
-  stories;
+  projects : ListReq<Project>;
   currentPage: number;
   sizePage: number;
+  projectStatus = ProjectStatus;
   sort = 'createdAt,desc';
  // user: User;
   uri: string;
   constructor(private crudService: CrudService,
               private router: Router,
               private route: ActivatedRoute,
+              private modalService: NzModalService
              ) {
 
   }
@@ -28,43 +34,76 @@ export class CharitiesListComponent implements OnInit {
   ngOnInit() {
     this.uri = this.route.snapshot.routeConfig.path;
     this.currentPage = 1;
-    this.sizePage = 6;
-    this.getStories();
+    this.sizePage = 2;
+    this.getProjects();
   }
 
-  getStories() {
+  getProjects() {
     let params: any;
     const selectedPage = this.currentPage - 1;
     params = new HttpParams().set('page', selectedPage.toString())
       .set('size', this.sizePage.toString()).set('sort', this.sort.toString());
 
-    console.log(params);
-    let url: string;
-
-      url = API_URL ;
-
-    console.log(this.uri, url)
-    /*this.crudService.getAllWithParams(url, params).subscribe(
+    this.crudService.getAllWithParams(API_URL+ CHARITY, params).subscribe(
       (response) => {
-        this.stories = response;
-        console.log(this.stories);
-        this.currentPage = this.stories.pageable.pageNumber + 1;
+        this.projects = response;
+        console.log(this.projects);
+        this.currentPage = this.projects.pageable.pageNumber + 1;
       },
       (error =>  {
         console.log(error);
       })
-    );*/
+    );
   }
 
   paginate(page: number) {
     this.currentPage = page ;
-    this.getStories();
+    this.getProjects();
+  }
+
+
+  pauseProject(project: Project) {
+    this.crudService.update(API_URL +CHARITY + PAUSE, project.id, {} ).subscribe(
+      (response) => {
+        this.getProjects();
+      }  , (error =>  {
+        console.log(error);
+      })
+    )
   }
 
 
 
-  addChapter() {
+  activateProject(project: Project) {
 
+    this.crudService.update(API_URL +CHARITY + ACTIVATE, project.id, {} ).subscribe(
+      (response) => {
+          this.getProjects();
+      }  , (error =>  {
+      console.log(error);
+    })
+    )
   }
 
+  endProject(project: Project) {
+    this.crudService.update(API_URL +CHARITY + TERNINATE, project.id, {} ).subscribe(
+      (response) => {
+        this.getProjects();
+      }  , (error =>  {
+        console.log(error);
+      })
+    )
+  }
+
+  showDeleteConfirm(project: Project): void {
+    this.modalService.confirm({
+      nzTitle: 'Are you sure you want to end this project?',
+      nzContent: '<b style="color: red;">The project supposed end date is</b>',
+      nzOkText: 'Yes',
+      nzOkType: 'danger',
+      nzOnOk: () => this.endProject(project),
+      nzCancelText: 'No',
+      nzOnCancel: () => console.log('Cancel')
+    });
+  }
 }
