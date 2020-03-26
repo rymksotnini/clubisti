@@ -29,7 +29,7 @@ import { ListCategoryComponent } from './pages/admin/category/list-category/list
 import { EnumToArrayPipe } from './pipes/enum-to-array.pipe';
 
 
-import {AuthenticationInterceptorProvider} from "./authentication.interceptor";
+import {AuthenticationInterceptorProvider} from "./_interceptors/authentication.interceptor";
 
 
 

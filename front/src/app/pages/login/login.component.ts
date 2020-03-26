@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import {AuthenticationService} from "../../authentication.service";
+import {AuthenticationService} from "../../_services/authentication.service";
 import {NgForm} from "@angular/forms";
 import {User} from "../../models/user";
 
