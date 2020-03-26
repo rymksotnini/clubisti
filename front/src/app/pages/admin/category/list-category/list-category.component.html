@@ -1,0 +1,80 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+      <!-- Card stats -->  <div class="container-fluid d-flex align-items-center">
+      <div class="row">
+        <div class="col-lg-7 col-md-10">
+          <a [routerLink]="['/admin/add-charity']" class="btn btn-info">Add new project</a>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+
+  <!-- Table -->
+  <div class="row">
+    <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+      <div class="card card-profile shadow">
+        <div class="">
+          <div class="">
+            <h3>Create category</h3>
+          </div>
+        </div>
+
+        <div class="card-body pt-0 pt-md-4">
+
+          <div class="text-center">
+            <app-create-category></app-create-category>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-8 order-xl-1">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <h3 class="mb-0">Categories</h3>
+        </div>
+        <div class="table-responsive">
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Type</th>
+              <th scope="col">delete category</th>
+            </tr>
+            </thead>
+            <tbody *ngIf="categories">
+            <tr *ngFor="let story of categories.content">
+              <th scope="row">
+                <div class="media align-items-center">
+
+                  <div class="media-body">
+                    <span class="mb-0 text-sm">{{story.name}}</span>
+                  </div>
+                </div>
+              </th>
+              <td>
+                {{story.type}}
+              </td>
+              <td>
+                <a   class="btn btn-info">delete</a>
+              </td>
+
+
+            </tr>
+
+            </tbody>
+          </table>
+        </div>
+        <div class="card-footer py-4" *ngIf="categories">
+          <nz-pagination [nzPageIndex]=currentPage  [nzTotal]=categories.totalElements  [nzPageSize]=sizePage (nzPageIndexChange)="paginate($event)"></nz-pagination>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

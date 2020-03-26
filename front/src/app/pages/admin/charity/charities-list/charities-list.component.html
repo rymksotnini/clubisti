@@ -1,0 +1,96 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+      <!-- Card stats -->  <div class="container-fluid d-flex align-items-center">
+      <div class="row">
+        <div class="col-lg-7 col-md-10">
+          <a [routerLink]="['/admin/add-charity']" class="btn btn-info">Add new project</a>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+
+  <!-- Table -->
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <h3 class="mb-0">Projects</h3>
+        </div>
+        <div class="table-responsive">
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Created At</th>
+              <th scope="col">Updated At</th>
+              <th scope="col">amount</th>
+              <th scope="col">MIN DA</th>
+              <th scope="col">MAX DA</th>
+              <th scope="col">last updated sum</th>
+              <th scope="col"> status</th>
+              <th scope="col"> change status</th>
+            </tr>
+            </thead>
+            <tbody *ngIf="projects">
+            <tr *ngFor="let project of projects.content">
+              <th scope="row">
+                <div class="media align-items-center">
+
+                  <div class="media-body">
+                    <span class="mb-0 text-sm">{{project.name}}</span>
+                  </div>
+                </div>
+              </th>
+              <td>
+
+                {{project.createdAt | date}}
+
+              </td>
+
+              <td>
+
+                {{project.updatedAt | date}}
+
+              </td>
+              <td>
+                {{project.amount}}
+              </td>
+              <td>
+                {{project.minDonationAmount}}
+              </td>
+              <td>
+                {{project.maxDonationAmount}}
+              </td>
+              <td>
+                {{project.lastUpdatedSum}}
+              </td>
+              <td>
+                {{project.status}}
+              </td>
+              <td>
+                <a (click)="pauseProject(project)"  class="btn ant-btn-primary" *ngIf="(project.status !='PAUSED') && project.status!='TERMINATED'" >Pause</a>
+                <a (click)="activateProject(project)"  class="btn btn-info" *ngIf="project.status!='ACTIVE' && project.status!='TERMINATED'">Activate</a>
+                <a  nzType="dashed" (click)="showDeleteConfirm(project)" class="btn btn-warning" *ngIf="project.status!='TERMINATED'">Terminate</a>
+
+              </td>
+
+
+            </tr>
+
+            </tbody>
+          </table>
+        </div>
+        <div class="card-footer py-4" *ngIf="projects">
+          <nz-pagination [nzPageIndex]=currentPage  [nzTotal]=projects.totalElements  [nzPageSize]=sizePage (nzPageIndexChange)="paginate($event)"></nz-pagination>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -22,7 +22,7 @@ import java.util.Set;
 import static com.pfa.clubisti.model.RoleName.ROLE_USER;
 
 @CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
-@RestController
+@RestController("/users")
 public class UserController {
 
     private UserRepository userRepository;
@@ -31,7 +31,7 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
-    @PostMapping("/register")
+    /*@PostMapping("/register")
     public ResponseEntity<?> createUser(@RequestBody User newUser) {
         if (userRepository.findOneByEmail(newUser.getEmail()) != null) {
             System.out.println("username Already exist " + newUser.getEmail());
@@ -58,17 +58,18 @@ public class UserController {
             return new ResponseEntity("incorrect password", HttpStatus.CONFLICT);
         }
         return new ResponseEntity<>(retrievedUser.createUserDTO(), HttpStatus.ACCEPTED);
-    }
-    @GetMapping("/users")
+    }*/
+    @GetMapping("/")
     public Page<User> getAllUsers(Pageable pageable) {
         return userRepository.findAll(pageable);
     }
 
-    @GetMapping("/users/{userId}")
-    public User getUser(@PathVariable Long userId) {
-        return userRepository.findById(userId).get();
+    @GetMapping("/{userId}")
+    public User getUser(@PathVariable String userId) {
+        System.out.println("user ID "+userId.split("user")[1]);
+        return userRepository.findById(Long.parseLong(userId.split("user")[1])).get();
     }
-    @PutMapping("/users/{userId}")
+    @PutMapping("/{userId}")
     public User updateUser(@PathVariable Long userId, @Valid @RequestBody User userRequest) {
         return userRepository.findById(userId).map(user -> {
             user.setUsername(userRequest.getUsername());
@@ -76,7 +77,7 @@ public class UserController {
         }).orElseThrow(() -> new ResourceNotFoundException("UserId " + userId + " not found"));
     }
 
-    @DeleteMapping("/users/{userId}")
+    @DeleteMapping("/{userId}")
     public ResponseEntity<?> deleteUser(@PathVariable Long userId) {
         return userRepository.findById(userId).map(user -> {
             user.setDeleted(true);

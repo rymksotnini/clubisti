@@ -15,7 +15,7 @@ const routes: Routes =[
     pathMatch: 'full',
   },
   {
-    path: '',
+    path: 'admin',
     component: AdminLayoutComponent,
     children: [
       {
@@ -33,7 +33,7 @@ const routes: Routes =[
       }
     ]
   },{
-    path: '',
+    path: 'auth',
     component: AuthLayoutComponent,
     children: [
       {
@@ -42,7 +42,7 @@ const routes: Routes =[
       }
     ]
   }, {
-    path: '',
+    path: 'template',
     component: TemplateLayoutComponent,
     children: [
       {
