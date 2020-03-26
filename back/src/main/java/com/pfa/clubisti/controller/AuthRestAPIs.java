@@ -4,10 +4,10 @@ package com.pfa.clubisti.controller;
 import com.pfa.clubisti.model.Role;
 import com.pfa.clubisti.model.RoleName;
 import com.pfa.clubisti.model.User;
-import com.pfa.clubisti.model.requests.LoginForm;
-import com.pfa.clubisti.model.requests.SignUpForm;
-import com.pfa.clubisti.model.response.JwtResponse;
-import com.pfa.clubisti.model.response.ResponseMessage;
+import com.pfa.clubisti.DTOs.requests.LoginForm;
+import com.pfa.clubisti.DTOs.requests.SignUpForm;
+import com.pfa.clubisti.DTOs.response.JwtResponse;
+import com.pfa.clubisti.DTOs.response.ResponseMessage;
 import com.pfa.clubisti.repository.RoleRepository;
 import com.pfa.clubisti.repository.UserRepository;
 import com.pfa.clubisti.security.jwt.JwtProvider;
@@ -77,7 +77,7 @@ public class AuthRestAPIs {
         }
 
         // Creating user's account
-        User user = new User(signUpRequest.getUsername(), signUpRequest.getEmail(), signUpRequest.getEmail(),
+        User user = new User(signUpRequest.getUsername(), signUpRequest.getEmail(), signUpRequest.getUsername(),
                 encoder.encode(signUpRequest.getPassword()));
 
 

@@ -1,4 +1,4 @@
-package com.pfa.clubisti.model.response;
+package com.pfa.clubisti.DTOs.response;
 
 
 import com.pfa.clubisti.model.User;

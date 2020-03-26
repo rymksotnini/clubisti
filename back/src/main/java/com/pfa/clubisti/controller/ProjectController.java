@@ -4,7 +4,7 @@ import com.pfa.clubisti.exception.NotAllowException;
 import com.pfa.clubisti.exception.ResourceNotFoundException;
 import com.pfa.clubisti.model.Project;
 import com.pfa.clubisti.model.ProjectStatus;
-import com.pfa.clubisti.model.requests.CreateProjectReq;
+import com.pfa.clubisti.DTOs.requests.CreateProjectReq;
 import com.pfa.clubisti.repository.CategoryRepository;
 import com.pfa.clubisti.repository.ProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;

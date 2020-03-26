@@ -1,4 +1,4 @@
-package com.pfa.clubisti.model.requests;
+package com.pfa.clubisti.DTOs.requests;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
