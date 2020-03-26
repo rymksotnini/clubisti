@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
-import {HttpClient, HttpHeaders, HttpResponse} from "@angular/common/http";
+import {HttpClient, HttpHeaders, HttpParams, HttpResponse} from "@angular/common/http";
 import {User} from "./models/user";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +11,9 @@ export class AuthenticationService {
 
   private resourceUrl =  'http://localhost:8081/api/auth/';
   private redirectUri = 'http://localhost:4200/';
-  private currentUser = null;
+  private currentUser = new User();
 
-  constructor(private http: HttpClient ) { }
+  constructor(private http: HttpClient, private router:Router ) { }
 
   public signup(user :User):Observable<HttpResponse<any>>{
     return this.http.post<any>(this.resourceUrl+'signup', JSON.parse(JSON.stringify(user)),{observe: 'response' });
@@ -20,43 +21,21 @@ export class AuthenticationService {
 
   public login(user: User): Observable<HttpResponse<any>> {
     const headers = { 'Content-Type':'application/json'};
-    console.log(JSON.stringify(user));
-    return this.http.post<any>(this.resourceUrl+'signin', JSON.stringify(user) , { headers:headers, observe: 'response' });
-  }
-  //method get for current user!
-  public retrieveToken() {
-    let params = new URLSearchParams();
-    params.append('grant_type','authorization_code');
-    params.append('client_id', this.currentUser.id);
-    params.append('client_secret', 'newClientSecret');
-    params.append('redirect_uri', this.redirectUri);
-
-    let headers =
-      new HttpHeaders({'Content-type': 'application/x-www-form-urlencoded; charset=utf-8',
-        'Authorization': 'Basic '+btoa(this.currentUser.id+":secret")});
-
-    this.http.post('http://localhost:8083/auth/realms/baeldung/protocol/openid-connect/token',
-      params.toString(), { headers: headers })
-      .subscribe(
-        data => this.saveToken(data),
-        err => alert('Invalid Credentials'));
-  }
-  private saveToken(token) {
-    const expireDate = new Date().getTime() + (1000 * token.expires_in);
-    const item = {
-      value: token.access_token,
-      expiry: expireDate
-    };
-    localStorage.setItem("access_token", JSON.stringify(item));
-    console.log('Obtained Access token');
-    window.location.href = 'http://localhost:8089';
+    const creds = { username: user.getEmail(), password: user.getPassword()};
+    return this.http.post<any>(this.resourceUrl+'signin', JSON.stringify(creds) , { headers: headers, observe: 'response' });
   }
 
+  //method get for current user from the backend
+  public getUser(){
+    return this.http.get('http://localhost:8081/user'+this.getCurrentUser().getId());
+  }
   public logout(){
-    localStorage.removeItem("access_token");
+    console.log("logging out")
+    localStorage.removeItem("token");
+    this.router.navigate(['/history']);
   }
   public isLogged(): boolean{
-    return localStorage.getItem("access_token")!=null;
+    return localStorage.getItem("token")!=null;
   }
 
   public getRedirectUri(): string{

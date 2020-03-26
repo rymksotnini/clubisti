@@ -10,7 +10,7 @@ export class User {
   private roles = null;
   private address = null;
 
-  constructor(id: number, userName: string, email: string) {
+  constructor(id: number=null, userName: string=null, email: string=null) {
     this.id = id;
     this.userName = userName;
     this.email = email;
