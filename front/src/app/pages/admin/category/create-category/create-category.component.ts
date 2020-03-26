@@ -3,7 +3,6 @@ import {Category} from '../../../../_models/Category';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {CrudService} from '../../../../_services/crud.service';
 import {Router} from '@angular/router';
-import {NzModalService} from 'ng-zorro-antd';
 import {CategoryType} from '../../../../_models/enum/CategoryType';
 import {API_URL, CATEGORY} from '../../../../_globals/global-variables';
 

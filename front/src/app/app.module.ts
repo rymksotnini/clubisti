@@ -5,8 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { BrowserModule } from '@angular/platform-browser';
-import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
 
+import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
 
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
@@ -24,7 +24,6 @@ import { ProductsComponent } from './pages/products/products.component';
 import { CharityProjectsComponent } from './pages/charity-projects/charity-projects.component';
 import { CharitiesListComponent } from './pages/admin/charity/charities-list/charities-list.component';
 import { CharityCreateComponent } from './pages/admin/charity/charity-create/charity-create.component';
-import { NzModalModule } from 'ng-zorro-antd/modal';
 import { CreateCategoryComponent } from './pages/admin/category/create-category/create-category.component';
 import { ListCategoryComponent } from './pages/admin/category/list-category/list-category.component';
 import { EnumToArrayPipe } from './pipes/enum-to-array.pipe';
@@ -37,7 +36,7 @@ import {AuthenticationInterceptorProvider} from "./authentication.interceptor";
 // @ts-ignore
 @NgModule({
   imports: [
-    NzModalModule,
+    NgZorroAntdModule,
     BrowserAnimationsModule,
     FormsModule,
     BrowserModule,
@@ -46,7 +45,6 @@ import {AuthenticationInterceptorProvider} from "./authentication.interceptor";
     NgbModule,
     RouterModule,
     AppRoutingModule,
-    NgZorroAntdModule,
     ReactiveFormsModule
   ],
   declarations: [
@@ -65,7 +63,9 @@ import {AuthenticationInterceptorProvider} from "./authentication.interceptor";
 
 
   ],
-  providers: [AuthenticationInterceptorProvider],
+  providers: [AuthenticationInterceptorProvider,
+    { provide: NZ_I18N, useValue: en_US }
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

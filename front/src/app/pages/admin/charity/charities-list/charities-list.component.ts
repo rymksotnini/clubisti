@@ -6,7 +6,6 @@ import {ACTIVATE, API_URL, CHARITY, PAUSE, TERNINATE} from '../../../../_globals
 import {Project} from '../../../../_models/Project';
 import {ListReq} from '../../../../_models/requests/ListReq';
 import {ProjectStatus} from '../../../../_models/enum/ProjectStatus';
-import {NzModalService} from 'ng-zorro-antd';
 
 @Component({
   selector: 'app-charities-list',
@@ -26,7 +25,7 @@ export class CharitiesListComponent implements OnInit {
   constructor(private crudService: CrudService,
               private router: Router,
               private route: ActivatedRoute,
-              private modalService: NzModalService
+              //private modalService: NzModalService
              ) {
 
   }
@@ -95,7 +94,7 @@ export class CharitiesListComponent implements OnInit {
     )
   }
 
-  showDeleteConfirm(project: Project): void {
+  /*showDeleteConfirm(project: Project): void {
     this.modalService.confirm({
       nzTitle: 'Are you sure you want to end this project?',
       nzContent: '<b style="color: red;">The project supposed end date is</b>',
@@ -105,5 +104,5 @@ export class CharitiesListComponent implements OnInit {
       nzCancelText: 'No',
       nzOnCancel: () => console.log('Cancel')
     });
-  }
+  }*/
 }

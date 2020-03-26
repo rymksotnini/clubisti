@@ -6,7 +6,7 @@ import javax.validation.constraints.Size;
 public class SignUpForm {
     @NotBlank
     @Size(min = 3, max = 50)
-    private String name;
+    private String username;
 
 
     @NotBlank
@@ -23,12 +23,12 @@ public class SignUpForm {
     @NotBlank
 
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String name) {
+        this.username = name;
     }
 
 

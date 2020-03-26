@@ -4,7 +4,6 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 import {CrudService} from '../../../../_services/crud.service';
 import {Router} from '@angular/router';
 import {API_URL, CATEGORY, CHARITY} from '../../../../_globals/global-variables';
-import { NzModalService } from 'ng-zorro-antd/modal';
 import {CreateCategoryComponent} from "../../category/create-category/create-category.component";
 import {HttpParams} from '@angular/common/http';
 
@@ -25,7 +24,8 @@ export class CharityCreateComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private crudService: CrudService,
               private router: Router,
-              private modalService: NzModalService) { }
+              //private modalService: NzModalService
+              ) { }
 
   ngOnInit() {
     this.getCategories();

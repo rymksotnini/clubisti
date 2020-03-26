@@ -31,7 +31,7 @@ public class UserController {
         this.userRepository = userRepository;
     }
 
-    @PostMapping("/register")
+    /*@PostMapping("/register")
     public ResponseEntity<?> createUser(@RequestBody User newUser) {
         if (userRepository.findOneByEmail(newUser.getEmail()) != null) {
             System.out.println("username Already exist " + newUser.getEmail());
@@ -58,7 +58,7 @@ public class UserController {
             return new ResponseEntity("incorrect password", HttpStatus.CONFLICT);
         }
         return new ResponseEntity<>(retrievedUser.createUserDTO(), HttpStatus.ACCEPTED);
-    }
+    }*/
     @GetMapping("/users")
     public Page<User> getAllUsers(Pageable pageable) {
         return userRepository.findAll(pageable);

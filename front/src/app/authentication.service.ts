@@ -8,20 +8,20 @@ import {User} from "./models/user";
 })
 export class AuthenticationService {
 
-  private resourceUrl =  'http://localhost:8081/';
+  private resourceUrl =  'http://localhost:8081/api/auth/';
   private redirectUri = 'http://localhost:4200/';
   private currentUser = null;
 
   constructor(private http: HttpClient ) { }
 
   public signup(user :User):Observable<HttpResponse<any>>{
-    return this.http.post<any>(this.resourceUrl+'register', JSON.parse(JSON.stringify(user)),{observe: 'response' });
+    return this.http.post<any>(this.resourceUrl+'signup', JSON.parse(JSON.stringify(user)),{observe: 'response' });
   }
 
-  public login(user: User): Observable<HttpResponse<User>> {
-    const headers = { 'Content-Type':'application/json'}
+  public login(user: User): Observable<HttpResponse<any>> {
+    const headers = { 'Content-Type':'application/json'};
     console.log(JSON.stringify(user));
-    return this.http.post<User>(this.resourceUrl+'login', JSON.stringify(user) , { headers:headers, observe: 'response' });
+    return this.http.post<any>(this.resourceUrl+'signin', JSON.stringify(user) , { headers:headers, observe: 'response' });
   }
   //method get for current user!
   public retrieveToken() {
