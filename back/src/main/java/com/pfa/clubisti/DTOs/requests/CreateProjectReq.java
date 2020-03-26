@@ -1,8 +1,5 @@
-package com.pfa.clubisti.model.requests;
+package com.pfa.clubisti.DTOs.requests;
 
-import com.pfa.clubisti.model.ProjectStatus;
-
-import javax.validation.constraints.NotBlank;
 import java.util.HashSet;
 import java.util.Set;
 

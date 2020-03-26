@@ -1,4 +1,4 @@
-package com.pfa.clubisti.model.requests;
+package com.pfa.clubisti.DTOs.requests;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -19,8 +19,6 @@ public class SignUpForm {
     @NotBlank
     @Size(min = 6, max = 40)
     private String password;
-
-    @NotBlank
 
 
     public String getUsername() {
