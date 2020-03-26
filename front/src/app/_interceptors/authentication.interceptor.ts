@@ -6,7 +6,7 @@ import {
   HttpInterceptor, HttpParams, HTTP_INTERCEPTORS, HttpHeaders
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {AuthenticationService} from "./authentication.service";
+import {AuthenticationService} from "../_services/authentication.service";
 
 @Injectable()
 export class AuthenticationInterceptor implements HttpInterceptor {
@@ -14,14 +14,15 @@ export class AuthenticationInterceptor implements HttpInterceptor {
   constructor(private authenticationService: AuthenticationService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
+    console.log("in interceptor", this.authenticationService.isLogged());
     if(this.authenticationService.isLogged()) {
       const newRequest = request.clone(
         {
-          headers: new HttpHeaders({
-            'Content-type': 'application/x-www-form-urlencoded; charset=utf-8',
-            'Authorization': 'Bearer '+localStorage.getItem("access_token")})
+          headers: request.headers.append(
+            'Authorization', 'Bearer '+localStorage.getItem("token"))
         }
       );
+      console.log("request",newRequest);
       return next.handle(newRequest);
 
     }else {

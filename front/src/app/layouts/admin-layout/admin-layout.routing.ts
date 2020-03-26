@@ -10,10 +10,10 @@ import {ListCategoryComponent} from '../../pages/admin/category/list-category/li
 
 
 export const AdminLayoutRoutes: Routes = [
-  { path: 'admin/landing',          component: LandingComponent },
-  { path: 'admin/variable',          component: ListCategoryComponent },
-  { path: 'admin/charity',          component: CharitiesListComponent },
-  { path: 'admin/products',          component: ProductsComponent },
-  {path: 'admin/add-charity', component: CharityCreateComponent},
+  { path: 'landing',          component: LandingComponent },
+  { path: 'variable',          component: ListCategoryComponent },
+  { path: 'charity',          component: CharitiesListComponent },
+  { path: 'products',          component: ProductsComponent },
+  {path: 'add-charity', component: CharityCreateComponent},
 
 ];
