@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Badge extends Model
 {
+    protected $fillable = ['name', 'lower_bond', 'upper_bond'];
+
     /**
      * Get the profiles for the badge.
      */

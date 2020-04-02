@@ -6,13 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    /**
-     * Get the category that owns the product.
-     */
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
-    }
+    protected $fillable = ['name', 'status', 'large_image_path', 'small_image_path', 'long_description', 'short_description', 'total_amount'];
+
 
     public function categories()
     {

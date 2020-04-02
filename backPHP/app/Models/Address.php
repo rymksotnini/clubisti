@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Address extends Model
 {
+    protected $fillable = ['city', 'street', 'street2', 'postal_code', 'country_id'];
+
     /**
      * Get the organisations for the address.
      */

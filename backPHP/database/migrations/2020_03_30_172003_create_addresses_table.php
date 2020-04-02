@@ -17,7 +17,7 @@ class CreateAddressesTable extends Migration
             $table->increments('id');
             $table->string('city');
             $table->string('street');
-            $table->string('street2');
+            $table->string('street2')->nullable();
             $table->string('postal_code');
             $table->integer('country_id')->unsigned();
             $table->timestamps();

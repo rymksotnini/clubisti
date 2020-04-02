@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Country extends Model
 {
+    protected $fillable = ['name'];
+
     /**
      * Get the addresses for the country.
      */

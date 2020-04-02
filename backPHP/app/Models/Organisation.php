@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Organisation extends Model
 {
+    protected $fillable = ['name', 'description', 'address_id'];
+
     /**
      * Get the accounts for the organisation.
      */
