@@ -42,4 +42,14 @@ export class NavbarComponent implements OnInit,DoCheck {
     this.connected = this.authenticationService.isLogged();
   }
 
+  logout(){
+    this.authenticationService.logout().subscribe(
+      (res) => {
+        console.log('logging out');
+        localStorage.removeItem('token');
+        this.router.navigate(['/history']);
+      }
+    );
+  }
+
 }
