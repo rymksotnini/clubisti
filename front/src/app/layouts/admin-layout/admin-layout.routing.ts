@@ -7,13 +7,10 @@ import {CharitiesListComponent} from '../../pages/admin/charity/charities-list/c
 import {CharityCreateComponent} from '../../pages/admin/charity/charity-create/charity-create.component';
 import {ListCategoryComponent} from '../../pages/admin/category/list-category/list-category.component';
 
-
-
 export const AdminLayoutRoutes: Routes = [
   { path: 'landing',          component: LandingComponent },
   { path: 'variable',          component: ListCategoryComponent },
   { path: 'charity',          component: CharitiesListComponent },
   { path: 'products',          component: ProductsComponent },
-  {path: 'add-charity', component: CharityCreateComponent},
-
+  {path: 'add-charity', component: CharityCreateComponent}
 ];
