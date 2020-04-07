@@ -3,6 +3,7 @@ import {Observable} from 'rxjs';
 import {HttpClient, HttpHeaders, HttpParams, HttpResponse} from '@angular/common/http';
 import {User} from '../models/user';
 import {Router} from '@angular/router';
+import {API_URL, REDIRECT} from '../_globals/global-variables';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,10 @@ export class AuthenticationService {
     const headers = { 'Content-Type':'application/json'};
     const creds = { email: user.getEmail(), password: user.getPassword()};
     return this.http.post<any>(this.resourceUrl+'login', JSON.stringify(creds) , { headers, observe: 'response' });
+  }
+
+  public facebookLogin(){
+    return this.http.get<any>(API_URL + REDIRECT);
   }
 
   // method get for current user from the backend
@@ -47,4 +52,6 @@ export class AuthenticationService {
   public getCurrentUser():User{
     return this.currentUser
   }
+
+
 }
