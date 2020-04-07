@@ -12,6 +12,7 @@ class AuthenticationController extends Controller
     public function register(Request $request)
     {
         error_log($request->json('email'));
+        error_log($request->json('username'));
         error_log('000000');
         $validator = Validator::make($request->all(), [
             'email' => 'required|string|email|max:255|unique:users',
