@@ -16,7 +16,9 @@ export class AuthenticationService {
   constructor(private http: HttpClient, private router:Router ) { }
 
   public signup(user :User):Observable<HttpResponse<any>>{
-    return this.http.post<any>(this.resourceUrl+'register', JSON.parse(JSON.stringify(user)),{observe: 'response' });
+    // tslint:disable-next-line:max-line-length
+    const creds = { username: user.getUserName(),first_name: user.getFirstName(),last_name:user.getLastName(),email: user.getEmail(), password: user.getPassword()};
+    return this.http.post<any>(this.resourceUrl+'register', JSON.parse(JSON.stringify(creds)),{observe: 'response' });
   }
 
   public login(user: User): Observable<HttpResponse<any>> {
