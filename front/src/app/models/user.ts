@@ -1,19 +1,23 @@
 export class User {
 
   private id: number;
-  private userName: string;
+  private firstName: string;
+  private lastName: string;
+  private username: string;
   private email: string;
   private password: string;
   private badge = null ;
-  private isDeleted : boolean = false;
+  private isDeleted = false;
   private profile = null ;
   private roles = null;
   private address = null;
 
-  constructor(id: number=null, userName: string=null, email: string=null) {
+  constructor(id: number=null, firstName: string=null, lastName: string=null, userName: string=null, email: string=null) {
     this.id = id;
-    this.userName = userName;
+    this.username = userName;
     this.email = email;
+    this.firstName = firstName;
+    this.lastName = lastName;
   }
 
   public getId(): number {
@@ -24,12 +28,28 @@ export class User {
     this.id = value;
   }
 
+  public getFirstName(): string {
+    return this.firstName;
+  }
+
+  public setFirstName(value: string) {
+    this.firstName = value;
+  }
+
+  public getLastName(): string {
+    return this.lastName;
+  }
+
+  public setLastName(value: string) {
+    this.lastName = value;
+  }
+
   public getUserName(): string {
-    return this.userName;
+    return this.username;
   }
 
   public setUserName(value: string) {
-    this.userName = value;
+    this.username = value;
   }
 
   public getEmail(): string {
