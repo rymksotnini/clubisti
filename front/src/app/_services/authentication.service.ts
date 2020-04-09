@@ -10,7 +10,7 @@ import {API_URL, REDIRECT} from '../_globals/global-variables';
 })
 export class AuthenticationService {
 
-  private resourceUrl =  'http://localhost:8000/api/';
+  private resourceUrl =  'http://back.clubisti.net/api/';
   private redirectUri = 'http://localhost:4200/';
   private currentUser = new User();
 
