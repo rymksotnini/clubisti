@@ -32,11 +32,11 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::delete('/addresses/{id}', 'AddressController@delete');
 
     /************************************************ Badges API ************************************************/
-    Route::get('/badges', 'BadgController@index');
-    Route::get('/badges/{id}', 'BadgController@show');
-    Route::post('/badges', 'BadgController@store');
-    Route::put('/badges/{id}', 'BadgController@update');
-    Route::delete('/badges/{id}', 'BadgController@delete');
+    Route::get('/badges', 'BadgeController@index');
+    Route::get('/badges/{id}', 'BadgeController@show');
+    Route::post('/badges', 'BadgeController@store');
+    Route::put('/badges/{id}', 'BadgeController@update');
+    Route::delete('/badges/{id}', 'BadgeController@delete');
 
     /************************************************ Categories API ************************************************/
     Route::get('/categories', 'CategoryController@index');
@@ -100,3 +100,10 @@ Route::group(['middleware' => ['jwt.verify']], function() {
 Route::post('/register', 'AuthenticationController@register');
 Route::post('/login', 'AuthenticationController@login');
 Route::post('/logout', 'AuthenticationController@logout');
+
+
+/************************************************ Authentication FACEBOOK ************************************************/
+
+//Route::get('/redirect', array('middleware' => 'cors', 'uses' => 'SocialAuthFacebookController@redirect'));
+//Route::get('/callback', array('middleware' => 'cors', 'uses' => 'SocialAuthFacebookController@callback'));
+
