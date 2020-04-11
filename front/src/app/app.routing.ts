@@ -11,7 +11,7 @@ import {TemplateLayoutComponent} from './layouts/template-layout/template-layout
 const routes: Routes =[
   {
     path: '',
-    redirectTo: 'landing',
+    redirectTo: 'dashboard',
     pathMatch: 'full',
   },
   {

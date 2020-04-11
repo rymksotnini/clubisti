@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import {AuthenticationService} from '../../_services/authentication.service';
 import {NgForm} from '@angular/forms';
-import {User} from '../../models/user';
+import {User} from '../../_models/user';
 import {Router} from '@angular/router';
 
 @Component({
@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   login(form: NgForm) {
+    // @ts-ignore
     console.log('login button clicked');
     if (!this.authenticationService.isLogged()) {
       this.user = new User();
@@ -34,6 +35,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           console.log('user: ' + currentUser);
           console.log('token: ' + result.body.token);
           this.authenticationService.setCurrentUser(currentUser);
+          // @ts-ignore
           localStorage.setItem('token',result.body.token);
           this.router.navigate(['/history']);
         }

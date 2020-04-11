@@ -36,6 +36,7 @@ import {AuthenticationInterceptorProvider} from "./_interceptors/authentication.
 // @ts-ignore
 @NgModule({
   imports: [
+    BrowserModule,
     NgZorroAntdModule,
     BrowserAnimationsModule,
     FormsModule,
