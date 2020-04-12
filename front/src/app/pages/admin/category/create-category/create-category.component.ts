@@ -3,6 +3,7 @@ import {Category} from '../../../../_models/Category';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {CrudService} from '../../../../_services/crud.service';
 import {Router} from '@angular/router';
+import {NzModalService} from 'ng-zorro-antd';
 import {CategoryType} from '../../../../_models/enum/CategoryType';
 import {API_URL, CATEGORY} from '../../../../_globals/global-variables';
 
@@ -14,7 +15,7 @@ import {API_URL, CATEGORY} from '../../../../_globals/global-variables';
 export class CreateCategoryComponent implements OnInit {
 
   keys = Object.keys;
-  categories: Category;
+  categories = CategoryType;
   createCategory: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
@@ -37,7 +38,7 @@ export class CreateCategoryComponent implements OnInit {
     this.crudService.post(API_URL + CATEGORY, this.createCategory.value).subscribe(
       (response) => {
         console.log(response);
-       // this.router.navigate(['/list-story']);
+        // this.router.navigate(['/list-story']);
       }, (error => console.log(error))
     );
   }

@@ -39,11 +39,11 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::delete('/badges/{id}', 'BadgeController@delete');
 
     /************************************************ Categories API ************************************************/
-    Route::get('/categories', 'CategoryController@index');
-    Route::get('/categories/{id}', 'CategoryController@show');
-    Route::post('/categories', 'CategoryController@store');
-    Route::put('/categories/{id}', 'CategoryController@update');
-    Route::delete('/categories/{id}', 'CategoryController@delete');
+//    Route::get('/categories', 'CategoryController@index');
+//    Route::get('/categories/{id}', 'CategoryController@show');
+//    Route::post('/categories', 'CategoryController@store');
+//    Route::put('/categories/{id}', 'CategoryController@update');
+//    Route::delete('/categories/{id}', 'CategoryController@delete');
 
     /************************************************ Countries API ************************************************/
     Route::get('/countries', 'CountryController@index');
@@ -103,6 +103,13 @@ Route::post('/logout', 'AuthenticationController@logout');
 
 
 /************************************************ Authentication FACEBOOK ************************************************/
+
+Route::get('/categories', 'CategoryController@index');
+Route::get('/categories/{id}', 'CategoryController@show');
+Route::post('/categories', 'CategoryController@store');
+Route::put('/categories/{id}', 'CategoryController@update');
+Route::delete('/categories/{id}', 'CategoryController@delete');
+
 
 //Route::get('/redirect', array('middleware' => 'cors', 'uses' => 'SocialAuthFacebookController@redirect'));
 //Route::get('/callback', array('middleware' => 'cors', 'uses' => 'SocialAuthFacebookController@callback'));

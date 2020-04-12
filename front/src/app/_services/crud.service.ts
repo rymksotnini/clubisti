@@ -12,7 +12,7 @@ export class CrudService {
     return this.http.get<any>(url);
   }
   getAllWithParams(url, params) {
-    console.log(url)
+    console.log(url, params)
     return this.http.get<any>(url, {params});
   }
   getOne(url, id) {

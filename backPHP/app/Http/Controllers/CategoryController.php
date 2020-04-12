@@ -6,12 +6,25 @@ use App\Http\Resources\CategoryCollection;
 use App\Http\Resources\Category as CategoryResource;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use function PHPSTORM_META\elementType;
+
 
 class CategoryController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        error_log($request->page);
+        if ($request->page  && $request->perPage){
+            return new CategoryCollection(Category::paginate($request->perPage));
+        }else if ($request->page ){
+            return new CategoryCollection(Category::paginate(1));
+        }
         return new CategoryCollection(Category::get());
+    }
+    public function indexPagination($page)
+    {
+        error_log("in pagination");
+        return new CategoryCollection(Category::paginate($page));
     }
 
     public function show($id)

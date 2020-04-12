@@ -34,7 +34,7 @@ export class CharitiesListComponent implements OnInit {
   ngOnInit() {
     this.uri = this.route.snapshot.routeConfig.path;
     this.currentPage = 1;
-    this.sizePage = 2;
+    this.sizePage = 1;
     this.getProjects();
   }
 
@@ -48,7 +48,7 @@ export class CharitiesListComponent implements OnInit {
       (response) => {
         this.projects = response;
         console.log(this.projects);
-        this.currentPage = this.projects.pageable.pageNumber + 1;
+        this.currentPage = this.projects.meta.current_page;
       },
       (error =>  {
         console.log(error);
