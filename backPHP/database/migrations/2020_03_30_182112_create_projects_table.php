@@ -21,7 +21,7 @@ class CreateProjectsTable extends Migration
             $table->double('amount');
             $table->double('max_donation_amount');
             $table->double('min_donation_amount');
-            $table->enum('status', ['CREATED', 'DELETED']);
+            $table->enum('status', ['CREATED', 'DELETED', 'TERMINATED', 'ACTIVE', 'PAUSED']);
             $table->timestamps();
         });
     }

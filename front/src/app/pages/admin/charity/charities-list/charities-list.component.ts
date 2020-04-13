@@ -34,15 +34,15 @@ export class CharitiesListComponent implements OnInit {
   ngOnInit() {
     this.uri = this.route.snapshot.routeConfig.path;
     this.currentPage = 1;
-    this.sizePage = 1;
+    this.sizePage = 3;
     this.getProjects();
   }
 
   getProjects() {
     let params: any;
-    const selectedPage = this.currentPage - 1;
+    const selectedPage = this.currentPage ;
     params = new HttpParams().set('page', selectedPage.toString())
-      .set('size', this.sizePage.toString()).set('sort', this.sort.toString());
+      .set('perPage', this.sizePage.toString());
 
     this.crudService.getAllWithParams(API_URL+ CHARITY, params).subscribe(
       (response) => {
