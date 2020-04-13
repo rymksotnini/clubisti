@@ -11,7 +11,7 @@ import {TemplateLayoutComponent} from './layouts/template-layout/template-layout
 const routes: Routes =[
   {
     path: '',
-    redirectTo: 'landing',
+    redirectTo: 'dashboard',
     pathMatch: 'full',
   },
   {
@@ -59,8 +59,6 @@ const routes: Routes =[
 
 @NgModule({
   imports: [
-    CommonModule,
-    BrowserModule,
     RouterModule.forRoot(routes,{
       useHash: true
     })
