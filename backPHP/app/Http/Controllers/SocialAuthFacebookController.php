@@ -25,8 +25,9 @@ class SocialAuthFacebookController extends Controller
     {
         error_log('callback');
         $user = $service->createOrGetUser(Socialite::driver('facebook')->stateless()->user());
-        auth()->login($user);
         error_log($user);
+        auth()->login($user);
+
         //return redirect()->to('/home');
         return $user;
     }

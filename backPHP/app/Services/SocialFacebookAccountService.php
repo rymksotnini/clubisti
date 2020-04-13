@@ -7,13 +7,15 @@ class SocialFacebookAccountService
 {
     public function createOrGetUser(ProviderUser $providerUser)
     {
-        error_log('heloo');
+
         $account = SocialFacebookAccount::whereProvider('facebook')
             ->whereProviderUserId($providerUser->getId())
             ->first();
         if ($account) {
+            error_log("in account " . $account);
             return $account->user;
         } else {
+            error_log("in provider " .$providerUser->token);
             $account = new SocialFacebookAccount([
                 'provider_user_id' => $providerUser->getId(),
                 'provider' => 'facebook'
