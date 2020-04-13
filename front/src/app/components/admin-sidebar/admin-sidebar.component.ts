@@ -12,6 +12,7 @@ export const ROUTES: RouteInfo[] = [
   { path: '/admin/products', title: 'Products',  icon:'ni-planet text-blue', class: '' },
   { path: '/admin/charity', title: 'Charity',  icon:'ni-pin-3 text-orange', class: '' },
   { path: '/admin/variable', title: 'Variable',  icon:'ni-pin-3 text-pink', class: '' },
+  { path: '/admin/users', title: 'Users',  icon:'ni-pin-3 text-pink', class: '' },
 ];
 
 

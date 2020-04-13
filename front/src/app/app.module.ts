@@ -33,6 +33,7 @@ import {AuthenticationInterceptorProvider} from './_interceptors/authentication.
 import {CommonModule} from '@angular/common';
 import {AnonymousLayoutModule} from "./layouts/anonymous-layout/anonymous-layout.module";
 import {DashboardComponent} from "./pages/dashboard/dashboard.component";
+import { UsersComponent } from './pages/users/users.component';
 
 
 

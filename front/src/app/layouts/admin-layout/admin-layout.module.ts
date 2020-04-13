@@ -5,6 +5,7 @@ import { AdminLayoutRoutes } from './admin-layout.routing';
 import {LandingComponent} from '../../pages/landing/landing.component';
 import {ProductsComponent} from '../../pages/products/products.component';
 import {CharityProjectsComponent} from '../../pages/charity-projects/charity-projects.component';
+import {UsersComponent} from '../../pages/users/users.component';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import {CharityProjectsComponent} from '../../pages/charity-projects/charity-pro
   declarations: [
     LandingComponent,
     ProductsComponent,
-    CharityProjectsComponent
+    CharityProjectsComponent,
+    UsersComponent,
   ]
 })
 
