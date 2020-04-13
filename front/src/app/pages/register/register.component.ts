@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {CrudService} from '../../_services/crud.service';
 import {Router} from '@angular/router';
 import {AuthenticationService} from '../../_services/authentication.service';
-import { User } from 'src/app/models/user';
+import { User } from 'src/app/_models/user';
 import { NgForm } from '@angular/forms';
 
 
