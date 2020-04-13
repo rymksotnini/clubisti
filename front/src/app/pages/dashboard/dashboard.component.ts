@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
-
 // core components
 import {
   chartOptions,
@@ -32,7 +31,7 @@ export class DashboardComponent implements OnInit {
     this.projects[2]= new Project(3,'Project 3','description project 3 bla bla bla bla',30,200);
     this.projects[3]= new Project(4,'Project 4','description project 4 bla bla bla bla',30,200);
     this.projects[4]= new Project(5,'Project 5','description project 5 bla bla bla bla',30,200);
-    console.log(this.projects[0]);
+    console.log(this.projects.length);
     this.datasets = [
       [0, 20, 10, 30, 15, 40, 20, 60, 60],
       [0, 20, 5, 25, 10, 30, 15, 40, 40]
