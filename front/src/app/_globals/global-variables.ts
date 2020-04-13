@@ -1,4 +1,4 @@
-export const API_URL = 'http://back.clubisti.net/api';
+export const API_URL = 'http://localhost:8000/api';
 export const CHARITY = '/projects';
 export const CATEGORY = '/categories';
 export const PAUSE = '/pause';

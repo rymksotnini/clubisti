@@ -6,7 +6,7 @@ import {
   parseOptions,
   chartExample1,
   chartExample2
-} from "../../variables/charts";
+} from '../../variables/charts';
 import {Project} from '../../_models/Project';
 
 @Component({
