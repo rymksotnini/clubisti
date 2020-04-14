@@ -5,10 +5,12 @@ import {AnonymousLayoutRoutes} from './anonymous-layout.routing';
 import {HistoryComponent} from '../../pages/history/history.component';
 import {FbAuthComponent} from "../../components/fb-auth/fb-auth.component";
 
+import {DashboardComponent} from "../../pages/dashboard/dashboard.component";
 
 
 @NgModule({
   declarations: [
+    DashboardComponent,
     HistoryComponent,
     FbAuthComponent
   ],

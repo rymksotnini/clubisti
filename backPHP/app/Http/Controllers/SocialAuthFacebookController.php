@@ -7,13 +7,17 @@ use App\Services\SocialFacebookAccountService;
 use Illuminate\Routing\Redirector ;
 class SocialAuthFacebookController extends Controller
 {
+    /**
+     * Create a redirect method to facebook api.
+     *
+     * @return void
+     */
     public function redirect()
 
     {
         error_log('redirect');
         return Socialite::driver('facebook')->redirect();
     }
-
     /**
      * Return a callback method from facebook api.
      *

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient, HttpHeaders, HttpParams, HttpResponse} from '@angular/common/http';
-import {User} from '../models/user';
+import {User} from '../_models/user';
 import {Router} from '@angular/router';
 import {API_URL, CALLBACK, REDIRECT} from '../_globals/global-variables';
 
@@ -10,7 +10,7 @@ import {API_URL, CALLBACK, REDIRECT} from '../_globals/global-variables';
 })
 export class AuthenticationService {
 
-  private resourceUrl =  'http://localhost:8000/api/';
+  private resourceUrl =  'http://back.clubisti.net/api/';
   private redirectUri = 'http://localhost:4200/';
   private currentUser = new User();
 

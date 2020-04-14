@@ -17,19 +17,19 @@
           </a>
         </li>
         <li class="nav-item">
-          <a *ngIf="connected" class="nav-link nav-link-icon" routerLinkActive="active" (click)="logout()">
+          <a *ngIf="this.authenticationService.isLogged()" class="nav-link nav-link-icon" routerLinkActive="active" (click)="logout()">
             <i class="ni ni-user-run"></i>
             <span class="nav-link-inner--text">Logout</span>
           </a>
         </li>
         <li class="nav-item">
-          <a *ngIf="connected==false" class="nav-link nav-link-icon" routerLinkActive="active" [routerLink]="['/auth/login']">
+          <a *ngIf="!this.authenticationService.isLogged()" class="nav-link nav-link-icon" routerLinkActive="active" [routerLink]="['/auth/login']">
             <i class="ni ni-key-25"></i>
             <span class="nav-link-inner--text">Login</span>
           </a>
         </li>
         <li class="nav-item">
-          <a *ngIf="connected==false" class="nav-link nav-link-icon" routerLinkActive="active" [routerLink]="['/user-profile']">
+          <a *ngIf="this.authenticationService.isLogged()" class="nav-link nav-link-icon" routerLinkActive="active" [routerLink]="['/user-profile']">
             <i class="ni ni-single-02"></i>
             <span class="nav-link-inner--text">Profile</span>
           </a>
@@ -50,7 +50,7 @@
     </form>
     <!-- User -->
     <ul class="navbar-nav align-items-center d-none d-md-flex">
-      <li class="nav-item" ngbDropdown placement="bottom-right">
+      <li *ngIf="this.authenticationService.isLogged()" class="nav-item" ngbDropdown placement="bottom-right">
         <a class="nav-link pr-0" role="button" ngbDropdownToggle>
           <div class="media align-items-center">
             <span class="avatar avatar-sm rounded-circle">
@@ -65,7 +65,7 @@
           <div class=" dropdown-header noti-title">
             <h6 class="text-overflow m-0">Welcome!</h6>
           </div>
-          <a routerLinkActive="active" [routerLink]="['/landing']" class="dropdown-item">
+          <a routerLinkActive="active" [routerLink]="['/admin/landing']" class="dropdown-item">
             <i class="ni ni-single-02"></i>
             <span>Admin</span>
           </a>
