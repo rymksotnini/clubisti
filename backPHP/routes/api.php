@@ -100,7 +100,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
 Route::post('/register', 'AuthenticationController@register');
 Route::post('/login', 'AuthenticationController@login');
 Route::post('/logout', 'AuthenticationController@logout');
-
+Route::post('/fblogin', array('middleware' => 'cors','uses'=>'SocialAuthFacebookController@login'));
 
 /************************************************ Authentication FACEBOOK ************************************************/
 
@@ -120,6 +120,6 @@ Route::put('/projects/{id}', 'ProjectController@update');
 Route::delete('/projects/{id}', 'ProjectController@delete');
 
 
-//Route::get('/redirect', array('middleware' => 'cors', 'uses' => 'SocialAuthFacebookController@redirect'));
-//Route::get('/callback', array('middleware' => 'cors', 'uses' => 'SocialAuthFacebookController@callback'));
+Route::get('/redirect', 'SocialAuthFacebookController@redirect');
+Route::get('/callback', 'SocialAuthFacebookController@callback');
 

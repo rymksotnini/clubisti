@@ -21,16 +21,7 @@ export class RegisterComponent implements OnInit {
 
 
   registerFacebook() {
-    console.log("helloo")
-    this.authenticationService.facebookLogin().subscribe(
-      (response) => {
-        console.log(response)
-        console.log("hellossso")
-      },
-      (error => {
-        console.log(error)
-      })
-    )
+    console.log("helloo");
   }
 
   register(form: NgForm) {
@@ -46,14 +37,8 @@ export class RegisterComponent implements OnInit {
       this.authenticationService.signup(this.user).subscribe(
         (result)=> {
           console.log('currently signing up...');
-          console.log('body', result.body);
-          const currentUser = new User();
-          Object.assign(currentUser,result.body.user);
-          console.log('user: ' + currentUser);
-          console.log('token: ' + result.body.token);
-          this.authenticationService.setCurrentUser(currentUser);
-          localStorage.setItem('token',result.body.token);
-          this.router.navigate(['/history']);
+          this.authenticationService.savingUser(result);
+          this.router.navigate(['/dashboard']);
         }
       )
     }
