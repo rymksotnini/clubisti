@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::middleware('api')->get('users', function (Request $request) {
+/*Route::middleware('api')->get('users', function (Request $request) {
     return $request->user();
-});
+});*/
 Route::group(['middleware' => ['jwt.verify']], function() {
     /************************************************ Accounts API ************************************************/
     Route::get('/accounts', 'AccountController@index');
@@ -100,7 +100,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
 Route::post('/register', 'AuthenticationController@register');
 Route::post('/login', 'AuthenticationController@login');
 Route::post('/logout', 'AuthenticationController@logout');
-
+Route::post('/fblogin', array('uses' => 'SocialAuthFacebookController@login'));
 
 /************************************************ Authentication FACEBOOK ************************************************/
 
@@ -120,6 +120,6 @@ Route::put('/projects/{id}', 'ProjectController@update');
 Route::delete('/projects/{id}', 'ProjectController@delete');
 
 
-//Route::get('/redirect', array('middleware' => 'cors', 'uses' => 'SocialAuthFacebookController@redirect'));
-//Route::get('/callback', array('middleware' => 'cors', 'uses' => 'SocialAuthFacebookController@callback'));
+Route::get('/redirect', 'SocialAuthFacebookController@redirect');
+Route::get('/callback', 'SocialAuthFacebookController@callback');
 

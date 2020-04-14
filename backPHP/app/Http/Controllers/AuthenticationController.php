@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Tymon\JWTAuth\Exceptions\JWTException;
 
@@ -49,6 +50,8 @@ class AuthenticationController extends Controller
 
     public function logout()
     {
+        $token = auth()->login(Auth::user());
+        error_log("logging out $token");
         auth()->logout();
 
         return response()->json(['message' => 'Successfully logged out']);

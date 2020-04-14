@@ -3,7 +3,7 @@ import {Observable} from 'rxjs';
 import {HttpClient, HttpHeaders, HttpParams, HttpResponse} from '@angular/common/http';
 import {User} from '../models/user';
 import {Router} from '@angular/router';
-import {API_URL, REDIRECT} from '../_globals/global-variables';
+import {API_URL, CALLBACK, REDIRECT} from '../_globals/global-variables';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +29,7 @@ export class AuthenticationService {
   }
 
   public facebookLogin(){
-    return this.http.get<any>(API_URL + REDIRECT);
+    return this.http.get<any>(API_URL + '/fblogin');
   }
 
   // method get for current user from the backend

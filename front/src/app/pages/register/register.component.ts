@@ -21,16 +21,7 @@ export class RegisterComponent implements OnInit {
 
 
   registerFacebook() {
-    console.log("helloo")
-    this.authenticationService.facebookLogin().subscribe(
-      (response) => {
-        console.log(response)
-        console.log("hellossso")
-      },
-      (error => {
-        console.log(error)
-      })
-    )
+    console.log("helloo");
   }
 
   register(form: NgForm) {

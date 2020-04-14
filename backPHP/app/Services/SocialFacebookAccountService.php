@@ -7,7 +7,7 @@ class SocialFacebookAccountService
 {
     public function createOrGetUser(ProviderUser $providerUser)
     {
-        error_log('heloo');
+        error_log($providerUser->token);
         $account = SocialFacebookAccount::whereProvider('facebook')
             ->whereProviderUserId($providerUser->getId())
             ->first();
@@ -24,6 +24,8 @@ class SocialFacebookAccountService
                     'email' => $providerUser->getEmail(),
                     'username' => $providerUser->getName(),
                     'password' => md5(rand(1,10000)),
+                    'first_name' => $providerUser->getName(),
+                    'last_name' => $providerUser->getName()
                 ]);
             }
             $account->user()->associate($user);
