@@ -32,7 +32,6 @@ import { EnumToArrayPipe } from './pipes/enum-to-array.pipe';
 import {AuthenticationInterceptorProvider} from './_interceptors/authentication.interceptor';
 import {CommonModule} from '@angular/common';
 import {AnonymousLayoutModule} from "./layouts/anonymous-layout/anonymous-layout.module";
-import {DashboardComponent} from "./pages/dashboard/dashboard.component";
 
 
 

@@ -28,16 +28,8 @@ export class LoginComponent implements OnInit, OnDestroy {
       console.log(this.user);
       this.authenticationService.login(this.user).subscribe(
         (result)=> {
-          console.log('currently logging in...');
-          console.log('body', result.body);
-          const currentUser = new User();
-          Object.assign(currentUser,result.body.user);
-          console.log('user: ' + currentUser);
-          console.log('token: ' + result.body.token);
-          this.authenticationService.setCurrentUser(currentUser);
-          // @ts-ignore
-          localStorage.setItem('token',result.body.token);
-          this.router.navigate(['/history']);
+          this.authenticationService.savingUser(result);
+          this.router.navigate(['/dashboard']);
         }
       )
     }

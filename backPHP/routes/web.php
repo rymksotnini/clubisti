@@ -24,6 +24,6 @@ Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/api/redirect', array('middleware' => 'cors', 'uses' => 'SocialAuthFacebookController@redirect'));
 //Route::get('/api/callback', array('middleware' => 'cors', 'uses' => 'SocialAuthFacebookController@callback'));
-Route::get('/redirect', array('uses' => 'SocialAuthFacebookController@redirect'));
+Route::get('/redirect', array('middleware' => 'web','uses' => 'SocialAuthFacebookController@redirect'));
 Route::get('/callback', array('uses' => 'SocialAuthFacebookController@callback'));
 Route::post('/logout', array( 'uses' => 'AuthenticationController@logout'));

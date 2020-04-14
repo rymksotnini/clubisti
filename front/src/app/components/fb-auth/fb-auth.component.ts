@@ -10,13 +10,21 @@ import {AuthenticationService} from "../../_services/authentication.service";
 })
 export class FbAuthComponent implements OnInit {
 
-  constructor(private router:Router, private http:HttpClient, private authenticationService:AuthenticationService) { }
+  constructor(private activatedRoute:ActivatedRoute,
+              private router:Router,
+              private http:HttpClient,
+              private authenticationService:AuthenticationService) { }
 
   ngOnInit(): void {
-    this.authenticationService.facebookLogin().subscribe(params=> {
-      console.log(params.token);
-      localStorage.setItem('token',params.token);
-      this.router.navigate(['/history']);
+    let id =null;
+    this.activatedRoute.queryParams.subscribe(params => {
+      id = params.param;
+      console.log("hello"+id);
+    });
+    this.authenticationService.facebookLogin(id).subscribe(result=> {
+      console.log('facebook login ...');
+      this.authenticationService.savingUser(result);
+      this.router.navigate(['/dashboard']);
     });
   }
 

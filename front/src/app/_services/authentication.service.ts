@@ -3,7 +3,7 @@ import {Observable} from 'rxjs';
 import {HttpClient, HttpHeaders, HttpParams, HttpResponse} from '@angular/common/http';
 import {User} from '../_models/user';
 import {Router} from '@angular/router';
-import {API_URL, CALLBACK, REDIRECT} from '../_globals/global-variables';
+import {API_URL, CALLBACK, REDIRECT, URL} from '../_globals/global-variables';
 
 @Injectable({
   providedIn: 'root'
@@ -19,25 +19,26 @@ export class AuthenticationService {
   public signup(user :User):Observable<HttpResponse<any>>{
     // tslint:disable-next-line:max-line-length
     const creds = { username: user.getUserName(),first_name: user.getFirstName(),last_name:user.getLastName(),email: user.getEmail(), password: user.getPassword()};
-    return this.http.post<any>(this.resourceUrl+'register', JSON.parse(JSON.stringify(creds)),{observe: 'response' });
+    return this.http.post<any>(API_URL+'/register', JSON.parse(JSON.stringify(creds)),{observe: 'response' });
   }
 
   public login(user: User): Observable<HttpResponse<any>> {
     const headers = { 'Content-Type':'application/json'};
     const creds = { email: user.getEmail(), password: user.getPassword()};
-    return this.http.post<any>(this.resourceUrl+'login', JSON.stringify(creds) , { headers, observe: 'response' });
+    return this.http.post<any>(API_URL+'/login', JSON.stringify(creds) , { headers, observe: 'response' });
   }
 
-  public facebookLogin(){
-    return this.http.get<any>(API_URL + '/fblogin');
+  public facebookLogin(id){
+    const param = {param : id};
+    return this.http.post<any>(API_URL+'/fblogin',JSON.stringify(param),{ observe: 'response' });
   }
 
   // method get for current user from the backend
   public getUser(){
-    return this.http.get(this.resourceUrl+'users'+this.getCurrentUser().getId());
+    return this.http.get(API_URL+'users'+this.getCurrentUser().getId());
   }
   public logout(){
-    return this.http.post<any>(this.resourceUrl+'logout', {observe: 'response' });
+    return this.http.post<any>(API_URL+'/logout', {observe: 'response' });
   }
   public isLogged(): boolean{
     return localStorage.getItem('token')!=null;
@@ -55,5 +56,16 @@ export class AuthenticationService {
     return this.currentUser
   }
 
+  public savingUser(result){
+    console.log('currently logging in...');
+    console.log('body', result.body);
+    const currentUser = new User();
+    Object.assign(currentUser,result.body.user);
+    console.log('user: ' + currentUser);
+    console.log('token: ' + result.body.token);
+    this.setCurrentUser(currentUser);
+    // @ts-ignore
+    localStorage.setItem('token',result.body.token);
+  }
 
 }
