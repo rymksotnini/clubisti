@@ -38,7 +38,7 @@
             </tr>
             </thead>
             <tbody *ngIf="projects">
-            <tr *ngFor="let project of projects.content">
+            <tr *ngFor="let project of projects.data">
               <th scope="row">
                 <div class="media align-items-center">
 
@@ -49,26 +49,26 @@
               </th>
               <td>
 
-                {{project.createdAt | date}}
+                {{project.created_at| date}}
 
               </td>
 
               <td>
 
-                {{project.updatedAt | date}}
+                {{project.updated_at | date}}
 
               </td>
               <td>
                 {{project.amount}}
               </td>
               <td>
-                {{project.minDonationAmount}}
+                {{project.min_donation_amount}}
               </td>
               <td>
-                {{project.maxDonationAmount}}
+                {{project.max_donation_amount}}
               </td>
               <td>
-                {{project.lastUpdatedSum}}
+                {{project.last_updated_sum}}
               </td>
               <td>
                 {{project.status}}
@@ -87,7 +87,7 @@
           </table>
         </div>
         <div class="card-footer py-4" *ngIf="projects">
-          <nz-pagination [nzPageIndex]=currentPage  [nzTotal]=projects.totalElements  [nzPageSize]=sizePage (nzPageIndexChange)="paginate($event)"></nz-pagination>
+          <nz-pagination [nzPageIndex]=currentPage  [nzTotal]=projects.meta.last_page  [nzPageSize]=sizePage (nzPageIndexChange)="paginate($event)"></nz-pagination>
         </div>
       </div>
     </div>

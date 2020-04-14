@@ -2,38 +2,42 @@ import {ProjectStatus} from './enum/ProjectStatus';
 import {Category} from './Category';
 
 
+
 export class Project{
 
   private _id: number;
 
   private _name: string;
 
-  private _lastUpdatedSum: number;
+  private _last_updated_sum: number;
 
   private _shortDescription: string;
 
   private _amount: number;
 
-  private _createdAt: Date;
+  private _created_at: Date;
 
-  private _updatedAt: Date;
+  private _updated_at: Date;
 
-  private _status: ProjectStatus;
+  private _status: string;
 
   private _categories: Category[];
 
-   private _minDonationAmount: number;
+  private _min_donation_amount: number;
 
-  private _maxDonationAmount: number;
+  private _max_donation_amount: number;
 
-  // tslint:disable-next-line:max-line-length
-  constructor(id: number=null, name: string=null, shortDescription: string=null, lastUpdatedSum: number=null, amount: number=null, maxDonationAmount: number=null, minDonationAmount: number=null,
-              status : string=null ) {
+
+  constructor(id: number=null, name: string=null,shortDescription: string=null, last_updated_sum: number=null,  amount: number=null,
+              max_donation_amount: number=null, min_donation_amount:number=null, status:  string=null  ) {
     this._id = id;
     this._name = name;
+    this._last_updated_sum = last_updated_sum;
     this._shortDescription = shortDescription;
-    this._lastUpdatedSum = lastUpdatedSum;
     this._amount = amount;
+    this._status = status;
+    this._min_donation_amount = min_donation_amount;
+    this._max_donation_amount = max_donation_amount;
   }
 
   get id(): number {
@@ -52,12 +56,12 @@ export class Project{
     this._name = value;
   }
 
-  get lastUpdatedSum(): number {
-    return this._lastUpdatedSum;
+  get last_updated_sum(): number {
+    return this._last_updated_sum;
   }
 
-  set lastUpdatedSum(value: number) {
-    this._lastUpdatedSum = value;
+  set last_updated_sum(value: number) {
+    this._last_updated_sum = value;
   }
 
   get shortDescription(): string {
@@ -76,29 +80,24 @@ export class Project{
     this._amount = value;
   }
 
-  get createdAt(): Date {
-    return this._createdAt;
+  get created_at(): Date {
+    return this._created_at;
   }
 
-  set createdAt(value: Date) {
-    this._createdAt = value;
+  set created_at(value: Date) {
+    this._created_at = value;
   }
 
-  get updatedAt(): Date {
-    return this._updatedAt;
+  get updated_at(): Date {
+    return this._updated_at;
   }
 
-  set updatedAt(value: Date) {
-    this._updatedAt = value;
+  set updated_at(value: Date) {
+    this._updated_at = value;
   }
 
-  get status(): ProjectStatus {
-    return this._status;
-  }
 
-  set status(value: ProjectStatus) {
-    this._status = value;
-  }
+
 
   get categories(): Category[] {
     return this._categories;
@@ -108,19 +107,19 @@ export class Project{
     this._categories = value;
   }
 
-  get minDonationAmount(): number {
-    return this._minDonationAmount;
+  get min_donation_amount(): number {
+    return this._min_donation_amount;
   }
 
-  set minDonationAmount(value: number) {
-    this._minDonationAmount = value;
+  set min_donation_amount(value: number) {
+    this._min_donation_amount = value;
   }
 
-  get maxDonationAmount(): number {
-    return this._maxDonationAmount;
+  get max_donation_amount(): number {
+    return this._max_donation_amount;
   }
 
-  set maxDonationAmount(value: number) {
-    this._maxDonationAmount = value;
+  set max_donation_amount(value: number) {
+    this._max_donation_amount = value;
   }
 }

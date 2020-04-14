@@ -1,24 +1,17 @@
-import {Sort} from './sort';
 
 
-export class Pageable {
-  sort: Sort;
-  offset: number;
-  pageSize: number;
-  pageNumber: number;
-  paged: boolean;
-  unpaged: boolean;
 
+export class Links {
+  first: string;
+  last: string;
+  prev: string;
+  next: string;
 }
 
-export class InfoPage {
-  totalElements: number;
-  last: boolean;
-  totalPages: number;
-  number: number;
-  size: number;
-  sort: Sort;
-  numberOfElements: number;
-  first: boolean;
-  empty: boolean;
+export class Meta {
+  current_page: number;
+  from: number;
+  last_page: number;
+  per_page: number;
+  to: number;
 }

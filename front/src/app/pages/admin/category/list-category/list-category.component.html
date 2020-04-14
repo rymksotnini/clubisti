@@ -48,7 +48,7 @@
             </tr>
             </thead>
             <tbody *ngIf="categories">
-            <tr *ngFor="let story of categories.content">
+            <tr *ngFor="let story of categories.data">
               <th scope="row">
                 <div class="media align-items-center">
 
@@ -71,7 +71,7 @@
           </table>
         </div>
         <div class="card-footer py-4" *ngIf="categories">
-          <nz-pagination [nzPageIndex]=currentPage  [nzTotal]=categories.totalElements  [nzPageSize]=sizePage (nzPageIndexChange)="paginate($event)"></nz-pagination>
+          <nz-pagination [nzPageIndex]=currentPage  [nzTotal]=categories.meta.last_page  [nzPageSize]=categories.meta.per_page (nzPageIndexChange)="paginate($event)"></nz-pagination>
         </div>
       </div>
     </div>

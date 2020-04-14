@@ -43,7 +43,7 @@ export class CharityCreateComponent implements OnInit {
   getCategories() {
     this.crudService.getAll(API_URL + CATEGORY).subscribe(
       (response) => {
-        this.categories = response.content;
+        this.categories = response.data;
         console.log(this.categories);
 
       },

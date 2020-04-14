@@ -27,22 +27,22 @@ export class ListCategoryComponent implements OnInit {
 
   ngOnInit() {
     this.currentPage = 1;
-    this.sizePage = 6;
+    this.sizePage = 1;
     this.getCategories();
   }
 
   getCategories() {
     let params: any;
-    const selectedPage = this.currentPage - 1;
+    const selectedPage = this.currentPage;
     params = new HttpParams().set('page', selectedPage.toString())
-      .set('size', this.sizePage.toString()).set('sort', this.sort.toString());
+      .set('perPage', this.sizePage.toString());
 
 
     this.crudService.getAllWithParams(API_URL + CATEGORY, params).subscribe(
       (response) => {
         this.categories = response;
         console.log(this.categories);
-        this.currentPage = this.categories.pageable.pageNumber + 1;
+        this.currentPage = this.categories.meta.current_page ;
       },
       (error =>  {
         console.log(error);
