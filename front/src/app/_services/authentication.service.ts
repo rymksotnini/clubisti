@@ -48,8 +48,12 @@ export class AuthenticationService {
     return this.redirectUri;
   }
 
-  public setCurrentUser(currentUser: User){
-    this.currentUser = currentUser;
+  public setCurrentUser(currentUser){
+    this.currentUser.setId(currentUser.id);
+    this.currentUser.setUserName(currentUser.username);
+    this.currentUser.setFirstName(currentUser.first_name);
+    this.currentUser.setLastName(currentUser.last_name);
+    this.currentUser.setEmail(currentUser.email);
   }
 
   public getCurrentUser():User{
@@ -58,12 +62,9 @@ export class AuthenticationService {
 
   public savingUser(result){
     console.log('currently logging in...');
-    console.log('body', result.body);
-    const currentUser = new User();
-    Object.assign(currentUser,result.body.user);
-    console.log('user: ' + currentUser);
-    console.log('token: ' + result.body.token);
-    this.setCurrentUser(currentUser);
+    console.log('body',  result.body.user);
+    this.setCurrentUser(JSON.parse(result.body.user));
+    console.log('current user last name ' + this.getCurrentUser().getLastName());
     // @ts-ignore
     localStorage.setItem('token',result.body.token);
   }

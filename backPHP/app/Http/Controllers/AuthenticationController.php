@@ -26,7 +26,9 @@ class AuthenticationController extends Controller
         error_log('111111111');
         $token = auth()->login($user);
         error_log('2222222222');
-        return $this->respondWithTokenAndUser($token);
+        $user_id = auth()->id();
+        error_log($user_id);
+        return $this->respondWithTokenAndUser($token,$user_id);
     }
     public function login(Request $request)
     {
@@ -45,7 +47,9 @@ class AuthenticationController extends Controller
         } catch (JWTException $e) {
             return response()->json(['error' => 'could_not_create_token'], 500);
         }
-        return $this->respondWithTokenAndUser($token);
+        $user_id = auth()->id();
+        error_log($user_id);
+        return $this->respondWithTokenAndUser($token,$user_id);
     }
 
     public function logout()
@@ -56,13 +60,13 @@ class AuthenticationController extends Controller
         return response()->json(['message' => 'Successfully logged out']);
     }
 
-    protected function respondWithTokenAndUser($token)
+    protected function respondWithTokenAndUser($token,$id)
     {
         return response()->json([
             'token' => $token,
             'token_type'   => 'bearer',
             'expires_in'   => auth()->factory()->getTTL() * 60,
-            'user' => Auth::user()
+            'user' => json_encode(User::find($id))
         ]);
     }
 }
