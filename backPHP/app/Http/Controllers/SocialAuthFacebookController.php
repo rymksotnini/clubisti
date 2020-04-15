@@ -39,11 +39,13 @@ class SocialAuthFacebookController extends Controller
         error_log($request->json('param'));
         $token = auth()->login(User::find($request->json('param')));
         error_log("hello2: $token");
+        $person=json_encode(User::find($id));
+        error_log("hello3: $person");
         return response()->json([
             'token' => $token,
             'token_type'   => 'bearer',
             'expires_in'   => auth()->factory()->getTTL() * 60,
-            'user' => User::find($request->json('id'))
+            'user' => json_encode(User::find($id))
         ]);
     }
 }
