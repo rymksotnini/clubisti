@@ -17,11 +17,11 @@ class Badge extends JsonResource
         return [
             'id'         => $this->id,
             'name'       => $this->name,
-            'lower_bond'    => $this->lower_bond,
-            'upper_bond'    => $this->upper_bond,
+            'lowerBond'    => $this->lower_bond,
+            'upperBond'    => $this->upper_bond,
             'profiles'    => $this->profiles,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+            'createdAt' => $this->created_at,
+            'updatedAt' => $this->updated_at,
         ];
     }
 }

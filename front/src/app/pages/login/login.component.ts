@@ -19,12 +19,11 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   login(form: NgForm) {
-    // @ts-ignore
     console.log('login button clicked');
     if (!this.authenticationService.isLogged()) {
       this.user = new User();
-      this.user.setEmail(form.controls.email.value);
-      this.user.setPassword(form.controls.password.value);
+      this.user.email = form.controls.email.value;
+      this.user.password = form.controls.password.value;
       console.log(this.user);
       this.authenticationService.login(this.user).subscribe(
         (result)=> {
@@ -35,7 +34,6 @@ export class LoginComponent implements OnInit, OnDestroy {
           console.log('user: ' + currentUser);
           console.log('token: ' + result.body.token);
           this.authenticationService.setCurrentUser(currentUser);
-          // @ts-ignore
           localStorage.setItem('token',result.body.token);
           this.router.navigate(['/history']);
         }

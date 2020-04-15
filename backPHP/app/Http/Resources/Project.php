@@ -17,15 +17,15 @@ class Project extends JsonResource
         return [
             'id'         => $this->id,
             'name'       => $this->name,
-            'short_description'       => $this->short_description,
-            'last_updated_sum'       => $this->last_updated_sum,
+            'shortDescription'       => $this->short_description,
+            'lastUpdatedSum'       => $this->last_updated_sum,
             'amount'       => $this->amount,
-            'max_donation_amount'       => $this->max_donation_amount,
-            'min_donation_amount'       => $this->min_donation_amount,
+            'maxDonationAmount'       => $this->max_donation_amount,
+            'minDonationAmount'       => $this->min_donation_amount,
             'status'       => $this->status,
             'categories'    => $this->categories,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+            'createdAt' => $this->created_at,
+            'updatedAt' => $this->updated_at,
         ];
     }
 }

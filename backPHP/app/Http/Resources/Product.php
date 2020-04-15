@@ -18,14 +18,14 @@ class Product extends JsonResource
             'id'         => $this->id,
             'name'       => $this->name,
             'status'    => $this->status,
-            'large_image_path'    => $this->large_image_path,
-            'small_image_path'    => $this->small_image_path,
-            'long_description'    => $this->long_description,
-            'short_description'    => $this->short_description,
-            'total_amount'    => $this->total_amount,
+            'largeImagePath'    => $this->large_image_path,
+            'smallImagePath'    => $this->small_image_path,
+            'longDescription'    => $this->long_description,
+            'shortDescription'    => $this->short_description,
+            'totalAmount'    => $this->total_amount,
             'categories'    => $this->categories,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+            'createdAt' => $this->created_at,
+            'updatedAt' => $this->updated_at,
         ];
     }
 }

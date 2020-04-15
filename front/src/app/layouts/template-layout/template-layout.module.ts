@@ -17,7 +17,6 @@ import {ClipboardModule} from 'ngx-clipboard';
 
 @NgModule({
   declarations: [
-    DashboardComponent,
     UserProfileComponent,
     TablesComponent,
     IconsComponent,

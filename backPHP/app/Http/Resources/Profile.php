@@ -16,16 +16,16 @@ class Profile extends JsonResource
     {
         return [
             'id'         => $this->id,
-            'phone_umber'       => $this->phone_umber,
+            'phoneNumber'       => $this->phone_umber,
             'gender'    => $this->gender,
-            'birth_date'    => $this->birth_date,
-            'image_url'    => $this->image_url,
+            'birthDate'    => $this->birth_date,
+            'imageUrl'    => $this->image_url,
             'status'    => $this->status,
             'user'    => $this->user,
             'badge'    => $this->badge,
             'address'    => $this->address,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+            'createdAt' => $this->created_at,
+            'updatedAt' => $this->updated_at,
         ];
     }
 }

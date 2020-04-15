@@ -6,7 +6,6 @@ import {IconsComponent} from '../../pages/icons/icons.component';
 import {MapsComponent} from '../../pages/maps/maps.component';
 
 export const TemplateLayoutRoutes: Routes = [
-  { path: 'dashboard',      component: DashboardComponent },
   { path: 'user-profile',   component: UserProfileComponent },
   { path: 'tables',         component: TablesComponent },
   { path: 'icons',          component: IconsComponent },
