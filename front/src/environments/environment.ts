@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  // apiUrl: 'http://back.clubisti.net/api'
-  apiUrl: 'http://localhost:8000/api'
+  apiUrl: 'http://back.clubisti.net'
+  // apiUrl: 'http://localhost:8000'
 };
 
 /*

@@ -4,6 +4,8 @@ import {Router} from '@angular/router';
 import {AuthenticationService} from '../../_services/authentication.service';
 import { User } from 'src/app/_models/user';
 import { NgForm } from '@angular/forms';
+import {API_URL, REDIRECT} from '../../_globals/global-variables';
+import {environment} from '../../../environments/environment';
 
 
 @Component({
@@ -13,6 +15,7 @@ import { NgForm } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
   user :User;
+  redirectURL = environment.apiUrl + REDIRECT
   constructor(private authenticationService: AuthenticationService, private router:Router) {}
 
 

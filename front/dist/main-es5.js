@@ -333,7 +333,27 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<nav class=\"navbar navbar-vertical navbar-expand-md navbar-light bg-white\" id=\"sidenav-main\">\n  <div class=\"container-fluid\">\n    <!-- Toggler -->\n    <button class=\"navbar-toggler\" type=\"button\" (click)=\"isCollapsed=!isCollapsed\"\n            aria-controls=\"sidenav-collapse-main\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <!-- Brand -->\n    <a class=\"navbar-brand pt-0\" routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n      <img src=\"./assets/img/brand/red.png\" class=\"navbar-brand-img\" alt=\"...\">\n    </a>\n    <!-- User -->\n    <ul class=\"nav align-items-center d-md-none\">\n      <li class=\"nav-item\" ngbDropdown placement=\"bottom-right\">\n        <a class=\"nav-link nav-link-icon\" role=\"button\" ngbDropdownToggle>\n          <i class=\"ni ni-bell-55\"></i>\n        </a>\n        <div class=\"dropdown-menu-arrow dropdown-menu-right\" ngbDropdownMenu>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Action</a>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Another action</a>\n          <div class=\"dropdown-divider\"></div>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Something else here</a>\n        </div>\n      </li>\n      <li class=\"nav-item\" ngbDropdown placement=\"bottom-right\">\n        <a class=\"nav-link\" role=\"button\" ngbDropdownToggle>\n          <div class=\"media align-items-center\">\n            <span class=\"avatar avatar-sm rounded-circle\">\n              <img alt=\"Image placeholder\" src=\"./assets/img/theme/team-1-800x800.jpg\">\n            </span>\n          </div>\n        </a>\n        <div class=\"dropdown-menu-arrow dropdown-menu-right\" ngbDropdownMenu>\n          <div class=\" dropdown-header noti-title\">\n            <h6 class=\"text-overflow m-0\">Welcome!</h6>\n          </div>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>My profile</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-settings-gear-65\"></i>\n            <span>Settings</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-calendar-grid-58\"></i>\n            <span>Activity</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-support-16\"></i>\n            <span>Support</span>\n          </a>\n          <div class=\"dropdown-divider\"></div>\n          <a href=\"#!\" class=\"dropdown-item\">\n            <i class=\"ni ni-user-run\"></i>\n            <span>Logout</span>\n          </a>\n        </div>\n      </li>\n    </ul>\n    <!-- Collapse -->\n    <div class=\"collapse navbar-collapse\"  [ngbCollapse]=\"isCollapsed\" id=\"sidenav-collapse-main\">\n      <!-- Collapse header -->\n      <div class=\"navbar-collapse-header d-md-none\">\n        <div class=\"row\">\n          <div class=\"col-6 collapse-brand\">\n            <a  routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n              <img src=\"./assets/img/brand/blue.png\">\n            </a>\n          </div>\n          <div class=\"col-6 collapse-close\">\n            <button type=\"button\" class=\"navbar-toggler\" (click)=\"isCollapsed=!isCollapsed\">\n              <span></span>\n              <span></span>\n            </button>\n          </div>\n        </div>\n      </div>\n      <!-- Form -->\n      <form class=\"mt-4 mb-3 d-md-none\">\n        <div class=\"input-group input-group-rounded input-group-merge\">\n          <input type=\"search\" class=\"form-control form-control-rounded form-control-prepended\" placeholder=\"Search\" aria-label=\"Search\">\n          <div class=\"input-group-prepend\">\n            <div class=\"input-group-text\">\n              <span class=\"fa fa-search\"></span>\n            </div>\n          </div>\n        </div>\n      </form>\n      <!-- Navigation -->\n      <ul class=\"navbar-nav\">\n        <li *ngFor=\"let menuItem of menuItems\" class=\"{{menuItem.class}} nav-item\">\n          <a routerLinkActive=\"active\" [routerLink]=\"[menuItem.path]\" class=\"nav-link\">\n            <i class=\"ni {{menuItem.icon}}\"></i>\n            {{menuItem.title}}\n          </a>\n        </li>\n      </ul>\n      <!-- Divider -->\n      <hr class=\"my-3\">\n      <!-- Heading -->\n      <h6 class=\"navbar-heading text-muted\">Documentation</h6>\n      <!-- Navigation -->\n      <ul class=\"navbar-nav mb-md-3\">\n        <li class=\"nav-item\">\n          <a routerLinkActive=\"active\" [routerLink]=\"['/auth/login']\" class=\"nav-link\">\n            <i class=\"ni ni-calendar-grid-58\"></i>\n            Login\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a routerLinkActive=\"active\" [routerLink]=\"['/auth/register']\" class=\"nav-link\">\n            <i class=\"ni ni-calendar-grid-58\"></i>\n            Register\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" href=\"https://demos.creative-tim.com/argon-dashboard-angular/documentation/tutorial\">\n            <i class=\"ni ni-spaceship\"></i> Getting started\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" href=\"https://demos.creative-tim.com/argon-dashboard-angular/documentation/colors\">\n            <i class=\"ni ni-palette\"></i> Foundation\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" href=\"https://demos.creative-tim.com/argon-dashboard-angular/documentation/alerts\">\n            <i class=\"ni ni-ui-04\"></i> Components\n          </a>\n        </li>\n      </ul>\n    </div>\n  </div>\n</nav>\n";
+    __webpack_exports__["default"] = "<nav class=\"navbar navbar-vertical navbar-expand-md navbar-light bg-white\" id=\"sidenav-main\">\n  <div class=\"container-fluid\">\n    <!-- Toggler -->\n    <button class=\"navbar-toggler\" type=\"button\" (click)=\"isCollapsed=!isCollapsed\"\n            aria-controls=\"sidenav-collapse-main\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <!-- Brand -->\n    <a class=\"navbar-brand pt-0\" routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n      <img src=\"./assets/img/brand/red.png\" class=\"navbar-brand-img\" alt=\"...\">\n    </a>\n    <!-- User -->\n    <ul class=\"nav align-items-center d-md-none\">\n      <li class=\"nav-item\" ngbDropdown placement=\"bottom-right\">\n        <a class=\"nav-link nav-link-icon\" role=\"button\" ngbDropdownToggle>\n          <i class=\"ni ni-bell-55\"></i>\n        </a>\n        <div class=\"dropdown-menu-arrow dropdown-menu-right\" ngbDropdownMenu>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Action</a>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Another action</a>\n          <div class=\"dropdown-divider\"></div>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Something else here</a>\n        </div>\n      </li>\n      <li class=\"nav-item\" ngbDropdown placement=\"bottom-right\">\n        <a class=\"nav-link\" role=\"button\" ngbDropdownToggle>\n          <div class=\"media align-items-center\">\n            <span class=\"avatar avatar-sm rounded-circle\">\n              <img alt=\"Image placeholder\" src=\"./assets/img/theme/team-1-800x800.jpg\">\n            </span>\n          </div>\n        </a>\n        <div class=\"dropdown-menu-arrow dropdown-menu-right\" ngbDropdownMenu>\n          <div class=\" dropdown-header noti-title\">\n            <h6 class=\"text-overflow m-0\">Welcome!</h6>\n          </div>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>My profile</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-settings-gear-65\"></i>\n            <span>Settings</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-calendar-grid-58\"></i>\n            <span>Activity</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-support-16\"></i>\n            <span>Support</span>\n          </a>\n          <div class=\"dropdown-divider\"></div>\n          <a href=\"#!\" class=\"dropdown-item\">\n            <i class=\"ni ni-user-run\"></i>\n            <span>Logout</span>\n          </a>\n        </div>\n      </li>\n    </ul>\n    <!-- Collapse -->\n    <div class=\"collapse navbar-collapse\"  [ngbCollapse]=\"isCollapsed\" id=\"sidenav-collapse-main\">\n      <!-- Collapse header -->\n      <div class=\"navbar-collapse-header d-md-none\">\n        <div class=\"row\">\n          <div class=\"col-6 collapse-brand\">\n            <a  routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n              <img src=\"./assets/img/brand/blue.png\">\n            </a>\n          </div>\n          <div class=\"col-6 collapse-close\">\n            <button type=\"button\" class=\"navbar-toggler\" (click)=\"isCollapsed=!isCollapsed\">\n              <span></span>\n              <span></span>\n            </button>\n          </div>\n        </div>\n      </div>\n      <!-- Form -->\n      <form class=\"mt-4 mb-3 d-md-none\">\n        <div class=\"input-group input-group-rounded input-group-merge\">\n          <input type=\"search\" class=\"form-control form-control-rounded form-control-prepended\" placeholder=\"Search\" aria-label=\"Search\">\n          <div class=\"input-group-prepend\">\n            <div class=\"input-group-text\">\n              <span class=\"fa fa-search\"></span>\n            </div>\n          </div>\n        </div>\n      </form>\n      <!-- Navigation -->\n      <ul class=\"navbar-nav\">\n        <li *ngFor=\"let menuItem of menuItems\" class=\"{{menuItem.class}} nav-item\">\n          <a routerLinkActive=\"active\" [routerLink]=\"[menuItem.path]\" class=\"nav-link\">\n            <i class=\"ni {{menuItem.icon}}\"></i>\n            {{menuItem.title}}\n          </a>\n        </li>\n      </ul>\n<!--      &lt;!&ndash; Divider &ndash;&gt;-->\n<!--      <hr class=\"my-3\">-->\n<!--      &lt;!&ndash; Heading &ndash;&gt;-->\n<!--      <h6 class=\"navbar-heading text-muted\">Documentation</h6>-->\n<!--      &lt;!&ndash; Navigation &ndash;&gt;-->\n<!--      <ul class=\"navbar-nav mb-md-3\">-->\n<!--        <li class=\"nav-item\">-->\n<!--          <a routerLinkActive=\"active\" [routerLink]=\"['/auth/login']\" class=\"nav-link\">-->\n<!--            <i class=\"ni ni-calendar-grid-58\"></i>-->\n<!--            Login-->\n<!--          </a>-->\n<!--        </li>-->\n<!--        <li class=\"nav-item\">-->\n<!--          <a routerLinkActive=\"active\" [routerLink]=\"['/auth/register']\" class=\"nav-link\">-->\n<!--            <i class=\"ni ni-calendar-grid-58\"></i>-->\n<!--            Register-->\n<!--          </a>-->\n<!--        </li>-->\n<!--        <li class=\"nav-item\">-->\n<!--          <a class=\"nav-link\" href=\"https://demos.creative-tim.com/argon-dashboard-angular/documentation/tutorial\">-->\n<!--            <i class=\"ni ni-spaceship\"></i> Getting started-->\n<!--          </a>-->\n<!--        </li>-->\n<!--        <li class=\"nav-item\">-->\n<!--          <a class=\"nav-link\" href=\"https://demos.creative-tim.com/argon-dashboard-angular/documentation/colors\">-->\n<!--            <i class=\"ni ni-palette\"></i> Foundation-->\n<!--          </a>-->\n<!--        </li>-->\n<!--        <li class=\"nav-item\">-->\n<!--          <a class=\"nav-link\" href=\"https://demos.creative-tim.com/argon-dashboard-angular/documentation/alerts\">-->\n<!--            <i class=\"ni ni-ui-04\"></i> Components-->\n<!--          </a>-->\n<!--        </li>-->\n<!--      </ul>-->\n    </div>\n  </div>\n</nav>\n";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/components/fb-auth/fb-auth.component.html":
+  /*!*************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/fb-auth/fb-auth.component.html ***!
+    \*************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppComponentsFbAuthFbAuthComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<div class=\"wrap\">\n  <div class=\"loading\">\n    <div class=\"bounceball\"></div>\n    <div class=\"text\">NOW LOADING</div>\n  </div>\n</div>\n";
     /***/
   },
 
@@ -353,7 +373,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<footer class=\"footer\">\n  <div class=\"row align-items-center justify-content-xl-between\">\n    <div class=\"col-xl-6\">\n      <div class=\"copyright text-center text-xl-left text-muted\">\n        &copy; {{ test | date: \"yyyy\" }} <a href=\"https://www.creative-tim.com?ref=ada-footer-admin-layout\" class=\"font-weight-bold ml-1\" target=\"_blank\">Creative Tim</a>\n      </div>\n    </div>\n    <div class=\"col-xl-6\">\n      <ul class=\"nav nav-footer justify-content-center justify-content-xl-end\">\n        <li class=\"nav-item\">\n          <a href=\"https://www.creative-tim.com?ref=ada-footer-admin-layout\" class=\"nav-link\" target=\"_blank\">Creative Tim</a>\n        </li>\n        <li class=\"nav-item\">\n          <a href=\"https://www.creative-tim.com/presentation?ref=ada-footer-admin-layout\" class=\"nav-link\" target=\"_blank\">About Us</a>\n        </li>\n        <li class=\"nav-item\">\n          <a href=\"http://blog.creative-tim.com?ref=ada-footer-admin-layout\" class=\"nav-link\" target=\"_blank\">Blog</a>\n        </li>\n        <li class=\"nav-item\">\n          <a href=\"https://github.com/creativetimofficial/argon-dashboard-angular/blob/master/LICENSE.md\" class=\"nav-link\" target=\"_blank\">MIT License</a>\n        </li>\n      </ul>\n    </div>\n  </div>\n</footer>\n";
+    __webpack_exports__["default"] = "<footer class=\"footer\">\n  <div class=\"row align-items-center justify-content-xl-between\">\n    <div class=\"col-xl-6\">\n      <div class=\"copyright text-center text-xl-left text-muted\">\n        &copy; {{ test | date: \"yyyy\" }} <a href=\"#\" class=\"font-weight-bold ml-1\" target=\"_blank\">INSAT</a>\n      </div>\n    </div>\n    <div class=\"col-xl-6\">\n<!--      <ul class=\"nav nav-footer justify-content-center justify-content-xl-end\">-->\n<!--        <li class=\"nav-item\">-->\n<!--          <a href=\"https://www.creative-tim.com?ref=ada-footer-admin-layout\" class=\"nav-link\" target=\"_blank\">Creative Tim</a>-->\n<!--        </li>-->\n<!--        <li class=\"nav-item\">-->\n<!--          <a href=\"https://www.creative-tim.com/presentation?ref=ada-footer-admin-layout\" class=\"nav-link\" target=\"_blank\">About Us</a>-->\n<!--        </li>-->\n<!--        <li class=\"nav-item\">-->\n<!--          <a href=\"http://blog.creative-tim.com?ref=ada-footer-admin-layout\" class=\"nav-link\" target=\"_blank\">Blog</a>-->\n<!--        </li>-->\n<!--        <li class=\"nav-item\">-->\n<!--          <a href=\"https://github.com/creativetimofficial/argon-dashboard-angular/blob/master/LICENSE.md\" class=\"nav-link\" target=\"_blank\">MIT License</a>-->\n<!--        </li>-->\n<!--      </ul>-->\n    </div>\n  </div>\n</footer>\n";
     /***/
   },
 
@@ -373,7 +393,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<nav class=\"navbar navbar-top navbar-expand-md navbar-dark navbar-horizontal\" id=\"navbar-main\">\n  <div class=\"container\">\n    <!-- Brand -->\n    <!--<a class=\"h4 mb-0 text-white text-uppercase d-none d-lg-inline-block\" routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">{{getTitle()}}</a>-->\n    <div class=\"collapse navbar-collapse\">\n      <ul class=\"navbar-nav\">\n        <li class=\"nav-item\">\n          <a class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n            <i class=\"ni ni-planet\"></i>\n            <span class=\"nav-link-inner--text\">Dashboard</span>\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/auth/register']\">\n            <i class=\"ni ni-circle-08\"></i>\n            <span class=\"nav-link-inner--text\">Register</span>\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a *ngIf=\"this.authenticationService.isLogged()\" class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" (click)=\"logout()\">\n            <i class=\"ni ni-user-run\"></i>\n            <span class=\"nav-link-inner--text\">Logout</span>\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a *ngIf=\"!this.authenticationService.isLogged()\" class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/auth/login']\">\n            <i class=\"ni ni-key-25\"></i>\n            <span class=\"nav-link-inner--text\">Login</span>\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a *ngIf=\"this.authenticationService.isLogged()\" class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\">\n            <i class=\"ni ni-single-02\"></i>\n            <span class=\"nav-link-inner--text\">Profile</span>\n          </a>\n        </li>\n      </ul>\n    </div>\n    <!-- Form -->\n    <form class=\"navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto\">\n      <div class=\"form-group mb-0\" [ngClass]=\"{ 'focused': focus === true }\">\n        <div class=\"input-group input-group-alternative\">\n          <div class=\"input-group-prepend\">\n            <span class=\"input-group-text\"><i class=\"fas fa-search\"></i></span>\n          </div>\n          <input class=\"form-control\" placeholder=\"Search\" type=\"text\" (focus)=\"focus = true\"\n          (blur)=\"focus = false\">\n        </div>\n      </div>\n    </form>\n    <!-- User -->\n    <ul class=\"navbar-nav align-items-center d-none d-md-flex\">\n      <li *ngIf=\"this.authenticationService.isLogged()\" class=\"nav-item\" ngbDropdown placement=\"bottom-right\">\n        <a class=\"nav-link pr-0\" role=\"button\" ngbDropdownToggle>\n          <div class=\"media align-items-center\">\n            <span class=\"avatar avatar-sm rounded-circle\">\n              <img alt=\"Image placeholder\" src=\"assets/img/theme/team-4-800x800.jpg\">\n            </span>\n            <div class=\"media-body ml-2 d-none d-lg-block\">\n              <span class=\"mb-0 text-sm  font-weight-bold\">Jessica Jones</span>\n            </div>\n          </div>\n        </a>\n        <div class=\"dropdown-menu-arrow dropdown-menu-right\" ngbDropdownMenu>\n          <div class=\" dropdown-header noti-title\">\n            <h6 class=\"text-overflow m-0\">Welcome!</h6>\n          </div>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/admin/landing']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>Admin</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/history']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>Anonymous</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>Template</span>\n          </a>\n          <a *ngIf=\"connected\" routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>My profile</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-calendar-grid-58\"></i>\n            <span>Activity</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-support-16\"></i>\n            <span>Support</span>\n          </a>\n          <div class=\"dropdown-divider\"></div>\n          <a href=\"#!\" class=\"dropdown-item\">\n            <i class=\"ni ni-user-run\"></i>\n            <span>Logout</span>\n          </a>\n        </div>\n      </li>\n    </ul>\n  </div>\n</nav>\n";
+    __webpack_exports__["default"] = "<nav class=\"navbar navbar-top navbar-expand-md navbar-dark navbar-horizontal\" id=\"navbar-main\">\n  <div class=\"container\">\n    <!-- Brand -->\n    <!--<a class=\"h4 mb-0 text-white text-uppercase d-none d-lg-inline-block\" routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">{{getTitle()}}</a>-->\n    <div class=\"collapse navbar-collapse\">\n      <ul class=\"navbar-nav\">\n        <li class=\"nav-item\">\n          <a class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n            <i class=\"ni ni-planet\"></i>\n            <span class=\"nav-link-inner--text\">Dashboard</span>\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a *ngIf=\"!this.authenticationService.isLogged()\" class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/auth/register']\">\n            <i class=\"ni ni-circle-08\"></i>\n            <span class=\"nav-link-inner--text\">Register</span>\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a *ngIf=\"this.authenticationService.isLogged()\" class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" (click)=\"logout()\">\n            <i class=\"ni ni-user-run\"></i>\n            <span class=\"nav-link-inner--text\">Logout</span>\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a *ngIf=\"!this.authenticationService.isLogged()\" class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/auth/login']\">\n            <i class=\"ni ni-key-25\"></i>\n            <span class=\"nav-link-inner--text\">Login</span>\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a *ngIf=\"this.authenticationService.isLogged()\" class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\">\n            <i class=\"ni ni-single-02\"></i>\n            <span class=\"nav-link-inner--text\">Profile</span>\n          </a>\n        </li>\n      </ul>\n    </div>\n    <!-- Form -->\n    <form class=\"navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto\">\n      <div class=\"form-group mb-0\" [ngClass]=\"{ 'focused': focus === true }\">\n        <div class=\"input-group input-group-alternative\">\n          <div class=\"input-group-prepend\">\n            <span class=\"input-group-text\"><i class=\"fas fa-search\"></i></span>\n          </div>\n          <input class=\"form-control\" placeholder=\"Search\" type=\"text\" (focus)=\"focus = true\"\n          (blur)=\"focus = false\">\n        </div>\n      </div>\n    </form>\n    <!-- User -->\n    <ul class=\"navbar-nav align-items-center d-none d-md-flex\">\n      <li *ngIf=\"this.authenticationService.isLogged()\" class=\"nav-item\" ngbDropdown placement=\"bottom-right\">\n        <a class=\"nav-link pr-0\" role=\"button\" ngbDropdownToggle>\n          <div class=\"media align-items-center\">\n            <span class=\"avatar avatar-sm rounded-circle\">\n              <img alt=\"Image placeholder\" src=\"assets/img/theme/team-4-800x800.jpg\">\n            </span>\n            <div class=\"media-body ml-2 d-none d-lg-block\">\n              <span class=\"mb-0 text-sm  font-weight-bold\">{{currentUser.username }}</span>\n            </div>\n          </div>\n        </a>\n        <div class=\"dropdown-menu-arrow dropdown-menu-right\" ngbDropdownMenu>\n          <div class=\" dropdown-header noti-title\">\n            <h6 class=\"text-overflow m-0\">Welcome!</h6>\n          </div>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/admin/variable']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>Admin</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/history']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>Anonymous</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>Template</span>\n          </a>\n          <a *ngIf=\"connected\" routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>My profile</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-calendar-grid-58\"></i>\n            <span>Activity</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-support-16\"></i>\n            <span>Support</span>\n          </a>\n          <div class=\"dropdown-divider\"></div>\n          <a href=\"#!\" class=\"dropdown-item\">\n            <i class=\"ni ni-user-run\"></i>\n            <span>Logout</span>\n          </a>\n        </div>\n      </li>\n    </ul>\n  </div>\n</nav>\n";
     /***/
   },
 
@@ -393,7 +413,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<nav class=\"navbar navbar-vertical navbar-expand-md navbar-light bg-white\" id=\"sidenav-main\">\n  <div class=\"container-fluid\">\n    <!-- Toggler -->\n    <button class=\"navbar-toggler\" type=\"button\" (click)=\"isCollapsed=!isCollapsed\"\n       aria-controls=\"sidenav-collapse-main\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <!-- Brand -->\n    <a class=\"navbar-brand pt-0\" routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n      <img src=\"./assets/img/brand/red.png\" class=\"navbar-brand-img\" alt=\"...\">\n    </a>\n    <!-- User -->\n    <ul class=\"nav align-items-center d-md-none\">\n      <li class=\"nav-item\" ngbDropdown placement=\"bottom-right\">\n        <a class=\"nav-link nav-link-icon\" role=\"button\" ngbDropdownToggle>\n          <i class=\"ni ni-bell-55\"></i>\n        </a>\n        <div class=\"dropdown-menu-arrow dropdown-menu-right\" ngbDropdownMenu>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Action</a>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Another action</a>\n          <div class=\"dropdown-divider\"></div>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Something else here</a>\n        </div>\n      </li>\n      <li class=\"nav-item\" ngbDropdown placement=\"bottom-right\">\n        <a class=\"nav-link\" role=\"button\" ngbDropdownToggle>\n          <div class=\"media align-items-center\">\n            <span class=\"avatar avatar-sm rounded-circle\">\n              <img alt=\"Image placeholder\" src=\"./assets/img/theme/team-1-800x800.jpg\">\n            </span>\n          </div>\n        </a>\n        <div class=\"dropdown-menu-arrow dropdown-menu-right\" ngbDropdownMenu>\n          <div class=\" dropdown-header noti-title\">\n            <h6 class=\"text-overflow m-0\">Welcome!</h6>\n          </div>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>My profile</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-settings-gear-65\"></i>\n            <span>Settings</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-calendar-grid-58\"></i>\n            <span>Activity</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-support-16\"></i>\n            <span>Support</span>\n          </a>\n          <div class=\"dropdown-divider\"></div>\n          <a href=\"#!\" class=\"dropdown-item\">\n            <i class=\"ni ni-user-run\"></i>\n            <span>Logout</span>\n          </a>\n        </div>\n      </li>\n    </ul>\n    <!-- Collapse -->\n    <div class=\"collapse navbar-collapse\"  [ngbCollapse]=\"isCollapsed\" id=\"sidenav-collapse-main\">\n      <!-- Collapse header -->\n      <div class=\"navbar-collapse-header d-md-none\">\n        <div class=\"row\">\n          <div class=\"col-6 collapse-brand\">\n            <a  routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n              <img src=\"./assets/img/brand/blue.png\">\n            </a>\n          </div>\n          <div class=\"col-6 collapse-close\">\n            <button type=\"button\" class=\"navbar-toggler\" (click)=\"isCollapsed=!isCollapsed\">\n              <span></span>\n              <span></span>\n            </button>\n          </div>\n        </div>\n      </div>\n      <!-- Form -->\n      <form class=\"mt-4 mb-3 d-md-none\">\n        <div class=\"input-group input-group-rounded input-group-merge\">\n          <input type=\"search\" class=\"form-control form-control-rounded form-control-prepended\" placeholder=\"Search\" aria-label=\"Search\">\n          <div class=\"input-group-prepend\">\n            <div class=\"input-group-text\">\n              <span class=\"fa fa-search\"></span>\n            </div>\n          </div>\n        </div>\n      </form>\n      <!-- Navigation -->\n      <ul class=\"navbar-nav\">\n          <li *ngFor=\"let menuItem of menuItems\" class=\"{{menuItem.class}} nav-item\">\n              <a routerLinkActive=\"active\" [routerLink]=\"[menuItem.path]\" class=\"nav-link\">\n                  <i class=\"ni {{menuItem.icon}}\"></i>\n                  {{menuItem.title}}\n              </a>\n          </li>\n      </ul>\n      <!-- Divider -->\n      <hr class=\"my-3\">\n      <!-- Heading -->\n      <h6 class=\"navbar-heading text-muted\">Documentation</h6>\n      <!-- Navigation -->\n      <ul class=\"navbar-nav mb-md-3\">\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" href=\"https://demos.creative-tim.com/argon-dashboard-angular/documentation/tutorial\">\n            <i class=\"ni ni-spaceship\"></i> Getting started\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" href=\"https://demos.creative-tim.com/argon-dashboard-angular/documentation/colors\">\n            <i class=\"ni ni-palette\"></i> Foundation\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" href=\"https://demos.creative-tim.com/argon-dashboard-angular/documentation/alerts\">\n            <i class=\"ni ni-ui-04\"></i> Components\n          </a>\n        </li>\n      </ul>\n    </div>\n  </div>\n</nav>\n";
+    __webpack_exports__["default"] = "<nav class=\"navbar navbar-vertical navbar-expand-md navbar-light bg-white\" id=\"sidenav-main\">\n  <div class=\"container-fluid\">\n    <!-- Toggler -->\n    <button class=\"navbar-toggler\" type=\"button\" (click)=\"isCollapsed=!isCollapsed\"\n       aria-controls=\"sidenav-collapse-main\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <!-- Brand -->\n    <a class=\"navbar-brand pt-0\" routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n      <img src=\"./assets/img/brand/red.png\" class=\"navbar-brand-img\" alt=\"...\">\n    </a>\n    <!-- User -->\n    <ul class=\"nav align-items-center d-md-none\">\n      <li class=\"nav-item\" ngbDropdown placement=\"bottom-right\">\n        <a class=\"nav-link nav-link-icon\" role=\"button\" ngbDropdownToggle>\n          <i class=\"ni ni-bell-55\"></i>\n        </a>\n        <div class=\"dropdown-menu-arrow dropdown-menu-right\" ngbDropdownMenu>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Action</a>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Another action</a>\n          <div class=\"dropdown-divider\"></div>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Something else here</a>\n        </div>\n      </li>\n      <li class=\"nav-item\" ngbDropdown placement=\"bottom-right\">\n        <a class=\"nav-link\" role=\"button\" ngbDropdownToggle>\n          <div class=\"media align-items-center\">\n            <span class=\"avatar avatar-sm rounded-circle\">\n              <img alt=\"Image placeholder\" src=\"./assets/img/theme/team-1-800x800.jpg\">\n            </span>\n          </div>\n        </a>\n        <div class=\"dropdown-menu-arrow dropdown-menu-right\" ngbDropdownMenu>\n          <div class=\" dropdown-header noti-title\">\n            <h6 class=\"text-overflow m-0\">Welcome!</h6>\n          </div>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>My profile</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-settings-gear-65\"></i>\n            <span>Settings</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-calendar-grid-58\"></i>\n            <span>Activity</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-support-16\"></i>\n            <span>Support</span>\n          </a>\n          <div class=\"dropdown-divider\"></div>\n          <a href=\"#!\" class=\"dropdown-item\">\n            <i class=\"ni ni-user-run\"></i>\n            <span>Logout</span>\n          </a>\n        </div>\n      </li>\n    </ul>\n    <!-- Collapse -->\n    <div class=\"collapse navbar-collapse\"  [ngbCollapse]=\"isCollapsed\" id=\"sidenav-collapse-main\">\n      <!-- Collapse header -->\n      <div class=\"navbar-collapse-header d-md-none\">\n        <div class=\"row\">\n          <div class=\"col-6 collapse-brand\">\n            <a  routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n              <img src=\"./assets/img/brand/blue.png\">\n            </a>\n          </div>\n          <div class=\"col-6 collapse-close\">\n            <button type=\"button\" class=\"navbar-toggler\" (click)=\"isCollapsed=!isCollapsed\">\n              <span></span>\n              <span></span>\n            </button>\n          </div>\n        </div>\n      </div>\n      <!-- Form -->\n      <form class=\"mt-4 mb-3 d-md-none\">\n        <div class=\"input-group input-group-rounded input-group-merge\">\n          <input type=\"search\" class=\"form-control form-control-rounded form-control-prepended\" placeholder=\"Search\" aria-label=\"Search\">\n          <div class=\"input-group-prepend\">\n            <div class=\"input-group-text\">\n              <span class=\"fa fa-search\"></span>\n            </div>\n          </div>\n        </div>\n      </form>\n      <!-- Navigation -->\n      <ul class=\"navbar-nav\">\n          <li *ngFor=\"let menuItem of menuItems\" class=\"{{menuItem.class}} nav-item\">\n              <a routerLinkActive=\"active\" [routerLink]=\"[menuItem.path]\" class=\"nav-link\">\n                  <i class=\"ni {{menuItem.icon}}\"></i>\n                  {{menuItem.title}}\n              </a>\n          </li>\n      </ul>\n<!--      &lt;!&ndash; Divider &ndash;&gt;-->\n<!--      <hr class=\"my-3\">-->\n<!--      &lt;!&ndash; Heading &ndash;&gt;-->\n<!--      <h6 class=\"navbar-heading text-muted\">Documentation</h6>-->\n<!--      &lt;!&ndash; Navigation &ndash;&gt;-->\n<!--      <ul class=\"navbar-nav mb-md-3\">-->\n<!--        <li class=\"nav-item\">-->\n<!--          <a class=\"nav-link\" href=\"https://demos.creative-tim.com/argon-dashboard-angular/documentation/tutorial\">-->\n<!--            <i class=\"ni ni-spaceship\"></i> Getting started-->\n<!--          </a>-->\n<!--        </li>-->\n<!--        <li class=\"nav-item\">-->\n<!--          <a class=\"nav-link\" href=\"https://demos.creative-tim.com/argon-dashboard-angular/documentation/colors\">-->\n<!--            <i class=\"ni ni-palette\"></i> Foundation-->\n<!--          </a>-->\n<!--        </li>-->\n<!--        <li class=\"nav-item\">-->\n<!--          <a class=\"nav-link\" href=\"https://demos.creative-tim.com/argon-dashboard-angular/documentation/alerts\">-->\n<!--            <i class=\"ni ni-ui-04\"></i> Components-->\n<!--          </a>-->\n<!--        </li>-->\n<!--      </ul>-->\n    </div>\n  </div>\n</nav>\n";
     /***/
   },
 
@@ -453,7 +473,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"main-content\">\n  <nav class=\"navbar navbar-top navbar-horizontal navbar-expand-md navbar-dark\">\n    <div class=\"container px-4\">\n      <a class=\"navbar-brand\" routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n        <img src=\"assets/img/brand/argon-white.png\" />\n      </a>\n      <button class=\"navbar-toggler\" type=\"button\" (click)=\"isCollapsed=!isCollapsed\"\n         aria-controls=\"sidenav-collapse-main\">\n        <span class=\"navbar-toggler-icon\"></span>\n      </button>\n      <div class=\"collapse navbar-collapse\"  [ngbCollapse]=\"isCollapsed\" id=\"sidenav-collapse-main\">\n        <!-- Collapse header -->\n        <div class=\"navbar-collapse-header d-md-none\">\n          <div class=\"row\">\n            <div class=\"col-6 collapse-brand\">\n              <a routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n                <img src=\"assets/img/brand/blue.png\">\n              </a>\n            </div>\n            <div class=\"col-6 collapse-close\">\n              <button type=\"button\" class=\"navbar-toggler\" (click)=\"isCollapsed=!isCollapsed\" >\n                <span></span>\n                <span></span>\n              </button>\n            </div>\n          </div>\n        </div>\n        <!-- Navbar items -->\n        <ul class=\"navbar-nav ml-auto\">\n          <li class=\"nav-item\">\n            <a class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n              <i class=\"ni ni-planet\"></i>\n              <span class=\"nav-link-inner--text\">Dashboard</span>\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/register']\">\n              <i class=\"ni ni-circle-08\"></i>\n              <span class=\"nav-link-inner--text\">Register</span>\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/login']\">\n              <i class=\"ni ni-key-25\"></i>\n              <span class=\"nav-link-inner--text\">Login</span>\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\">\n              <i class=\"ni ni-single-02\"></i>\n              <span class=\"nav-link-inner--text\">Profile</span>\n            </a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n  <router-outlet></router-outlet>\n</div>\n<footer class=\"py-5\">\n  <div class=\"container\">\n    <div class=\"row align-items-center justify-content-xl-between\">\n      <div class=\"col-xl-6\">\n        <div class=\"copyright text-center text-xl-left text-muted\">\n          &copy; {{ test | date: \"yyyy\" }} <a href=\"https://www.creative-tim.com?ref=ada-footer-auth-layout\" class=\"font-weight-bold ml-1\" target=\"_blank\">Creative Tim</a>\n        </div>\n      </div>\n      <div class=\"col-xl-6\">\n        <ul class=\"nav nav-footer justify-content-center justify-content-xl-end\">\n          <li class=\"nav-item\">\n            <a href=\"https://www.creative-tim.com?ref=ada-footer-auth-layout\" class=\"nav-link\" target=\"_blank\">Creative Tim</a>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"https://www.creative-tim.com/presentation?ref=ada-footer-auth-layout\" class=\"nav-link\" target=\"_blank\">About Us</a>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"http://blog.creative-tim.com?ref=ada-footer-auth-layout\" class=\"nav-link\" target=\"_blank\">Blog</a>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"https://github.com/creativetimofficial/argon-dashboard-angular/blob/master/LICENSE.md\" class=\"nav-link\" target=\"_blank\">MIT License</a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </div>\n</footer>\n";
+    __webpack_exports__["default"] = "<div class=\"main-content\">\n\n  <router-outlet></router-outlet>\n</div>\n<footer class=\"py-5\">\n  <div class=\"container\">\n    <div class=\"row align-items-center justify-content-xl-between\">\n      <div class=\"col-xl-6\">\n        <div class=\"copyright text-center text-xl-left text-muted\">\n          &copy; {{ test | date: \"yyyy\" }} <a href=\"https://www.creative-tim.com?ref=ada-footer-auth-layout\" class=\"font-weight-bold ml-1\" target=\"_blank\">Creative Tim</a>\n        </div>\n      </div>\n      <div class=\"col-xl-6\">\n        <ul class=\"nav nav-footer justify-content-center justify-content-xl-end\">\n          <li class=\"nav-item\">\n            <a href=\"https://www.creative-tim.com?ref=ada-footer-auth-layout\" class=\"nav-link\" target=\"_blank\">Creative Tim</a>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"https://www.creative-tim.com/presentation?ref=ada-footer-auth-layout\" class=\"nav-link\" target=\"_blank\">About Us</a>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"http://blog.creative-tim.com?ref=ada-footer-auth-layout\" class=\"nav-link\" target=\"_blank\">Blog</a>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"https://github.com/creativetimofficial/argon-dashboard-angular/blob/master/LICENSE.md\" class=\"nav-link\" target=\"_blank\">MIT License</a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </div>\n</footer>\n";
     /***/
   },
 
@@ -493,7 +513,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<form id=create-book-form [formGroup]=\"createCategory\" >\n  <div >\n    <div class=\"form-group\">\n      <label class=\"form-control-label\" for=\"input-Name\">Name</label>\n      <input  formControlName= \"name\" type=\"text\" id=\"input-Name\" class=\"form-control form-control-alternative\" placeholder=\"Name\" >\n    </div>\n  </div>\n  <div class=\"form-group\">\n    <label class=\"form-control-label\" for=\"input-type\">Categories</label>\n    <!-- Category -->\n    <div class=\"sidebar-widget\">\n      <select formControlName= \"type\" class=\"selectpicker default input-type\" id=\"input-type\" name=\"input-type\" data-selected-text-format=\"count\" title=\"All Categories\" >\n        <option *ngFor=\"let item of categories | enumToArray\">{{item.name}}</option>\n      </select>\n    </div>\n  </div>\n</form>\n<div >\n  <button type=\"submit\" (click)=\"onSubmit()\" class=\"btn btn-info\" form=\"create-book-form\">\n    <i class=\"icon-feather-plus\"></i>add category</button>\n</div>\n";
+    __webpack_exports__["default"] = "<form id=create-book-form [formGroup]=\"createCategory\" >\n  <div >\n    <div class=\"form-group\">\n      <label class=\"form-control-label\" for=\"input-Name\">Name</label>\n      <input  formControlName= \"name\" type=\"text\" id=\"input-Name\" class=\"form-control form-control-alternative\" placeholder=\"Name\" >\n    </div>\n  </div>\n  <div class=\"form-group\">\n    <label class=\"form-control-label\" for=\"input-type\">Categories</label>\n    <!-- Category -->\n    <div class=\"sidebar-widget\">\n      <select formControlName= \"type\" class=\"selectpicker default input-type\" id=\"input-type\" name=\"input-type\" data-selected-text-format=\"count\" title=\"All Categories\" >\n        <option *ngFor=\"let item of categories | enumToArray\">{{item.name}}</option>\n      </select>\n    </div>\n  </div>\n</form>\n<div >\n  <button type=\"submit\" (click)=\"onSubmit()\" class=\"btn btn-info\" form=\"create-book-form\">\n    <i class=\"icon-feather-plus\"></i>add category</button>\n</div>\n\n\n";
     /***/
   },
 
@@ -513,7 +533,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"header bg-gradient-danger pb-8 pt-5 pt-md-8\">\n  <div class=\"container-fluid\">\n    <div class=\"header-body\">\n      <!-- Card stats -->  <div class=\"container-fluid d-flex align-items-center\">\n      <div class=\"row\">\n        <div class=\"col-lg-7 col-md-10\">\n          <a [routerLink]=\"['/admin/add-charity']\" class=\"btn btn-info\">Add new project</a>\n        </div>\n      </div>\n    </div>\n\n    </div>\n  </div>\n</div>\n<!-- Page content -->\n<div class=\"container-fluid mt--7\">\n\n  <!-- Table -->\n  <div class=\"row\">\n    <div class=\"col-xl-4 order-xl-2 mb-5 mb-xl-0\">\n      <div class=\"card card-profile shadow\">\n        <div class=\"\">\n          <div class=\"\">\n            <h3>Create category</h3>\n          </div>\n        </div>\n\n        <div class=\"card-body pt-0 pt-md-4\">\n\n          <div class=\"text-center\">\n            <app-create-category></app-create-category>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-xl-8 order-xl-1\">\n      <div class=\"card shadow\">\n        <div class=\"card-header border-0\">\n          <h3 class=\"mb-0\">Categories</h3>\n        </div>\n        <div class=\"table-responsive\">\n          <table class=\"table align-items-center table-flush\">\n            <thead class=\"thead-light\">\n            <tr>\n              <th scope=\"col\">Name</th>\n              <th scope=\"col\">Type</th>\n              <th scope=\"col\">delete category</th>\n            </tr>\n            </thead>\n            <tbody *ngIf=\"categories\">\n            <tr *ngFor=\"let story of categories.data\">\n              <th scope=\"row\">\n                <div class=\"media align-items-center\">\n\n                  <div class=\"media-body\">\n                    <span class=\"mb-0 text-sm\">{{story.name}}</span>\n                  </div>\n                </div>\n              </th>\n              <td>\n                {{story.type}}\n              </td>\n              <td>\n                <a   class=\"btn btn-info\">delete</a>\n              </td>\n\n\n            </tr>\n\n            </tbody>\n          </table>\n        </div>\n        <div class=\"card-footer py-4\" *ngIf=\"categories\">\n          <nz-pagination [nzPageIndex]=currentPage  [nzTotal]=categories.meta.last_page  [nzPageSize]=categories.meta.per_page (nzPageIndexChange)=\"paginate($event)\"></nz-pagination>\n        </div>\n      </div>\n    </div>\n  </div>\n\n</div>\n";
+    __webpack_exports__["default"] = "<div class=\"header bg-gradient-danger pb-8 pt-5 pt-md-8\">\n  <div class=\"container-fluid\">\n    <div class=\"header-body\">\n      <!-- Card stats -->  <div class=\"container-fluid d-flex align-items-center\">\n      <div class=\"row\">\n        <div class=\"col-lg-7 col-md-10\">\n          <a [routerLink]=\"['/admin/add-charity']\" class=\"btn btn-info\">Add new project</a>\n        </div>\n      </div>\n    </div>\n\n    </div>\n  </div>\n</div>\n<!-- Page content -->\n<div class=\"container-fluid mt--7\">\n\n  <!-- Table -->\n  <div class=\"row\">\n    <div class=\"col-xl-4 order-xl-2 mb-5 mb-xl-0\">\n      <div class=\"card card-profile shadow\">\n        <div class=\"\">\n          <div class=\"\">\n            <h3>Create category</h3>\n          </div>\n        </div>\n\n        <div class=\"card-body pt-0 pt-md-4\">\n\n          <div class=\"text-center\">\n            <app-create-category></app-create-category>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-xl-8 order-xl-1\">\n      <div class=\"card shadow\">\n        <div class=\"card-header border-0\">\n          <h3 class=\"mb-0\">Categories</h3>\n        </div>\n        <div class=\"table-responsive\">\n          <table class=\"table align-items-center table-flush\">\n            <thead class=\"thead-light\">\n            <tr>\n              <th scope=\"col\">Name</th>\n              <th scope=\"col\">Type</th>\n              <th scope=\"col\">delete category</th>\n            </tr>\n            </thead>\n            <tbody *ngIf=\"this.categoryService.getCategories()\">\n            <tr *ngFor=\"let story of this.categoryService.getCategories().data\">\n              <th scope=\"row\">\n                <div class=\"media align-items-center\">\n\n                  <div class=\"media-body\">\n                    <span class=\"mb-0 text-sm\">{{story.name}}</span>\n                  </div>\n                </div>\n              </th>\n              <td>\n                {{story.type}}\n              </td>\n              <td>\n                <a   class=\"btn btn-info\">delete</a>\n              </td>\n\n\n            </tr>\n\n            </tbody>\n          </table>\n        </div>\n        <div class=\"card-footer py-4\" *ngIf=\"categories\">\n          <nz-pagination [nzPageIndex]=currentPage  [nzTotal]=categories.meta.last_page  [nzPageSize]=categories.meta.per_page (nzPageIndexChange)=\"paginate($event)\"></nz-pagination>\n        </div>\n      </div>\n    </div>\n  </div>\n\n</div>\n";
     /***/
   },
 
@@ -533,7 +553,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"header bg-gradient-danger pb-8 pt-5 pt-md-8\">\n  <div class=\"container-fluid\">\n    <div class=\"header-body\">\n      <!-- Card stats -->  <div class=\"container-fluid d-flex align-items-center\">\n      <div class=\"row\">\n        <div class=\"col-lg-7 col-md-10\">\n          <a [routerLink]=\"['/admin/add-charity']\" class=\"btn btn-info\">Add new project</a>\n        </div>\n      </div>\n    </div>\n\n    </div>\n  </div>\n</div>\n<!-- Page content -->\n<div class=\"container-fluid mt--7\">\n\n  <!-- Table -->\n  <div class=\"row\">\n    <div class=\"col\">\n      <div class=\"card shadow\">\n        <div class=\"card-header border-0\">\n          <h3 class=\"mb-0\">Projects</h3>\n        </div>\n        <div class=\"table-responsive\">\n          <table class=\"table align-items-center table-flush\">\n            <thead class=\"thead-light\">\n            <tr>\n              <th scope=\"col\">Name</th>\n              <th scope=\"col\">Created At</th>\n              <th scope=\"col\">Updated At</th>\n              <th scope=\"col\">amount</th>\n              <th scope=\"col\">MIN DA</th>\n              <th scope=\"col\">MAX DA</th>\n              <th scope=\"col\">last updated sum</th>\n              <th scope=\"col\"> status</th>\n              <th scope=\"col\"> change status</th>\n            </tr>\n            </thead>\n            <tbody *ngIf=\"projects\">\n            <tr *ngFor=\"let project of projects.data\">\n              <th scope=\"row\">\n                <div class=\"media align-items-center\">\n\n                  <div class=\"media-body\">\n                    <span class=\"mb-0 text-sm\">{{project.name}}</span>\n                  </div>\n                </div>\n              </th>\n              <td>\n\n                {{project.created_at| date}}\n\n              </td>\n\n              <td>\n\n                {{project.updated_at | date}}\n\n              </td>\n              <td>\n                {{project.amount}}\n              </td>\n              <td>\n                {{project.min_donation_amount}}\n              </td>\n              <td>\n                {{project.max_donation_amount}}\n              </td>\n              <td>\n                {{project.last_updated_sum}}\n              </td>\n              <td>\n                {{project.status}}\n              </td>\n              <td>\n                <a (click)=\"pauseProject(project)\"  class=\"btn ant-btn-primary\" *ngIf=\"(project.status !='PAUSED') && project.status!='TERMINATED'\" >Pause</a>\n                <a (click)=\"activateProject(project)\"  class=\"btn btn-info\" *ngIf=\"project.status!='ACTIVE' && project.status!='TERMINATED'\">Activate</a>\n                <a  nzType=\"dashed\" (click)=\"showDeleteConfirm(project)\" class=\"btn btn-warning\" *ngIf=\"project.status!='TERMINATED'\">Terminate</a>\n\n              </td>\n\n\n            </tr>\n\n            </tbody>\n          </table>\n        </div>\n        <div class=\"card-footer py-4\" *ngIf=\"projects\">\n          <nz-pagination [nzPageIndex]=currentPage  [nzTotal]=projects.meta.last_page  [nzPageSize]=sizePage (nzPageIndexChange)=\"paginate($event)\"></nz-pagination>\n        </div>\n      </div>\n    </div>\n  </div>\n\n</div>\n";
+    __webpack_exports__["default"] = "<div class=\"header bg-gradient-danger pb-8 pt-5 pt-md-8\">\n  <div class=\"container-fluid\">\n    <div class=\"header-body\">\n      <!-- Card stats -->  <div class=\"container-fluid d-flex align-items-center\">\n      <div class=\"row\">\n        <div class=\"col-lg-7 col-md-10\">\n          <a [routerLink]=\"['/admin/add-charity']\" class=\"btn btn-info\">Add new project</a>\n        </div>\n      </div>\n    </div>\n\n    </div>\n  </div>\n</div>\n<!-- Page content -->\n<div class=\"container-fluid mt--7\">\n\n  <!-- Table -->\n  <div class=\"row\">\n    <div class=\"col\">\n      <div class=\"card shadow\">\n        <div class=\"card-header border-0\">\n          <h3 class=\"mb-0\">Projects</h3>\n        </div>\n        <div class=\"table-responsive\">\n          <table class=\"table align-items-center table-flush\">\n            <thead class=\"thead-light\">\n            <tr>\n              <th scope=\"col\">Id</th>\n              <th scope=\"col\">Name</th>\n              <th scope=\"col\">Created At</th>\n              <th scope=\"col\">Updated At</th>\n              <th scope=\"col\">amount</th>\n              <th scope=\"col\">MIN DA</th>\n              <th scope=\"col\">MAX DA</th>\n              <th scope=\"col\">last updated sum</th>\n              <th scope=\"col\">start at</th>\n              <th scope=\"col\">end at</th>\n              <th scope=\"col\"> status</th>\n              <th scope=\"col\"> change status</th>\n              <th scope=\"col\">Controls</th>\n            </tr>\n            </thead>\n            <tbody *ngIf=\"projects\">\n            <tr *ngFor=\"let project of projects.data\">\n              <th scope=\"row\">\n                <div class=\"media align-items-center\">\n\n                  <div class=\"media-body\">\n                    <span class=\"mb-0 text-sm\">{{project.name}}</span>\n                  </div>\n                </div>\n              </th>\n              <td>\n\n                {{project.id}}\n\n              </td>\n              <td>\n\n                {{project.createdAt| date}}\n\n              </td>\n\n              <td>\n\n                {{project.updatedAt | date}}\n\n              </td>\n              <td>\n                {{project.amount}}\n              </td>\n              <td>\n                {{project.minDonationAmount}}\n              </td>\n              <td>\n                {{project.maxDonationAmount}}\n              </td>\n              <td>\n                {{project.lastUpdatedSum}}\n              </td>\n              <td>\n                {{project.startDate | date}}\n              </td>\n              <td>\n                {{project.endDate | date}}\n              </td>\n              <td>\n                {{project.status}}\n              </td>\n              <td>\n                <a (click)=\"pauseProject(project)\"  class=\"btn ant-btn-primary\" *ngIf=\"(project.status !='PAUSED') && project.status!='TERMINATED'\" >Pause</a>\n                <a (click)=\"activateProject(project)\"  class=\"btn btn-info\" *ngIf=\"project.status!='ACTIVE' && project.status!='TERMINATED'\">Activate</a>\n                <a  nzType=\"dashed\" (click)=\"showDeleteConfirm(project)\" class=\"btn btn-warning\" *ngIf=\"project.status!='TERMINATED'\">Terminate</a>\n              </td>\n              <td>\n                <a (click)=\"updateProject(project.id)\"  class=\"btn ant-btn-primary\" >Update</a>\n<!--                <a (click)=\"deleteProject(project.id)\"  class=\"btn btn-info\" >Delete</a>-->\n\n              </td>\n\n\n            </tr>\n\n            </tbody>\n          </table>\n        </div>\n        <div class=\"card-footer py-4\" *ngIf=\"projects\">\n          <nz-pagination [nzPageIndex]=currentPage  [nzTotal]=projects.meta.total   [nzPageSize]=sizePage (nzPageIndexChange)=\"paginate($event)\"></nz-pagination>\n        </div>\n      </div>\n    </div>\n  </div>\n\n</div>\n";
     /***/
   },
 
@@ -553,7 +573,27 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "\n\n<div class=\"header bg-gradient-danger pb-8 pt-5 pt-md-8\">\n  <div class=\"container-fluid\">\n    <div class=\"header-body\">\n      <!-- Card stats -->  <div class=\"container-fluid d-flex align-items-center\">\n      <div class=\"row\">\n        <div class=\"col-lg-7 col-md-10\">\n          <a [routerLink]=\"['/add-category']\" class=\"btn btn-info\">Add new category</a>\n\n        </div>\n      </div>\n    </div>\n\n    </div>\n  </div>\n</div>\n\n<div class=\"container-fluid mt--7\">\n  <div class=\"container-fluid d-flex align-items-center\">\n\n    <div class=\"col-lg-12 col-lg-12\">\n\n      <div class=\"col-xl-8 order-xl-1\">\n        <div class=\"card bg-secondary shadow\">\n          <div class=\"card-header bg-white border-0\">\n            <div class=\"row align-items-center\">\n              <div class=\"col-8\">\n                <h3 class=\"mb-0\">Charity</h3>\n              </div>\n\n            </div>\n          </div>\n          <div class=\"card-body\">\n            <form id=create-book-form [formGroup]=\"createCharity\" >\n              <h6 class=\"heading-small text-muted mb-4\">Information</h6>\n              <div class=\"pl-lg-4\">\n                <div class=\"row\">\n                  <div class=\"col-lg-6\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-Name\">Name</label>\n                      <input  formControlName= \"name\" type=\"text\" id=\"input-Name\" class=\"form-control form-control-alternative\" placeholder=\"Name\" >\n                    </div>\n                  </div>\n                  <div class=\"col-lg-6\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-genre\">Categories</label>\n                      <!-- Category -->\n                      <div class=\"sidebar-widget\">\n                        <select formControlName= \"categoriesIds\" class=\"selectpicker default input-genre\" id=\"input-genre\" name=\"input-genre\" data-selected-text-format=\"count\" title=\"All Categories\" >\n                          <option *ngFor=\"let item of categories \" [value]=\"item.id\">{{item.name}}</option>\n                        </select>\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row\">\n                  <div class=\"col-lg-8\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-amount\">Amount</label>\n                      <input  formControlName= \"amount\" type=\"text\" id=\"input-amount\" class=\"form-control form-control-alternative\" placeholder=\"Amount\" >\n                    </div>\n                  </div>\n\n                </div>\n                <div class=\"row\">\n                  <div class=\"col-lg-4\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-min\">Min donation amount</label>\n                      <input  formControlName= \"minDonationAmount\" type=\"text\" id=\"input-min\" class=\"form-control form-control-alternative\" placeholder=\"Amount\" >\n                    </div>\n                  </div>\n                  <div class=\"col-lg-4\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-max\">Max donation amount</label>\n                      <input  formControlName= \"maxDonationAmount\" type=\"text\" id=\"input-max\" class=\"form-control form-control-alternative\" placeholder=\"Amount\" >\n                    </div>\n                  </div>\n\n                </div>\n              </div>\n\n              <hr class=\"my-4\" />\n              <!-- Description -->\n              <h6 class=\"heading-small text-muted mb-4\">Description</h6>\n              <div class=\"pl-lg-4\">\n                <div class=\"form-group\">\n                  <label>Description</label>\n                  <textarea formControlName=\"shortDescription\" rows=\"4\" class=\"form-control form-control-alternative\" placeholder=\"A few words about your project ...\"></textarea>\n                </div>\n              </div>\n\n            </form>\n            <div class=\"col-xl-12\">\n              <button type=\"submit\" (click)=\"onSubmit()\" class=\"btn btn-info\" form=\"create-book-form\">\n                <i class=\"icon-feather-plus\"></i>post project</button>\n            </div>\n          </div>\n        </div>\n      </div>\n\n    </div>\n  </div>\n</div>\n\n<br />\n<br />\n\n";
+    __webpack_exports__["default"] = "\n\n<div class=\"header bg-gradient-danger pb-8 pt-5 pt-md-8\">\n  <div class=\"container-fluid\">\n    <div class=\"header-body\">\n      <!-- Card stats -->  <div class=\"container-fluid d-flex align-items-center\">\n      <div class=\"row\">\n        <div class=\"col-lg-7 col-md-10\">\n          <a [routerLink]=\"['/add-category']\" class=\"btn btn-info\">Add new category</a>\n\n        </div>\n      </div>\n    </div>\n\n    </div>\n  </div>\n</div>\n\n<div class=\"container-fluid mt--7\">\n  <div class=\"container-fluid d-flex align-items-center\">\n\n    <div class=\"col-lg-12 col-lg-12\">\n\n      <div class=\"col-xl-8 order-xl-1\">\n        <div class=\"card bg-secondary shadow\">\n          <div class=\"card-header bg-white border-0\">\n            <div class=\"row align-items-center\">\n              <div class=\"col-8\">\n                <h3 class=\"mb-0\">Charity</h3>\n              </div>\n\n            </div>\n          </div>\n          <div class=\"card-body\">\n            <form id=create-book-form [formGroup]=\"createCharity\" >\n              <h6 class=\"heading-small text-muted mb-4\">Information</h6>\n              <div class=\"pl-lg-4\">\n                <div class=\"row\">\n                  <div class=\"col-lg-6\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-Name\">Name</label>\n                      <input  formControlName= \"name\" type=\"text\" id=\"input-Name\" class=\"form-control form-control-alternative\" placeholder=\"Name\" >\n                    </div>\n                  </div>\n                  <div class=\"col-lg-6\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-genre\">Categories</label>\n                      <!-- Category -->\n                      <div class=\"sidebar-widget\">\n                        <select formControlName= \"categoriesIds\" class=\"selectpicker default input-genre\" id=\"input-genre\" name=\"input-genre\" data-selected-text-format=\"count\" title=\"All Categories\" >\n                          <option *ngFor=\"let item of categories \" [value]=\"item.id\">{{item.name}}</option>\n                        </select>\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row\">\n                  <div class=\"col-lg-8\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-amount\">Amount</label>\n                      <input  formControlName= \"amount\" type=\"text\" id=\"input-amount\" class=\"form-control form-control-alternative\" placeholder=\"Amount\" >\n                    </div>\n                  </div>\n\n                </div>\n                <div class=\"row\">\n                  <div class=\"col-lg-4\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-min\">Min donation amount</label>\n                      <input  formControlName= \"minDonationAmount\" type=\"text\" id=\"input-min\" class=\"form-control form-control-alternative\" placeholder=\"Amount\" >\n                    </div>\n                  </div>\n                  <div class=\"col-lg-4\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-max\">Max donation amount</label>\n                      <input  formControlName= \"maxDonationAmount\" type=\"text\" id=\"input-max\" class=\"form-control form-control-alternative\" placeholder=\"Amount\" >\n                    </div>\n                  </div>\n\n                </div>\n                <div class=\"row\">\n\n                  <nz-range-picker   formControlName= \"date\" [nzFormat]=\"dateFormat\"></nz-range-picker>\n                </div>\n              </div>\n\n              <hr class=\"my-4\" />\n              <!-- Description -->\n              <h6 class=\"heading-small text-muted mb-4\">Description</h6>\n              <div class=\"pl-lg-4\">\n                <div class=\"form-group\">\n                  <label>Description</label>\n                  <textarea formControlName=\"shortDescription\" rows=\"4\" class=\"form-control form-control-alternative\" placeholder=\"A few words about your project ...\"></textarea>\n                </div>\n              </div>\n\n            </form>\n            <div class=\"col-xl-12\">\n              <button type=\"submit\" (click)=\"onSubmit()\" class=\"btn btn-info\" form=\"create-book-form\">\n                <i class=\"icon-feather-plus\"></i>post project</button>\n            </div>\n          </div>\n        </div>\n      </div>\n\n    </div>\n  </div>\n</div>\n\n<br />\n<br />\n\n";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/admin/charity/charity-update/charity-update.component.html":
+  /*!************************************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/admin/charity/charity-update/charity-update.component.html ***!
+    \************************************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppPagesAdminCharityCharityUpdateCharityUpdateComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "\n\n<div class=\"header bg-gradient-danger pb-8 pt-5 pt-md-8\">\n  <div class=\"container-fluid\">\n    <div class=\"header-body\">\n      <!-- Card stats -->  <div class=\"container-fluid d-flex align-items-center\">\n      <div class=\"row\">\n\n      </div>\n    </div>\n\n    </div>\n  </div>\n</div>\n\n<div class=\"container-fluid mt--7\">\n  <div class=\"container-fluid d-flex align-items-center\">\n\n    <div class=\"col-lg-12 col-lg-12\">\n\n      <div class=\"col-xl-8 order-xl-1\">\n        <div class=\"card bg-secondary shadow\">\n          <div class=\"card-header bg-white border-0\">\n            <div class=\"row align-items-center\">\n              <div class=\"col-8\">\n                <h3 class=\"mb-0\">Charity</h3>\n              </div>\n\n            </div>\n          </div>\n          <div class=\"card-body\">\n            <form id=create-book-form [formGroup]=\"createCharity\" >\n              <h6 class=\"heading-small text-muted mb-4\">Information</h6>\n              <div class=\"pl-lg-4\">\n                <div class=\"row\">\n                  <div class=\"col-lg-6\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-Name\">Name</label>\n                      <input  formControlName= \"name\" type=\"text\" id=\"input-Name\" class=\"form-control form-control-alternative\" placeholder=\"Name\" >\n                    </div>\n                  </div>\n                  <div class=\"col-lg-6\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-genre\">Categories</label>\n                      <!-- Category -->\n                      <div class=\"sidebar-widget\">\n                        <select formControlName= \"categoriesIds\" class=\"selectpicker default input-genre\" id=\"input-genre\" name=\"input-genre\" data-selected-text-format=\"count\" title=\"All Categories\" >\n                          <option *ngFor=\"let item of categories \" [value]=\"item.id\">{{item.name}}</option>\n                        </select>\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row\">\n                  <div class=\"col-lg-8\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-amount\">Amount</label>\n                      <input  formControlName= \"amount\" type=\"text\" id=\"input-amount\" class=\"form-control form-control-alternative\" placeholder=\"Amount\" >\n                    </div>\n                  </div>\n\n                </div>\n                <div class=\"row\">\n                  <div class=\"col-lg-4\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-min\">Min donation amount</label>\n                      <input  formControlName= \"minDonationAmount\" type=\"text\" id=\"input-min\" class=\"form-control form-control-alternative\" placeholder=\"Amount\" >\n                    </div>\n                  </div>\n                  <div class=\"col-lg-4\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-max\">Max donation amount</label>\n                      <input  formControlName= \"maxDonationAmount\" type=\"text\" id=\"input-max\" class=\"form-control form-control-alternative\" placeholder=\"Amount\" >\n                    </div>\n                  </div>\n\n\n\n                </div>\n                <div class=\"row\">\n                  <div class=\"col-lg-4\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-start\">Start date</label>\n                      <input readonly formControlName= \"startDate\" type=\"text\" id=\"input-start\" class=\"form-control form-control-alternative\" >\n                    </div>\n                  </div>\n                  <div class=\"col-lg-4\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-end\">end date</label>\n                      <input readonly formControlName= \"endDate\" type=\"text\" id=\"input-end\" class=\"form-control form-control-alternative\">\n                    </div>\n                  </div>\n\n\n\n                </div>\n                <div class=\"row\">\n\n                  <nz-range-picker   formControlName= \"date\" [nzFormat]=\"dateFormat\"></nz-range-picker>\n                </div>\n              </div>\n\n              <hr class=\"my-4\" />\n              <!-- Description -->\n              <h6 class=\"heading-small text-muted mb-4\">Description</h6>\n              <div class=\"pl-lg-4\">\n                <div class=\"form-group\">\n                  <label>Description</label>\n                  <textarea formControlName=\"shortDescription\" rows=\"4\" class=\"form-control form-control-alternative\" placeholder=\"A few words about your project ...\"></textarea>\n                </div>\n              </div>\n\n            </form>\n            <div class=\"col-xl-12\">\n              <button type=\"submit\" (click)=\"onSubmit()\" class=\"btn btn-info\" form=\"create-book-form\">\n                <i class=\"icon-feather-plus\"></i>post project</button>\n            </div>\n          </div>\n        </div>\n      </div>\n\n    </div>\n  </div>\n</div>\n\n<br />\n<br />\n\n";
     /***/
   },
 
@@ -573,7 +613,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "\n\n<div class=\"header bg-danger pb-8 pt-5 pt-md-8\">\n  <div class=\"container-fluid\">\n    <div class=\"header-body\">\n      <!-- Card stats -->\n      <div class=\"row\">\n        <div *ngFor=\"let project of projects\" class=\"col-xl-3 col-lg-6\">\n          <div class=\"card card-stats mb-4 mb-xl-0 bg-dark\" style=\"margin-top:1.25rem\">\n            <div class=\"card-body\">\n              <div class=\"row\">\n                <div class=\"col\">\n                  <h5 class=\"card-title text-uppercase text-muted mb-0\">{{project.name}}</h5>\n                  <span class=\"h1 font-weight-bold mb-0\" style=\"color: white\">{{project.lastUpdatedSum}} coins</span>\n                </div>\n                <div class=\"col-auto\">\n                  <div class=\"icon icon-shape bg-success text-white rounded-circle shadow\">\n                    <i class=\"fas fa-dollar-sign\"></i>\n                  </div>\n                </div>\n              </div>\n              <p class=\"mt-3 mb-0 text-muted text-sm\">\n                <span class=\"text-success mr-2\"><i class=\"fa fa-percentage fa-1x\"></i> {{this.project.amount}} coins</span>\n                <span class=\"text-nowrap\">needed amount</span>\n              </p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"container-fluid mt--7\">\n  <div class=\"row\">\n    <div class=\"col-xl-8 mb-5 mb-xl-0\">\n      <div class=\"card bg-dark shadow\">\n        <div class=\"card-header bg-transparent\">\n          <div class=\"row align-items-center\">\n            <div class=\"col\">\n              <h6 class=\"text-uppercase text-light ls-1 mb-1\">Overview</h6>\n              <h2 class=\"text-white mb-0\">Total donations</h2>\n            </div>\n            <div class=\"col\">\n              <ul class=\"nav nav-pills justify-content-end\">\n                <li class=\"nav-item mr-2 mr-md-0\" data-toggle=\"chart\" data-target=\"#chart-sales\"  (click)=\"data=datasets[0];updateOptions()\">\n                  <a href=\"javascript:void(0)\" class=\"nav-link py-2 px-3\" [ngClass]=\"{'active':clicked===true}\" data-toggle=\"tab\" (click)=\"clicked=true;clicked1=false\">\n                    <span class=\"d-none d-md-block\">Month</span>\n                    <span class=\"d-md-none\">M</span>\n                  </a>\n                </li>\n                <li class=\"nav-item\" data-toggle=\"chart\" data-target=\"#chart-sales\"  (click)=\"data=datasets[1];updateOptions()\">\n                  <a href=\"javascript:void(0)\" class=\"nav-link py-2 px-3\" [ngClass]=\"{'active':clicked1===true}\" data-toggle=\"tab\" (click)=\"clicked=false;clicked1=true\">\n                    <span class=\"d-none d-md-block\">Week</span>\n                    <span class=\"d-md-none\">W</span>\n                  </a>\n                </li>\n              </ul>\n            </div>\n          </div>\n        </div>\n        <div class=\"card-body\">\n          <!-- Chart -->\n          <div class=\"chart\">\n            <!-- Chart wrapper -->\n            <canvas id=\"chart-sales\" class=\"chart-canvas\"></canvas>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-xl-4\">\n      <div class=\"card shadow\">\n        <div class=\"card-header bg-transparent\">\n          <div class=\"row align-items-center\">\n            <div class=\"col\">\n              <h6 class=\"text-uppercase text-muted ls-1 mb-1\">Performance</h6>\n              <h2 class=\"mb-0\">Total orders</h2>\n            </div>\n          </div>\n        </div>\n        <div class=\"card-body\">\n          <!-- Chart -->\n          <div class=\"chart\">\n            <canvas id=\"chart-orders\" class=\"chart-canvas\"></canvas>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"row mt-5\">\n    <div class=\"col-xl-8 mb-5 mb-xl-0\">\n      <div class=\"card shadow\">\n        <div class=\"card-header border-0\">\n          <div class=\"row align-items-center\">\n            <div class=\"col\">\n              <h3 class=\"mb-0\">Page visits</h3>\n            </div>\n            <div class=\"col text-right\">\n              <a href=\"#!\" class=\"btn btn-sm btn-primary\">See all</a>\n            </div>\n          </div>\n        </div>\n        <div class=\"table-responsive\">\n          <!-- Projects table -->\n          <table class=\"table align-items-center table-flush\">\n            <thead class=\"thead-light\">\n              <tr>\n                <th scope=\"col\">Page name</th>\n                <th scope=\"col\">Visitors</th>\n                <th scope=\"col\">Unique users</th>\n                <th scope=\"col\">Bounce rate</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <th scope=\"row\">\n                  /argon/\n                </th>\n                <td>\n                  4,569\n                </td>\n                <td>\n                  340\n                </td>\n                <td>\n                  <i class=\"fas fa-arrow-up text-success mr-3\"></i> 46,53%\n                </td>\n              </tr>\n              <tr>\n                <th scope=\"row\">\n                  /argon/index.html\n                </th>\n                <td>\n                  3,985\n                </td>\n                <td>\n                  319\n                </td>\n                <td>\n                  <i class=\"fas fa-arrow-down text-warning mr-3\"></i> 46,53%\n                </td>\n              </tr>\n              <tr>\n                <th scope=\"row\">\n                  /argon/charts.html\n                </th>\n                <td>\n                  3,513\n                </td>\n                <td>\n                  294\n                </td>\n                <td>\n                  <i class=\"fas fa-arrow-down text-warning mr-3\"></i> 36,49%\n                </td>\n              </tr>\n              <tr>\n                <th scope=\"row\">\n                  /argon/tables.html\n                </th>\n                <td>\n                  2,050\n                </td>\n                <td>\n                  147\n                </td>\n                <td>\n                  <i class=\"fas fa-arrow-up text-success mr-3\"></i> 50,87%\n                </td>\n              </tr>\n              <tr>\n                <th scope=\"row\">\n                  /argon/profile.html\n                </th>\n                <td>\n                  1,795\n                </td>\n                <td>\n                  190\n                </td>\n                <td>\n                  <i class=\"fas fa-arrow-down text-danger mr-3\"></i> 46,53%\n                </td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-xl-4\">\n      <div class=\"card shadow\">\n        <div class=\"card-header border-0\">\n          <div class=\"row align-items-center\">\n            <div class=\"col\">\n              <h3 class=\"mb-0\">Social traffic</h3>\n            </div>\n            <div class=\"col text-right\">\n              <a href=\"#!\" class=\"btn btn-sm btn-primary\">See all</a>\n            </div>\n          </div>\n        </div>\n        <div class=\"table-responsive\">\n          <!-- Projects table -->\n          <table class=\"table align-items-center table-flush\">\n            <thead class=\"thead-light\">\n              <tr>\n                <th scope=\"col\">Referral</th>\n                <th scope=\"col\">Visitors</th>\n                <th scope=\"col\"></th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <th scope=\"row\">\n                  Facebook\n                </th>\n                <td>\n                  1,480\n                </td>\n                <td>\n                  <div class=\"d-flex align-items-center\">\n                    <span class=\"mr-2\">60%</span>\n                    <div>\n                      <div class=\"progress\">\n                        <div class=\"progress-bar bg-gradient-danger\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 60%;\"></div>\n                      </div>\n                    </div>\n                  </div>\n                </td>\n              </tr>\n              <tr>\n                <th scope=\"row\">\n                  Facebook\n                </th>\n                <td>\n                  5,480\n                </td>\n                <td>\n                  <div class=\"d-flex align-items-center\">\n                    <span class=\"mr-2\">70%</span>\n                    <div>\n                      <div class=\"progress\">\n                        <div class=\"progress-bar bg-gradient-success\" role=\"progressbar\" aria-valuenow=\"70\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 70%;\"></div>\n                      </div>\n                    </div>\n                  </div>\n                </td>\n              </tr>\n              <tr>\n                <th scope=\"row\">\n                  Google\n                </th>\n                <td>\n                  4,807\n                </td>\n                <td>\n                  <div class=\"d-flex align-items-center\">\n                    <span class=\"mr-2\">80%</span>\n                    <div>\n                      <div class=\"progress\">\n                        <div class=\"progress-bar bg-gradient-primary\" role=\"progressbar\" aria-valuenow=\"80\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 80%;\"></div>\n                      </div>\n                    </div>\n                  </div>\n                </td>\n              </tr>\n              <tr>\n                <th scope=\"row\">\n                  Instagram\n                </th>\n                <td>\n                  3,678\n                </td>\n                <td>\n                  <div class=\"d-flex align-items-center\">\n                    <span class=\"mr-2\">75%</span>\n                    <div>\n                      <div class=\"progress\">\n                        <div class=\"progress-bar bg-gradient-info\" role=\"progressbar\" aria-valuenow=\"75\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 75%;\"></div>\n                      </div>\n                    </div>\n                  </div>\n                </td>\n              </tr>\n              <tr>\n                <th scope=\"row\">\n                  twitter\n                </th>\n                <td>\n                  2,645\n                </td>\n                <td>\n                  <div class=\"d-flex align-items-center\">\n                    <span class=\"mr-2\">30%</span>\n                    <div>\n                      <div class=\"progress\">\n                        <div class=\"progress-bar bg-gradient-warning\" role=\"progressbar\" aria-valuenow=\"30\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 30%;\"></div>\n                      </div>\n                    </div>\n                  </div>\n                </td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+    __webpack_exports__["default"] = "<div class=\"header bg-danger pb-8 pt-5 pt-md-8\">\n  <div class=\"container-fluid\">\n    <div class=\"header-body\">\n      <!-- Card stats -->\n      <div class=\"row\">\n        <div *ngFor=\"let project of projects\" class=\"col-xl-3 col-lg-6\">\n          <div class=\"card card-stats mb-4 mb-xl-0 bg-dark\" style=\"margin-top:1.25rem\">\n            <div class=\"card-body\">\n              <div class=\"row\">\n                <div class=\"col\">\n                  <h5 class=\"card-title text-uppercase text-muted mb-0\">{{project.name}}</h5>\n                  <span class=\"h1 font-weight-bold mb-0\" style=\"color: white\">  {{project.amount}} coins</span>\n                </div>\n                <div class=\"col-auto\">\n                  <div class=\"icon icon-shape bg-success text-white rounded-circle shadow\">\n                    <i class=\"fas fa-dollar-sign\"></i>\n                  </div>\n                </div>\n              </div>\n              <p class=\"mt-3 mb-0 text-muted text-sm\">\n                <span>{{project.shortDescription}}</span></p>\n              <p class=\"mt-3 mb-0 text-muted text-sm\">\n                <span class=\"text-success mr-2\"><i class=\"fa \"></i> {{project.lastUpdatedSum}} coins</span>\n                <span class=\"text-nowrap\"> collected amount</span>\n              </p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"container-fluid mt--7\">\n  <div class=\"row\">\n    <div class=\"col-xl-8 mb-5 mb-xl-0\">\n      <div class=\"card bg-dark shadow\">\n        <div class=\"card-header bg-transparent\">\n          <div class=\"row align-items-center\">\n            <div class=\"col\">\n              <h6 class=\"text-uppercase text-light ls-1 mb-1\">Overview</h6>\n              <h2 class=\"text-white mb-0\">Total donations</h2>\n            </div>\n            <div class=\"col\">\n              <ul class=\"nav nav-pills justify-content-end\">\n                <li class=\"nav-item mr-2 mr-md-0\" data-toggle=\"chart\" data-target=\"#chart-sales\"  (click)=\"data=datasets[0];updateOptions()\">\n                  <a href=\"javascript:void(0)\" class=\"nav-link py-2 px-3\" [ngClass]=\"{'active':clicked===true}\" data-toggle=\"tab\" (click)=\"clicked=true;clicked1=false\">\n                    <span class=\"d-none d-md-block\">Month</span>\n                    <span class=\"d-md-none\">M</span>\n                  </a>\n                </li>\n                <li class=\"nav-item\" data-toggle=\"chart\" data-target=\"#chart-sales\"  (click)=\"data=datasets[1];updateOptions()\">\n                  <a href=\"javascript:void(0)\" class=\"nav-link py-2 px-3\" [ngClass]=\"{'active':clicked1===true}\" data-toggle=\"tab\" (click)=\"clicked=false;clicked1=true\">\n                    <span class=\"d-none d-md-block\">Week</span>\n                    <span class=\"d-md-none\">W</span>\n                  </a>\n                </li>\n              </ul>\n            </div>\n          </div>\n        </div>\n        <div class=\"card-body\">\n          <!-- Chart -->\n          <div class=\"chart\">\n            <!-- Chart wrapper -->\n            <canvas id=\"chart-sales\" class=\"chart-canvas\"></canvas>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-xl-4\">\n      <div class=\"card shadow\">\n        <div class=\"card-header bg-transparent\">\n          <div class=\"row align-items-center\">\n            <div class=\"col\">\n              <h6 class=\"text-uppercase text-muted ls-1 mb-1\">Performance</h6>\n              <h2 class=\"mb-0\">Total orders</h2>\n            </div>\n          </div>\n        </div>\n        <div class=\"card-body\">\n          <!-- Chart -->\n          <div class=\"chart\">\n            <canvas id=\"chart-orders\" class=\"chart-canvas\"></canvas>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n<!--  <div class=\"row mt-5\">-->\n<!--    <div class=\"col-xl-8 mb-5 mb-xl-0\">-->\n<!--      <div class=\"card shadow\">-->\n<!--        <div class=\"card-header border-0\">-->\n<!--          <div class=\"row align-items-center\">-->\n<!--            <div class=\"col\">-->\n<!--              <h3 class=\"mb-0\">Page visits</h3>-->\n<!--            </div>-->\n<!--            <div class=\"col text-right\">-->\n<!--              <a href=\"#!\" class=\"btn btn-sm btn-primary\">See all</a>-->\n<!--            </div>-->\n<!--          </div>-->\n<!--        </div>-->\n<!--        <div class=\"table-responsive\">-->\n<!--          &lt;!&ndash; Projects table &ndash;&gt;-->\n<!--          <table class=\"table align-items-center table-flush\">-->\n<!--            <thead class=\"thead-light\">-->\n<!--              <tr>-->\n<!--                <th scope=\"col\">Page name</th>-->\n<!--                <th scope=\"col\">Visitors</th>-->\n<!--                <th scope=\"col\">Unique users</th>-->\n<!--                <th scope=\"col\">Bounce rate</th>-->\n<!--              </tr>-->\n<!--            </thead>-->\n<!--            <tbody>-->\n<!--              <tr>-->\n<!--                <th scope=\"row\">-->\n<!--                  /argon/-->\n<!--                </th>-->\n<!--                <td>-->\n<!--                  4,569-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  340-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  <i class=\"fas fa-arrow-up text-success mr-3\"></i> 46,53%-->\n<!--                </td>-->\n<!--              </tr>-->\n<!--              <tr>-->\n<!--                <th scope=\"row\">-->\n<!--                  /argon/index.html-->\n<!--                </th>-->\n<!--                <td>-->\n<!--                  3,985-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  319-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  <i class=\"fas fa-arrow-down text-warning mr-3\"></i> 46,53%-->\n<!--                </td>-->\n<!--              </tr>-->\n<!--              <tr>-->\n<!--                <th scope=\"row\">-->\n<!--                  /argon/charts.html-->\n<!--                </th>-->\n<!--                <td>-->\n<!--                  3,513-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  294-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  <i class=\"fas fa-arrow-down text-warning mr-3\"></i> 36,49%-->\n<!--                </td>-->\n<!--              </tr>-->\n<!--              <tr>-->\n<!--                <th scope=\"row\">-->\n<!--                  /argon/tables.html-->\n<!--                </th>-->\n<!--                <td>-->\n<!--                  2,050-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  147-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  <i class=\"fas fa-arrow-up text-success mr-3\"></i> 50,87%-->\n<!--                </td>-->\n<!--              </tr>-->\n<!--              <tr>-->\n<!--                <th scope=\"row\">-->\n<!--                  /argon/profile.html-->\n<!--                </th>-->\n<!--                <td>-->\n<!--                  1,795-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  190-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  <i class=\"fas fa-arrow-down text-danger mr-3\"></i> 46,53%-->\n<!--                </td>-->\n<!--              </tr>-->\n<!--            </tbody>-->\n<!--          </table>-->\n<!--        </div>-->\n<!--      </div>-->\n<!--    </div>-->\n<!--    <div class=\"col-xl-4\">-->\n<!--      <div class=\"card shadow\">-->\n<!--        <div class=\"card-header border-0\">-->\n<!--          <div class=\"row align-items-center\">-->\n<!--            <div class=\"col\">-->\n<!--              <h3 class=\"mb-0\">Social traffic</h3>-->\n<!--            </div>-->\n<!--            <div class=\"col text-right\">-->\n<!--              <a href=\"#!\" class=\"btn btn-sm btn-primary\">See all</a>-->\n<!--            </div>-->\n<!--          </div>-->\n<!--        </div>-->\n<!--        <div class=\"table-responsive\">-->\n<!--          &lt;!&ndash; Projects table &ndash;&gt;-->\n<!--          <table class=\"table align-items-center table-flush\">-->\n<!--            <thead class=\"thead-light\">-->\n<!--              <tr>-->\n<!--                <th scope=\"col\">Referral</th>-->\n<!--                <th scope=\"col\">Visitors</th>-->\n<!--                <th scope=\"col\"></th>-->\n<!--              </tr>-->\n<!--            </thead>-->\n<!--            <tbody>-->\n<!--              <tr>-->\n<!--                <th scope=\"row\">-->\n<!--                  Facebook-->\n<!--                </th>-->\n<!--                <td>-->\n<!--                  1,480-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  <div class=\"d-flex align-items-center\">-->\n<!--                    <span class=\"mr-2\">60%</span>-->\n<!--                    <div>-->\n<!--                      <div class=\"progress\">-->\n<!--                        <div class=\"progress-bar bg-gradient-danger\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 60%;\"></div>-->\n<!--                      </div>-->\n<!--                    </div>-->\n<!--                  </div>-->\n<!--                </td>-->\n<!--              </tr>-->\n<!--              <tr>-->\n<!--                <th scope=\"row\">-->\n<!--                  Facebook-->\n<!--                </th>-->\n<!--                <td>-->\n<!--                  5,480-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  <div class=\"d-flex align-items-center\">-->\n<!--                    <span class=\"mr-2\">70%</span>-->\n<!--                    <div>-->\n<!--                      <div class=\"progress\">-->\n<!--                        <div class=\"progress-bar bg-gradient-success\" role=\"progressbar\" aria-valuenow=\"70\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 70%;\"></div>-->\n<!--                      </div>-->\n<!--                    </div>-->\n<!--                  </div>-->\n<!--                </td>-->\n<!--              </tr>-->\n<!--              <tr>-->\n<!--                <th scope=\"row\">-->\n<!--                  Google-->\n<!--                </th>-->\n<!--                <td>-->\n<!--                  4,807-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  <div class=\"d-flex align-items-center\">-->\n<!--                    <span class=\"mr-2\">80%</span>-->\n<!--                    <div>-->\n<!--                      <div class=\"progress\">-->\n<!--                        <div class=\"progress-bar bg-gradient-primary\" role=\"progressbar\" aria-valuenow=\"80\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 80%;\"></div>-->\n<!--                      </div>-->\n<!--                    </div>-->\n<!--                  </div>-->\n<!--                </td>-->\n<!--              </tr>-->\n<!--              <tr>-->\n<!--                <th scope=\"row\">-->\n<!--                  Instagram-->\n<!--                </th>-->\n<!--                <td>-->\n<!--                  3,678-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  <div class=\"d-flex align-items-center\">-->\n<!--                    <span class=\"mr-2\">75%</span>-->\n<!--                    <div>-->\n<!--                      <div class=\"progress\">-->\n<!--                        <div class=\"progress-bar bg-gradient-info\" role=\"progressbar\" aria-valuenow=\"75\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 75%;\"></div>-->\n<!--                      </div>-->\n<!--                    </div>-->\n<!--                  </div>-->\n<!--                </td>-->\n<!--              </tr>-->\n<!--              <tr>-->\n<!--                <th scope=\"row\">-->\n<!--                  twitter-->\n<!--                </th>-->\n<!--                <td>-->\n<!--                  2,645-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  <div class=\"d-flex align-items-center\">-->\n<!--                    <span class=\"mr-2\">30%</span>-->\n<!--                    <div>-->\n<!--                      <div class=\"progress\">-->\n<!--                        <div class=\"progress-bar bg-gradient-warning\" role=\"progressbar\" aria-valuenow=\"30\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 30%;\"></div>-->\n<!--                      </div>-->\n<!--                    </div>-->\n<!--                  </div>-->\n<!--                </td>-->\n<!--              </tr>-->\n<!--            </tbody>-->\n<!--          </table>-->\n<!--        </div>-->\n<!--      </div>-->\n<!--    </div>-->\n<!--  </div>-->\n</div>\n";
     /***/
   },
 
@@ -593,7 +633,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"container-fluid mt--7\">\n  <div class=\"row\">\n    <div class=\"col-xl-8 mb-5 mb-xl-0\">\n      <div class=\"card bg-gradient-default shadow\">\n        <div class=\"card-header bg-transparent\">\n          <div class=\"row align-items-center\">\n            <div class=\"col\">\n              <h6 class=\"text-uppercase text-light ls-1 mb-1\">Overview</h6>\n              <h2 class=\"text-white mb-0\">Sales value</h2>\n            </div>\n            <div class=\"col\">\n              <ul class=\"nav nav-pills justify-content-end\">\n                <li class=\"nav-item mr-2 mr-md-0\" data-toggle=\"chart\" data-target=\"#chart-sales\"  (click)=\"data=datasets[0];updateOptions()\">\n                  <a href=\"javascript:void(0)\" class=\"nav-link py-2 px-3\" [ngClass]=\"{'active':clicked===true}\" data-toggle=\"tab\" (click)=\"clicked=true;clicked1=false\">\n                    <span class=\"d-none d-md-block\">Month</span>\n                    <span class=\"d-md-none\">M</span>\n                  </a>\n                </li>\n                <li class=\"nav-item\" data-toggle=\"chart\" data-target=\"#chart-sales\"  (click)=\"data=datasets[1];updateOptions()\">\n                  <a href=\"javascript:void(0)\" class=\"nav-link py-2 px-3\" [ngClass]=\"{'active':clicked1===true}\" data-toggle=\"tab\" (click)=\"clicked=false;clicked1=true\">\n                    <span class=\"d-none d-md-block\">Week</span>\n                    <span class=\"d-md-none\">W</span>\n                  </a>\n                </li>\n              </ul>\n            </div>\n          </div>\n        </div>\n        <div class=\"card-body\">\n          <!-- Chart -->\n          <div class=\"chart\">\n            <!-- Chart wrapper -->\n            <canvas id=\"chart-sales\" class=\"chart-canvas\"></canvas>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-xl-4\">\n      <div class=\"card shadow\">\n        <div class=\"card-header bg-transparent\">\n          <div class=\"row align-items-center\">\n            <div class=\"col\">\n              <h6 class=\"text-uppercase text-muted ls-1 mb-1\">Performance</h6>\n              <h2 class=\"mb-0\">Total orders</h2>\n            </div>\n          </div>\n        </div>\n        <div class=\"card-body\">\n          <!-- Chart -->\n          <div class=\"chart\">\n            <canvas id=\"chart-orders\" class=\"chart-canvas\"></canvas>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"row mt-5\">\n    <div class=\"col-xl-8 mb-5 mb-xl-0\">\n      <div class=\"card shadow\">\n        <div class=\"card-header border-0\">\n          <div class=\"row align-items-center\">\n            <div class=\"col\">\n              <h3 class=\"mb-0\">Page visits</h3>\n            </div>\n            <div class=\"col text-right\">\n              <a href=\"#!\" class=\"btn btn-sm btn-primary\">See all</a>\n            </div>\n          </div>\n        </div>\n        <div class=\"table-responsive\">\n          <!-- Projects table -->\n          <table class=\"table align-items-center table-flush\">\n            <thead class=\"thead-light\">\n            <tr>\n              <th scope=\"col\">Page name</th>\n              <th scope=\"col\">Visitors</th>\n              <th scope=\"col\">Unique users</th>\n              <th scope=\"col\">Bounce rate</th>\n            </tr>\n            </thead>\n            <tbody>\n            <tr>\n              <th scope=\"row\">\n                /argon/\n              </th>\n              <td>\n                4,569\n              </td>\n              <td>\n                340\n              </td>\n              <td>\n                <i class=\"fas fa-arrow-up text-success mr-3\"></i> 46,53%\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                /argon/index.html\n              </th>\n              <td>\n                3,985\n              </td>\n              <td>\n                319\n              </td>\n              <td>\n                <i class=\"fas fa-arrow-down text-warning mr-3\"></i> 46,53%\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                /argon/charts.html\n              </th>\n              <td>\n                3,513\n              </td>\n              <td>\n                294\n              </td>\n              <td>\n                <i class=\"fas fa-arrow-down text-warning mr-3\"></i> 36,49%\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                /argon/tables.html\n              </th>\n              <td>\n                2,050\n              </td>\n              <td>\n                147\n              </td>\n              <td>\n                <i class=\"fas fa-arrow-up text-success mr-3\"></i> 50,87%\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                /argon/profile.html\n              </th>\n              <td>\n                1,795\n              </td>\n              <td>\n                190\n              </td>\n              <td>\n                <i class=\"fas fa-arrow-down text-danger mr-3\"></i> 46,53%\n              </td>\n            </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-xl-4\">\n      <div class=\"card shadow\">\n        <div class=\"card-header border-0\">\n          <div class=\"row align-items-center\">\n            <div class=\"col\">\n              <h3 class=\"mb-0\">Social traffic</h3>\n            </div>\n            <div class=\"col text-right\">\n              <a href=\"#!\" class=\"btn btn-sm btn-primary\">See all</a>\n            </div>\n          </div>\n        </div>\n        <div class=\"table-responsive\">\n          <!-- Projects table -->\n          <table class=\"table align-items-center table-flush\">\n            <thead class=\"thead-light\">\n            <tr>\n              <th scope=\"col\">Referral</th>\n              <th scope=\"col\">Visitors</th>\n              <th scope=\"col\"></th>\n            </tr>\n            </thead>\n            <tbody>\n            <tr>\n              <th scope=\"row\">\n                Facebook\n              </th>\n              <td>\n                1,480\n              </td>\n              <td>\n                <div class=\"d-flex align-items-center\">\n                  <span class=\"mr-2\">60%</span>\n                  <div>\n                    <div class=\"progress\">\n                      <div class=\"progress-bar bg-gradient-danger\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 60%;\"></div>\n                    </div>\n                  </div>\n                </div>\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                Facebook\n              </th>\n              <td>\n                5,480\n              </td>\n              <td>\n                <div class=\"d-flex align-items-center\">\n                  <span class=\"mr-2\">70%</span>\n                  <div>\n                    <div class=\"progress\">\n                      <div class=\"progress-bar bg-gradient-success\" role=\"progressbar\" aria-valuenow=\"70\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 70%;\"></div>\n                    </div>\n                  </div>\n                </div>\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                Google\n              </th>\n              <td>\n                4,807\n              </td>\n              <td>\n                <div class=\"d-flex align-items-center\">\n                  <span class=\"mr-2\">80%</span>\n                  <div>\n                    <div class=\"progress\">\n                      <div class=\"progress-bar bg-gradient-primary\" role=\"progressbar\" aria-valuenow=\"80\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 80%;\"></div>\n                    </div>\n                  </div>\n                </div>\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                Instagram\n              </th>\n              <td>\n                3,678\n              </td>\n              <td>\n                <div class=\"d-flex align-items-center\">\n                  <span class=\"mr-2\">75%</span>\n                  <div>\n                    <div class=\"progress\">\n                      <div class=\"progress-bar bg-gradient-info\" role=\"progressbar\" aria-valuenow=\"75\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 75%;\"></div>\n                    </div>\n                  </div>\n                </div>\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                twitter\n              </th>\n              <td>\n                2,645\n              </td>\n              <td>\n                <div class=\"d-flex align-items-center\">\n                  <span class=\"mr-2\">30%</span>\n                  <div>\n                    <div class=\"progress\">\n                      <div class=\"progress-bar bg-gradient-warning\" role=\"progressbar\" aria-valuenow=\"30\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 30%;\"></div>\n                    </div>\n                  </div>\n                </div>\n              </td>\n            </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
+    __webpack_exports__["default"] = "<div class=\"header bg-danger pb-8 pt-5 pt-md-8\">\n  <div class=\"container-fluid\">\n    <div class=\"header-body\">\n      <!-- Card stats -->\n      <div class=\"row\">\n        <div *ngFor=\"let project of projects\" class=\"col-xl-3 col-lg-6\">\n          <div class=\"card card-stats mb-4 mb-xl-0 bg-dark\" style=\"margin-top:1.25rem\">\n            <div class=\"card-body\">\n              <div class=\"row\">\n                <div class=\"col\">\n                  <h5 class=\"card-title text-uppercase text-muted mb-0\">{{project.name}}</h5>\n                  <span class=\"h1 font-weight-bold mb-0\" style=\"color: white\">{{project.last_updated_sum}} coins</span>\n                </div>\n                <div class=\"col-auto\">\n                  <div class=\"icon icon-shape bg-success text-white rounded-circle shadow\">\n                    <i class=\"fas fa-dollar-sign\"></i>\n                  </div>\n                </div>\n              </div>\n              <p class=\"mt-3 mb-0 text-muted text-sm\">\n                <span>{{this.project.shortDescription}}</span>\n                <span class=\"text-success mr-2\"><i class=\"fa fa-percentage fa-1x\"></i> {{this.project.amount}} coins</span>\n                <span class=\"text-nowrap\">needed amount</span>\n              </p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"container-fluid mt--7\">\n  <div class=\"row\">\n    <div class=\"col-xl-8 mb-5 mb-xl-0\">\n      <div class=\"card bg-gradient-default shadow\">\n        <div class=\"card-header bg-transparent\">\n          <div class=\"row align-items-center\">\n            <div class=\"col\">\n              <h6 class=\"text-uppercase text-light ls-1 mb-1\">Overview</h6>\n              <h2 class=\"text-white mb-0\">Sales value</h2>\n            </div>\n            <div class=\"col\">\n              <ul class=\"nav nav-pills justify-content-end\">\n                <li class=\"nav-item mr-2 mr-md-0\" data-toggle=\"chart\" data-target=\"#chart-sales\"  (click)=\"data=datasets[0];updateOptions()\">\n                  <a href=\"javascript:void(0)\" class=\"nav-link py-2 px-3\" [ngClass]=\"{'active':clicked===true}\" data-toggle=\"tab\" (click)=\"clicked=true;clicked1=false\">\n                    <span class=\"d-none d-md-block\">Month</span>\n                    <span class=\"d-md-none\">M</span>\n                  </a>\n                </li>\n                <li class=\"nav-item\" data-toggle=\"chart\" data-target=\"#chart-sales\"  (click)=\"data=datasets[1];updateOptions()\">\n                  <a href=\"javascript:void(0)\" class=\"nav-link py-2 px-3\" [ngClass]=\"{'active':clicked1===true}\" data-toggle=\"tab\" (click)=\"clicked=false;clicked1=true\">\n                    <span class=\"d-none d-md-block\">Week</span>\n                    <span class=\"d-md-none\">W</span>\n                  </a>\n                </li>\n              </ul>\n            </div>\n          </div>\n        </div>\n        <div class=\"card-body\">\n          <!-- Chart -->\n          <div class=\"chart\">\n            <!-- Chart wrapper -->\n            <canvas id=\"chart-sales\" class=\"chart-canvas\"></canvas>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-xl-4\">\n      <div class=\"card shadow\">\n        <div class=\"card-header bg-transparent\">\n          <div class=\"row align-items-center\">\n            <div class=\"col\">\n              <h6 class=\"text-uppercase text-muted ls-1 mb-1\">Performance</h6>\n              <h2 class=\"mb-0\">Total orders</h2>\n            </div>\n          </div>\n        </div>\n        <div class=\"card-body\">\n          <!-- Chart -->\n          <div class=\"chart\">\n            <canvas id=\"chart-orders\" class=\"chart-canvas\"></canvas>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"row mt-5\">\n    <div class=\"col-xl-8 mb-5 mb-xl-0\">\n      <div class=\"card shadow\">\n        <div class=\"card-header border-0\">\n          <div class=\"row align-items-center\">\n            <div class=\"col\">\n              <h3 class=\"mb-0\">Page visits</h3>\n            </div>\n            <div class=\"col text-right\">\n              <a href=\"#!\" class=\"btn btn-sm btn-primary\">See all</a>\n            </div>\n          </div>\n        </div>\n        <div class=\"table-responsive\">\n          <!-- Projects table -->\n          <table class=\"table align-items-center table-flush\">\n            <thead class=\"thead-light\">\n            <tr>\n              <th scope=\"col\">Page name</th>\n              <th scope=\"col\">Visitors</th>\n              <th scope=\"col\">Unique users</th>\n              <th scope=\"col\">Bounce rate</th>\n            </tr>\n            </thead>\n            <tbody>\n            <tr>\n              <th scope=\"row\">\n                /argon/\n              </th>\n              <td>\n                4,569\n              </td>\n              <td>\n                340\n              </td>\n              <td>\n                <i class=\"fas fa-arrow-up text-success mr-3\"></i> 46,53%\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                /argon/index.html\n              </th>\n              <td>\n                3,985\n              </td>\n              <td>\n                319\n              </td>\n              <td>\n                <i class=\"fas fa-arrow-down text-warning mr-3\"></i> 46,53%\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                /argon/charts.html\n              </th>\n              <td>\n                3,513\n              </td>\n              <td>\n                294\n              </td>\n              <td>\n                <i class=\"fas fa-arrow-down text-warning mr-3\"></i> 36,49%\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                /argon/tables.html\n              </th>\n              <td>\n                2,050\n              </td>\n              <td>\n                147\n              </td>\n              <td>\n                <i class=\"fas fa-arrow-up text-success mr-3\"></i> 50,87%\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                /argon/profile.html\n              </th>\n              <td>\n                1,795\n              </td>\n              <td>\n                190\n              </td>\n              <td>\n                <i class=\"fas fa-arrow-down text-danger mr-3\"></i> 46,53%\n              </td>\n            </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-xl-4\">\n      <div class=\"card shadow\">\n        <div class=\"card-header border-0\">\n          <div class=\"row align-items-center\">\n            <div class=\"col\">\n              <h3 class=\"mb-0\">Social traffic</h3>\n            </div>\n            <div class=\"col text-right\">\n              <a href=\"#!\" class=\"btn btn-sm btn-primary\">See all</a>\n            </div>\n          </div>\n        </div>\n        <div class=\"table-responsive\">\n          <!-- Projects table -->\n          <table class=\"table align-items-center table-flush\">\n            <thead class=\"thead-light\">\n            <tr>\n              <th scope=\"col\">Referral</th>\n              <th scope=\"col\">Visitors</th>\n              <th scope=\"col\"></th>\n            </tr>\n            </thead>\n            <tbody>\n            <tr>\n              <th scope=\"row\">\n                Facebook\n              </th>\n              <td>\n                1,480\n              </td>\n              <td>\n                <div class=\"d-flex align-items-center\">\n                  <span class=\"mr-2\">60%</span>\n                  <div>\n                    <div class=\"progress\">\n                      <div class=\"progress-bar bg-gradient-danger\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 60%;\"></div>\n                    </div>\n                  </div>\n                </div>\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                Facebook\n              </th>\n              <td>\n                5,480\n              </td>\n              <td>\n                <div class=\"d-flex align-items-center\">\n                  <span class=\"mr-2\">70%</span>\n                  <div>\n                    <div class=\"progress\">\n                      <div class=\"progress-bar bg-gradient-success\" role=\"progressbar\" aria-valuenow=\"70\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 70%;\"></div>\n                    </div>\n                  </div>\n                </div>\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                Google\n              </th>\n              <td>\n                4,807\n              </td>\n              <td>\n                <div class=\"d-flex align-items-center\">\n                  <span class=\"mr-2\">80%</span>\n                  <div>\n                    <div class=\"progress\">\n                      <div class=\"progress-bar bg-gradient-primary\" role=\"progressbar\" aria-valuenow=\"80\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 80%;\"></div>\n                    </div>\n                  </div>\n                </div>\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                Instagram\n              </th>\n              <td>\n                3,678\n              </td>\n              <td>\n                <div class=\"d-flex align-items-center\">\n                  <span class=\"mr-2\">75%</span>\n                  <div>\n                    <div class=\"progress\">\n                      <div class=\"progress-bar bg-gradient-info\" role=\"progressbar\" aria-valuenow=\"75\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 75%;\"></div>\n                    </div>\n                  </div>\n                </div>\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                twitter\n              </th>\n              <td>\n                2,645\n              </td>\n              <td>\n                <div class=\"d-flex align-items-center\">\n                  <span class=\"mr-2\">30%</span>\n                  <div>\n                    <div class=\"progress\">\n                      <div class=\"progress-bar bg-gradient-warning\" role=\"progressbar\" aria-valuenow=\"30\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 30%;\"></div>\n                    </div>\n                  </div>\n                </div>\n              </td>\n            </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n";
     /***/
   },
 
@@ -1238,7 +1278,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     !*** ./src/app/_globals/global-variables.ts ***!
     \**********************************************/
 
-  /*! exports provided: API_URL, CHARITY, CATEGORY, PAUSE, ACTIVATE, TERNINATE, REDIRECT, CALLBACK */
+  /*! exports provided: API_URL, CHARITY, CATEGORY, PAUSE, ACTIVATE, TERNINATE, REDIRECT, CALLBACK, URL, USERS */
 
   /***/
   function srcApp_globalsGlobalVariablesTs(module, __webpack_exports__, __webpack_require__) {
@@ -1293,14 +1333,32 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     __webpack_require__.d(__webpack_exports__, "CALLBACK", function () {
       return CALLBACK;
     });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "URL", function () {
+      return URL;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "USERS", function () {
+      return USERS;
+    });
     /* harmony import */
 
 
     var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
     /*! tslib */
     "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
 
-    var API_URL = 'http://back.clubisti.net/api';
+
+    var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! ../../environments/environment */
+    "./src/environments/environment.ts");
+
+    var API_URL = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].apiUrl;
     var CHARITY = '/projects';
     var CATEGORY = '/categories';
     var PAUSE = '/pause';
@@ -1308,6 +1366,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var TERNINATE = '/end';
     var REDIRECT = '/redirect';
     var CALLBACK = '/callback';
+    var URL = 'http://localhost:8000';
+    var USERS = '/users';
     /***/
   },
 
@@ -1403,145 +1463,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       multi: true
     };
     /***/
-  },
-
-  /***/
-  "./src/app/_models/Project.ts":
-  /*!************************************!*\
-    !*** ./src/app/_models/Project.ts ***!
-    \************************************/
-
-  /*! exports provided: Project */
-
-  /***/
-  function srcApp_modelsProjectTs(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-
-    __webpack_require__.r(__webpack_exports__);
-    /* harmony export (binding) */
-
-
-    __webpack_require__.d(__webpack_exports__, "Project", function () {
-      return Project;
-    });
-    /* harmony import */
-
-
-    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
-    /*! tslib */
-    "./node_modules/tslib/tslib.es6.js");
-
-    var Project =
-    /*#__PURE__*/
-    function () {
-      function Project() {
-        var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-        var name = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
-        var shortDescription = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
-        var last_updated_sum = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
-        var amount = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : null;
-        var max_donation_amount = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : null;
-        var min_donation_amount = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : null;
-        var status = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : null;
-
-        _classCallCheck(this, Project);
-
-        this._id = id;
-        this._name = name;
-        this._last_updated_sum = last_updated_sum;
-        this._shortDescription = shortDescription;
-        this._amount = amount;
-        this._status = status;
-        this._min_donation_amount = min_donation_amount;
-        this._max_donation_amount = max_donation_amount;
-      }
-
-      _createClass(Project, [{
-        key: "id",
-        get: function get() {
-          return this._id;
-        },
-        set: function set(value) {
-          this._id = value;
-        }
-      }, {
-        key: "name",
-        get: function get() {
-          return this._name;
-        },
-        set: function set(value) {
-          this._name = value;
-        }
-      }, {
-        key: "last_updated_sum",
-        get: function get() {
-          return this._last_updated_sum;
-        },
-        set: function set(value) {
-          this._last_updated_sum = value;
-        }
-      }, {
-        key: "shortDescription",
-        get: function get() {
-          return this._shortDescription;
-        },
-        set: function set(value) {
-          this._shortDescription = value;
-        }
-      }, {
-        key: "amount",
-        get: function get() {
-          return this._amount;
-        },
-        set: function set(value) {
-          this._amount = value;
-        }
-      }, {
-        key: "created_at",
-        get: function get() {
-          return this._created_at;
-        },
-        set: function set(value) {
-          this._created_at = value;
-        }
-      }, {
-        key: "updated_at",
-        get: function get() {
-          return this._updated_at;
-        },
-        set: function set(value) {
-          this._updated_at = value;
-        }
-      }, {
-        key: "categories",
-        get: function get() {
-          return this._categories;
-        },
-        set: function set(value) {
-          this._categories = value;
-        }
-      }, {
-        key: "min_donation_amount",
-        get: function get() {
-          return this._min_donation_amount;
-        },
-        set: function set(value) {
-          this._min_donation_amount = value;
-        }
-      }, {
-        key: "max_donation_amount",
-        get: function get() {
-          return this._max_donation_amount;
-        },
-        set: function set(value) {
-          this._max_donation_amount = value;
-        }
-      }]);
-
-      return Project;
-    }();
-    /***/
-
   },
 
   /***/
@@ -1647,86 +1568,128 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var User =
     /*#__PURE__*/
     function () {
+      // constructor(
+      //   id: number,
+      //   firstName: string,
+      //   lastName: string,
+      //   username: string,
+      //   email: string,
+      //   password: string,
+      //   badge: any,
+      //   deleted: boolean,
+      //   profile: any,
+      //   roles: any,
+      //   address: any
+      // ) {
+      //   this._id = id;
+      //   this._firstName = firstName;
+      //   this._lastName = lastName;
+      //   this._username = username;
+      //   this._email = email;
+      //   this._password = password;
+      //   this._badge = badge;
+      //   this._deleted = deleted;
+      //   this._profile = profile;
+      //   this._roles = roles;
+      //   this._address = address;
+      // }
       function User() {
-        var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-        var firstName = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
-        var lastName = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
-        var userName = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
-        var email = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : null;
-
         _classCallCheck(this, User);
 
-        this.badge = null;
-        this.isDeleted = false;
-        this.profile = null;
-        this.roles = null;
-        this.address = null;
-        this.id = id;
-        this.username = userName;
-        this.email = email;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this._badge = null;
+        this._deleted = false;
+        this._profile = null;
+        this._roles = null;
+        this._address = null;
       }
 
       _createClass(User, [{
-        key: "getId",
-        value: function getId() {
-          return this.id;
+        key: "id",
+        get: function get() {
+          return this._id;
+        },
+        set: function set(value) {
+          this._id = value;
         }
       }, {
-        key: "setId",
-        value: function setId(value) {
-          this.id = value;
+        key: "firstName",
+        get: function get() {
+          return this._firstName;
+        },
+        set: function set(value) {
+          this._firstName = value;
         }
       }, {
-        key: "getFirstName",
-        value: function getFirstName() {
-          return this.firstName;
+        key: "lastName",
+        get: function get() {
+          return this._lastName;
+        },
+        set: function set(value) {
+          this._lastName = value;
         }
       }, {
-        key: "setFirstName",
-        value: function setFirstName(value) {
-          this.firstName = value;
+        key: "username",
+        get: function get() {
+          return this._username;
+        },
+        set: function set(value) {
+          this._username = value;
         }
       }, {
-        key: "getLastName",
-        value: function getLastName() {
-          return this.lastName;
+        key: "email",
+        get: function get() {
+          return this._email;
+        },
+        set: function set(value) {
+          this._email = value;
         }
       }, {
-        key: "setLastName",
-        value: function setLastName(value) {
-          this.lastName = value;
+        key: "password",
+        get: function get() {
+          return this._password;
+        },
+        set: function set(value) {
+          this._password = value;
         }
       }, {
-        key: "getUserName",
-        value: function getUserName() {
-          return this.username;
+        key: "badge",
+        get: function get() {
+          return this._badge;
+        },
+        set: function set(value) {
+          this._badge = value;
         }
       }, {
-        key: "setUserName",
-        value: function setUserName(value) {
-          this.username = value;
+        key: "deleted",
+        get: function get() {
+          return this._deleted;
+        },
+        set: function set(value) {
+          this._deleted = value;
         }
       }, {
-        key: "getEmail",
-        value: function getEmail() {
-          return this.email;
+        key: "profile",
+        get: function get() {
+          return this._profile;
+        },
+        set: function set(value) {
+          this._profile = value;
         }
       }, {
-        key: "setEmail",
-        value: function setEmail(value) {
-          this.email = value;
+        key: "roles",
+        get: function get() {
+          return this._roles;
+        },
+        set: function set(value) {
+          this._roles = value;
         }
       }, {
-        key: "getPassword",
-        value: function getPassword() {
-          return this.password;
-        }
-      }, {
-        key: "setPassword",
-        value: function setPassword(value) {
-          this.password = value;
+        key: "address",
+        get: function get() {
+          return this._address;
+        },
+        set: function set(value) {
+          this._address = value;
         }
       }]);
 
@@ -1810,13 +1773,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function signup(user) {
           // tslint:disable-next-line:max-line-length
           var creds = {
-            username: user.getUserName(),
-            first_name: user.getFirstName(),
-            last_name: user.getLastName(),
-            email: user.getEmail(),
-            password: user.getPassword()
+            username: user.username,
+            first_name: user.firstName,
+            last_name: user.lastName,
+            email: user.email,
+            password: user.password
           };
-          return this.http.post(this.resourceUrl + 'register', JSON.parse(JSON.stringify(creds)), {
+          return this.http.post(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + '/register', JSON.parse(JSON.stringify(creds)), {
             observe: 'response'
           });
         }
@@ -1827,29 +1790,34 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             'Content-Type': 'application/json'
           };
           var creds = {
-            email: user.getEmail(),
-            password: user.getPassword()
+            email: user.email,
+            password: user.password
           };
-          return this.http.post(this.resourceUrl + 'login', JSON.stringify(creds), {
+          return this.http.post(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + '/login', JSON.stringify(creds), {
             headers: headers,
             observe: 'response'
           });
         }
       }, {
         key: "facebookLogin",
-        value: function facebookLogin() {
-          return this.http.get(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["REDIRECT"]);
+        value: function facebookLogin(id) {
+          var param = {
+            param: id
+          };
+          return this.http.post(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + '/fblogin', JSON.stringify(param), {
+            observe: 'response'
+          });
         } // method get for current user from the backend
 
       }, {
         key: "getUser",
         value: function getUser() {
-          return this.http.get(this.resourceUrl + 'users' + this.getCurrentUser().getId());
+          return this.http.get(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + 'users' + this.getCurrentUser().id);
         }
       }, {
         key: "logout",
         value: function logout() {
-          return this.http.post(this.resourceUrl + 'logout', {
+          return this.http.post(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + '/logout', {
             observe: 'response'
           });
         }
@@ -1866,12 +1834,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "setCurrentUser",
         value: function setCurrentUser(currentUser) {
-          this.currentUser = currentUser;
+          this.currentUser.id = currentUser.id;
+          this.currentUser.username = currentUser.username;
+          this.currentUser.firstName = currentUser.first_name;
+          this.currentUser.lastName = currentUser.last_name;
+          this.currentUser.email = currentUser.email;
         }
       }, {
         key: "getCurrentUser",
         value: function getCurrentUser() {
           return this.currentUser;
+        }
+      }, {
+        key: "savingUser",
+        value: function savingUser(result) {
+          console.log('currently logging in...');
+          console.log('body', result.body.user);
+          this.setCurrentUser(JSON.parse(result.body.user));
+          console.log('current user last name ' + this.getCurrentUser().lastName); // @ts-ignore
+
+          localStorage.setItem('token', result.body.token);
         }
       }]);
 
@@ -1889,6 +1871,128 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     AuthenticationService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
       providedIn: 'root'
     })], AuthenticationService);
+    /***/
+  },
+
+  /***/
+  "./src/app/_services/categories.service.ts":
+  /*!*************************************************!*\
+    !*** ./src/app/_services/categories.service.ts ***!
+    \*************************************************/
+
+  /*! exports provided: CategoriesService */
+
+  /***/
+  function srcApp_servicesCategoriesServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "CategoriesService", function () {
+      return CategoriesService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    /* harmony import */
+
+
+    var _globals_global_variables__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../_globals/global-variables */
+    "./src/app/_globals/global-variables.ts");
+    /* harmony import */
+
+
+    var _crud_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ./crud.service */
+    "./src/app/_services/crud.service.ts");
+
+    var CategoriesService =
+    /*#__PURE__*/
+    function () {
+      function CategoriesService(crudService) {
+        _classCallCheck(this, CategoriesService);
+
+        this.crudService = crudService;
+      }
+
+      _createClass(CategoriesService, [{
+        key: "setCategories",
+        value: function setCategories(categories) {
+          this.categories = categories;
+        }
+      }, {
+        key: "getCategories",
+        value: function getCategories() {
+          return this.categories;
+        }
+      }, {
+        key: "getCurrentPage",
+        value: function getCurrentPage() {
+          return this._currentPage;
+        }
+      }, {
+        key: "setCurrentPage",
+        value: function setCurrentPage(value) {
+          this._currentPage = value;
+        }
+      }, {
+        key: "getSizePage",
+        value: function getSizePage() {
+          return this._sizePage;
+        }
+      }, {
+        key: "setSizePage",
+        value: function setSizePage(value) {
+          this._sizePage = value;
+        }
+      }, {
+        key: "getCategoriesAPI",
+        value: function getCategoriesAPI() {
+          var _this = this;
+
+          var params;
+          var selectedPage = this._currentPage;
+          params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]().set('page', selectedPage.toString()).set('perPage', this._sizePage.toString());
+          this.crudService.getAllWithParams(_globals_global_variables__WEBPACK_IMPORTED_MODULE_3__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_3__["CATEGORY"], params).subscribe(function (response) {
+            _this.categories = response;
+            console.log(_this.categories);
+            _this._currentPage = _this.categories.meta.current_page;
+          }, function (error) {
+            console.log(error);
+          });
+        }
+      }]);
+
+      return CategoriesService;
+    }();
+
+    CategoriesService.ctorParameters = function () {
+      return [{
+        type: _crud_service__WEBPACK_IMPORTED_MODULE_4__["CrudService"]
+      }];
+    };
+
+    CategoriesService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+      providedIn: 'root'
+    })], CategoriesService);
     /***/
   },
 
@@ -2232,7 +2336,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var _layouts_anonymous_layout_anonymous_layout_module__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
     /*! ./layouts/anonymous-layout/anonymous-layout.module */
-    "./src/app/layouts/anonymous-layout/anonymous-layout.module.ts"); // @ts-ignore
+    "./src/app/layouts/anonymous-layout/anonymous-layout.module.ts");
+    /* harmony import */
+
+
+    var _pages_admin_charity_charity_update_charity_update_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(
+    /*! ./pages/admin/charity/charity-update/charity-update.component */
+    "./src/app/pages/admin/charity/charity-update/charity-update.component.ts");
+    /* harmony import */
+
+
+    var _components_fb_auth_fb_auth_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(
+    /*! ./components/fb-auth/fb-auth.component */
+    "./src/app/components/fb-auth/fb-auth.component.ts"); // @ts-ignore
 
 
     var AppModule = function AppModule() {
@@ -2241,7 +2357,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
       imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__["BrowserModule"], ng_zorro_antd__WEBPACK_IMPORTED_MODULE_7__["NgZorroAntdModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_1__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _components_components_module__WEBPACK_IMPORTED_MODULE_13__["ComponentsModule"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_11__["NgbModule"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterModule"], _app_routing__WEBPACK_IMPORTED_MODULE_12__["AppRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"], _layouts_anonymous_layout_anonymous_layout_module__WEBPACK_IMPORTED_MODULE_22__["AnonymousLayoutModule"]],
-      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"], _layouts_admin_layout_admin_layout_component__WEBPACK_IMPORTED_MODULE_9__["AdminLayoutComponent"], _layouts_auth_layout_auth_layout_component__WEBPACK_IMPORTED_MODULE_10__["AuthLayoutComponent"], _layouts_anonymous_layout_anonymous_layout_component__WEBPACK_IMPORTED_MODULE_14__["AnonymousLayoutComponent"], _layouts_template_layout_template_layout_component__WEBPACK_IMPORTED_MODULE_15__["TemplateLayoutComponent"], _pages_admin_charity_charities_list_charities_list_component__WEBPACK_IMPORTED_MODULE_16__["CharitiesListComponent"], _pages_admin_charity_charity_create_charity_create_component__WEBPACK_IMPORTED_MODULE_17__["CharityCreateComponent"], _pages_admin_category_create_category_create_category_component__WEBPACK_IMPORTED_MODULE_18__["CreateCategoryComponent"], _pages_admin_category_list_category_list_category_component__WEBPACK_IMPORTED_MODULE_19__["ListCategoryComponent"], _pipes_enum_to_array_pipe__WEBPACK_IMPORTED_MODULE_20__["EnumToArrayPipe"]],
+      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"], _layouts_admin_layout_admin_layout_component__WEBPACK_IMPORTED_MODULE_9__["AdminLayoutComponent"], _layouts_auth_layout_auth_layout_component__WEBPACK_IMPORTED_MODULE_10__["AuthLayoutComponent"], _layouts_anonymous_layout_anonymous_layout_component__WEBPACK_IMPORTED_MODULE_14__["AnonymousLayoutComponent"], _layouts_template_layout_template_layout_component__WEBPACK_IMPORTED_MODULE_15__["TemplateLayoutComponent"], _pages_admin_charity_charities_list_charities_list_component__WEBPACK_IMPORTED_MODULE_16__["CharitiesListComponent"], _pages_admin_charity_charity_create_charity_create_component__WEBPACK_IMPORTED_MODULE_17__["CharityCreateComponent"], _pages_admin_category_create_category_create_category_component__WEBPACK_IMPORTED_MODULE_18__["CreateCategoryComponent"], _pages_admin_category_list_category_list_category_component__WEBPACK_IMPORTED_MODULE_19__["ListCategoryComponent"], _pipes_enum_to_array_pipe__WEBPACK_IMPORTED_MODULE_20__["EnumToArrayPipe"], _pages_admin_charity_charity_update_charity_update_component__WEBPACK_IMPORTED_MODULE_23__["CharityUpdateComponent"], _components_fb_auth_fb_auth_component__WEBPACK_IMPORTED_MODULE_24__["FbAuthComponent"]],
       providers: [_interceptors_authentication_interceptor__WEBPACK_IMPORTED_MODULE_21__["AuthenticationInterceptorProvider"], {
         provide: ng_zorro_antd__WEBPACK_IMPORTED_MODULE_7__["NZ_I18N"],
         useValue: ng_zorro_antd__WEBPACK_IMPORTED_MODULE_7__["en_US"]
@@ -2312,11 +2428,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _layouts_template_layout_template_layout_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! ./layouts/template-layout/template-layout.component */
     "./src/app/layouts/template-layout/template-layout.component.ts");
+    /* harmony import */
+
+
+    var _components_fb_auth_fb_auth_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! ./components/fb-auth/fb-auth.component */
+    "./src/app/components/fb-auth/fb-auth.component.ts");
 
     var routes = [{
       path: '',
       redirectTo: 'dashboard',
       pathMatch: 'full'
+    }, {
+      path: 'fblogin',
+      component: _components_fb_auth_fb_auth_component__WEBPACK_IMPORTED_MODULE_7__["FbAuthComponent"]
     }, {
       path: 'admin',
       component: _layouts_admin_layout_admin_layout_component__WEBPACK_IMPORTED_MODULE_3__["AdminLayoutComponent"],
@@ -2433,19 +2558,19 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       icon: 'ni-tv-2 text-primary',
       class: ''
     }, {
-      path: '/admin/products',
-      title: 'Products',
-      icon: 'ni-planet text-blue',
+      path: '/admin/variable',
+      title: 'Setting',
+      icon: 'ni-settings text-pink',
       class: ''
     }, {
       path: '/admin/charity',
       title: 'Charity',
-      icon: 'ni-pin-3 text-orange',
+      icon: ' ni-money-coins text-orange',
       class: ''
     }, {
-      path: '/admin/variable',
-      title: 'Variable',
-      icon: 'ni-pin-3 text-pink',
+      path: '/admin/users',
+      title: 'Users',
+      icon: 'ni-single-02 text-red',
       class: ''
     }];
 
@@ -2462,13 +2587,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(AdminSidebarComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this = this;
+          var _this2 = this;
 
           this.menuItems = ROUTES.filter(function (menuItem) {
             return menuItem;
           });
           this.router.events.subscribe(function (event) {
-            _this.isCollapsed = true;
+            _this2.isCollapsed = true;
           });
         }
       }]);
@@ -2577,6 +2702,137 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       declarations: [_footer_footer_component__WEBPACK_IMPORTED_MODULE_5__["FooterComponent"], _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_4__["NavbarComponent"], _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_3__["SidebarComponent"], _admin_sidebar_admin_sidebar_component__WEBPACK_IMPORTED_MODULE_8__["AdminSidebarComponent"]],
       exports: [_footer_footer_component__WEBPACK_IMPORTED_MODULE_5__["FooterComponent"], _navbar_navbar_component__WEBPACK_IMPORTED_MODULE_4__["NavbarComponent"], _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_3__["SidebarComponent"], _admin_sidebar_admin_sidebar_component__WEBPACK_IMPORTED_MODULE_8__["AdminSidebarComponent"]]
     })], ComponentsModule);
+    /***/
+  },
+
+  /***/
+  "./src/app/components/fb-auth/fb-auth.component.scss":
+  /*!***********************************************************!*\
+    !*** ./src/app/components/fb-auth/fb-auth.component.scss ***!
+    \***********************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppComponentsFbAuthFbAuthComponentScss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "@import url(https://fonts.googleapis.com/css?family=Montserrat);\nbody {\n  position: relative;\n  width: 100%;\n  height: 100vh;\n  font-family: Montserrat;\n}\n.wrap {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n}\n.text {\n  color: #fbae17;\n  display: inline-block;\n  margin-left: 5px;\n}\n.bounceball {\n  position: relative;\n  display: inline-block;\n  height: 37px;\n  width: 15px;\n}\n.bounceball:before {\n  position: absolute;\n  content: \"\";\n  display: block;\n  top: 0;\n  width: 15px;\n  height: 15px;\n  border-radius: 50%;\n  background-color: #fbae17;\n  -webkit-transform-origin: 50%;\n          transform-origin: 50%;\n  -webkit-animation: bounce 500ms alternate infinite ease;\n          animation: bounce 500ms alternate infinite ease;\n}\n@-webkit-keyframes bounce {\n  0% {\n    top: 30px;\n    height: 5px;\n    border-radius: 60px 60px 20px 20px;\n    -webkit-transform: scaleX(2);\n            transform: scaleX(2);\n  }\n  35% {\n    height: 15px;\n    border-radius: 50%;\n    -webkit-transform: scaleX(1);\n            transform: scaleX(1);\n  }\n  100% {\n    top: 0;\n  }\n}\n@keyframes bounce {\n  0% {\n    top: 30px;\n    height: 5px;\n    border-radius: 60px 60px 20px 20px;\n    -webkit-transform: scaleX(2);\n            transform: scaleX(2);\n  }\n  35% {\n    height: 15px;\n    border-radius: 50%;\n    -webkit-transform: scaleX(1);\n            transform: scaleX(1);\n  }\n  100% {\n    top: 0;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3NhbWkvV0VCL2NsdWJpc3RpL2Zyb250L3NyYy9hcHAvY29tcG9uZW50cy9mYi1hdXRoL2ZiLWF1dGguY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbXBvbmVudHMvZmItYXV0aC9mYi1hdXRoLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFTLCtEQUFBO0FBU1Q7RUFDRSxrQkFBQTtFQUNBLFdBQUE7RUFDQSxhQUFBO0VBQ0EsdUJBQUE7QUNQRjtBRFVBO0VBQ0Usa0JBQUE7RUFDQSxRQUFBO0VBQ0EsU0FBQTtFQUNBLHdDQUFBO1VBQUEsZ0NBQUE7QUNQRjtBRFVBO0VBQ0UsY0FBQTtFQUNBLHFCQUFBO0VBQ0EsZ0JBQUE7QUNQRjtBRFVBO0VBQ0Usa0JBQUE7RUFDQSxxQkFBQTtFQUNBLFlBQUE7RUFDQSxXQTlCTTtBQ3VCUjtBRFFBO0VBQ0csa0JBQUE7RUFDQSxXQUFBO0VBQ0EsY0FBQTtFQUNBLE1BQUE7RUFDQSxXQXBDSztFQXFDTCxZQXBDTTtFQXFDTixrQkFBQTtFQUNBLHlCQUFBO0VBQ0EsNkJBQUE7VUFBQSxxQkFBQTtFQUNBLHVEQUFBO1VBQUEsK0NBQUE7QUNOSDtBRFVBO0VBQ0U7SUFDRSxTQTNDWTtJQTRDWixXQUFBO0lBQ0Esa0NBQUE7SUFDQSw0QkFBQTtZQUFBLG9CQUFBO0VDUEY7RURTQTtJQUNFLFlBcERLO0lBcURMLGtCQUFBO0lBQ0EsNEJBQUE7WUFBQSxvQkFBQTtFQ1BGO0VEU0E7SUFDRSxNQUFBO0VDUEY7QUFDRjtBRFBBO0VBQ0U7SUFDRSxTQTNDWTtJQTRDWixXQUFBO0lBQ0Esa0NBQUE7SUFDQSw0QkFBQTtZQUFBLG9CQUFBO0VDUEY7RURTQTtJQUNFLFlBcERLO0lBcURMLGtCQUFBO0lBQ0EsNEJBQUE7WUFBQSxvQkFBQTtFQ1BGO0VEU0E7SUFDRSxNQUFBO0VDUEY7QUFDRiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvZmItYXV0aC9mYi1hdXRoLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAgdXJsKGh0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzP2ZhbWlseT1Nb250c2VycmF0KTtcblxuXG4kd2lkdGg6IDE1cHg7XG4kaGVpZ2h0OiAxNXB4O1xuXG5cbiRib3VuY2VfaGVpZ2h0OiAzMHB4O1xuXG5ib2R5IHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgZm9udC1mYW1pbHk6IE1vbnRzZXJyYXQ7XG59XG5cbi53cmFwIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDUwJTtcbiAgbGVmdDogNTAlO1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbn1cblxuLnRleHQge1xuICBjb2xvcjogI2ZiYWUxNztcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBtYXJnaW4tbGVmdDogNXB4O1xufVxuXG4uYm91bmNlYmFsbCB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBoZWlnaHQ6IDM3cHg7XG4gIHdpZHRoOiAkd2lkdGg7XG4mOmJlZm9yZSB7XG4gICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICBjb250ZW50OiAnJztcbiAgIGRpc3BsYXk6IGJsb2NrO1xuICAgdG9wOiAwO1xuICAgd2lkdGg6ICR3aWR0aDtcbiAgIGhlaWdodDogJGhlaWdodDtcbiAgIGJvcmRlci1yYWRpdXM6IDUwJTtcbiAgIGJhY2tncm91bmQtY29sb3I6ICNmYmFlMTc7XG4gICB0cmFuc2Zvcm0tb3JpZ2luOiA1MCU7XG4gICBhbmltYXRpb246IGJvdW5jZSA1MDBtcyBhbHRlcm5hdGUgaW5maW5pdGUgZWFzZTtcbiB9XG59XG5cbkBrZXlmcmFtZXMgYm91bmNlIHtcbiAgMCUge1xuICAgIHRvcDogJGJvdW5jZV9oZWlnaHQ7XG4gICAgaGVpZ2h0OiA1cHg7XG4gICAgYm9yZGVyLXJhZGl1czogNjBweCA2MHB4IDIwcHggMjBweDtcbiAgICB0cmFuc2Zvcm06IHNjYWxlWCgyKTtcbiAgfVxuICAzNSUge1xuICAgIGhlaWdodDogJGhlaWdodDtcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XG4gICAgdHJhbnNmb3JtOiBzY2FsZVgoMSk7XG4gIH1cbiAgMTAwJSB7XG4gICAgdG9wOiAwO1xuICB9XG59XG4iLCJAaW1wb3J0IHVybChodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2Nzcz9mYW1pbHk9TW9udHNlcnJhdCk7XG5ib2R5IHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgZm9udC1mYW1pbHk6IE1vbnRzZXJyYXQ7XG59XG5cbi53cmFwIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDUwJTtcbiAgbGVmdDogNTAlO1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbn1cblxuLnRleHQge1xuICBjb2xvcjogI2ZiYWUxNztcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBtYXJnaW4tbGVmdDogNXB4O1xufVxuXG4uYm91bmNlYmFsbCB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBoZWlnaHQ6IDM3cHg7XG4gIHdpZHRoOiAxNXB4O1xufVxuLmJvdW5jZWJhbGw6YmVmb3JlIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBjb250ZW50OiBcIlwiO1xuICBkaXNwbGF5OiBibG9jaztcbiAgdG9wOiAwO1xuICB3aWR0aDogMTVweDtcbiAgaGVpZ2h0OiAxNXB4O1xuICBib3JkZXItcmFkaXVzOiA1MCU7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmYmFlMTc7XG4gIHRyYW5zZm9ybS1vcmlnaW46IDUwJTtcbiAgYW5pbWF0aW9uOiBib3VuY2UgNTAwbXMgYWx0ZXJuYXRlIGluZmluaXRlIGVhc2U7XG59XG5cbkBrZXlmcmFtZXMgYm91bmNlIHtcbiAgMCUge1xuICAgIHRvcDogMzBweDtcbiAgICBoZWlnaHQ6IDVweDtcbiAgICBib3JkZXItcmFkaXVzOiA2MHB4IDYwcHggMjBweCAyMHB4O1xuICAgIHRyYW5zZm9ybTogc2NhbGVYKDIpO1xuICB9XG4gIDM1JSB7XG4gICAgaGVpZ2h0OiAxNXB4O1xuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHNjYWxlWCgxKTtcbiAgfVxuICAxMDAlIHtcbiAgICB0b3A6IDA7XG4gIH1cbn0iXX0= */";
+    /***/
+  },
+
+  /***/
+  "./src/app/components/fb-auth/fb-auth.component.ts":
+  /*!*********************************************************!*\
+    !*** ./src/app/components/fb-auth/fb-auth.component.ts ***!
+    \*********************************************************/
+
+  /*! exports provided: FbAuthComponent */
+
+  /***/
+  function srcAppComponentsFbAuthFbAuthComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "FbAuthComponent", function () {
+      return FbAuthComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    /* harmony import */
+
+
+    var _services_authentication_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ../../_services/authentication.service */
+    "./src/app/_services/authentication.service.ts");
+
+    var FbAuthComponent =
+    /*#__PURE__*/
+    function () {
+      function FbAuthComponent(activatedRoute, router, http, authenticationService) {
+        _classCallCheck(this, FbAuthComponent);
+
+        this.activatedRoute = activatedRoute;
+        this.router = router;
+        this.http = http;
+        this.authenticationService = authenticationService;
+      }
+
+      _createClass(FbAuthComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          var _this3 = this;
+
+          var id = null;
+          this.activatedRoute.queryParams.subscribe(function (params) {
+            id = params.param;
+            console.log("hello" + id);
+          });
+          this.authenticationService.facebookLogin(id).subscribe(function (result) {
+            console.log('facebook login ...');
+
+            _this3.authenticationService.savingUser(result);
+
+            console.log(_this3.authenticationService.getCurrentUser());
+
+            _this3.router.navigate(['/dashboard']);
+          });
+        }
+      }]);
+
+      return FbAuthComponent;
+    }();
+
+    FbAuthComponent.ctorParameters = function () {
+      return [{
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]
+      }, {
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]
+      }, {
+        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]
+      }, {
+        type: _services_authentication_service__WEBPACK_IMPORTED_MODULE_4__["AuthenticationService"]
+      }];
+    };
+
+    FbAuthComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-fb-auth',
+      template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+      /*! raw-loader!./fb-auth.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/components/fb-auth/fb-auth.component.html")).default,
+      styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+      /*! ./fb-auth.component.scss */
+      "./src/app/components/fb-auth/fb-auth.component.scss")).default]
+    })], FbAuthComponent);
     /***/
   },
 
@@ -2759,6 +3015,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           });
           console.log(this.authenticationService.isLogged());
           this.connected = this.authenticationService.isLogged();
+          this.currentUser = this.authenticationService.getCurrentUser();
         }
       }, {
         key: "getTitle",
@@ -2785,7 +3042,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "logout",
         value: function logout() {
-          var _this2 = this;
+          var _this4 = this;
 
           this.authenticationService.logout().subscribe(function (res) {
             // @ts-ignore
@@ -2793,7 +3050,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
             localStorage.removeItem('token');
 
-            _this2.router.navigate(['/history']);
+            _this4.router.navigate(['/dashboard']);
           });
         }
       }]);
@@ -2929,13 +3186,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(SidebarComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this3 = this;
+          var _this5 = this;
 
           this.menuItems = ROUTES.filter(function (menuItem) {
             return menuItem;
           });
           this.router.events.subscribe(function (event) {
-            _this3.isCollapsed = true;
+            _this5.isCollapsed = true;
           });
         }
       }]);
@@ -3312,14 +3569,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(AuthLayoutComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this4 = this;
+          var _this6 = this;
 
           var html = document.getElementsByTagName("html")[0];
           html.classList.add("auth-layout");
           var body = document.getElementsByTagName("body")[0];
           body.classList.add("bg-default");
           this.router.events.subscribe(function (event) {
-            _this4.isCollapsed = true;
+            _this6.isCollapsed = true;
           });
         }
       }, {
@@ -3513,16 +3770,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _globals_global_variables__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! ../../../../_globals/global-variables */
     "./src/app/_globals/global-variables.ts");
+    /* harmony import */
+
+
+    var _services_categories_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! ../../../../_services/categories.service */
+    "./src/app/_services/categories.service.ts");
 
     var CreateCategoryComponent =
     /*#__PURE__*/
     function () {
-      function CreateCategoryComponent(formBuilder, crudService, router) {
+      function CreateCategoryComponent(formBuilder, crudService, router, categoryService) {
         _classCallCheck(this, CreateCategoryComponent);
 
         this.formBuilder = formBuilder;
         this.crudService = crudService;
         this.router = router;
+        this.categoryService = categoryService;
         this.keys = Object.keys;
         this.categories = _models_enum_CategoryType__WEBPACK_IMPORTED_MODULE_5__["CategoryType"];
       }
@@ -3538,9 +3802,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "onSubmit",
         value: function onSubmit() {
+          var _this7 = this;
+
           console.log(this.createCategory.value);
           this.crudService.post(_globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["CATEGORY"], this.createCategory.value).subscribe(function (response) {
-            console.log(response); // this.router.navigate(['/list-story']);
+            console.log(response);
+
+            _this7.categoryService.getCategoriesAPI();
+
+            _this7.router.navigate(['/admin/variable']);
           }, function (error) {
             return console.log(error);
           });
@@ -3557,6 +3827,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         type: _services_crud_service__WEBPACK_IMPORTED_MODULE_3__["CrudService"]
       }, {
         type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]
+      }, {
+        type: _services_categories_service__WEBPACK_IMPORTED_MODULE_7__["CategoriesService"]
       }];
     };
 
@@ -3647,16 +3919,23 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ../../../../_globals/global-variables */
     "./src/app/_globals/global-variables.ts");
+    /* harmony import */
+
+
+    var _services_categories_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! ../../../../_services/categories.service */
+    "./src/app/_services/categories.service.ts");
 
     var ListCategoryComponent =
     /*#__PURE__*/
     function () {
-      function ListCategoryComponent(crudService, router, route) {
+      function ListCategoryComponent(crudService, router, route, categoryService) {
         _classCallCheck(this, ListCategoryComponent);
 
         this.crudService = crudService;
         this.router = router;
         this.route = route;
+        this.categoryService = categoryService;
         this.isVisible = false;
         this.sort = 'createdAt,desc';
       }
@@ -3665,21 +3944,28 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "ngOnInit",
         value: function ngOnInit() {
           this.currentPage = 1;
-          this.sizePage = 1;
+          this.sizePage = 10;
+          this.categoryService.setCurrentPage(1);
+          this.categoryService.setSizePage(3);
           this.getCategories();
         }
       }, {
         key: "getCategories",
         value: function getCategories() {
-          var _this5 = this;
+          var _this8 = this;
 
           var params;
           var selectedPage = this.currentPage;
           params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpParams"]().set('page', selectedPage.toString()).set('perPage', this.sizePage.toString());
           this.crudService.getAllWithParams(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["CATEGORY"], params).subscribe(function (response) {
-            _this5.categories = response;
-            console.log(_this5.categories);
-            _this5.currentPage = _this5.categories.meta.current_page;
+            _this8.categories = response;
+
+            _this8.categoryService.setCategories(_this8.categories);
+
+            console.log(_this8.categories);
+            _this8.currentPage = _this8.categories.meta.current_page;
+
+            _this8.categoryService.setCurrentPage(_this8.categories.meta.current_page);
           }, function (error) {
             console.log(error);
           });
@@ -3702,6 +3988,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]
       }, {
         type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]
+      }, {
+        type: _services_categories_service__WEBPACK_IMPORTED_MODULE_6__["CategoriesService"]
       }];
     };
 
@@ -3831,15 +4119,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getProjects",
         value: function getProjects() {
-          var _this6 = this;
+          var _this9 = this;
 
           var params;
           var selectedPage = this.currentPage;
           params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpParams"]().set('page', selectedPage.toString()).set('perPage', this.sizePage.toString());
           this.crudService.getAllWithParams(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["CHARITY"], params).subscribe(function (response) {
-            _this6.projects = response;
-            console.log(_this6.projects);
-            _this6.currentPage = _this6.projects.meta.current_page;
+            _this9.projects = response;
+            console.log(_this9.projects);
+            _this9.currentPage = _this9.projects.meta.current_page;
           }, function (error) {
             console.log(error);
           });
@@ -3853,10 +4141,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "pauseProject",
         value: function pauseProject(project) {
-          var _this7 = this;
+          var _this10 = this;
 
           this.crudService.update(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["CHARITY"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["PAUSE"], project.id, {}).subscribe(function (response) {
-            _this7.getProjects();
+            _this10.getProjects();
           }, function (error) {
             console.log(error);
           });
@@ -3864,10 +4152,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "activateProject",
         value: function activateProject(project) {
-          var _this8 = this;
+          var _this11 = this;
 
           this.crudService.update(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["CHARITY"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["ACTIVATE"], project.id, {}).subscribe(function (response) {
-            _this8.getProjects();
+            _this11.getProjects();
           }, function (error) {
             console.log(error);
           });
@@ -3875,10 +4163,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "endProject",
         value: function endProject(project) {
-          var _this9 = this;
+          var _this12 = this;
 
           this.crudService.update(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["CHARITY"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["TERNINATE"], project.id, {}).subscribe(function (response) {
-            _this9.getProjects();
+            _this12.getProjects();
           }, function (error) {
             console.log(error);
           });
@@ -3886,7 +4174,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "showDeleteConfirm",
         value: function showDeleteConfirm(project) {
-          var _this10 = this;
+          var _this13 = this;
 
           this.modalService.confirm({
             nzTitle: 'Are you sure you want to end this project?',
@@ -3894,13 +4182,31 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             nzOkText: 'Yes',
             nzOkType: 'danger',
             nzOnOk: function nzOnOk() {
-              return _this10.endProject(project);
+              return _this13.endProject(project);
             },
             nzCancelText: 'No',
             nzOnCancel: function nzOnCancel() {
               return console.log('Cancel');
             }
           });
+        }
+      }, {
+        key: "deleteProject",
+        value: function deleteProject(id) {
+          var _this14 = this;
+
+          this.crudService.delete(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["CHARITY"], id).subscribe(function (response) {
+            console.log(response);
+
+            _this14.getProjects();
+          }, function (error) {
+            console.log(error);
+          });
+        }
+      }, {
+        key: "updateProject",
+        value: function updateProject(id) {
+          this.router.navigate(['admin/charity/update/', id]);
         }
       }]);
 
@@ -4006,6 +4312,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ../../../../_globals/global-variables */
     "./src/app/_globals/global-variables.ts");
+    /* harmony import */
+
+
+    var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! @angular/common */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
 
     var CharityCreateComponent =
     /*#__PURE__*/
@@ -4021,6 +4333,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.date = null;
         this.dateFormat = 'yyyy/MM/dd';
         this.keys = Object.keys;
+        this.pipe = new _angular_common__WEBPACK_IMPORTED_MODULE_6__["DatePipe"]('en-US');
       }
 
       _createClass(CharityCreateComponent, [{
@@ -4033,17 +4346,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             amount: 0,
             minDonationAmount: 0,
             maxDonationAmount: 0,
-            categoriesIds: 0
+            categoriesIds: 1,
+            date: []
           });
         }
       }, {
         key: "getCategories",
         value: function getCategories() {
-          var _this11 = this;
+          var _this15 = this;
 
           this.crudService.getAll(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["CATEGORY"]).subscribe(function (response) {
-            _this11.categories = response.data;
-            console.log(_this11.categories);
+            _this15.categories = response.data;
+            console.log(_this15.categories);
           }, function (error) {
             console.log(error);
           });
@@ -4051,14 +4365,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "onSubmit",
         value: function onSubmit() {
-          var _this12 = this;
+          var _this16 = this;
 
           this.createCharity.value.categoriesIds = [this.createCharity.value.categoriesIds];
+          this.createCharity.value.startDate = this.pipe.transform(this.createCharity.value.date[0], ' yyyy-M-d hh:mm:ss');
+          this.createCharity.value.endDate = this.pipe.transform(this.createCharity.value.date[1], 'yyyy-M-d hh:mm:ss');
           console.log(this.createCharity.value);
           this.crudService.post(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["CHARITY"], this.createCharity.value).subscribe(function (response) {
             console.log(response);
 
-            _this12.router.navigate(['/admin/charity']);
+            _this16.router.navigate(['/admin/charity']);
           }, function (error) {
             return console.log(error);
           });
@@ -4087,6 +4403,242 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       /*! ./charity-create.component.css */
       "./src/app/pages/admin/charity/charity-create/charity-create.component.css")).default]
     })], CharityCreateComponent);
+    /***/
+  },
+
+  /***/
+  "./src/app/pages/admin/charity/charity-update/charity-update.component.css":
+  /*!*********************************************************************************!*\
+    !*** ./src/app/pages/admin/charity/charity-update/charity-update.component.css ***!
+    \*********************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppPagesAdminCharityCharityUpdateCharityUpdateComponentCss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2FkbWluL2NoYXJpdHkvY2hhcml0eS11cGRhdGUvY2hhcml0eS11cGRhdGUuY29tcG9uZW50LmNzcyJ9 */";
+    /***/
+  },
+
+  /***/
+  "./src/app/pages/admin/charity/charity-update/charity-update.component.ts":
+  /*!********************************************************************************!*\
+    !*** ./src/app/pages/admin/charity/charity-update/charity-update.component.ts ***!
+    \********************************************************************************/
+
+  /*! exports provided: CharityUpdateComponent */
+
+  /***/
+  function srcAppPagesAdminCharityCharityUpdateCharityUpdateComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "CharityUpdateComponent", function () {
+      return CharityUpdateComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/forms */
+    "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+    /* harmony import */
+
+
+    var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/common */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+    /* harmony import */
+
+
+    var _services_crud_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ../../../../_services/crud.service */
+    "./src/app/_services/crud.service.ts");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    /* harmony import */
+
+
+    var _globals_global_variables__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! ../../../../_globals/global-variables */
+    "./src/app/_globals/global-variables.ts");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+
+    var CharityUpdateComponent =
+    /*#__PURE__*/
+    function () {
+      function CharityUpdateComponent(formBuilder, crudService, router, route, http) {
+        _classCallCheck(this, CharityUpdateComponent);
+
+        this.formBuilder = formBuilder;
+        this.crudService = crudService;
+        this.router = router;
+        this.route = route;
+        this.http = http;
+        this.date = null;
+        this.dateFormat = 'yyyy/MM/dd';
+        this.keys = Object.keys;
+        this.pipe = new _angular_common__WEBPACK_IMPORTED_MODULE_3__["DatePipe"]('en-US');
+        this.getProject();
+      }
+
+      _createClass(CharityUpdateComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          console.log(this.project);
+          this.getProject();
+          this.getCategories();
+          this.createCharity = this.formBuilder.group({
+            name: '',
+            shortDescription: '',
+            amount: 0,
+            minDonationAmount: 0,
+            maxDonationAmount: 0,
+            categoriesIds: 0,
+            startDate: '',
+            endDate: '',
+            date: []
+          });
+        }
+      }, {
+        key: "initForm",
+        value: function initForm() {
+          this.createCharity = this.formBuilder.group({
+            name: this.project.name,
+            shortDescription: this.project.shortDescription,
+            amount: this.project.amount,
+            minDonationAmount: this.project.minDonationAmount,
+            maxDonationAmount: this.project.maxDonationAmount,
+            categoriesIds: this.project.categories[0].id,
+            startDate: this.project.startDate,
+            endDate: this.project.endDate,
+            date: []
+          });
+        }
+      }, {
+        key: "getProject",
+        value: function getProject() {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0,
+          /*#__PURE__*/
+          regeneratorRuntime.mark(function _callee() {
+            var _this17 = this;
+
+            var data;
+            return regeneratorRuntime.wrap(function _callee$(_context) {
+              while (1) {
+                switch (_context.prev = _context.next) {
+                  case 0:
+                    this.route.params.subscribe(function (params) {
+                      _this17.id = +params['id'];
+                      console.log(_this17.id);
+                    });
+                    _context.next = 3;
+                    return this.http.get(_globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["CHARITY"] + '/' + this.id).toPromise();
+
+                  case 3:
+                    data = _context.sent;
+                    this.project = data.data;
+                    this.initForm();
+
+                  case 6:
+                  case "end":
+                    return _context.stop();
+                }
+              }
+            }, _callee, this);
+          }));
+        }
+      }, {
+        key: "getCategories",
+        value: function getCategories() {
+          var _this18 = this;
+
+          this.crudService.getAll(_globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["CATEGORY"]).subscribe(function (response) {
+            _this18.categories = response.data;
+            console.log(_this18.categories);
+          }, function (error) {
+            console.log(error);
+          });
+        }
+      }, {
+        key: "onSubmit",
+        value: function onSubmit() {
+          var _this19 = this;
+
+          this.createCharity.value.categoriesIds = [this.createCharity.value.categoriesIds];
+
+          if (this.createCharity.value.date) {
+            this.createCharity.value.startDate = this.pipe.transform(this.createCharity.value.date[0], ' yyyy-M-d hh:mm:ss');
+            this.createCharity.value.endDate = this.pipe.transform(this.createCharity.value.date[1], 'yyyy-M-d hh:mm:ss');
+          }
+
+          console.log(this.createCharity.value);
+          this.crudService.update(_globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["CHARITY"], this.id, this.createCharity.value).subscribe(function (response) {
+            console.log(response);
+
+            _this19.router.navigate(['/admin/charity']);
+          }, function (error) {
+            return console.log(error);
+          });
+        }
+      }]);
+
+      return CharityUpdateComponent;
+    }();
+
+    CharityUpdateComponent.ctorParameters = function () {
+      return [{
+        type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]
+      }, {
+        type: _services_crud_service__WEBPACK_IMPORTED_MODULE_4__["CrudService"]
+      }, {
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"]
+      }, {
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"]
+      }, {
+        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClient"]
+      }];
+    };
+
+    CharityUpdateComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-charity-update',
+      template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+      /*! raw-loader!./charity-update.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/admin/charity/charity-update/charity-update.component.html")).default,
+      styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+      /*! ./charity-update.component.css */
+      "./src/app/pages/admin/charity/charity-update/charity-update.component.css")).default]
+    })], CharityUpdateComponent);
     /***/
   },
 
@@ -4162,17 +4714,24 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _models_Project__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-    /*! ../../_models/Project */
-    "./src/app/_models/Project.ts"); // core components
+    var _globals_global_variables__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ../../_globals/global-variables */
+    "./src/app/_globals/global-variables.ts");
+    /* harmony import */
+
+
+    var _services_crud_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! ../../_services/crud.service */
+    "./src/app/_services/crud.service.ts"); // core components
 
 
     var DashboardComponent =
     /*#__PURE__*/
     function () {
-      function DashboardComponent() {
+      function DashboardComponent(crudService) {
         _classCallCheck(this, DashboardComponent);
 
+        this.crudService = crudService;
         this.clicked = true;
         this.clicked1 = false;
         this.projects = [];
@@ -4181,12 +4740,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(DashboardComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          this.projects[0] = new _models_Project__WEBPACK_IMPORTED_MODULE_4__["Project"](1, 'Project 1', 'description project 1 bla bla bla bla', 20, 100);
-          this.projects[1] = new _models_Project__WEBPACK_IMPORTED_MODULE_4__["Project"](2, 'Project 2', 'description project 2 bla bla bla bla', 30, 200);
-          this.projects[2] = new _models_Project__WEBPACK_IMPORTED_MODULE_4__["Project"](3, 'Project 3', 'description project 3 bla bla bla bla', 30, 200);
-          this.projects[3] = new _models_Project__WEBPACK_IMPORTED_MODULE_4__["Project"](4, 'Project 4', 'description project 4 bla bla bla bla', 30, 200);
-          this.projects[4] = new _models_Project__WEBPACK_IMPORTED_MODULE_4__["Project"](5, 'Project 5', 'description project 5 bla bla bla bla', 30, 200);
-          console.log(this.projects.length);
+          // this.projects[0]= new Project(1,'Project 1','description project 1 bla bla bla bla',20,100);
+          // this.projects[1]= new Project(2,'Project 2','description project 2 bla bla bla bla',30,200);
+          // this.projects[2]= new Project(3,'Project 3','description project 3 bla bla bla bla',30,200);
+          // this.projects[3]= new Project(4,'Project 4','description project 4 bla bla bla bla',30,200);
+          // this.projects[4]= new Project(5,'Project 5','description project 5 bla bla bla bla',30,200);
+          // console.log(this.projects.length);
+          this.getProjects();
           this.datasets = [[0, 20, 10, 30, 15, 40, 20, 60, 60], [0, 20, 5, 25, 10, 30, 15, 40, 40]];
           this.data = this.datasets[0];
           var chartOrders = document.getElementById('chart-orders');
@@ -4204,6 +4764,18 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           });
         }
       }, {
+        key: "getProjects",
+        value: function getProjects() {
+          var _this20 = this;
+
+          this.crudService.getAll(_globals_global_variables__WEBPACK_IMPORTED_MODULE_4__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_4__["CHARITY"]).subscribe(function (response) {
+            _this20.projects = response.data;
+            console.log(_this20.projects);
+          }, function (error) {
+            console.log(error);
+          });
+        }
+      }, {
         key: "updateOptions",
         value: function updateOptions() {
           this.salesChart.data.datasets[0].data = this.data;
@@ -4213,6 +4785,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
       return DashboardComponent;
     }();
+
+    DashboardComponent.ctorParameters = function () {
+      return [{
+        type: _services_crud_service__WEBPACK_IMPORTED_MODULE_5__["CrudService"]
+      }];
+    };
 
     DashboardComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
       selector: 'app-dashboard',
@@ -4792,7 +5370,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
     var environment = {
-      production: false
+      production: false,
+      // apiUrl: 'http://back.clubisti.net/api'
+      apiUrl: 'http://localhost:8000/api'
     };
     /*
      * For easier debugging in development mode, you can import the following file
@@ -4828,25 +5408,37 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    var hammerjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! hammerjs */
+    "./node_modules/hammerjs/hammer.js");
+    /* harmony import */
+
+
+    var hammerjs__WEBPACK_IMPORTED_MODULE_1___default =
+    /*#__PURE__*/
+    __webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_1__);
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
     /* harmony import */
 
 
-    var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
     /*! @angular/platform-browser-dynamic */
     "./node_modules/@angular/platform-browser-dynamic/__ivy_ngcc__/fesm2015/platform-browser-dynamic.js");
     /* harmony import */
 
 
-    var _app_app_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    var _app_app_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ./app/app.module */
     "./src/app/app.module.ts");
     /* harmony import */
 
 
-    var _environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    var _environments_environment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ./environments/environment */
     "./src/environments/environment.ts");
     /*!
@@ -4868,11 +5460,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     */
 
 
-    if (_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].production) {
-      Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["enableProdMode"])();
+    if (_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].production) {
+      Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["enableProdMode"])();
     }
 
-    Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_3__["AppModule"]).catch(function (err) {
+    Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_3__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_4__["AppModule"]).catch(function (err) {
       return console.error(err);
     });
     /***/

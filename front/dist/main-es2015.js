@@ -308,7 +308,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-vertical navbar-expand-md navbar-light bg-white\" id=\"sidenav-main\">\n  <div class=\"container-fluid\">\n    <!-- Toggler -->\n    <button class=\"navbar-toggler\" type=\"button\" (click)=\"isCollapsed=!isCollapsed\"\n            aria-controls=\"sidenav-collapse-main\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <!-- Brand -->\n    <a class=\"navbar-brand pt-0\" routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n      <img src=\"./assets/img/brand/red.png\" class=\"navbar-brand-img\" alt=\"...\">\n    </a>\n    <!-- User -->\n    <ul class=\"nav align-items-center d-md-none\">\n      <li class=\"nav-item\" ngbDropdown placement=\"bottom-right\">\n        <a class=\"nav-link nav-link-icon\" role=\"button\" ngbDropdownToggle>\n          <i class=\"ni ni-bell-55\"></i>\n        </a>\n        <div class=\"dropdown-menu-arrow dropdown-menu-right\" ngbDropdownMenu>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Action</a>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Another action</a>\n          <div class=\"dropdown-divider\"></div>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Something else here</a>\n        </div>\n      </li>\n      <li class=\"nav-item\" ngbDropdown placement=\"bottom-right\">\n        <a class=\"nav-link\" role=\"button\" ngbDropdownToggle>\n          <div class=\"media align-items-center\">\n            <span class=\"avatar avatar-sm rounded-circle\">\n              <img alt=\"Image placeholder\" src=\"./assets/img/theme/team-1-800x800.jpg\">\n            </span>\n          </div>\n        </a>\n        <div class=\"dropdown-menu-arrow dropdown-menu-right\" ngbDropdownMenu>\n          <div class=\" dropdown-header noti-title\">\n            <h6 class=\"text-overflow m-0\">Welcome!</h6>\n          </div>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>My profile</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-settings-gear-65\"></i>\n            <span>Settings</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-calendar-grid-58\"></i>\n            <span>Activity</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-support-16\"></i>\n            <span>Support</span>\n          </a>\n          <div class=\"dropdown-divider\"></div>\n          <a href=\"#!\" class=\"dropdown-item\">\n            <i class=\"ni ni-user-run\"></i>\n            <span>Logout</span>\n          </a>\n        </div>\n      </li>\n    </ul>\n    <!-- Collapse -->\n    <div class=\"collapse navbar-collapse\"  [ngbCollapse]=\"isCollapsed\" id=\"sidenav-collapse-main\">\n      <!-- Collapse header -->\n      <div class=\"navbar-collapse-header d-md-none\">\n        <div class=\"row\">\n          <div class=\"col-6 collapse-brand\">\n            <a  routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n              <img src=\"./assets/img/brand/blue.png\">\n            </a>\n          </div>\n          <div class=\"col-6 collapse-close\">\n            <button type=\"button\" class=\"navbar-toggler\" (click)=\"isCollapsed=!isCollapsed\">\n              <span></span>\n              <span></span>\n            </button>\n          </div>\n        </div>\n      </div>\n      <!-- Form -->\n      <form class=\"mt-4 mb-3 d-md-none\">\n        <div class=\"input-group input-group-rounded input-group-merge\">\n          <input type=\"search\" class=\"form-control form-control-rounded form-control-prepended\" placeholder=\"Search\" aria-label=\"Search\">\n          <div class=\"input-group-prepend\">\n            <div class=\"input-group-text\">\n              <span class=\"fa fa-search\"></span>\n            </div>\n          </div>\n        </div>\n      </form>\n      <!-- Navigation -->\n      <ul class=\"navbar-nav\">\n        <li *ngFor=\"let menuItem of menuItems\" class=\"{{menuItem.class}} nav-item\">\n          <a routerLinkActive=\"active\" [routerLink]=\"[menuItem.path]\" class=\"nav-link\">\n            <i class=\"ni {{menuItem.icon}}\"></i>\n            {{menuItem.title}}\n          </a>\n        </li>\n      </ul>\n      <!-- Divider -->\n      <hr class=\"my-3\">\n      <!-- Heading -->\n      <h6 class=\"navbar-heading text-muted\">Documentation</h6>\n      <!-- Navigation -->\n      <ul class=\"navbar-nav mb-md-3\">\n        <li class=\"nav-item\">\n          <a routerLinkActive=\"active\" [routerLink]=\"['/auth/login']\" class=\"nav-link\">\n            <i class=\"ni ni-calendar-grid-58\"></i>\n            Login\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a routerLinkActive=\"active\" [routerLink]=\"['/auth/register']\" class=\"nav-link\">\n            <i class=\"ni ni-calendar-grid-58\"></i>\n            Register\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" href=\"https://demos.creative-tim.com/argon-dashboard-angular/documentation/tutorial\">\n            <i class=\"ni ni-spaceship\"></i> Getting started\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" href=\"https://demos.creative-tim.com/argon-dashboard-angular/documentation/colors\">\n            <i class=\"ni ni-palette\"></i> Foundation\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" href=\"https://demos.creative-tim.com/argon-dashboard-angular/documentation/alerts\">\n            <i class=\"ni ni-ui-04\"></i> Components\n          </a>\n        </li>\n      </ul>\n    </div>\n  </div>\n</nav>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-vertical navbar-expand-md navbar-light bg-white\" id=\"sidenav-main\">\n  <div class=\"container-fluid\">\n    <!-- Toggler -->\n    <button class=\"navbar-toggler\" type=\"button\" (click)=\"isCollapsed=!isCollapsed\"\n            aria-controls=\"sidenav-collapse-main\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <!-- Brand -->\n    <a class=\"navbar-brand pt-0\" routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n      <img src=\"./assets/img/brand/red.png\" class=\"navbar-brand-img\" alt=\"...\">\n    </a>\n    <!-- User -->\n    <ul class=\"nav align-items-center d-md-none\">\n      <li class=\"nav-item\" ngbDropdown placement=\"bottom-right\">\n        <a class=\"nav-link nav-link-icon\" role=\"button\" ngbDropdownToggle>\n          <i class=\"ni ni-bell-55\"></i>\n        </a>\n        <div class=\"dropdown-menu-arrow dropdown-menu-right\" ngbDropdownMenu>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Action</a>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Another action</a>\n          <div class=\"dropdown-divider\"></div>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Something else here</a>\n        </div>\n      </li>\n      <li class=\"nav-item\" ngbDropdown placement=\"bottom-right\">\n        <a class=\"nav-link\" role=\"button\" ngbDropdownToggle>\n          <div class=\"media align-items-center\">\n            <span class=\"avatar avatar-sm rounded-circle\">\n              <img alt=\"Image placeholder\" src=\"./assets/img/theme/team-1-800x800.jpg\">\n            </span>\n          </div>\n        </a>\n        <div class=\"dropdown-menu-arrow dropdown-menu-right\" ngbDropdownMenu>\n          <div class=\" dropdown-header noti-title\">\n            <h6 class=\"text-overflow m-0\">Welcome!</h6>\n          </div>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>My profile</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-settings-gear-65\"></i>\n            <span>Settings</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-calendar-grid-58\"></i>\n            <span>Activity</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-support-16\"></i>\n            <span>Support</span>\n          </a>\n          <div class=\"dropdown-divider\"></div>\n          <a href=\"#!\" class=\"dropdown-item\">\n            <i class=\"ni ni-user-run\"></i>\n            <span>Logout</span>\n          </a>\n        </div>\n      </li>\n    </ul>\n    <!-- Collapse -->\n    <div class=\"collapse navbar-collapse\"  [ngbCollapse]=\"isCollapsed\" id=\"sidenav-collapse-main\">\n      <!-- Collapse header -->\n      <div class=\"navbar-collapse-header d-md-none\">\n        <div class=\"row\">\n          <div class=\"col-6 collapse-brand\">\n            <a  routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n              <img src=\"./assets/img/brand/blue.png\">\n            </a>\n          </div>\n          <div class=\"col-6 collapse-close\">\n            <button type=\"button\" class=\"navbar-toggler\" (click)=\"isCollapsed=!isCollapsed\">\n              <span></span>\n              <span></span>\n            </button>\n          </div>\n        </div>\n      </div>\n      <!-- Form -->\n      <form class=\"mt-4 mb-3 d-md-none\">\n        <div class=\"input-group input-group-rounded input-group-merge\">\n          <input type=\"search\" class=\"form-control form-control-rounded form-control-prepended\" placeholder=\"Search\" aria-label=\"Search\">\n          <div class=\"input-group-prepend\">\n            <div class=\"input-group-text\">\n              <span class=\"fa fa-search\"></span>\n            </div>\n          </div>\n        </div>\n      </form>\n      <!-- Navigation -->\n      <ul class=\"navbar-nav\">\n        <li *ngFor=\"let menuItem of menuItems\" class=\"{{menuItem.class}} nav-item\">\n          <a routerLinkActive=\"active\" [routerLink]=\"[menuItem.path]\" class=\"nav-link\">\n            <i class=\"ni {{menuItem.icon}}\"></i>\n            {{menuItem.title}}\n          </a>\n        </li>\n      </ul>\n<!--      &lt;!&ndash; Divider &ndash;&gt;-->\n<!--      <hr class=\"my-3\">-->\n<!--      &lt;!&ndash; Heading &ndash;&gt;-->\n<!--      <h6 class=\"navbar-heading text-muted\">Documentation</h6>-->\n<!--      &lt;!&ndash; Navigation &ndash;&gt;-->\n<!--      <ul class=\"navbar-nav mb-md-3\">-->\n<!--        <li class=\"nav-item\">-->\n<!--          <a routerLinkActive=\"active\" [routerLink]=\"['/auth/login']\" class=\"nav-link\">-->\n<!--            <i class=\"ni ni-calendar-grid-58\"></i>-->\n<!--            Login-->\n<!--          </a>-->\n<!--        </li>-->\n<!--        <li class=\"nav-item\">-->\n<!--          <a routerLinkActive=\"active\" [routerLink]=\"['/auth/register']\" class=\"nav-link\">-->\n<!--            <i class=\"ni ni-calendar-grid-58\"></i>-->\n<!--            Register-->\n<!--          </a>-->\n<!--        </li>-->\n<!--        <li class=\"nav-item\">-->\n<!--          <a class=\"nav-link\" href=\"https://demos.creative-tim.com/argon-dashboard-angular/documentation/tutorial\">-->\n<!--            <i class=\"ni ni-spaceship\"></i> Getting started-->\n<!--          </a>-->\n<!--        </li>-->\n<!--        <li class=\"nav-item\">-->\n<!--          <a class=\"nav-link\" href=\"https://demos.creative-tim.com/argon-dashboard-angular/documentation/colors\">-->\n<!--            <i class=\"ni ni-palette\"></i> Foundation-->\n<!--          </a>-->\n<!--        </li>-->\n<!--        <li class=\"nav-item\">-->\n<!--          <a class=\"nav-link\" href=\"https://demos.creative-tim.com/argon-dashboard-angular/documentation/alerts\">-->\n<!--            <i class=\"ni ni-ui-04\"></i> Components-->\n<!--          </a>-->\n<!--        </li>-->\n<!--      </ul>-->\n    </div>\n  </div>\n</nav>\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/fb-auth/fb-auth.component.html":
+/*!*************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/components/fb-auth/fb-auth.component.html ***!
+  \*************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"wrap\">\n  <div class=\"loading\">\n    <div class=\"bounceball\"></div>\n    <div class=\"text\">NOW LOADING</div>\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -321,7 +334,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<footer class=\"footer\">\n  <div class=\"row align-items-center justify-content-xl-between\">\n    <div class=\"col-xl-6\">\n      <div class=\"copyright text-center text-xl-left text-muted\">\n        &copy; {{ test | date: \"yyyy\" }} <a href=\"https://www.creative-tim.com?ref=ada-footer-admin-layout\" class=\"font-weight-bold ml-1\" target=\"_blank\">Creative Tim</a>\n      </div>\n    </div>\n    <div class=\"col-xl-6\">\n      <ul class=\"nav nav-footer justify-content-center justify-content-xl-end\">\n        <li class=\"nav-item\">\n          <a href=\"https://www.creative-tim.com?ref=ada-footer-admin-layout\" class=\"nav-link\" target=\"_blank\">Creative Tim</a>\n        </li>\n        <li class=\"nav-item\">\n          <a href=\"https://www.creative-tim.com/presentation?ref=ada-footer-admin-layout\" class=\"nav-link\" target=\"_blank\">About Us</a>\n        </li>\n        <li class=\"nav-item\">\n          <a href=\"http://blog.creative-tim.com?ref=ada-footer-admin-layout\" class=\"nav-link\" target=\"_blank\">Blog</a>\n        </li>\n        <li class=\"nav-item\">\n          <a href=\"https://github.com/creativetimofficial/argon-dashboard-angular/blob/master/LICENSE.md\" class=\"nav-link\" target=\"_blank\">MIT License</a>\n        </li>\n      </ul>\n    </div>\n  </div>\n</footer>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<footer class=\"footer\">\n  <div class=\"row align-items-center justify-content-xl-between\">\n    <div class=\"col-xl-6\">\n      <div class=\"copyright text-center text-xl-left text-muted\">\n        &copy; {{ test | date: \"yyyy\" }} <a href=\"#\" class=\"font-weight-bold ml-1\" target=\"_blank\">INSAT</a>\n      </div>\n    </div>\n    <div class=\"col-xl-6\">\n<!--      <ul class=\"nav nav-footer justify-content-center justify-content-xl-end\">-->\n<!--        <li class=\"nav-item\">-->\n<!--          <a href=\"https://www.creative-tim.com?ref=ada-footer-admin-layout\" class=\"nav-link\" target=\"_blank\">Creative Tim</a>-->\n<!--        </li>-->\n<!--        <li class=\"nav-item\">-->\n<!--          <a href=\"https://www.creative-tim.com/presentation?ref=ada-footer-admin-layout\" class=\"nav-link\" target=\"_blank\">About Us</a>-->\n<!--        </li>-->\n<!--        <li class=\"nav-item\">-->\n<!--          <a href=\"http://blog.creative-tim.com?ref=ada-footer-admin-layout\" class=\"nav-link\" target=\"_blank\">Blog</a>-->\n<!--        </li>-->\n<!--        <li class=\"nav-item\">-->\n<!--          <a href=\"https://github.com/creativetimofficial/argon-dashboard-angular/blob/master/LICENSE.md\" class=\"nav-link\" target=\"_blank\">MIT License</a>-->\n<!--        </li>-->\n<!--      </ul>-->\n    </div>\n  </div>\n</footer>\n");
 
 /***/ }),
 
@@ -334,7 +347,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-top navbar-expand-md navbar-dark navbar-horizontal\" id=\"navbar-main\">\n  <div class=\"container\">\n    <!-- Brand -->\n    <!--<a class=\"h4 mb-0 text-white text-uppercase d-none d-lg-inline-block\" routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">{{getTitle()}}</a>-->\n    <div class=\"collapse navbar-collapse\">\n      <ul class=\"navbar-nav\">\n        <li class=\"nav-item\">\n          <a class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n            <i class=\"ni ni-planet\"></i>\n            <span class=\"nav-link-inner--text\">Dashboard</span>\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/auth/register']\">\n            <i class=\"ni ni-circle-08\"></i>\n            <span class=\"nav-link-inner--text\">Register</span>\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a *ngIf=\"this.authenticationService.isLogged()\" class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" (click)=\"logout()\">\n            <i class=\"ni ni-user-run\"></i>\n            <span class=\"nav-link-inner--text\">Logout</span>\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a *ngIf=\"!this.authenticationService.isLogged()\" class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/auth/login']\">\n            <i class=\"ni ni-key-25\"></i>\n            <span class=\"nav-link-inner--text\">Login</span>\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a *ngIf=\"this.authenticationService.isLogged()\" class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\">\n            <i class=\"ni ni-single-02\"></i>\n            <span class=\"nav-link-inner--text\">Profile</span>\n          </a>\n        </li>\n      </ul>\n    </div>\n    <!-- Form -->\n    <form class=\"navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto\">\n      <div class=\"form-group mb-0\" [ngClass]=\"{ 'focused': focus === true }\">\n        <div class=\"input-group input-group-alternative\">\n          <div class=\"input-group-prepend\">\n            <span class=\"input-group-text\"><i class=\"fas fa-search\"></i></span>\n          </div>\n          <input class=\"form-control\" placeholder=\"Search\" type=\"text\" (focus)=\"focus = true\"\n          (blur)=\"focus = false\">\n        </div>\n      </div>\n    </form>\n    <!-- User -->\n    <ul class=\"navbar-nav align-items-center d-none d-md-flex\">\n      <li *ngIf=\"this.authenticationService.isLogged()\" class=\"nav-item\" ngbDropdown placement=\"bottom-right\">\n        <a class=\"nav-link pr-0\" role=\"button\" ngbDropdownToggle>\n          <div class=\"media align-items-center\">\n            <span class=\"avatar avatar-sm rounded-circle\">\n              <img alt=\"Image placeholder\" src=\"assets/img/theme/team-4-800x800.jpg\">\n            </span>\n            <div class=\"media-body ml-2 d-none d-lg-block\">\n              <span class=\"mb-0 text-sm  font-weight-bold\">Jessica Jones</span>\n            </div>\n          </div>\n        </a>\n        <div class=\"dropdown-menu-arrow dropdown-menu-right\" ngbDropdownMenu>\n          <div class=\" dropdown-header noti-title\">\n            <h6 class=\"text-overflow m-0\">Welcome!</h6>\n          </div>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/admin/landing']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>Admin</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/history']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>Anonymous</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>Template</span>\n          </a>\n          <a *ngIf=\"connected\" routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>My profile</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-calendar-grid-58\"></i>\n            <span>Activity</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-support-16\"></i>\n            <span>Support</span>\n          </a>\n          <div class=\"dropdown-divider\"></div>\n          <a href=\"#!\" class=\"dropdown-item\">\n            <i class=\"ni ni-user-run\"></i>\n            <span>Logout</span>\n          </a>\n        </div>\n      </li>\n    </ul>\n  </div>\n</nav>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-top navbar-expand-md navbar-dark navbar-horizontal\" id=\"navbar-main\">\n  <div class=\"container\">\n    <!-- Brand -->\n    <!--<a class=\"h4 mb-0 text-white text-uppercase d-none d-lg-inline-block\" routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">{{getTitle()}}</a>-->\n    <div class=\"collapse navbar-collapse\">\n      <ul class=\"navbar-nav\">\n        <li class=\"nav-item\">\n          <a class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n            <i class=\"ni ni-planet\"></i>\n            <span class=\"nav-link-inner--text\">Dashboard</span>\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a *ngIf=\"!this.authenticationService.isLogged()\" class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/auth/register']\">\n            <i class=\"ni ni-circle-08\"></i>\n            <span class=\"nav-link-inner--text\">Register</span>\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a *ngIf=\"this.authenticationService.isLogged()\" class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" (click)=\"logout()\">\n            <i class=\"ni ni-user-run\"></i>\n            <span class=\"nav-link-inner--text\">Logout</span>\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a *ngIf=\"!this.authenticationService.isLogged()\" class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/auth/login']\">\n            <i class=\"ni ni-key-25\"></i>\n            <span class=\"nav-link-inner--text\">Login</span>\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a *ngIf=\"this.authenticationService.isLogged()\" class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\">\n            <i class=\"ni ni-single-02\"></i>\n            <span class=\"nav-link-inner--text\">Profile</span>\n          </a>\n        </li>\n      </ul>\n    </div>\n    <!-- Form -->\n    <form class=\"navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto\">\n      <div class=\"form-group mb-0\" [ngClass]=\"{ 'focused': focus === true }\">\n        <div class=\"input-group input-group-alternative\">\n          <div class=\"input-group-prepend\">\n            <span class=\"input-group-text\"><i class=\"fas fa-search\"></i></span>\n          </div>\n          <input class=\"form-control\" placeholder=\"Search\" type=\"text\" (focus)=\"focus = true\"\n          (blur)=\"focus = false\">\n        </div>\n      </div>\n    </form>\n    <!-- User -->\n    <ul class=\"navbar-nav align-items-center d-none d-md-flex\">\n      <li *ngIf=\"this.authenticationService.isLogged()\" class=\"nav-item\" ngbDropdown placement=\"bottom-right\">\n        <a class=\"nav-link pr-0\" role=\"button\" ngbDropdownToggle>\n          <div class=\"media align-items-center\">\n            <span class=\"avatar avatar-sm rounded-circle\">\n              <img alt=\"Image placeholder\" src=\"assets/img/theme/team-4-800x800.jpg\">\n            </span>\n            <div class=\"media-body ml-2 d-none d-lg-block\">\n              <span class=\"mb-0 text-sm  font-weight-bold\">{{currentUser.username }}</span>\n            </div>\n          </div>\n        </a>\n        <div class=\"dropdown-menu-arrow dropdown-menu-right\" ngbDropdownMenu>\n          <div class=\" dropdown-header noti-title\">\n            <h6 class=\"text-overflow m-0\">Welcome!</h6>\n          </div>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/admin/variable']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>Admin</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/history']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>Anonymous</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>Template</span>\n          </a>\n          <a *ngIf=\"connected\" routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>My profile</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-calendar-grid-58\"></i>\n            <span>Activity</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-support-16\"></i>\n            <span>Support</span>\n          </a>\n          <div class=\"dropdown-divider\"></div>\n          <a href=\"#!\" class=\"dropdown-item\">\n            <i class=\"ni ni-user-run\"></i>\n            <span>Logout</span>\n          </a>\n        </div>\n      </li>\n    </ul>\n  </div>\n</nav>\n");
 
 /***/ }),
 
@@ -347,7 +360,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-vertical navbar-expand-md navbar-light bg-white\" id=\"sidenav-main\">\n  <div class=\"container-fluid\">\n    <!-- Toggler -->\n    <button class=\"navbar-toggler\" type=\"button\" (click)=\"isCollapsed=!isCollapsed\"\n       aria-controls=\"sidenav-collapse-main\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <!-- Brand -->\n    <a class=\"navbar-brand pt-0\" routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n      <img src=\"./assets/img/brand/red.png\" class=\"navbar-brand-img\" alt=\"...\">\n    </a>\n    <!-- User -->\n    <ul class=\"nav align-items-center d-md-none\">\n      <li class=\"nav-item\" ngbDropdown placement=\"bottom-right\">\n        <a class=\"nav-link nav-link-icon\" role=\"button\" ngbDropdownToggle>\n          <i class=\"ni ni-bell-55\"></i>\n        </a>\n        <div class=\"dropdown-menu-arrow dropdown-menu-right\" ngbDropdownMenu>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Action</a>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Another action</a>\n          <div class=\"dropdown-divider\"></div>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Something else here</a>\n        </div>\n      </li>\n      <li class=\"nav-item\" ngbDropdown placement=\"bottom-right\">\n        <a class=\"nav-link\" role=\"button\" ngbDropdownToggle>\n          <div class=\"media align-items-center\">\n            <span class=\"avatar avatar-sm rounded-circle\">\n              <img alt=\"Image placeholder\" src=\"./assets/img/theme/team-1-800x800.jpg\">\n            </span>\n          </div>\n        </a>\n        <div class=\"dropdown-menu-arrow dropdown-menu-right\" ngbDropdownMenu>\n          <div class=\" dropdown-header noti-title\">\n            <h6 class=\"text-overflow m-0\">Welcome!</h6>\n          </div>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>My profile</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-settings-gear-65\"></i>\n            <span>Settings</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-calendar-grid-58\"></i>\n            <span>Activity</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-support-16\"></i>\n            <span>Support</span>\n          </a>\n          <div class=\"dropdown-divider\"></div>\n          <a href=\"#!\" class=\"dropdown-item\">\n            <i class=\"ni ni-user-run\"></i>\n            <span>Logout</span>\n          </a>\n        </div>\n      </li>\n    </ul>\n    <!-- Collapse -->\n    <div class=\"collapse navbar-collapse\"  [ngbCollapse]=\"isCollapsed\" id=\"sidenav-collapse-main\">\n      <!-- Collapse header -->\n      <div class=\"navbar-collapse-header d-md-none\">\n        <div class=\"row\">\n          <div class=\"col-6 collapse-brand\">\n            <a  routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n              <img src=\"./assets/img/brand/blue.png\">\n            </a>\n          </div>\n          <div class=\"col-6 collapse-close\">\n            <button type=\"button\" class=\"navbar-toggler\" (click)=\"isCollapsed=!isCollapsed\">\n              <span></span>\n              <span></span>\n            </button>\n          </div>\n        </div>\n      </div>\n      <!-- Form -->\n      <form class=\"mt-4 mb-3 d-md-none\">\n        <div class=\"input-group input-group-rounded input-group-merge\">\n          <input type=\"search\" class=\"form-control form-control-rounded form-control-prepended\" placeholder=\"Search\" aria-label=\"Search\">\n          <div class=\"input-group-prepend\">\n            <div class=\"input-group-text\">\n              <span class=\"fa fa-search\"></span>\n            </div>\n          </div>\n        </div>\n      </form>\n      <!-- Navigation -->\n      <ul class=\"navbar-nav\">\n          <li *ngFor=\"let menuItem of menuItems\" class=\"{{menuItem.class}} nav-item\">\n              <a routerLinkActive=\"active\" [routerLink]=\"[menuItem.path]\" class=\"nav-link\">\n                  <i class=\"ni {{menuItem.icon}}\"></i>\n                  {{menuItem.title}}\n              </a>\n          </li>\n      </ul>\n      <!-- Divider -->\n      <hr class=\"my-3\">\n      <!-- Heading -->\n      <h6 class=\"navbar-heading text-muted\">Documentation</h6>\n      <!-- Navigation -->\n      <ul class=\"navbar-nav mb-md-3\">\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" href=\"https://demos.creative-tim.com/argon-dashboard-angular/documentation/tutorial\">\n            <i class=\"ni ni-spaceship\"></i> Getting started\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" href=\"https://demos.creative-tim.com/argon-dashboard-angular/documentation/colors\">\n            <i class=\"ni ni-palette\"></i> Foundation\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" href=\"https://demos.creative-tim.com/argon-dashboard-angular/documentation/alerts\">\n            <i class=\"ni ni-ui-04\"></i> Components\n          </a>\n        </li>\n      </ul>\n    </div>\n  </div>\n</nav>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-vertical navbar-expand-md navbar-light bg-white\" id=\"sidenav-main\">\n  <div class=\"container-fluid\">\n    <!-- Toggler -->\n    <button class=\"navbar-toggler\" type=\"button\" (click)=\"isCollapsed=!isCollapsed\"\n       aria-controls=\"sidenav-collapse-main\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <!-- Brand -->\n    <a class=\"navbar-brand pt-0\" routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n      <img src=\"./assets/img/brand/red.png\" class=\"navbar-brand-img\" alt=\"...\">\n    </a>\n    <!-- User -->\n    <ul class=\"nav align-items-center d-md-none\">\n      <li class=\"nav-item\" ngbDropdown placement=\"bottom-right\">\n        <a class=\"nav-link nav-link-icon\" role=\"button\" ngbDropdownToggle>\n          <i class=\"ni ni-bell-55\"></i>\n        </a>\n        <div class=\"dropdown-menu-arrow dropdown-menu-right\" ngbDropdownMenu>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Action</a>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Another action</a>\n          <div class=\"dropdown-divider\"></div>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Something else here</a>\n        </div>\n      </li>\n      <li class=\"nav-item\" ngbDropdown placement=\"bottom-right\">\n        <a class=\"nav-link\" role=\"button\" ngbDropdownToggle>\n          <div class=\"media align-items-center\">\n            <span class=\"avatar avatar-sm rounded-circle\">\n              <img alt=\"Image placeholder\" src=\"./assets/img/theme/team-1-800x800.jpg\">\n            </span>\n          </div>\n        </a>\n        <div class=\"dropdown-menu-arrow dropdown-menu-right\" ngbDropdownMenu>\n          <div class=\" dropdown-header noti-title\">\n            <h6 class=\"text-overflow m-0\">Welcome!</h6>\n          </div>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>My profile</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-settings-gear-65\"></i>\n            <span>Settings</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-calendar-grid-58\"></i>\n            <span>Activity</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-support-16\"></i>\n            <span>Support</span>\n          </a>\n          <div class=\"dropdown-divider\"></div>\n          <a href=\"#!\" class=\"dropdown-item\">\n            <i class=\"ni ni-user-run\"></i>\n            <span>Logout</span>\n          </a>\n        </div>\n      </li>\n    </ul>\n    <!-- Collapse -->\n    <div class=\"collapse navbar-collapse\"  [ngbCollapse]=\"isCollapsed\" id=\"sidenav-collapse-main\">\n      <!-- Collapse header -->\n      <div class=\"navbar-collapse-header d-md-none\">\n        <div class=\"row\">\n          <div class=\"col-6 collapse-brand\">\n            <a  routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n              <img src=\"./assets/img/brand/blue.png\">\n            </a>\n          </div>\n          <div class=\"col-6 collapse-close\">\n            <button type=\"button\" class=\"navbar-toggler\" (click)=\"isCollapsed=!isCollapsed\">\n              <span></span>\n              <span></span>\n            </button>\n          </div>\n        </div>\n      </div>\n      <!-- Form -->\n      <form class=\"mt-4 mb-3 d-md-none\">\n        <div class=\"input-group input-group-rounded input-group-merge\">\n          <input type=\"search\" class=\"form-control form-control-rounded form-control-prepended\" placeholder=\"Search\" aria-label=\"Search\">\n          <div class=\"input-group-prepend\">\n            <div class=\"input-group-text\">\n              <span class=\"fa fa-search\"></span>\n            </div>\n          </div>\n        </div>\n      </form>\n      <!-- Navigation -->\n      <ul class=\"navbar-nav\">\n          <li *ngFor=\"let menuItem of menuItems\" class=\"{{menuItem.class}} nav-item\">\n              <a routerLinkActive=\"active\" [routerLink]=\"[menuItem.path]\" class=\"nav-link\">\n                  <i class=\"ni {{menuItem.icon}}\"></i>\n                  {{menuItem.title}}\n              </a>\n          </li>\n      </ul>\n<!--      &lt;!&ndash; Divider &ndash;&gt;-->\n<!--      <hr class=\"my-3\">-->\n<!--      &lt;!&ndash; Heading &ndash;&gt;-->\n<!--      <h6 class=\"navbar-heading text-muted\">Documentation</h6>-->\n<!--      &lt;!&ndash; Navigation &ndash;&gt;-->\n<!--      <ul class=\"navbar-nav mb-md-3\">-->\n<!--        <li class=\"nav-item\">-->\n<!--          <a class=\"nav-link\" href=\"https://demos.creative-tim.com/argon-dashboard-angular/documentation/tutorial\">-->\n<!--            <i class=\"ni ni-spaceship\"></i> Getting started-->\n<!--          </a>-->\n<!--        </li>-->\n<!--        <li class=\"nav-item\">-->\n<!--          <a class=\"nav-link\" href=\"https://demos.creative-tim.com/argon-dashboard-angular/documentation/colors\">-->\n<!--            <i class=\"ni ni-palette\"></i> Foundation-->\n<!--          </a>-->\n<!--        </li>-->\n<!--        <li class=\"nav-item\">-->\n<!--          <a class=\"nav-link\" href=\"https://demos.creative-tim.com/argon-dashboard-angular/documentation/alerts\">-->\n<!--            <i class=\"ni ni-ui-04\"></i> Components-->\n<!--          </a>-->\n<!--        </li>-->\n<!--      </ul>-->\n    </div>\n  </div>\n</nav>\n");
 
 /***/ }),
 
@@ -386,7 +399,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"main-content\">\n  <nav class=\"navbar navbar-top navbar-horizontal navbar-expand-md navbar-dark\">\n    <div class=\"container px-4\">\n      <a class=\"navbar-brand\" routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n        <img src=\"assets/img/brand/argon-white.png\" />\n      </a>\n      <button class=\"navbar-toggler\" type=\"button\" (click)=\"isCollapsed=!isCollapsed\"\n         aria-controls=\"sidenav-collapse-main\">\n        <span class=\"navbar-toggler-icon\"></span>\n      </button>\n      <div class=\"collapse navbar-collapse\"  [ngbCollapse]=\"isCollapsed\" id=\"sidenav-collapse-main\">\n        <!-- Collapse header -->\n        <div class=\"navbar-collapse-header d-md-none\">\n          <div class=\"row\">\n            <div class=\"col-6 collapse-brand\">\n              <a routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n                <img src=\"assets/img/brand/blue.png\">\n              </a>\n            </div>\n            <div class=\"col-6 collapse-close\">\n              <button type=\"button\" class=\"navbar-toggler\" (click)=\"isCollapsed=!isCollapsed\" >\n                <span></span>\n                <span></span>\n              </button>\n            </div>\n          </div>\n        </div>\n        <!-- Navbar items -->\n        <ul class=\"navbar-nav ml-auto\">\n          <li class=\"nav-item\">\n            <a class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n              <i class=\"ni ni-planet\"></i>\n              <span class=\"nav-link-inner--text\">Dashboard</span>\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/register']\">\n              <i class=\"ni ni-circle-08\"></i>\n              <span class=\"nav-link-inner--text\">Register</span>\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/login']\">\n              <i class=\"ni ni-key-25\"></i>\n              <span class=\"nav-link-inner--text\">Login</span>\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\">\n              <i class=\"ni ni-single-02\"></i>\n              <span class=\"nav-link-inner--text\">Profile</span>\n            </a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n  <router-outlet></router-outlet>\n</div>\n<footer class=\"py-5\">\n  <div class=\"container\">\n    <div class=\"row align-items-center justify-content-xl-between\">\n      <div class=\"col-xl-6\">\n        <div class=\"copyright text-center text-xl-left text-muted\">\n          &copy; {{ test | date: \"yyyy\" }} <a href=\"https://www.creative-tim.com?ref=ada-footer-auth-layout\" class=\"font-weight-bold ml-1\" target=\"_blank\">Creative Tim</a>\n        </div>\n      </div>\n      <div class=\"col-xl-6\">\n        <ul class=\"nav nav-footer justify-content-center justify-content-xl-end\">\n          <li class=\"nav-item\">\n            <a href=\"https://www.creative-tim.com?ref=ada-footer-auth-layout\" class=\"nav-link\" target=\"_blank\">Creative Tim</a>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"https://www.creative-tim.com/presentation?ref=ada-footer-auth-layout\" class=\"nav-link\" target=\"_blank\">About Us</a>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"http://blog.creative-tim.com?ref=ada-footer-auth-layout\" class=\"nav-link\" target=\"_blank\">Blog</a>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"https://github.com/creativetimofficial/argon-dashboard-angular/blob/master/LICENSE.md\" class=\"nav-link\" target=\"_blank\">MIT License</a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </div>\n</footer>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"main-content\">\n\n  <router-outlet></router-outlet>\n</div>\n<footer class=\"py-5\">\n  <div class=\"container\">\n    <div class=\"row align-items-center justify-content-xl-between\">\n      <div class=\"col-xl-6\">\n        <div class=\"copyright text-center text-xl-left text-muted\">\n          &copy; {{ test | date: \"yyyy\" }} <a href=\"https://www.creative-tim.com?ref=ada-footer-auth-layout\" class=\"font-weight-bold ml-1\" target=\"_blank\">Creative Tim</a>\n        </div>\n      </div>\n      <div class=\"col-xl-6\">\n        <ul class=\"nav nav-footer justify-content-center justify-content-xl-end\">\n          <li class=\"nav-item\">\n            <a href=\"https://www.creative-tim.com?ref=ada-footer-auth-layout\" class=\"nav-link\" target=\"_blank\">Creative Tim</a>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"https://www.creative-tim.com/presentation?ref=ada-footer-auth-layout\" class=\"nav-link\" target=\"_blank\">About Us</a>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"http://blog.creative-tim.com?ref=ada-footer-auth-layout\" class=\"nav-link\" target=\"_blank\">Blog</a>\n          </li>\n          <li class=\"nav-item\">\n            <a href=\"https://github.com/creativetimofficial/argon-dashboard-angular/blob/master/LICENSE.md\" class=\"nav-link\" target=\"_blank\">MIT License</a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </div>\n</footer>\n");
 
 /***/ }),
 
@@ -412,7 +425,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<form id=create-book-form [formGroup]=\"createCategory\" >\n  <div >\n    <div class=\"form-group\">\n      <label class=\"form-control-label\" for=\"input-Name\">Name</label>\n      <input  formControlName= \"name\" type=\"text\" id=\"input-Name\" class=\"form-control form-control-alternative\" placeholder=\"Name\" >\n    </div>\n  </div>\n  <div class=\"form-group\">\n    <label class=\"form-control-label\" for=\"input-type\">Categories</label>\n    <!-- Category -->\n    <div class=\"sidebar-widget\">\n      <select formControlName= \"type\" class=\"selectpicker default input-type\" id=\"input-type\" name=\"input-type\" data-selected-text-format=\"count\" title=\"All Categories\" >\n        <option *ngFor=\"let item of categories | enumToArray\">{{item.name}}</option>\n      </select>\n    </div>\n  </div>\n</form>\n<div >\n  <button type=\"submit\" (click)=\"onSubmit()\" class=\"btn btn-info\" form=\"create-book-form\">\n    <i class=\"icon-feather-plus\"></i>add category</button>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<form id=create-book-form [formGroup]=\"createCategory\" >\n  <div >\n    <div class=\"form-group\">\n      <label class=\"form-control-label\" for=\"input-Name\">Name</label>\n      <input  formControlName= \"name\" type=\"text\" id=\"input-Name\" class=\"form-control form-control-alternative\" placeholder=\"Name\" >\n    </div>\n  </div>\n  <div class=\"form-group\">\n    <label class=\"form-control-label\" for=\"input-type\">Categories</label>\n    <!-- Category -->\n    <div class=\"sidebar-widget\">\n      <select formControlName= \"type\" class=\"selectpicker default input-type\" id=\"input-type\" name=\"input-type\" data-selected-text-format=\"count\" title=\"All Categories\" >\n        <option *ngFor=\"let item of categories | enumToArray\">{{item.name}}</option>\n      </select>\n    </div>\n  </div>\n</form>\n<div >\n  <button type=\"submit\" (click)=\"onSubmit()\" class=\"btn btn-info\" form=\"create-book-form\">\n    <i class=\"icon-feather-plus\"></i>add category</button>\n</div>\n\n\n");
 
 /***/ }),
 
@@ -425,7 +438,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"header bg-gradient-danger pb-8 pt-5 pt-md-8\">\n  <div class=\"container-fluid\">\n    <div class=\"header-body\">\n      <!-- Card stats -->  <div class=\"container-fluid d-flex align-items-center\">\n      <div class=\"row\">\n        <div class=\"col-lg-7 col-md-10\">\n          <a [routerLink]=\"['/admin/add-charity']\" class=\"btn btn-info\">Add new project</a>\n        </div>\n      </div>\n    </div>\n\n    </div>\n  </div>\n</div>\n<!-- Page content -->\n<div class=\"container-fluid mt--7\">\n\n  <!-- Table -->\n  <div class=\"row\">\n    <div class=\"col-xl-4 order-xl-2 mb-5 mb-xl-0\">\n      <div class=\"card card-profile shadow\">\n        <div class=\"\">\n          <div class=\"\">\n            <h3>Create category</h3>\n          </div>\n        </div>\n\n        <div class=\"card-body pt-0 pt-md-4\">\n\n          <div class=\"text-center\">\n            <app-create-category></app-create-category>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-xl-8 order-xl-1\">\n      <div class=\"card shadow\">\n        <div class=\"card-header border-0\">\n          <h3 class=\"mb-0\">Categories</h3>\n        </div>\n        <div class=\"table-responsive\">\n          <table class=\"table align-items-center table-flush\">\n            <thead class=\"thead-light\">\n            <tr>\n              <th scope=\"col\">Name</th>\n              <th scope=\"col\">Type</th>\n              <th scope=\"col\">delete category</th>\n            </tr>\n            </thead>\n            <tbody *ngIf=\"categories\">\n            <tr *ngFor=\"let story of categories.data\">\n              <th scope=\"row\">\n                <div class=\"media align-items-center\">\n\n                  <div class=\"media-body\">\n                    <span class=\"mb-0 text-sm\">{{story.name}}</span>\n                  </div>\n                </div>\n              </th>\n              <td>\n                {{story.type}}\n              </td>\n              <td>\n                <a   class=\"btn btn-info\">delete</a>\n              </td>\n\n\n            </tr>\n\n            </tbody>\n          </table>\n        </div>\n        <div class=\"card-footer py-4\" *ngIf=\"categories\">\n          <nz-pagination [nzPageIndex]=currentPage  [nzTotal]=categories.meta.last_page  [nzPageSize]=categories.meta.per_page (nzPageIndexChange)=\"paginate($event)\"></nz-pagination>\n        </div>\n      </div>\n    </div>\n  </div>\n\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"header bg-gradient-danger pb-8 pt-5 pt-md-8\">\n  <div class=\"container-fluid\">\n    <div class=\"header-body\">\n      <!-- Card stats -->  <div class=\"container-fluid d-flex align-items-center\">\n      <div class=\"row\">\n        <div class=\"col-lg-7 col-md-10\">\n          <a [routerLink]=\"['/admin/add-charity']\" class=\"btn btn-info\">Add new project</a>\n        </div>\n      </div>\n    </div>\n\n    </div>\n  </div>\n</div>\n<!-- Page content -->\n<div class=\"container-fluid mt--7\">\n\n  <!-- Table -->\n  <div class=\"row\">\n    <div class=\"col-xl-4 order-xl-2 mb-5 mb-xl-0\">\n      <div class=\"card card-profile shadow\">\n        <div class=\"\">\n          <div class=\"\">\n            <h3>Create category</h3>\n          </div>\n        </div>\n\n        <div class=\"card-body pt-0 pt-md-4\">\n\n          <div class=\"text-center\">\n            <app-create-category></app-create-category>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-xl-8 order-xl-1\">\n      <div class=\"card shadow\">\n        <div class=\"card-header border-0\">\n          <h3 class=\"mb-0\">Categories</h3>\n        </div>\n        <div class=\"table-responsive\">\n          <table class=\"table align-items-center table-flush\">\n            <thead class=\"thead-light\">\n            <tr>\n              <th scope=\"col\">Name</th>\n              <th scope=\"col\">Type</th>\n              <th scope=\"col\">delete category</th>\n            </tr>\n            </thead>\n            <tbody *ngIf=\"this.categoryService.getCategories()\">\n            <tr *ngFor=\"let story of this.categoryService.getCategories().data\">\n              <th scope=\"row\">\n                <div class=\"media align-items-center\">\n\n                  <div class=\"media-body\">\n                    <span class=\"mb-0 text-sm\">{{story.name}}</span>\n                  </div>\n                </div>\n              </th>\n              <td>\n                {{story.type}}\n              </td>\n              <td>\n                <a   class=\"btn btn-info\">delete</a>\n              </td>\n\n\n            </tr>\n\n            </tbody>\n          </table>\n        </div>\n        <div class=\"card-footer py-4\" *ngIf=\"categories\">\n          <nz-pagination [nzPageIndex]=currentPage  [nzTotal]=categories.meta.last_page  [nzPageSize]=categories.meta.per_page (nzPageIndexChange)=\"paginate($event)\"></nz-pagination>\n        </div>\n      </div>\n    </div>\n  </div>\n\n</div>\n");
 
 /***/ }),
 
@@ -438,7 +451,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"header bg-gradient-danger pb-8 pt-5 pt-md-8\">\n  <div class=\"container-fluid\">\n    <div class=\"header-body\">\n      <!-- Card stats -->  <div class=\"container-fluid d-flex align-items-center\">\n      <div class=\"row\">\n        <div class=\"col-lg-7 col-md-10\">\n          <a [routerLink]=\"['/admin/add-charity']\" class=\"btn btn-info\">Add new project</a>\n        </div>\n      </div>\n    </div>\n\n    </div>\n  </div>\n</div>\n<!-- Page content -->\n<div class=\"container-fluid mt--7\">\n\n  <!-- Table -->\n  <div class=\"row\">\n    <div class=\"col\">\n      <div class=\"card shadow\">\n        <div class=\"card-header border-0\">\n          <h3 class=\"mb-0\">Projects</h3>\n        </div>\n        <div class=\"table-responsive\">\n          <table class=\"table align-items-center table-flush\">\n            <thead class=\"thead-light\">\n            <tr>\n              <th scope=\"col\">Name</th>\n              <th scope=\"col\">Created At</th>\n              <th scope=\"col\">Updated At</th>\n              <th scope=\"col\">amount</th>\n              <th scope=\"col\">MIN DA</th>\n              <th scope=\"col\">MAX DA</th>\n              <th scope=\"col\">last updated sum</th>\n              <th scope=\"col\"> status</th>\n              <th scope=\"col\"> change status</th>\n            </tr>\n            </thead>\n            <tbody *ngIf=\"projects\">\n            <tr *ngFor=\"let project of projects.data\">\n              <th scope=\"row\">\n                <div class=\"media align-items-center\">\n\n                  <div class=\"media-body\">\n                    <span class=\"mb-0 text-sm\">{{project.name}}</span>\n                  </div>\n                </div>\n              </th>\n              <td>\n\n                {{project.created_at| date}}\n\n              </td>\n\n              <td>\n\n                {{project.updated_at | date}}\n\n              </td>\n              <td>\n                {{project.amount}}\n              </td>\n              <td>\n                {{project.min_donation_amount}}\n              </td>\n              <td>\n                {{project.max_donation_amount}}\n              </td>\n              <td>\n                {{project.last_updated_sum}}\n              </td>\n              <td>\n                {{project.status}}\n              </td>\n              <td>\n                <a (click)=\"pauseProject(project)\"  class=\"btn ant-btn-primary\" *ngIf=\"(project.status !='PAUSED') && project.status!='TERMINATED'\" >Pause</a>\n                <a (click)=\"activateProject(project)\"  class=\"btn btn-info\" *ngIf=\"project.status!='ACTIVE' && project.status!='TERMINATED'\">Activate</a>\n                <a  nzType=\"dashed\" (click)=\"showDeleteConfirm(project)\" class=\"btn btn-warning\" *ngIf=\"project.status!='TERMINATED'\">Terminate</a>\n\n              </td>\n\n\n            </tr>\n\n            </tbody>\n          </table>\n        </div>\n        <div class=\"card-footer py-4\" *ngIf=\"projects\">\n          <nz-pagination [nzPageIndex]=currentPage  [nzTotal]=projects.meta.last_page  [nzPageSize]=sizePage (nzPageIndexChange)=\"paginate($event)\"></nz-pagination>\n        </div>\n      </div>\n    </div>\n  </div>\n\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"header bg-gradient-danger pb-8 pt-5 pt-md-8\">\n  <div class=\"container-fluid\">\n    <div class=\"header-body\">\n      <!-- Card stats -->  <div class=\"container-fluid d-flex align-items-center\">\n      <div class=\"row\">\n        <div class=\"col-lg-7 col-md-10\">\n          <a [routerLink]=\"['/admin/add-charity']\" class=\"btn btn-info\">Add new project</a>\n        </div>\n      </div>\n    </div>\n\n    </div>\n  </div>\n</div>\n<!-- Page content -->\n<div class=\"container-fluid mt--7\">\n\n  <!-- Table -->\n  <div class=\"row\">\n    <div class=\"col\">\n      <div class=\"card shadow\">\n        <div class=\"card-header border-0\">\n          <h3 class=\"mb-0\">Projects</h3>\n        </div>\n        <div class=\"table-responsive\">\n          <table class=\"table align-items-center table-flush\">\n            <thead class=\"thead-light\">\n            <tr>\n              <th scope=\"col\">Id</th>\n              <th scope=\"col\">Name</th>\n              <th scope=\"col\">Created At</th>\n              <th scope=\"col\">Updated At</th>\n              <th scope=\"col\">amount</th>\n              <th scope=\"col\">MIN DA</th>\n              <th scope=\"col\">MAX DA</th>\n              <th scope=\"col\">last updated sum</th>\n              <th scope=\"col\">start at</th>\n              <th scope=\"col\">end at</th>\n              <th scope=\"col\"> status</th>\n              <th scope=\"col\"> change status</th>\n              <th scope=\"col\">Controls</th>\n            </tr>\n            </thead>\n            <tbody *ngIf=\"projects\">\n            <tr *ngFor=\"let project of projects.data\">\n              <th scope=\"row\">\n                <div class=\"media align-items-center\">\n\n                  <div class=\"media-body\">\n                    <span class=\"mb-0 text-sm\">{{project.name}}</span>\n                  </div>\n                </div>\n              </th>\n              <td>\n\n                {{project.id}}\n\n              </td>\n              <td>\n\n                {{project.createdAt| date}}\n\n              </td>\n\n              <td>\n\n                {{project.updatedAt | date}}\n\n              </td>\n              <td>\n                {{project.amount}}\n              </td>\n              <td>\n                {{project.minDonationAmount}}\n              </td>\n              <td>\n                {{project.maxDonationAmount}}\n              </td>\n              <td>\n                {{project.lastUpdatedSum}}\n              </td>\n              <td>\n                {{project.startDate | date}}\n              </td>\n              <td>\n                {{project.endDate | date}}\n              </td>\n              <td>\n                {{project.status}}\n              </td>\n              <td>\n                <a (click)=\"pauseProject(project)\"  class=\"btn ant-btn-primary\" *ngIf=\"(project.status !='PAUSED') && project.status!='TERMINATED'\" >Pause</a>\n                <a (click)=\"activateProject(project)\"  class=\"btn btn-info\" *ngIf=\"project.status!='ACTIVE' && project.status!='TERMINATED'\">Activate</a>\n                <a  nzType=\"dashed\" (click)=\"showDeleteConfirm(project)\" class=\"btn btn-warning\" *ngIf=\"project.status!='TERMINATED'\">Terminate</a>\n              </td>\n              <td>\n                <a (click)=\"updateProject(project.id)\"  class=\"btn ant-btn-primary\" >Update</a>\n<!--                <a (click)=\"deleteProject(project.id)\"  class=\"btn btn-info\" >Delete</a>-->\n\n              </td>\n\n\n            </tr>\n\n            </tbody>\n          </table>\n        </div>\n        <div class=\"card-footer py-4\" *ngIf=\"projects\">\n          <nz-pagination [nzPageIndex]=currentPage  [nzTotal]=projects.meta.total   [nzPageSize]=sizePage (nzPageIndexChange)=\"paginate($event)\"></nz-pagination>\n        </div>\n      </div>\n    </div>\n  </div>\n\n</div>\n");
 
 /***/ }),
 
@@ -451,7 +464,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n\n<div class=\"header bg-gradient-danger pb-8 pt-5 pt-md-8\">\n  <div class=\"container-fluid\">\n    <div class=\"header-body\">\n      <!-- Card stats -->  <div class=\"container-fluid d-flex align-items-center\">\n      <div class=\"row\">\n        <div class=\"col-lg-7 col-md-10\">\n          <a [routerLink]=\"['/add-category']\" class=\"btn btn-info\">Add new category</a>\n\n        </div>\n      </div>\n    </div>\n\n    </div>\n  </div>\n</div>\n\n<div class=\"container-fluid mt--7\">\n  <div class=\"container-fluid d-flex align-items-center\">\n\n    <div class=\"col-lg-12 col-lg-12\">\n\n      <div class=\"col-xl-8 order-xl-1\">\n        <div class=\"card bg-secondary shadow\">\n          <div class=\"card-header bg-white border-0\">\n            <div class=\"row align-items-center\">\n              <div class=\"col-8\">\n                <h3 class=\"mb-0\">Charity</h3>\n              </div>\n\n            </div>\n          </div>\n          <div class=\"card-body\">\n            <form id=create-book-form [formGroup]=\"createCharity\" >\n              <h6 class=\"heading-small text-muted mb-4\">Information</h6>\n              <div class=\"pl-lg-4\">\n                <div class=\"row\">\n                  <div class=\"col-lg-6\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-Name\">Name</label>\n                      <input  formControlName= \"name\" type=\"text\" id=\"input-Name\" class=\"form-control form-control-alternative\" placeholder=\"Name\" >\n                    </div>\n                  </div>\n                  <div class=\"col-lg-6\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-genre\">Categories</label>\n                      <!-- Category -->\n                      <div class=\"sidebar-widget\">\n                        <select formControlName= \"categoriesIds\" class=\"selectpicker default input-genre\" id=\"input-genre\" name=\"input-genre\" data-selected-text-format=\"count\" title=\"All Categories\" >\n                          <option *ngFor=\"let item of categories \" [value]=\"item.id\">{{item.name}}</option>\n                        </select>\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row\">\n                  <div class=\"col-lg-8\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-amount\">Amount</label>\n                      <input  formControlName= \"amount\" type=\"text\" id=\"input-amount\" class=\"form-control form-control-alternative\" placeholder=\"Amount\" >\n                    </div>\n                  </div>\n\n                </div>\n                <div class=\"row\">\n                  <div class=\"col-lg-4\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-min\">Min donation amount</label>\n                      <input  formControlName= \"minDonationAmount\" type=\"text\" id=\"input-min\" class=\"form-control form-control-alternative\" placeholder=\"Amount\" >\n                    </div>\n                  </div>\n                  <div class=\"col-lg-4\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-max\">Max donation amount</label>\n                      <input  formControlName= \"maxDonationAmount\" type=\"text\" id=\"input-max\" class=\"form-control form-control-alternative\" placeholder=\"Amount\" >\n                    </div>\n                  </div>\n\n                </div>\n              </div>\n\n              <hr class=\"my-4\" />\n              <!-- Description -->\n              <h6 class=\"heading-small text-muted mb-4\">Description</h6>\n              <div class=\"pl-lg-4\">\n                <div class=\"form-group\">\n                  <label>Description</label>\n                  <textarea formControlName=\"shortDescription\" rows=\"4\" class=\"form-control form-control-alternative\" placeholder=\"A few words about your project ...\"></textarea>\n                </div>\n              </div>\n\n            </form>\n            <div class=\"col-xl-12\">\n              <button type=\"submit\" (click)=\"onSubmit()\" class=\"btn btn-info\" form=\"create-book-form\">\n                <i class=\"icon-feather-plus\"></i>post project</button>\n            </div>\n          </div>\n        </div>\n      </div>\n\n    </div>\n  </div>\n</div>\n\n<br />\n<br />\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("\n\n<div class=\"header bg-gradient-danger pb-8 pt-5 pt-md-8\">\n  <div class=\"container-fluid\">\n    <div class=\"header-body\">\n      <!-- Card stats -->  <div class=\"container-fluid d-flex align-items-center\">\n      <div class=\"row\">\n        <div class=\"col-lg-7 col-md-10\">\n          <a [routerLink]=\"['/add-category']\" class=\"btn btn-info\">Add new category</a>\n\n        </div>\n      </div>\n    </div>\n\n    </div>\n  </div>\n</div>\n\n<div class=\"container-fluid mt--7\">\n  <div class=\"container-fluid d-flex align-items-center\">\n\n    <div class=\"col-lg-12 col-lg-12\">\n\n      <div class=\"col-xl-8 order-xl-1\">\n        <div class=\"card bg-secondary shadow\">\n          <div class=\"card-header bg-white border-0\">\n            <div class=\"row align-items-center\">\n              <div class=\"col-8\">\n                <h3 class=\"mb-0\">Charity</h3>\n              </div>\n\n            </div>\n          </div>\n          <div class=\"card-body\">\n            <form id=create-book-form [formGroup]=\"createCharity\" >\n              <h6 class=\"heading-small text-muted mb-4\">Information</h6>\n              <div class=\"pl-lg-4\">\n                <div class=\"row\">\n                  <div class=\"col-lg-6\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-Name\">Name</label>\n                      <input  formControlName= \"name\" type=\"text\" id=\"input-Name\" class=\"form-control form-control-alternative\" placeholder=\"Name\" >\n                    </div>\n                  </div>\n                  <div class=\"col-lg-6\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-genre\">Categories</label>\n                      <!-- Category -->\n                      <div class=\"sidebar-widget\">\n                        <select formControlName= \"categoriesIds\" class=\"selectpicker default input-genre\" id=\"input-genre\" name=\"input-genre\" data-selected-text-format=\"count\" title=\"All Categories\" >\n                          <option *ngFor=\"let item of categories \" [value]=\"item.id\">{{item.name}}</option>\n                        </select>\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row\">\n                  <div class=\"col-lg-8\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-amount\">Amount</label>\n                      <input  formControlName= \"amount\" type=\"text\" id=\"input-amount\" class=\"form-control form-control-alternative\" placeholder=\"Amount\" >\n                    </div>\n                  </div>\n\n                </div>\n                <div class=\"row\">\n                  <div class=\"col-lg-4\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-min\">Min donation amount</label>\n                      <input  formControlName= \"minDonationAmount\" type=\"text\" id=\"input-min\" class=\"form-control form-control-alternative\" placeholder=\"Amount\" >\n                    </div>\n                  </div>\n                  <div class=\"col-lg-4\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-max\">Max donation amount</label>\n                      <input  formControlName= \"maxDonationAmount\" type=\"text\" id=\"input-max\" class=\"form-control form-control-alternative\" placeholder=\"Amount\" >\n                    </div>\n                  </div>\n\n                </div>\n                <div class=\"row\">\n\n                  <nz-range-picker   formControlName= \"date\" [nzFormat]=\"dateFormat\"></nz-range-picker>\n                </div>\n              </div>\n\n              <hr class=\"my-4\" />\n              <!-- Description -->\n              <h6 class=\"heading-small text-muted mb-4\">Description</h6>\n              <div class=\"pl-lg-4\">\n                <div class=\"form-group\">\n                  <label>Description</label>\n                  <textarea formControlName=\"shortDescription\" rows=\"4\" class=\"form-control form-control-alternative\" placeholder=\"A few words about your project ...\"></textarea>\n                </div>\n              </div>\n\n            </form>\n            <div class=\"col-xl-12\">\n              <button type=\"submit\" (click)=\"onSubmit()\" class=\"btn btn-info\" form=\"create-book-form\">\n                <i class=\"icon-feather-plus\"></i>post project</button>\n            </div>\n          </div>\n        </div>\n      </div>\n\n    </div>\n  </div>\n</div>\n\n<br />\n<br />\n\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/admin/charity/charity-update/charity-update.component.html":
+/*!************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/admin/charity/charity-update/charity-update.component.html ***!
+  \************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n\n<div class=\"header bg-gradient-danger pb-8 pt-5 pt-md-8\">\n  <div class=\"container-fluid\">\n    <div class=\"header-body\">\n      <!-- Card stats -->  <div class=\"container-fluid d-flex align-items-center\">\n      <div class=\"row\">\n\n      </div>\n    </div>\n\n    </div>\n  </div>\n</div>\n\n<div class=\"container-fluid mt--7\">\n  <div class=\"container-fluid d-flex align-items-center\">\n\n    <div class=\"col-lg-12 col-lg-12\">\n\n      <div class=\"col-xl-8 order-xl-1\">\n        <div class=\"card bg-secondary shadow\">\n          <div class=\"card-header bg-white border-0\">\n            <div class=\"row align-items-center\">\n              <div class=\"col-8\">\n                <h3 class=\"mb-0\">Charity</h3>\n              </div>\n\n            </div>\n          </div>\n          <div class=\"card-body\">\n            <form id=create-book-form [formGroup]=\"createCharity\" >\n              <h6 class=\"heading-small text-muted mb-4\">Information</h6>\n              <div class=\"pl-lg-4\">\n                <div class=\"row\">\n                  <div class=\"col-lg-6\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-Name\">Name</label>\n                      <input  formControlName= \"name\" type=\"text\" id=\"input-Name\" class=\"form-control form-control-alternative\" placeholder=\"Name\" >\n                    </div>\n                  </div>\n                  <div class=\"col-lg-6\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-genre\">Categories</label>\n                      <!-- Category -->\n                      <div class=\"sidebar-widget\">\n                        <select formControlName= \"categoriesIds\" class=\"selectpicker default input-genre\" id=\"input-genre\" name=\"input-genre\" data-selected-text-format=\"count\" title=\"All Categories\" >\n                          <option *ngFor=\"let item of categories \" [value]=\"item.id\">{{item.name}}</option>\n                        </select>\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row\">\n                  <div class=\"col-lg-8\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-amount\">Amount</label>\n                      <input  formControlName= \"amount\" type=\"text\" id=\"input-amount\" class=\"form-control form-control-alternative\" placeholder=\"Amount\" >\n                    </div>\n                  </div>\n\n                </div>\n                <div class=\"row\">\n                  <div class=\"col-lg-4\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-min\">Min donation amount</label>\n                      <input  formControlName= \"minDonationAmount\" type=\"text\" id=\"input-min\" class=\"form-control form-control-alternative\" placeholder=\"Amount\" >\n                    </div>\n                  </div>\n                  <div class=\"col-lg-4\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-max\">Max donation amount</label>\n                      <input  formControlName= \"maxDonationAmount\" type=\"text\" id=\"input-max\" class=\"form-control form-control-alternative\" placeholder=\"Amount\" >\n                    </div>\n                  </div>\n\n\n\n                </div>\n                <div class=\"row\">\n                  <div class=\"col-lg-4\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-start\">Start date</label>\n                      <input readonly formControlName= \"startDate\" type=\"text\" id=\"input-start\" class=\"form-control form-control-alternative\" >\n                    </div>\n                  </div>\n                  <div class=\"col-lg-4\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-end\">end date</label>\n                      <input readonly formControlName= \"endDate\" type=\"text\" id=\"input-end\" class=\"form-control form-control-alternative\">\n                    </div>\n                  </div>\n\n\n\n                </div>\n                <div class=\"row\">\n\n                  <nz-range-picker   formControlName= \"date\" [nzFormat]=\"dateFormat\"></nz-range-picker>\n                </div>\n              </div>\n\n              <hr class=\"my-4\" />\n              <!-- Description -->\n              <h6 class=\"heading-small text-muted mb-4\">Description</h6>\n              <div class=\"pl-lg-4\">\n                <div class=\"form-group\">\n                  <label>Description</label>\n                  <textarea formControlName=\"shortDescription\" rows=\"4\" class=\"form-control form-control-alternative\" placeholder=\"A few words about your project ...\"></textarea>\n                </div>\n              </div>\n\n            </form>\n            <div class=\"col-xl-12\">\n              <button type=\"submit\" (click)=\"onSubmit()\" class=\"btn btn-info\" form=\"create-book-form\">\n                <i class=\"icon-feather-plus\"></i>post project</button>\n            </div>\n          </div>\n        </div>\n      </div>\n\n    </div>\n  </div>\n</div>\n\n<br />\n<br />\n\n");
 
 /***/ }),
 
@@ -464,7 +490,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n\n<div class=\"header bg-danger pb-8 pt-5 pt-md-8\">\n  <div class=\"container-fluid\">\n    <div class=\"header-body\">\n      <!-- Card stats -->\n      <div class=\"row\">\n        <div *ngFor=\"let project of projects\" class=\"col-xl-3 col-lg-6\">\n          <div class=\"card card-stats mb-4 mb-xl-0 bg-dark\" style=\"margin-top:1.25rem\">\n            <div class=\"card-body\">\n              <div class=\"row\">\n                <div class=\"col\">\n                  <h5 class=\"card-title text-uppercase text-muted mb-0\">{{project.name}}</h5>\n                  <span class=\"h1 font-weight-bold mb-0\" style=\"color: white\">{{project.lastUpdatedSum}} coins</span>\n                </div>\n                <div class=\"col-auto\">\n                  <div class=\"icon icon-shape bg-success text-white rounded-circle shadow\">\n                    <i class=\"fas fa-dollar-sign\"></i>\n                  </div>\n                </div>\n              </div>\n              <p class=\"mt-3 mb-0 text-muted text-sm\">\n                <span class=\"text-success mr-2\"><i class=\"fa fa-percentage fa-1x\"></i> {{this.project.amount}} coins</span>\n                <span class=\"text-nowrap\">needed amount</span>\n              </p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"container-fluid mt--7\">\n  <div class=\"row\">\n    <div class=\"col-xl-8 mb-5 mb-xl-0\">\n      <div class=\"card bg-dark shadow\">\n        <div class=\"card-header bg-transparent\">\n          <div class=\"row align-items-center\">\n            <div class=\"col\">\n              <h6 class=\"text-uppercase text-light ls-1 mb-1\">Overview</h6>\n              <h2 class=\"text-white mb-0\">Total donations</h2>\n            </div>\n            <div class=\"col\">\n              <ul class=\"nav nav-pills justify-content-end\">\n                <li class=\"nav-item mr-2 mr-md-0\" data-toggle=\"chart\" data-target=\"#chart-sales\"  (click)=\"data=datasets[0];updateOptions()\">\n                  <a href=\"javascript:void(0)\" class=\"nav-link py-2 px-3\" [ngClass]=\"{'active':clicked===true}\" data-toggle=\"tab\" (click)=\"clicked=true;clicked1=false\">\n                    <span class=\"d-none d-md-block\">Month</span>\n                    <span class=\"d-md-none\">M</span>\n                  </a>\n                </li>\n                <li class=\"nav-item\" data-toggle=\"chart\" data-target=\"#chart-sales\"  (click)=\"data=datasets[1];updateOptions()\">\n                  <a href=\"javascript:void(0)\" class=\"nav-link py-2 px-3\" [ngClass]=\"{'active':clicked1===true}\" data-toggle=\"tab\" (click)=\"clicked=false;clicked1=true\">\n                    <span class=\"d-none d-md-block\">Week</span>\n                    <span class=\"d-md-none\">W</span>\n                  </a>\n                </li>\n              </ul>\n            </div>\n          </div>\n        </div>\n        <div class=\"card-body\">\n          <!-- Chart -->\n          <div class=\"chart\">\n            <!-- Chart wrapper -->\n            <canvas id=\"chart-sales\" class=\"chart-canvas\"></canvas>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-xl-4\">\n      <div class=\"card shadow\">\n        <div class=\"card-header bg-transparent\">\n          <div class=\"row align-items-center\">\n            <div class=\"col\">\n              <h6 class=\"text-uppercase text-muted ls-1 mb-1\">Performance</h6>\n              <h2 class=\"mb-0\">Total orders</h2>\n            </div>\n          </div>\n        </div>\n        <div class=\"card-body\">\n          <!-- Chart -->\n          <div class=\"chart\">\n            <canvas id=\"chart-orders\" class=\"chart-canvas\"></canvas>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"row mt-5\">\n    <div class=\"col-xl-8 mb-5 mb-xl-0\">\n      <div class=\"card shadow\">\n        <div class=\"card-header border-0\">\n          <div class=\"row align-items-center\">\n            <div class=\"col\">\n              <h3 class=\"mb-0\">Page visits</h3>\n            </div>\n            <div class=\"col text-right\">\n              <a href=\"#!\" class=\"btn btn-sm btn-primary\">See all</a>\n            </div>\n          </div>\n        </div>\n        <div class=\"table-responsive\">\n          <!-- Projects table -->\n          <table class=\"table align-items-center table-flush\">\n            <thead class=\"thead-light\">\n              <tr>\n                <th scope=\"col\">Page name</th>\n                <th scope=\"col\">Visitors</th>\n                <th scope=\"col\">Unique users</th>\n                <th scope=\"col\">Bounce rate</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <th scope=\"row\">\n                  /argon/\n                </th>\n                <td>\n                  4,569\n                </td>\n                <td>\n                  340\n                </td>\n                <td>\n                  <i class=\"fas fa-arrow-up text-success mr-3\"></i> 46,53%\n                </td>\n              </tr>\n              <tr>\n                <th scope=\"row\">\n                  /argon/index.html\n                </th>\n                <td>\n                  3,985\n                </td>\n                <td>\n                  319\n                </td>\n                <td>\n                  <i class=\"fas fa-arrow-down text-warning mr-3\"></i> 46,53%\n                </td>\n              </tr>\n              <tr>\n                <th scope=\"row\">\n                  /argon/charts.html\n                </th>\n                <td>\n                  3,513\n                </td>\n                <td>\n                  294\n                </td>\n                <td>\n                  <i class=\"fas fa-arrow-down text-warning mr-3\"></i> 36,49%\n                </td>\n              </tr>\n              <tr>\n                <th scope=\"row\">\n                  /argon/tables.html\n                </th>\n                <td>\n                  2,050\n                </td>\n                <td>\n                  147\n                </td>\n                <td>\n                  <i class=\"fas fa-arrow-up text-success mr-3\"></i> 50,87%\n                </td>\n              </tr>\n              <tr>\n                <th scope=\"row\">\n                  /argon/profile.html\n                </th>\n                <td>\n                  1,795\n                </td>\n                <td>\n                  190\n                </td>\n                <td>\n                  <i class=\"fas fa-arrow-down text-danger mr-3\"></i> 46,53%\n                </td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-xl-4\">\n      <div class=\"card shadow\">\n        <div class=\"card-header border-0\">\n          <div class=\"row align-items-center\">\n            <div class=\"col\">\n              <h3 class=\"mb-0\">Social traffic</h3>\n            </div>\n            <div class=\"col text-right\">\n              <a href=\"#!\" class=\"btn btn-sm btn-primary\">See all</a>\n            </div>\n          </div>\n        </div>\n        <div class=\"table-responsive\">\n          <!-- Projects table -->\n          <table class=\"table align-items-center table-flush\">\n            <thead class=\"thead-light\">\n              <tr>\n                <th scope=\"col\">Referral</th>\n                <th scope=\"col\">Visitors</th>\n                <th scope=\"col\"></th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <th scope=\"row\">\n                  Facebook\n                </th>\n                <td>\n                  1,480\n                </td>\n                <td>\n                  <div class=\"d-flex align-items-center\">\n                    <span class=\"mr-2\">60%</span>\n                    <div>\n                      <div class=\"progress\">\n                        <div class=\"progress-bar bg-gradient-danger\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 60%;\"></div>\n                      </div>\n                    </div>\n                  </div>\n                </td>\n              </tr>\n              <tr>\n                <th scope=\"row\">\n                  Facebook\n                </th>\n                <td>\n                  5,480\n                </td>\n                <td>\n                  <div class=\"d-flex align-items-center\">\n                    <span class=\"mr-2\">70%</span>\n                    <div>\n                      <div class=\"progress\">\n                        <div class=\"progress-bar bg-gradient-success\" role=\"progressbar\" aria-valuenow=\"70\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 70%;\"></div>\n                      </div>\n                    </div>\n                  </div>\n                </td>\n              </tr>\n              <tr>\n                <th scope=\"row\">\n                  Google\n                </th>\n                <td>\n                  4,807\n                </td>\n                <td>\n                  <div class=\"d-flex align-items-center\">\n                    <span class=\"mr-2\">80%</span>\n                    <div>\n                      <div class=\"progress\">\n                        <div class=\"progress-bar bg-gradient-primary\" role=\"progressbar\" aria-valuenow=\"80\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 80%;\"></div>\n                      </div>\n                    </div>\n                  </div>\n                </td>\n              </tr>\n              <tr>\n                <th scope=\"row\">\n                  Instagram\n                </th>\n                <td>\n                  3,678\n                </td>\n                <td>\n                  <div class=\"d-flex align-items-center\">\n                    <span class=\"mr-2\">75%</span>\n                    <div>\n                      <div class=\"progress\">\n                        <div class=\"progress-bar bg-gradient-info\" role=\"progressbar\" aria-valuenow=\"75\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 75%;\"></div>\n                      </div>\n                    </div>\n                  </div>\n                </td>\n              </tr>\n              <tr>\n                <th scope=\"row\">\n                  twitter\n                </th>\n                <td>\n                  2,645\n                </td>\n                <td>\n                  <div class=\"d-flex align-items-center\">\n                    <span class=\"mr-2\">30%</span>\n                    <div>\n                      <div class=\"progress\">\n                        <div class=\"progress-bar bg-gradient-warning\" role=\"progressbar\" aria-valuenow=\"30\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 30%;\"></div>\n                      </div>\n                    </div>\n                  </div>\n                </td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"header bg-danger pb-8 pt-5 pt-md-8\">\n  <div class=\"container-fluid\">\n    <div class=\"header-body\">\n      <!-- Card stats -->\n      <div class=\"row\">\n        <div *ngFor=\"let project of projects\" class=\"col-xl-3 col-lg-6\">\n          <div class=\"card card-stats mb-4 mb-xl-0 bg-dark\" style=\"margin-top:1.25rem\">\n            <div class=\"card-body\">\n              <div class=\"row\">\n                <div class=\"col\">\n                  <h5 class=\"card-title text-uppercase text-muted mb-0\">{{project.name}}</h5>\n                  <span class=\"h1 font-weight-bold mb-0\" style=\"color: white\">  {{project.amount}} coins</span>\n                </div>\n                <div class=\"col-auto\">\n                  <div class=\"icon icon-shape bg-success text-white rounded-circle shadow\">\n                    <i class=\"fas fa-dollar-sign\"></i>\n                  </div>\n                </div>\n              </div>\n              <p class=\"mt-3 mb-0 text-muted text-sm\">\n                <span>{{project.shortDescription}}</span></p>\n              <p class=\"mt-3 mb-0 text-muted text-sm\">\n                <span class=\"text-success mr-2\"><i class=\"fa \"></i> {{project.lastUpdatedSum}} coins</span>\n                <span class=\"text-nowrap\"> collected amount</span>\n              </p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n\n<div class=\"container-fluid mt--7\">\n  <div class=\"row\">\n    <div class=\"col-xl-8 mb-5 mb-xl-0\">\n      <div class=\"card bg-dark shadow\">\n        <div class=\"card-header bg-transparent\">\n          <div class=\"row align-items-center\">\n            <div class=\"col\">\n              <h6 class=\"text-uppercase text-light ls-1 mb-1\">Overview</h6>\n              <h2 class=\"text-white mb-0\">Total donations</h2>\n            </div>\n            <div class=\"col\">\n              <ul class=\"nav nav-pills justify-content-end\">\n                <li class=\"nav-item mr-2 mr-md-0\" data-toggle=\"chart\" data-target=\"#chart-sales\"  (click)=\"data=datasets[0];updateOptions()\">\n                  <a href=\"javascript:void(0)\" class=\"nav-link py-2 px-3\" [ngClass]=\"{'active':clicked===true}\" data-toggle=\"tab\" (click)=\"clicked=true;clicked1=false\">\n                    <span class=\"d-none d-md-block\">Month</span>\n                    <span class=\"d-md-none\">M</span>\n                  </a>\n                </li>\n                <li class=\"nav-item\" data-toggle=\"chart\" data-target=\"#chart-sales\"  (click)=\"data=datasets[1];updateOptions()\">\n                  <a href=\"javascript:void(0)\" class=\"nav-link py-2 px-3\" [ngClass]=\"{'active':clicked1===true}\" data-toggle=\"tab\" (click)=\"clicked=false;clicked1=true\">\n                    <span class=\"d-none d-md-block\">Week</span>\n                    <span class=\"d-md-none\">W</span>\n                  </a>\n                </li>\n              </ul>\n            </div>\n          </div>\n        </div>\n        <div class=\"card-body\">\n          <!-- Chart -->\n          <div class=\"chart\">\n            <!-- Chart wrapper -->\n            <canvas id=\"chart-sales\" class=\"chart-canvas\"></canvas>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-xl-4\">\n      <div class=\"card shadow\">\n        <div class=\"card-header bg-transparent\">\n          <div class=\"row align-items-center\">\n            <div class=\"col\">\n              <h6 class=\"text-uppercase text-muted ls-1 mb-1\">Performance</h6>\n              <h2 class=\"mb-0\">Total orders</h2>\n            </div>\n          </div>\n        </div>\n        <div class=\"card-body\">\n          <!-- Chart -->\n          <div class=\"chart\">\n            <canvas id=\"chart-orders\" class=\"chart-canvas\"></canvas>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n<!--  <div class=\"row mt-5\">-->\n<!--    <div class=\"col-xl-8 mb-5 mb-xl-0\">-->\n<!--      <div class=\"card shadow\">-->\n<!--        <div class=\"card-header border-0\">-->\n<!--          <div class=\"row align-items-center\">-->\n<!--            <div class=\"col\">-->\n<!--              <h3 class=\"mb-0\">Page visits</h3>-->\n<!--            </div>-->\n<!--            <div class=\"col text-right\">-->\n<!--              <a href=\"#!\" class=\"btn btn-sm btn-primary\">See all</a>-->\n<!--            </div>-->\n<!--          </div>-->\n<!--        </div>-->\n<!--        <div class=\"table-responsive\">-->\n<!--          &lt;!&ndash; Projects table &ndash;&gt;-->\n<!--          <table class=\"table align-items-center table-flush\">-->\n<!--            <thead class=\"thead-light\">-->\n<!--              <tr>-->\n<!--                <th scope=\"col\">Page name</th>-->\n<!--                <th scope=\"col\">Visitors</th>-->\n<!--                <th scope=\"col\">Unique users</th>-->\n<!--                <th scope=\"col\">Bounce rate</th>-->\n<!--              </tr>-->\n<!--            </thead>-->\n<!--            <tbody>-->\n<!--              <tr>-->\n<!--                <th scope=\"row\">-->\n<!--                  /argon/-->\n<!--                </th>-->\n<!--                <td>-->\n<!--                  4,569-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  340-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  <i class=\"fas fa-arrow-up text-success mr-3\"></i> 46,53%-->\n<!--                </td>-->\n<!--              </tr>-->\n<!--              <tr>-->\n<!--                <th scope=\"row\">-->\n<!--                  /argon/index.html-->\n<!--                </th>-->\n<!--                <td>-->\n<!--                  3,985-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  319-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  <i class=\"fas fa-arrow-down text-warning mr-3\"></i> 46,53%-->\n<!--                </td>-->\n<!--              </tr>-->\n<!--              <tr>-->\n<!--                <th scope=\"row\">-->\n<!--                  /argon/charts.html-->\n<!--                </th>-->\n<!--                <td>-->\n<!--                  3,513-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  294-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  <i class=\"fas fa-arrow-down text-warning mr-3\"></i> 36,49%-->\n<!--                </td>-->\n<!--              </tr>-->\n<!--              <tr>-->\n<!--                <th scope=\"row\">-->\n<!--                  /argon/tables.html-->\n<!--                </th>-->\n<!--                <td>-->\n<!--                  2,050-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  147-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  <i class=\"fas fa-arrow-up text-success mr-3\"></i> 50,87%-->\n<!--                </td>-->\n<!--              </tr>-->\n<!--              <tr>-->\n<!--                <th scope=\"row\">-->\n<!--                  /argon/profile.html-->\n<!--                </th>-->\n<!--                <td>-->\n<!--                  1,795-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  190-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  <i class=\"fas fa-arrow-down text-danger mr-3\"></i> 46,53%-->\n<!--                </td>-->\n<!--              </tr>-->\n<!--            </tbody>-->\n<!--          </table>-->\n<!--        </div>-->\n<!--      </div>-->\n<!--    </div>-->\n<!--    <div class=\"col-xl-4\">-->\n<!--      <div class=\"card shadow\">-->\n<!--        <div class=\"card-header border-0\">-->\n<!--          <div class=\"row align-items-center\">-->\n<!--            <div class=\"col\">-->\n<!--              <h3 class=\"mb-0\">Social traffic</h3>-->\n<!--            </div>-->\n<!--            <div class=\"col text-right\">-->\n<!--              <a href=\"#!\" class=\"btn btn-sm btn-primary\">See all</a>-->\n<!--            </div>-->\n<!--          </div>-->\n<!--        </div>-->\n<!--        <div class=\"table-responsive\">-->\n<!--          &lt;!&ndash; Projects table &ndash;&gt;-->\n<!--          <table class=\"table align-items-center table-flush\">-->\n<!--            <thead class=\"thead-light\">-->\n<!--              <tr>-->\n<!--                <th scope=\"col\">Referral</th>-->\n<!--                <th scope=\"col\">Visitors</th>-->\n<!--                <th scope=\"col\"></th>-->\n<!--              </tr>-->\n<!--            </thead>-->\n<!--            <tbody>-->\n<!--              <tr>-->\n<!--                <th scope=\"row\">-->\n<!--                  Facebook-->\n<!--                </th>-->\n<!--                <td>-->\n<!--                  1,480-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  <div class=\"d-flex align-items-center\">-->\n<!--                    <span class=\"mr-2\">60%</span>-->\n<!--                    <div>-->\n<!--                      <div class=\"progress\">-->\n<!--                        <div class=\"progress-bar bg-gradient-danger\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 60%;\"></div>-->\n<!--                      </div>-->\n<!--                    </div>-->\n<!--                  </div>-->\n<!--                </td>-->\n<!--              </tr>-->\n<!--              <tr>-->\n<!--                <th scope=\"row\">-->\n<!--                  Facebook-->\n<!--                </th>-->\n<!--                <td>-->\n<!--                  5,480-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  <div class=\"d-flex align-items-center\">-->\n<!--                    <span class=\"mr-2\">70%</span>-->\n<!--                    <div>-->\n<!--                      <div class=\"progress\">-->\n<!--                        <div class=\"progress-bar bg-gradient-success\" role=\"progressbar\" aria-valuenow=\"70\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 70%;\"></div>-->\n<!--                      </div>-->\n<!--                    </div>-->\n<!--                  </div>-->\n<!--                </td>-->\n<!--              </tr>-->\n<!--              <tr>-->\n<!--                <th scope=\"row\">-->\n<!--                  Google-->\n<!--                </th>-->\n<!--                <td>-->\n<!--                  4,807-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  <div class=\"d-flex align-items-center\">-->\n<!--                    <span class=\"mr-2\">80%</span>-->\n<!--                    <div>-->\n<!--                      <div class=\"progress\">-->\n<!--                        <div class=\"progress-bar bg-gradient-primary\" role=\"progressbar\" aria-valuenow=\"80\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 80%;\"></div>-->\n<!--                      </div>-->\n<!--                    </div>-->\n<!--                  </div>-->\n<!--                </td>-->\n<!--              </tr>-->\n<!--              <tr>-->\n<!--                <th scope=\"row\">-->\n<!--                  Instagram-->\n<!--                </th>-->\n<!--                <td>-->\n<!--                  3,678-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  <div class=\"d-flex align-items-center\">-->\n<!--                    <span class=\"mr-2\">75%</span>-->\n<!--                    <div>-->\n<!--                      <div class=\"progress\">-->\n<!--                        <div class=\"progress-bar bg-gradient-info\" role=\"progressbar\" aria-valuenow=\"75\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 75%;\"></div>-->\n<!--                      </div>-->\n<!--                    </div>-->\n<!--                  </div>-->\n<!--                </td>-->\n<!--              </tr>-->\n<!--              <tr>-->\n<!--                <th scope=\"row\">-->\n<!--                  twitter-->\n<!--                </th>-->\n<!--                <td>-->\n<!--                  2,645-->\n<!--                </td>-->\n<!--                <td>-->\n<!--                  <div class=\"d-flex align-items-center\">-->\n<!--                    <span class=\"mr-2\">30%</span>-->\n<!--                    <div>-->\n<!--                      <div class=\"progress\">-->\n<!--                        <div class=\"progress-bar bg-gradient-warning\" role=\"progressbar\" aria-valuenow=\"30\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 30%;\"></div>-->\n<!--                      </div>-->\n<!--                    </div>-->\n<!--                  </div>-->\n<!--                </td>-->\n<!--              </tr>-->\n<!--            </tbody>-->\n<!--          </table>-->\n<!--        </div>-->\n<!--      </div>-->\n<!--    </div>-->\n<!--  </div>-->\n</div>\n");
 
 /***/ }),
 
@@ -477,7 +503,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid mt--7\">\n  <div class=\"row\">\n    <div class=\"col-xl-8 mb-5 mb-xl-0\">\n      <div class=\"card bg-gradient-default shadow\">\n        <div class=\"card-header bg-transparent\">\n          <div class=\"row align-items-center\">\n            <div class=\"col\">\n              <h6 class=\"text-uppercase text-light ls-1 mb-1\">Overview</h6>\n              <h2 class=\"text-white mb-0\">Sales value</h2>\n            </div>\n            <div class=\"col\">\n              <ul class=\"nav nav-pills justify-content-end\">\n                <li class=\"nav-item mr-2 mr-md-0\" data-toggle=\"chart\" data-target=\"#chart-sales\"  (click)=\"data=datasets[0];updateOptions()\">\n                  <a href=\"javascript:void(0)\" class=\"nav-link py-2 px-3\" [ngClass]=\"{'active':clicked===true}\" data-toggle=\"tab\" (click)=\"clicked=true;clicked1=false\">\n                    <span class=\"d-none d-md-block\">Month</span>\n                    <span class=\"d-md-none\">M</span>\n                  </a>\n                </li>\n                <li class=\"nav-item\" data-toggle=\"chart\" data-target=\"#chart-sales\"  (click)=\"data=datasets[1];updateOptions()\">\n                  <a href=\"javascript:void(0)\" class=\"nav-link py-2 px-3\" [ngClass]=\"{'active':clicked1===true}\" data-toggle=\"tab\" (click)=\"clicked=false;clicked1=true\">\n                    <span class=\"d-none d-md-block\">Week</span>\n                    <span class=\"d-md-none\">W</span>\n                  </a>\n                </li>\n              </ul>\n            </div>\n          </div>\n        </div>\n        <div class=\"card-body\">\n          <!-- Chart -->\n          <div class=\"chart\">\n            <!-- Chart wrapper -->\n            <canvas id=\"chart-sales\" class=\"chart-canvas\"></canvas>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-xl-4\">\n      <div class=\"card shadow\">\n        <div class=\"card-header bg-transparent\">\n          <div class=\"row align-items-center\">\n            <div class=\"col\">\n              <h6 class=\"text-uppercase text-muted ls-1 mb-1\">Performance</h6>\n              <h2 class=\"mb-0\">Total orders</h2>\n            </div>\n          </div>\n        </div>\n        <div class=\"card-body\">\n          <!-- Chart -->\n          <div class=\"chart\">\n            <canvas id=\"chart-orders\" class=\"chart-canvas\"></canvas>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"row mt-5\">\n    <div class=\"col-xl-8 mb-5 mb-xl-0\">\n      <div class=\"card shadow\">\n        <div class=\"card-header border-0\">\n          <div class=\"row align-items-center\">\n            <div class=\"col\">\n              <h3 class=\"mb-0\">Page visits</h3>\n            </div>\n            <div class=\"col text-right\">\n              <a href=\"#!\" class=\"btn btn-sm btn-primary\">See all</a>\n            </div>\n          </div>\n        </div>\n        <div class=\"table-responsive\">\n          <!-- Projects table -->\n          <table class=\"table align-items-center table-flush\">\n            <thead class=\"thead-light\">\n            <tr>\n              <th scope=\"col\">Page name</th>\n              <th scope=\"col\">Visitors</th>\n              <th scope=\"col\">Unique users</th>\n              <th scope=\"col\">Bounce rate</th>\n            </tr>\n            </thead>\n            <tbody>\n            <tr>\n              <th scope=\"row\">\n                /argon/\n              </th>\n              <td>\n                4,569\n              </td>\n              <td>\n                340\n              </td>\n              <td>\n                <i class=\"fas fa-arrow-up text-success mr-3\"></i> 46,53%\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                /argon/index.html\n              </th>\n              <td>\n                3,985\n              </td>\n              <td>\n                319\n              </td>\n              <td>\n                <i class=\"fas fa-arrow-down text-warning mr-3\"></i> 46,53%\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                /argon/charts.html\n              </th>\n              <td>\n                3,513\n              </td>\n              <td>\n                294\n              </td>\n              <td>\n                <i class=\"fas fa-arrow-down text-warning mr-3\"></i> 36,49%\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                /argon/tables.html\n              </th>\n              <td>\n                2,050\n              </td>\n              <td>\n                147\n              </td>\n              <td>\n                <i class=\"fas fa-arrow-up text-success mr-3\"></i> 50,87%\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                /argon/profile.html\n              </th>\n              <td>\n                1,795\n              </td>\n              <td>\n                190\n              </td>\n              <td>\n                <i class=\"fas fa-arrow-down text-danger mr-3\"></i> 46,53%\n              </td>\n            </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-xl-4\">\n      <div class=\"card shadow\">\n        <div class=\"card-header border-0\">\n          <div class=\"row align-items-center\">\n            <div class=\"col\">\n              <h3 class=\"mb-0\">Social traffic</h3>\n            </div>\n            <div class=\"col text-right\">\n              <a href=\"#!\" class=\"btn btn-sm btn-primary\">See all</a>\n            </div>\n          </div>\n        </div>\n        <div class=\"table-responsive\">\n          <!-- Projects table -->\n          <table class=\"table align-items-center table-flush\">\n            <thead class=\"thead-light\">\n            <tr>\n              <th scope=\"col\">Referral</th>\n              <th scope=\"col\">Visitors</th>\n              <th scope=\"col\"></th>\n            </tr>\n            </thead>\n            <tbody>\n            <tr>\n              <th scope=\"row\">\n                Facebook\n              </th>\n              <td>\n                1,480\n              </td>\n              <td>\n                <div class=\"d-flex align-items-center\">\n                  <span class=\"mr-2\">60%</span>\n                  <div>\n                    <div class=\"progress\">\n                      <div class=\"progress-bar bg-gradient-danger\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 60%;\"></div>\n                    </div>\n                  </div>\n                </div>\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                Facebook\n              </th>\n              <td>\n                5,480\n              </td>\n              <td>\n                <div class=\"d-flex align-items-center\">\n                  <span class=\"mr-2\">70%</span>\n                  <div>\n                    <div class=\"progress\">\n                      <div class=\"progress-bar bg-gradient-success\" role=\"progressbar\" aria-valuenow=\"70\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 70%;\"></div>\n                    </div>\n                  </div>\n                </div>\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                Google\n              </th>\n              <td>\n                4,807\n              </td>\n              <td>\n                <div class=\"d-flex align-items-center\">\n                  <span class=\"mr-2\">80%</span>\n                  <div>\n                    <div class=\"progress\">\n                      <div class=\"progress-bar bg-gradient-primary\" role=\"progressbar\" aria-valuenow=\"80\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 80%;\"></div>\n                    </div>\n                  </div>\n                </div>\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                Instagram\n              </th>\n              <td>\n                3,678\n              </td>\n              <td>\n                <div class=\"d-flex align-items-center\">\n                  <span class=\"mr-2\">75%</span>\n                  <div>\n                    <div class=\"progress\">\n                      <div class=\"progress-bar bg-gradient-info\" role=\"progressbar\" aria-valuenow=\"75\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 75%;\"></div>\n                    </div>\n                  </div>\n                </div>\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                twitter\n              </th>\n              <td>\n                2,645\n              </td>\n              <td>\n                <div class=\"d-flex align-items-center\">\n                  <span class=\"mr-2\">30%</span>\n                  <div>\n                    <div class=\"progress\">\n                      <div class=\"progress-bar bg-gradient-warning\" role=\"progressbar\" aria-valuenow=\"30\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 30%;\"></div>\n                    </div>\n                  </div>\n                </div>\n              </td>\n            </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"header bg-danger pb-8 pt-5 pt-md-8\">\n  <div class=\"container-fluid\">\n    <div class=\"header-body\">\n      <!-- Card stats -->\n      <div class=\"row\">\n        <div *ngFor=\"let project of projects\" class=\"col-xl-3 col-lg-6\">\n          <div class=\"card card-stats mb-4 mb-xl-0 bg-dark\" style=\"margin-top:1.25rem\">\n            <div class=\"card-body\">\n              <div class=\"row\">\n                <div class=\"col\">\n                  <h5 class=\"card-title text-uppercase text-muted mb-0\">{{project.name}}</h5>\n                  <span class=\"h1 font-weight-bold mb-0\" style=\"color: white\">{{project.last_updated_sum}} coins</span>\n                </div>\n                <div class=\"col-auto\">\n                  <div class=\"icon icon-shape bg-success text-white rounded-circle shadow\">\n                    <i class=\"fas fa-dollar-sign\"></i>\n                  </div>\n                </div>\n              </div>\n              <p class=\"mt-3 mb-0 text-muted text-sm\">\n                <span>{{this.project.shortDescription}}</span>\n                <span class=\"text-success mr-2\"><i class=\"fa fa-percentage fa-1x\"></i> {{this.project.amount}} coins</span>\n                <span class=\"text-nowrap\">needed amount</span>\n              </p>\n            </div>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"container-fluid mt--7\">\n  <div class=\"row\">\n    <div class=\"col-xl-8 mb-5 mb-xl-0\">\n      <div class=\"card bg-gradient-default shadow\">\n        <div class=\"card-header bg-transparent\">\n          <div class=\"row align-items-center\">\n            <div class=\"col\">\n              <h6 class=\"text-uppercase text-light ls-1 mb-1\">Overview</h6>\n              <h2 class=\"text-white mb-0\">Sales value</h2>\n            </div>\n            <div class=\"col\">\n              <ul class=\"nav nav-pills justify-content-end\">\n                <li class=\"nav-item mr-2 mr-md-0\" data-toggle=\"chart\" data-target=\"#chart-sales\"  (click)=\"data=datasets[0];updateOptions()\">\n                  <a href=\"javascript:void(0)\" class=\"nav-link py-2 px-3\" [ngClass]=\"{'active':clicked===true}\" data-toggle=\"tab\" (click)=\"clicked=true;clicked1=false\">\n                    <span class=\"d-none d-md-block\">Month</span>\n                    <span class=\"d-md-none\">M</span>\n                  </a>\n                </li>\n                <li class=\"nav-item\" data-toggle=\"chart\" data-target=\"#chart-sales\"  (click)=\"data=datasets[1];updateOptions()\">\n                  <a href=\"javascript:void(0)\" class=\"nav-link py-2 px-3\" [ngClass]=\"{'active':clicked1===true}\" data-toggle=\"tab\" (click)=\"clicked=false;clicked1=true\">\n                    <span class=\"d-none d-md-block\">Week</span>\n                    <span class=\"d-md-none\">W</span>\n                  </a>\n                </li>\n              </ul>\n            </div>\n          </div>\n        </div>\n        <div class=\"card-body\">\n          <!-- Chart -->\n          <div class=\"chart\">\n            <!-- Chart wrapper -->\n            <canvas id=\"chart-sales\" class=\"chart-canvas\"></canvas>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-xl-4\">\n      <div class=\"card shadow\">\n        <div class=\"card-header bg-transparent\">\n          <div class=\"row align-items-center\">\n            <div class=\"col\">\n              <h6 class=\"text-uppercase text-muted ls-1 mb-1\">Performance</h6>\n              <h2 class=\"mb-0\">Total orders</h2>\n            </div>\n          </div>\n        </div>\n        <div class=\"card-body\">\n          <!-- Chart -->\n          <div class=\"chart\">\n            <canvas id=\"chart-orders\" class=\"chart-canvas\"></canvas>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n  <div class=\"row mt-5\">\n    <div class=\"col-xl-8 mb-5 mb-xl-0\">\n      <div class=\"card shadow\">\n        <div class=\"card-header border-0\">\n          <div class=\"row align-items-center\">\n            <div class=\"col\">\n              <h3 class=\"mb-0\">Page visits</h3>\n            </div>\n            <div class=\"col text-right\">\n              <a href=\"#!\" class=\"btn btn-sm btn-primary\">See all</a>\n            </div>\n          </div>\n        </div>\n        <div class=\"table-responsive\">\n          <!-- Projects table -->\n          <table class=\"table align-items-center table-flush\">\n            <thead class=\"thead-light\">\n            <tr>\n              <th scope=\"col\">Page name</th>\n              <th scope=\"col\">Visitors</th>\n              <th scope=\"col\">Unique users</th>\n              <th scope=\"col\">Bounce rate</th>\n            </tr>\n            </thead>\n            <tbody>\n            <tr>\n              <th scope=\"row\">\n                /argon/\n              </th>\n              <td>\n                4,569\n              </td>\n              <td>\n                340\n              </td>\n              <td>\n                <i class=\"fas fa-arrow-up text-success mr-3\"></i> 46,53%\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                /argon/index.html\n              </th>\n              <td>\n                3,985\n              </td>\n              <td>\n                319\n              </td>\n              <td>\n                <i class=\"fas fa-arrow-down text-warning mr-3\"></i> 46,53%\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                /argon/charts.html\n              </th>\n              <td>\n                3,513\n              </td>\n              <td>\n                294\n              </td>\n              <td>\n                <i class=\"fas fa-arrow-down text-warning mr-3\"></i> 36,49%\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                /argon/tables.html\n              </th>\n              <td>\n                2,050\n              </td>\n              <td>\n                147\n              </td>\n              <td>\n                <i class=\"fas fa-arrow-up text-success mr-3\"></i> 50,87%\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                /argon/profile.html\n              </th>\n              <td>\n                1,795\n              </td>\n              <td>\n                190\n              </td>\n              <td>\n                <i class=\"fas fa-arrow-down text-danger mr-3\"></i> 46,53%\n              </td>\n            </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-xl-4\">\n      <div class=\"card shadow\">\n        <div class=\"card-header border-0\">\n          <div class=\"row align-items-center\">\n            <div class=\"col\">\n              <h3 class=\"mb-0\">Social traffic</h3>\n            </div>\n            <div class=\"col text-right\">\n              <a href=\"#!\" class=\"btn btn-sm btn-primary\">See all</a>\n            </div>\n          </div>\n        </div>\n        <div class=\"table-responsive\">\n          <!-- Projects table -->\n          <table class=\"table align-items-center table-flush\">\n            <thead class=\"thead-light\">\n            <tr>\n              <th scope=\"col\">Referral</th>\n              <th scope=\"col\">Visitors</th>\n              <th scope=\"col\"></th>\n            </tr>\n            </thead>\n            <tbody>\n            <tr>\n              <th scope=\"row\">\n                Facebook\n              </th>\n              <td>\n                1,480\n              </td>\n              <td>\n                <div class=\"d-flex align-items-center\">\n                  <span class=\"mr-2\">60%</span>\n                  <div>\n                    <div class=\"progress\">\n                      <div class=\"progress-bar bg-gradient-danger\" role=\"progressbar\" aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 60%;\"></div>\n                    </div>\n                  </div>\n                </div>\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                Facebook\n              </th>\n              <td>\n                5,480\n              </td>\n              <td>\n                <div class=\"d-flex align-items-center\">\n                  <span class=\"mr-2\">70%</span>\n                  <div>\n                    <div class=\"progress\">\n                      <div class=\"progress-bar bg-gradient-success\" role=\"progressbar\" aria-valuenow=\"70\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 70%;\"></div>\n                    </div>\n                  </div>\n                </div>\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                Google\n              </th>\n              <td>\n                4,807\n              </td>\n              <td>\n                <div class=\"d-flex align-items-center\">\n                  <span class=\"mr-2\">80%</span>\n                  <div>\n                    <div class=\"progress\">\n                      <div class=\"progress-bar bg-gradient-primary\" role=\"progressbar\" aria-valuenow=\"80\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 80%;\"></div>\n                    </div>\n                  </div>\n                </div>\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                Instagram\n              </th>\n              <td>\n                3,678\n              </td>\n              <td>\n                <div class=\"d-flex align-items-center\">\n                  <span class=\"mr-2\">75%</span>\n                  <div>\n                    <div class=\"progress\">\n                      <div class=\"progress-bar bg-gradient-info\" role=\"progressbar\" aria-valuenow=\"75\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 75%;\"></div>\n                    </div>\n                  </div>\n                </div>\n              </td>\n            </tr>\n            <tr>\n              <th scope=\"row\">\n                twitter\n              </th>\n              <td>\n                2,645\n              </td>\n              <td>\n                <div class=\"d-flex align-items-center\">\n                  <span class=\"mr-2\">30%</span>\n                  <div>\n                    <div class=\"progress\">\n                      <div class=\"progress-bar bg-gradient-warning\" role=\"progressbar\" aria-valuenow=\"30\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 30%;\"></div>\n                    </div>\n                  </div>\n                </div>\n              </td>\n            </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n");
 
 /***/ }),
 
@@ -779,7 +805,7 @@ module.exports = webpackAsyncContext;
 /*!**********************************************!*\
   !*** ./src/app/_globals/global-variables.ts ***!
   \**********************************************/
-/*! exports provided: API_URL, CHARITY, CATEGORY, PAUSE, ACTIVATE, TERNINATE, REDIRECT, CALLBACK */
+/*! exports provided: API_URL, CHARITY, CATEGORY, PAUSE, ACTIVATE, TERNINATE, REDIRECT, CALLBACK, URL, USERS */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -792,9 +818,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TERNINATE", function() { return TERNINATE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REDIRECT", function() { return REDIRECT; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CALLBACK", function() { return CALLBACK; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "URL", function() { return URL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "USERS", function() { return USERS; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
 
-const API_URL = 'http://back.clubisti.net/api';
+
+const API_URL = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].apiUrl;
 const CHARITY = '/projects';
 const CATEGORY = '/categories';
 const PAUSE = '/pause';
@@ -802,6 +832,8 @@ const ACTIVATE = '/activate';
 const TERNINATE = '/end';
 const REDIRECT = '/redirect';
 const CALLBACK = '/callback';
+const URL = 'http://localhost:8000';
+const USERS = '/users';
 
 
 /***/ }),
@@ -855,94 +887,6 @@ const AuthenticationInterceptorProvider = {
     useClass: AuthenticationInterceptor,
     multi: true
 };
-
-
-/***/ }),
-
-/***/ "./src/app/_models/Project.ts":
-/*!************************************!*\
-  !*** ./src/app/_models/Project.ts ***!
-  \************************************/
-/*! exports provided: Project */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Project", function() { return Project; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-
-class Project {
-    constructor(id = null, name = null, shortDescription = null, last_updated_sum = null, amount = null, max_donation_amount = null, min_donation_amount = null, status = null) {
-        this._id = id;
-        this._name = name;
-        this._last_updated_sum = last_updated_sum;
-        this._shortDescription = shortDescription;
-        this._amount = amount;
-        this._status = status;
-        this._min_donation_amount = min_donation_amount;
-        this._max_donation_amount = max_donation_amount;
-    }
-    get id() {
-        return this._id;
-    }
-    set id(value) {
-        this._id = value;
-    }
-    get name() {
-        return this._name;
-    }
-    set name(value) {
-        this._name = value;
-    }
-    get last_updated_sum() {
-        return this._last_updated_sum;
-    }
-    set last_updated_sum(value) {
-        this._last_updated_sum = value;
-    }
-    get shortDescription() {
-        return this._shortDescription;
-    }
-    set shortDescription(value) {
-        this._shortDescription = value;
-    }
-    get amount() {
-        return this._amount;
-    }
-    set amount(value) {
-        this._amount = value;
-    }
-    get created_at() {
-        return this._created_at;
-    }
-    set created_at(value) {
-        this._created_at = value;
-    }
-    get updated_at() {
-        return this._updated_at;
-    }
-    set updated_at(value) {
-        this._updated_at = value;
-    }
-    get categories() {
-        return this._categories;
-    }
-    set categories(value) {
-        this._categories = value;
-    }
-    get min_donation_amount() {
-        return this._min_donation_amount;
-    }
-    set min_donation_amount(value) {
-        this._min_donation_amount = value;
-    }
-    get max_donation_amount() {
-        return this._max_donation_amount;
-    }
-    set max_donation_amount(value) {
-        this._max_donation_amount = value;
-    }
-}
 
 
 /***/ }),
@@ -1004,53 +948,103 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
 class User {
-    constructor(id = null, firstName = null, lastName = null, userName = null, email = null) {
-        this.badge = null;
-        this.isDeleted = false;
-        this.profile = null;
-        this.roles = null;
-        this.address = null;
-        this.id = id;
-        this.username = userName;
-        this.email = email;
-        this.firstName = firstName;
-        this.lastName = lastName;
+    // constructor(
+    //   id: number,
+    //   firstName: string,
+    //   lastName: string,
+    //   username: string,
+    //   email: string,
+    //   password: string,
+    //   badge: any,
+    //   deleted: boolean,
+    //   profile: any,
+    //   roles: any,
+    //   address: any
+    // ) {
+    //   this._id = id;
+    //   this._firstName = firstName;
+    //   this._lastName = lastName;
+    //   this._username = username;
+    //   this._email = email;
+    //   this._password = password;
+    //   this._badge = badge;
+    //   this._deleted = deleted;
+    //   this._profile = profile;
+    //   this._roles = roles;
+    //   this._address = address;
+    // }
+    constructor() {
+        this._badge = null;
+        this._deleted = false;
+        this._profile = null;
+        this._roles = null;
+        this._address = null;
     }
-    getId() {
-        return this.id;
+    get id() {
+        return this._id;
     }
-    setId(value) {
-        this.id = value;
+    set id(value) {
+        this._id = value;
     }
-    getFirstName() {
-        return this.firstName;
+    get firstName() {
+        return this._firstName;
     }
-    setFirstName(value) {
-        this.firstName = value;
+    set firstName(value) {
+        this._firstName = value;
     }
-    getLastName() {
-        return this.lastName;
+    get lastName() {
+        return this._lastName;
     }
-    setLastName(value) {
-        this.lastName = value;
+    set lastName(value) {
+        this._lastName = value;
     }
-    getUserName() {
-        return this.username;
+    get username() {
+        return this._username;
     }
-    setUserName(value) {
-        this.username = value;
+    set username(value) {
+        this._username = value;
     }
-    getEmail() {
-        return this.email;
+    get email() {
+        return this._email;
     }
-    setEmail(value) {
-        this.email = value;
+    set email(value) {
+        this._email = value;
     }
-    getPassword() {
-        return this.password;
+    get password() {
+        return this._password;
     }
-    setPassword(value) {
-        this.password = value;
+    set password(value) {
+        this._password = value;
+    }
+    get badge() {
+        return this._badge;
+    }
+    set badge(value) {
+        this._badge = value;
+    }
+    get deleted() {
+        return this._deleted;
+    }
+    set deleted(value) {
+        this._deleted = value;
+    }
+    get profile() {
+        return this._profile;
+    }
+    set profile(value) {
+        this._profile = value;
+    }
+    get roles() {
+        return this._roles;
+    }
+    set roles(value) {
+        this._roles = value;
+    }
+    get address() {
+        return this._address;
+    }
+    set address(value) {
+        this._address = value;
     }
 }
 
@@ -1089,23 +1083,24 @@ let AuthenticationService = class AuthenticationService {
     }
     signup(user) {
         // tslint:disable-next-line:max-line-length
-        const creds = { username: user.getUserName(), first_name: user.getFirstName(), last_name: user.getLastName(), email: user.getEmail(), password: user.getPassword() };
-        return this.http.post(this.resourceUrl + 'register', JSON.parse(JSON.stringify(creds)), { observe: 'response' });
+        const creds = { username: user.username, first_name: user.firstName, last_name: user.lastName, email: user.email, password: user.password };
+        return this.http.post(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + '/register', JSON.parse(JSON.stringify(creds)), { observe: 'response' });
     }
     login(user) {
         const headers = { 'Content-Type': 'application/json' };
-        const creds = { email: user.getEmail(), password: user.getPassword() };
-        return this.http.post(this.resourceUrl + 'login', JSON.stringify(creds), { headers, observe: 'response' });
+        const creds = { email: user.email, password: user.password };
+        return this.http.post(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + '/login', JSON.stringify(creds), { headers, observe: 'response' });
     }
-    facebookLogin() {
-        return this.http.get(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["REDIRECT"]);
+    facebookLogin(id) {
+        const param = { param: id };
+        return this.http.post(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + '/fblogin', JSON.stringify(param), { observe: 'response' });
     }
     // method get for current user from the backend
     getUser() {
-        return this.http.get(this.resourceUrl + 'users' + this.getCurrentUser().getId());
+        return this.http.get(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + 'users' + this.getCurrentUser().id);
     }
     logout() {
-        return this.http.post(this.resourceUrl + 'logout', { observe: 'response' });
+        return this.http.post(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + '/logout', { observe: 'response' });
     }
     isLogged() {
         return localStorage.getItem('token') != null;
@@ -1114,10 +1109,22 @@ let AuthenticationService = class AuthenticationService {
         return this.redirectUri;
     }
     setCurrentUser(currentUser) {
-        this.currentUser = currentUser;
+        this.currentUser.id = currentUser.id;
+        this.currentUser.username = currentUser.username;
+        this.currentUser.firstName = currentUser.first_name;
+        this.currentUser.lastName = currentUser.last_name;
+        this.currentUser.email = currentUser.email;
     }
     getCurrentUser() {
         return this.currentUser;
+    }
+    savingUser(result) {
+        console.log('currently logging in...');
+        console.log('body', result.body.user);
+        this.setCurrentUser(JSON.parse(result.body.user));
+        console.log('current user last name ' + this.getCurrentUser().lastName);
+        // @ts-ignore
+        localStorage.setItem('token', result.body.token);
     }
 };
 AuthenticationService.ctorParameters = () => [
@@ -1129,6 +1136,75 @@ AuthenticationService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])
         providedIn: 'root'
     })
 ], AuthenticationService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/_services/categories.service.ts":
+/*!*************************************************!*\
+  !*** ./src/app/_services/categories.service.ts ***!
+  \*************************************************/
+/*! exports provided: CategoriesService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoriesService", function() { return CategoriesService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/* harmony import */ var _globals_global_variables__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../_globals/global-variables */ "./src/app/_globals/global-variables.ts");
+/* harmony import */ var _crud_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./crud.service */ "./src/app/_services/crud.service.ts");
+
+
+
+
+
+let CategoriesService = class CategoriesService {
+    constructor(crudService) {
+        this.crudService = crudService;
+    }
+    setCategories(categories) {
+        this.categories = categories;
+    }
+    getCategories() {
+        return this.categories;
+    }
+    getCurrentPage() {
+        return this._currentPage;
+    }
+    setCurrentPage(value) {
+        this._currentPage = value;
+    }
+    getSizePage() {
+        return this._sizePage;
+    }
+    setSizePage(value) {
+        this._sizePage = value;
+    }
+    getCategoriesAPI() {
+        let params;
+        const selectedPage = this._currentPage;
+        params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]().set('page', selectedPage.toString())
+            .set('perPage', this._sizePage.toString());
+        this.crudService.getAllWithParams(_globals_global_variables__WEBPACK_IMPORTED_MODULE_3__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_3__["CATEGORY"], params).subscribe((response) => {
+            this.categories = response;
+            console.log(this.categories);
+            this._currentPage = this.categories.meta.current_page;
+        }, (error => {
+            console.log(error);
+        }));
+    }
+};
+CategoriesService.ctorParameters = () => [
+    { type: _crud_service__WEBPACK_IMPORTED_MODULE_4__["CrudService"] }
+];
+CategoriesService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], CategoriesService);
 
 
 
@@ -1277,6 +1353,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pipes_enum_to_array_pipe__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./pipes/enum-to-array.pipe */ "./src/app/pipes/enum-to-array.pipe.ts");
 /* harmony import */ var _interceptors_authentication_interceptor__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./_interceptors/authentication.interceptor */ "./src/app/_interceptors/authentication.interceptor.ts");
 /* harmony import */ var _layouts_anonymous_layout_anonymous_layout_module__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./layouts/anonymous-layout/anonymous-layout.module */ "./src/app/layouts/anonymous-layout/anonymous-layout.module.ts");
+/* harmony import */ var _pages_admin_charity_charity_update_charity_update_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./pages/admin/charity/charity-update/charity-update.component */ "./src/app/pages/admin/charity/charity-update/charity-update.component.ts");
+/* harmony import */ var _components_fb_auth_fb_auth_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/fb-auth/fb-auth.component */ "./src/app/components/fb-auth/fb-auth.component.ts");
+
+
 
 
 
@@ -1329,6 +1409,8 @@ AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
             _pages_admin_category_create_category_create_category_component__WEBPACK_IMPORTED_MODULE_18__["CreateCategoryComponent"],
             _pages_admin_category_list_category_list_category_component__WEBPACK_IMPORTED_MODULE_19__["ListCategoryComponent"],
             _pipes_enum_to_array_pipe__WEBPACK_IMPORTED_MODULE_20__["EnumToArrayPipe"],
+            _pages_admin_charity_charity_update_charity_update_component__WEBPACK_IMPORTED_MODULE_23__["CharityUpdateComponent"],
+            _components_fb_auth_fb_auth_component__WEBPACK_IMPORTED_MODULE_24__["FbAuthComponent"]
         ],
         providers: [_interceptors_authentication_interceptor__WEBPACK_IMPORTED_MODULE_21__["AuthenticationInterceptorProvider"],
             { provide: ng_zorro_antd__WEBPACK_IMPORTED_MODULE_7__["NZ_I18N"], useValue: ng_zorro_antd__WEBPACK_IMPORTED_MODULE_7__["en_US"] }
@@ -1358,6 +1440,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _layouts_auth_layout_auth_layout_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./layouts/auth-layout/auth-layout.component */ "./src/app/layouts/auth-layout/auth-layout.component.ts");
 /* harmony import */ var _layouts_anonymous_layout_anonymous_layout_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./layouts/anonymous-layout/anonymous-layout.component */ "./src/app/layouts/anonymous-layout/anonymous-layout.component.ts");
 /* harmony import */ var _layouts_template_layout_template_layout_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./layouts/template-layout/template-layout.component */ "./src/app/layouts/template-layout/template-layout.component.ts");
+/* harmony import */ var _components_fb_auth_fb_auth_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/fb-auth/fb-auth.component */ "./src/app/components/fb-auth/fb-auth.component.ts");
+
 
 
 
@@ -1371,6 +1455,7 @@ const routes = [
         redirectTo: 'dashboard',
         pathMatch: 'full',
     },
+    { path: 'fblogin', component: _components_fb_auth_fb_auth_component__WEBPACK_IMPORTED_MODULE_7__["FbAuthComponent"] },
     {
         path: 'admin',
         component: _layouts_admin_layout_admin_layout_component__WEBPACK_IMPORTED_MODULE_3__["AdminLayoutComponent"],
@@ -1462,9 +1547,9 @@ __webpack_require__.r(__webpack_exports__);
 
 const ROUTES = [
     { path: '/admin/landing', title: 'Landing', icon: 'ni-tv-2 text-primary', class: '' },
-    { path: '/admin/products', title: 'Products', icon: 'ni-planet text-blue', class: '' },
-    { path: '/admin/charity', title: 'Charity', icon: 'ni-pin-3 text-orange', class: '' },
-    { path: '/admin/variable', title: 'Variable', icon: 'ni-pin-3 text-pink', class: '' },
+    { path: '/admin/variable', title: 'Setting', icon: 'ni-settings text-pink', class: '' },
+    { path: '/admin/charity', title: 'Charity', icon: ' ni-money-coins text-orange', class: '' },
+    { path: '/admin/users', title: 'Users', icon: 'ni-single-02 text-red', class: '' },
 ];
 let AdminSidebarComponent = class AdminSidebarComponent {
     constructor(router) {
@@ -1544,6 +1629,78 @@ ComponentsModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
         ]
     })
 ], ComponentsModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/fb-auth/fb-auth.component.scss":
+/*!***********************************************************!*\
+  !*** ./src/app/components/fb-auth/fb-auth.component.scss ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("@import url(https://fonts.googleapis.com/css?family=Montserrat);\nbody {\n  position: relative;\n  width: 100%;\n  height: 100vh;\n  font-family: Montserrat;\n}\n.wrap {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  -webkit-transform: translate(-50%, -50%);\n          transform: translate(-50%, -50%);\n}\n.text {\n  color: #fbae17;\n  display: inline-block;\n  margin-left: 5px;\n}\n.bounceball {\n  position: relative;\n  display: inline-block;\n  height: 37px;\n  width: 15px;\n}\n.bounceball:before {\n  position: absolute;\n  content: \"\";\n  display: block;\n  top: 0;\n  width: 15px;\n  height: 15px;\n  border-radius: 50%;\n  background-color: #fbae17;\n  -webkit-transform-origin: 50%;\n          transform-origin: 50%;\n  -webkit-animation: bounce 500ms alternate infinite ease;\n          animation: bounce 500ms alternate infinite ease;\n}\n@-webkit-keyframes bounce {\n  0% {\n    top: 30px;\n    height: 5px;\n    border-radius: 60px 60px 20px 20px;\n    -webkit-transform: scaleX(2);\n            transform: scaleX(2);\n  }\n  35% {\n    height: 15px;\n    border-radius: 50%;\n    -webkit-transform: scaleX(1);\n            transform: scaleX(1);\n  }\n  100% {\n    top: 0;\n  }\n}\n@keyframes bounce {\n  0% {\n    top: 30px;\n    height: 5px;\n    border-radius: 60px 60px 20px 20px;\n    -webkit-transform: scaleX(2);\n            transform: scaleX(2);\n  }\n  35% {\n    height: 15px;\n    border-radius: 50%;\n    -webkit-transform: scaleX(1);\n            transform: scaleX(1);\n  }\n  100% {\n    top: 0;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9ob21lL3NhbWkvV0VCL2NsdWJpc3RpL2Zyb250L3NyYy9hcHAvY29tcG9uZW50cy9mYi1hdXRoL2ZiLWF1dGguY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NvbXBvbmVudHMvZmItYXV0aC9mYi1hdXRoLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFTLCtEQUFBO0FBU1Q7RUFDRSxrQkFBQTtFQUNBLFdBQUE7RUFDQSxhQUFBO0VBQ0EsdUJBQUE7QUNQRjtBRFVBO0VBQ0Usa0JBQUE7RUFDQSxRQUFBO0VBQ0EsU0FBQTtFQUNBLHdDQUFBO1VBQUEsZ0NBQUE7QUNQRjtBRFVBO0VBQ0UsY0FBQTtFQUNBLHFCQUFBO0VBQ0EsZ0JBQUE7QUNQRjtBRFVBO0VBQ0Usa0JBQUE7RUFDQSxxQkFBQTtFQUNBLFlBQUE7RUFDQSxXQTlCTTtBQ3VCUjtBRFFBO0VBQ0csa0JBQUE7RUFDQSxXQUFBO0VBQ0EsY0FBQTtFQUNBLE1BQUE7RUFDQSxXQXBDSztFQXFDTCxZQXBDTTtFQXFDTixrQkFBQTtFQUNBLHlCQUFBO0VBQ0EsNkJBQUE7VUFBQSxxQkFBQTtFQUNBLHVEQUFBO1VBQUEsK0NBQUE7QUNOSDtBRFVBO0VBQ0U7SUFDRSxTQTNDWTtJQTRDWixXQUFBO0lBQ0Esa0NBQUE7SUFDQSw0QkFBQTtZQUFBLG9CQUFBO0VDUEY7RURTQTtJQUNFLFlBcERLO0lBcURMLGtCQUFBO0lBQ0EsNEJBQUE7WUFBQSxvQkFBQTtFQ1BGO0VEU0E7SUFDRSxNQUFBO0VDUEY7QUFDRjtBRFBBO0VBQ0U7SUFDRSxTQTNDWTtJQTRDWixXQUFBO0lBQ0Esa0NBQUE7SUFDQSw0QkFBQTtZQUFBLG9CQUFBO0VDUEY7RURTQTtJQUNFLFlBcERLO0lBcURMLGtCQUFBO0lBQ0EsNEJBQUE7WUFBQSxvQkFBQTtFQ1BGO0VEU0E7SUFDRSxNQUFBO0VDUEY7QUFDRiIsImZpbGUiOiJzcmMvYXBwL2NvbXBvbmVudHMvZmItYXV0aC9mYi1hdXRoLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCAgdXJsKGh0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzP2ZhbWlseT1Nb250c2VycmF0KTtcblxuXG4kd2lkdGg6IDE1cHg7XG4kaGVpZ2h0OiAxNXB4O1xuXG5cbiRib3VuY2VfaGVpZ2h0OiAzMHB4O1xuXG5ib2R5IHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgZm9udC1mYW1pbHk6IE1vbnRzZXJyYXQ7XG59XG5cbi53cmFwIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDUwJTtcbiAgbGVmdDogNTAlO1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbn1cblxuLnRleHQge1xuICBjb2xvcjogI2ZiYWUxNztcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBtYXJnaW4tbGVmdDogNXB4O1xufVxuXG4uYm91bmNlYmFsbCB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBoZWlnaHQ6IDM3cHg7XG4gIHdpZHRoOiAkd2lkdGg7XG4mOmJlZm9yZSB7XG4gICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICBjb250ZW50OiAnJztcbiAgIGRpc3BsYXk6IGJsb2NrO1xuICAgdG9wOiAwO1xuICAgd2lkdGg6ICR3aWR0aDtcbiAgIGhlaWdodDogJGhlaWdodDtcbiAgIGJvcmRlci1yYWRpdXM6IDUwJTtcbiAgIGJhY2tncm91bmQtY29sb3I6ICNmYmFlMTc7XG4gICB0cmFuc2Zvcm0tb3JpZ2luOiA1MCU7XG4gICBhbmltYXRpb246IGJvdW5jZSA1MDBtcyBhbHRlcm5hdGUgaW5maW5pdGUgZWFzZTtcbiB9XG59XG5cbkBrZXlmcmFtZXMgYm91bmNlIHtcbiAgMCUge1xuICAgIHRvcDogJGJvdW5jZV9oZWlnaHQ7XG4gICAgaGVpZ2h0OiA1cHg7XG4gICAgYm9yZGVyLXJhZGl1czogNjBweCA2MHB4IDIwcHggMjBweDtcbiAgICB0cmFuc2Zvcm06IHNjYWxlWCgyKTtcbiAgfVxuICAzNSUge1xuICAgIGhlaWdodDogJGhlaWdodDtcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XG4gICAgdHJhbnNmb3JtOiBzY2FsZVgoMSk7XG4gIH1cbiAgMTAwJSB7XG4gICAgdG9wOiAwO1xuICB9XG59XG4iLCJAaW1wb3J0IHVybChodHRwczovL2ZvbnRzLmdvb2dsZWFwaXMuY29tL2Nzcz9mYW1pbHk9TW9udHNlcnJhdCk7XG5ib2R5IHtcbiAgcG9zaXRpb246IHJlbGF0aXZlO1xuICB3aWR0aDogMTAwJTtcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgZm9udC1mYW1pbHk6IE1vbnRzZXJyYXQ7XG59XG5cbi53cmFwIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICB0b3A6IDUwJTtcbiAgbGVmdDogNTAlO1xuICB0cmFuc2Zvcm06IHRyYW5zbGF0ZSgtNTAlLCAtNTAlKTtcbn1cblxuLnRleHQge1xuICBjb2xvcjogI2ZiYWUxNztcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBtYXJnaW4tbGVmdDogNXB4O1xufVxuXG4uYm91bmNlYmFsbCB7XG4gIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICBoZWlnaHQ6IDM3cHg7XG4gIHdpZHRoOiAxNXB4O1xufVxuLmJvdW5jZWJhbGw6YmVmb3JlIHtcbiAgcG9zaXRpb246IGFic29sdXRlO1xuICBjb250ZW50OiBcIlwiO1xuICBkaXNwbGF5OiBibG9jaztcbiAgdG9wOiAwO1xuICB3aWR0aDogMTVweDtcbiAgaGVpZ2h0OiAxNXB4O1xuICBib3JkZXItcmFkaXVzOiA1MCU7XG4gIGJhY2tncm91bmQtY29sb3I6ICNmYmFlMTc7XG4gIHRyYW5zZm9ybS1vcmlnaW46IDUwJTtcbiAgYW5pbWF0aW9uOiBib3VuY2UgNTAwbXMgYWx0ZXJuYXRlIGluZmluaXRlIGVhc2U7XG59XG5cbkBrZXlmcmFtZXMgYm91bmNlIHtcbiAgMCUge1xuICAgIHRvcDogMzBweDtcbiAgICBoZWlnaHQ6IDVweDtcbiAgICBib3JkZXItcmFkaXVzOiA2MHB4IDYwcHggMjBweCAyMHB4O1xuICAgIHRyYW5zZm9ybTogc2NhbGVYKDIpO1xuICB9XG4gIDM1JSB7XG4gICAgaGVpZ2h0OiAxNXB4O1xuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcbiAgICB0cmFuc2Zvcm06IHNjYWxlWCgxKTtcbiAgfVxuICAxMDAlIHtcbiAgICB0b3A6IDA7XG4gIH1cbn0iXX0= */");
+
+/***/ }),
+
+/***/ "./src/app/components/fb-auth/fb-auth.component.ts":
+/*!*********************************************************!*\
+  !*** ./src/app/components/fb-auth/fb-auth.component.ts ***!
+  \*********************************************************/
+/*! exports provided: FbAuthComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FbAuthComponent", function() { return FbAuthComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+/* harmony import */ var _services_authentication_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../_services/authentication.service */ "./src/app/_services/authentication.service.ts");
+
+
+
+
+
+let FbAuthComponent = class FbAuthComponent {
+    constructor(activatedRoute, router, http, authenticationService) {
+        this.activatedRoute = activatedRoute;
+        this.router = router;
+        this.http = http;
+        this.authenticationService = authenticationService;
+    }
+    ngOnInit() {
+        let id = null;
+        this.activatedRoute.queryParams.subscribe(params => {
+            id = params.param;
+            console.log("hello" + id);
+        });
+        this.authenticationService.facebookLogin(id).subscribe(result => {
+            console.log('facebook login ...');
+            this.authenticationService.savingUser(result);
+            console.log(this.authenticationService.getCurrentUser());
+            this.router.navigate(['/dashboard']);
+        });
+    }
+};
+FbAuthComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] },
+    { type: _services_authentication_service__WEBPACK_IMPORTED_MODULE_4__["AuthenticationService"] }
+];
+FbAuthComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-fb-auth',
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./fb-auth.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/fb-auth/fb-auth.component.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./fb-auth.component.scss */ "./src/app/components/fb-auth/fb-auth.component.scss")).default]
+    })
+], FbAuthComponent);
 
 
 
@@ -1643,6 +1800,7 @@ let NavbarComponent = class NavbarComponent {
         this.listTitles = _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_2__["ROUTES"].filter(listTitle => listTitle);
         console.log(this.authenticationService.isLogged());
         this.connected = this.authenticationService.isLogged();
+        this.currentUser = this.authenticationService.getCurrentUser();
     }
     getTitle() {
         let titlee = this.location.prepareExternalUrl(this.location.path());
@@ -1665,7 +1823,7 @@ let NavbarComponent = class NavbarComponent {
             console.log('logging out');
             // @ts-ignore
             localStorage.removeItem('token');
-            this.router.navigate(['/history']);
+            this.router.navigate(['/dashboard']);
         });
     }
 };
@@ -1869,7 +2027,7 @@ AnonymousLayoutModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         declarations: [
             _pages_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_6__["DashboardComponent"],
-            _pages_history_history_component__WEBPACK_IMPORTED_MODULE_5__["HistoryComponent"],
+            _pages_history_history_component__WEBPACK_IMPORTED_MODULE_5__["HistoryComponent"]
         ],
         imports: [
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
@@ -2046,6 +2204,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 /* harmony import */ var _models_enum_CategoryType__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../_models/enum/CategoryType */ "./src/app/_models/enum/CategoryType.ts");
 /* harmony import */ var _globals_global_variables__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../_globals/global-variables */ "./src/app/_globals/global-variables.ts");
+/* harmony import */ var _services_categories_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../_services/categories.service */ "./src/app/_services/categories.service.ts");
+
 
 
 
@@ -2054,10 +2214,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let CreateCategoryComponent = class CreateCategoryComponent {
-    constructor(formBuilder, crudService, router) {
+    constructor(formBuilder, crudService, router, categoryService) {
         this.formBuilder = formBuilder;
         this.crudService = crudService;
         this.router = router;
+        this.categoryService = categoryService;
         this.keys = Object.keys;
         this.categories = _models_enum_CategoryType__WEBPACK_IMPORTED_MODULE_5__["CategoryType"];
     }
@@ -2071,14 +2232,16 @@ let CreateCategoryComponent = class CreateCategoryComponent {
         console.log(this.createCategory.value);
         this.crudService.post(_globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["CATEGORY"], this.createCategory.value).subscribe((response) => {
             console.log(response);
-            // this.router.navigate(['/list-story']);
+            this.categoryService.getCategoriesAPI();
+            this.router.navigate(['/admin/variable']);
         }, (error => console.log(error)));
     }
 };
 CreateCategoryComponent.ctorParameters = () => [
     { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
     { type: _services_crud_service__WEBPACK_IMPORTED_MODULE_3__["CrudService"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] },
+    { type: _services_categories_service__WEBPACK_IMPORTED_MODULE_7__["CategoriesService"] }
 ];
 CreateCategoryComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -2121,6 +2284,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 /* harmony import */ var _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../_globals/global-variables */ "./src/app/_globals/global-variables.ts");
+/* harmony import */ var _services_categories_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../_services/categories.service */ "./src/app/_services/categories.service.ts");
+
 
 
 
@@ -2128,16 +2293,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let ListCategoryComponent = class ListCategoryComponent {
-    constructor(crudService, router, route) {
+    constructor(crudService, router, route, categoryService) {
         this.crudService = crudService;
         this.router = router;
         this.route = route;
+        this.categoryService = categoryService;
         this.isVisible = false;
         this.sort = 'createdAt,desc';
     }
     ngOnInit() {
         this.currentPage = 1;
-        this.sizePage = 1;
+        this.sizePage = 10;
+        this.categoryService.setCurrentPage(1);
+        this.categoryService.setSizePage(3);
         this.getCategories();
     }
     getCategories() {
@@ -2147,8 +2315,10 @@ let ListCategoryComponent = class ListCategoryComponent {
             .set('perPage', this.sizePage.toString());
         this.crudService.getAllWithParams(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["CATEGORY"], params).subscribe((response) => {
             this.categories = response;
+            this.categoryService.setCategories(this.categories);
             console.log(this.categories);
             this.currentPage = this.categories.meta.current_page;
+            this.categoryService.setCurrentPage(this.categories.meta.current_page);
         }, (error => {
             console.log(error);
         }));
@@ -2161,7 +2331,8 @@ let ListCategoryComponent = class ListCategoryComponent {
 ListCategoryComponent.ctorParameters = () => [
     { type: _services_crud_service__WEBPACK_IMPORTED_MODULE_2__["CrudService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
+    { type: _services_categories_service__WEBPACK_IMPORTED_MODULE_6__["CategoriesService"] }
 ];
 ListCategoryComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -2279,6 +2450,17 @@ let CharitiesListComponent = class CharitiesListComponent {
             nzOnCancel: () => console.log('Cancel')
         });
     }
+    deleteProject(id) {
+        this.crudService.delete(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["CHARITY"], id).subscribe((response => {
+            console.log(response);
+            this.getProjects();
+        }), (error => {
+            console.log(error);
+        }));
+    }
+    updateProject(id) {
+        this.router.navigate(['admin/charity/update/', id]);
+    }
 };
 CharitiesListComponent.ctorParameters = () => [
     { type: _services_crud_service__WEBPACK_IMPORTED_MODULE_2__["CrudService"] },
@@ -2327,6 +2509,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _services_crud_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../_services/crud.service */ "./src/app/_services/crud.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
 /* harmony import */ var _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../_globals/global-variables */ "./src/app/_globals/global-variables.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+
 
 
 
@@ -2343,6 +2527,7 @@ let CharityCreateComponent = class CharityCreateComponent {
         this.date = null;
         this.dateFormat = 'yyyy/MM/dd';
         this.keys = Object.keys;
+        this.pipe = new _angular_common__WEBPACK_IMPORTED_MODULE_6__["DatePipe"]('en-US');
     }
     ngOnInit() {
         this.getCategories();
@@ -2352,7 +2537,8 @@ let CharityCreateComponent = class CharityCreateComponent {
             amount: 0,
             minDonationAmount: 0,
             maxDonationAmount: 0,
-            categoriesIds: 0,
+            categoriesIds: 1,
+            date: []
         });
     }
     getCategories() {
@@ -2365,6 +2551,8 @@ let CharityCreateComponent = class CharityCreateComponent {
     }
     onSubmit() {
         this.createCharity.value.categoriesIds = [this.createCharity.value.categoriesIds];
+        this.createCharity.value.startDate = this.pipe.transform(this.createCharity.value.date[0], ' yyyy-M-d hh:mm:ss');
+        this.createCharity.value.endDate = this.pipe.transform(this.createCharity.value.date[1], 'yyyy-M-d hh:mm:ss');
         console.log(this.createCharity.value);
         this.crudService.post(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["CHARITY"], this.createCharity.value).subscribe((response) => {
             console.log(response);
@@ -2384,6 +2572,138 @@ CharityCreateComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]
         styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./charity-create.component.css */ "./src/app/pages/admin/charity/charity-create/charity-create.component.css")).default]
     })
 ], CharityCreateComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/pages/admin/charity/charity-update/charity-update.component.css":
+/*!*********************************************************************************!*\
+  !*** ./src/app/pages/admin/charity/charity-update/charity-update.component.css ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2FkbWluL2NoYXJpdHkvY2hhcml0eS11cGRhdGUvY2hhcml0eS11cGRhdGUuY29tcG9uZW50LmNzcyJ9 */");
+
+/***/ }),
+
+/***/ "./src/app/pages/admin/charity/charity-update/charity-update.component.ts":
+/*!********************************************************************************!*\
+  !*** ./src/app/pages/admin/charity/charity-update/charity-update.component.ts ***!
+  \********************************************************************************/
+/*! exports provided: CharityUpdateComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CharityUpdateComponent", function() { return CharityUpdateComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+/* harmony import */ var _services_crud_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../_services/crud.service */ "./src/app/_services/crud.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+/* harmony import */ var _globals_global_variables__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../_globals/global-variables */ "./src/app/_globals/global-variables.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+
+
+
+
+
+
+
+
+let CharityUpdateComponent = class CharityUpdateComponent {
+    constructor(formBuilder, crudService, router, route, http) {
+        this.formBuilder = formBuilder;
+        this.crudService = crudService;
+        this.router = router;
+        this.route = route;
+        this.http = http;
+        this.date = null;
+        this.dateFormat = 'yyyy/MM/dd';
+        this.keys = Object.keys;
+        this.pipe = new _angular_common__WEBPACK_IMPORTED_MODULE_3__["DatePipe"]('en-US');
+        this.getProject();
+    }
+    ngOnInit() {
+        console.log(this.project);
+        this.getProject();
+        this.getCategories();
+        this.createCharity = this.formBuilder.group({
+            name: '',
+            shortDescription: '',
+            amount: 0,
+            minDonationAmount: 0,
+            maxDonationAmount: 0,
+            categoriesIds: 0,
+            startDate: '',
+            endDate: '',
+            date: []
+        });
+    }
+    initForm() {
+        this.createCharity = this.formBuilder.group({
+            name: this.project.name,
+            shortDescription: this.project.shortDescription,
+            amount: this.project.amount,
+            minDonationAmount: this.project.minDonationAmount,
+            maxDonationAmount: this.project.maxDonationAmount,
+            categoriesIds: this.project.categories[0].id,
+            startDate: this.project.startDate,
+            endDate: this.project.endDate,
+            date: []
+        });
+    }
+    getProject() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            this.route.params.subscribe(params => {
+                this.id = +params['id'];
+                console.log(this.id);
+            });
+            const data = yield this.http.get(_globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["CHARITY"] + '/' + this.id).toPromise();
+            this.project = data.data;
+            this.initForm();
+        });
+    }
+    getCategories() {
+        this.crudService.getAll(_globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["CATEGORY"]).subscribe((response) => {
+            this.categories = response.data;
+            console.log(this.categories);
+        }, (error => {
+            console.log(error);
+        }));
+    }
+    onSubmit() {
+        this.createCharity.value.categoriesIds = [this.createCharity.value.categoriesIds];
+        if (this.createCharity.value.date) {
+            this.createCharity.value.startDate = this.pipe.transform(this.createCharity.value.date[0], ' yyyy-M-d hh:mm:ss');
+            this.createCharity.value.endDate = this.pipe.transform(this.createCharity.value.date[1], 'yyyy-M-d hh:mm:ss');
+        }
+        console.log(this.createCharity.value);
+        this.crudService.update(_globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["CHARITY"], this.id, this.createCharity.value).subscribe((response) => {
+            console.log(response);
+            this.router.navigate(['/admin/charity']);
+        }, (error => console.log(error)));
+    }
+};
+CharityUpdateComponent.ctorParameters = () => [
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"] },
+    { type: _services_crud_service__WEBPACK_IMPORTED_MODULE_4__["CrudService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"] },
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_7__["HttpClient"] }
+];
+CharityUpdateComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-charity-update',
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./charity-update.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/admin/charity/charity-update/charity-update.component.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./charity-update.component.css */ "./src/app/pages/admin/charity/charity-update/charity-update.component.css")).default]
+    })
+], CharityUpdateComponent);
 
 
 
@@ -2417,26 +2737,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! chart.js */ "./node_modules/chart.js/src/chart.js");
 /* harmony import */ var chart_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(chart_js__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _variables_charts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../variables/charts */ "./src/app/variables/charts.ts");
-/* harmony import */ var _models_Project__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../_models/Project */ "./src/app/_models/Project.ts");
+/* harmony import */ var _globals_global_variables__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../_globals/global-variables */ "./src/app/_globals/global-variables.ts");
+/* harmony import */ var _services_crud_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../_services/crud.service */ "./src/app/_services/crud.service.ts");
 
 
 
 // core components
 
 
+
 let DashboardComponent = class DashboardComponent {
-    constructor() {
+    constructor(crudService) {
+        this.crudService = crudService;
         this.clicked = true;
         this.clicked1 = false;
         this.projects = [];
     }
     ngOnInit() {
-        this.projects[0] = new _models_Project__WEBPACK_IMPORTED_MODULE_4__["Project"](1, 'Project 1', 'description project 1 bla bla bla bla', 20, 100);
-        this.projects[1] = new _models_Project__WEBPACK_IMPORTED_MODULE_4__["Project"](2, 'Project 2', 'description project 2 bla bla bla bla', 30, 200);
-        this.projects[2] = new _models_Project__WEBPACK_IMPORTED_MODULE_4__["Project"](3, 'Project 3', 'description project 3 bla bla bla bla', 30, 200);
-        this.projects[3] = new _models_Project__WEBPACK_IMPORTED_MODULE_4__["Project"](4, 'Project 4', 'description project 4 bla bla bla bla', 30, 200);
-        this.projects[4] = new _models_Project__WEBPACK_IMPORTED_MODULE_4__["Project"](5, 'Project 5', 'description project 5 bla bla bla bla', 30, 200);
-        console.log(this.projects.length);
+        // this.projects[0]= new Project(1,'Project 1','description project 1 bla bla bla bla',20,100);
+        // this.projects[1]= new Project(2,'Project 2','description project 2 bla bla bla bla',30,200);
+        // this.projects[2]= new Project(3,'Project 3','description project 3 bla bla bla bla',30,200);
+        // this.projects[3]= new Project(4,'Project 4','description project 4 bla bla bla bla',30,200);
+        // this.projects[4]= new Project(5,'Project 5','description project 5 bla bla bla bla',30,200);
+        // console.log(this.projects.length);
+        this.getProjects();
         this.datasets = [
             [0, 20, 10, 30, 15, 40, 20, 60, 60],
             [0, 20, 5, 25, 10, 30, 15, 40, 40]
@@ -2456,11 +2780,22 @@ let DashboardComponent = class DashboardComponent {
             data: _variables_charts__WEBPACK_IMPORTED_MODULE_3__["chartExample1"].data
         });
     }
+    getProjects() {
+        this.crudService.getAll(_globals_global_variables__WEBPACK_IMPORTED_MODULE_4__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_4__["CHARITY"]).subscribe((response) => {
+            this.projects = response.data;
+            console.log(this.projects);
+        }, (error => {
+            console.log(error);
+        }));
+    }
     updateOptions() {
         this.salesChart.data.datasets[0].data = this.data;
         this.salesChart.update();
     }
 };
+DashboardComponent.ctorParameters = () => [
+    { type: _services_crud_service__WEBPACK_IMPORTED_MODULE_5__["CrudService"] }
+];
 DashboardComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-dashboard',
@@ -2905,7 +3240,9 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 
 const environment = {
-    production: false
+    production: false,
+    // apiUrl: 'http://back.clubisti.net/api'
+    apiUrl: 'http://localhost:8000/api'
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -2929,10 +3266,13 @@ const environment = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
-/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/__ivy_ngcc__/fesm2015/platform-browser-dynamic.js");
-/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
-/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! hammerjs */ "./node_modules/hammerjs/hammer.js");
+/* harmony import */ var hammerjs__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(hammerjs__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/__ivy_ngcc__/fesm2015/platform-browser-dynamic.js");
+/* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
+
 
 /*!
 
@@ -2955,10 +3295,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-if (_environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].production) {
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["enableProdMode"])();
+if (_environments_environment__WEBPACK_IMPORTED_MODULE_5__["environment"].production) {
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["enableProdMode"])();
 }
-Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_3__["AppModule"])
+Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_3__["platformBrowserDynamic"])().bootstrapModule(_app_app_module__WEBPACK_IMPORTED_MODULE_4__["AppModule"])
     .catch(err => console.error(err));
 
 
