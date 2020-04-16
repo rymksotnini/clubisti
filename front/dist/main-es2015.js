@@ -824,7 +824,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
 
 
-const API_URL = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].apiUrl;
+const API_URL = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].apiUrl + '/api';
 const CHARITY = '/projects';
 const CATEGORY = '/categories';
 const PAUSE = '/pause';
@@ -3241,8 +3241,8 @@ __webpack_require__.r(__webpack_exports__);
 
 const environment = {
     production: false,
-    // apiUrl: 'http://back.clubisti.net/api'
-    apiUrl: 'http://localhost:8000/api'
+    apiUrl: 'http://back.clubisti.net'
+    // apiUrl: 'http://localhost:8000'
 };
 /*
  * For easier debugging in development mode, you can import the following file
