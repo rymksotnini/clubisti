@@ -19,6 +19,7 @@ class CreateOrganisationsTable extends Migration
             $table->string('description');
             $table->integer('address_id')->unsigned();
             $table->timestamps();
+            $table->boolean('deleted')->default(false);
             $table->foreign('address_id')->references('id')->on('addresses')
                 ->onDelete('cascade');
         });

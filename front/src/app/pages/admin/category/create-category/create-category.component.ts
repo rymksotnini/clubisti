@@ -6,6 +6,7 @@ import {Router} from '@angular/router';
 import {NzModalService} from 'ng-zorro-antd';
 import {CategoryType} from '../../../../_models/enum/CategoryType';
 import {API_URL, CATEGORY} from '../../../../_globals/global-variables';
+import {CategoriesService} from '../../../../_services/categories.service';
 
 @Component({
   selector: 'app-create-category',
@@ -20,7 +21,8 @@ export class CreateCategoryComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
               private crudService: CrudService,
-              private router: Router
+              private router: Router,
+              private categoryService: CategoriesService,
   ) { }
 
   ngOnInit() {
@@ -38,9 +40,12 @@ export class CreateCategoryComponent implements OnInit {
     this.crudService.post(API_URL + CATEGORY, this.createCategory.value).subscribe(
       (response) => {
         console.log(response);
+        this.categoryService.getCategoriesAPI();
         this.router.navigate(['/admin/variable']);
       }, (error => console.log(error))
     );
   }
+
+
 
 }

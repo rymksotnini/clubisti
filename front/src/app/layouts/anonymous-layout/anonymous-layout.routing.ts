@@ -6,6 +6,5 @@ import {DashboardComponent} from '../../pages/dashboard/dashboard.component';
 
 export const AnonymousLayoutRoutes: Routes = [
   { path: 'history',          component: HistoryComponent },
-  { path: 'fblogin',          component: FbAuthComponent },
   { path: 'dashboard',          component: DashboardComponent }
 ];

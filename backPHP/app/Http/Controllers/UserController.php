@@ -9,8 +9,16 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        error_log($request->page);
+        if ($request->page  && $request->perPage){
+            error_log("in if");
+            return new UserCollection(User::paginate($request->perPage));
+        }else if ($request->page ){
+            return new UserCollection(User::paginate(10));
+        }
+
         return new UserCollection(User::get());
     }
 

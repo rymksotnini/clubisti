@@ -6,7 +6,7 @@ import {AuthenticationService} from "../../_services/authentication.service";
 @Component({
   selector: 'app-fb-auth',
   templateUrl: './fb-auth.component.html',
-  styleUrls: ['./fb-auth.component.css']
+  styleUrls: ['./fb-auth.component.scss']
 })
 export class FbAuthComponent implements OnInit {
 
@@ -16,6 +16,7 @@ export class FbAuthComponent implements OnInit {
               private authenticationService:AuthenticationService) { }
 
   ngOnInit(): void {
+
     let id =null;
     this.activatedRoute.queryParams.subscribe(params => {
       id = params.param;
@@ -24,6 +25,7 @@ export class FbAuthComponent implements OnInit {
     this.authenticationService.facebookLogin(id).subscribe(result=> {
       console.log('facebook login ...');
       this.authenticationService.savingUser(result);
+      console.log(this.authenticationService.getCurrentUser())
       this.router.navigate(['/dashboard']);
     });
   }

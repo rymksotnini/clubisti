@@ -35,6 +35,7 @@ import {AnonymousLayoutModule} from "./layouts/anonymous-layout/anonymous-layout
 import {DashboardComponent} from "./pages/dashboard/dashboard.component";
 import { UsersComponent } from './pages/users/users.component';
 import { CharityUpdateComponent } from './pages/admin/charity/charity-update/charity-update.component';
+import {FbAuthComponent} from './components/fb-auth/fb-auth.component';
 
 
 
@@ -65,6 +66,7 @@ import { CharityUpdateComponent } from './pages/admin/charity/charity-update/cha
     ListCategoryComponent,
     EnumToArrayPipe,
     CharityUpdateComponent,
+    FbAuthComponent
 
   ],
   providers: [AuthenticationInterceptorProvider,

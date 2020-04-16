@@ -47,6 +47,8 @@ export class CharityUpdateComponent implements OnInit {
             minDonationAmount: 0,
             maxDonationAmount: 0,
             categoriesIds: 0,
+            startDate: '',
+            endDate: '',
             date: []
           });
 
@@ -55,11 +57,13 @@ export class CharityUpdateComponent implements OnInit {
   initForm(){
     this.createCharity = this.formBuilder.group({
       name: this.project.name,
-      shortDescription: this.project.id,
+      shortDescription: this.project.shortDescription,
       amount: this.project.amount,
       minDonationAmount: this.project.minDonationAmount,
       maxDonationAmount: this.project.maxDonationAmount,
       categoriesIds: this.project.categories[0].id,
+      startDate:this.project.startDate,
+      endDate: this.project.endDate,
       date: []
     });
   }
@@ -69,25 +73,6 @@ export class CharityUpdateComponent implements OnInit {
       this.id = +params['id'];
      console.log(this.id);
     });
-    // this.crudService.getOne(API_URL + CHARITY, this.id).subscribe(
-    //   (response => {
-    //     console.log(response);
-    //     this.project = response.data;
-    //     this.createCharity = this.formBuilder.group({
-    //       name: '',
-    //       shortDescription: response.data.id,
-    //       amount: 0,
-    //       minDonationAmount: 0,
-    //       maxDonationAmount: 0,
-    //       categoriesIds: 0,
-    //       date: []
-    //     });
-    //   }),
-    //   (error => {
-    //     console.log(error);
-    //   })
-    // )
-
     const data = await this.http.get<any>(API_URL + CHARITY + '/' + this.id).toPromise();
     this.project = data.data;
     this.initForm();
@@ -113,12 +98,12 @@ export class CharityUpdateComponent implements OnInit {
   onSubmit() {
 
     this.createCharity.value.categoriesIds = [this.createCharity.value.categoriesIds];
-    this.createCharity.value.startDate = this.pipe.transform(this.createCharity.value.date[0], ' yyyy-M-d hh:mm:ss');
-    this.createCharity.value.endDate =  this.pipe.transform( this.createCharity.value.date[1], 'yyyy-M-d hh:mm:ss');
-
-
+     if (this.createCharity.value.date) {
+       this.createCharity.value.startDate = this.pipe.transform(this.createCharity.value.date[0], ' yyyy-M-d hh:mm:ss');
+       this.createCharity.value.endDate = this.pipe.transform(this.createCharity.value.date[1], 'yyyy-M-d hh:mm:ss');
+     }
     console.log(this.createCharity.value);
-    this.crudService.post(API_URL + CHARITY, this.createCharity.value).subscribe(
+    this.crudService.update(API_URL + CHARITY,this.id , this.createCharity.value).subscribe(
       (response) => {
         console.log(response);
         this.router.navigate(['/admin/charity']);

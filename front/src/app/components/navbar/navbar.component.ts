@@ -3,6 +3,7 @@ import { ROUTES } from '../sidebar/sidebar.component';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { Router } from '@angular/router';
 import {AuthenticationService} from '../../_services/authentication.service';
+import {User} from '../../_models/user';
 
 @Component({
   selector: 'app-navbar',
@@ -14,6 +15,7 @@ export class NavbarComponent implements OnInit,DoCheck {
   public focus;
   public listTitles: any[];
   public location: Location;
+  currentUser: User;
   // tslint:disable-next-line:max-line-length
   constructor(location: Location,  private element: ElementRef, private router: Router, private  authenticationService:AuthenticationService) {
     this.location = location;
@@ -24,6 +26,7 @@ export class NavbarComponent implements OnInit,DoCheck {
     this.listTitles = ROUTES.filter(listTitle => listTitle);
     console.log(this.authenticationService.isLogged());
     this.connected = this.authenticationService.isLogged();
+    this.currentUser = this.authenticationService.getCurrentUser();
   }
   getTitle(){
     let titlee = this.location.prepareExternalUrl(this.location.path());

@@ -48,19 +48,19 @@ export class Project{
   }
 
 
-  get start_date(): Date {
+  get startDate(): Date {
     return this._start_date;
   }
 
-  set start_date(value: Date) {
+  set startDate(value: Date) {
     this._start_date = value;
   }
 
-  get end_date(): Date {
+  get endDate(): Date {
     return this._end_date;
   }
 
-  set end_date(value: Date) {
+  set endDate(value: Date) {
     this._end_date = value;
   }
 
@@ -88,11 +88,11 @@ export class Project{
     this._name = value;
   }
 
-  get last_updated_sum(): number {
+  get lastUpdatedSum(): number {
     return this._last_updated_sum;
   }
 
-  set last_updated_sum(value: number) {
+  set lastUpdatedSum(value: number) {
     this._last_updated_sum = value;
   }
 

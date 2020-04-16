@@ -7,6 +7,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import {AnonymousLayoutComponent} from './layouts/anonymous-layout/anonymous-layout.component';
 import {TemplateLayoutComponent} from './layouts/template-layout/template-layout.component';
+import {FbAuthComponent} from './components/fb-auth/fb-auth.component';
 
 const routes: Routes =[
   {
@@ -14,6 +15,7 @@ const routes: Routes =[
     redirectTo: 'dashboard',
     pathMatch: 'full',
   },
+  { path: 'fblogin', component: FbAuthComponent },
   {
     path: 'admin',
     component: AdminLayoutComponent,

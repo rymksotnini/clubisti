@@ -36,7 +36,7 @@ export class CharityCreateComponent implements OnInit {
       amount: 0,
       minDonationAmount: 0,
       maxDonationAmount: 0,
-      categoriesIds: 0,
+      categoriesIds: 1,
       date: []
     });
   }

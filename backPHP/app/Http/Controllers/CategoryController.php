@@ -13,11 +13,11 @@ class CategoryController extends Controller
 {
     public function index(Request $request)
     {
-        error_log($request->page);
+
         if ($request->page  && $request->perPage){
             return new CategoryCollection(Category::paginate($request->perPage));
         }else if ($request->page ){
-            return new CategoryCollection(Category::paginate(1));
+            return new CategoryCollection(Category::paginate(10));
         }
         return new CategoryCollection(Category::get());
     }

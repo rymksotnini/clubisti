@@ -18,13 +18,13 @@ export class AuthenticationService {
 
   public signup(user :User):Observable<HttpResponse<any>>{
     // tslint:disable-next-line:max-line-length
-    const creds = { username: user.getUserName(),first_name: user.getFirstName(),last_name:user.getLastName(),email: user.getEmail(), password: user.getPassword()};
+    const creds = { username: user.username,first_name: user.firstName,last_name:user.lastName,email: user.email, password: user.password};
     return this.http.post<any>(API_URL+'/register', JSON.parse(JSON.stringify(creds)),{observe: 'response' });
   }
 
   public login(user: User): Observable<HttpResponse<any>> {
     const headers = { 'Content-Type':'application/json'};
-    const creds = { email: user.getEmail(), password: user.getPassword()};
+    const creds = { email: user.email, password: user.password};
     return this.http.post<any>(API_URL+'/login', JSON.stringify(creds) , { headers, observe: 'response' });
   }
 
@@ -35,7 +35,7 @@ export class AuthenticationService {
 
   // method get for current user from the backend
   public getUser(){
-    return this.http.get(API_URL+'users'+this.getCurrentUser().getId());
+    return this.http.get(API_URL+'users'+this.getCurrentUser().id);
   }
   public logout(){
     return this.http.post<any>(API_URL+'/logout', {observe: 'response' });
@@ -49,11 +49,11 @@ export class AuthenticationService {
   }
 
   public setCurrentUser(currentUser){
-    this.currentUser.setId(currentUser.id);
-    this.currentUser.setUserName(currentUser.username);
-    this.currentUser.setFirstName(currentUser.first_name);
-    this.currentUser.setLastName(currentUser.last_name);
-    this.currentUser.setEmail(currentUser.email);
+    this.currentUser.id =currentUser.id;
+    this.currentUser.username =currentUser.username;
+    this.currentUser.firstName = currentUser.first_name;
+    this.currentUser.lastName = currentUser.last_name;
+    this.currentUser.email = currentUser.email;
   }
 
   public getCurrentUser():User{
@@ -64,7 +64,7 @@ export class AuthenticationService {
     console.log('currently logging in...');
     console.log('body',  result.body.user);
     this.setCurrentUser(JSON.parse(result.body.user));
-    console.log('current user last name ' + this.getCurrentUser().getLastName());
+    console.log('current user last name ' + this.getCurrentUser().lastName);
     // @ts-ignore
     localStorage.setItem('token',result.body.token);
   }

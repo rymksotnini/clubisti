@@ -17,6 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->enum('type', ['PROJECT', 'PRODUCT']);
+            $table->boolean('deleted')->default(false);
             $table->timestamps();
         });
     }

@@ -26,6 +26,7 @@
           <table class="table align-items-center table-flush">
             <thead class="thead-light">
             <tr>
+              <th scope="col">Id</th>
               <th scope="col">Name</th>
               <th scope="col">Created At</th>
               <th scope="col">Updated At</th>
@@ -50,6 +51,11 @@
                   </div>
                 </div>
               </th>
+              <td>
+
+                {{project.id}}
+
+              </td>
               <td>
 
                 {{project.createdAt| date}}
@@ -88,8 +94,8 @@
                 <a  nzType="dashed" (click)="showDeleteConfirm(project)" class="btn btn-warning" *ngIf="project.status!='TERMINATED'">Terminate</a>
               </td>
               <td>
-               <!-- <a (click)="updateProject(project.id)"  class="btn ant-btn-primary" >Update</a>-->
-                <a (click)="deleteProject(project.id)"  class="btn btn-info" >Delete</a>
+                <a (click)="updateProject(project.id)"  class="btn ant-btn-primary" >Update</a>
+<!--                <a (click)="deleteProject(project.id)"  class="btn btn-info" >Delete</a>-->
 
               </td>
 

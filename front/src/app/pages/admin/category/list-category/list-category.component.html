@@ -47,8 +47,8 @@
               <th scope="col">delete category</th>
             </tr>
             </thead>
-            <tbody *ngIf="categories">
-            <tr *ngFor="let story of categories.data">
+            <tbody *ngIf="this.categoryService.getCategories()">
+            <tr *ngFor="let story of this.categoryService.getCategories().data">
               <th scope="row">
                 <div class="media align-items-center">
 

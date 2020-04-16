@@ -17,6 +17,7 @@ class CreateProjectsTable extends Migration
             $table->increments('id');
             $table->double('last_updated_sum');
             $table->date('start_date');
+            $table->boolean('deleted')->default(false);
             $table->date('end_date');
             $table->string('name');
             $table->string('short_description');

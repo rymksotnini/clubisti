@@ -8,13 +8,15 @@ import {CharityProjectsComponent} from '../../pages/charity-projects/charity-pro
 import {UsersComponent} from '../../pages/users/users.component';
 import {NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
 import {MatSnackBarModule} from '@angular/material';
+import {NgZorroAntdModule} from 'ng-zorro-antd';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(AdminLayoutRoutes),
     NgbDropdownModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    NgZorroAntdModule
   ],
   declarations: [
     LandingComponent,
