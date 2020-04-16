@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Tymon\JWTAuth\Exceptions\JWTException;
 
@@ -25,7 +26,9 @@ class AuthenticationController extends Controller
         error_log('111111111');
         $token = auth()->login($user);
         error_log('2222222222');
-        return $this->respondWithToken($token);
+        $user_id = auth()->id();
+        error_log($user_id);
+        return $this->respondWithTokenAndUser($token,$user_id);
     }
     public function login(Request $request)
     {
@@ -44,22 +47,26 @@ class AuthenticationController extends Controller
         } catch (JWTException $e) {
             return response()->json(['error' => 'could_not_create_token'], 500);
         }
-        return $this->respondWithToken($token);
+        $user_id = auth()->id();
+        error_log($user_id);
+        return $this->respondWithTokenAndUser($token,$user_id);
     }
 
     public function logout()
     {
+
         auth()->logout();
 
         return response()->json(['message' => 'Successfully logged out']);
     }
 
-    protected function respondWithToken($token)
+    protected function respondWithTokenAndUser($token,$id)
     {
         return response()->json([
             'token' => $token,
             'token_type'   => 'bearer',
-            'expires_in'   => auth()->factory()->getTTL() * 60
+            'expires_in'   => auth()->factory()->getTTL() * 60,
+            'user' => json_encode(User::find($id))
         ]);
     }
 }

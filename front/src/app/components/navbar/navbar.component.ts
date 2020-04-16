@@ -50,7 +50,7 @@ export class NavbarComponent implements OnInit,DoCheck {
         console.log('logging out');
         // @ts-ignore
         localStorage.removeItem('token');
-        this.router.navigate(['/history']);
+        this.router.navigate(['/dashboard']);
       }
     );
   }

@@ -8,4 +8,5 @@ export const ACTIVATE = '/activate';
 export const TERNINATE = '/end';
 export const REDIRECT = '/redirect';
 export const CALLBACK = '/callback';
+export const URL = 'http://localhost:8000';
 export const USERS = '/users';

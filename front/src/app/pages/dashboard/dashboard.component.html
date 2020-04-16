@@ -1,5 +1,3 @@
-
-
 <div class="header bg-danger pb-8 pt-5 pt-md-8">
   <div class="container-fluid">
     <div class="header-body">
@@ -11,7 +9,7 @@
               <div class="row">
                 <div class="col">
                   <h5 class="card-title text-uppercase text-muted mb-0">{{project.name}}</h5>
-                  <span class="h1 font-weight-bold mb-0" style="color: white">{{project.lastUpdatedSum}} coins</span>
+                  <span class="h1 font-weight-bold mb-0" style="color: white">{{project.last_updated_sum}} coins</span>
                 </div>
                 <div class="col-auto">
                   <div class="icon icon-shape bg-success text-white rounded-circle shadow">
@@ -20,6 +18,7 @@
                 </div>
               </div>
               <p class="mt-3 mb-0 text-muted text-sm">
+                <span>{{this.project.shortDescription}}</span>
                 <span class="text-success mr-2"><i class="fa fa-percentage fa-1x"></i> {{this.project.amount}} coins</span>
                 <span class="text-nowrap">needed amount</span>
               </p>
