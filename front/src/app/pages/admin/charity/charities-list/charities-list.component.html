@@ -33,8 +33,11 @@
               <th scope="col">MIN DA</th>
               <th scope="col">MAX DA</th>
               <th scope="col">last updated sum</th>
+              <th scope="col">start at</th>
+              <th scope="col">end at</th>
               <th scope="col"> status</th>
               <th scope="col"> change status</th>
+              <th scope="col">Controls</th>
             </tr>
             </thead>
             <tbody *ngIf="projects">
@@ -49,26 +52,32 @@
               </th>
               <td>
 
-                {{project.created_at| date}}
+                {{project.createdAt| date}}
 
               </td>
 
               <td>
 
-                {{project.updated_at | date}}
+                {{project.updatedAt | date}}
 
               </td>
               <td>
                 {{project.amount}}
               </td>
               <td>
-                {{project.min_donation_amount}}
+                {{project.minDonationAmount}}
               </td>
               <td>
-                {{project.max_donation_amount}}
+                {{project.maxDonationAmount}}
               </td>
               <td>
-                {{project.last_updated_sum}}
+                {{project.lastUpdatedSum}}
+              </td>
+              <td>
+                {{project.startDate | date}}
+              </td>
+              <td>
+                {{project.endDate | date}}
               </td>
               <td>
                 {{project.status}}
@@ -77,6 +86,10 @@
                 <a (click)="pauseProject(project)"  class="btn ant-btn-primary" *ngIf="(project.status !='PAUSED') && project.status!='TERMINATED'" >Pause</a>
                 <a (click)="activateProject(project)"  class="btn btn-info" *ngIf="project.status!='ACTIVE' && project.status!='TERMINATED'">Activate</a>
                 <a  nzType="dashed" (click)="showDeleteConfirm(project)" class="btn btn-warning" *ngIf="project.status!='TERMINATED'">Terminate</a>
+              </td>
+              <td>
+               <!-- <a (click)="updateProject(project.id)"  class="btn ant-btn-primary" >Update</a>-->
+                <a (click)="deleteProject(project.id)"  class="btn btn-info" >Delete</a>
 
               </td>
 
@@ -87,7 +100,7 @@
           </table>
         </div>
         <div class="card-footer py-4" *ngIf="projects">
-          <nz-pagination [nzPageIndex]=currentPage  [nzTotal]=projects.meta.last_page  [nzPageSize]=sizePage (nzPageIndexChange)="paginate($event)"></nz-pagination>
+          <nz-pagination [nzPageIndex]=currentPage  [nzTotal]=projects.meta.total   [nzPageSize]=sizePage (nzPageIndexChange)="paginate($event)"></nz-pagination>
         </div>
       </div>
     </div>

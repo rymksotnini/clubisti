@@ -6,7 +6,7 @@ import {Router} from '@angular/router';
 import {API_URL, CATEGORY, CHARITY} from '../../../../_globals/global-variables';
 import {CreateCategoryComponent} from "../../category/create-category/create-category.component";
 import {HttpParams} from '@angular/common/http';
-
+import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-charity-create',
   templateUrl: './charity-create.component.html',
@@ -20,6 +20,7 @@ export class CharityCreateComponent implements OnInit {
   keys = Object.keys;
   categories : Category[];
   createCharity: FormGroup;
+  pipe = new DatePipe('en-US');
   file: any;
   constructor(private formBuilder: FormBuilder,
               private crudService: CrudService,
@@ -36,6 +37,7 @@ export class CharityCreateComponent implements OnInit {
       minDonationAmount: 0,
       maxDonationAmount: 0,
       categoriesIds: 0,
+      date: []
     });
   }
 
@@ -58,6 +60,10 @@ export class CharityCreateComponent implements OnInit {
   onSubmit() {
 
    this.createCharity.value.categoriesIds = [this.createCharity.value.categoriesIds];
+    this.createCharity.value.startDate = this.pipe.transform(this.createCharity.value.date[0], ' yyyy-M-d hh:mm:ss');
+    this.createCharity.value.endDate =  this.pipe.transform( this.createCharity.value.date[1], 'yyyy-M-d hh:mm:ss');
+
+
     console.log(this.createCharity.value);
     this.crudService.post(API_URL + CHARITY, this.createCharity.value).subscribe(
       (response) => {

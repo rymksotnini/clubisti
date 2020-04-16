@@ -40,9 +40,13 @@ class ProjectController extends Controller
 
     public function store(Request $request)
     {
+        error_log("in store");
+        error_log($request->startDate);
         $project = new Project;
         $project->name = $request->name;
         $project->amount = $request->amount;
+        $project->start_date = $request->startDate;
+        $project->end_date = $request->endDate;
         $project->short_description =  $request->shortDescription;
         $project->last_updated_sum = 0;
         $project->max_donation_amount = $request->maxDonationAmount;

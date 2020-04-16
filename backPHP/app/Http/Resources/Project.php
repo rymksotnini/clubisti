@@ -26,6 +26,8 @@ class Project extends JsonResource
             'categories'    => $this->categories,
             'createdAt' => $this->created_at,
             'updatedAt' => $this->updated_at,
+            'startDate' => $this->start_date,
+            'endDate'   => $this->end_date,
         ];
     }
 }

@@ -14,4 +14,5 @@ export class Meta {
   last_page: number;
   per_page: number;
   to: number;
+  total: number;
 }

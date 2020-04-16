@@ -16,6 +16,8 @@ class CreateProjectsTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
             $table->double('last_updated_sum');
+            $table->date('start_date');
+            $table->date('end_date');
             $table->string('name');
             $table->string('short_description');
             $table->double('amount');

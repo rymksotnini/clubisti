@@ -38,7 +38,7 @@ export class CreateCategoryComponent implements OnInit {
     this.crudService.post(API_URL + CATEGORY, this.createCategory.value).subscribe(
       (response) => {
         console.log(response);
-        // this.router.navigate(['/list-story']);
+        this.router.navigate(['/admin/variable']);
       }, (error => console.log(error))
     );
   }

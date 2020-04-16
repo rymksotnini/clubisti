@@ -106,4 +106,20 @@ export class CharitiesListComponent implements OnInit {
       nzOnCancel: () => console.log('Cancel')
     });
   }
+
+  deleteProject(id: number) {
+    this.crudService.delete(API_URL + CHARITY, id).subscribe(
+      (response => {
+        console.log(response);
+        this.getProjects();
+      }) ,
+      (error => {
+        console.log(error);
+      })
+    )
+  }
+
+  updateProject(id: number) {
+    this.router.navigate(['admin/charity/update/', id]);
+  }
 }

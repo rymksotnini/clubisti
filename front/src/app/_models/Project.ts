@@ -19,6 +19,10 @@ export class Project{
 
   private _updated_at: Date;
 
+  private _start_date: Date;
+
+  private _end_date: Date;
+
   private _status: string;
 
   private _categories: Category[];
@@ -29,7 +33,8 @@ export class Project{
 
 
   constructor(id: number=null, name: string=null,shortDescription: string=null, last_updated_sum: number=null,  amount: number=null,
-              max_donation_amount: number=null, min_donation_amount:number=null, status:  string=null  ) {
+              max_donation_amount: number=null, min_donation_amount:number=null, status:  string=null, start_date: Date=null,
+              end_date=null  ) {
     this._id = id;
     this._name = name;
     this._last_updated_sum = last_updated_sum;
@@ -38,6 +43,33 @@ export class Project{
     this._status = status;
     this._min_donation_amount = min_donation_amount;
     this._max_donation_amount = max_donation_amount;
+    this._end_date = end_date;
+    this._start_date = start_date;
+  }
+
+
+  get start_date(): Date {
+    return this._start_date;
+  }
+
+  set start_date(value: Date) {
+    this._start_date = value;
+  }
+
+  get end_date(): Date {
+    return this._end_date;
+  }
+
+  set end_date(value: Date) {
+    this._end_date = value;
+  }
+
+  get status(): string {
+    return this._status;
+  }
+
+  set status(value: string) {
+    this._status = value;
   }
 
   get id(): number {
@@ -80,19 +112,19 @@ export class Project{
     this._amount = value;
   }
 
-  get created_at(): Date {
+  get createdAt(): Date {
     return this._created_at;
   }
 
-  set created_at(value: Date) {
+  set createdAt(value: Date) {
     this._created_at = value;
   }
 
-  get updated_at(): Date {
+  get updatedAt(): Date {
     return this._updated_at;
   }
 
-  set updated_at(value: Date) {
+  set updatedAt(value: Date) {
     this._updated_at = value;
   }
 
@@ -107,19 +139,19 @@ export class Project{
     this._categories = value;
   }
 
-  get min_donation_amount(): number {
+  get minDonationAmount(): number {
     return this._min_donation_amount;
   }
 
-  set min_donation_amount(value: number) {
+  set minDonationAmount(value: number) {
     this._min_donation_amount = value;
   }
 
-  get max_donation_amount(): number {
+  get maxDonationAmount(): number {
     return this._max_donation_amount;
   }
 
-  set max_donation_amount(value: number) {
+  set maxDonationAmount(value: number) {
     this._max_donation_amount = value;
   }
 }
