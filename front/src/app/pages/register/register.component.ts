@@ -15,11 +15,8 @@ import {environment} from '../../../environments/environment';
 })
 export class RegisterComponent implements OnInit {
   user :User;
-<<<<<<< HEAD
   redirectURL = environment.apiUrl + REDIRECT
-=======
   error = false;
->>>>>>> 613082b20d810d7dd4a7ab249ff723608876bcb3
   constructor(private authenticationService: AuthenticationService, private router:Router) {}
 
 
