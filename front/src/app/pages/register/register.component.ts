@@ -13,6 +13,7 @@ import { NgForm } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
   user :User;
+  error = false;
   constructor(private authenticationService: AuthenticationService, private router:Router) {}
 
 
@@ -39,7 +40,12 @@ export class RegisterComponent implements OnInit {
           console.log('currently signing up...');
           this.authenticationService.savingUser(result);
           this.router.navigate(['/dashboard']);
-        }
+        },
+      (error)=> {
+          if( error.status === 406){
+            this.error = true;
+          }
+      }
       )
     }
 

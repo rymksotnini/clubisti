@@ -10,7 +10,11 @@ import {Router} from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit, OnDestroy {
+
   user :User;
+  error = false;
+  textError = '';
+
   constructor(private authenticationService: AuthenticationService, private router:Router) {}
 
   ngOnInit() {
@@ -30,6 +34,18 @@ export class LoginComponent implements OnInit, OnDestroy {
         (result)=> {
           this.authenticationService.savingUser(result);
           this.router.navigate(['/dashboard']);
+        },
+        (error)=> {
+          this.error = true;
+          if (error.status === 406) {
+            this.textError = 'Invalid email or password';
+          }
+          if (error.status === 401) {
+            this.textError = 'Incorrect password or email';
+          }
+          else {
+            this.textError ='Error';
+          }
         }
       )
     }
