@@ -30,7 +30,7 @@ class SocialAuthFacebookController extends Controller
         error_log("id1: $user_id");
         error_log("hello1: $token");
         //return redirect()->to('/home');
-        return redirect()->away("http://localhost:4200/#/fblogin?param=$user_id");
+        return redirect()->away( env('PROD_URL', 'https://clubisti.net')  . "/#/fblogin?param=$user_id");
     }
 
     public function login(Request $request)

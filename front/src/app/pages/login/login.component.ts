@@ -39,8 +39,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           this.error = true;
           if (error.status === 406) {
             this.textError = 'Invalid email or password';
-          }
-          if (error.status === 401) {
+          } else if (error.status === 401) {
             this.textError = 'Incorrect password or email';
           }
           else {

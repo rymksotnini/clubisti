@@ -3,7 +3,7 @@ import {Observable} from 'rxjs';
 import {HttpClient, HttpHeaders, HttpParams, HttpResponse} from '@angular/common/http';
 import {User} from '../_models/user';
 import {Router} from '@angular/router';
-import {API_URL, CALLBACK, REDIRECT, URL} from '../_globals/global-variables';
+import {API_URL, CALLBACK, REDIRECT} from '../_globals/global-variables';
 
 @Injectable({
   providedIn: 'root'

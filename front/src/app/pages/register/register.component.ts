@@ -17,6 +17,7 @@ export class RegisterComponent implements OnInit {
   user :User;
   redirectURL = environment.apiUrl + REDIRECT
   error = false;
+  accepted = false;
   constructor(private authenticationService: AuthenticationService, private router:Router) {}
 
 

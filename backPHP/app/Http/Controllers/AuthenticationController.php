@@ -65,7 +65,7 @@ class AuthenticationController extends Controller
         return response()->json([
             'token' => $token,
             'token_type'   => 'bearer',
-            'expires_in'   => auth()->factory()->getTTL() * 60,
+            'expires_in'   => auth()->factory()->getTTL() * 60*24*30,
             'user' => json_encode(User::find($id))
         ]);
     }
