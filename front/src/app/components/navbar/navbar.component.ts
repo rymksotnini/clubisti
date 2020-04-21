@@ -39,7 +39,7 @@ export class NavbarComponent implements OnInit,DoCheck {
         // const blob = URL.createObjectURL(data);
         // image.srcObject = URL.createObjectURL(mediaSource);
         // console.log(blob);
-        this.image = this.sanitizer.bypassSecurityTrustResourceUrl(data.toString());
+        this.image = 'http://127.0.0.1:8887/'+ data;
       },
       error => {
         console.log(error);

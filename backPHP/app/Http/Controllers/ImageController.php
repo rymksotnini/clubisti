@@ -27,11 +27,12 @@ class ImageController extends Controller
             $user = User::find($request->id_user);
             $profile = $user->profile;
             if (!$profile) {
-                $profile = new Profile(['image_url' => public_path('img').'\\'.$picture]);
+                $profile = new Profile(['image_url' => $picture]);
                 $user->profile()->save($profile);
                 return response()->json(["message" => "Image Uploaded Succesfully"]);
             }
-            $profile->update($request->all());
+            $profile->image_url= $picture;
+            $profile->save();
             return response()->json(["message" => "Image Uploaded Succesfully"]);
         }
         else
