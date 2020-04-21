@@ -1,3 +1,6 @@
+import {Profile} from "./profile";
+
+
 export class User {
 
   private _id: number;
@@ -8,7 +11,7 @@ export class User {
   private _password: string;
   private _badge = null ;
   private _deleted = false;
-  private _profile = null ;
+  private _profile: Profile  = null;
   private _roles = null;
   private _address = null;
 

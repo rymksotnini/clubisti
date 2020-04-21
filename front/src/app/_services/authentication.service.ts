@@ -12,7 +12,7 @@ export class AuthenticationService {
 
   private resourceUrl =  'http://back.clubisti.net/api/';
   private redirectUri = 'http://localhost:4200/';
-  private currentUser = new User();
+  private currentUser = null;
 
   constructor(private http: HttpClient, private router:Router ) { }
 
@@ -38,6 +38,7 @@ export class AuthenticationService {
     return this.http.get(API_URL+'users'+this.getCurrentUser().id);
   }
   public logout(){
+    localStorage.removeItem('currentUser');
     return this.http.post<any>(API_URL+'/logout', {observe: 'response' });
   }
   public isLogged(): boolean{
@@ -49,6 +50,8 @@ export class AuthenticationService {
   }
 
   public setCurrentUser(currentUser){
+    console.log('ahla');
+    this.currentUser = new User();
     this.currentUser.id =currentUser.id;
     this.currentUser.username =currentUser.username;
     this.currentUser.firstName = currentUser.first_name;
@@ -57,12 +60,22 @@ export class AuthenticationService {
   }
 
   public getCurrentUser():User{
-    return this.currentUser
+    const user = JSON.parse(localStorage.getItem('currentUser'));
+    if (user==null){
+      console.log('here');
+      return this.currentUser;
+    }
+    console.log('2');
+    console.log('user: ' + user);
+    this.setCurrentUser(user);
+    return this.currentUser;
   }
 
   public savingUser(result){
+    this.currentUser = new User();
     console.log('currently logging in...');
     console.log('body',  result.body.user);
+    localStorage.setItem('currentUser',result.body.user);
     this.setCurrentUser(JSON.parse(result.body.user));
     console.log('current user last name ' + this.getCurrentUser().lastName);
     // @ts-ignore

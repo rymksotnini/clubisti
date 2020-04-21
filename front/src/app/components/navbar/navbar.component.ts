@@ -4,6 +4,8 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
 import { Router } from '@angular/router';
 import {AuthenticationService} from '../../_services/authentication.service';
 import {User} from '../../_models/user';
+import {ImageService} from '../../_services/image.service';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-navbar',
@@ -15,9 +17,11 @@ export class NavbarComponent implements OnInit,DoCheck {
   public focus;
   public listTitles: any[];
   public location: Location;
+  public image;
   currentUser: User;
   // tslint:disable-next-line:max-line-length
-  constructor(location: Location,  private element: ElementRef, private router: Router, private  authenticationService:AuthenticationService) {
+  constructor(private imageService:ImageService,location: Location,  private element: ElementRef, private router: Router,
+              private  authenticationService:AuthenticationService, private sanitizer : DomSanitizer) {
     this.location = location;
   }
 
@@ -27,6 +31,21 @@ export class NavbarComponent implements OnInit,DoCheck {
     console.log(this.authenticationService.isLogged());
     this.connected = this.authenticationService.isLogged();
     this.currentUser = this.authenticationService.getCurrentUser();
+    this.imageService.getImage().subscribe(
+      (data) =>{
+        // console.log(data.toString());
+        // const mediaSource = new MediaSource();
+        // const image = document.getElementById('user_image');
+        // const blob = URL.createObjectURL(data);
+        // image.srcObject = URL.createObjectURL(mediaSource);
+        // console.log(blob);
+        this.image = this.sanitizer.bypassSecurityTrustResourceUrl(data.toString());
+      },
+      error => {
+        console.log(error);
+        this.image = 'assets/img/theme/team-4-800x800.jpg';
+      }
+    )
   }
   getTitle(){
     let titlee = this.location.prepareExternalUrl(this.location.path());
@@ -34,7 +53,8 @@ export class NavbarComponent implements OnInit,DoCheck {
         titlee = titlee.slice( 1 );
     }
 
-    for(var item = 0; item < this.listTitles.length; item++){
+    // tslint:disable-next-line:prefer-for-of
+    for(let item = 0; item < this.listTitles.length; item++){
         if(this.listTitles[item].path === titlee){
             return this.listTitles[item].title;
         }

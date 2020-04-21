@@ -93,6 +93,11 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post('/users', 'UserController@store');
     Route::put('/users/{id}', 'UserController@update');
     Route::delete('/users/{id}', 'UserController@delete');
+
+    /************************************************ Image API ************************************************/
+    Route::post("/image" , "ImageController@downloadImage");
+    Route::get('/image/{id}', 'ImageController@uploadImage');
+
 });
 
 

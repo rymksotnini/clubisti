@@ -11,6 +11,7 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ClipboardModule} from 'ngx-clipboard';
+import {UpdateProfileComponent} from '../../pages/update-profile/update-profile.component';
 
 
 
@@ -20,6 +21,7 @@ import {ClipboardModule} from 'ngx-clipboard';
     TablesComponent,
     IconsComponent,
     MapsComponent,
+    UpdateProfileComponent
   ],
   imports: [
     CommonModule,
