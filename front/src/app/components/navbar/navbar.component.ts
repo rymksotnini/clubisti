@@ -6,6 +6,7 @@ import {AuthenticationService} from '../../_services/authentication.service';
 import {User} from '../../_models/user';
 import {ImageService} from '../../_services/image.service';
 import {DomSanitizer} from '@angular/platform-browser';
+import {IMG_URL} from "../../_globals/global-variables";
 
 @Component({
   selector: 'app-navbar',
@@ -39,7 +40,7 @@ export class NavbarComponent implements OnInit,DoCheck {
         // const blob = URL.createObjectURL(data);
         // image.srcObject = URL.createObjectURL(mediaSource);
         // console.log(blob);
-        this.image = 'http://127.0.0.1:8887/'+ data;
+        this.image = IMG_URL + data; // 'https://clubisti.net/assets/img/'+ data | environment.apiUrl+'/assets/img/'+
       },
       error => {
         console.log(error);

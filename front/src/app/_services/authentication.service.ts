@@ -12,7 +12,7 @@ export class AuthenticationService {
 
   private resourceUrl =  'http://back.clubisti.net/api/';
   private redirectUri = 'http://localhost:4200/';
-  private currentUser = null;
+  private currentUser = new User();
 
   constructor(private http: HttpClient, private router:Router ) { }
 
