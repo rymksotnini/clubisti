@@ -8,6 +8,7 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
 import {AnonymousLayoutComponent} from './layouts/anonymous-layout/anonymous-layout.component';
 import {TemplateLayoutComponent} from './layouts/template-layout/template-layout.component';
 import {FbAuthComponent} from './components/fb-auth/fb-auth.component';
+import {SharedModule} from "./shared/shared.module";
 
 const routes: Routes =[
   {
@@ -63,7 +64,8 @@ const routes: Routes =[
   imports: [
     RouterModule.forRoot(routes,{
       useHash: true
-    })
+    }),
+    SharedModule
   ],
   exports: [
   ],

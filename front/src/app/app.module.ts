@@ -31,11 +31,11 @@ import { EnumToArrayPipe } from './pipes/enum-to-array.pipe';
 
 import {AuthenticationInterceptorProvider} from './_interceptors/authentication.interceptor';
 import {CommonModule} from '@angular/common';
-import {AnonymousLayoutModule} from "./layouts/anonymous-layout/anonymous-layout.module";
-import {DashboardComponent} from "./pages/dashboard/dashboard.component";
+import {AnonymousLayoutModule} from './layouts/anonymous-layout/anonymous-layout.module';
 import { UsersComponent } from './pages/users/users.component';
 import { CharityUpdateComponent } from './pages/admin/charity/charity-update/charity-update.component';
 import {FbAuthComponent} from './components/fb-auth/fb-auth.component';
+import {SharedModule} from "./shared/shared.module";
 
 
 
@@ -52,7 +52,8 @@ import {FbAuthComponent} from './components/fb-auth/fb-auth.component';
     RouterModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    AnonymousLayoutModule
+    AnonymousLayoutModule,
+    SharedModule
   ],
   declarations: [
     AppComponent,
@@ -64,14 +65,13 @@ import {FbAuthComponent} from './components/fb-auth/fb-auth.component';
     CharityCreateComponent,
     CreateCategoryComponent,
     ListCategoryComponent,
-    EnumToArrayPipe,
     CharityUpdateComponent,
     FbAuthComponent
 
   ],
   providers: [AuthenticationInterceptorProvider,
-    { provide: NZ_I18N, useValue: en_US }
-    ],
+    {provide: NZ_I18N, useValue: en_US}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

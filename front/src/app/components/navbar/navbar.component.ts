@@ -40,6 +40,8 @@ export class NavbarComponent implements OnInit,DoCheck {
         // const blob = URL.createObjectURL(data);
         // image.srcObject = URL.createObjectURL(mediaSource);
         // console.log(blob);
+        console.log('data: '+data);
+        console.log(IMG_URL + data);
         this.image = IMG_URL + data; // 'https://clubisti.net/assets/img/'+ data | environment.apiUrl+'/assets/img/'+
       },
       error => {
