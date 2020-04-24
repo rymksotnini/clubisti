@@ -27,7 +27,7 @@
             </div>
           </div>
         </div>
-        <form role="form"  [formGroup]="profileToCreate">
+        <form role="form"  [formGroup]="profileToCreate" >
           <div class="card-header bg-white border-0">
             <div class="row align-items-center">
               <div class="col-8">
@@ -41,7 +41,7 @@
           <div class="card-body">
             <div *ngIf="imageEditClicked" class="form-group">
               <label class="form-control-label" for="input-image">Choose an image</label>
-              <input type="file" id="input-image" class="form-control" ngModel name="myFile" (change)="fileEvent($event)">
+              <input type="file" id="input-image" class="form-control" name="myFile" (change)="fileEvent($event)">
             </div>
             <h6 class="heading-small text-muted mb-4">User information</h6>
             <div class="pl-lg-4">

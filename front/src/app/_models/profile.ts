@@ -1,5 +1,6 @@
 export class Profile {
 
+  private _id: number;
   private _phone_number: number;
   private _gender: string;
   private _birth_date: Date;
@@ -7,6 +8,14 @@ export class Profile {
   private _status: string;
   private _badge=null;
   private _address = null;
+
+  get id(): number {
+    return this._id;
+  }
+
+  set id(value: number) {
+    this._id = value;
+  }
 
   get phone_number(): number {
     return this._phone_number;

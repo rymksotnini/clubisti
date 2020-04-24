@@ -29,11 +29,11 @@ class ImageController extends Controller
             if (!$profile) {
                 $profile = new Profile(['image_url' => $picture]);
                 $user->profile()->save($profile);
-                return response()->json(["message" => "Image Uploaded Succesfully"]);
+                return response()->json(["message" => "Image Uploaded Successfully"]);
             }
             $profile->image_url= $picture;
             $profile->save();
-            return response()->json(["message" => "Image Uploaded Succesfully"]);
+            return response()->json(["message" => "Image Uploaded Successfully"]);
         }
         else
         {
