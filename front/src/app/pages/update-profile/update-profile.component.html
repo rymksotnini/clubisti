@@ -63,13 +63,13 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-first-name">First name</label>
-                    <input formControlName="firstName" type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="{{this.currentUser.firstName}}" value="{{this.currentUser.firstName}}">
+                    <input formControlName="firstName" type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="{{this.currentUser.firstName}}">
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-last-name">Last name</label>
-                    <input formControlName="lastName" type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="{{this.currentUser.lastName}}" value="{{this.currentUser.lastName}}">
+                    <input formControlName="lastName" type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="{{this.currentUser.lastName}}">
                   </div>
                 </div>
               </div>
@@ -83,7 +83,7 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-number">Phone Number</label>
-                    <input formControlName="number" id="input-number" class="form-control form-control-alternative" placeholder="Phone Number" value="XXXXXXXXXXX" type="text">
+                    <input formControlName="number" id="input-number" class="form-control form-control-alternative" placeholder="{{this.currentProfile.phone_number}}" type="text">
                   </div>
                 </div>
               </div>
@@ -105,7 +105,7 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <label class="form-control-label" for="input-address">Street</label>
-                    <input formControlName="street" id="input-address" class="form-control form-control-alternative" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text">
+                    <input formControlName="street" id="input-address" class="form-control form-control-alternative" placeholder="{{this.currentAddress.street}}" type="text">
                   </div>
                 </div>
               </div>
@@ -113,7 +113,7 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <label class="form-control-label" for="input-address2">Street 2 (optional)</label>
-                    <input formControlName="street2" id="input-address2" class="form-control form-control-alternative" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09" type="text">
+                    <input formControlName="street2" id="input-address2" class="form-control form-control-alternative" placeholder="{{this.currentAddress.street2}}">
                   </div>
                 </div>
               </div>
@@ -121,19 +121,19 @@
                 <div class="col-lg-4">
                   <div class="form-group">
                     <label class="form-control-label" for="input-city">City</label>
-                    <input formControlName="city" type="text" id="input-city" class="form-control form-control-alternative" placeholder="City" value="New York">
+                    <input formControlName="city" type="text" id="input-city" class="form-control form-control-alternative" placeholder="{{this.currentAddress.city}}">
                   </div>
                 </div>
                 <div class="col-lg-4">
                   <div class="form-group">
                     <label class="form-control-label" for="input-country">Country</label>
-                    <input formControlName="country" type="text" id="input-country" class="form-control form-control-alternative" placeholder="Country" value="United States">
+                    <input formControlName="country" type="text" id="input-country" class="form-control form-control-alternative" placeholder="{{this.currentCountry.name}}">
                   </div>
                 </div>
                 <div class="col-lg-4">
                   <div class="form-group">
                     <label class="form-control-label" for="input-postal-code">Postal code</label>
-                    <input formControlName="postalCode" type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="Postal code">
+                    <input formControlName="postalCode" type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="{{this.currentAddress.postal_code}}">
                   </div>
                 </div>
               </div>

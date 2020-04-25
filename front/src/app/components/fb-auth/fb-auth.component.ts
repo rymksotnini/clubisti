@@ -24,6 +24,7 @@ export class FbAuthComponent implements OnInit {
     });
     this.authenticationService.facebookLogin(id).subscribe(result=> {
       console.log('facebook login ...');
+      this.authenticationService.savingToken(result);
       this.authenticationService.savingUser(result);
       console.log(this.authenticationService.getCurrentUser())
       this.router.navigate(['/dashboard']);

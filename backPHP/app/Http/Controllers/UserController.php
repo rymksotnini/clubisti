@@ -103,20 +103,37 @@ class UserController extends Controller
         error_log("1");
         $user->update(Arr::except($request->input('user'), ['profile']));
         error_log("2");
-        $profile = $request->input('user.profile');
-        error_log(json_encode($profile));
-        //
-        $address = $request->input('user.profile.address');
-        error_log(json_encode($address));
-        $country = $request->input('user.profile.address.country');
-        error_log(json_encode($country));
-        $profile = $user->profile()->updateOrCreate(Arr::except($profile, ['address']));
-        $address=Address::updateOrCreate(Arr::except($address, ['country']));
+        $profile_update = $request->input('user.profile');
+        error_log(json_encode($profile_update));
+        $address_update = $request->input('user.profile.address');
+        error_log(json_encode($address_update));
+        $country_update = $request->input('user.profile.address.country');
+        error_log(json_encode($country_update));
+        $profile = $user->profile();
+        if (!$profile){
+            $user->profile()->create(Arr::except($profile_update, ['address']));
+        }
+        else{
+            $user->profile()->update(Arr::except($profile_update, ['address']));
+        }
+        $address= $profile->address();
+        if (!$address){
+            $address=Address::create(Arr::except($address_update, ['country']));
+        }
+        else{
+            $address->update(Arr::except($address_update, ['country']));
+        }
         $profile->address()->associate($address);
-        $profile->save();
-        $country=Country::updateOrCreate($country);
+        $profile->update();
+        $country = $address->country();
+        if (!$country){
+            $country=Country::create($country_update);
+        }
+        else{
+            $country->update($country_update);
+        }
         $address->country()->associate($country);
-        $address->save();
+        $address->update();
         return response()->json([
             'user' => json_encode($user)
         ]);
