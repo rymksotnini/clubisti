@@ -40,10 +40,13 @@ export class UpdateProfileComponent implements OnInit {
       (res) =>{
         this.currentUser = JSON.parse(res.user);
         this.currentProfile = this.currentUser.profile;
-        this.currentAddress = this.currentProfile.address;
-        this.currentCountry = this.currentAddress.country;
-        console.log(this.currentUser.username);
-        console.log(this.currentCountry.name);
+        if (this.currentProfile){
+          this.currentAddress = this.currentProfile.address;
+          if(this.currentAddress){
+            this.currentCountry = this.currentAddress.country;
+            console.log(this.currentUser.username);
+          }
+        }
         this.initializeForm();
       }
     );
@@ -75,16 +78,23 @@ export class UpdateProfileComponent implements OnInit {
 
   initializeForm(){
     this.profileToCreate.controls['username'].setValue(this.currentUser.username);
+    console.log('init'+this.profileToCreate.value.username);
     this.profileToCreate.controls['email'].setValue(this.currentUser.email);
     this.profileToCreate.controls['firstName'].setValue(this.currentUser.first_name);
     this.profileToCreate.controls['lastName'].setValue(this.currentUser.last_name);
-    this.profileToCreate.controls['gender'].setValue(this.currentProfile.gender);
-    this.profileToCreate.controls['number'].setValue(this.currentProfile.phone_number);
-    this.profileToCreate.controls['street'].setValue(this.currentAddress.street);
-    this.profileToCreate.controls['street2'].setValue(this.currentAddress.street2);
-    this.profileToCreate.controls['city'].setValue(this.currentAddress.city);
-    this.profileToCreate.controls['postalCode'].setValue(this.currentAddress.postal_code);
-    this.profileToCreate.controls['country'].setValue(this.currentCountry.name);
+    if (this.currentProfile){
+      this.profileToCreate.controls['gender'].setValue(this.currentProfile.gender);
+      this.profileToCreate.controls['number'].setValue(this.currentProfile.phone_number);
+      if (this.currentAddress){
+        this.profileToCreate.controls['street'].setValue(this.currentAddress.street);
+        this.profileToCreate.controls['street2'].setValue(this.currentAddress.street2);
+        this.profileToCreate.controls['city'].setValue(this.currentAddress.city);
+        this.profileToCreate.controls['postalCode'].setValue(this.currentAddress.postal_code);
+        if(this.currentCountry){
+          this.profileToCreate.controls['country'].setValue(this.currentCountry.name);
+        }
+      }
+    }
   }
 
   clickedTrue(){
@@ -101,54 +111,69 @@ export class UpdateProfileComponent implements OnInit {
     if(this.profileToCreate.value.birthday){
       this.profileToCreate.value.birthday = this.pipe.transform(this.profileToCreate.value.birthday, ' yyyy-M-d hh:mm:ss');
     }
-    this.currentUser.username = this.profileToCreate.value.username;
-    this.currentUser.email = this.profileToCreate.value.email;
-    this.currentUser.first_name = this.profileToCreate.value.firstName;
-    this.currentUser.last_name = this.profileToCreate.value.lastName;
-    this.currentProfile.birth_date = this.profileToCreate.value.birthday;
-    this.currentProfile.phone_number = this.profileToCreate.value.number;
-    this.currentProfile.gender = this.profileToCreate.value.gender;
-    this.currentAddress.city = this.profileToCreate.value.city;
-    this.currentAddress.street = this.profileToCreate.value.street;
-    this.currentAddress.street2 = this.profileToCreate.value.street2;
-    this.currentAddress.postal_code = this.profileToCreate.value.postalCode;
-    this.currentCountry.name = this.profileToCreate.value.country;
-    this.currentAddress.country = this.currentCountry;
-    this.currentProfile.address = this.currentAddress;
-    this.currentUser.profile = this.currentProfile;
+    // this.currentUser.username = this.profileToCreate.value.username;
+    // this.currentUser.email = this.profileToCreate.value.email;
+    // this.currentUser.first_name = this.profileToCreate.value.firstName;
+    // this.currentUser.last_name = this.profileToCreate.value.lastName;
+    // if (this.currentProfile){
+    //   this.currentProfile.birth_date = this.profileToCreate.value.birthday;
+    //   this.currentProfile.phone_number = this.profileToCreate.value.number;
+    //   this.currentProfile.gender = this.profileToCreate.value.gender;
+    //   if(this.currentAddress){
+    //     this.currentAddress.city = this.profileToCreate.value.city;
+    //     this.currentAddress.street = this.profileToCreate.value.street;
+    //     this.currentAddress.street2 = this.profileToCreate.value.street2;
+    //     this.currentAddress.postal_code = this.profileToCreate.value.postalCode;
+    //     if(this.currentCountry){
+    //       this.currentCountry.name = this.profileToCreate.value.country;
+    //     }
+    //   }
+    //   if(this.currentAddress){
+    //     this.currentAddress.country = this.currentCountry;
+    //   }
+    //   if(this.currentProfile){
+    //     this.currentProfile.address = this.currentAddress;
+    //   }
+    //   if(this.currentUser){
+    //     this.currentUser.profile = this.currentProfile;
+    //   }
+    // }
     const jsonUser = {
       user : {
-        username: this.currentUser.username,
-        email: this.currentUser.email,
-        first_name: this.currentUser.first_name,
-        last_name: this.currentUser.last_name,
+        username: this.profileToCreate.value.username,
+        email: this.profileToCreate.value.email,
+        first_name: this.profileToCreate.value.firstName,
+        last_name: this.profileToCreate.value.lastName,
         profile: {
-          gender: this.currentProfile.gender,
-          phone_number: this.currentProfile.phone_number,
-          birth_date: this.currentProfile.birth_date,
+          gender: this.profileToCreate.value.gender,
+          phone_number: this.profileToCreate.value.number,
+          birth_date: this.profileToCreate.value.birthday,
           address: {
-            street: this.currentAddress.street,
-            street2: this.currentAddress.street2,
-            postal_code: this.currentAddress.postal_code,
-            city: this.currentAddress.city,
+            street: this.profileToCreate.value.street,
+            street2: this.profileToCreate.value.street2,
+            postal_code: this.profileToCreate.value.postalCode,
+            city: this.profileToCreate.value.city,
             country: {
-              name: this.currentCountry.name
+              name: this.profileToCreate.value.country
             }
           }
         }
       }
     };
+    // call for update
     this.crudService.update(API_URL+USERS_PROFILE,this.authenticationService.getCurrentUser().id,jsonUser).subscribe(
       (result) =>{
         console.log(result.body.user);
-        this.authenticationService.savingUser(result);
         // update current user
+        this.authenticationService.savingUser(result);
       }
     );
-    // call for update
-    /*this.imageService.postImage(this.fileData).subscribe(data => {
-      console.log(data);
-    });*/
+    // post image
+    if(this.fileData){
+      this.imageService.postImage(this.fileData).subscribe(data => {
+        console.log(data);
+      });
+    }
   }
 
 }

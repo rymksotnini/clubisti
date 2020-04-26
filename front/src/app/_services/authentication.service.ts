@@ -49,14 +49,16 @@ export class AuthenticationService {
     return this.redirectUri;
   }
 
-  public setCurrentUser(currentUser){
+  public setCurrentUser(currentUser:User){
     console.log('ahla');
+    console.log(currentUser.last_name);
     this.currentUser = new User();
     this.currentUser.id =currentUser.id;
     this.currentUser.username =currentUser.username;
     this.currentUser.first_name = currentUser.first_name;
-    this.currentUser.first_name = currentUser.last_name;
+    this.currentUser.last_name = currentUser.last_name;
     this.currentUser.email = currentUser.email;
+    console.log('real last name '+this.currentUser.last_name);
   }
 
   public getCurrentUser():User{
@@ -66,14 +68,13 @@ export class AuthenticationService {
       return this.currentUser;
     }
     console.log('2');
-    console.log('user: ' + user);
+    console.log('user: ' + user.last_name);
     this.setCurrentUser(user);
     return this.currentUser;
   }
 
   public savingUser(result){
     this.currentUser = new User();
-    console.log('currently logging in...');
     console.log('body',  result.body.user);
     localStorage.removeItem('currentUser');
     localStorage.setItem('currentUser',result.body.user);

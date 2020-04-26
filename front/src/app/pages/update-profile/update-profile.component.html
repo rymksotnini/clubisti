@@ -49,13 +49,13 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-username">Username</label>
-                    <input type="text" id="input-username" class="form-control form-control-alternative" formControlName="username" placeholder="{{this.currentUser.username}}" value="{{this.currentUser.username}}">
+                    <input type="text" id="input-username" class="form-control form-control-alternative" formControlName="username" placeholder="{{this.currentUser?.username}}" value="{{this.currentUser.username}}">
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-email">Email address</label>
-                    <input formControlName="email" type="email" id="input-email" class="form-control form-control-alternative" placeholder="{{this.currentUser.email}}">
+                    <input formControlName="email" type="email" id="input-email" class="form-control form-control-alternative" placeholder="{{this.currentUser?.email}}">
                   </div>
                 </div>
               </div>
@@ -63,13 +63,13 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-first-name">First name</label>
-                    <input formControlName="firstName" type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="{{this.currentUser.firstName}}">
+                    <input formControlName="firstName" type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="{{this.currentUser?.first_name}}">
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-last-name">Last name</label>
-                    <input formControlName="lastName" type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="{{this.currentUser.lastName}}">
+                    <input formControlName="lastName" type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="{{this.currentUser?.last_name}}">
                   </div>
                 </div>
               </div>
@@ -83,7 +83,7 @@
                 <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-number">Phone Number</label>
-                    <input formControlName="number" id="input-number" class="form-control form-control-alternative" placeholder="{{this.currentProfile.phone_number}}" type="text">
+                    <input formControlName="number" id="input-number" class="form-control form-control-alternative" placeholder="{{this.currentProfile?.phone_number}}" type="text">
                   </div>
                 </div>
               </div>
@@ -105,7 +105,7 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <label class="form-control-label" for="input-address">Street</label>
-                    <input formControlName="street" id="input-address" class="form-control form-control-alternative" placeholder="{{this.currentAddress.street}}" type="text">
+                    <input formControlName="street" id="input-address" class="form-control form-control-alternative" placeholder="{{this.currentAddress?.street}}" type="text">
                   </div>
                 </div>
               </div>
@@ -113,7 +113,7 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <label class="form-control-label" for="input-address2">Street 2 (optional)</label>
-                    <input formControlName="street2" id="input-address2" class="form-control form-control-alternative" placeholder="{{this.currentAddress.street2}}">
+                    <input formControlName="street2" id="input-address2" class="form-control form-control-alternative" placeholder="{{this.currentAddress?.street2}}">
                   </div>
                 </div>
               </div>
@@ -121,19 +121,19 @@
                 <div class="col-lg-4">
                   <div class="form-group">
                     <label class="form-control-label" for="input-city">City</label>
-                    <input formControlName="city" type="text" id="input-city" class="form-control form-control-alternative" placeholder="{{this.currentAddress.city}}">
+                    <input formControlName="city" type="text" id="input-city" class="form-control form-control-alternative" placeholder="{{this.currentAddress?.city}}">
                   </div>
                 </div>
                 <div class="col-lg-4">
                   <div class="form-group">
                     <label class="form-control-label" for="input-country">Country</label>
-                    <input formControlName="country" type="text" id="input-country" class="form-control form-control-alternative" placeholder="{{this.currentCountry.name}}">
+                    <input formControlName="country" type="text" id="input-country" class="form-control form-control-alternative" placeholder="{{this.currentCountry?.name}}">
                   </div>
                 </div>
                 <div class="col-lg-4">
                   <div class="form-group">
                     <label class="form-control-label" for="input-postal-code">Postal code</label>
-                    <input formControlName="postalCode" type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="{{this.currentAddress.postal_code}}">
+                    <input formControlName="postalCode" type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="{{this.currentAddress?.postal_code}}">
                   </div>
                 </div>
               </div>
