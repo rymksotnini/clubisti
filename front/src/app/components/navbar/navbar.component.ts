@@ -15,6 +15,7 @@ export class NavbarComponent implements OnInit,DoCheck {
   public focus;
   public listTitles: any[];
   public location: Location;
+  isLogged : boolean;
   currentUser: User;
   // tslint:disable-next-line:max-line-length
   constructor(location: Location,  private element: ElementRef, private router: Router, private  authenticationService:AuthenticationService) {
@@ -27,6 +28,7 @@ export class NavbarComponent implements OnInit,DoCheck {
     console.log(this.authenticationService.isLogged());
     this.connected = this.authenticationService.isLogged();
     this.currentUser = this.authenticationService.getCurrentUser();
+    this.isLogged = this.authenticationService.isLogged();
   }
   getTitle(){
     let titlee = this.location.prepareExternalUrl(this.location.path());
