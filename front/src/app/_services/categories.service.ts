@@ -12,6 +12,7 @@ export class CategoriesService {
   private categories: ListReq<Category>;
   private _currentPage: number;
   private _sizePage: number;
+  private _total: number;
 
   constructor(private crudService: CrudService) { }
 
@@ -22,6 +23,14 @@ export class CategoriesService {
     return this.categories;
   }
 
+
+  getTotal(): number {
+    return this._total;
+  }
+
+  setTotal(value: number) {
+    this._total = value;
+  }
 
   getCurrentPage(): number {
     return this._currentPage;
@@ -45,12 +54,31 @@ export class CategoriesService {
     params = new HttpParams().set('page', selectedPage.toString())
       .set('perPage', this._sizePage.toString());
 
+    this.crudService.getAllWithParams(API_URL + CATEGORY, params).subscribe(
+      (response) => {
+        this.categories = response;
+        console.log(this.categories);
+        this._currentPage = this.categories.meta.current_page ;
+        this._total = response.meta.total;
+      },
+      (error =>  {
+        console.log(error);
+      })
+    );
+  }
+
+  getCategoriesPagination(page) {
+    let params: any;
+    this._currentPage = page;
+    params = new HttpParams().set('page', this._currentPage.toString())
+      .set('perPage', this._sizePage.toString());
 
     this.crudService.getAllWithParams(API_URL + CATEGORY, params).subscribe(
       (response) => {
         this.categories = response;
         console.log(this.categories);
         this._currentPage = this.categories.meta.current_page ;
+        this._total = response.meta.total;
       },
       (error =>  {
         console.log(error);

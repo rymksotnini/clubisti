@@ -9,3 +9,7 @@ export const TERNINATE = '/end';
 export const REDIRECT = '/redirect';
 export const CALLBACK = '/callback';
 export const USERS = '/users';
+export const USERS_PROFILE = '/users/profile'
+export const IMG_URL = environment.apiUrl + '/assets/img/';
+// export const IMG_URL = 'http://127.0.0.1:8887/';
+export const BADGE = '/badges';

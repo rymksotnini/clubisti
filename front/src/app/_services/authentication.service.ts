@@ -18,7 +18,7 @@ export class AuthenticationService {
 
   public signup(user :User):Observable<HttpResponse<any>>{
     // tslint:disable-next-line:max-line-length
-    const creds = { username: user.username,first_name: user.firstName,last_name:user.lastName,email: user.email, password: user.password};
+    const creds = { username: user.username,first_name: user.first_name,last_name:user.last_name,email: user.email, password: user.password};
     return this.http.post<any>(API_URL+'/register', JSON.parse(JSON.stringify(creds)),{observe: 'response' });
   }
 
@@ -38,6 +38,7 @@ export class AuthenticationService {
     return this.http.get(API_URL+'users'+this.getCurrentUser().id);
   }
   public logout(){
+    localStorage.removeItem('currentUser');
     return this.http.post<any>(API_URL+'/logout', {observe: 'response' });
   }
   public isLogged(): boolean{
@@ -48,25 +49,40 @@ export class AuthenticationService {
     return this.redirectUri;
   }
 
-  public setCurrentUser(currentUser){
+  public setCurrentUser(currentUser:User){
+    console.log('ahla');
+    console.log(currentUser.last_name);
+    this.currentUser = new User();
     this.currentUser.id =currentUser.id;
     this.currentUser.username =currentUser.username;
-    this.currentUser.firstName = currentUser.first_name;
-    this.currentUser.lastName = currentUser.last_name;
+    this.currentUser.first_name = currentUser.first_name;
+    this.currentUser.last_name = currentUser.last_name;
     this.currentUser.email = currentUser.email;
+    console.log('real last name '+this.currentUser.last_name);
   }
 
   public getCurrentUser():User{
-    return this.currentUser
+    const user :User = JSON.parse(localStorage.getItem('currentUser'));
+    if (user==null){
+      console.log('here');
+      return this.currentUser;
+    }
+    console.log('2');
+    console.log('user: ' + user.last_name);
+    this.setCurrentUser(user);
+    return this.currentUser;
   }
 
   public savingUser(result){
-    console.log('currently logging in...');
+    this.currentUser = new User();
     console.log('body',  result.body.user);
+    localStorage.removeItem('currentUser');
+    localStorage.setItem('currentUser',result.body.user);
     this.setCurrentUser(JSON.parse(result.body.user));
-    console.log('current user last name ' + this.getCurrentUser().lastName);
-    // @ts-ignore
-    localStorage.setItem('token',result.body.token);
+    console.log('current user last name ' + this.getCurrentUser().last_name);
   }
 
+  public savingToken(result){
+    localStorage.setItem('token',result.body.token);
+  }
 }

@@ -36,12 +36,13 @@ export class RegisterComponent implements OnInit {
       this.user.email = form.controls.email.value;
       this.user.password =form.controls.password.value;
       this.user.username = form.controls.username.value;
-      this.user.firstName = form.controls.firstName.value;
-      this.user.lastName =form.controls.lastName.value;
+      this.user.first_name = form.controls.firstName.value;
+      this.user.last_name =form.controls.lastName.value;
       console.log(this.user);
       this.authenticationService.signup(this.user).subscribe(
         (result)=> {
           console.log('currently signing up...');
+          this.authenticationService.savingToken(result);
           this.authenticationService.savingUser(result);
           this.router.navigate(['/dashboard']);
         },

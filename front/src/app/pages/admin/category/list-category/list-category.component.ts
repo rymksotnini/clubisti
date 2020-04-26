@@ -2,10 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import {CrudService} from '../../../../_services/crud.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {HttpParams} from '@angular/common/http';
-import {API_URL, CATEGORY} from '../../../../_globals/global-variables';
+import {API_URL, CATEGORY, USERS} from '../../../../_globals/global-variables';
 import {ListReq} from '../../../../_models/requests/ListReq';
 import {Category} from '../../../../_models/Category';
 import {CategoriesService} from '../../../../_services/categories.service';
+import {NzModalRef, NzModalService} from 'ng-zorro-antd';
+import {BadgesCreateComponent} from '../../badge/badges-create/badges-create.component';
+import {CreateCategoryComponent} from '../create-category/create-category.component';
 
 @Component({
   selector: 'app-list-category',
@@ -15,53 +18,50 @@ import {CategoriesService} from '../../../../_services/categories.service';
 export class ListCategoryComponent implements OnInit {
 
   isVisible = false;
-  categories: ListReq<Category>;
-  currentPage: number;
-  sizePage: number;
+
   sort = 'createdAt,desc';
   constructor(private crudService: CrudService,
               private router: Router,
               private route: ActivatedRoute,
               private categoryService: CategoriesService,
+              private modal: NzModalService
   ) {
 
   }
 
   ngOnInit() {
-    this.currentPage = 1;
-    this.sizePage = 10;
     this.categoryService.setCurrentPage(1);
-    this.categoryService.setSizePage(3);
-    this.getCategories();
+    this.categoryService.setSizePage(10);
+    this.categoryService.getCategoriesAPI();
   }
 
-  getCategories() {
-    let params: any;
-    const selectedPage = this.currentPage;
-    params = new HttpParams().set('page', selectedPage.toString())
-      .set('perPage', this.sizePage.toString());
 
-
-    this.crudService.getAllWithParams(API_URL + CATEGORY, params).subscribe(
-      (response) => {
-        this.categories = response;
-        this.categoryService.setCategories(this.categories);
-        console.log(this.categories);
-        this.currentPage = this.categories.meta.current_page ;
-        this.categoryService.setCurrentPage(this.categories.meta.current_page);
-      },
-      (error =>  {
-        console.log(error);
-      })
-    );
-  }
 
   paginate(page: number) {
-    this.currentPage = page ;
-    this.getCategories();
+    this.categoryService.getCategoriesPagination(page);
   }
 
-
+  createGategory(): void {
+    const modal: NzModalRef = this.modal.create({
+      nzTitle: 'Add category',
+      nzContent: CreateCategoryComponent,
+      nzFooter: [
+        {
+          label: 'Close',
+          shape: 'round',
+          onClick: () => modal.destroy()
+        }
+      ]
+    });
+  }
+  delete(category) {
+    this.crudService.delete(API_URL + CATEGORY, category.id).subscribe(res => {
+      console.log(res)
+      category.deleted = 1;
+    }, error => {
+      console.log(error)
+    });
+  }
 
 
 }

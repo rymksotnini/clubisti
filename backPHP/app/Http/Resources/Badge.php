@@ -22,6 +22,7 @@ class Badge extends JsonResource
             'profiles'    => $this->profiles,
             'createdAt' => $this->created_at,
             'updatedAt' => $this->updated_at,
+            'deleted'    => $this->deleted,
         ];
     }
 }

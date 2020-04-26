@@ -29,7 +29,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a *ngIf="isLogged" class="nav-link nav-link-icon" routerLinkActive="active" [routerLink]="['/user-profile']">
+          <a *ngIf="isLogged" class="nav-link nav-link-icon" routerLinkActive="active" [routerLink]="['/template/user-profile']">
             <i class="ni ni-single-02"></i>
             <span class="nav-link-inner--text">Profile</span>
           </a>
@@ -54,7 +54,7 @@
         <a class="nav-link pr-0" role="button" ngbDropdownToggle>
           <div class="media align-items-center">
             <span class="avatar avatar-sm rounded-circle">
-              <img alt="Image placeholder" src="assets/img/theme/team-4-800x800.jpg">
+              <img id="user_image" alt="Image placeholder" [src]=this.image>
             </span>
             <div class="media-body ml-2 d-none d-lg-block">
               <span class="mb-0 text-sm  font-weight-bold">{{currentUser.username }}</span>
@@ -77,20 +77,20 @@
             <i class="ni ni-single-02"></i>
             <span>Template</span>
           </a>
-          <a *ngIf="connected" routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">
+          <a *ngIf="connected" routerLinkActive="active" [routerLink]="['template/user-profile']" class="dropdown-item">
             <i class="ni ni-single-02"></i>
             <span>My profile</span>
           </a>
-          <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">
+          <a routerLinkActive="active" [routerLink]="['template/user-profile']" class="dropdown-item">
             <i class="ni ni-calendar-grid-58"></i>
             <span>Activity</span>
           </a>
-          <a routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">
+          <a routerLinkActive="active" [routerLink]="['template/user-profile']" class="dropdown-item">
             <i class="ni ni-support-16"></i>
             <span>Support</span>
           </a>
           <div class="dropdown-divider"></div>
-          <a href="#!" class="dropdown-item">
+          <a *ngIf="this.authenticationService.isLogged()" (click)="logout()" class="dropdown-item">
             <i class="ni ni-user-run"></i>
             <span>Logout</span>
           </a>

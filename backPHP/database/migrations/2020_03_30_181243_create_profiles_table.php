@@ -15,14 +15,14 @@ class CreateProfilesTable extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('phone_umber');
-            $table->enum('gender', ['MALE', 'FEMALE']);
-            $table->dateTime('birth_date');
-            $table->string('image_url');
-            $table->enum('status', ['CREATED', 'DELETED']);
-            $table->unsignedBigInteger('user_id');
-            $table->integer('badge_id')->unsigned();
-            $table->integer('address_id')->unsigned();
+            $table->string('phone_number')->nullable();
+            $table->enum('gender', ['MALE', 'FEMALE'])->nullable();
+            $table->dateTime('birth_date')->nullable();
+            $table->string('image_url')->nullable();
+            $table->enum('status', ['CREATED', 'DELETED'])->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->integer('badge_id')->unsigned()->nullable();
+            $table->integer('address_id')->unsigned()->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')
                 ->onDelete('cascade');

@@ -1,0 +1,30 @@
+<form id=create-book-form [formGroup]="createBadge" >
+  <div >
+    <div class="form-group">
+      <label class="form-control-label" for="input-Name">Name</label>
+      <input  formControlName= "name" type="text" id="input-Name" class="form-control form-control-alternative" placeholder="Name" >
+    </div>
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="form-group">
+          <label class="form-control-label" for="input-min">Lower Bound</label>
+          <input  formControlName= "lower_bond" type="text" id="input-min" class="form-control form-control-alternative" placeholder="Amount" >
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="form-group">
+          <label class="form-control-label" for="input-max">Upper Bound</label>
+          <input  formControlName= "upper_bond" type="text" id="input-max" class="form-control form-control-alternative" placeholder="Amount" >
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</form>
+<div >
+  <button type="submit" (click)="onSubmit()" class="btn btn-info" form="create-book-form">
+    <i class="icon-feather-plus"></i>add badge</button>
+</div>
+
+
