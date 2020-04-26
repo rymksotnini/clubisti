@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
 
 class ImageController extends Controller
 {
@@ -22,8 +24,6 @@ class ImageController extends Controller
             $picture   = date('His').'-'.$filename;
             error_log($picture);
             error_log(public_path('img'));
-            $file->move(public_path('img'), $picture);
-
             $user = User::find($request->id_user);
             $profile = $user->profile;
             if (!$profile) {
@@ -31,6 +31,12 @@ class ImageController extends Controller
                 $user->profile()->save($profile);
                 return response()->json(["message" => "Image Uploaded Successfully"]);
             }
+            if($profile->image_url) {
+                error_log("deleting...");
+                error_log(public_path("img\\$profile->image_url"));
+                File::delete(public_path("img\\$profile->image_url"));
+            }
+            $file->move(public_path('img'), $picture);
             $profile->image_url= $picture;
             $profile->save();
             return response()->json(["message" => "Image Uploaded Successfully"]);
