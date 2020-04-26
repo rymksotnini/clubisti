@@ -1440,7 +1440,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var CALLBACK = '/callback';
     var USERS = '/users';
     var USERS_PROFILE = '/users/profile';
-    var IMG_URL = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].apiUrl + '/assets/img/'; // export const IMG_URL = 'http://127.0.0.1:8887/';
+    var IMG_URL = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].apiUrl + '/img/'; // export const IMG_URL = 'http://127.0.0.1:8887/';
 
     var BADGE = '/badges';
     /***/

@@ -877,7 +877,7 @@ const REDIRECT = '/redirect';
 const CALLBACK = '/callback';
 const USERS = '/users';
 const USERS_PROFILE = '/users/profile';
-const IMG_URL = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].apiUrl + '/assets/img/';
+const IMG_URL = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].apiUrl + '/img/';
 // export const IMG_URL = 'http://127.0.0.1:8887/';
 const BADGE = '/badges';
 
