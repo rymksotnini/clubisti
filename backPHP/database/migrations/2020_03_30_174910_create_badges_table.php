@@ -15,10 +15,10 @@ class CreateBadgesTable extends Migration
     {
         Schema::create('badges', function (Blueprint $table) {
             $table->increments('id');
-            $table->boolean('deleted')->default(false);
             $table->string('name');
             $table->integer('lower_bond');
             $table->integer('upper_bond');
+            $table->boolean('deleted')->default(false);
             $table->timestamps();
         });
     }

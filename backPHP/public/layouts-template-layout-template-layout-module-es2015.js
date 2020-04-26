@@ -417,6 +417,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/update-profile/update-profile.component.html":
+/*!**********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/update-profile/update-profile.component.html ***!
+  \**********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"header pb-8 pt-5 pt-lg-8 d-flex align-items-center\" style=\"min-height: 600px; background-size: cover; background-position: center top;\">\n  <!-- Mask -->\n  <span class=\"mask bg-gradient-danger opacity-8\"></span>\n  <!-- Header container -->\n  <div class=\"container-fluid d-flex align-items-center\">\n    <div class=\"row\">\n      <div class=\"col-lg-7 col-md-10\">\n        <h1 class=\"display-2 text-white\">Hello {{this.currentUser.username}}</h1>\n        <p class=\"text-white mt-0 mb-5\">Here you can update all your personal information and edit your profile image</p>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"container-fluid mt--7\">\n  <div class=\"row\">\n    <div class=\"col-xl-8 ant-col-lg-offset-4 order-xl-1\">\n      <div class=\"card bg-secondary shadow\">\n        <div class=\"row justify-content-center\">\n          <div class=\"col-lg-3\">\n            <div class=\"card-profile-image\">\n              <a href=\"javascript:void(0)\">\n                <img [src]=this.image class=\"rounded-circle\">\n              </a>\n            </div>\n            <div class=\"card-img-overlay ant-col-md-offset-13 ant-col-sm-offset-13 ant-col-xs-offset-13 ant-col-lg-offset-15\" style=\"margin-top: 80px; border-radius: 50px\">\n              <button class=\"btn btn-info btn-sm\" (click)=\"clickedTrue()\"><i class=\"fa fa-pen\"></i></button>\n            </div>\n          </div>\n        </div>\n        <form role=\"form\"  [formGroup]=\"profileToCreate\" >\n          <div class=\"card-header bg-white border-0\">\n            <div class=\"row align-items-center\">\n              <div class=\"col-8\">\n                <h3 class=\"mb-0\">My account</h3>\n              </div>\n              <div class=\"col-4 text-right\">\n                <button (click)=\"submit()\" type=\"submit\" class=\"btn btn-sm btn-primary\">submit</button>\n              </div>\n            </div>\n          </div>\n          <div class=\"card-body\">\n            <div *ngIf=\"imageEditClicked\" class=\"form-group\">\n              <label class=\"form-control-label\" for=\"input-image\">Choose an image</label>\n              <input type=\"file\" id=\"input-image\" class=\"form-control\" name=\"myFile\" (change)=\"fileEvent($event)\">\n            </div>\n            <h6 class=\"heading-small text-muted mb-4\">User information</h6>\n            <div class=\"pl-lg-4\">\n              <div class=\"row\">\n                <div class=\"col-lg-6\">\n                  <div class=\"form-group\">\n                    <label class=\"form-control-label\" for=\"input-username\">Username</label>\n                    <input type=\"text\" id=\"input-username\" class=\"form-control form-control-alternative\" formControlName=\"username\" placeholder=\"{{this.currentUser?.username}}\" value=\"{{this.currentUser.username}}\">\n                  </div>\n                </div>\n                <div class=\"col-lg-6\">\n                  <div class=\"form-group\">\n                    <label class=\"form-control-label\" for=\"input-email\">Email address</label>\n                    <input formControlName=\"email\" type=\"email\" id=\"input-email\" class=\"form-control form-control-alternative\" placeholder=\"{{this.currentUser?.email}}\">\n                  </div>\n                </div>\n              </div>\n              <div class=\"row\">\n                <div class=\"col-lg-6\">\n                  <div class=\"form-group\">\n                    <label class=\"form-control-label\" for=\"input-first-name\">First name</label>\n                    <input formControlName=\"firstName\" type=\"text\" id=\"input-first-name\" class=\"form-control form-control-alternative\" placeholder=\"{{this.currentUser?.first_name}}\">\n                  </div>\n                </div>\n                <div class=\"col-lg-6\">\n                  <div class=\"form-group\">\n                    <label class=\"form-control-label\" for=\"input-last-name\">Last name</label>\n                    <input formControlName=\"lastName\" type=\"text\" id=\"input-last-name\" class=\"form-control form-control-alternative\" placeholder=\"{{this.currentUser?.last_name}}\">\n                  </div>\n                </div>\n              </div>\n              <div class=\"row\">\n                <div class=\"col-lg-6\">\n                  <label class=\"form-control-label\" for=\"input-first-name\">Gender</label>\n                  <select formControlName=\"gender\" class=\"form-control form-control-alternative\" id=\"input-gender\" name=\"input-gender\" data-selected-text-format=\"count\" title=\"Gender\" >\n                    <option class=\"\" *ngFor=\"let item of gender|enumToArray\">{{item.name}}</option>\n                  </select>\n                </div>\n                <div class=\"col-lg-6\">\n                  <div class=\"form-group\">\n                    <label class=\"form-control-label\" for=\"input-number\">Phone Number</label>\n                    <input formControlName=\"number\" id=\"input-number\" class=\"form-control form-control-alternative\" placeholder=\"{{this.currentProfile?.phone_number}}\" type=\"text\">\n                  </div>\n                </div>\n              </div>\n              <div class=\"row\">\n                <div class=\"col-md-12 ant-col-lg-offset-7\">\n                  <div class=\"form-group\">\n                    <label class=\"form-control-label\" for=\"input-birth-date\">Birthday</label>\n                    <br>\n                    <nz-date-picker formControlName=\"birthday\" id=\"input-birth-date\" nzSize=\"large\"></nz-date-picker>\n                  </div>\n                </div>\n              </div>\n            </div>\n            <hr class=\"my-4\" />\n            <!-- Address -->\n            <h6 class=\"heading-small text-muted mb-4\">Address</h6>\n            <div class=\"pl-lg-4\">\n              <div class=\"row\">\n                <div class=\"col-md-12\">\n                  <div class=\"form-group\">\n                    <label class=\"form-control-label\" for=\"input-address\">Street</label>\n                    <input formControlName=\"street\" id=\"input-address\" class=\"form-control form-control-alternative\" placeholder=\"{{this.currentAddress?.street}}\" type=\"text\">\n                  </div>\n                </div>\n              </div>\n              <div class=\"row\">\n                <div class=\"col-md-12\">\n                  <div class=\"form-group\">\n                    <label class=\"form-control-label\" for=\"input-address2\">Street 2 (optional)</label>\n                    <input formControlName=\"street2\" id=\"input-address2\" class=\"form-control form-control-alternative\" placeholder=\"{{this.currentAddress?.street2}}\">\n                  </div>\n                </div>\n              </div>\n              <div class=\"row\">\n                <div class=\"col-lg-4\">\n                  <div class=\"form-group\">\n                    <label class=\"form-control-label\" for=\"input-city\">City</label>\n                    <input formControlName=\"city\" type=\"text\" id=\"input-city\" class=\"form-control form-control-alternative\" placeholder=\"{{this.currentAddress?.city}}\">\n                  </div>\n                </div>\n                <div class=\"col-lg-4\">\n                  <div class=\"form-group\">\n                    <label class=\"form-control-label\" for=\"input-country\">Country</label>\n                    <input formControlName=\"country\" type=\"text\" id=\"input-country\" class=\"form-control form-control-alternative\" placeholder=\"{{this.currentCountry?.name}}\">\n                  </div>\n                </div>\n                <div class=\"col-lg-4\">\n                  <div class=\"form-group\">\n                    <label class=\"form-control-label\" for=\"input-postal-code\">Postal code</label>\n                    <input formControlName=\"postalCode\" type=\"number\" id=\"input-postal-code\" class=\"form-control form-control-alternative\" placeholder=\"{{this.currentAddress?.postal_code}}\">\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n</div>\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/user-profile/user-profile.component.html":
 /*!******************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/user-profile/user-profile.component.html ***!
@@ -426,7 +439,182 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"header pb-8 pt-5 pt-lg-8 d-flex align-items-center\" style=\"min-height: 600px; background-image: url(assets/img/theme/profile-cover.jpg); background-size: cover; background-position: center top;\">\n  <!-- Mask -->\n  <span class=\"mask bg-gradient-danger opacity-8\"></span>\n  <!-- Header container -->\n  <div class=\"container-fluid d-flex align-items-center\">\n    <div class=\"row\">\n      <div class=\"col-lg-7 col-md-10\">\n        <h1 class=\"display-2 text-white\">Hello Jesse</h1>\n        <p class=\"text-white mt-0 mb-5\">This is your profile page. You can see the progress you've made with your work and manage your projects or assigned tasks</p>\n        <a href=\"#!\" class=\"btn btn-info\">Edit profile</a>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"container-fluid mt--7\">\n  <div class=\"row\">\n    <div class=\"col-xl-4 order-xl-2 mb-5 mb-xl-0\">\n      <div class=\"card card-profile shadow\">\n        <div class=\"row justify-content-center\">\n          <div class=\"col-lg-3 order-lg-2\">\n            <div class=\"card-profile-image\">\n              <a href=\"javascript:void(0)\">\n                <img src=\"assets/img/theme/team-4-800x800.jpg\" class=\"rounded-circle\">\n              </a>\n            </div>\n          </div>\n        </div>\n        <div class=\"card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4\">\n          <div class=\"d-flex justify-content-between\">\n            <a href=\"javascript:void(0)\" class=\"btn btn-sm btn-info mr-4\">Connect</a>\n            <a href=\"javascript:void(0)\" class=\"btn btn-sm btn-default float-right\">Message</a>\n          </div>\n        </div>\n        <div class=\"card-body pt-0 pt-md-4\">\n          <div class=\"row\">\n            <div class=\"col\">\n              <div class=\"card-profile-stats d-flex justify-content-center mt-md-5\">\n                <div>\n                  <span class=\"heading\">22</span>\n                  <span class=\"description\">Friends</span>\n                </div>\n                <div>\n                  <span class=\"heading\">10</span>\n                  <span class=\"description\">Photos</span>\n                </div>\n                <div>\n                  <span class=\"heading\">89</span>\n                  <span class=\"description\">Comments</span>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"text-center\">\n            <h3>\n              Jessica Jones<span class=\"font-weight-light\">, 27</span>\n            </h3>\n            <div class=\"h5 font-weight-300\">\n              <i class=\"ni location_pin mr-2\"></i>Bucharest, Romania\n            </div>\n            <div class=\"h5 mt-4\">\n              <i class=\"ni business_briefcase-24 mr-2\"></i>Solution Manager - Creative Tim Officer\n            </div>\n            <div>\n              <i class=\"ni education_hat mr-2\"></i>University of Computer Science\n            </div>\n            <hr class=\"my-4\" />\n            <p>Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music.</p>\n            <a href=\"javascript:void(0)\">Show more</a>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-xl-8 order-xl-1\">\n      <div class=\"card bg-secondary shadow\">\n        <div class=\"card-header bg-white border-0\">\n          <div class=\"row align-items-center\">\n            <div class=\"col-8\">\n              <h3 class=\"mb-0\">My account</h3>\n            </div>\n            <div class=\"col-4 text-right\">\n              <a href=\"#!\" class=\"btn btn-sm btn-primary\">Settings</a>\n            </div>\n          </div>\n        </div>\n        <div class=\"card-body\">\n          <form>\n            <h6 class=\"heading-small text-muted mb-4\">User information</h6>\n            <div class=\"pl-lg-4\">\n              <div class=\"row\">\n                <div class=\"col-lg-6\">\n                  <div class=\"form-group\">\n                    <label class=\"form-control-label\" for=\"input-username\">Username</label>\n                    <input type=\"text\" id=\"input-username\" class=\"form-control form-control-alternative\" placeholder=\"Username\" value=\"lucky.jesse\">\n                  </div>\n                </div>\n                <div class=\"col-lg-6\">\n                  <div class=\"form-group\">\n                    <label class=\"form-control-label\" for=\"input-email\">Email address</label>\n                    <input type=\"email\" id=\"input-email\" class=\"form-control form-control-alternative\" placeholder=\"jesse@example.com\">\n                  </div>\n                </div>\n              </div>\n              <div class=\"row\">\n                <div class=\"col-lg-6\">\n                  <div class=\"form-group\">\n                    <label class=\"form-control-label\" for=\"input-first-name\">First name</label>\n                    <input type=\"text\" id=\"input-first-name\" class=\"form-control form-control-alternative\" placeholder=\"First name\" value=\"Lucky\">\n                  </div>\n                </div>\n                <div class=\"col-lg-6\">\n                  <div class=\"form-group\">\n                    <label class=\"form-control-label\" for=\"input-last-name\">Last name</label>\n                    <input type=\"text\" id=\"input-last-name\" class=\"form-control form-control-alternative\" placeholder=\"Last name\" value=\"Jesse\">\n                  </div>\n                </div>\n              </div>\n            </div>\n            <hr class=\"my-4\" />\n            <!-- Address -->\n            <h6 class=\"heading-small text-muted mb-4\">Contact information</h6>\n            <div class=\"pl-lg-4\">\n              <div class=\"row\">\n                <div class=\"col-md-12\">\n                  <div class=\"form-group\">\n                    <label class=\"form-control-label\" for=\"input-address\">Address</label>\n                    <input id=\"input-address\" class=\"form-control form-control-alternative\" placeholder=\"Home Address\" value=\"Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09\" type=\"text\">\n                  </div>\n                </div>\n              </div>\n              <div class=\"row\">\n                <div class=\"col-lg-4\">\n                  <div class=\"form-group\">\n                    <label class=\"form-control-label\" for=\"input-city\">City</label>\n                    <input type=\"text\" id=\"input-city\" class=\"form-control form-control-alternative\" placeholder=\"City\" value=\"New York\">\n                  </div>\n                </div>\n                <div class=\"col-lg-4\">\n                  <div class=\"form-group\">\n                    <label class=\"form-control-label\" for=\"input-country\">Country</label>\n                    <input type=\"text\" id=\"input-country\" class=\"form-control form-control-alternative\" placeholder=\"Country\" value=\"United States\">\n                  </div>\n                </div>\n                <div class=\"col-lg-4\">\n                  <div class=\"form-group\">\n                    <label class=\"form-control-label\" for=\"input-country\">Postal code</label>\n                    <input type=\"number\" id=\"input-postal-code\" class=\"form-control form-control-alternative\" placeholder=\"Postal code\">\n                  </div>\n                </div>\n              </div>\n            </div>\n            <hr class=\"my-4\" />\n            <!-- Description -->\n            <h6 class=\"heading-small text-muted mb-4\">About me</h6>\n            <div class=\"pl-lg-4\">\n              <div class=\"form-group\">\n                <label>About Me</label>\n                <textarea rows=\"4\" class=\"form-control form-control-alternative\" placeholder=\"A few words about you ...\">A beautiful Dashboard for Bootstrap 4. It is Free and Open Source.</textarea>\n              </div>\n            </div>\n          </form>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"header pb-8 pt-5 pt-lg-8 d-flex align-items-center\" style=\"min-height: 600px; background-size: cover; background-position: center top;\">\n  <!-- Mask -->\n  <span class=\"mask bg-gradient-danger opacity-8\"></span>\n  <!-- Header container -->\n  <div class=\"container-fluid d-flex align-items-center\">\n    <div class=\"row\">\n      <div class=\"col-lg-12 col-md-10\">\n        <h1 class=\"display-2 text-white\">Hello {{this.currentUser.username}}</h1>\n        <p class=\"text-white mt-0 mb-5\">This is your profile page. You can edit your profile or check your current coins amount </p>\n        <a [routerLink]=\"['/template/update-profile']\" class=\"btn btn-info\">Edit profile</a>\n      </div>\n    </div>\n  </div>\n</div>\n<div class=\"container-fluid mt--7\">\n  <div class=\"row\">\n    <div class=\"col-xl-7 order-xl-2 mb-5 mb-xl-0 ant-col-lg-offset-5\">\n      <div class=\"card card-profile shadow\">\n        <div class=\"row justify-content-center\">\n          <div class=\"col-lg-3 order-lg-2\">\n            <div class=\"card-profile-image\">\n              <a href=\"javascript:void(0)\">\n                <img [src]=this.image class=\"rounded-circle\">\n              </a>\n            </div>\n          </div>\n        </div>\n        <div class=\"card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4\">\n          <div class=\"d-flex justify-content-between\">\n            <a href=\"javascript:void(0)\" class=\"btn btn-sm btn-info mr-4\">Connect</a>\n            <a href=\"javascript:void(0)\" class=\"btn btn-sm btn-default float-right\">Message</a>\n          </div>\n        </div>\n        <div class=\"card-body pt-0 pt-md-4\">\n          <div class=\"row\">\n            <div class=\"col\">\n              <div class=\"card-profile-stats d-flex justify-content-center mt-md-5\">\n                <div>\n                  <span class=\"heading\">22</span>\n                  <span class=\"description\">Friends</span>\n                </div>\n                <div>\n                  <span class=\"heading\">10</span>\n                  <span class=\"description\">Photos</span>\n                </div>\n                <div>\n                  <span class=\"heading\">89</span>\n                  <span class=\"description\">Comments</span>\n                </div>\n              </div>\n            </div>\n          </div>\n          <div class=\"text-center\">\n            <h3>\n              {{this.currentUser.username}}<span class=\"font-weight-light\"></span>\n            </h3>\n            <div class=\"h5 font-weight-300\">\n              <i class=\"ni location_pin mr-2\"></i> {{this.currentUser.address}}\n            </div>\n            <div class=\"h5 mt-4\">\n              <i class=\"ni ni-email-83 mr-2\"></i> {{this.currentUser.email}}\n            <div>\n              <i class=\"ni education_hat mr-2\"></i>University of Computer Science\n            </div>\n            <a href=\"javascript:void(0)\">Show more</a>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n");
+
+/***/ }),
+
+/***/ "./src/app/_models/address.ts":
+/*!************************************!*\
+  !*** ./src/app/_models/address.ts ***!
+  \************************************/
+/*! exports provided: Address */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Address", function() { return Address; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class Address {
+    get id() {
+        return this._id;
+    }
+    set id(value) {
+        this._id = value;
+    }
+    get street() {
+        return this._street;
+    }
+    set street(value) {
+        this._street = value;
+    }
+    get street2() {
+        return this._street2;
+    }
+    set street2(value) {
+        this._street2 = value;
+    }
+    get city() {
+        return this._city;
+    }
+    set city(value) {
+        this._city = value;
+    }
+    get country() {
+        return this._country;
+    }
+    set country(value) {
+        this._country = value;
+    }
+    get postal_code() {
+        return this._postal_code;
+    }
+    set postal_code(value) {
+        this._postal_code = value;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/_models/country.ts":
+/*!************************************!*\
+  !*** ./src/app/_models/country.ts ***!
+  \************************************/
+/*! exports provided: Country */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Country", function() { return Country; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class Country {
+    get id() {
+        return this._id;
+    }
+    set id(value) {
+        this._id = value;
+    }
+    get name() {
+        return this._name;
+    }
+    set name(value) {
+        this._name = value;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./src/app/_models/enum/Gender.ts":
+/*!****************************************!*\
+  !*** ./src/app/_models/enum/Gender.ts ***!
+  \****************************************/
+/*! exports provided: Gender */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Gender", function() { return Gender; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+var Gender;
+(function (Gender) {
+    Gender[Gender["MALE"] = 0] = "MALE";
+    Gender[Gender["FEMALE"] = 1] = "FEMALE";
+})(Gender || (Gender = {}));
+
+
+/***/ }),
+
+/***/ "./src/app/_models/profile.ts":
+/*!************************************!*\
+  !*** ./src/app/_models/profile.ts ***!
+  \************************************/
+/*! exports provided: Profile */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Profile", function() { return Profile; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class Profile {
+    constructor() {
+        this._badge = null;
+        this._address = null;
+    }
+    get id() {
+        return this._id;
+    }
+    set id(value) {
+        this._id = value;
+    }
+    get phone_number() {
+        return this._phone_number;
+    }
+    set phone_number(value) {
+        this._phone_number = value;
+    }
+    get gender() {
+        return this._gender;
+    }
+    set gender(value) {
+        this._gender = value;
+    }
+    get birth_date() {
+        return this._birth_date;
+    }
+    set birth_date(value) {
+        this._birth_date = value;
+    }
+    get image_url() {
+        return this._image_url;
+    }
+    set image_url(value) {
+        this._image_url = value;
+    }
+    get status() {
+        return this._status;
+    }
+    set status(value) {
+        this._status = value;
+    }
+    get badge() {
+        return this._badge;
+    }
+    set badge(value) {
+        this._badge = value;
+    }
+    get address() {
+        return this._address;
+    }
+    set address(value) {
+        this._address = value;
+    }
+}
+
 
 /***/ }),
 
@@ -453,6 +641,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/__ivy_ngcc__/fesm2015/ng-bootstrap.js");
 /* harmony import */ var ngx_clipboard__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ngx-clipboard */ "./node_modules/ngx-clipboard/__ivy_ngcc__/fesm2015/ngx-clipboard.js");
+/* harmony import */ var _pages_update_profile_update_profile_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../pages/update-profile/update-profile.component */ "./src/app/pages/update-profile/update-profile.component.ts");
+/* harmony import */ var ng_zorro_antd__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ng-zorro-antd */ "./node_modules/ng-zorro-antd/__ivy_ngcc__/fesm2015/ng-zorro-antd.js");
+/* harmony import */ var _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/material/snack-bar */ "./node_modules/@angular/material/__ivy_ngcc__/esm2015/snack-bar.js");
+/* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../shared/shared.module */ "./src/app/shared/shared.module.ts");
+
+
+
+
 
 
 
@@ -475,6 +671,7 @@ TemplateLayoutModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])(
             _pages_tables_tables_component__WEBPACK_IMPORTED_MODULE_6__["TablesComponent"],
             _pages_icons_icons_component__WEBPACK_IMPORTED_MODULE_7__["IconsComponent"],
             _pages_maps_maps_component__WEBPACK_IMPORTED_MODULE_8__["MapsComponent"],
+            _pages_update_profile_update_profile_component__WEBPACK_IMPORTED_MODULE_13__["UpdateProfileComponent"]
         ],
         imports: [
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
@@ -482,7 +679,12 @@ TemplateLayoutModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])(
             _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClientModule"],
             _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_11__["NgbModule"],
-            ngx_clipboard__WEBPACK_IMPORTED_MODULE_12__["ClipboardModule"]
+            ngx_clipboard__WEBPACK_IMPORTED_MODULE_12__["ClipboardModule"],
+            _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_11__["NgbDropdownModule"],
+            _angular_material_snack_bar__WEBPACK_IMPORTED_MODULE_15__["MatSnackBarModule"],
+            ng_zorro_antd__WEBPACK_IMPORTED_MODULE_14__["NgZorroAntdModule"],
+            _shared_shared_module__WEBPACK_IMPORTED_MODULE_16__["SharedModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_9__["ReactiveFormsModule"]
         ]
     })
 ], TemplateLayoutModule);
@@ -506,6 +708,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_tables_tables_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../pages/tables/tables.component */ "./src/app/pages/tables/tables.component.ts");
 /* harmony import */ var _pages_icons_icons_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../pages/icons/icons.component */ "./src/app/pages/icons/icons.component.ts");
 /* harmony import */ var _pages_maps_maps_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../pages/maps/maps.component */ "./src/app/pages/maps/maps.component.ts");
+/* harmony import */ var _pages_update_profile_update_profile_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../pages/update-profile/update-profile.component */ "./src/app/pages/update-profile/update-profile.component.ts");
+
 
 
 
@@ -513,6 +717,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const TemplateLayoutRoutes = [
     { path: 'user-profile', component: _pages_user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_1__["UserProfileComponent"] },
+    { path: 'update-profile', component: _pages_update_profile_update_profile_component__WEBPACK_IMPORTED_MODULE_5__["UpdateProfileComponent"] },
     { path: 'tables', component: _pages_tables_tables_component__WEBPACK_IMPORTED_MODULE_2__["TablesComponent"] },
     { path: 'icons', component: _pages_icons_icons_component__WEBPACK_IMPORTED_MODULE_3__["IconsComponent"] },
     { path: 'maps', component: _pages_maps_maps_component__WEBPACK_IMPORTED_MODULE_4__["MapsComponent"] }
@@ -688,6 +893,198 @@ TablesComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 /***/ }),
 
+/***/ "./src/app/pages/update-profile/update-profile.component.css":
+/*!*******************************************************************!*\
+  !*** ./src/app/pages/update-profile/update-profile.component.css ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL3VwZGF0ZS1wcm9maWxlL3VwZGF0ZS1wcm9maWxlLmNvbXBvbmVudC5jc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/pages/update-profile/update-profile.component.ts":
+/*!******************************************************************!*\
+  !*** ./src/app/pages/update-profile/update-profile.component.ts ***!
+  \******************************************************************/
+/*! exports provided: UpdateProfileComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UpdateProfileComponent", function() { return UpdateProfileComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+/* harmony import */ var _services_image_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../_services/image.service */ "./src/app/_services/image.service.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+/* harmony import */ var _services_authentication_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../_services/authentication.service */ "./src/app/_services/authentication.service.ts");
+/* harmony import */ var _models_user__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../_models/user */ "./src/app/_models/user.ts");
+/* harmony import */ var _globals_global_variables__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../_globals/global-variables */ "./src/app/_globals/global-variables.ts");
+/* harmony import */ var _models_enum_Gender__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../_models/enum/Gender */ "./src/app/_models/enum/Gender.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+/* harmony import */ var _models_profile__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../_models/profile */ "./src/app/_models/profile.ts");
+/* harmony import */ var _models_address__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../_models/address */ "./src/app/_models/address.ts");
+/* harmony import */ var _models_country__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../_models/country */ "./src/app/_models/country.ts");
+/* harmony import */ var _services_crud_service__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../_services/crud.service */ "./src/app/_services/crud.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let UpdateProfileComponent = class UpdateProfileComponent {
+    constructor(formBuilder, imageService, authenticationService, crudService, router) {
+        this.formBuilder = formBuilder;
+        this.imageService = imageService;
+        this.authenticationService = authenticationService;
+        this.crudService = crudService;
+        this.router = router;
+        this.dateFormat = 'yyyy/MM/dd';
+        this.gender = _models_enum_Gender__WEBPACK_IMPORTED_MODULE_7__["Gender"];
+        this.imageEditClicked = false;
+        this.currentUser = new _models_user__WEBPACK_IMPORTED_MODULE_5__["User"]();
+        this.currentProfile = new _models_profile__WEBPACK_IMPORTED_MODULE_9__["Profile"]();
+        this.currentAddress = new _models_address__WEBPACK_IMPORTED_MODULE_10__["Address"]();
+        this.currentCountry = new _models_country__WEBPACK_IMPORTED_MODULE_11__["Country"]();
+        this.image = null;
+        this.pipe = new _angular_common__WEBPACK_IMPORTED_MODULE_8__["DatePipe"]('en-US');
+    }
+    ngOnInit() {
+        // fetch profile from back
+        this.crudService.getOne(_globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["USERS_PROFILE"], this.authenticationService.getCurrentUser().id).subscribe((res) => {
+            this.currentUser = JSON.parse(res.user);
+            this.currentProfile = this.currentUser.profile;
+            if (this.currentProfile) {
+                this.currentAddress = this.currentProfile.address;
+                if (this.currentAddress) {
+                    this.currentCountry = this.currentAddress.country;
+                    console.log(this.currentUser.username);
+                }
+            }
+            this.initializeForm();
+        });
+        this.profileToCreate = this.formBuilder.group({
+            username: '',
+            email: '',
+            firstName: '',
+            lastName: '',
+            gender: '',
+            number: '',
+            birthday: '',
+            street: '',
+            street2: '',
+            city: '',
+            country: '',
+            postalCode: '',
+        });
+        // fetch current user image
+        this.imageService.getImage().subscribe((data) => {
+            this.image = _globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["IMG_URL"] + data; // 'https://clubisti.net/assets/img/'+ data | environment.apiUrl+'/assets/img/'+
+        }, error => {
+            console.log(error);
+            this.image = 'assets/img/theme/team-4-800x800.jpg';
+        });
+    }
+    initializeForm() {
+        this.profileToCreate.controls['username'].setValue(this.currentUser.username);
+        console.log('init' + this.profileToCreate.value.username);
+        this.profileToCreate.controls['email'].setValue(this.currentUser.email);
+        this.profileToCreate.controls['firstName'].setValue(this.currentUser.first_name);
+        this.profileToCreate.controls['lastName'].setValue(this.currentUser.last_name);
+        if (this.currentProfile) {
+            this.profileToCreate.controls['gender'].setValue(this.currentProfile.gender);
+            this.profileToCreate.controls['number'].setValue(this.currentProfile.phone_number);
+            if (this.currentAddress) {
+                this.profileToCreate.controls['street'].setValue(this.currentAddress.street);
+                this.profileToCreate.controls['street2'].setValue(this.currentAddress.street2);
+                this.profileToCreate.controls['city'].setValue(this.currentAddress.city);
+                this.profileToCreate.controls['postalCode'].setValue(this.currentAddress.postal_code);
+                if (this.currentCountry) {
+                    this.profileToCreate.controls['country'].setValue(this.currentCountry.name);
+                }
+            }
+        }
+    }
+    clickedTrue() {
+        this.imageEditClicked = true;
+    }
+    fileEvent(e) {
+        this.fileData = e.target.files[0];
+        console.log(this.fileData);
+    }
+    submit() {
+        console.log('submitted');
+        if (this.profileToCreate.value.birthday) {
+            this.profileToCreate.value.birthday = this.pipe.transform(this.profileToCreate.value.birthday, ' yyyy-M-d hh:mm:ss');
+        }
+        const jsonUser = {
+            user: {
+                username: this.profileToCreate.value.username,
+                email: this.profileToCreate.value.email,
+                first_name: this.profileToCreate.value.firstName,
+                last_name: this.profileToCreate.value.lastName,
+                profile: {
+                    gender: this.profileToCreate.value.gender,
+                    phone_number: this.profileToCreate.value.number,
+                    birth_date: this.profileToCreate.value.birthday,
+                    address: {
+                        street: this.profileToCreate.value.street,
+                        street2: this.profileToCreate.value.street2,
+                        postal_code: this.profileToCreate.value.postalCode,
+                        city: this.profileToCreate.value.city,
+                        country: {
+                            name: this.profileToCreate.value.country
+                        }
+                    }
+                }
+            }
+        };
+        // call for update
+        this.crudService.update(_globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["USERS_PROFILE"], this.authenticationService.getCurrentUser().id, jsonUser).subscribe((result) => {
+            console.log(result.body.user);
+            // update current user
+            this.authenticationService.savingUser(result);
+        });
+        // post image
+        if (this.fileData) {
+            this.imageService.postImage(this.fileData).subscribe(data => {
+                console.log(data);
+            });
+        }
+        this.router.navigate(['/template/user-profile']);
+    }
+};
+UpdateProfileComponent.ctorParameters = () => [
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"] },
+    { type: _services_image_service__WEBPACK_IMPORTED_MODULE_2__["ImageService"] },
+    { type: _services_authentication_service__WEBPACK_IMPORTED_MODULE_4__["AuthenticationService"] },
+    { type: _services_crud_service__WEBPACK_IMPORTED_MODULE_12__["CrudService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_13__["Router"] }
+];
+UpdateProfileComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-update-profile',
+        template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./update-profile.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/update-profile/update-profile.component.html")).default,
+        styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./update-profile.component.css */ "./src/app/pages/update-profile/update-profile.component.css")).default]
+    })
+], UpdateProfileComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/pages/user-profile/user-profile.component.scss":
 /*!****************************************************************!*\
   !*** ./src/app/pages/user-profile/user-profile.component.scss ***!
@@ -714,23 +1111,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _services_authentication_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../_services/authentication.service */ "./src/app/_services/authentication.service.ts");
+/* harmony import */ var _globals_global_variables__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../_globals/global-variables */ "./src/app/_globals/global-variables.ts");
+/* harmony import */ var _services_image_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../_services/image.service */ "./src/app/_services/image.service.ts");
+
+
 
 
 
 let UserProfileComponent = class UserProfileComponent {
-    constructor(authenticationService) {
+    constructor(authenticationService, imageService) {
         this.authenticationService = authenticationService;
+        this.imageService = imageService;
     }
     ngOnInit() {
-        console.log("hello");
-        this.authenticationService.getUser().subscribe((result) => {
-            console.log("in");
-            console.log(result);
+        this.imageService.getImage().subscribe((data) => {
+            this.image = _globals_global_variables__WEBPACK_IMPORTED_MODULE_3__["IMG_URL"] + data; // 'https://clubisti.net/assets/img/'+ data | environment.apiUrl+'/assets/img/'+
+        }, error => {
+            console.log(error);
+            this.image = 'assets/img/theme/team-4-800x800.jpg';
         });
+        this.currentUser = this.authenticationService.getCurrentUser();
+        console.log(this.currentUser.username);
     }
 };
 UserProfileComponent.ctorParameters = () => [
-    { type: _services_authentication_service__WEBPACK_IMPORTED_MODULE_2__["AuthenticationService"] }
+    { type: _services_authentication_service__WEBPACK_IMPORTED_MODULE_2__["AuthenticationService"] },
+    { type: _services_image_service__WEBPACK_IMPORTED_MODULE_4__["ImageService"] }
 ];
 UserProfileComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({

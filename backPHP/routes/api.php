@@ -104,9 +104,16 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     /************************************************ Users API ************************************************/
     Route::get('/users', 'UserController@index');
     Route::get('/users/{id}', 'UserController@show');
+    Route::get('/users/profile/{id}', 'UserController@getUserWithRelationship');
     Route::post('/users', 'UserController@store');
     Route::put('/users/{id}', 'UserController@update');
+    Route::put('/users/profile/{id}', 'UserController@createOrUpdate');
     Route::delete('/users/{id}', 'UserController@delete');
+
+    /************************************************ Image API ************************************************/
+    Route::post("/image" , "ImageController@downloadImage");
+    Route::get('/image/{id}', 'ImageController@uploadImage');
+
 });
 
 

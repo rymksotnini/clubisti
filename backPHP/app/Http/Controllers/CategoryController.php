@@ -17,7 +17,7 @@ class CategoryController extends Controller
         if ($request->page  && $request->perPage){
             return new CategoryCollection(Category::paginate($request->perPage));
         }else if ($request->page ){
-            return new CategoryCollection(Category::paginate(10));
+            return new CategoryCollection(Category::paginate(3));
         }
         return new CategoryCollection(Category::get());
     }
@@ -53,8 +53,17 @@ class CategoryController extends Controller
             ->setStatusCode(201);
     }
 
-
     public function delete($id)
+    {
+        $category = Category::findOrFail($id);
+        if($category) {
+            $category->deleted = true;
+            $category->save();
+        }
+
+        return response()->json(null, 204);
+    }
+    public function deleteFinal($id)
     {
         $category = Category::findOrFail($id);
         $category->delete();

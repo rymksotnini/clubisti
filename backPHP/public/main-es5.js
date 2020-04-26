@@ -393,7 +393,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<nav class=\"navbar navbar-top navbar-expand-md navbar-dark navbar-horizontal\" id=\"navbar-main\">\n  <div class=\"container\">\n    <!-- Brand -->\n    <!--<a class=\"h4 mb-0 text-white text-uppercase d-none d-lg-inline-block\" routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">{{getTitle()}}</a>-->\n    <div class=\"collapse navbar-collapse\">\n      <ul class=\"navbar-nav\">\n        <li class=\"nav-item\">\n          <a class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n            <i class=\"ni ni-planet\"></i>\n            <span class=\"nav-link-inner--text\">Dashboard</span>\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a *ngIf=\"!this.authenticationService.isLogged()\" class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/auth/register']\">\n            <i class=\"ni ni-circle-08\"></i>\n            <span class=\"nav-link-inner--text\">Register</span>\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a *ngIf=\"this.authenticationService.isLogged()\" class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" (click)=\"logout()\">\n            <i class=\"ni ni-user-run\"></i>\n            <span class=\"nav-link-inner--text\">Logout</span>\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a *ngIf=\"!this.authenticationService.isLogged()\" class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/auth/login']\">\n            <i class=\"ni ni-key-25\"></i>\n            <span class=\"nav-link-inner--text\">Login</span>\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a *ngIf=\"this.authenticationService.isLogged()\" class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\">\n            <i class=\"ni ni-single-02\"></i>\n            <span class=\"nav-link-inner--text\">Profile</span>\n          </a>\n        </li>\n      </ul>\n    </div>\n    <!-- Form -->\n    <form class=\"navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto\">\n      <div class=\"form-group mb-0\" [ngClass]=\"{ 'focused': focus === true }\">\n        <div class=\"input-group input-group-alternative\">\n          <div class=\"input-group-prepend\">\n            <span class=\"input-group-text\"><i class=\"fas fa-search\"></i></span>\n          </div>\n          <input class=\"form-control\" placeholder=\"Search\" type=\"text\" (focus)=\"focus = true\"\n          (blur)=\"focus = false\">\n        </div>\n      </div>\n    </form>\n    <!-- User -->\n    <ul class=\"navbar-nav align-items-center d-none d-md-flex\">\n      <li *ngIf=\"this.authenticationService.isLogged()\" class=\"nav-item\" ngbDropdown placement=\"bottom-right\">\n        <a class=\"nav-link pr-0\" role=\"button\" ngbDropdownToggle>\n          <div class=\"media align-items-center\">\n            <span class=\"avatar avatar-sm rounded-circle\">\n              <img alt=\"Image placeholder\" src=\"assets/img/theme/team-4-800x800.jpg\">\n            </span>\n            <div class=\"media-body ml-2 d-none d-lg-block\">\n              <span class=\"mb-0 text-sm  font-weight-bold\">{{currentUser.username }}</span>\n            </div>\n          </div>\n        </a>\n        <div class=\"dropdown-menu-arrow dropdown-menu-right\" ngbDropdownMenu>\n          <div class=\" dropdown-header noti-title\">\n            <h6 class=\"text-overflow m-0\">Welcome!</h6>\n          </div>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/admin/variable']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>Admin</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/history']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>Anonymous</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>Template</span>\n          </a>\n          <a *ngIf=\"connected\" routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>My profile</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-calendar-grid-58\"></i>\n            <span>Activity</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-support-16\"></i>\n            <span>Support</span>\n          </a>\n          <div class=\"dropdown-divider\"></div>\n          <a href=\"#!\" class=\"dropdown-item\">\n            <i class=\"ni ni-user-run\"></i>\n            <span>Logout</span>\n          </a>\n        </div>\n      </li>\n    </ul>\n  </div>\n</nav>\n";
+    __webpack_exports__["default"] = "<nav class=\"navbar navbar-top navbar-expand-md navbar-dark navbar-horizontal\" id=\"navbar-main\">\n  <div class=\"container\">\n    <!-- Brand -->\n    <!--<a class=\"h4 mb-0 text-white text-uppercase d-none d-lg-inline-block\" routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">{{getTitle()}}</a>-->\n    <div class=\"collapse navbar-collapse\">\n      <ul class=\"navbar-nav\">\n        <li class=\"nav-item\">\n          <a class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n            <i class=\"ni ni-planet\"></i>\n            <span class=\"nav-link-inner--text\">Dashboard</span>\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a *ngIf=\"!isLogged\" class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/auth/register']\">\n            <i class=\"ni ni-circle-08\"></i>\n            <span class=\"nav-link-inner--text\">Register</span>\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a *ngIf=\"isLogged\" class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" (click)=\"logout()\">\n            <i class=\"ni ni-user-run\"></i>\n            <span class=\"nav-link-inner--text\">Logout</span>\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a *ngIf=\"!isLogged\" class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/auth/login']\">\n            <i class=\"ni ni-key-25\"></i>\n            <span class=\"nav-link-inner--text\">Login</span>\n          </a>\n        </li>\n        <li class=\"nav-item\">\n          <a *ngIf=\"isLogged\" class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/template/user-profile']\">\n            <i class=\"ni ni-single-02\"></i>\n            <span class=\"nav-link-inner--text\">Profile</span>\n          </a>\n        </li>\n      </ul>\n    </div>\n    <!-- Form -->\n    <form class=\"navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto\">\n      <div class=\"form-group mb-0\" [ngClass]=\"{ 'focused': focus === true }\">\n        <div class=\"input-group input-group-alternative\">\n          <div class=\"input-group-prepend\">\n            <span class=\"input-group-text\"><i class=\"fas fa-search\"></i></span>\n          </div>\n          <input class=\"form-control\" placeholder=\"Search\" type=\"text\" (focus)=\"focus = true\"\n          (blur)=\"focus = false\">\n        </div>\n      </div>\n    </form>\n    <!-- User -->\n    <ul class=\"navbar-nav align-items-center d-none d-md-flex\">\n      <li *ngIf=\"isLogged\" class=\"nav-item\" ngbDropdown placement=\"bottom-right\">\n        <a class=\"nav-link pr-0\" role=\"button\" ngbDropdownToggle>\n          <div class=\"media align-items-center\">\n            <span class=\"avatar avatar-sm rounded-circle\">\n              <img id=\"user_image\" alt=\"Image placeholder\" [src]=this.image>\n            </span>\n            <div class=\"media-body ml-2 d-none d-lg-block\">\n              <span class=\"mb-0 text-sm  font-weight-bold\">{{currentUser.username }}</span>\n            </div>\n          </div>\n        </a>\n        <div class=\"dropdown-menu-arrow dropdown-menu-right\" ngbDropdownMenu>\n          <div class=\" dropdown-header noti-title\">\n            <h6 class=\"text-overflow m-0\">Welcome!</h6>\n          </div>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/admin/variable']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>Admin</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/history']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>Anonymous</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>Template</span>\n          </a>\n          <a *ngIf=\"connected\" routerLinkActive=\"active\" [routerLink]=\"['template/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>My profile</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['template/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-calendar-grid-58\"></i>\n            <span>Activity</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['template/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-support-16\"></i>\n            <span>Support</span>\n          </a>\n          <div class=\"dropdown-divider\"></div>\n          <a *ngIf=\"this.authenticationService.isLogged()\" (click)=\"logout()\" class=\"dropdown-item\">\n            <i class=\"ni ni-user-run\"></i>\n            <span>Logout</span>\n          </a>\n        </div>\n      </li>\n    </ul>\n  </div>\n</nav>\n";
     /***/
   },
 
@@ -498,6 +498,46 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/admin/badge/badges-create/badges-create.component.html":
+  /*!********************************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/admin/badge/badges-create/badges-create.component.html ***!
+    \********************************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppPagesAdminBadgeBadgesCreateBadgesCreateComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<form id=create-book-form [formGroup]=\"createBadge\" >\n  <div >\n    <div class=\"form-group\">\n      <label class=\"form-control-label\" for=\"input-Name\">Name</label>\n      <input  formControlName= \"name\" type=\"text\" id=\"input-Name\" class=\"form-control form-control-alternative\" placeholder=\"Name\" >\n    </div>\n    <div class=\"row\">\n      <div class=\"col-lg-4\">\n        <div class=\"form-group\">\n          <label class=\"form-control-label\" for=\"input-min\">Lower Bound</label>\n          <input  formControlName= \"lower_bond\" type=\"text\" id=\"input-min\" class=\"form-control form-control-alternative\" placeholder=\"Amount\" >\n        </div>\n      </div>\n      <div class=\"col-lg-4\">\n        <div class=\"form-group\">\n          <label class=\"form-control-label\" for=\"input-max\">Upper Bound</label>\n          <input  formControlName= \"upper_bond\" type=\"text\" id=\"input-max\" class=\"form-control form-control-alternative\" placeholder=\"Amount\" >\n        </div>\n      </div>\n\n    </div>\n  </div>\n\n</form>\n<div >\n  <button type=\"submit\" (click)=\"onSubmit()\" class=\"btn btn-info\" form=\"create-book-form\">\n    <i class=\"icon-feather-plus\"></i>add badge</button>\n</div>\n\n\n";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/admin/badge/badges-list/badges-list.component.html":
+  /*!****************************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/admin/badge/badges-list/badges-list.component.html ***!
+    \****************************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppPagesAdminBadgeBadgesListBadgesListComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<div class=\"header bg-gradient-danger pb-8 pt-5 pt-md-8\">\n  <div class=\"container-fluid\">\n    <div class=\"header-body\">\n      <!-- Card stats -->  <div class=\"container-fluid d-flex align-items-center\">\n      <div class=\"row\">\n        <div class=\"col-lg-7 col-md-10\">\n          <button nz-button nzType=\"primary\" (click)=\"createCustomButtonModal()\">Add badge</button>\n\n\n        </div>\n      </div>\n    </div>\n\n    </div>\n  </div>\n</div>\n<!-- Page content -->\n<div class=\"container-fluid mt--7\">\n\n  <!-- Table -->\n  <div class=\"row\">\n\n    <div class=\"col-xl-12 order-xl-1\">\n      <div class=\"card shadow\">\n        <div class=\"card-header border-0\">\n          <h3 class=\"mb-0\">Badges</h3>\n        </div>\n        <div class=\"table-responsive\">\n          <table class=\"table align-items-center table-flush\">\n            <thead class=\"thead-light\">\n            <tr>\n              <th scope=\"col\">Name</th>\n              <th scope=\"col\">Lower Bound</th>\n              <th scope=\"col\">Upper Bound</th>\n              <th scope=\"col\">Created at</th>\n              <th scope=\"col\">Updated at</th>\n              <th scope=\"col\">Status</th>\n              <th scope=\"col\"></th>\n            </tr>\n            </thead>\n            <tbody *ngIf=\"this.badgeService.getBadges()\">\n            <tr *ngFor=\"let badge of this.badgeService.getBadges().data\">\n              <th scope=\"row\">\n                <div class=\"media align-items-center\">\n\n                  <div class=\"media-body\">\n                    <span class=\"mb-0 text-sm\">{{badge.name}}</span>\n                  </div>\n                </div>\n              </th>\n              <td>\n                {{badge.lowerBond}}\n              </td>\n              <td>\n                {{badge.upperBond}}\n              </td>\n              <td>\n                {{badge.createdAt | date}}\n              </td>\n              <td>\n                {{badge.updatedAt | date}}\n              </td>\n              <td>\n                <span *ngIf=\"!badge.deleted\" class=\"badge badge-dot\">\n                  <i class=\"bg-success\"></i> active\n                </span>\n                <span *ngIf=\"badge.deleted\" class=\"badge badge-dot mr-4\">\n                  <i class=\"bg-danger\"></i> deleted\n                </span>\n              </td>\n              <td class=\"text-right\">\n                <div ngbDropdown placement=\"bottom-right\">\n                  <a class=\"btn btn-sm btn-icon-only text-light\"  ngbDropdownToggle>\n                    <i class=\"fas fa-ellipsis-v\"></i>\n                  </a>\n                  <div ngbDropdownMenu class=\" dropdown-menu-right dropdown-menu-arrow\">\n                    <a class=\"dropdown-item\" (click)=\"delete(badge)\">Delete</a>\n                  </div>\n                </div>\n              </td>\n\n\n            </tr>\n\n            </tbody>\n          </table>\n        </div>\n        <div class=\"card-footer py-4\" *ngIf=\"this.badgeService.getBadges()\">\n          <nz-pagination [nzPageIndex]=this.badgeService.getCurrentPage() [nzTotal]=this.badgeService.getTotal() [nzPageSize]=this.badgeService.getSizePage() (nzPageIndexChange)=\"paginate($event)\"></nz-pagination>\n        </div>\n      </div>\n    </div>\n  </div>\n\n</div>\n";
+    /***/
+  },
+
+  /***/
   "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/admin/category/create-category/create-category.component.html":
   /*!***************************************************************************************************************************!*\
     !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/admin/category/create-category/create-category.component.html ***!
@@ -513,7 +553,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<form id=create-book-form [formGroup]=\"createCategory\" >\n  <div >\n    <div class=\"form-group\">\n      <label class=\"form-control-label\" for=\"input-Name\">Name</label>\n      <input  formControlName= \"name\" type=\"text\" id=\"input-Name\" class=\"form-control form-control-alternative\" placeholder=\"Name\" >\n    </div>\n  </div>\n  <div class=\"form-group\">\n    <label class=\"form-control-label\" for=\"input-type\">Categories</label>\n    <!-- Category -->\n    <div class=\"sidebar-widget\">\n      <select formControlName= \"type\" class=\"selectpicker default input-type\" id=\"input-type\" name=\"input-type\" data-selected-text-format=\"count\" title=\"All Categories\" >\n        <option *ngFor=\"let item of categories | enumToArray\">{{item.name}}</option>\n      </select>\n    </div>\n  </div>\n</form>\n<div >\n  <button type=\"submit\" (click)=\"onSubmit()\" class=\"btn btn-info\" form=\"create-book-form\">\n    <i class=\"icon-feather-plus\"></i>add category</button>\n</div>\n\n\n";
+    __webpack_exports__["default"] = "<form id=create-book-form [formGroup]=\"createCategory\" >\n  <div >\n    <div class=\"form-group\">\n      <label class=\"form-control-label\" for=\"input-Name\">Name</label>\n      <input  formControlName= \"name\" type=\"text\" id=\"input-Name\" class=\"form-control form-control-alternative\" placeholder=\"Name\" >\n    </div>\n  </div>\n  <div class=\"form-group\">\n    <label class=\"form-control-label\" for=\"input-type\">Categories</label>\n    <!-- Category -->\n    <div class=\"sidebar-widget\">\n      <select formControlName= \"type\" class=\"selectpicker default input-type\" id=\"input-type\" name=\"input-type\" data-selected-text-format=\"count\" title=\"All Categories\" >\n        <option *ngFor=\"let item of categories | enumToArray\">{{item.name}}</option>\n      </select>\n    </div>\n  </div>\n</form>\n\n<div >\n  <button type=\"submit\" (click)=\"onSubmit()\" class=\"btn btn-info\" form=\"create-book-form\">\n    <i class=\"icon-feather-plus\"></i>add category</button>\n</div>\n\n\n";
     /***/
   },
 
@@ -533,7 +573,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"header bg-gradient-danger pb-8 pt-5 pt-md-8\">\n  <div class=\"container-fluid\">\n    <div class=\"header-body\">\n      <!-- Card stats -->  <div class=\"container-fluid d-flex align-items-center\">\n      <div class=\"row\">\n        <div class=\"col-lg-7 col-md-10\">\n          <a [routerLink]=\"['/admin/add-charity']\" class=\"btn btn-info\">Add new project</a>\n        </div>\n      </div>\n    </div>\n\n    </div>\n  </div>\n</div>\n<!-- Page content -->\n<div class=\"container-fluid mt--7\">\n\n  <!-- Table -->\n  <div class=\"row\">\n    <div class=\"col-xl-4 order-xl-2 mb-5 mb-xl-0\">\n      <div class=\"card card-profile shadow\">\n        <div class=\"\">\n          <div class=\"\">\n            <h3>Create category</h3>\n          </div>\n        </div>\n\n        <div class=\"card-body pt-0 pt-md-4\">\n\n          <div class=\"text-center\">\n            <app-create-category></app-create-category>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"col-xl-8 order-xl-1\">\n      <div class=\"card shadow\">\n        <div class=\"card-header border-0\">\n          <h3 class=\"mb-0\">Categories</h3>\n        </div>\n        <div class=\"table-responsive\">\n          <table class=\"table align-items-center table-flush\">\n            <thead class=\"thead-light\">\n            <tr>\n              <th scope=\"col\">Name</th>\n              <th scope=\"col\">Type</th>\n              <th scope=\"col\">delete category</th>\n            </tr>\n            </thead>\n            <tbody *ngIf=\"this.categoryService.getCategories()\">\n            <tr *ngFor=\"let story of this.categoryService.getCategories().data\">\n              <th scope=\"row\">\n                <div class=\"media align-items-center\">\n\n                  <div class=\"media-body\">\n                    <span class=\"mb-0 text-sm\">{{story.name}}</span>\n                  </div>\n                </div>\n              </th>\n              <td>\n                {{story.type}}\n              </td>\n              <td>\n                <a   class=\"btn btn-info\">delete</a>\n              </td>\n\n\n            </tr>\n\n            </tbody>\n          </table>\n        </div>\n        <div class=\"card-footer py-4\" *ngIf=\"categories\">\n          <nz-pagination [nzPageIndex]=currentPage  [nzTotal]=categories.meta.last_page  [nzPageSize]=categories.meta.per_page (nzPageIndexChange)=\"paginate($event)\"></nz-pagination>\n        </div>\n      </div>\n    </div>\n  </div>\n\n</div>\n";
+    __webpack_exports__["default"] = "<div class=\"header bg-gradient-danger pb-8 pt-5 pt-md-8\">\n  <div class=\"container-fluid\">\n    <div class=\"header-body\">\n      <!-- Card stats -->  <div class=\"container-fluid d-flex align-items-center\">\n      <div class=\"row\">\n        <div class=\"col-lg-7 col-md-10\">\n          <button nz-button nzType=\"primary\" (click)=\"createGategory()\">Add Category</button>\n        </div>\n      </div>\n    </div>\n\n    </div>\n  </div>\n</div>\n<!-- Page content -->\n<div class=\"container-fluid mt--7\">\n\n  <!-- Table -->\n  <div class=\"row\">\n    <div class=\"col-xl-12 order-xl-1\">\n      <div class=\"card shadow\">\n        <div class=\"card-header border-0\">\n          <h3 class=\"mb-0\">Categories</h3>\n        </div>\n        <div class=\"table-responsive\">\n          <table class=\"table align-items-center table-flush\">\n            <thead class=\"thead-light\">\n            <tr>\n              <th scope=\"col\">Name</th>\n              <th scope=\"col\">Type</th>\n              <th scope=\"col\">Created At</th>\n              <th scope=\"col\">Updated At</th>\n              <th scope=\"col\">Status</th>\n              <th scope=\"col\"></th>\n            </tr>\n            </thead>\n            <tbody *ngIf=\"this.categoryService.getCategories()\">\n            <tr *ngFor=\"let category of this.categoryService.getCategories().data\">\n              <th scope=\"row\">\n                <div class=\"media align-items-center\">\n\n                  <div class=\"media-body\">\n                    <span class=\"mb-0 text-sm\">{{category.name}}</span>\n                  </div>\n                </div>\n              </th>\n              <td>\n                {{category.type}}\n              </td>\n              <td>\n                {{category.createdAt | date}}\n              </td>\n              <td>\n                {{category.updatedAt | date}}\n              </td>\n              <td>\n                <span *ngIf=\"!category.deleted\" class=\"badge badge-dot\">\n                  <i class=\"bg-success\"></i> active\n                </span>\n                <span *ngIf=\"category.deleted\" class=\"badge badge-dot mr-4\">\n                  <i class=\"bg-danger\"></i> deleted\n                </span>\n              </td>\n              <td class=\"text-right\">\n                <div ngbDropdown placement=\"bottom-right\">\n                  <a class=\"btn btn-sm btn-icon-only text-light\"  ngbDropdownToggle>\n                    <i class=\"fas fa-ellipsis-v\"></i>\n                  </a>\n                  <div ngbDropdownMenu class=\" dropdown-menu-right dropdown-menu-arrow\">\n                    <a class=\"dropdown-item\" (click)=\"delete(category)\">Delete</a>\n                  </div>\n                </div>\n              </td>\n\n\n\n            </tr>\n\n            </tbody>\n          </table>\n        </div>\n        <div class=\"card-footer py-4\" *ngIf=\"this.categoryService.getCategories()\">\n          <nz-pagination [nzPageIndex]=this.categoryService.getCurrentPage() [nzTotal]=this.categoryService.getTotal()  [nzPageSize]=this.categoryService.getSizePage() (nzPageIndexChange)=\"paginate($event)\"></nz-pagination>\n        </div>\n      </div>\n    </div>\n  </div>\n\n</div>\n";
     /***/
   },
 
@@ -593,7 +633,27 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "\n\n<div class=\"header bg-gradient-danger pb-8 pt-5 pt-md-8\">\n  <div class=\"container-fluid\">\n    <div class=\"header-body\">\n      <!-- Card stats -->  <div class=\"container-fluid d-flex align-items-center\">\n      <div class=\"row\">\n\n      </div>\n    </div>\n\n    </div>\n  </div>\n</div>\n\n<div class=\"container-fluid mt--7\">\n  <div class=\"container-fluid d-flex align-items-center\">\n\n    <div class=\"col-lg-12 col-lg-12\">\n\n      <div class=\"col-xl-8 order-xl-1\">\n        <div class=\"card bg-secondary shadow\">\n          <div class=\"card-header bg-white border-0\">\n            <div class=\"row align-items-center\">\n              <div class=\"col-8\">\n                <h3 class=\"mb-0\">Charity</h3>\n              </div>\n\n            </div>\n          </div>\n          <div class=\"card-body\">\n            <form id=create-book-form [formGroup]=\"createCharity\" >\n              <h6 class=\"heading-small text-muted mb-4\">Information</h6>\n              <div class=\"pl-lg-4\">\n                <div class=\"row\">\n                  <div class=\"col-lg-6\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-Name\">Name</label>\n                      <input  formControlName= \"name\" type=\"text\" id=\"input-Name\" class=\"form-control form-control-alternative\" placeholder=\"Name\" >\n                    </div>\n                  </div>\n                  <div class=\"col-lg-6\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-genre\">Categories</label>\n                      <!-- Category -->\n                      <div class=\"sidebar-widget\">\n                        <select formControlName= \"categoriesIds\" class=\"selectpicker default input-genre\" id=\"input-genre\" name=\"input-genre\" data-selected-text-format=\"count\" title=\"All Categories\" >\n                          <option *ngFor=\"let item of categories \" [value]=\"item.id\">{{item.name}}</option>\n                        </select>\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row\">\n                  <div class=\"col-lg-8\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-amount\">Amount</label>\n                      <input  formControlName= \"amount\" type=\"text\" id=\"input-amount\" class=\"form-control form-control-alternative\" placeholder=\"Amount\" >\n                    </div>\n                  </div>\n\n                </div>\n                <div class=\"row\">\n                  <div class=\"col-lg-4\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-min\">Min donation amount</label>\n                      <input  formControlName= \"minDonationAmount\" type=\"text\" id=\"input-min\" class=\"form-control form-control-alternative\" placeholder=\"Amount\" >\n                    </div>\n                  </div>\n                  <div class=\"col-lg-4\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-max\">Max donation amount</label>\n                      <input  formControlName= \"maxDonationAmount\" type=\"text\" id=\"input-max\" class=\"form-control form-control-alternative\" placeholder=\"Amount\" >\n                    </div>\n                  </div>\n\n\n\n                </div>\n                <div class=\"row\">\n                  <div class=\"col-lg-4\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-start\">Start date</label>\n                      <input readonly formControlName= \"startDate\" type=\"text\" id=\"input-start\" class=\"form-control form-control-alternative\" >\n                    </div>\n                  </div>\n                  <div class=\"col-lg-4\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-end\">end date</label>\n                      <input readonly formControlName= \"endDate\" type=\"text\" id=\"input-end\" class=\"form-control form-control-alternative\">\n                    </div>\n                  </div>\n\n\n\n                </div>\n                <div class=\"row\">\n\n                  <nz-range-picker   formControlName= \"date\" [nzFormat]=\"dateFormat\"></nz-range-picker>\n                </div>\n              </div>\n\n              <hr class=\"my-4\" />\n              <!-- Description -->\n              <h6 class=\"heading-small text-muted mb-4\">Description</h6>\n              <div class=\"pl-lg-4\">\n                <div class=\"form-group\">\n                  <label>Description</label>\n                  <textarea formControlName=\"shortDescription\" rows=\"4\" class=\"form-control form-control-alternative\" placeholder=\"A few words about your project ...\"></textarea>\n                </div>\n              </div>\n\n            </form>\n            <div class=\"col-xl-12\">\n              <button type=\"submit\" (click)=\"onSubmit()\" class=\"btn btn-info\" form=\"create-book-form\">\n                <i class=\"icon-feather-plus\"></i>post project</button>\n            </div>\n          </div>\n        </div>\n      </div>\n\n    </div>\n  </div>\n</div>\n\n<br />\n<br />\n\n";
+    __webpack_exports__["default"] = "\n\n<div class=\"header bg-gradient-danger pb-8 pt-5 pt-md-8\">\n  <div class=\"container-fluid\">\n    <div class=\"header-body\">\n      <!-- Card stats -->  <div class=\"container-fluid d-flex align-items-center\">\n      <div class=\"row\">\n\n      </div>\n    </div>\n\n    </div>\n  </div>\n</div>\n\n<div class=\"container-fluid mt--7\">\n  <div class=\"container-fluid d-flex align-items-center\">\n\n    <div class=\"col-lg-12 col-lg-12\">\n      <div class=\"col-xl-8 order-xl-1\">\n        <div class=\"card bg-secondary shadow\">\n          <div class=\"card-header bg-white border-0\">\n            <div class=\"row align-items-center\">\n              <div class=\"col-8\">\n                <h3 class=\"mb-0\">Charity</h3>\n              </div>\n\n            </div>\n          </div>\n          <div class=\"card-body\">\n            <form id=create-book-form [formGroup]=\"createCharity\" >\n              <h6 class=\"heading-small text-muted mb-4\">Information</h6>\n              <div class=\"pl-lg-4\">\n                <div class=\"row\">\n                  <div class=\"col-lg-6\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-Name\">Name</label>\n                      <input  formControlName= \"name\" type=\"text\" id=\"input-Name\" class=\"form-control form-control-alternative\" placeholder=\"Name\" >\n                    </div>\n                  </div>\n                  <div class=\"col-lg-6\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-genre\">Categories</label>\n                      <!-- Category -->\n                      <div class=\"sidebar-widget\">\n                        <select formControlName= \"categoriesIds\" class=\"selectpicker default input-genre\" id=\"input-genre\" name=\"input-genre\" data-selected-text-format=\"count\" title=\"All Categories\" >\n                          <option *ngFor=\"let item of categories \" [value]=\"item.id\">{{item.name}}</option>\n                        </select>\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row\">\n                  <div class=\"col-lg-8\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-amount\">Amount</label>\n                      <input  formControlName= \"amount\" type=\"text\" id=\"input-amount\" class=\"form-control form-control-alternative\" placeholder=\"Amount\" >\n                    </div>\n                  </div>\n\n                </div>\n                <div class=\"row\">\n                  <div class=\"col-lg-4\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-min\">Min donation amount</label>\n                      <input  formControlName= \"minDonationAmount\" type=\"text\" id=\"input-min\" class=\"form-control form-control-alternative\" placeholder=\"Amount\" >\n                    </div>\n                  </div>\n                  <div class=\"col-lg-4\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-max\">Max donation amount</label>\n                      <input  formControlName= \"maxDonationAmount\" type=\"text\" id=\"input-max\" class=\"form-control form-control-alternative\" placeholder=\"Amount\" >\n                    </div>\n                  </div>\n\n\n\n                </div>\n                <div class=\"row\">\n                  <div class=\"col-lg-4\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-start\">Start date</label>\n                      <input readonly formControlName= \"startDate\" type=\"text\" id=\"input-start\" class=\"form-control form-control-alternative\" >\n                    </div>\n                  </div>\n                  <div class=\"col-lg-4\">\n                    <div class=\"form-group\">\n                      <label class=\"form-control-label\" for=\"input-end\">end date</label>\n                      <input readonly formControlName= \"endDate\" type=\"text\" id=\"input-end\" class=\"form-control form-control-alternative\">\n                    </div>\n                  </div>\n\n\n\n                </div>\n                <div class=\"row\">\n\n                  <nz-range-picker   formControlName= \"date\" [nzFormat]=\"dateFormat\"></nz-range-picker>\n                </div>\n              </div>\n\n              <hr class=\"my-4\" />\n              <!-- Description -->\n              <h6 class=\"heading-small text-muted mb-4\">Description</h6>\n              <div class=\"pl-lg-4\">\n                <div class=\"form-group\">\n                  <label>Description</label>\n                  <textarea formControlName=\"shortDescription\" rows=\"4\" class=\"form-control form-control-alternative\" placeholder=\"A few words about your project ...\"></textarea>\n                </div>\n              </div>\n\n            </form>\n            <div class=\"col-xl-12\">\n              <button type=\"submit\" (click)=\"onSubmit()\" class=\"btn btn-info\" form=\"create-book-form\">\n                <i class=\"icon-feather-plus\"></i>post project</button>\n            </div>\n          </div>\n        </div>\n      </div>\n\n    </div>\n  </div>\n</div>\n\n<br />\n<br />\n\n";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/admin/variable/variable.component.html":
+  /*!****************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/pages/admin/variable/variable.component.html ***!
+    \****************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppPagesAdminVariableVariableComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<div class=\"header bg-gradient-danger pb-8 pt-5 pt-md-8\">\n  <div class=\"container-fluid\">\n    <div class=\"header-body\">\n      <!-- Card stats -->  <div class=\"container-fluid d-flex align-items-center\">\n      <div class=\"row\">\n        <div class=\"col-lg-6 col-md-6\">\n          <a [routerLink]=\"['/admin/category']\" class=\"btn btn-info\">Category Setting</a>\n        </div>\n        <div class=\"col-lg-6 col-md-6\">\n          <a [routerLink]=\"['/admin/badge']\" class=\"btn btn-info\">Badge Setting</a>\n        </div>\n      </div>\n    </div>\n\n    </div>\n  </div>\n</div>\n<!-- Page content -->\n<div class=\"container-fluid mt--7\">\n\n\n</div>\n";
     /***/
   },
 
@@ -1241,10 +1301,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   /***/
   function src$$_lazy_route_resourceLazyRecursive(module, exports, __webpack_require__) {
     var map = {
-      "./layouts/admin-layout/admin-layout.module": ["./src/app/layouts/admin-layout/admin-layout.module.ts", "layouts-admin-layout-admin-layout-module"],
+      "./layouts/admin-layout/admin-layout.module": ["./src/app/layouts/admin-layout/admin-layout.module.ts", "default~layouts-admin-layout-admin-layout-module~layouts-template-layout-template-layout-module", "layouts-admin-layout-admin-layout-module"],
       "./layouts/anonymous-layout/anonymous-layout.module": ["./src/app/layouts/anonymous-layout/anonymous-layout.module.ts"],
       "./layouts/auth-layout/auth-layout.module": ["./src/app/layouts/auth-layout/auth-layout.module.ts", "layouts-auth-layout-auth-layout-module"],
-      "./layouts/template-layout/template-layout.module": ["./src/app/layouts/template-layout/template-layout.module.ts", "layouts-template-layout-template-layout-module"]
+      "./layouts/template-layout/template-layout.module": ["./src/app/layouts/template-layout/template-layout.module.ts", "default~layouts-admin-layout-admin-layout-module~layouts-template-layout-template-layout-module", "layouts-template-layout-template-layout-module"]
     };
 
     function webpackAsyncContext(req) {
@@ -1278,7 +1338,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     !*** ./src/app/_globals/global-variables.ts ***!
     \**********************************************/
 
-  /*! exports provided: API_URL, CHARITY, CATEGORY, PAUSE, ACTIVATE, TERNINATE, REDIRECT, CALLBACK, URL, USERS */
+  /*! exports provided: API_URL, CHARITY, CATEGORY, PAUSE, ACTIVATE, TERNINATE, REDIRECT, CALLBACK, USERS, USERS_PROFILE, IMG_URL, BADGE */
 
   /***/
   function srcApp_globalsGlobalVariablesTs(module, __webpack_exports__, __webpack_require__) {
@@ -1336,14 +1396,26 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony export (binding) */
 
 
-    __webpack_require__.d(__webpack_exports__, "URL", function () {
-      return URL;
+    __webpack_require__.d(__webpack_exports__, "USERS", function () {
+      return USERS;
     });
     /* harmony export (binding) */
 
 
-    __webpack_require__.d(__webpack_exports__, "USERS", function () {
-      return USERS;
+    __webpack_require__.d(__webpack_exports__, "USERS_PROFILE", function () {
+      return USERS_PROFILE;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "IMG_URL", function () {
+      return IMG_URL;
+    });
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "BADGE", function () {
+      return BADGE;
     });
     /* harmony import */
 
@@ -1366,8 +1438,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var TERNINATE = '/end';
     var REDIRECT = '/redirect';
     var CALLBACK = '/callback';
-    var URL = 'http://localhost:8000';
     var USERS = '/users';
+    var USERS_PROFILE = '/users/profile';
+    var IMG_URL = _environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].apiUrl + '/img/'; // export const IMG_URL = 'http://127.0.0.1:8887/';
+
+    var BADGE = '/badges';
     /***/
   },
 
@@ -1612,20 +1687,20 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this._id = value;
         }
       }, {
-        key: "firstName",
+        key: "first_name",
         get: function get() {
-          return this._firstName;
+          return this._first_name;
         },
         set: function set(value) {
-          this._firstName = value;
+          this._first_name = value;
         }
       }, {
-        key: "lastName",
+        key: "last_name",
         get: function get() {
-          return this._lastName;
+          return this._last_name;
         },
         set: function set(value) {
-          this._lastName = value;
+          this._last_name = value;
         }
       }, {
         key: "username",
@@ -1774,8 +1849,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           // tslint:disable-next-line:max-line-length
           var creds = {
             username: user.username,
-            first_name: user.firstName,
-            last_name: user.lastName,
+            first_name: user.first_name,
+            last_name: user.last_name,
             email: user.email,
             password: user.password
           };
@@ -1817,6 +1892,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "logout",
         value: function logout() {
+          localStorage.removeItem('currentUser');
           return this.http.post(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + '/logout', {
             observe: 'response'
           });
@@ -1834,25 +1910,44 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "setCurrentUser",
         value: function setCurrentUser(currentUser) {
+          console.log('ahla');
+          console.log(currentUser.last_name);
+          this.currentUser = new _models_user__WEBPACK_IMPORTED_MODULE_3__["User"]();
           this.currentUser.id = currentUser.id;
           this.currentUser.username = currentUser.username;
-          this.currentUser.firstName = currentUser.first_name;
-          this.currentUser.lastName = currentUser.last_name;
+          this.currentUser.first_name = currentUser.first_name;
+          this.currentUser.last_name = currentUser.last_name;
           this.currentUser.email = currentUser.email;
+          console.log('real last name ' + this.currentUser.last_name);
         }
       }, {
         key: "getCurrentUser",
         value: function getCurrentUser() {
+          var user = JSON.parse(localStorage.getItem('currentUser'));
+
+          if (user == null) {
+            console.log('here');
+            return this.currentUser;
+          }
+
+          console.log('2');
+          console.log('user: ' + user.last_name);
+          this.setCurrentUser(user);
           return this.currentUser;
         }
       }, {
         key: "savingUser",
         value: function savingUser(result) {
-          console.log('currently logging in...');
+          this.currentUser = new _models_user__WEBPACK_IMPORTED_MODULE_3__["User"]();
           console.log('body', result.body.user);
+          localStorage.removeItem('currentUser');
+          localStorage.setItem('currentUser', result.body.user);
           this.setCurrentUser(JSON.parse(result.body.user));
-          console.log('current user last name ' + this.getCurrentUser().lastName); // @ts-ignore
-
+          console.log('current user last name ' + this.getCurrentUser().last_name);
+        }
+      }, {
+        key: "savingToken",
+        value: function savingToken(result) {
           localStorage.setItem('token', result.body.token);
         }
       }]);
@@ -1871,6 +1966,156 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     AuthenticationService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
       providedIn: 'root'
     })], AuthenticationService);
+    /***/
+  },
+
+  /***/
+  "./src/app/_services/badge.service.ts":
+  /*!********************************************!*\
+    !*** ./src/app/_services/badge.service.ts ***!
+    \********************************************/
+
+  /*! exports provided: BadgeService */
+
+  /***/
+  function srcApp_servicesBadgeServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "BadgeService", function () {
+      return BadgeService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    /* harmony import */
+
+
+    var _globals_global_variables__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../_globals/global-variables */
+    "./src/app/_globals/global-variables.ts");
+    /* harmony import */
+
+
+    var _crud_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ./crud.service */
+    "./src/app/_services/crud.service.ts");
+
+    var BadgeService =
+    /*#__PURE__*/
+    function () {
+      function BadgeService(crudService) {
+        _classCallCheck(this, BadgeService);
+
+        this.crudService = crudService;
+      }
+
+      _createClass(BadgeService, [{
+        key: "getTotal",
+        value: function getTotal() {
+          return this._total;
+        }
+      }, {
+        key: "setTotal",
+        value: function setTotal(value) {
+          this._total = value;
+        }
+      }, {
+        key: "setBadges",
+        value: function setBadges(badges) {
+          this.badges = badges;
+        }
+      }, {
+        key: "getBadges",
+        value: function getBadges() {
+          return this.badges;
+        }
+      }, {
+        key: "getCurrentPage",
+        value: function getCurrentPage() {
+          return this._currentPage;
+        }
+      }, {
+        key: "setCurrentPage",
+        value: function setCurrentPage(value) {
+          this._currentPage = value;
+        }
+      }, {
+        key: "getSizePage",
+        value: function getSizePage() {
+          return this._sizePage;
+        }
+      }, {
+        key: "setSizePage",
+        value: function setSizePage(value) {
+          this._sizePage = value;
+        }
+      }, {
+        key: "getBadgesAPI",
+        value: function getBadgesAPI() {
+          var _this = this;
+
+          var params;
+          var selectedPage = this._currentPage;
+          params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]().set('page', selectedPage.toString()).set('perPage', this._sizePage.toString());
+          this.crudService.getAllWithParams(_globals_global_variables__WEBPACK_IMPORTED_MODULE_3__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_3__["BADGE"], params).subscribe(function (response) {
+            _this.badges = response;
+            console.log(_this.badges);
+            _this._currentPage = _this.badges.meta.current_page;
+            _this._total = response.meta.total;
+          }, function (error) {
+            console.log(error);
+          });
+        }
+      }, {
+        key: "getBadgesPagination",
+        value: function getBadgesPagination(page) {
+          var _this2 = this;
+
+          var params;
+          this._currentPage = page;
+          params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]().set('page', this._currentPage.toString()).set('perPage', this._sizePage.toString());
+          this.crudService.getAllWithParams(_globals_global_variables__WEBPACK_IMPORTED_MODULE_3__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_3__["BADGE"], params).subscribe(function (response) {
+            _this2.badges = response;
+            console.log(_this2.badges);
+            _this2._currentPage = _this2.badges.meta.current_page;
+            _this2._total = response.meta.total;
+          }, function (error) {
+            console.log(error);
+          });
+        }
+      }]);
+
+      return BadgeService;
+    }();
+
+    BadgeService.ctorParameters = function () {
+      return [{
+        type: _crud_service__WEBPACK_IMPORTED_MODULE_4__["CrudService"]
+      }];
+    };
+
+    BadgeService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+      providedIn: 'root'
+    })], BadgeService);
     /***/
   },
 
@@ -1944,6 +2189,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           return this.categories;
         }
       }, {
+        key: "getTotal",
+        value: function getTotal() {
+          return this._total;
+        }
+      }, {
+        key: "setTotal",
+        value: function setTotal(value) {
+          this._total = value;
+        }
+      }, {
         key: "getCurrentPage",
         value: function getCurrentPage() {
           return this._currentPage;
@@ -1966,15 +2221,33 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getCategoriesAPI",
         value: function getCategoriesAPI() {
-          var _this = this;
+          var _this3 = this;
 
           var params;
           var selectedPage = this._currentPage;
           params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]().set('page', selectedPage.toString()).set('perPage', this._sizePage.toString());
           this.crudService.getAllWithParams(_globals_global_variables__WEBPACK_IMPORTED_MODULE_3__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_3__["CATEGORY"], params).subscribe(function (response) {
-            _this.categories = response;
-            console.log(_this.categories);
-            _this._currentPage = _this.categories.meta.current_page;
+            _this3.categories = response;
+            console.log(_this3.categories);
+            _this3._currentPage = _this3.categories.meta.current_page;
+            _this3._total = response.meta.total;
+          }, function (error) {
+            console.log(error);
+          });
+        }
+      }, {
+        key: "getCategoriesPagination",
+        value: function getCategoriesPagination(page) {
+          var _this4 = this;
+
+          var params;
+          this._currentPage = page;
+          params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpParams"]().set('page', this._currentPage.toString()).set('perPage', this._sizePage.toString());
+          this.crudService.getAllWithParams(_globals_global_variables__WEBPACK_IMPORTED_MODULE_3__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_3__["CATEGORY"], params).subscribe(function (response) {
+            _this4.categories = response;
+            console.log(_this4.categories);
+            _this4._currentPage = _this4.categories.meta.current_page;
+            _this4._total = response.meta.total;
           }, function (error) {
             console.log(error);
           });
@@ -2079,7 +2352,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "update",
         value: function update(url, id, body) {
           console.log(url);
-          return this.http.put(url + '/' + id, body);
+          return this.http.put(url + '/' + id, body, {
+            observe: 'response'
+          });
         }
       }, {
         key: "delete",
@@ -2107,6 +2382,104 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     CrudService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
       providedIn: 'root'
     })], CrudService);
+    /***/
+  },
+
+  /***/
+  "./src/app/_services/image.service.ts":
+  /*!********************************************!*\
+    !*** ./src/app/_services/image.service.ts ***!
+    \********************************************/
+
+  /*! exports provided: ImageService */
+
+  /***/
+  function srcApp_servicesImageServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "ImageService", function () {
+      return ImageService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
+    /* harmony import */
+
+
+    var _globals_global_variables__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../_globals/global-variables */
+    "./src/app/_globals/global-variables.ts");
+    /* harmony import */
+
+
+    var _authentication_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! ./authentication.service */
+    "./src/app/_services/authentication.service.ts");
+
+    var ImageService =
+    /*#__PURE__*/
+    function () {
+      function ImageService(http, authenticationService) {
+        _classCallCheck(this, ImageService);
+
+        this.http = http;
+        this.authenticationService = authenticationService;
+      }
+
+      _createClass(ImageService, [{
+        key: "postImage",
+        value: function postImage(fileData) {
+          var myFormData = new FormData();
+          var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]();
+          headers.append('Content-Type', 'multipart/form-data');
+          headers.append('Accept', 'application/json');
+          myFormData.append('id_user', this.authenticationService.getCurrentUser().id.toString());
+          myFormData.append('image', fileData);
+          console.log('formData: ' + myFormData.getAll('id_user'));
+          return this.http.post(_globals_global_variables__WEBPACK_IMPORTED_MODULE_3__["API_URL"] + '/image', myFormData, {
+            headers: headers
+          });
+        }
+      }, {
+        key: "getImage",
+        value: function getImage() {
+          return this.http.get(_globals_global_variables__WEBPACK_IMPORTED_MODULE_3__["API_URL"] + '/image/' + this.authenticationService.getCurrentUser().id);
+        }
+      }]);
+
+      return ImageService;
+    }();
+
+    ImageService.ctorParameters = function () {
+      return [{
+        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
+      }, {
+        type: _authentication_service__WEBPACK_IMPORTED_MODULE_4__["AuthenticationService"]
+      }];
+    };
+
+    ImageService = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+      providedIn: 'root'
+    })], ImageService);
     /***/
   },
 
@@ -2322,33 +2695,51 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _pipes_enum_to_array_pipe__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
-    /*! ./pipes/enum-to-array.pipe */
-    "./src/app/pipes/enum-to-array.pipe.ts");
-    /* harmony import */
-
-
-    var _interceptors_authentication_interceptor__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
+    var _interceptors_authentication_interceptor__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
     /*! ./_interceptors/authentication.interceptor */
     "./src/app/_interceptors/authentication.interceptor.ts");
     /* harmony import */
 
 
-    var _layouts_anonymous_layout_anonymous_layout_module__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
+    var _layouts_anonymous_layout_anonymous_layout_module__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(
     /*! ./layouts/anonymous-layout/anonymous-layout.module */
     "./src/app/layouts/anonymous-layout/anonymous-layout.module.ts");
     /* harmony import */
 
 
-    var _pages_admin_charity_charity_update_charity_update_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(
+    var _pages_admin_charity_charity_update_charity_update_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(
     /*! ./pages/admin/charity/charity-update/charity-update.component */
     "./src/app/pages/admin/charity/charity-update/charity-update.component.ts");
     /* harmony import */
 
 
-    var _components_fb_auth_fb_auth_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(
+    var _components_fb_auth_fb_auth_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(
     /*! ./components/fb-auth/fb-auth.component */
-    "./src/app/components/fb-auth/fb-auth.component.ts"); // @ts-ignore
+    "./src/app/components/fb-auth/fb-auth.component.ts");
+    /* harmony import */
+
+
+    var _shared_shared_module__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(
+    /*! ./shared/shared.module */
+    "./src/app/shared/shared.module.ts");
+    /* harmony import */
+
+
+    var _pages_admin_badge_badges_list_badges_list_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(
+    /*! ./pages/admin/badge/badges-list/badges-list.component */
+    "./src/app/pages/admin/badge/badges-list/badges-list.component.ts");
+    /* harmony import */
+
+
+    var _pages_admin_badge_badges_create_badges_create_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(
+    /*! ./pages/admin/badge/badges-create/badges-create.component */
+    "./src/app/pages/admin/badge/badges-create/badges-create.component.ts");
+    /* harmony import */
+
+
+    var _pages_admin_variable_variable_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(
+    /*! ./pages/admin/variable/variable.component */
+    "./src/app/pages/admin/variable/variable.component.ts"); // @ts-ignore
 
 
     var AppModule = function AppModule() {
@@ -2356,9 +2747,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     };
 
     AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
-      imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__["BrowserModule"], ng_zorro_antd__WEBPACK_IMPORTED_MODULE_7__["NgZorroAntdModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_1__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _components_components_module__WEBPACK_IMPORTED_MODULE_13__["ComponentsModule"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_11__["NgbModule"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterModule"], _app_routing__WEBPACK_IMPORTED_MODULE_12__["AppRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"], _layouts_anonymous_layout_anonymous_layout_module__WEBPACK_IMPORTED_MODULE_22__["AnonymousLayoutModule"]],
-      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"], _layouts_admin_layout_admin_layout_component__WEBPACK_IMPORTED_MODULE_9__["AdminLayoutComponent"], _layouts_auth_layout_auth_layout_component__WEBPACK_IMPORTED_MODULE_10__["AuthLayoutComponent"], _layouts_anonymous_layout_anonymous_layout_component__WEBPACK_IMPORTED_MODULE_14__["AnonymousLayoutComponent"], _layouts_template_layout_template_layout_component__WEBPACK_IMPORTED_MODULE_15__["TemplateLayoutComponent"], _pages_admin_charity_charities_list_charities_list_component__WEBPACK_IMPORTED_MODULE_16__["CharitiesListComponent"], _pages_admin_charity_charity_create_charity_create_component__WEBPACK_IMPORTED_MODULE_17__["CharityCreateComponent"], _pages_admin_category_create_category_create_category_component__WEBPACK_IMPORTED_MODULE_18__["CreateCategoryComponent"], _pages_admin_category_list_category_list_category_component__WEBPACK_IMPORTED_MODULE_19__["ListCategoryComponent"], _pipes_enum_to_array_pipe__WEBPACK_IMPORTED_MODULE_20__["EnumToArrayPipe"], _pages_admin_charity_charity_update_charity_update_component__WEBPACK_IMPORTED_MODULE_23__["CharityUpdateComponent"], _components_fb_auth_fb_auth_component__WEBPACK_IMPORTED_MODULE_24__["FbAuthComponent"]],
-      providers: [_interceptors_authentication_interceptor__WEBPACK_IMPORTED_MODULE_21__["AuthenticationInterceptorProvider"], {
+      imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__["BrowserModule"], ng_zorro_antd__WEBPACK_IMPORTED_MODULE_7__["NgZorroAntdModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_1__["BrowserAnimationsModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"], _components_components_module__WEBPACK_IMPORTED_MODULE_13__["ComponentsModule"], _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_11__["NgbModule"], _angular_router__WEBPACK_IMPORTED_MODULE_5__["RouterModule"], _app_routing__WEBPACK_IMPORTED_MODULE_12__["AppRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"], _layouts_anonymous_layout_anonymous_layout_module__WEBPACK_IMPORTED_MODULE_21__["AnonymousLayoutModule"], _shared_shared_module__WEBPACK_IMPORTED_MODULE_24__["SharedModule"]],
+      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"], _layouts_admin_layout_admin_layout_component__WEBPACK_IMPORTED_MODULE_9__["AdminLayoutComponent"], _layouts_auth_layout_auth_layout_component__WEBPACK_IMPORTED_MODULE_10__["AuthLayoutComponent"], _layouts_anonymous_layout_anonymous_layout_component__WEBPACK_IMPORTED_MODULE_14__["AnonymousLayoutComponent"], _layouts_template_layout_template_layout_component__WEBPACK_IMPORTED_MODULE_15__["TemplateLayoutComponent"], _pages_admin_charity_charities_list_charities_list_component__WEBPACK_IMPORTED_MODULE_16__["CharitiesListComponent"], _pages_admin_charity_charity_create_charity_create_component__WEBPACK_IMPORTED_MODULE_17__["CharityCreateComponent"], _pages_admin_category_create_category_create_category_component__WEBPACK_IMPORTED_MODULE_18__["CreateCategoryComponent"], _pages_admin_category_list_category_list_category_component__WEBPACK_IMPORTED_MODULE_19__["ListCategoryComponent"], _pages_admin_charity_charity_update_charity_update_component__WEBPACK_IMPORTED_MODULE_22__["CharityUpdateComponent"], _components_fb_auth_fb_auth_component__WEBPACK_IMPORTED_MODULE_23__["FbAuthComponent"], _pages_admin_badge_badges_list_badges_list_component__WEBPACK_IMPORTED_MODULE_25__["BadgesListComponent"], _pages_admin_badge_badges_create_badges_create_component__WEBPACK_IMPORTED_MODULE_26__["BadgesCreateComponent"], _pages_admin_variable_variable_component__WEBPACK_IMPORTED_MODULE_27__["VariableComponent"]],
+      providers: [_interceptors_authentication_interceptor__WEBPACK_IMPORTED_MODULE_20__["AuthenticationInterceptorProvider"], {
         provide: ng_zorro_antd__WEBPACK_IMPORTED_MODULE_7__["NZ_I18N"],
         useValue: ng_zorro_antd__WEBPACK_IMPORTED_MODULE_7__["en_US"]
       }],
@@ -2434,6 +2825,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _components_fb_auth_fb_auth_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
     /*! ./components/fb-auth/fb-auth.component */
     "./src/app/components/fb-auth/fb-auth.component.ts");
+    /* harmony import */
+
+
+    var _shared_shared_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    /*! ./shared/shared.module */
+    "./src/app/shared/shared.module.ts");
 
     var routes = [{
       path: '',
@@ -2482,7 +2879,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     AppRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
       imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(routes, {
         useHash: true
-      })],
+      }), _shared_shared_module__WEBPACK_IMPORTED_MODULE_8__["SharedModule"]],
       exports: []
     })], AppRoutingModule);
     /***/
@@ -2587,13 +2984,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(AdminSidebarComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this2 = this;
+          var _this5 = this;
 
           this.menuItems = ROUTES.filter(function (menuItem) {
             return menuItem;
           });
           this.router.events.subscribe(function (event) {
-            _this2.isCollapsed = true;
+            _this5.isCollapsed = true;
           });
         }
       }]);
@@ -2790,7 +3187,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(FbAuthComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this3 = this;
+          var _this6 = this;
 
           var id = null;
           this.activatedRoute.queryParams.subscribe(function (params) {
@@ -2800,11 +3197,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.authenticationService.facebookLogin(id).subscribe(function (result) {
             console.log('facebook login ...');
 
-            _this3.authenticationService.savingUser(result);
+            _this6.authenticationService.savingToken(result);
 
-            console.log(_this3.authenticationService.getCurrentUser());
+            _this6.authenticationService.savingUser(result);
 
-            _this3.router.navigate(['/dashboard']);
+            console.log(_this6.authenticationService.getCurrentUser());
+
+            _this6.router.navigate(['/dashboard']);
           });
         }
       }]);
@@ -2992,17 +3391,37 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _services_authentication_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ../../_services/authentication.service */
     "./src/app/_services/authentication.service.ts");
+    /* harmony import */
+
+
+    var _services_image_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! ../../_services/image.service */
+    "./src/app/_services/image.service.ts");
+    /* harmony import */
+
+
+    var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! @angular/platform-browser */
+    "./node_modules/@angular/platform-browser/__ivy_ngcc__/fesm2015/platform-browser.js");
+    /* harmony import */
+
+
+    var _globals_global_variables__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+    /*! ../../_globals/global-variables */
+    "./src/app/_globals/global-variables.ts");
 
     var NavbarComponent =
     /*#__PURE__*/
     function () {
       // tslint:disable-next-line:max-line-length
-      function NavbarComponent(location, element, router, authenticationService) {
+      function NavbarComponent(imageService, location, element, router, authenticationService, sanitizer) {
         _classCallCheck(this, NavbarComponent);
 
+        this.imageService = imageService;
         this.element = element;
         this.router = router;
         this.authenticationService = authenticationService;
+        this.sanitizer = sanitizer;
         this.connected = false;
         this.location = location;
       }
@@ -3010,12 +3429,29 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(NavbarComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
+          var _this7 = this;
+
           this.listTitles = _sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_2__["ROUTES"].filter(function (listTitle) {
             return listTitle;
           });
           console.log(this.authenticationService.isLogged());
           this.connected = this.authenticationService.isLogged();
           this.currentUser = this.authenticationService.getCurrentUser();
+          this.isLogged = this.authenticationService.isLogged();
+          this.imageService.getImage().subscribe(function (data) {
+            // console.log(data.toString());
+            // const mediaSource = new MediaSource();
+            // const image = document.getElementById('user_image');
+            // const blob = URL.createObjectURL(data);
+            // image.srcObject = URL.createObjectURL(mediaSource);
+            // console.log(blob);
+            console.log('data: ' + data);
+            console.log(_globals_global_variables__WEBPACK_IMPORTED_MODULE_8__["IMG_URL"] + data);
+            _this7.image = _globals_global_variables__WEBPACK_IMPORTED_MODULE_8__["IMG_URL"] + data; // 'https://clubisti.net/assets/img/'+ data | environment.apiUrl+'/assets/img/'+
+          }, function (error) {
+            console.log(error);
+            _this7.image = 'assets/img/theme/team-4-800x800.jpg';
+          });
         }
       }, {
         key: "getTitle",
@@ -3024,7 +3460,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
           if (titlee.charAt(0) === '#') {
             titlee = titlee.slice(1);
-          }
+          } // tslint:disable-next-line:prefer-for-of
+
 
           for (var item = 0; item < this.listTitles.length; item++) {
             if (this.listTitles[item].path === titlee) {
@@ -3042,7 +3479,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "logout",
         value: function logout() {
-          var _this4 = this;
+          var _this8 = this;
 
           this.authenticationService.logout().subscribe(function (res) {
             // @ts-ignore
@@ -3050,7 +3487,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
             localStorage.removeItem('token');
 
-            _this4.router.navigate(['/dashboard']);
+            _this8.router.navigate(['/dashboard']);
           });
         }
       }]);
@@ -3060,6 +3497,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     NavbarComponent.ctorParameters = function () {
       return [{
+        type: _services_image_service__WEBPACK_IMPORTED_MODULE_6__["ImageService"]
+      }, {
         type: _angular_common__WEBPACK_IMPORTED_MODULE_3__["Location"]
       }, {
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"]
@@ -3067,6 +3506,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]
       }, {
         type: _services_authentication_service__WEBPACK_IMPORTED_MODULE_5__["AuthenticationService"]
+      }, {
+        type: _angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__["DomSanitizer"]
       }];
     };
 
@@ -3186,13 +3627,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(SidebarComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this5 = this;
+          var _this9 = this;
 
           this.menuItems = ROUTES.filter(function (menuItem) {
             return menuItem;
           });
           this.router.events.subscribe(function (event) {
-            _this5.isCollapsed = true;
+            _this9.isCollapsed = true;
           });
         }
       }]);
@@ -3569,14 +4010,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(AuthLayoutComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this6 = this;
+          var _this10 = this;
 
           var html = document.getElementsByTagName("html")[0];
           html.classList.add("auth-layout");
           var body = document.getElementsByTagName("body")[0];
           body.classList.add("bg-default");
           this.router.events.subscribe(function (event) {
-            _this6.isCollapsed = true;
+            _this10.isCollapsed = true;
           });
         }
       }, {
@@ -3686,6 +4127,324 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       /*! ./template-layout.component.css */
       "./src/app/layouts/template-layout/template-layout.component.css")).default]
     })], TemplateLayoutComponent);
+    /***/
+  },
+
+  /***/
+  "./src/app/pages/admin/badge/badges-create/badges-create.component.css":
+  /*!*****************************************************************************!*\
+    !*** ./src/app/pages/admin/badge/badges-create/badges-create.component.css ***!
+    \*****************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppPagesAdminBadgeBadgesCreateBadgesCreateComponentCss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2FkbWluL2JhZGdlL2JhZGdlcy1jcmVhdGUvYmFkZ2VzLWNyZWF0ZS5jb21wb25lbnQuY3NzIn0= */";
+    /***/
+  },
+
+  /***/
+  "./src/app/pages/admin/badge/badges-create/badges-create.component.ts":
+  /*!****************************************************************************!*\
+    !*** ./src/app/pages/admin/badge/badges-create/badges-create.component.ts ***!
+    \****************************************************************************/
+
+  /*! exports provided: BadgesCreateComponent */
+
+  /***/
+  function srcAppPagesAdminBadgeBadgesCreateBadgesCreateComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "BadgesCreateComponent", function () {
+      return BadgesCreateComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _globals_global_variables__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../../../../_globals/global-variables */
+    "./src/app/_globals/global-variables.ts");
+    /* harmony import */
+
+
+    var _services_badge_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../../../../_services/badge.service */
+    "./src/app/_services/badge.service.ts");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    /* harmony import */
+
+
+    var _services_crud_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! ../../../../_services/crud.service */
+    "./src/app/_services/crud.service.ts");
+    /* harmony import */
+
+
+    var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! @angular/forms */
+    "./node_modules/@angular/forms/__ivy_ngcc__/fesm2015/forms.js");
+
+    var BadgesCreateComponent =
+    /*#__PURE__*/
+    function () {
+      function BadgesCreateComponent(formBuilder, crudService, router, badgeService) {
+        _classCallCheck(this, BadgesCreateComponent);
+
+        this.formBuilder = formBuilder;
+        this.crudService = crudService;
+        this.router = router;
+        this.badgeService = badgeService;
+      }
+
+      _createClass(BadgesCreateComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          this.createBadge = this.formBuilder.group({
+            name: '',
+            lower_bond: 0,
+            upper_bond: 0
+          });
+        }
+      }, {
+        key: "onSubmit",
+        value: function onSubmit() {
+          var _this11 = this;
+
+          console.log(this.createBadge.value);
+          this.crudService.post(_globals_global_variables__WEBPACK_IMPORTED_MODULE_2__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_2__["BADGE"], this.createBadge.value).subscribe(function (response) {
+            console.log(response);
+
+            _this11.badgeService.getBadgesAPI();
+
+            _this11.router.navigate(['/admin/badge']);
+          }, function (error) {
+            return console.log(error);
+          });
+        }
+      }]);
+
+      return BadgesCreateComponent;
+    }();
+
+    BadgesCreateComponent.ctorParameters = function () {
+      return [{
+        type: _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormBuilder"]
+      }, {
+        type: _services_crud_service__WEBPACK_IMPORTED_MODULE_5__["CrudService"]
+      }, {
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]
+      }, {
+        type: _services_badge_service__WEBPACK_IMPORTED_MODULE_3__["BadgeService"]
+      }];
+    };
+
+    BadgesCreateComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-badges-create',
+      template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+      /*! raw-loader!./badges-create.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/admin/badge/badges-create/badges-create.component.html")).default,
+      styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+      /*! ./badges-create.component.css */
+      "./src/app/pages/admin/badge/badges-create/badges-create.component.css")).default]
+    })], BadgesCreateComponent);
+    /***/
+  },
+
+  /***/
+  "./src/app/pages/admin/badge/badges-list/badges-list.component.css":
+  /*!*************************************************************************!*\
+    !*** ./src/app/pages/admin/badge/badges-list/badges-list.component.css ***!
+    \*************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppPagesAdminBadgeBadgesListBadgesListComponentCss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2FkbWluL2JhZGdlL2JhZGdlcy1saXN0L2JhZGdlcy1saXN0LmNvbXBvbmVudC5jc3MifQ== */";
+    /***/
+  },
+
+  /***/
+  "./src/app/pages/admin/badge/badges-list/badges-list.component.ts":
+  /*!************************************************************************!*\
+    !*** ./src/app/pages/admin/badge/badges-list/badges-list.component.ts ***!
+    \************************************************************************/
+
+  /*! exports provided: BadgesListComponent */
+
+  /***/
+  function srcAppPagesAdminBadgeBadgesListBadgesListComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "BadgesListComponent", function () {
+      return BadgesListComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _globals_global_variables__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../../../../_globals/global-variables */
+    "./src/app/_globals/global-variables.ts");
+    /* harmony import */
+
+
+    var _services_crud_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../../../../_services/crud.service */
+    "./src/app/_services/crud.service.ts");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/__ivy_ngcc__/fesm2015/router.js");
+    /* harmony import */
+
+
+    var _services_badge_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    /*! ../../../../_services/badge.service */
+    "./src/app/_services/badge.service.ts");
+    /* harmony import */
+
+
+    var _badges_create_badges_create_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! ../badges-create/badges-create.component */
+    "./src/app/pages/admin/badge/badges-create/badges-create.component.ts");
+    /* harmony import */
+
+
+    var ng_zorro_antd__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! ng-zorro-antd */
+    "./node_modules/ng-zorro-antd/__ivy_ngcc__/fesm2015/ng-zorro-antd.js");
+
+    var BadgesListComponent =
+    /*#__PURE__*/
+    function () {
+      function BadgesListComponent(crudService, router, route, badgeService, modal) {
+        _classCallCheck(this, BadgesListComponent);
+
+        this.crudService = crudService;
+        this.router = router;
+        this.route = route;
+        this.badgeService = badgeService;
+        this.modal = modal;
+        this.sort = 'createdAt,desc';
+      }
+
+      _createClass(BadgesListComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          this.badgeService.setCurrentPage(1);
+          this.badgeService.setSizePage(10);
+          this.badgeService.getBadgesAPI();
+        }
+      }, {
+        key: "paginate",
+        value: function paginate(page) {
+          this.badgeService.getBadgesPagination(page);
+        }
+      }, {
+        key: "createCustomButtonModal",
+        value: function createCustomButtonModal() {
+          var modal = this.modal.create({
+            nzTitle: 'Add badge',
+            nzContent: _badges_create_badges_create_component__WEBPACK_IMPORTED_MODULE_6__["BadgesCreateComponent"],
+            nzFooter: [{
+              label: 'Close',
+              shape: 'round',
+              onClick: function onClick() {
+                return modal.destroy();
+              }
+            }]
+          });
+        }
+      }, {
+        key: "delete",
+        value: function _delete(badge) {
+          this.crudService.delete(_globals_global_variables__WEBPACK_IMPORTED_MODULE_2__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_2__["BADGE"], badge.id).subscribe(function (res) {
+            console.log(res);
+            badge.deleted = 1;
+          }, function (error) {
+            console.log(error);
+          });
+        }
+      }]);
+
+      return BadgesListComponent;
+    }();
+
+    BadgesListComponent.ctorParameters = function () {
+      return [{
+        type: _services_crud_service__WEBPACK_IMPORTED_MODULE_3__["CrudService"]
+      }, {
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]
+      }, {
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"]
+      }, {
+        type: _services_badge_service__WEBPACK_IMPORTED_MODULE_5__["BadgeService"]
+      }, {
+        type: ng_zorro_antd__WEBPACK_IMPORTED_MODULE_7__["NzModalService"]
+      }];
+    };
+
+    BadgesListComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-badges-list',
+      template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+      /*! raw-loader!./badges-list.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/admin/badge/badges-list/badges-list.component.html")).default,
+      styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+      /*! ./badges-list.component.css */
+      "./src/app/pages/admin/badge/badges-list/badges-list.component.css")).default]
+    })], BadgesListComponent);
     /***/
   },
 
@@ -3802,15 +4561,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "onSubmit",
         value: function onSubmit() {
-          var _this7 = this;
+          var _this12 = this;
 
           console.log(this.createCategory.value);
           this.crudService.post(_globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["CATEGORY"], this.createCategory.value).subscribe(function (response) {
             console.log(response);
 
-            _this7.categoryService.getCategoriesAPI();
-
-            _this7.router.navigate(['/admin/variable']);
+            _this12.categoryService.getCategoriesAPI();
           }, function (error) {
             return console.log(error);
           });
@@ -3910,32 +4667,39 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony import */
 
 
-    var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
-    /*! @angular/common/http */
-    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
-    /* harmony import */
-
-
-    var _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+    var _globals_global_variables__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
     /*! ../../../../_globals/global-variables */
     "./src/app/_globals/global-variables.ts");
     /* harmony import */
 
 
-    var _services_categories_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    var _services_categories_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
     /*! ../../../../_services/categories.service */
     "./src/app/_services/categories.service.ts");
+    /* harmony import */
+
+
+    var ng_zorro_antd__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+    /*! ng-zorro-antd */
+    "./node_modules/ng-zorro-antd/__ivy_ngcc__/fesm2015/ng-zorro-antd.js");
+    /* harmony import */
+
+
+    var _create_category_create_category_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! ../create-category/create-category.component */
+    "./src/app/pages/admin/category/create-category/create-category.component.ts");
 
     var ListCategoryComponent =
     /*#__PURE__*/
     function () {
-      function ListCategoryComponent(crudService, router, route, categoryService) {
+      function ListCategoryComponent(crudService, router, route, categoryService, modal) {
         _classCallCheck(this, ListCategoryComponent);
 
         this.crudService = crudService;
         this.router = router;
         this.route = route;
         this.categoryService = categoryService;
+        this.modal = modal;
         this.isVisible = false;
         this.sort = 'createdAt,desc';
       }
@@ -3943,38 +4707,39 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(ListCategoryComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          this.currentPage = 1;
-          this.sizePage = 10;
           this.categoryService.setCurrentPage(1);
-          this.categoryService.setSizePage(3);
-          this.getCategories();
-        }
-      }, {
-        key: "getCategories",
-        value: function getCategories() {
-          var _this8 = this;
-
-          var params;
-          var selectedPage = this.currentPage;
-          params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpParams"]().set('page', selectedPage.toString()).set('perPage', this.sizePage.toString());
-          this.crudService.getAllWithParams(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["CATEGORY"], params).subscribe(function (response) {
-            _this8.categories = response;
-
-            _this8.categoryService.setCategories(_this8.categories);
-
-            console.log(_this8.categories);
-            _this8.currentPage = _this8.categories.meta.current_page;
-
-            _this8.categoryService.setCurrentPage(_this8.categories.meta.current_page);
-          }, function (error) {
-            console.log(error);
-          });
+          this.categoryService.setSizePage(10);
+          this.categoryService.getCategoriesAPI();
         }
       }, {
         key: "paginate",
         value: function paginate(page) {
-          this.currentPage = page;
-          this.getCategories();
+          this.categoryService.getCategoriesPagination(page);
+        }
+      }, {
+        key: "createGategory",
+        value: function createGategory() {
+          var modal = this.modal.create({
+            nzTitle: 'Add category',
+            nzContent: _create_category_create_category_component__WEBPACK_IMPORTED_MODULE_7__["CreateCategoryComponent"],
+            nzFooter: [{
+              label: 'Close',
+              shape: 'round',
+              onClick: function onClick() {
+                return modal.destroy();
+              }
+            }]
+          });
+        }
+      }, {
+        key: "delete",
+        value: function _delete(category) {
+          this.crudService.delete(_globals_global_variables__WEBPACK_IMPORTED_MODULE_4__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_4__["CATEGORY"], category.id).subscribe(function (res) {
+            console.log(res);
+            category.deleted = 1;
+          }, function (error) {
+            console.log(error);
+          });
         }
       }]);
 
@@ -3989,7 +4754,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]
       }, {
-        type: _services_categories_service__WEBPACK_IMPORTED_MODULE_6__["CategoriesService"]
+        type: _services_categories_service__WEBPACK_IMPORTED_MODULE_5__["CategoriesService"]
+      }, {
+        type: ng_zorro_antd__WEBPACK_IMPORTED_MODULE_6__["NzModalService"]
       }];
     };
 
@@ -4119,15 +4886,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getProjects",
         value: function getProjects() {
-          var _this9 = this;
+          var _this13 = this;
 
           var params;
           var selectedPage = this.currentPage;
           params = new _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpParams"]().set('page', selectedPage.toString()).set('perPage', this.sizePage.toString());
           this.crudService.getAllWithParams(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["CHARITY"], params).subscribe(function (response) {
-            _this9.projects = response;
-            console.log(_this9.projects);
-            _this9.currentPage = _this9.projects.meta.current_page;
+            _this13.projects = response;
+            console.log(_this13.projects);
+            _this13.currentPage = _this13.projects.meta.current_page;
           }, function (error) {
             console.log(error);
           });
@@ -4141,10 +4908,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "pauseProject",
         value: function pauseProject(project) {
-          var _this10 = this;
+          var _this14 = this;
 
           this.crudService.update(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["CHARITY"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["PAUSE"], project.id, {}).subscribe(function (response) {
-            _this10.getProjects();
+            _this14.getProjects();
           }, function (error) {
             console.log(error);
           });
@@ -4152,10 +4919,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "activateProject",
         value: function activateProject(project) {
-          var _this11 = this;
+          var _this15 = this;
 
           this.crudService.update(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["CHARITY"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["ACTIVATE"], project.id, {}).subscribe(function (response) {
-            _this11.getProjects();
+            _this15.getProjects();
           }, function (error) {
             console.log(error);
           });
@@ -4163,10 +4930,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "endProject",
         value: function endProject(project) {
-          var _this12 = this;
+          var _this16 = this;
 
           this.crudService.update(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["CHARITY"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["TERNINATE"], project.id, {}).subscribe(function (response) {
-            _this12.getProjects();
+            _this16.getProjects();
           }, function (error) {
             console.log(error);
           });
@@ -4174,7 +4941,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "showDeleteConfirm",
         value: function showDeleteConfirm(project) {
-          var _this13 = this;
+          var _this17 = this;
 
           this.modalService.confirm({
             nzTitle: 'Are you sure you want to end this project?',
@@ -4182,7 +4949,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             nzOkText: 'Yes',
             nzOkType: 'danger',
             nzOnOk: function nzOnOk() {
-              return _this13.endProject(project);
+              return _this17.endProject(project);
             },
             nzCancelText: 'No',
             nzOnCancel: function nzOnCancel() {
@@ -4193,12 +4960,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "deleteProject",
         value: function deleteProject(id) {
-          var _this14 = this;
+          var _this18 = this;
 
           this.crudService.delete(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["CHARITY"], id).subscribe(function (response) {
             console.log(response);
 
-            _this14.getProjects();
+            _this18.getProjects();
           }, function (error) {
             console.log(error);
           });
@@ -4353,11 +5120,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getCategories",
         value: function getCategories() {
-          var _this15 = this;
+          var _this19 = this;
 
           this.crudService.getAll(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["CATEGORY"]).subscribe(function (response) {
-            _this15.categories = response.data;
-            console.log(_this15.categories);
+            _this19.categories = response.data;
+            console.log(_this19.categories);
           }, function (error) {
             console.log(error);
           });
@@ -4365,7 +5132,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "onSubmit",
         value: function onSubmit() {
-          var _this16 = this;
+          var _this20 = this;
 
           this.createCharity.value.categoriesIds = [this.createCharity.value.categoriesIds];
           this.createCharity.value.startDate = this.pipe.transform(this.createCharity.value.date[0], ' yyyy-M-d hh:mm:ss');
@@ -4374,7 +5141,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.crudService.post(_globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_5__["CHARITY"], this.createCharity.value).subscribe(function (response) {
             console.log(response);
 
-            _this16.router.navigate(['/admin/charity']);
+            _this20.router.navigate(['/admin/charity']);
           }, function (error) {
             return console.log(error);
           });
@@ -4551,7 +5318,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0,
           /*#__PURE__*/
           regeneratorRuntime.mark(function _callee() {
-            var _this17 = this;
+            var _this21 = this;
 
             var data;
             return regeneratorRuntime.wrap(function _callee$(_context) {
@@ -4559,8 +5326,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
                 switch (_context.prev = _context.next) {
                   case 0:
                     this.route.params.subscribe(function (params) {
-                      _this17.id = +params['id'];
-                      console.log(_this17.id);
+                      _this21.id = +params['id'];
+                      console.log(_this21.id);
                     });
                     _context.next = 3;
                     return this.http.get(_globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["CHARITY"] + '/' + this.id).toPromise();
@@ -4581,11 +5348,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getCategories",
         value: function getCategories() {
-          var _this18 = this;
+          var _this22 = this;
 
           this.crudService.getAll(_globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["CATEGORY"]).subscribe(function (response) {
-            _this18.categories = response.data;
-            console.log(_this18.categories);
+            _this22.categories = response.data;
+            console.log(_this22.categories);
           }, function (error) {
             console.log(error);
           });
@@ -4593,7 +5360,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "onSubmit",
         value: function onSubmit() {
-          var _this19 = this;
+          var _this23 = this;
 
           this.createCharity.value.categoriesIds = [this.createCharity.value.categoriesIds];
 
@@ -4606,7 +5373,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           this.crudService.update(_globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_6__["CHARITY"], this.id, this.createCharity.value).subscribe(function (response) {
             console.log(response);
 
-            _this19.router.navigate(['/admin/charity']);
+            _this23.router.navigate(['/admin/charity']);
           }, function (error) {
             return console.log(error);
           });
@@ -4639,6 +5406,85 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       /*! ./charity-update.component.css */
       "./src/app/pages/admin/charity/charity-update/charity-update.component.css")).default]
     })], CharityUpdateComponent);
+    /***/
+  },
+
+  /***/
+  "./src/app/pages/admin/variable/variable.component.css":
+  /*!*************************************************************!*\
+    !*** ./src/app/pages/admin/variable/variable.component.css ***!
+    \*************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppPagesAdminVariableVariableComponentCss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3BhZ2VzL2FkbWluL3ZhcmlhYmxlL3ZhcmlhYmxlLmNvbXBvbmVudC5jc3MifQ== */";
+    /***/
+  },
+
+  /***/
+  "./src/app/pages/admin/variable/variable.component.ts":
+  /*!************************************************************!*\
+    !*** ./src/app/pages/admin/variable/variable.component.ts ***!
+    \************************************************************/
+
+  /*! exports provided: VariableComponent */
+
+  /***/
+  function srcAppPagesAdminVariableVariableComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "VariableComponent", function () {
+      return VariableComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+
+    var VariableComponent =
+    /*#__PURE__*/
+    function () {
+      function VariableComponent() {
+        _classCallCheck(this, VariableComponent);
+      }
+
+      _createClass(VariableComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {}
+      }]);
+
+      return VariableComponent;
+    }();
+
+    VariableComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-variable',
+      template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+      /*! raw-loader!./variable.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/pages/admin/variable/variable.component.html")).default,
+      styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(
+      /*! ./variable.component.css */
+      "./src/app/pages/admin/variable/variable.component.css")).default]
+    })], VariableComponent);
     /***/
   },
 
@@ -4766,11 +5612,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "getProjects",
         value: function getProjects() {
-          var _this20 = this;
+          var _this24 = this;
 
           this.crudService.getAll(_globals_global_variables__WEBPACK_IMPORTED_MODULE_4__["API_URL"] + _globals_global_variables__WEBPACK_IMPORTED_MODULE_4__["CHARITY"]).subscribe(function (response) {
-            _this20.projects = response.data;
-            console.log(_this20.projects);
+            _this24.projects = response.data;
+            console.log(_this24.projects);
           }, function (error) {
             console.log(error);
           });
@@ -4942,6 +5788,62 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     EnumToArrayPipe = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
       name: 'enumToArray'
     })], EnumToArrayPipe);
+    /***/
+  },
+
+  /***/
+  "./src/app/shared/shared.module.ts":
+  /*!*****************************************!*\
+    !*** ./src/app/shared/shared.module.ts ***!
+    \*****************************************/
+
+  /*! exports provided: SharedModule */
+
+  /***/
+  function srcAppSharedSharedModuleTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "SharedModule", function () {
+      return SharedModule;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common */
+    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
+    /* harmony import */
+
+
+    var _pipes_enum_to_array_pipe__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! ../pipes/enum-to-array.pipe */
+    "./src/app/pipes/enum-to-array.pipe.ts");
+
+    var SharedModule = function SharedModule() {
+      _classCallCheck(this, SharedModule);
+    };
+
+    SharedModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+      declarations: [_pipes_enum_to_array_pipe__WEBPACK_IMPORTED_MODULE_3__["EnumToArrayPipe"]],
+      exports: [_pipes_enum_to_array_pipe__WEBPACK_IMPORTED_MODULE_3__["EnumToArrayPipe"]],
+      imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]]
+    })], SharedModule);
     /***/
   },
 
@@ -5371,8 +6273,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var environment = {
       production: false,
-      // apiUrl: 'http://back.clubisti.net'
-      apiUrl: 'http://localhost:8000'
+      apiUrl: 'https://clubisti.net' // apiUrl: 'http://localhost:8000'
+
     };
     /*
      * For easier debugging in development mode, you can import the following file
