@@ -123,16 +123,19 @@ class UserController extends Controller
             $user->profile()->update(Arr::except($profile_update, ['address']));
             error_log("22222");
         }
+        $user = User::find($id);
         $profile= Profile::find($user->profile->id);
         if ($profile->address==null){
-            Address::create(Arr::except($address_update, ['country']));
+            $address=Address::create(Arr::except($address_update, ['country']));
             error_log("11111");
         }
         else{
             $profile->address()->update(Arr::except($address_update, ['country']));
             error_log("22222");
+            $address= Address::find($profile->address->id);
         }
-        $address= Address::find($profile->address->id);
+        error_log("*****");
+        error_log(json_encode($profile->address));
         error_log(json_encode($address));
         $profile->address()->associate($address);
         $profile->save();
