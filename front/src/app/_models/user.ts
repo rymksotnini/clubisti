@@ -9,7 +9,7 @@ export class User {
   private _badge = null ;
   private _deleted = false;
   private _profile = null ;
-  private _roles = null;
+  private _role = null;
   private _address = null;
 
   // constructor(
@@ -114,12 +114,12 @@ export class User {
     this._profile = value;
   }
 
-  get roles(): any {
-    return this._roles;
+  get role(): any {
+    return this._role;
   }
 
-  set roles(value: any) {
-    this._roles = value;
+  set role(value: any) {
+    this._role = value;
   }
 
   get address(): any {

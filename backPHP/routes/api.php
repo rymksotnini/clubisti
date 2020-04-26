@@ -18,6 +18,7 @@ Route::middleware('api')->get('users', function (Request $request) {
 });
 Route::group(['middleware' => ['jwt.verify']], function() {
     /************************************************ Accounts API ************************************************/
+    // admin, superAdmin
     Route::get('/accounts', 'AccountController@index');
     Route::get('/accounts/{id}', 'AccountController@show');
     Route::post('/accounts', 'AccountController@store');
@@ -25,6 +26,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::delete('/accounts/{id}', 'AccountController@delete');
 
     /************************************************ Addresses API ************************************************/
+    // user, admin, superAdmin
     Route::get('/addresses', 'AddressController@index');
     Route::get('/addresses/{id}', 'AddressController@show');
     Route::post('/addresses', 'AddressController@store');
@@ -32,29 +34,38 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::delete('/addresses/{id}', 'AddressController@delete');
 
     /************************************************ Badges API ************************************************/
+    // user, admin, superAdmin
     Route::get('/badges', 'BadgeController@index');
     Route::get('/badges/{id}', 'BadgeController@show');
+    // admin, superAdmin
     Route::post('/badges', 'BadgeController@store');
     Route::put('/badges/{id}', 'BadgeController@update');
     Route::delete('/badges/{id}', 'BadgeController@delete');
 
     /************************************************ Categories API ************************************************/
-//    Route::get('/categories', 'CategoryController@index');
-//    Route::get('/categories/{id}', 'CategoryController@show');
-//    Route::post('/categories', 'CategoryController@store');
-//    Route::put('/categories/{id}', 'CategoryController@update');
-//    Route::delete('/categories/{id}', 'CategoryController@delete');
+    // user, admin, superAdmin
+    Route::get('/categories', 'CategoryController@index');
+    Route::get('/categories/{id}', 'CategoryController@show');
+    // admin, superAdmin
+    Route::post('/categories', 'CategoryController@store');
+    Route::put('/categories/{id}', 'CategoryController@update');
+    Route::delete('/categories/{id}', 'CategoryController@delete');
 
     /************************************************ Countries API ************************************************/
-    Route::get('/countries', 'CountryController@index');
+    // user, admin, superAdmin
+    Route::get('/countries', ['middleware' => 'auth.role:admin,user', 'uses' => 'CountryController@index']);
+//    Route::get('/countries', 'CountryController@index');
     Route::get('/countries/{id}', 'CountryController@show');
+    // admin, superAdmin
     Route::post('/countries', 'CountryController@store');
     Route::put('/countries/{id}', 'CountryController@update');
     Route::delete('/countries/{id}', 'CountryController@delete');
 
     /************************************************ Organisations API ************************************************/
+    // user, admin, superAdmin
     Route::get('/organisations', 'OrganisationController@index');
     Route::get('/organisations/{id}', 'OrganisationController@show');
+    // admin, superAdmin
     Route::post('/organisations', 'OrganisationController@store');
     Route::put('/organisations/{id}', 'OrganisationController@update');
     Route::delete('/organisations/{id}', 'OrganisationController@delete');
@@ -74,11 +85,14 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::delete('/profiles/{id}', 'ProfileController@delete');
 
     /************************************************ Projectes API ************************************************/
-//    Route::get('/projects', 'ProjectController@index');
-//    Route::get('/projects/{id}', 'ProjectController@show');
-//    Route::post('/projects', 'ProjectController@store');
-//    Route::put('/projects/{id}', 'ProjectController@update');
-//    Route::delete('/projects/{id}', 'ProjectController@delete');
+    Route::get('/projects', 'ProjectController@index');
+    Route::get('/projects/{id}', 'ProjectController@show');
+    Route::post('/projects', 'ProjectController@store');
+    Route::put('/projects/activate/{id}', 'ProjectController@activate');
+    Route::put('/projects/pause/{id}', 'ProjectController@pause');
+    Route::put('/projects/end/{id}', 'ProjectController@end');
+    Route::put('/projects/{id}', 'ProjectController@update');
+    Route::delete('/projects/{id}', 'ProjectController@delete');
 
     /************************************************ Roles API ************************************************/
     Route::get('/roles', 'RoleController@index');
@@ -103,23 +117,6 @@ Route::post('/logout', 'AuthenticationController@logout');
 Route::post('/fblogin', array('middleware' => 'cors','uses'=>'SocialAuthFacebookController@login'));
 
 /************************************************ Authentication FACEBOOK ************************************************/
-
-Route::get('/categories', 'CategoryController@index');
-Route::get('/categories/{id}', 'CategoryController@show');
-Route::post('/categories', 'CategoryController@store');
-Route::put('/categories/{id}', 'CategoryController@update');
-Route::delete('/categories/{id}', 'CategoryController@delete');
-
-Route::get('/projects', 'ProjectController@index');
-Route::get('/projects/{id}', 'ProjectController@show');
-Route::post('/projects', 'ProjectController@store');
-Route::put('/projects/activate/{id}', 'ProjectController@activate');
-Route::put('/projects/pause/{id}', 'ProjectController@pause');
-Route::put('/projects/end/{id}', 'ProjectController@end');
-Route::put('/projects/{id}', 'ProjectController@update');
-Route::delete('/projects/{id}', 'ProjectController@delete');
-
-
 Route::get('/redirect', 'SocialAuthFacebookController@redirect');
 Route::get('/callback', 'SocialAuthFacebookController@callback');
 

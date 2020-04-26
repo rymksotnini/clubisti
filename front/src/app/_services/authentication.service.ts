@@ -54,6 +54,7 @@ export class AuthenticationService {
     this.currentUser.firstName = currentUser.first_name;
     this.currentUser.lastName = currentUser.last_name;
     this.currentUser.email = currentUser.email;
+    this.currentUser.role = currentUser.role;
   }
 
   public getCurrentUser():User{
@@ -65,6 +66,7 @@ export class AuthenticationService {
     console.log('body',  result.body.user);
     this.setCurrentUser(JSON.parse(result.body.user));
     console.log('current user last name ' + this.getCurrentUser().lastName);
+    console.log('current user role ' + this.getCurrentUser().role);
     // @ts-ignore
     localStorage.setItem('token',result.body.token);
   }
