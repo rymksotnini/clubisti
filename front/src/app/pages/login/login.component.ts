@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       console.log(this.user);
       this.authenticationService.login(this.user).subscribe(
         (result)=> {
+          this.authenticationService.savingToken(result);
           this.authenticationService.savingUser(result);
           this.router.navigate(['/dashboard']);
         },

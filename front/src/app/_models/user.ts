@@ -1,14 +1,17 @@
+import {Profile} from "./profile";
+
+
 export class User {
 
   private _id: number;
-  private _firstName: string;
-  private _lastName: string;
+  private _first_name: string;
+  private _last_name: string;
   private _username: string;
   private _email: string;
   private _password: string;
   private _badge = null ;
   private _deleted = false;
-  private _profile = null ;
+  private _profile: Profile  = null;
   private _roles = null;
   private _address = null;
 
@@ -50,20 +53,20 @@ export class User {
     this._id = value;
   }
 
-  get firstName(): string {
-    return this._firstName;
+  get first_name(): string {
+    return this._first_name;
   }
 
-  set firstName(value: string) {
-    this._firstName = value;
+  set first_name(value: string) {
+    this._first_name = value;
   }
 
-  get lastName(): string {
-    return this._lastName;
+  get last_name(): string {
+    return this._last_name;
   }
 
-  set lastName(value: string) {
-    this._lastName = value;
+  set last_name(value: string) {
+    this._last_name = value;
   }
 
   get username(): string {

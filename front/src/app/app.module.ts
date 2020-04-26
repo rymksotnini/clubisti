@@ -36,6 +36,7 @@ import {DashboardComponent} from "./pages/dashboard/dashboard.component";
 import { UsersComponent } from './pages/users/users.component';
 import { CharityUpdateComponent } from './pages/admin/charity/charity-update/charity-update.component';
 import {FbAuthComponent} from './components/fb-auth/fb-auth.component';
+import {SharedModule} from "./shared/shared.module";
 import { BadgesListComponent } from './pages/admin/badge/badges-list/badges-list.component';
 import { BadgesCreateComponent } from './pages/admin/badge/badges-create/badges-create.component';
 import { VariableComponent } from './pages/admin/variable/variable.component';
@@ -55,7 +56,8 @@ import { VariableComponent } from './pages/admin/variable/variable.component';
     RouterModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    AnonymousLayoutModule
+    AnonymousLayoutModule,
+    SharedModule
   ],
   declarations: [
     AppComponent,
@@ -67,7 +69,6 @@ import { VariableComponent } from './pages/admin/variable/variable.component';
     CharityCreateComponent,
     CreateCategoryComponent,
     ListCategoryComponent,
-    EnumToArrayPipe,
     CharityUpdateComponent,
     FbAuthComponent,
     BadgesListComponent,
@@ -76,8 +77,8 @@ import { VariableComponent } from './pages/admin/variable/variable.component';
 
   ],
   providers: [AuthenticationInterceptorProvider,
-    { provide: NZ_I18N, useValue: en_US }
-    ],
+    {provide: NZ_I18N, useValue: en_US}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
