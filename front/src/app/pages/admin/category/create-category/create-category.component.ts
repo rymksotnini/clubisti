@@ -41,7 +41,6 @@ export class CreateCategoryComponent implements OnInit {
       (response) => {
         console.log(response);
         this.categoryService.getCategoriesAPI();
-        this.router.navigate(['/admin/variable']);
       }, (error => console.log(error))
     );
   }

@@ -1,27 +1,20 @@
 import { Injectable } from '@angular/core';
-import {Category} from '../_models/Category';
+import {Badge} from '../_models/Badge';
 import {HttpParams} from '@angular/common/http';
-import {API_URL, CATEGORY} from '../_globals/global-variables';
+import {API_URL, BADGE, CATEGORY} from '../_globals/global-variables';
 import {CrudService} from './crud.service';
 import {ListReq} from '../_models/requests/ListReq';
 
 @Injectable({
   providedIn: 'root'
 })
-export class CategoriesService {
-  private categories: ListReq<Category>;
+export class BadgeService {
+  private badges: ListReq<Badge>;
   private _currentPage: number;
   private _sizePage: number;
   private _total: number;
 
   constructor(private crudService: CrudService) { }
-
-  setCategories(categories){
-    this.categories = categories;
-  }
-  getCategories(){
-    return this.categories;
-  }
 
 
   getTotal(): number {
@@ -31,6 +24,14 @@ export class CategoriesService {
   setTotal(value: number) {
     this._total = value;
   }
+
+  setBadges(badges){
+    this.badges = badges;
+  }
+  getBadges(){
+    return this.badges;
+  }
+
 
   getCurrentPage(): number {
     return this._currentPage;
@@ -48,17 +49,18 @@ export class CategoriesService {
     this._sizePage = value;
   }
 
-  getCategoriesAPI() {
+  getBadgesAPI() {
     let params: any;
     const selectedPage = this._currentPage;
     params = new HttpParams().set('page', selectedPage.toString())
       .set('perPage', this._sizePage.toString());
 
-    this.crudService.getAllWithParams(API_URL + CATEGORY, params).subscribe(
+
+    this.crudService.getAllWithParams(API_URL + BADGE, params).subscribe(
       (response) => {
-        this.categories = response;
-        console.log(this.categories);
-        this._currentPage = this.categories.meta.current_page ;
+        this.badges = response;
+        console.log(this.badges);
+        this._currentPage = this.badges.meta.current_page ;
         this._total = response.meta.total;
       },
       (error =>  {
@@ -67,17 +69,19 @@ export class CategoriesService {
     );
   }
 
-  getCategoriesPagination(page) {
+  getBadgesPagination(page) {
+
     let params: any;
     this._currentPage = page;
     params = new HttpParams().set('page', this._currentPage.toString())
       .set('perPage', this._sizePage.toString());
 
-    this.crudService.getAllWithParams(API_URL + CATEGORY, params).subscribe(
+
+    this.crudService.getAllWithParams(API_URL + BADGE, params).subscribe(
       (response) => {
-        this.categories = response;
-        console.log(this.categories);
-        this._currentPage = this.categories.meta.current_page ;
+        this.badges = response;
+        console.log(this.badges);
+        this._currentPage = this.badges.meta.current_page ;
         this._total = response.meta.total;
       },
       (error =>  {

@@ -9,8 +9,14 @@ use Illuminate\Http\Request;
 
 class BadgeController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+
+        if ($request->page  && $request->perPage){
+            return new BadgeCollection(Badge::paginate($request->perPage));
+        }else if ($request->page ){
+            return new BadgeCollection(Badge::paginate(10));
+        }
         return new BadgeCollection(Badge::get());
     }
 
@@ -44,9 +50,21 @@ class BadgeController extends Controller
     public function delete($id)
     {
         $badge = Badge::findOrFail($id);
+        if($badge) {
+            $badge->deleted = true;
+            $badge->save();
+        }
+
+        return response()->json(null, 204);
+    }
+
+    public function deleteFinal($id)
+    {
+        $badge = Badge::findOrFail($id);
         $badge->delete();
 
         return response()->json(null, 204);
     }
+
 
 }

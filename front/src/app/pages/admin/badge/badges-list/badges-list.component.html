@@ -4,7 +4,9 @@
       <!-- Card stats -->  <div class="container-fluid d-flex align-items-center">
       <div class="row">
         <div class="col-lg-7 col-md-10">
-          <button nz-button nzType="primary" (click)="createGategory()">Add Category</button>
+          <button nz-button nzType="primary" (click)="createCustomButtonModal()">Add badge</button>
+
+
         </div>
       </div>
     </div>
@@ -17,47 +19,52 @@
 
   <!-- Table -->
   <div class="row">
+
     <div class="col-xl-12 order-xl-1">
       <div class="card shadow">
         <div class="card-header border-0">
-          <h3 class="mb-0">Categories</h3>
+          <h3 class="mb-0">Badges</h3>
         </div>
         <div class="table-responsive">
           <table class="table align-items-center table-flush">
             <thead class="thead-light">
             <tr>
               <th scope="col">Name</th>
-              <th scope="col">Type</th>
-              <th scope="col">Created At</th>
-              <th scope="col">Updated At</th>
+              <th scope="col">Lower Bound</th>
+              <th scope="col">Upper Bound</th>
+              <th scope="col">Created at</th>
+              <th scope="col">Updated at</th>
               <th scope="col">Status</th>
               <th scope="col"></th>
             </tr>
             </thead>
-            <tbody *ngIf="this.categoryService.getCategories()">
-            <tr *ngFor="let category of this.categoryService.getCategories().data">
+            <tbody *ngIf="this.badgeService.getBadges()">
+            <tr *ngFor="let badge of this.badgeService.getBadges().data">
               <th scope="row">
                 <div class="media align-items-center">
 
                   <div class="media-body">
-                    <span class="mb-0 text-sm">{{category.name}}</span>
+                    <span class="mb-0 text-sm">{{badge.name}}</span>
                   </div>
                 </div>
               </th>
               <td>
-                {{category.type}}
+                {{badge.lowerBond}}
               </td>
               <td>
-                {{category.createdAt | date}}
+                {{badge.upperBond}}
               </td>
               <td>
-                {{category.updatedAt | date}}
+                {{badge.createdAt | date}}
               </td>
               <td>
-                <span *ngIf="!category.deleted" class="badge badge-dot">
+                {{badge.updatedAt | date}}
+              </td>
+              <td>
+                <span *ngIf="!badge.deleted" class="badge badge-dot">
                   <i class="bg-success"></i> active
                 </span>
-                <span *ngIf="category.deleted" class="badge badge-dot mr-4">
+                <span *ngIf="badge.deleted" class="badge badge-dot mr-4">
                   <i class="bg-danger"></i> deleted
                 </span>
               </td>
@@ -67,11 +74,10 @@
                     <i class="fas fa-ellipsis-v"></i>
                   </a>
                   <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
-                    <a class="dropdown-item" (click)="delete(category)">Delete</a>
+                    <a class="dropdown-item" (click)="delete(badge)">Delete</a>
                   </div>
                 </div>
               </td>
-
 
 
             </tr>
@@ -79,8 +85,8 @@
             </tbody>
           </table>
         </div>
-        <div class="card-footer py-4" *ngIf="this.categoryService.getCategories()">
-          <nz-pagination [nzPageIndex]=this.categoryService.getCurrentPage() [nzTotal]=this.categoryService.getTotal()  [nzPageSize]=this.categoryService.getSizePage() (nzPageIndexChange)="paginate($event)"></nz-pagination>
+        <div class="card-footer py-4" *ngIf="this.badgeService.getBadges()">
+          <nz-pagination [nzPageIndex]=this.badgeService.getCurrentPage() [nzTotal]=this.badgeService.getTotal() [nzPageSize]=this.badgeService.getSizePage() (nzPageIndexChange)="paginate($event)"></nz-pagination>
         </div>
       </div>
     </div>

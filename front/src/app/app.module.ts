@@ -31,11 +31,15 @@ import { EnumToArrayPipe } from './pipes/enum-to-array.pipe';
 
 import {AuthenticationInterceptorProvider} from './_interceptors/authentication.interceptor';
 import {CommonModule} from '@angular/common';
-import {AnonymousLayoutModule} from './layouts/anonymous-layout/anonymous-layout.module';
+import {AnonymousLayoutModule} from "./layouts/anonymous-layout/anonymous-layout.module";
+import {DashboardComponent} from "./pages/dashboard/dashboard.component";
 import { UsersComponent } from './pages/users/users.component';
 import { CharityUpdateComponent } from './pages/admin/charity/charity-update/charity-update.component';
 import {FbAuthComponent} from './components/fb-auth/fb-auth.component';
 import {SharedModule} from "./shared/shared.module";
+import { BadgesListComponent } from './pages/admin/badge/badges-list/badges-list.component';
+import { BadgesCreateComponent } from './pages/admin/badge/badges-create/badges-create.component';
+import { VariableComponent } from './pages/admin/variable/variable.component';
 
 
 
@@ -66,7 +70,10 @@ import {SharedModule} from "./shared/shared.module";
     CreateCategoryComponent,
     ListCategoryComponent,
     CharityUpdateComponent,
-    FbAuthComponent
+    FbAuthComponent,
+    BadgesListComponent,
+    BadgesCreateComponent,
+    VariableComponent
 
   ],
   providers: [AuthenticationInterceptorProvider,
