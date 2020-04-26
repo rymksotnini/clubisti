@@ -36,6 +36,9 @@ import {DashboardComponent} from "./pages/dashboard/dashboard.component";
 import { UsersComponent } from './pages/users/users.component';
 import { CharityUpdateComponent } from './pages/admin/charity/charity-update/charity-update.component';
 import {FbAuthComponent} from './components/fb-auth/fb-auth.component';
+import { BadgesListComponent } from './pages/admin/badge/badges-list/badges-list.component';
+import { BadgesCreateComponent } from './pages/admin/badge/badges-create/badges-create.component';
+import { VariableComponent } from './pages/admin/variable/variable.component';
 
 
 
@@ -66,7 +69,10 @@ import {FbAuthComponent} from './components/fb-auth/fb-auth.component';
     ListCategoryComponent,
     EnumToArrayPipe,
     CharityUpdateComponent,
-    FbAuthComponent
+    FbAuthComponent,
+    BadgesListComponent,
+    BadgesCreateComponent,
+    VariableComponent
 
   ],
   providers: [AuthenticationInterceptorProvider,

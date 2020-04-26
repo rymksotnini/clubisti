@@ -9,3 +9,4 @@ export const TERNINATE = '/end';
 export const REDIRECT = '/redirect';
 export const CALLBACK = '/callback';
 export const USERS = '/users';
+export const BADGE = '/badges';
