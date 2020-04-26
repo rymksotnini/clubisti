@@ -10,6 +10,7 @@ import {Profile} from '../../_models/profile';
 import {Address} from '../../_models/address';
 import {Country} from '../../_models/country';
 import {CrudService} from '../../_services/crud.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-update-profile',
@@ -32,7 +33,8 @@ export class UpdateProfileComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private imageService:ImageService,
               private authenticationService:AuthenticationService,
-              private crudService:CrudService) { }
+              private crudService:CrudService,
+              private router:Router) { }
 
   ngOnInit(): void {
     // fetch profile from back
@@ -111,33 +113,6 @@ export class UpdateProfileComponent implements OnInit {
     if(this.profileToCreate.value.birthday){
       this.profileToCreate.value.birthday = this.pipe.transform(this.profileToCreate.value.birthday, ' yyyy-M-d hh:mm:ss');
     }
-    // this.currentUser.username = this.profileToCreate.value.username;
-    // this.currentUser.email = this.profileToCreate.value.email;
-    // this.currentUser.first_name = this.profileToCreate.value.firstName;
-    // this.currentUser.last_name = this.profileToCreate.value.lastName;
-    // if (this.currentProfile){
-    //   this.currentProfile.birth_date = this.profileToCreate.value.birthday;
-    //   this.currentProfile.phone_number = this.profileToCreate.value.number;
-    //   this.currentProfile.gender = this.profileToCreate.value.gender;
-    //   if(this.currentAddress){
-    //     this.currentAddress.city = this.profileToCreate.value.city;
-    //     this.currentAddress.street = this.profileToCreate.value.street;
-    //     this.currentAddress.street2 = this.profileToCreate.value.street2;
-    //     this.currentAddress.postal_code = this.profileToCreate.value.postalCode;
-    //     if(this.currentCountry){
-    //       this.currentCountry.name = this.profileToCreate.value.country;
-    //     }
-    //   }
-    //   if(this.currentAddress){
-    //     this.currentAddress.country = this.currentCountry;
-    //   }
-    //   if(this.currentProfile){
-    //     this.currentProfile.address = this.currentAddress;
-    //   }
-    //   if(this.currentUser){
-    //     this.currentUser.profile = this.currentProfile;
-    //   }
-    // }
     const jsonUser = {
       user : {
         username: this.profileToCreate.value.username,
@@ -174,6 +149,7 @@ export class UpdateProfileComponent implements OnInit {
         console.log(data);
       });
     }
+    this.router.navigate(['/template/user-profile']);
   }
 
 }
