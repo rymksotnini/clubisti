@@ -64,7 +64,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"layouts-admin-layout-admin-layout-module":"layouts-admin-layout-admin-layout-module","layouts-auth-layout-auth-layout-module":"layouts-auth-layout-auth-layout-module","layouts-template-layout-template-layout-module":"layouts-template-layout-template-layout-module"}[chunkId]||chunkId) +    "-es5.js"
+/******/ 		return __webpack_require__.p + "" + ({"default~layouts-admin-layout-admin-layout-module~layouts-template-layout-template-layout-module":"default~layouts-admin-layout-admin-layout-module~layouts-template-layout-template-layout-module","layouts-admin-layout-admin-layout-module":"layouts-admin-layout-admin-layout-module","layouts-template-layout-template-layout-module":"layouts-template-layout-template-layout-module","layouts-auth-layout-auth-layout-module":"layouts-auth-layout-auth-layout-module"}[chunkId]||chunkId) +    "-es5.js"
 /******/ 	}
 /******/
 /******/ 	// The require function
