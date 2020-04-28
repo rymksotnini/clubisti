@@ -40,6 +40,7 @@ import {SharedModule} from "./shared/shared.module";
 import { BadgesListComponent } from './pages/admin/badge/badges-list/badges-list.component';
 import { BadgesCreateComponent } from './pages/admin/badge/badges-create/badges-create.component';
 import { VariableComponent } from './pages/admin/variable/variable.component';
+import { TestLandingComponent } from './pages/test-landing/test-landing.component';
 
 
 
@@ -73,7 +74,8 @@ import { VariableComponent } from './pages/admin/variable/variable.component';
     FbAuthComponent,
     BadgesListComponent,
     BadgesCreateComponent,
-    VariableComponent
+    VariableComponent,
+    TestLandingComponent
 
   ],
   providers: [AuthenticationInterceptorProvider,

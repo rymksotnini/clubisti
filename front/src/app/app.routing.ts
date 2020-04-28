@@ -9,12 +9,12 @@ import {AnonymousLayoutComponent} from './layouts/anonymous-layout/anonymous-lay
 import {TemplateLayoutComponent} from './layouts/template-layout/template-layout.component';
 import {FbAuthComponent} from './components/fb-auth/fb-auth.component';
 import {SharedModule} from "./shared/shared.module";
+import {TestLandingComponent} from "./pages/test-landing/test-landing.component";
 
 const routes: Routes =[
   {
     path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full',
+    component: TestLandingComponent
   },
   { path: 'fblogin', component: FbAuthComponent },
   {
