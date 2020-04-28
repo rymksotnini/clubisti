@@ -109,6 +109,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::put('/users/{id}', 'UserController@update');
     Route::put('/users/profile/{id}', 'UserController@createOrUpdate');
     Route::delete('/users/{id}', 'UserController@delete');
+    Route::post('/users/makeAdmin/{id}', 'UserController@makeAdmin');
 
     /************************************************ Image API ************************************************/
     Route::post("/image" , "ImageController@downloadImage");
