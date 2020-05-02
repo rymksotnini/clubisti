@@ -13,3 +13,4 @@ export const USERS_PROFILE = '/users/profile'
 // export const IMG_URL = environment.apiUrl + '/assets/img/';
 export const IMG_URL = 'http://127.0.0.1:8887/';
 export const BADGE = '/badges';
+export const INFURA_URL = 'https://ropsten.infura.io/v3/'+environment.infuraApiKey;
