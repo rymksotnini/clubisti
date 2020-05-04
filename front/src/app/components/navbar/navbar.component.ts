@@ -54,7 +54,12 @@ export class NavbarComponent implements OnInit,DoCheck {
         this.image = 'assets/img/theme/team-4-800x800.jpg';
       }
     );
-    console.log('account '+this.moneyTransferService.getAccount());
+    this.moneyTransferService.transferAmount().then(()=>{
+      console.log('success!!');
+    },
+      (errors) => {
+      console.log(errors);
+    });
   }
   getTitle(){
     let titlee = this.location.prepareExternalUrl(this.location.path());

@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import {INFURA_URL} from '../_globals/global-variables';
 const Web3 = require('web3');
-const Accounts = require('web3-eth-accounts');
-const accounts = new Accounts(INFURA_URL);
 declare let require: any;
 declare let window: any;
 const tokenAbi = require('../../../truffle/build/contracts/MoneyTransfer.json');
@@ -11,6 +9,8 @@ const tokenAbi = require('../../../truffle/build/contracts/MoneyTransfer.json');
 })
 export class MoneyTransferService {
   private account: any = null;
+  private account1: any = null;
+  private account2: any = null;
   private web3: any;
   private web3Provider: any;
   private enable: any;
@@ -23,8 +23,7 @@ export class MoneyTransferService {
         this.web3Provider = window.web3.currentProvider;
       });
     } else {
-      Web3.providers.HttpProvider.prototype.sendAsync = Web3.providers.HttpProvider.prototype.send;
-      this.web3Provider = new Web3.providers.HttpProvider(INFURA_URL);
+      this.web3Provider = new Web3.providers.WebsocketProvider(INFURA_URL);
     }
     console.log('transfer.service :: constructor :: window.ethereum');
     this.web3 = new Web3(this.web3Provider);
@@ -38,17 +37,17 @@ export class MoneyTransferService {
     if (this.account == null) {
       this.account = await new Promise((resolve, reject) => {
         console.log('transfer.service :: getAccount :: eth');
-        console.log('eth '+ JSON.stringify(this.web3.currentProvider));
+        console.log( this.web3.currentProvider);
         this.web3.eth.getAccounts((err, retAccount) => {
           console.log('transfer.service :: getAccount: retAccount');
           console.log(retAccount);
           if (retAccount.length > 0) {
             this.account = retAccount[0];
+            console.log(this.account);
+            console.log('current account');
             resolve(this.account);
           } else {
-            this.web3.eth.accounts.wallet.create(1);
-            const currentAccount = this.web3.eth.accounts.create('hello');
-            this.web3.eth.accounts.wallet.add(currentAccount);
+            console.log('accounts');
             console.log(this.web3.eth.getAccounts());
             // alert('transfer.service :: getAccount :: no accounts found.');
             // reject('No accounts found.');
@@ -61,5 +60,56 @@ export class MoneyTransferService {
       }) as Promise<any>;
     }
     return Promise.resolve(this.account);
+  }
+
+  public async getUserBalance(): Promise<any> {
+    const account = await this.getAccount();
+    console.log('transfer.service :: getUserBalance :: account');
+    console.log(account);
+    return new Promise((resolve, reject) => {
+      window.web3.eth.getBalance(account, (err, balance) => {
+        console.log('transfer.service :: getUserBalance :: getBalance');
+        console.log(balance);
+        if (!err) {
+          const retVal = {
+            account,
+            balance
+          };
+          console.log('transfer.service :: getUserBalance :: getBalance :: retVal');
+          console.log(retVal);
+          resolve(retVal);
+        } else {
+          reject({account: 'error', balance: 0});
+        }
+      });
+    }) as Promise<any>;
+  }
+  transferAmount(/*value*/) {
+    this.account1=this.web3.eth.accounts.create();
+    this.account2=this.web3.eth.accounts.create();
+    console.log(this.account1);
+    console.log(this.account2);
+    return new Promise((resolve, reject) => {
+      console.log('transfer.service :: transferEther :: tokenAbi');
+      console.log(tokenAbi);
+      const contract = require('@truffle/contract');
+      const transferContract = contract(tokenAbi);
+      transferContract.setProvider(this.web3Provider);
+      console.log('transfer.service :: transferEther :: transferContract');
+      console.log(transferContract);
+      transferContract.deployed().then((instance) => {
+        console.log('deploying...');
+        return instance.sendCoin(
+          this.account2.address,
+          15);
+      }).then((status) => {
+        if (status) {
+          return resolve({status: true});
+        }
+      }).catch((error) => {
+        console.log(error);
+        return reject('transfer.service error');
+      });
+    });
   }
 }
