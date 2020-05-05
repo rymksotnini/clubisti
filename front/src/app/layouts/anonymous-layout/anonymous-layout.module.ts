@@ -6,16 +6,20 @@ import {HistoryComponent} from '../../pages/history/history.component';
 
 
 import {DashboardComponent} from "../../pages/dashboard/dashboard.component";
+import {TestLandingComponent} from "../../pages/test-landing/test-landing.component";
+import {ComponentsModule} from "../../components/components.module";
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
-    HistoryComponent
+    HistoryComponent,
+    TestLandingComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(AnonymousLayoutRoutes),
+    ComponentsModule,
   ]
 })
 export class AnonymousLayoutModule { }

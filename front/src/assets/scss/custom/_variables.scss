@@ -169,6 +169,18 @@ $shapes-primary-colors: map-merge((
   "span-5-bg":                  #1fa2ff
 ), $shapes-primary-colors);
 
+$shapes-clubisti-colors: () !default;
+$shapes-clubisti-colors: map-merge((
+  "step-1-gradient-bg": #d02727,
+  "step-2-gradient-bg": #d96b77,
+  "step-3-gradient-bg": #c61628,
+  "span-1-bg":                  #53f,
+  "span-2-bg":                  #4553ff,
+  "span-3-bg":                  #4f40ff,
+  "span-4-bg":                  #25ddf5,
+  "span-5-bg":                  #1fa2ff
+), $shapes-clubisti-colors);
+
 $shapes-default-colors: () !default;
 $shapes-default-colors: map-merge((
   "step-1-gradient-bg":         #7795f8,
@@ -397,7 +409,7 @@ $heading-section-text-transform:      uppercase !default;
 
 $display1-size:               3.3rem !default;
 $display2-size:               2.75rem !default;
-$display3-size:               2.1875rem !default;
+$display3-size:               2.0875rem !default;
 $display4-size:               1.6275rem !default;
 
 $display1-weight:             $font-weight-bold !default;

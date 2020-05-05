@@ -8,15 +8,10 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
 import {AnonymousLayoutComponent} from './layouts/anonymous-layout/anonymous-layout.component';
 import {TemplateLayoutComponent} from './layouts/template-layout/template-layout.component';
 import {FbAuthComponent} from './components/fb-auth/fb-auth.component';
-import {SharedModule} from './shared/shared.module';
-import {TestLandingComponent} from './pages/test-landing/test-landing.component';
+import {SharedModule} from "./shared/shared.module";
+import {TestLandingComponent} from "./pages/test-landing/test-landing.component";
 
 const routes: Routes =[
-  {
-    path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full',
-  },
   { path: 'fblogin', component: FbAuthComponent },
   {
     path: 'admin',

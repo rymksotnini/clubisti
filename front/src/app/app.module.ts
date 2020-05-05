@@ -41,6 +41,7 @@ import { BadgesListComponent } from './pages/admin/badge/badges-list/badges-list
 import { BadgesCreateComponent } from './pages/admin/badge/badges-create/badges-create.component';
 import { VariableComponent } from './pages/admin/variable/variable.component';
 import { TestLandingComponent } from './pages/test-landing/test-landing.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -58,7 +59,8 @@ import { TestLandingComponent } from './pages/test-landing/test-landing.componen
     AppRoutingModule,
     ReactiveFormsModule,
     AnonymousLayoutModule,
-    SharedModule
+    SharedModule,
+    FontAwesomeModule,
   ],
   declarations: [
     AppComponent,
@@ -75,7 +77,6 @@ import { TestLandingComponent } from './pages/test-landing/test-landing.componen
     BadgesListComponent,
     BadgesCreateComponent,
     VariableComponent,
-    TestLandingComponent
 
   ],
   providers: [AuthenticationInterceptorProvider,
