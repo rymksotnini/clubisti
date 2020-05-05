@@ -30,9 +30,9 @@ export class NavbarComponent implements OnInit,DoCheck {
 
   ngOnInit() {
     this.listTitles = ROUTES.filter(listTitle => listTitle);
-    console.log(this.authenticationService.isLogged());
     this.connected = this.authenticationService.isLogged();
     this.currentUser = this.authenticationService.getCurrentUser();
+    console.log(this.currentUser);
     this.isLogged = this.authenticationService.isLogged();
     this.imageService.getImage().subscribe(
       (data) =>{

@@ -10,10 +10,17 @@ import {UsersComponent} from '../../pages/users/users.component';
 import {CharityUpdateComponent} from '../../pages/admin/charity/charity-update/charity-update.component';
 import {BadgesListComponent} from '../../pages/admin/badge/badges-list/badges-list.component';
 import {VariableComponent} from '../../pages/admin/variable/variable.component';
+import {AuthGuard} from "../../_guards/auth.guard";
+import {Role} from "../../_models/enum/Role";
 
 export const AdminLayoutRoutes: Routes = [
   { path: 'landing',          component: LandingComponent },
-  { path: 'users',          component: UsersComponent },
+  {
+    path: 'users',
+    component: UsersComponent,
+    canActivate: [AuthGuard],
+    data: {roles: [Role.Admin]}
+  },
   { path: 'variable',          component: VariableComponent },
   { path: 'category',          component: ListCategoryComponent },
   { path: 'badge',          component: BadgesListComponent },

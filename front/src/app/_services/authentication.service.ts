@@ -50,15 +50,13 @@ export class AuthenticationService {
   }
 
   public setCurrentUser(currentUser:User){
-    console.log('ahla');
-    console.log(currentUser.last_name);
     this.currentUser = new User();
     this.currentUser.id =currentUser.id;
     this.currentUser.username =currentUser.username;
     this.currentUser.first_name = currentUser.first_name;
     this.currentUser.last_name = currentUser.last_name;
     this.currentUser.email = currentUser.email;
-    console.log('real last name '+this.currentUser.last_name);
+    this.currentUser.role = currentUser.role;
   }
 
   public getCurrentUser():User{
@@ -67,8 +65,6 @@ export class AuthenticationService {
       console.log('here');
       return this.currentUser;
     }
-    console.log('2');
-    console.log('user: ' + user.last_name);
     this.setCurrentUser(user);
     return this.currentUser;
   }

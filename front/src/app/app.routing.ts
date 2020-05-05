@@ -14,10 +14,6 @@ import {TestLandingComponent} from './pages/test-landing/test-landing.component'
 const routes: Routes =[
   {
     path: '',
-    component: TestLandingComponent
-  },
-  {
-    path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full',
   },
