@@ -12,10 +12,6 @@ import {SharedModule} from "./shared/shared.module";
 import {TestLandingComponent} from "./pages/test-landing/test-landing.component";
 
 const routes: Routes =[
-  {
-    path: '',
-    component: TestLandingComponent
-  },
   { path: 'fblogin', component: FbAuthComponent },
   {
     path: 'admin',

@@ -20,6 +20,10 @@
 	@return map-get($shapes-primary-colors, $key);
 }
 
+@function shapes-clubisti-color($key: "step-1-gradient-bg") {
+  @return map-get($shapes-clubisti-colors, $key);
+}
+
 @function shapes-default-color($key: "step-1-gradient-bg") {
 	@return map-get($shapes-default-colors, $key);
 }

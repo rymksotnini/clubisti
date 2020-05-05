@@ -5,6 +5,18 @@
 
 // Navbar links
 
+.navbar-brand {
+  font-size: $font-size-sm;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: .875rem;
+  letter-spacing: .05px;
+
+  img {
+    height: 30px;
+  }
+}
+
 .navbar-horizontal {
     .navbar-nav {
         .nav-link {
