@@ -14,7 +14,7 @@ export class AuthenticationInterceptor implements HttpInterceptor {
   constructor(private authenticationService: AuthenticationService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    console.log('in interceptor', this.authenticationService.isLogged());
+    // console.log('in interceptor', this.authenticationService.isLogged());
     if(this.authenticationService.isLogged()) {
       const newRequest = request.clone(
         {
@@ -22,7 +22,7 @@ export class AuthenticationInterceptor implements HttpInterceptor {
             'Authorization', 'Bearer '+localStorage.getItem('token'))
         }
       );
-      console.log('request',newRequest);
+      // console.log('request',newRequest);
       return next.handle(newRequest);
 
     }else {

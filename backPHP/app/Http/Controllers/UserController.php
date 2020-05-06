@@ -65,6 +65,17 @@ class UserController extends Controller
         return response()->json(null, 204);
     }
 
+    public function makeAdmin($id) {
+        $user = User::findOrFail($id);
+        if($user) {
+            $user->role = 'ADMIN';
+            $user->save();
+        }
+        return (new UserResource($user))
+            ->response()
+            ->setStatusCode(201);
+    }
+
     public function getUserWithRelationship($id){
         $user = User::findOrFail($id);
         if($user) {

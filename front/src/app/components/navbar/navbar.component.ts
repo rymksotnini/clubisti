@@ -18,6 +18,7 @@ export class NavbarComponent implements OnInit,DoCheck {
   public focus;
   public listTitles: any[];
   public location: Location;
+  isLogged : boolean;
   public image;
   currentUser: User;
   // tslint:disable-next-line:max-line-length
@@ -29,17 +30,12 @@ export class NavbarComponent implements OnInit,DoCheck {
 
   ngOnInit() {
     this.listTitles = ROUTES.filter(listTitle => listTitle);
-    console.log(this.authenticationService.isLogged());
     this.connected = this.authenticationService.isLogged();
     this.currentUser = this.authenticationService.getCurrentUser();
+    console.log(this.currentUser);
+    this.isLogged = this.authenticationService.isLogged();
     this.imageService.getImage().subscribe(
       (data) =>{
-        // console.log(data.toString());
-        // const mediaSource = new MediaSource();
-        // const image = document.getElementById('user_image');
-        // const blob = URL.createObjectURL(data);
-        // image.srcObject = URL.createObjectURL(mediaSource);
-        // console.log(blob);
         console.log('data: '+data);
         console.log(IMG_URL + data);
         this.image = IMG_URL + data; // 'https://clubisti.net/assets/img/'+ data | environment.apiUrl+'/assets/img/'+
@@ -72,11 +68,13 @@ export class NavbarComponent implements OnInit,DoCheck {
   logout(){
     this.authenticationService.logout().subscribe(
       (res) => {
-        // @ts-ignore
         console.log('logging out');
-        // @ts-ignore
         localStorage.removeItem('token');
-        this.router.navigate(['/dashboard']);
+        localStorage.removeItem('currentUser');
+        this.isLogged = false;
+        this.image = null;
+        this.currentUser = null;
+        this.router.navigate(['/']);
       }
     );
   }

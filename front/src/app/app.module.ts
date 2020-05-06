@@ -40,6 +40,9 @@ import {SharedModule} from "./shared/shared.module";
 import { BadgesListComponent } from './pages/admin/badge/badges-list/badges-list.component';
 import { BadgesCreateComponent } from './pages/admin/badge/badges-create/badges-create.component';
 import { VariableComponent } from './pages/admin/variable/variable.component';
+import { TestLandingComponent } from './pages/test-landing/test-landing.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 
 
 
@@ -57,7 +60,8 @@ import { VariableComponent } from './pages/admin/variable/variable.component';
     AppRoutingModule,
     ReactiveFormsModule,
     AnonymousLayoutModule,
-    SharedModule
+    SharedModule,
+    FontAwesomeModule,
   ],
   declarations: [
     AppComponent,
@@ -73,7 +77,7 @@ import { VariableComponent } from './pages/admin/variable/variable.component';
     FbAuthComponent,
     BadgesListComponent,
     BadgesCreateComponent,
-    VariableComponent
+    VariableComponent,
 
   ],
   providers: [AuthenticationInterceptorProvider,

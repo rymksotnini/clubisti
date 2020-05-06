@@ -13,12 +13,15 @@ import {VariableComponent} from '../../pages/admin/variable/variable.component';
 
 export const AdminLayoutRoutes: Routes = [
   { path: 'landing',          component: LandingComponent },
-  { path: 'users',          component: UsersComponent },
+  {
+    path: 'users',
+    component: UsersComponent,
+  },
   { path: 'variable',          component: VariableComponent },
   { path: 'category',          component: ListCategoryComponent },
   { path: 'badge',          component: BadgesListComponent },
   { path: 'charity',          component: CharitiesListComponent },
   { path: 'charity/update/:id',          component: CharityUpdateComponent },
   { path: 'products',          component: ProductsComponent },
-  {path: 'add-charity', component: CharityCreateComponent}
+  {path: 'add-charity', component: CharityCreateComponent},
 ];

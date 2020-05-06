@@ -12,35 +12,8 @@ export class User {
   private _badge = null ;
   private _deleted = false;
   private _profile: Profile  = null;
-  private _roles = null;
+  private _role = null;
   private _address = null;
-
-  // constructor(
-  //   id: number,
-  //   firstName: string,
-  //   lastName: string,
-  //   username: string,
-  //   email: string,
-  //   password: string,
-  //   badge: any,
-  //   deleted: boolean,
-  //   profile: any,
-  //   roles: any,
-  //   address: any
-  // ) {
-  //   this._id = id;
-  //   this._firstName = firstName;
-  //   this._lastName = lastName;
-  //   this._username = username;
-  //   this._email = email;
-  //   this._password = password;
-  //   this._badge = badge;
-  //   this._deleted = deleted;
-  //   this._profile = profile;
-  //   this._roles = roles;
-  //   this._address = address;
-  // }
-
 
   constructor() {
   }
@@ -117,12 +90,13 @@ export class User {
     this._profile = value;
   }
 
-  get roles(): any {
-    return this._roles;
+
+  get role(): any {
+    return this._role;
   }
 
-  set roles(value: any) {
-    this._roles = value;
+  set role(value: any) {
+    this._role = value;
   }
 
   get address(): any {

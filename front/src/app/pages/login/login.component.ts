@@ -3,6 +3,8 @@ import {AuthenticationService} from '../../_services/authentication.service';
 import {NgForm} from '@angular/forms';
 import {User} from '../../_models/user';
 import {Router} from '@angular/router';
+import {environment} from "../../../environments/environment";
+import {REDIRECT} from "../../_globals/global-variables";
 
 @Component({
   selector: 'app-login',
@@ -14,6 +16,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   user :User;
   error = false;
   textError = '';
+  redirectURL = environment.apiUrl + REDIRECT
 
   constructor(private authenticationService: AuthenticationService, private router:Router) {}
 

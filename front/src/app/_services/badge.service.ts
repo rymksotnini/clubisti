@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import {Badge} from '../_models/Badge';
 import {HttpParams} from '@angular/common/http';
 import {API_URL, BADGE, CATEGORY} from '../_globals/global-variables';
 import {CrudService} from './crud.service';
 import {ListReq} from '../_models/requests/ListReq';
+import {Badge} from '../_models/badge';
 
 @Injectable({
   providedIn: 'root'
