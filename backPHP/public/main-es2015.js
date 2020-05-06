@@ -4183,8 +4183,8 @@ __webpack_require__.r(__webpack_exports__);
 
 const environment = {
     production: false,
-    // apiUrl: 'https://clubisti.net'
-    apiUrl: 'http://localhost:8000'
+    apiUrl: 'https://clubisti.net'
+    // apiUrl: 'http://localhost:8000'
 };
 /*
  * For easier debugging in development mode, you can import the following file

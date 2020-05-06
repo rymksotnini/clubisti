@@ -7040,8 +7040,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
     var environment = {
       production: false,
-      // apiUrl: 'https://clubisti.net'
-      apiUrl: 'http://localhost:8000'
+      apiUrl: 'https://clubisti.net' // apiUrl: 'http://localhost:8000'
+
     };
     /*
      * For easier debugging in development mode, you can import the following file
