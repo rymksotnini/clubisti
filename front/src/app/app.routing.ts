@@ -10,12 +10,16 @@ import {TemplateLayoutComponent} from './layouts/template-layout/template-layout
 import {FbAuthComponent} from './components/fb-auth/fb-auth.component';
 import {SharedModule} from "./shared/shared.module";
 import {TestLandingComponent} from "./pages/test-landing/test-landing.component";
+import {AuthGuard} from "./_guards/auth.guard";
+import {Role} from "./_models/enum/Role";
 
 const routes: Routes =[
   { path: 'fblogin', component: FbAuthComponent },
   {
     path: 'admin',
     component: AdminLayoutComponent,
+    canActivate: [AuthGuard],
+    data: {roles: [Role.Admin]},
     children: [
       {
         path: '',

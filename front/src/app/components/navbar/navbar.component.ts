@@ -68,11 +68,13 @@ export class NavbarComponent implements OnInit,DoCheck {
   logout(){
     this.authenticationService.logout().subscribe(
       (res) => {
-        // @ts-ignore
         console.log('logging out');
-        // @ts-ignore
         localStorage.removeItem('token');
-        this.router.navigate(['/dashboard']);
+        localStorage.removeItem('currentUser');
+        this.isLogged = false;
+        this.image = null;
+        this.currentUser = null;
+        this.router.navigate(['/']);
       }
     );
   }

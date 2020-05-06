@@ -60,7 +60,11 @@ export class TopbarLandingComponent implements OnInit, DoCheck {
       (res) => {
         console.log('logging out');
         localStorage.removeItem('token');
-        this.router.navigate(['/dashboard']);
+        localStorage.removeItem('currentUser');
+        this.isLogged = false;
+        this.image = null;
+        this.currentUser = null;
+        this.router.navigate(['/']);
       }
     );
   }

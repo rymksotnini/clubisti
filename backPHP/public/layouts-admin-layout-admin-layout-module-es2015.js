@@ -42088,14 +42088,17 @@ __webpack_require__.r(__webpack_exports__);
 
 const AdminLayoutRoutes = [
     { path: 'landing', component: _pages_landing_landing_component__WEBPACK_IMPORTED_MODULE_1__["LandingComponent"] },
-    { path: 'users', component: _pages_users_users_component__WEBPACK_IMPORTED_MODULE_6__["UsersComponent"] },
+    {
+        path: 'users',
+        component: _pages_users_users_component__WEBPACK_IMPORTED_MODULE_6__["UsersComponent"],
+    },
     { path: 'variable', component: _pages_admin_variable_variable_component__WEBPACK_IMPORTED_MODULE_9__["VariableComponent"] },
     { path: 'category', component: _pages_admin_category_list_category_list_category_component__WEBPACK_IMPORTED_MODULE_5__["ListCategoryComponent"] },
     { path: 'badge', component: _pages_admin_badge_badges_list_badges_list_component__WEBPACK_IMPORTED_MODULE_8__["BadgesListComponent"] },
     { path: 'charity', component: _pages_admin_charity_charities_list_charities_list_component__WEBPACK_IMPORTED_MODULE_3__["CharitiesListComponent"] },
     { path: 'charity/update/:id', component: _pages_admin_charity_charity_update_charity_update_component__WEBPACK_IMPORTED_MODULE_7__["CharityUpdateComponent"] },
     { path: 'products', component: _pages_products_products_component__WEBPACK_IMPORTED_MODULE_2__["ProductsComponent"] },
-    { path: 'add-charity', component: _pages_admin_charity_charity_create_charity_create_component__WEBPACK_IMPORTED_MODULE_4__["CharityCreateComponent"] }
+    { path: 'add-charity', component: _pages_admin_charity_charity_create_charity_create_component__WEBPACK_IMPORTED_MODULE_4__["CharityCreateComponent"] },
 ];
 
 

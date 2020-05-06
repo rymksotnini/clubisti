@@ -39,6 +39,7 @@ export class AuthenticationService {
   }
   public logout(){
     localStorage.removeItem('currentUser');
+    this.currentUser = null;
     return this.http.post<any>(API_URL+'/logout', {observe: 'response' });
   }
   public isLogged(): boolean{

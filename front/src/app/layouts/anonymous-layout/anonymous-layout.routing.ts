@@ -7,5 +7,5 @@ import {TestLandingComponent} from '../../pages/test-landing/test-landing.compon
 export const AnonymousLayoutRoutes: Routes = [
   { path: '',                   component: TestLandingComponent },
   { path: 'history',            component: HistoryComponent },
-  { path: 'dashboard',          component: DashboardComponent }
+  { path: 'dashboard',          component: DashboardComponent },
 ];
