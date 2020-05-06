@@ -18,7 +18,6 @@ export class TopbarLandingComponent implements OnInit, DoCheck {
   public focus;
   public listTitles: any[];
   public location: Location;
-  isLogged : boolean;
   public image;
   currentUser: User;
   constructor(
@@ -37,7 +36,6 @@ export class TopbarLandingComponent implements OnInit, DoCheck {
     console.log(this.authenticationService.isLogged());
     this.connected = this.authenticationService.isLogged();
     this.currentUser = this.authenticationService.getCurrentUser();
-    this.isLogged = this.authenticationService.isLogged();
     this.imageService.getImage().subscribe(
       (data) =>{
         console.log('data: '+data);
@@ -61,7 +59,7 @@ export class TopbarLandingComponent implements OnInit, DoCheck {
         console.log('logging out');
         localStorage.removeItem('token');
         localStorage.removeItem('currentUser');
-        this.isLogged = false;
+        this.connected = false;
         this.image = null;
         this.currentUser = null;
         this.router.navigate(['/']);
