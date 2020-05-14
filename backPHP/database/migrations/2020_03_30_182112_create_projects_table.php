@@ -22,9 +22,12 @@ class CreateProjectsTable extends Migration
             $table->string('name');
             $table->string('short_description');
             $table->double('amount');
+            $table->integer('offer_id')->unsigned()->nullable();
             $table->double('max_donation_amount');
             $table->double('min_donation_amount');
             $table->enum('status', ['CREATED', 'DELETED', 'TERMINATED', 'ACTIVE', 'PAUSED']);
+            $table->foreign('offer_id')->references('id')->on('offers')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }

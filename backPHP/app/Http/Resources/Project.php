@@ -15,19 +15,15 @@ class Project extends JsonResource
     public function toArray($request)
     {
         return [
-            'id'         => $this->id,
-            'name'       => $this->name,
-            'shortDescription'       => $this->short_description,
+            'id'              => $this->id,
             'lastUpdatedSum'       => $this->last_updated_sum,
-            'amount'       => $this->amount,
             'maxDonationAmount'       => $this->max_donation_amount,
             'minDonationAmount'       => $this->min_donation_amount,
             'status'       => $this->status,
             'categories'    => $this->categories,
-            'createdAt' => $this->created_at,
-            'updatedAt' => $this->updated_at,
             'startDate' => $this->start_date,
             'endDate'   => $this->end_date,
+            'offer' => $this->offer,
         ];
     }
 }
