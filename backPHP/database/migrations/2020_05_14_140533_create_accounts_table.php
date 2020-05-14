@@ -16,8 +16,8 @@ class CreateAccountsTable extends Migration
         Schema::create('accounts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('account_number');
-            $table->integer('organisation_id')->unsigned();
-            $table->integer('account_type_id')->unsigned();
+            $table->integer('organisation_id')->unsigned()->nullable();
+            $table->integer('account_type_id')->unsigned()->nullable();
             $table->timestamps();
             $table->foreign('organisation_id')->references('id')->on('organisations')
                 ->onDelete('cascade');
