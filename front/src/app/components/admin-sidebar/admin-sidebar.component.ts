@@ -25,6 +25,12 @@ export class AdminSidebarComponent implements OnInit {
   public menuItems: any[];
   public isCollapsed = true;
 
+  openMap: { [name: string]: boolean } = {
+    sub1: true,
+    sub2: true,
+    sub3: true
+  };
+
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -33,4 +39,25 @@ export class AdminSidebarComponent implements OnInit {
       this.isCollapsed = true;
     });
   }
+
+
+  openHandler(value: string): void {
+    for (const key in this.openMap) {
+      if (key !== value) {
+        this.openMap[key] = false;
+      }
+    }
+  }
+
+  collapse(value: string) {
+
+    for (const key in this.openMap) {
+      if (key !== value) {
+        this.openMap[key] = true;
+      } else {
+        this.openMap[key] = !this.openMap[key];
+      }
+    }
+  }
+
 }

@@ -43,6 +43,7 @@ export class CharityUpdateComponent implements OnInit {
     this.createCharity = this.formBuilder.group({
             name: '',
             shortDescription: '',
+            longDescription: '',
             amount: 0,
             minDonationAmount: 0,
             maxDonationAmount: 0,
@@ -56,12 +57,13 @@ export class CharityUpdateComponent implements OnInit {
 
   initForm(){
     this.createCharity = this.formBuilder.group({
-      name: this.project.name,
-      shortDescription: this.project.shortDescription,
-      amount: this.project.amount,
+      name: this.project.offer.name,
+      shortDescription: this.project.offer.shortDescription,
+      longDescription: this.project.offer.longDescription,
+      amount: this.project.offer.amount,
       minDonationAmount: this.project.minDonationAmount,
       maxDonationAmount: this.project.maxDonationAmount,
-      categoriesIds: this.project.categories[0].id,
+      categoriesIds: this.project.offer.categories[0].id,
       startDate:this.project.startDate,
       endDate: this.project.endDate,
       date: []

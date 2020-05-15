@@ -86,12 +86,30 @@
 
               <hr class="my-4" />
               <!-- Description -->
-              <h6 class="heading-small text-muted mb-4">Description</h6>
+              <h6 class="heading-small text-muted mb-4">Sort Description</h6>
               <div class="pl-lg-4">
                 <div class="form-group">
-                  <label>Description</label>
+                  <label> Short Description </label>
                   <textarea formControlName="shortDescription" rows="4" class="form-control form-control-alternative" placeholder="A few words about your project ..."></textarea>
                 </div>
+              </div>
+
+              <div class="pl-lg-4">
+                <div class="form-group">
+                  <label>Long Description</label>
+                  <textarea formControlName="longDescription" rows="4" class="form-control form-control-alternative" placeholder="A few words about your project ..."></textarea>
+                </div>
+              </div>
+              <hr class="my-4" />
+              <!-- Description -->
+              <h6 class="heading-small text-muted mb-4">Images</h6>
+              <div  class="form-group">
+                <label class="form-control-label" for="input-image">Choose short image</label>
+                <input type="file" id="input-image" class="form-control" name="myFile" (change)="fileEventShortFile($event)">
+              </div>
+              <div  class="form-group">
+                <label class="form-control-label" for="input-image">Choose large image</label>
+                <input type="file" id="input-image-large" class="form-control" name="myFileLarge" (change)="fileEventLargeFile($event)">
               </div>
 
             </form>
@@ -100,6 +118,8 @@
                 <i class="icon-feather-plus"></i>post project</button>
             </div>
           </div>
+
+
         </div>
       </div>
 

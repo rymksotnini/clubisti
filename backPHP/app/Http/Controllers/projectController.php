@@ -40,39 +40,38 @@ class ProjectController extends Controller
 
     }
 
-    public function store(Request $request)
-    {
-        error_log("in store");
-        error_log($request->startDate);
-        $project = new Project;
-        $project->name = $request->name;
-        $project->amount = $request->amount;
-        $project->start_date = $request->startDate;
-        $project->end_date = $request->endDate;
-        $project->short_description =  $request->shortDescription;
-        $project->last_updated_sum = 0;
-        $project->max_donation_amount = $request->maxDonationAmount;
-        $project->status = "PAUSED";
-        $project->min_donation_amount = $request->minDonationAmount;
-
-
-
-        $project->save();
-
-        if ($request->categoriesIds){
-
-            $project->categories()->sync($request->categoriesIds);
-
-        }
-
-        return (new ProjectResource($project))
-            ->response()
-            ->setStatusCode(201);
-    }
+//    public function store(Request $request)
+//    {
+//        error_log("in store");
+//        error_log($request->startDate);
+//        $project = new Project;
+//        $project->name = $request->name;
+//        $project->amount = $request->amount;
+//        $project->start_date = $request->startDate;
+//        $project->end_date = $request->endDate;
+//        $project->short_description =  $request->shortDescription;
+//        $project->last_updated_sum = 0;
+//        $project->max_donation_amount = $request->maxDonationAmount;
+//        $project->status = "PAUSED";
+//        $project->min_donation_amount = $request->minDonationAmount;
+//
+//
+//
+//        $project->save();
+//
+//        if ($request->categoriesIds){
+//
+//            $project->categories()->sync($request->categoriesIds);
+//
+//        }
+//
+//        return (new ProjectResource($project))
+//            ->response()
+//            ->setStatusCode(201);
+//    }
     public function storeWithOffer(Request $request)
     {
-        error_log("in store");
-        error_log($request->startDate);
+        error_log("in storeWithOffer");
         $project = new Project;
         $offer = new Offer;
         $offer->name = $request->name;
@@ -87,15 +86,11 @@ class ProjectController extends Controller
         $offer->long_description = $request->longDescription;
         $offer->save();
         $offer->project()->save($project);
-
-
-
-
-
-
+        error_log("wf");
+        error_log($request->categoriesIds[0]);
         if ($request->categoriesIds){
-
-            $project->categories()->sync($request->categoriesIds);
+            error_log("in if ");
+            $offer->categories()->sync($request->categoriesIds);
 
         }
 
@@ -125,6 +120,48 @@ class ProjectController extends Controller
             ->setStatusCode(201);
     }
 
+    public function downloadImage(Request $request)
+    {
+        if ($request->hasFile('largeImage') &&$request->hasFile('shortImage') )
+        {
+
+            $offer = Offer::find($request->id);
+
+            if (!$offer) {
+                error_log("offer not found");
+                return response()->json(["message" => "Offer not found."]);
+            }
+            $file = $request->file('largeImage');
+            $extension = $file->getClientOriginalExtension();
+            $picture   = date('His').'-'.'PG-LG.'.$extension;
+            if($offer->large_image_path) {
+                error_log("deleting...");
+                error_log(public_path("img\\$offer->large_image_path"));
+                File::delete(public_path("img\\$offer->large_image_path"));
+            }
+            $file->move(public_path('img'), $picture);
+            $offer->large_image_path= $picture;
+
+            //small image
+            $file = $request->file('shortImage');
+            $extension = $file->getClientOriginalExtension();
+            $picture   = date('His').'-'.'PG-ST.'.$extension;
+            if($offer->short_image_path) {
+                error_log("deleting...");
+                File::delete(public_path("img\\$offer->short_image_path"));
+            }
+            $file->move(public_path('img'), $picture);
+            $offer->short_image_path= $picture;
+
+            //save changes
+            $offer->save();
+            return response()->json(["message" => "Image Uploaded Successfully"]);
+        }
+        else
+        {
+            return response()->json(["message" => "Select image first."]);
+        }
+    }
 
     public function activate($id){
 

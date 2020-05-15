@@ -93,6 +93,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::put('/projects/end/{id}', 'ProjectController@end');
     Route::put('/projects/{id}', 'ProjectController@update');
     Route::delete('/projects/{id}', 'ProjectController@delete');
+    Route::post("/projects/image" , "ProjectController@downloadImage");
 
     /************************************************ Roles API ************************************************/
     Route::get('/roles', 'RoleController@index');
