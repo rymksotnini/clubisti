@@ -58,6 +58,7 @@ class TransactionController extends Controller
             return response()->json("current balance not sufficient",406);
         }
         $transaction=Transaction::create($request->input('transaction'));
+        $currentUser->profile->balance = $currentUser->profile->balance + (double)$request->input('transaction.amount'); //test it
         $transaction->account()->associate($currentAccount);
         $transaction->save();
         $transaction->offer()->associate($currentOffer);

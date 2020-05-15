@@ -132,6 +132,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
 Route::get('/transactions', 'TransactionController@index');
 Route::get('/transactions/{id}', 'TransactionController@show');
 Route::post('/transactions', 'TransactionController@store');
+Route::post('/donate', 'TransactionController@create');
 // admin, superAdmin
 Route::put('/transactions/{id}', 'TransactionController@update');
 Route::delete('/transactions/{id}', 'TransactionController@delete');
