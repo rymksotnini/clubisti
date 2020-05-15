@@ -47,7 +47,7 @@
                 <div class="media align-items-center">
 
                   <div class="media-body">
-                    <span class="mb-0 text-sm">{{project.name}}</span>
+                    <span class="mb-0 text-sm">{{project.offer.name}}</span>
                   </div>
                 </div>
               </th>
@@ -58,17 +58,17 @@
               </td>
               <td>
 
-                {{project.createdAt| date}}
+                {{project.offer.created_at| date}}
 
               </td>
 
               <td>
 
-                {{project.updatedAt | date}}
+                {{project.offer.updated_at | date}}
 
               </td>
               <td>
-                {{project.amount}}
+                {{project.offer.amount}}
               </td>
               <td>
                 {{project.minDonationAmount}}

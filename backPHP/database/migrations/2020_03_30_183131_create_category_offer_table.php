@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCategoryProjectTable extends Migration
+    class CreateCategoryOfferTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateCategoryProjectTable extends Migration
      */
     public function up()
     {
-        Schema::create('category_project', function (Blueprint $table) {
+        Schema::create('category_offer', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('category_id')->unsigned();
-            $table->integer('project_id')->unsigned();
+            $table->integer('offer_id')->unsigned();
         });
     }
 
@@ -27,6 +27,6 @@ class CreateCategoryProjectTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('category_project');
+        Schema::dropIfExists('category_offer');
     }
 }

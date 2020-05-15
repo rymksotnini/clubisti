@@ -2,6 +2,7 @@ import {environment} from '../../environments/environment';
 
 export const API_URL = environment.apiUrl + '/api';
 export const CHARITY = '/projects';
+export const IMAGE = '/image';
 export const CATEGORY = '/categories';
 export const PAUSE = '/pause';
 export const ACTIVATE = '/activate';

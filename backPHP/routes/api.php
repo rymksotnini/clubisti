@@ -87,12 +87,13 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     /************************************************ Projects API ************************************************/
     Route::get('/projects', 'ProjectController@index');
     Route::get('/projects/{id}', 'ProjectController@show');
-    Route::post('/projects', 'ProjectController@store');
+    Route::post('/projects', 'ProjectController@storeWithOffer');
     Route::put('/projects/activate/{id}', 'ProjectController@activate');
     Route::put('/projects/pause/{id}', 'ProjectController@pause');
     Route::put('/projects/end/{id}', 'ProjectController@end');
     Route::put('/projects/{id}', 'ProjectController@update');
     Route::delete('/projects/{id}', 'ProjectController@delete');
+    Route::post("/projects/image" , "ProjectController@downloadImage");
 
     /************************************************ Roles API ************************************************/
     Route::get('/roles', 'RoleController@index');
