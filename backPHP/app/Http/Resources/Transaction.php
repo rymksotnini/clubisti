@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class Profile extends JsonResource
+class Transaction extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,16 +16,11 @@ class Profile extends JsonResource
     {
         return [
             'id'         => $this->id,
-            'phoneNumber'       => $this->phone_umber,
-            'gender'    => $this->gender,
-            'birthDate'    => $this->birth_date,
-            'imageUrl'    => $this->image_url,
-            'status'    => $this->status,
-            'balance'    => $this->balance,
-            'totalDonatedAmount'    => $this->totalDonatedAmount,
+            'amount'       => $this->amount,
+            'newTotal'       => $this->newTotal,
             'user'    => $this->user,
-            'badge'    => $this->badge,
-            'address'    => $this->address,
+            'offer'    => $this->offer,
+            'account'    => $this->account,
             'createdAt' => $this->created_at,
             'updatedAt' => $this->updated_at,
         ];

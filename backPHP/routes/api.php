@@ -127,6 +127,14 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     /************************************************ AccountAndAccountType API ************************************************/
     Route::post('/accounts/accountTypes/{id}', 'AccountController@createOrUpdateWithAccountType');
 });
+/************************************************ Transaction API ************************************************/
+// user, admin, superAdmin
+Route::get('/transactions', 'TransactionController@index');
+Route::get('/transactions/{id}', 'TransactionController@show');
+Route::post('/transactions', 'TransactionController@store');
+// admin, superAdmin
+Route::put('/transactions/{id}', 'TransactionController@update');
+Route::delete('/transactions/{id}', 'TransactionController@delete');
 
 /************************************************ Authentication API ************************************************/
 Route::post('/register', 'AuthenticationController@register');
