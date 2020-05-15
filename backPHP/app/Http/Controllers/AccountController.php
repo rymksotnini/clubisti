@@ -66,14 +66,7 @@ class AccountController extends Controller
         $account->organisation()->associate($organization);
         $account->save();
 
-        $accountType = $account->accountType;
-        if ($accountType==null){
-            $accountType=AccountType::create($request->input('accountType'));
-        }
-        else{
-            $account->accountType()->update($request->input('accountType'));
-            $accountType= AccountType::find($account->accountType->id);
-        }
+        $accountType=AccountType::updateOrCreate($request->input('accountType'));
         $account->accountType()->associate($accountType);
         $account->save();
 
