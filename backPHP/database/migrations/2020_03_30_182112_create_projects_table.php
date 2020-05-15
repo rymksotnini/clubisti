@@ -19,9 +19,6 @@ class CreateProjectsTable extends Migration
             $table->date('start_date');
             $table->boolean('deleted')->default(false);
             $table->date('end_date');
-            $table->string('name');
-            $table->string('short_description');
-            $table->double('amount');
             $table->integer('offer_id')->unsigned()->nullable();
             $table->double('max_donation_amount');
             $table->double('min_donation_amount');

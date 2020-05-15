@@ -16,14 +16,16 @@ class Offer extends JsonResource
     {
         return [
             'id'         => $this->id,
+            'deleted'    => $this->deleted,
             'name'       => $this->name,
             'shortDescription'       => $this->short_description,
+            'longDescription' => $this->long_description,
             'categories'    => $this->categories,
             'createdAt' => $this->created_at,
             'updatedAt' => $this->updated_at,
-            'large_image_path' => $this->large_image_path,
-            'short_image_path' => $this->short_image_path,
-            'deleted'    => $this->deleted,
+            'largeImagePath' => $this->large_image_path,
+            'shortImagePath' => $this->short_image_path,
+
         ];
     }
 }

@@ -20,7 +20,6 @@ class Project extends JsonResource
             'maxDonationAmount'       => $this->max_donation_amount,
             'minDonationAmount'       => $this->min_donation_amount,
             'status'       => $this->status,
-            'categories'    => $this->categories,
             'startDate' => $this->start_date,
             'endDate'   => $this->end_date,
             'offer' => $this->offer,

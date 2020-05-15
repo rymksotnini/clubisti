@@ -87,7 +87,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     /************************************************ Projectes API ************************************************/
     Route::get('/projects', 'ProjectController@index');
     Route::get('/projects/{id}', 'ProjectController@show');
-    Route::post('/projects', 'ProjectController@store');
+    Route::post('/projects', 'ProjectController@storeWithOffer');
     Route::put('/projects/activate/{id}', 'ProjectController@activate');
     Route::put('/projects/pause/{id}', 'ProjectController@pause');
     Route::put('/projects/end/{id}', 'ProjectController@end');

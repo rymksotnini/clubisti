@@ -20,7 +20,6 @@ class Category extends JsonResource
             'name'       => $this->name,
             'type'    => $this->type,
             'products'    => $this->products,
-            'projects'    => $this->projects,
             'createdAt' => $this->created_at,
             'updatedAt' => $this->updated_at,
             'deleted'    => $this->deleted,

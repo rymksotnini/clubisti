@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\Offer;
 use App\Http\Resources\ProductCollection;
 use App\Http\Resources\Product as ProductResource;
 use App\Models\Category;
@@ -32,6 +33,8 @@ class ProductController extends Controller
             ->response()
             ->setStatusCode(201);
     }
+
+
 
     public function update(Request $request, $id) {
         $request->validate([
