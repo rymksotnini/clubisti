@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Category;
 use App\Models\Project;
+use App\Transaction;
 use Illuminate\Database\Eloquent\Model;
 
 class Offer extends Model
@@ -19,4 +20,11 @@ class Offer extends Model
         return $this->hasOne(Project::class);
     }
 
+    /**
+     * Get the transactions for the offer.
+     */
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
 }

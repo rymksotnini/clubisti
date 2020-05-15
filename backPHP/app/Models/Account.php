@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\AccountType;
+use App\Transaction;
 use Illuminate\Database\Eloquent\Model;
 
 class Account extends Model
@@ -24,5 +25,13 @@ class Account extends Model
     public function accountType()
     {
         return $this->belongsTo(AccountType::class);
+    }
+
+    /**
+     * Get the transactions for the account.
+     */
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
     }
 }

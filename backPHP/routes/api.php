@@ -116,16 +116,17 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post("/image" , "ImageController@downloadImage");
     Route::get('/image/{id}', 'ImageController@uploadImage');
 
-});
-/************************************************ Account API ************************************************/
-// user, admin, superAdmin
-Route::get('/accountTypes', 'AccountTypeController@index');
-Route::get('/accountTypes/{id}', 'AccountTypeController@show');
+    /************************************************ AccountType API ************************************************/
 // admin, superAdmin
-Route::post('/accountTypes', 'AccountTypeController@store');
-Route::post('/accounts/accountTypes/{id}', 'AccountController@createOrUpdateWithAccountType');
-Route::put('/accountTypes/{id}', 'AccountTypeController@update');
-Route::delete('/accountTypes/{id}', 'AccountTypeController@delete');
+    Route::get('/accountTypes', 'AccountTypeController@index');
+    Route::get('/accountTypes/{id}', 'AccountTypeController@show');
+    Route::post('/accountTypes', 'AccountTypeController@store');
+    Route::put('/accountTypes/{id}', 'AccountTypeController@update');
+    Route::delete('/accountTypes/{id}', 'AccountTypeController@delete');
+
+    /************************************************ AccountAndAccountType API ************************************************/
+    Route::post('/accounts/accountTypes/{id}', 'AccountController@createOrUpdateWithAccountType');
+});
 
 /************************************************ Authentication API ************************************************/
 Route::post('/register', 'AuthenticationController@register');

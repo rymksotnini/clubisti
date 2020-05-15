@@ -17,13 +17,15 @@ class CreateTransactionsTable extends Migration
             $table->increments('id');
             $table->double('amount');
             $table->double('newTotal');
-            $table->integer('user_id')->unsigned()->nullable();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->integer('account_id')->unsigned()->nullable();
             $table->integer('offer_id')->unsigned()->nullable();
             $table->timestamps();
-            $table->foreign('organisation_id')->references('id')->on('organisations')
+            $table->foreign('user_id')->references('id')->on('users')
                 ->onDelete('cascade');
-            $table->foreign('account_type_id')->references('id')->on('account_types')
+            $table->foreign('account_id')->references('id')->on('accounts')
+                ->onDelete('cascade');
+            $table->foreign('offer_id')->references('id')->on('offers')
                 ->onDelete('cascade');
         });
     }
