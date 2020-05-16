@@ -103,21 +103,59 @@
               <hr class="my-4" />
               <!-- Description -->
               <h6 class="heading-small text-muted mb-4">Images</h6>
-              <div  class="form-group">
-                <label class="form-control-label" for="input-image">Choose short image</label>
-                <input type="file" id="input-image" class="form-control" name="myFile" (change)="fileEventShortFile($event)">
-              </div>
-              <div  class="form-group">
-                <label class="form-control-label" for="input-image">Choose large image</label>
-                <input type="file" id="input-image-large" class="form-control" name="myFileLarge" (change)="fileEventLargeFile($event)">
+
+
+                <div class="row">
+                <div class="col-sm">
+                  <nz-upload
+                    class="avatar-uploader"
+                    nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                    nzName="avatar1"
+                    nzListType="picture-card"
+                    [nzShowUploadList]="false"
+                    [nzBeforeUpload]="beforeUpload"
+                    (nzChange)="handleChange($event)">
+
+
+                    <ng-container *ngIf="!avatarUrl">
+                      <i class="upload-icon" nz-icon [nzType]="loading ? 'loading' : 'plus'"></i>
+                      <div class="ant-upload-text">Upload small image</div>
+                    </ng-container>
+                    <img *ngIf="avatarUrl" [src]="avatarUrl" style="width: 100%" />
+                  </nz-upload>
+                </div>
+                <div class="col-sm">
+                  <nz-upload
+                    class="avatar-uploader"
+                    nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                    nzName="avatar"
+                    nzListType="picture-card"
+                    [nzShowUploadList]="false"
+                    [nzBeforeUpload]="beforeUpload1"
+                    (nzChange)="handleChange1($event)"
+                  >
+                    <ng-container *ngIf="!avatarUrl1">
+                      <i class="upload-icon" nz-icon [nzType]="loading1 ? 'loading' : 'plus'"></i>
+                      <div class="ant-upload-text">Upload large image</div>
+                    </ng-container>
+                    <img *ngIf="avatarUrl" [src]="avatarUrl1" style="width: 100%" />
+                  </nz-upload>
+                </div>
+
               </div>
 
+
+              <hr class="my-4" />
+
+              <div class="col-xl-12">
+                <button type="submit" (click)="onSubmit()" class="btn btn-info" form="create-book-form">
+                  <i class="icon-feather-plus"></i>post project</button>
+              </div>
+
+
             </form>
-            <div class="col-xl-12">
-              <button type="submit" (click)="onSubmit()" class="btn btn-info" form="create-book-form">
-                <i class="icon-feather-plus"></i>post project</button>
-            </div>
-          </div>
+
+
 
 
         </div>

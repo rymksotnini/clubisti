@@ -26,6 +26,9 @@ export class ImageService {
   getImage(){
     return this.http.get(API_URL+'/image/'+this.authenticationService.getCurrentUser().id);
   }
+  getImageWithApi(api,id){
+    return this.http.get(API_URL+api+'/'+id);
+  }
 
   postImageProject(largeImage,shortImage, id,api){
     const myFormData = new FormData();

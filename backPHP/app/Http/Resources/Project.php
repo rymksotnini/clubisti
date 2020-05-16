@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Resources;
-
+use App\Http\Resources\Offer as OfferResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class Project extends JsonResource
@@ -22,7 +22,7 @@ class Project extends JsonResource
             'status'       => $this->status,
             'startDate' => $this->start_date,
             'endDate'   => $this->end_date,
-            'offer' => $this->offer,
+            'offer' => OfferResource::make($this->offer),
         ];
     }
 }
