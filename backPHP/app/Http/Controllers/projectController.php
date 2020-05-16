@@ -40,35 +40,31 @@ class ProjectController extends Controller
 
     }
 
-//    public function store(Request $request)
-//    {
-//        error_log("in store");
-//        error_log($request->startDate);
-//        $project = new Project;
-//        $project->name = $request->name;
-//        $project->amount = $request->amount;
-//        $project->start_date = $request->startDate;
-//        $project->end_date = $request->endDate;
-//        $project->short_description =  $request->shortDescription;
-//        $project->last_updated_sum = 0;
-//        $project->max_donation_amount = $request->maxDonationAmount;
-//        $project->status = "PAUSED";
-//        $project->min_donation_amount = $request->minDonationAmount;
-//
-//
-//
-//        $project->save();
-//
-//        if ($request->categoriesIds){
-//
-//            $project->categories()->sync($request->categoriesIds);
-//
-//        }
-//
-//        return (new ProjectResource($project))
-//            ->response()
-//            ->setStatusCode(201);
-//    }
+    public function getProjectWithRelationship($id){
+        $project = Project::findOrFail($id);
+        if($project) {
+            $offer = $project->offer;
+            error_log($offer->id);
+            $sql = $offer->categories()->toSql();
+            $categoties = $offer->categories()->get();
+            error_log($sql);
+            error_log($categoties);
+            if(!$offer){
+                return response()->json([
+                    'project' => json_encode($project)
+                ]);
+            }
+
+
+            return response()->json([
+                'project' => json_encode($project),
+                'offer'   => json_encode($offer),
+            ]);
+        }
+        return response()->json("non existent project",406);
+    }
+
+
     public function storeWithOffer(Request $request)
     {
         error_log("in storeWithOffer");
@@ -161,6 +157,20 @@ class ProjectController extends Controller
         {
             return response()->json(["message" => "Select image first."]);
         }
+    }
+
+    public function uploadImage(Request $request,$id){
+        error_log($id);
+        $offer= Offer::find($id);
+        if($offer==null){
+            return response()->json("non existent offer",406);
+        }
+        error_log($offer);
+        error_log($offer->large_image_path);
+        if($offer->large_image_path==null){
+            return response()->json("non existent image",406);
+        }
+        return response()->json($offer->large_image_path);
     }
 
     public function activate($id){

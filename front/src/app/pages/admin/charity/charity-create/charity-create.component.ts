@@ -6,6 +6,9 @@ import {Router} from '@angular/router';
 import {API_URL, CATEGORY, CHARITY, IMAGE} from '../../../../_globals/global-variables';
 import { DatePipe } from '@angular/common';
 import {ImageService} from "../../../../_services/image.service";
+import {NzMessageService} from "ng-zorro-antd";
+import { UploadFile } from 'ng-zorro-antd/upload';
+import { Observable, Observer } from 'rxjs';
 @Component({
   selector: 'app-charity-create',
   templateUrl: './charity-create.component.html',
@@ -24,10 +27,15 @@ export class CharityCreateComponent implements OnInit {
   file: any;
   shortImage: any;
   largeImage: any;
+  loading = false;
+  loading1 = false;
+  avatarUrl?: string;
+  avatarUrl1?: string;
   constructor(private formBuilder: FormBuilder,
               private crudService: CrudService,
               private router: Router,
               private imageService:ImageService,
+              private msg: NzMessageService
               ) { }
 
   ngOnInit() {
@@ -89,5 +97,94 @@ export class CharityCreateComponent implements OnInit {
     // post image
 
     this.router.navigate(['/admin/charity']);
+  }
+
+  beforeUpload = (file: UploadFile, _fileList: UploadFile[]) => {
+    return new Observable((observer: Observer<boolean>) => {
+      const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
+      if (!isJpgOrPng) {
+        this.msg.error('You can only upload JPG file!');
+        observer.complete();
+        return;
+      }
+      const isLt2M = file.size! / 1024 / 1024 < 2;
+      if (!isLt2M) {
+        this.msg.error('Image must smaller than 2MB!');
+        observer.complete();
+        return;
+      }
+      this.shortImage = file;
+      observer.next(isJpgOrPng && isLt2M);
+      observer.complete();
+    });
+  };
+
+  private getBase64(img: File, callback: (img: string) => void): void {
+    const reader = new FileReader();
+    reader.addEventListener('load', () => callback(reader.result!.toString()));
+    reader.readAsDataURL(img);
+  }
+
+  handleChange(info: { file: UploadFile }): void {
+    switch (info.file.status) {
+      case 'uploading':
+        this.loading = true;
+        break;
+      case 'done':
+        // Get this url from response in real world.
+        this.getBase64(info.file!.originFileObj!, (img: string) => {
+          this.loading = false;
+          this.avatarUrl = img;
+        });
+        break;
+      case 'error':
+        this.msg.error('Network error');
+        this.loading = false;
+        break;
+    }
+  }
+
+
+  //large image handler
+
+  beforeUpload1 = (file: UploadFile, _fileList: UploadFile[]) => {
+    return new Observable((observer: Observer<boolean>) => {
+      const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
+      if (!isJpgOrPng) {
+        this.msg.error('You can only upload JPG file!');
+        observer.complete();
+        return;
+      }
+      const isLt2M = file.size! / 1024 / 1024 < 2;
+      if (!isLt2M) {
+        this.msg.error('Image must smaller than 2MB!');
+        observer.complete();
+        return;
+      }
+      this.largeImage = file;
+      observer.next(isJpgOrPng && isLt2M);
+      observer.complete();
+    });
+  };
+
+
+
+  handleChange1(info: { file: UploadFile }): void {
+    switch (info.file.status) {
+      case 'uploading':
+        this.loading1 = true;
+        break;
+      case 'done':
+        // Get this url from response in real world.
+        this.getBase64(info.file!.originFileObj!, (img: string) => {
+          this.loading1 = false;
+          this.avatarUrl1 = img;
+        });
+        break;
+      case 'error':
+        this.msg.error('Network error');
+        this.loading1 = false;
+        break;
+    }
   }
 }
