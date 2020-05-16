@@ -19,7 +19,7 @@ class CreateAddressesTable extends Migration
             $table->string('street')->nullable();
             $table->string('street2')->nullable();
             $table->string('postal_code')->nullable();
-            $table->integer('country_id')->unsigned()->nullable();;
+            $table->integer('country_id')->unsigned()->nullable();
             $table->timestamps();
             $table->foreign('country_id')->references('id')->on('countries')
                 ->onDelete('cascade');

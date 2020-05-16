@@ -91,7 +91,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::put('/offers/{id}', 'OfferController@update');
     Route::delete('/offers/{id}', 'OfferController@delete');
 
-    /************************************************ Projectes API ************************************************/
+    /************************************************ Projects API ************************************************/
     Route::get('/projects', 'ProjectController@index');
     Route::get('/projects/{id}', 'ProjectController@getProjectWithRelationship');
     Route::post('/projects', 'ProjectController@storeWithOffer');
@@ -123,8 +123,26 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post("/image" , "ImageController@downloadImage");
     Route::get('/image/{id}', 'ImageController@uploadImage');
 
-});
+    /************************************************ AccountType API ************************************************/
+// admin, superAdmin
+    Route::get('/accountTypes', 'AccountTypeController@index');
+    Route::get('/accountTypes/{id}', 'AccountTypeController@show');
+    Route::post('/accountTypes', 'AccountTypeController@store');
+    Route::put('/accountTypes/{id}', 'AccountTypeController@update');
+    Route::delete('/accountTypes/{id}', 'AccountTypeController@delete');
 
+    /************************************************ AccountAndAccountType API ************************************************/
+    Route::post('/accounts/accountTypes/{id}', 'AccountController@createOrUpdateWithAccountType');
+});
+/************************************************ Transaction API ************************************************/
+// user, admin, superAdmin
+Route::get('/transactions', 'TransactionController@index');
+Route::get('/transactions/{id}', 'TransactionController@show');
+Route::post('/transactions', 'TransactionController@store');
+Route::post('/donate', 'TransactionController@create');
+// admin, superAdmin
+Route::put('/transactions/{id}', 'TransactionController@update');
+Route::delete('/transactions/{id}', 'TransactionController@delete');
 
 /************************************************ Authentication API ************************************************/
 Route::post('/register', 'AuthenticationController@register');

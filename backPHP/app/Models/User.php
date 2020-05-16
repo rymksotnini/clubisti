@@ -47,6 +47,14 @@ class User extends Authenticatable implements JWTSubject
     }
 
     /**
+     * Get the transactions for the user.
+     */
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
+
+    /**
      * jwt authentication related
      */
     public function getJWTIdentifier()

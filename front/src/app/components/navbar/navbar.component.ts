@@ -6,7 +6,8 @@ import {AuthenticationService} from '../../_services/authentication.service';
 import {User} from '../../_models/user';
 import {ImageService} from '../../_services/image.service';
 import {DomSanitizer} from '@angular/platform-browser';
-import {IMG_URL} from "../../_globals/global-variables";
+import {IMG_URL} from '../../_globals/global-variables';
+import {MoneyTransferService} from '../../_services/money-transfer.service';
 
 @Component({
   selector: 'app-navbar',
@@ -22,8 +23,12 @@ export class NavbarComponent implements OnInit,DoCheck {
   public image;
   currentUser: User;
   // tslint:disable-next-line:max-line-length
-  constructor(private imageService:ImageService,location: Location,  private element: ElementRef, private router: Router,
-              private  authenticationService:AuthenticationService, private sanitizer : DomSanitizer) {
+  constructor(private imageService:ImageService,location: Location,
+              private element: ElementRef,
+              private router: Router,
+              private  authenticationService:AuthenticationService,
+              private sanitizer : DomSanitizer,
+              private moneyTransferService: MoneyTransferService) {
     this.location = location;
   }
 
@@ -44,7 +49,13 @@ export class NavbarComponent implements OnInit,DoCheck {
         console.log(error);
         this.image = 'assets/img/theme/team-4-800x800.jpg';
       }
-    )
+    );
+    this.moneyTransferService.transferAmount().then(()=>{
+      console.log('success!!');
+    },
+      (errors) => {
+      console.log(errors);
+    });
   }
   getTitle(){
     let titlee = this.location.prepareExternalUrl(this.location.path());
