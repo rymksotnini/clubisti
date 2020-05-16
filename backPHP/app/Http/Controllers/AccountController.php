@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\AccountType;
 use App\Http\Resources\AccountCollection;
 use App\Http\Resources\Account as AccountResource;
 use App\Models\Account;
+use App\Models\Organisation;
 use Illuminate\Http\Request;
 
 class AccountController extends Controller
@@ -47,6 +49,30 @@ class AccountController extends Controller
         $account->delete();
 
         return response()->json(null, 204);
+    }
+
+    public function createOrUpdateWithAccountType(Request $request, $id){
+        $organization = Organisation::find($id);
+        if(!$organization){
+            return response()->json("non existent organization",406);
+        }
+        if($request->input('organization')){
+            $organization=$organization->update($request->input('organization'));
+        }
+
+        $account = Account::updateOrCreate(
+            ['account_number' => $request->input('account.account_number')]
+        );
+        $account->organisation()->associate($organization);
+        $account->save();
+
+        $accountType=AccountType::updateOrCreate($request->input('accountType'));
+        $account->accountType()->associate($accountType);
+        $account->save();
+
+        return (new AccountResource($account))
+            ->response()
+            ->setStatusCode(201);
     }
 
 }

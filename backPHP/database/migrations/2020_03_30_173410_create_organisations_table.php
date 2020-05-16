@@ -17,7 +17,7 @@ class CreateOrganisationsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('description');
-            $table->integer('address_id')->unsigned();
+            $table->integer('address_id')->unsigned()->nullable();
             $table->timestamps();
             $table->boolean('deleted')->default(false);
             $table->foreign('address_id')->references('id')->on('addresses')

@@ -84,16 +84,24 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::put('/profiles/{id}', 'ProfileController@update');
     Route::delete('/profiles/{id}', 'ProfileController@delete');
 
-    /************************************************ Projectes API ************************************************/
+    /************************************************ offer API ************************************************/
+    Route::get('/offers', 'OfferController@index');
+    Route::get('/offers/{id}', 'OfferController@show');
+    Route::post('/offers', 'OfferController@store');
+    Route::put('/offers/{id}', 'OfferController@update');
+    Route::delete('/offers/{id}', 'OfferController@delete');
+
+    /************************************************ Projects API ************************************************/
     Route::get('/projects', 'ProjectController@index');
-    Route::get('/projects/{id}', 'ProjectController@show');
-    Route::post('/projects', 'ProjectController@store');
+    Route::get('/projects/{id}', 'ProjectController@getProjectWithRelationship');
+    Route::post('/projects', 'ProjectController@storeWithOffer');
     Route::put('/projects/activate/{id}', 'ProjectController@activate');
     Route::put('/projects/pause/{id}', 'ProjectController@pause');
     Route::put('/projects/end/{id}', 'ProjectController@end');
     Route::put('/projects/{id}', 'ProjectController@update');
     Route::delete('/projects/{id}', 'ProjectController@delete');
-
+    Route::post("/projects/image" , "ProjectController@downloadImage");
+    Route::post("/projects/image/{id}" , "ProjectController@uploadImage");
     /************************************************ Roles API ************************************************/
     Route::get('/roles', 'RoleController@index');
     Route::get('/roles/{id}', 'RoleController@show');
@@ -115,8 +123,26 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post("/image" , "ImageController@downloadImage");
     Route::get('/image/{id}', 'ImageController@uploadImage');
 
-});
+    /************************************************ AccountType API ************************************************/
+// admin, superAdmin
+    Route::get('/accountTypes', 'AccountTypeController@index');
+    Route::get('/accountTypes/{id}', 'AccountTypeController@show');
+    Route::post('/accountTypes', 'AccountTypeController@store');
+    Route::put('/accountTypes/{id}', 'AccountTypeController@update');
+    Route::delete('/accountTypes/{id}', 'AccountTypeController@delete');
 
+    /************************************************ AccountAndAccountType API ************************************************/
+    Route::post('/accounts/accountTypes/{id}', 'AccountController@createOrUpdateWithAccountType');
+});
+/************************************************ Transaction API ************************************************/
+// user, admin, superAdmin
+Route::get('/transactions', 'TransactionController@index');
+Route::get('/transactions/{id}', 'TransactionController@show');
+Route::post('/transactions', 'TransactionController@store');
+Route::post('/donate', 'TransactionController@create');
+// admin, superAdmin
+Route::put('/transactions/{id}', 'TransactionController@update');
+Route::delete('/transactions/{id}', 'TransactionController@delete');
 
 /************************************************ Authentication API ************************************************/
 Route::post('/register', 'AuthenticationController@register');

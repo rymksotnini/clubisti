@@ -21,6 +21,8 @@ class Profile extends JsonResource
             'birthDate'    => $this->birth_date,
             'imageUrl'    => $this->image_url,
             'status'    => $this->status,
+            'balance'    => $this->balance,
+            'totalDonatedAmount'    => $this->totalDonatedAmount,
             'user'    => $this->user,
             'badge'    => $this->badge,
             'address'    => $this->address,
