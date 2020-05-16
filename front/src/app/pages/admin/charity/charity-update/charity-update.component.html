@@ -28,7 +28,7 @@
             </div>
           </div>
           <div class="card-body">
-            <form id=create-book-form [formGroup]="createCharity" >
+            <form id=create-book-form [formGroup]="createCharity">
               <h6 class="heading-small text-muted mb-4">Information</h6>
               <div class="pl-lg-4">
                 <div class="row">
@@ -108,6 +108,58 @@
                   <textarea formControlName="shortDescription" rows="4" class="form-control form-control-alternative" placeholder="A few words about your project ..."></textarea>
                 </div>
               </div>
+
+              <div class="pl-lg-4">
+                <div class="form-group">
+                  <label>Long Description</label>
+                  <textarea formControlName="longDescription" rows="4" class="form-control form-control-alternative" placeholder="A few words about your project ..."></textarea>
+                </div>
+              </div>
+              <hr class="my-4" />
+              <!-- Description -->
+              <h6 class="heading-small text-muted mb-4">Images</h6>
+
+
+              <div class="row">
+                <div class="col-sm">
+                  <nz-upload
+                    class="avatar-uploader"
+                    nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                    nzName="avatar1"
+                    nzListType="picture-card"
+                    [nzShowUploadList]="false"
+                    [nzBeforeUpload]="beforeUpload"
+                    (nzChange)="handleChange($event)">
+
+
+                    <ng-container *ngIf="!avatarUrl">
+                      <i class="upload-icon" nz-icon [nzType]="loading ? 'loading' : 'plus'"></i>
+                      <div class="ant-upload-text">Upload small image</div>
+                    </ng-container>
+                    <img *ngIf="avatarUrl" [src]="avatarUrl" style="width: 100%" />
+                  </nz-upload>
+                </div>
+                <div class="col-sm">
+                  <nz-upload
+                    class="avatar-uploader"
+                    nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+                    nzName="avatar"
+                    nzListType="picture-card"
+                    [nzShowUploadList]="false"
+                    [nzBeforeUpload]="beforeUpload1"
+                    (nzChange)="handleChange1($event)"
+                  >
+                    <ng-container *ngIf="!avatarUrl1">
+                      <i class="upload-icon" nz-icon [nzType]="loading1 ? 'loading' : 'plus'"></i>
+                      <div class="ant-upload-text">Upload large image</div>
+                    </ng-container>
+                    <img *ngIf="avatarUrl" [src]="avatarUrl1" style="width: 100%" />
+                  </nz-upload>
+                </div>
+
+              </div>
+
+
 
             </form>
             <div class="col-xl-12">

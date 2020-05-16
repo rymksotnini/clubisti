@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Offer;
 use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
@@ -19,8 +20,8 @@ class Category extends Model
     /**
      * Get the projects for the category.
      */
-    public function projects()
+    public function offers()
     {
-        return $this->belongsToMany(Project::class);
+        return $this->belongsToMany(Offer::class);
     }
 }

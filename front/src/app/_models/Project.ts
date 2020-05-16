@@ -1,5 +1,6 @@
 import {ProjectStatus} from './enum/ProjectStatus';
 import {Category} from './Category';
+import {Offer} from "./offer";
 
 
 
@@ -7,13 +8,7 @@ export class Project{
 
   private _id: number;
 
-  private _name: string;
-
   private _last_updated_sum: number;
-
-  private _shortDescription: string;
-
-  private _amount: number;
 
   private _created_at: Date;
 
@@ -25,21 +20,19 @@ export class Project{
 
   private _status: string;
 
-  private _categories: Category[];
+  public offer: Offer;
+
 
   private _min_donation_amount: number;
 
   private _max_donation_amount: number;
 
 
-  constructor(id: number=null, name: string=null,shortDescription: string=null, last_updated_sum: number=null,  amount: number=null,
+  constructor(id: number=null,  last_updated_sum: number=null,
               max_donation_amount: number=null, min_donation_amount:number=null, status:  string=null, start_date: Date=null,
               end_date=null  ) {
     this._id = id;
-    this._name = name;
     this._last_updated_sum = last_updated_sum;
-    this._shortDescription = shortDescription;
-    this._amount = amount;
     this._status = status;
     this._min_donation_amount = min_donation_amount;
     this._max_donation_amount = max_donation_amount;
@@ -80,13 +73,7 @@ export class Project{
     this._id = value;
   }
 
-  get name(): string {
-    return this._name;
-  }
 
-  set name(value: string) {
-    this._name = value;
-  }
 
   get lastUpdatedSum(): number {
     return this._last_updated_sum;
@@ -96,21 +83,7 @@ export class Project{
     this._last_updated_sum = value;
   }
 
-  get shortDescription(): string {
-    return this._shortDescription;
-  }
 
-  set shortDescription(value: string) {
-    this._shortDescription = value;
-  }
-
-  get amount(): number {
-    return this._amount;
-  }
-
-  set amount(value: number) {
-    this._amount = value;
-  }
 
   get createdAt(): Date {
     return this._created_at;
@@ -126,17 +99,6 @@ export class Project{
 
   set updatedAt(value: Date) {
     this._updated_at = value;
-  }
-
-
-
-
-  get categories(): Category[] {
-    return this._categories;
-  }
-
-  set categories(value: Category[]) {
-    this._categories = value;
   }
 
   get minDonationAmount(): number {

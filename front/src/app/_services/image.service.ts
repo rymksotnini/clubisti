@@ -26,4 +26,21 @@ export class ImageService {
   getImage(){
     return this.http.get(API_URL+'/image/'+this.authenticationService.getCurrentUser().id);
   }
+  getImageWithApi(api,id){
+    return this.http.get(API_URL+api+'/'+id);
+  }
+
+  postImageProject(largeImage,shortImage, id,api){
+    const myFormData = new FormData();
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'multipart/form-data');
+    headers.append('Accept', 'application/json');
+    myFormData.append('id', id);
+    myFormData.append('largeImage', largeImage);
+    myFormData.append('shortImage', shortImage);
+    console.log('formData: '+ myFormData.getAll('id'));
+    return this.http.post(API_URL+api, myFormData, {
+      headers
+    });
+  }
 }

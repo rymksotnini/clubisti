@@ -3,10 +3,12 @@ import {Category} from '../../../../_models/Category';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {CrudService} from '../../../../_services/crud.service';
 import {Router} from '@angular/router';
-import {API_URL, CATEGORY, CHARITY} from '../../../../_globals/global-variables';
-import {CreateCategoryComponent} from "../../category/create-category/create-category.component";
-import {HttpParams} from '@angular/common/http';
+import {API_URL, CATEGORY, CHARITY, IMAGE} from '../../../../_globals/global-variables';
 import { DatePipe } from '@angular/common';
+import {ImageService} from "../../../../_services/image.service";
+import {NzMessageService} from "ng-zorro-antd";
+import { UploadFile } from 'ng-zorro-antd/upload';
+import { Observable, Observer } from 'rxjs';
 @Component({
   selector: 'app-charity-create',
   templateUrl: './charity-create.component.html',
@@ -21,11 +23,19 @@ export class CharityCreateComponent implements OnInit {
   categories : Category[];
   createCharity: FormGroup;
   pipe = new DatePipe('en-US');
+  idOffer:any;
   file: any;
+  shortImage: any;
+  largeImage: any;
+  loading = false;
+  loading1 = false;
+  avatarUrl?: string;
+  avatarUrl1?: string;
   constructor(private formBuilder: FormBuilder,
               private crudService: CrudService,
               private router: Router,
-              // private modalService: NzModalService
+              private imageService:ImageService,
+              private msg: NzMessageService
               ) { }
 
   ngOnInit() {
@@ -33,6 +43,7 @@ export class CharityCreateComponent implements OnInit {
     this.createCharity = this.formBuilder.group({
       name: '',
       shortDescription: '',
+      longDescription: '',
       amount: 0,
       minDonationAmount: 0,
       maxDonationAmount: 0,
@@ -55,22 +66,125 @@ export class CharityCreateComponent implements OnInit {
     );
   }
 
+  fileEventShortFile(e){
+    this.shortImage = e.target.files[0];
 
+  }
+  fileEventLargeFile(e){
+    this.largeImage = e.target.files[0];
+
+  }
 
   onSubmit() {
-
+    console.log(this.createCharity.value.categoriesIds);
    this.createCharity.value.categoriesIds = [this.createCharity.value.categoriesIds];
+    console.log(this.createCharity.value.categoriesIds);
     this.createCharity.value.startDate = this.pipe.transform(this.createCharity.value.date[0], ' yyyy-M-d hh:mm:ss');
     this.createCharity.value.endDate =  this.pipe.transform( this.createCharity.value.date[1], 'yyyy-M-d hh:mm:ss');
 
 
     console.log(this.createCharity.value);
     this.crudService.post(API_URL + CHARITY, this.createCharity.value).subscribe(
-      (response) => {
-        console.log(response);
-        this.router.navigate(['/admin/charity']);
+      (data) => {
+        this.idOffer = data.data.offer.id;
+        if(this.shortImage && this.largeImage){
+          this.imageService.postImageProject(this.largeImage,this.shortImage,this.idOffer,CHARITY + IMAGE).subscribe(data => {
+            console.log(data);
+          });
+        }
       }, (error => console.log(error))
     );
+    // post image
+
+    this.router.navigate(['/admin/charity']);
   }
 
+  beforeUpload = (file: UploadFile, _fileList: UploadFile[]) => {
+    return new Observable((observer: Observer<boolean>) => {
+      const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
+      if (!isJpgOrPng) {
+        this.msg.error('You can only upload JPG file!');
+        observer.complete();
+        return;
+      }
+      const isLt2M = file.size! / 1024 / 1024 < 2;
+      if (!isLt2M) {
+        this.msg.error('Image must smaller than 2MB!');
+        observer.complete();
+        return;
+      }
+      this.shortImage = file;
+      observer.next(isJpgOrPng && isLt2M);
+      observer.complete();
+    });
+  };
+
+  private getBase64(img: File, callback: (img: string) => void): void {
+    const reader = new FileReader();
+    reader.addEventListener('load', () => callback(reader.result!.toString()));
+    reader.readAsDataURL(img);
+  }
+
+  handleChange(info: { file: UploadFile }): void {
+    switch (info.file.status) {
+      case 'uploading':
+        this.loading = true;
+        break;
+      case 'done':
+        // Get this url from response in real world.
+        this.getBase64(info.file!.originFileObj!, (img: string) => {
+          this.loading = false;
+          this.avatarUrl = img;
+        });
+        break;
+      case 'error':
+        this.msg.error('Network error');
+        this.loading = false;
+        break;
+    }
+  }
+
+
+  //large image handler
+
+  beforeUpload1 = (file: UploadFile, _fileList: UploadFile[]) => {
+    return new Observable((observer: Observer<boolean>) => {
+      const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
+      if (!isJpgOrPng) {
+        this.msg.error('You can only upload JPG file!');
+        observer.complete();
+        return;
+      }
+      const isLt2M = file.size! / 1024 / 1024 < 2;
+      if (!isLt2M) {
+        this.msg.error('Image must smaller than 2MB!');
+        observer.complete();
+        return;
+      }
+      this.largeImage = file;
+      observer.next(isJpgOrPng && isLt2M);
+      observer.complete();
+    });
+  };
+
+
+
+  handleChange1(info: { file: UploadFile }): void {
+    switch (info.file.status) {
+      case 'uploading':
+        this.loading1 = true;
+        break;
+      case 'done':
+        // Get this url from response in real world.
+        this.getBase64(info.file!.originFileObj!, (img: string) => {
+          this.loading1 = false;
+          this.avatarUrl1 = img;
+        });
+        break;
+      case 'error':
+        this.msg.error('Network error');
+        this.loading1 = false;
+        break;
+    }
+  }
 }
