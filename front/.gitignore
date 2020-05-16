@@ -17,6 +17,8 @@ speed-measure-plugin*.json
 # IDEs and editors
 /.idea
 .project
+truffle/.env
+/truffle/.secret
 .classpath
 .c9/
 *.launch
