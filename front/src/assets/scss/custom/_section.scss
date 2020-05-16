@@ -144,6 +144,11 @@
     }
   }
 
+  .shape-clubisti2 {
+    background: linear-gradient(150deg, shapes-default-color("step-1-gradient-bg") 15%, shapes-default-color("step-2-gradient-bg") 70%, shapes-default-color("step-3-gradient-bg") 94%);
+
+  }
+
   .shape-default {
     background: linear-gradient(150deg, shapes-default-color("step-1-gradient-bg") 15%, shapes-default-color("step-2-gradient-bg") 70%, shapes-default-color("step-3-gradient-bg") 94%);
 
@@ -344,11 +349,21 @@
 
     // shape color variations
     &.shape-primary {
-      //background: linear-gradient(150deg, shapes-primary-color("step-1-gradient-bg") 15%, shapes-primary-color("step-2-gradient-bg") 70%, shapes-primary-color("step-3-gradient-bg") 94%);
+      background: linear-gradient(150deg, shapes-primary-color("step-1-gradient-bg") 15%, shapes-primary-color("step-2-gradient-bg") 70%, shapes-primary-color("step-3-gradient-bg") 94%);
     }
 
     &.shape-default {
       background: linear-gradient(150deg, shapes-default-color("step-1-gradient-bg") 15%, shapes-default-color("step-2-gradient-bg") 70%, shapes-default-color("step-3-gradient-bg") 94%);
+    }
+
+    &.shape-clubisti2 {
+      background: url("src/assets/img/backgrounds/projects.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &.shape-clubisti3 {
+      background: linear-gradient(150deg, #d1c2c2 15%, #aaaaaa 70%, #d1c2c2 94%);
     }
 
     &.shape-light {
