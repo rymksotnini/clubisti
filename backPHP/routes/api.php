@@ -84,6 +84,13 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::put('/profiles/{id}', 'ProfileController@update');
     Route::delete('/profiles/{id}', 'ProfileController@delete');
 
+    /************************************************ offer API ************************************************/
+    Route::get('/offers', 'OfferController@index');
+    Route::get('/offers/{id}', 'OfferController@show');
+    Route::post('/offers', 'OfferController@store');
+    Route::put('/offers/{id}', 'OfferController@update');
+    Route::delete('/offers/{id}', 'OfferController@delete');
+
     /************************************************ Projectes API ************************************************/
     Route::get('/projects', 'ProjectController@index');
     Route::get('/projects/{id}', 'ProjectController@getProjectWithRelationship');
