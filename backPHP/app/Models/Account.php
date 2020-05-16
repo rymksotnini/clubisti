@@ -2,8 +2,7 @@
 
 namespace App\Models;
 
-use App\AccountType;
-use App\Transaction;
+
 use Illuminate\Database\Eloquent\Model;
 
 class Account extends Model

@@ -2,9 +2,7 @@
 
 namespace App\Models;
 
-use App\Models\Category;
-use App\Models\Project;
-use App\Transaction;
+
 use Illuminate\Database\Eloquent\Model;
 
 class Offer extends Model

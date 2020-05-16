@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\TransactionCollection;
 use App\Models\Offer;
 use App\Models\User;
-use App\Transaction;
+use App\Models\Transaction;
 use App\Http\Resources\Transaction as TransactionResource;
 use Illuminate\Http\Request;
 
@@ -57,8 +57,19 @@ class TransactionController extends Controller
         if($currentUser->profile->balance < (double)$request->input('transaction.amount')){
             return response()->json("current balance not sufficient",406);
         }
-        $transaction=Transaction::create($request->input('transaction'));
-        $currentUser->profile->balance = $currentUser->profile->balance + (double)$request->input('transaction.amount'); //test it
+        error_log(Transaction::all());
+        if(Transaction::all()->isEmpty()){
+            error_log("hello1");
+            $transaction=Transaction::create(["amount"=>$request->input('transaction.amount'),"newTotal"=>$request->input('transaction.amount')]);
+        }
+        else{
+            error_log("hello2");
+            $lastTransaction = Transaction::latest()->first();
+            $transaction=Transaction::create(["amount"=>$request->input('transaction.amount'),"newTotal"=>(double)$request->input('transaction.amount')+$lastTransaction->newTotal]);
+        }
+        $currentProfile=$currentUser->profile;
+        $currentProfile->balance = $currentProfile->balance - (double)$request->input('transaction.amount'); //test it
+        $currentProfile->save();
         $transaction->account()->associate($currentAccount);
         $transaction->save();
         $transaction->offer()->associate($currentOffer);
