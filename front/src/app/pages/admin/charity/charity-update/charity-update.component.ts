@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Category} from '../../../../_models/Category';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {DatePipe} from '@angular/common';
 import {CrudService} from '../../../../_services/crud.service';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -29,11 +29,12 @@ export class CharityUpdateComponent implements OnInit {
   pipe = new DatePipe('en-US');
   file: any;
   test: any;
-  project: any;
+  project: Project;
   loading = false;
   avatarUrl="assets/img/theme/team-4-800x800.jpg";
   loading1 = false;
   avatarUrl1: string;
+  submitted = false;
 
   constructor(private formBuilder: FormBuilder,
               private crudService: CrudService,
@@ -67,16 +68,15 @@ export class CharityUpdateComponent implements OnInit {
 
   initForm(){
     this.createCharity = this.formBuilder.group({
-      name: this.project.offer.name,
-      shortDescription: this.project.offer.short_description,
-      longDescription: this.project.offer.long_description,
-      amount: this.project.offer.amount,
-      minDonationAmount: this.project.min_donation_amount,
-      maxDonationAmount: this.project.max_donation_amount,
-      //categoriesIds: this.project.offer.categories[0].id,
-      categoriesIds: 1,
-      startDate:this.project.start_date,
-      endDate: this.project.end_date,
+      name: [this.project.offer.name, Validators.required],
+      shortDescription: [this.project.offer.shortDescription,Validators.required],
+      longDescription: [this.project.offer.longDescription,Validators.required],
+      amount: [this.project.offer.amount,Validators.required],
+      minDonationAmount: [this.project.minDonationAmount,Validators.required],
+      maxDonationAmount: [this.project.maxDonationAmount,Validators.required],
+      categoriesIds: [this.project.offer.categories[0].id],
+      startDate: [this.project.startDate,Validators.required],
+      endDate: [this.project.endDate,Validators.required],
       date: []
     });
   }
@@ -87,8 +87,7 @@ export class CharityUpdateComponent implements OnInit {
      console.log(this.id);
     });
     const data = await this.http.get<any>(API_URL + CHARITY + '/' + this.id).toPromise();
-    this.project = JSON.parse(data.project);
-   this.project.offer = JSON.parse(data.offer);
+    this.project = data.data;
     console.log(this.project);
     this.initForm();
 
@@ -108,9 +107,13 @@ export class CharityUpdateComponent implements OnInit {
     );
   }
 
-
+  get f() { return this.createCharity.controls; }
 
   onSubmit() {
+    this.submitted = true;
+    if (this.createCharity.invalid) {
+      return;
+    }
 
     this.createCharity.value.categoriesIds = [this.createCharity.value.categoriesIds];
      if (this.createCharity.value.date) {

@@ -21,6 +21,7 @@ class Offer extends JsonResource
             'shortDescription'       => $this->short_description,
             'longDescription' => $this->long_description,
             'categories'    => $this->categories,
+            'amount' => $this->amount,
             'createdAt' => $this->created_at,
             'updatedAt' => $this->updated_at,
             'largeImagePath' => $this->large_image_path,

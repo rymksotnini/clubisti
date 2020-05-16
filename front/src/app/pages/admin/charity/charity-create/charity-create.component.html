@@ -40,6 +40,9 @@
                     <div class="form-group">
                       <label class="form-control-label" for="input-Name">Name</label>
                       <input  formControlName= "name" type="text" id="input-Name" class="form-control form-control-alternative" placeholder="Name" >
+                      <div *ngIf="submitted && f.name.errors" class="invalid-feedback d-block">
+                        field is required
+                      </div>
                     </div>
                   </div>
                   <div class="col-lg-6">
@@ -59,6 +62,9 @@
                     <div class="form-group">
                       <label class="form-control-label" for="input-amount">Amount</label>
                       <input  formControlName= "amount" type="text" id="input-amount" class="form-control form-control-alternative" placeholder="Amount" >
+                      <div *ngIf="submitted && f.amount.errors" class="invalid-feedback d-block">
+                        field is required
+                      </div>
                     </div>
                   </div>
 
@@ -68,12 +74,18 @@
                     <div class="form-group">
                       <label class="form-control-label" for="input-min">Min donation amount</label>
                       <input  formControlName= "minDonationAmount" type="text" id="input-min" class="form-control form-control-alternative" placeholder="Amount" >
+                      <div *ngIf="submitted && f.minDonationAmount.errors" class="invalid-feedback d-block">
+                        field is required
+                      </div>
                     </div>
                   </div>
                   <div class="col-lg-4">
                     <div class="form-group">
                       <label class="form-control-label" for="input-max">Max donation amount</label>
                       <input  formControlName= "maxDonationAmount" type="text" id="input-max" class="form-control form-control-alternative" placeholder="Amount" >
+                      <div *ngIf="submitted && f.maxDonationAmount.errors" class="invalid-feedback d-block">
+                        field is required
+                      </div>
                     </div>
                   </div>
 
@@ -81,6 +93,9 @@
                 <div class="row">
 
                   <nz-range-picker   formControlName= "date" [nzFormat]="dateFormat"></nz-range-picker>
+                  <div *ngIf="submitted && f.date.errors" class="invalid-feedback d-block">
+                    field is required
+                  </div>
                 </div>
               </div>
 
@@ -91,6 +106,9 @@
                 <div class="form-group">
                   <label> Short Description </label>
                   <textarea formControlName="shortDescription" rows="4" class="form-control form-control-alternative" placeholder="A few words about your project ..."></textarea>
+                  <div *ngIf="submitted && f.shortDescription.errors" class="invalid-feedback d-block">
+                    field is required
+                  </div>
                 </div>
               </div>
 
@@ -98,6 +116,9 @@
                 <div class="form-group">
                   <label>Long Description</label>
                   <textarea formControlName="longDescription" rows="4" class="form-control form-control-alternative" placeholder="A few words about your project ..."></textarea>
+                  <div *ngIf="submitted && f.longDescription.errors" class="invalid-feedback d-block">
+                    field is required
+                  </div>
                 </div>
               </div>
               <hr class="my-4" />

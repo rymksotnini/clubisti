@@ -34,7 +34,7 @@ export class CharitiesListComponent implements OnInit {
   ngOnInit() {
     this.uri = this.route.snapshot.routeConfig.path;
     this.currentPage = 1;
-    this.sizePage = 3;
+    this.sizePage = 10;
     this.getProjects();
   }
 
