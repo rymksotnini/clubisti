@@ -1,49 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {API_URL, BADGE, CATEGORY} from '../../../../_globals/global-variables';
-import {HttpParams} from '@angular/common/http';
+import {API_URL, BADGE} from '../../../../_globals/global-variables';
 import {CrudService} from '../../../../_services/crud.service';
-import {ActivatedRoute, Router} from '@angular/router';
-import {BadgeService} from '../../../../_services/badge.service';
 import {Badge} from '../../../../_models/badge';
-import {ListReq} from '../../../../_models/requests/ListReq';
-import {BadgesCreateComponent} from '../badges-create/badges-create.component';
-import {NzModalRef, NzModalService} from 'ng-zorro-antd';
-import { ViewChild} from '@angular/core';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
+import { NzModalService} from 'ng-zorro-antd';
 
 
-export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
-
-export interface UsersData {
-  name: string;
-  id: number;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
-
-const ELEMENT_DATA2: UsersData[] = [
-  {id: 1560608769632, name: 'Artificial Intelligence'},
-  {id: 1560608796014, name: 'Machine Learning'},
-  {id: 1560608787815, name: 'Robotic Process Automation'},
-  {id: 1560608805101, name: 'Blockchain'}
-];
 
 @Component({
   selector: 'app-badges-list',
@@ -51,68 +12,71 @@ const ELEMENT_DATA2: UsersData[] = [
   styleUrls: ['./badges-list.component.css']
 })
 export class BadgesListComponent implements OnInit {
+  isVisible = false;
+  private badges: Badge[];
+  first = 0;
+  cols: any[];
 
-
-
-  sort1 = 'createdAt,desc';
-  data:any;
   constructor(private crudService: CrudService,
-              private router: Router,
-              private route: ActivatedRoute,
-              private badgeService: BadgeService,
-              private modal: NzModalService
-  ) {
-  }
-
-  displayedColumns: string[] = ['Name', 'Lower Bound', 'Upper Bound', 'Created at','Updated at','Status',''];
-  dataSource:any;
-
-
-  @ViewChild(MatSort, {static: true}) sort: MatSort;
-
-
+              private modal: NzModalService) { }
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource(this.data);
-    this.dataSource.sort = this.sort;
-    this.badgeService.setCurrentPage(1);
-    this.badgeService.setSizePage(10);
-    this.badgeService.getBadgesAPI();
-    this.data = this.badgeService.getBadges().data;
-
-
-
+    this.getBadge();
+    this.cols = [
+      { field: 'id', header: 'Id' },
+      { field: 'name', header: 'Name' },
+      { field: 'lowerBond', header: 'Lower bond' },
+      { field: 'upperBond', header: 'Upper bond' },
+      { field: 'createdAt', header: 'Created dAt' },
+      { field: 'updatedAt', header: 'Updated At' },
+      { field: 'deleted', header: 'Status' },
+      { field: 'action', header: '' }
+    ];
+    console.log(this.badges)
   }
 
 
-
-  paginate(page: number) {
-
-    this.badgeService.getBadgesPagination(page);
-  }
-
-  createCustomButtonModal(): void {
-    const modal: NzModalRef = this.modal.create({
-      nzTitle: 'Add badge',
-      nzContent: BadgesCreateComponent,
-      nzFooter: [
-        {
-          label: 'Close',
-          shape: 'round',
-          onClick: () => modal.destroy()
-        }
-      ]
-    });
-  }
-
-  delete(badge) {
-    this.crudService.delete(API_URL + BADGE, badge.id).subscribe(res => {
-      console.log(res);
-      badge.deleted = 1;
+  delete(category) {
+    this.crudService.delete(API_URL + BADGE, category.id).subscribe(res => {
+      category.deleted = 1;
     }, error => {
       console.log(error)
     });
   }
 
+  getBadge() {
+
+    this.crudService.getAll(API_URL + BADGE)
+      .toPromise()
+      .then(res => res.data as Badge[])
+      .then(data => { return data; })
+      .then(data => this.badges = data);
+
+
+
+  }
+
+  reset() {
+    this.first = 0;
+  }
+
+  showModal(): void {
+    this.isVisible = true;
+  }
+
+  handleOk(): void {
+    console.log('Button ok clicked!');
+    this.isVisible = false;
+  }
+
+  handleCancel(): void {
+    console.log('Button cancel clicked!');
+    this.isVisible = false;
+  }
+
+
+  onAdd($event: any) {
+    this.badges.push($event.data);
+  }
 
 }

@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {API_URL, BADGE} from '../../../../_globals/global-variables';
-import {BadgeService} from '../../../../_services/badge.service';
+
 import {Router} from '@angular/router';
 import {CrudService} from '../../../../_services/crud.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
@@ -12,13 +12,12 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 })
 export class BadgesCreateComponent implements OnInit {
 
-
+  @Output() added = new EventEmitter<boolean>();
   createBadge: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
               private crudService: CrudService,
-              private router: Router,
-              private badgeService: BadgeService,
+              private router: Router
   ) { }
 
   ngOnInit() {
@@ -37,7 +36,7 @@ export class BadgesCreateComponent implements OnInit {
     this.crudService.post(API_URL + BADGE, this.createBadge.value).subscribe(
       (response) => {
         console.log(response);
-        this.badgeService.getBadgesAPI();
+        this.added.emit(response);
         this.router.navigate(['/admin/badge']);
       }, (error => console.log(error))
     );

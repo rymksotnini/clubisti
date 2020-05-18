@@ -32,7 +32,6 @@ import { VariableComponent } from './pages/admin/variable/variable.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MatFormFieldModule, MatIconModule, MatPaginatorModule, MatSortModule, MatTableModule} from '@angular/material';
 import {MatInputModule} from '@angular/material';
-import { TestNgPrimeComponent } from './pages/test-ng-prime/test-ng-prime.component';
 import {TableModule} from 'primeng/table';
 import {PaginatorModule} from 'primeng/paginator';
 import {MultiSelectModule} from 'primeng/multiselect';
@@ -78,7 +77,6 @@ import {MultiSelectModule} from 'primeng/multiselect';
     BadgesListComponent,
     BadgesCreateComponent,
     VariableComponent,
-    TestNgPrimeComponent,
 
   ],
   providers: [AuthenticationInterceptorProvider,
