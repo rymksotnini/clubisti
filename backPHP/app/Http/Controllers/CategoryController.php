@@ -17,7 +17,7 @@ class CategoryController extends Controller
         if ($request->page  && $request->perPage){
             return new CategoryCollection(Category::paginate($request->perPage));
         }else if ($request->page ){
-            return new CategoryCollection(Category::paginate(3));
+            return new CategoryCollection(Category::paginate(15));
         }
         return new CategoryCollection(Category::get());
     }

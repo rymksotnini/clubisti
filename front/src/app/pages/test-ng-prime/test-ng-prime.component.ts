@@ -21,7 +21,7 @@ export class TestNgPrimeComponent implements OnInit {
   private categories: Category[];
   private _currentPage: number;
   private _sizePage = 10;
-  first: number = 0;
+  first = 0;
   cols: any[];
   brands: SelectItem[];
 
@@ -33,7 +33,7 @@ export class TestNgPrimeComponent implements OnInit {
   constructor(private crudService: CrudService) { }
 
   ngOnInit() {
-    this.getCategoriesPagination(1);
+    this.getCategories();
     this.cols = [
       { field: 'id', header: 'Id' },
       { field: 'name', header: 'Name' },
@@ -47,31 +47,14 @@ export class TestNgPrimeComponent implements OnInit {
 
   delete(category) {
     this.crudService.delete(API_URL + CATEGORY, category.id).subscribe(res => {
-      console.log(res)
       category.deleted = 1;
     }, error => {
       console.log(error)
     });
   }
 
-  getCategoriesPagination(page) {
-    let params: any;
-    this._currentPage = page;
-    params = new HttpParams().set('page', this._currentPage.toString())
-      .set('perPage', this._sizePage.toString());
-
-    // this.crudService.getAllWithParams(API_URL + CATEGORY, params).subscribe(
-    //   (response) => {
-    //     this.categories = response.data;
-    //     console.log(this.categories);
-    //
-    //   },
-    //   (error =>  {
-    //     console.log(error);
-    //   })
-    // );
-
-    this.crudService.getAllWithParams(API_URL + CATEGORY, params)
+  getCategories() {
+    this.crudService.getAll(API_URL + CATEGORY)
   .toPromise()
       .then(res => res.data as Category[])
       .then(data => { return data; })

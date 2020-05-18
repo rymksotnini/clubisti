@@ -29,8 +29,7 @@
 
 
 
-          <p-table #tt class="table align-items-center table-flush" [columns]="cols" [value]="categories" [paginator]="true" [rows]="10">
-
+          <p-table #tt class="table align-items-center table-flush"    [rowHover]="true" [columns]="cols" [value]="categories" [paginator]="true" [rows]="10"   [rowsPerPageOptions]="[1,5,10]">
             <ng-template pTemplate="caption">
 
               <input type="text" pInputText size="50" placeholder="Search" (input)="tt.filterGlobal($event.target.value, 'contains')" style="width:auto">
