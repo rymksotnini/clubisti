@@ -4,6 +4,7 @@ import {HttpClient, HttpHeaders, HttpParams, HttpResponse} from '@angular/common
 import {User} from '../_models/user';
 import {Router} from '@angular/router';
 import {API_URL, CALLBACK, REDIRECT} from '../_globals/global-variables';
+import {LocalService} from './local.service';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,8 @@ export class AuthenticationService {
   private redirectUri = 'http://localhost:4200/';
   private currentUser = new User();
 
-  constructor(private http: HttpClient, private router:Router ) { }
+  constructor(private http: HttpClient, private router:Router,
+              private localService: LocalService) { }
 
   public signup(user :User):Observable<HttpResponse<any>>{
     // tslint:disable-next-line:max-line-length
@@ -38,12 +40,11 @@ export class AuthenticationService {
     return this.http.get(API_URL+'users'+this.getCurrentUser().id);
   }
   public logout(){
-    localStorage.removeItem('currentUser');
     this.currentUser = null;
     return this.http.post<any>(API_URL+'/logout', {observe: 'response' });
   }
   public isLogged(): boolean{
-    return localStorage.getItem('token')!=null;
+    return this.localService.getJsonValue('token')!=null;
   }
 
   public getRedirectUri(): string{
@@ -61,7 +62,7 @@ export class AuthenticationService {
   }
 
   public getCurrentUser():User{
-    const user :User = JSON.parse(localStorage.getItem('currentUser'));
+    const user :User = this.localService.getJsonValue('currentUser');
     if (user==null){
       console.log('here');
       return this.currentUser;
@@ -73,13 +74,12 @@ export class AuthenticationService {
   public savingUser(result){
     this.currentUser = new User();
     console.log('body',  result.body.user);
-    localStorage.removeItem('currentUser');
-    localStorage.setItem('currentUser',result.body.user);
+    this.localService.setJsonValue('currentUser',JSON.parse(result.body.user));
     this.setCurrentUser(JSON.parse(result.body.user));
     console.log('current user last name ' + this.getCurrentUser().last_name);
   }
 
   public savingToken(result){
-    localStorage.setItem('token',result.body.token);
+    this.localService.setJsonValue('token',result.body.token);
   }
 }
