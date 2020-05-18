@@ -13,7 +13,7 @@ import {CreateCategoryComponent} from '../create-category/create-category.compon
 export class ListCategoryComponent implements OnInit {
 
   isVisible = false;
-  private categories: Category[];
+  categories: Category[];
   first = 0;
   cols: any[];
 

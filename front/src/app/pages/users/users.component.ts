@@ -55,4 +55,8 @@ export class UsersComponent implements OnInit {
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message);
   }
+
+  paginate($event: number) {
+    
+  }
 }

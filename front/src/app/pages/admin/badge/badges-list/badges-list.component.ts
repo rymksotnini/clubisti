@@ -13,7 +13,7 @@ import { NzModalService} from 'ng-zorro-antd';
 })
 export class BadgesListComponent implements OnInit {
   isVisible = false;
-  private badges: Badge[];
+  badges: Badge[];
   first = 0;
   cols: any[];
 
