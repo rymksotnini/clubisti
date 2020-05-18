@@ -8,6 +8,7 @@ import {ImageService} from '../../_services/image.service';
 import {DomSanitizer} from '@angular/platform-browser';
 import {IMG_URL} from '../../_globals/global-variables';
 import {MoneyTransferService} from '../../_services/money-transfer.service';
+import {LocalService} from '../../_services/local.service';
 
 @Component({
   selector: 'app-navbar',
@@ -28,7 +29,8 @@ export class NavbarComponent implements OnInit,DoCheck {
               private router: Router,
               private  authenticationService:AuthenticationService,
               private sanitizer : DomSanitizer,
-              private moneyTransferService: MoneyTransferService) {
+              private moneyTransferService: MoneyTransferService,
+              private localService: LocalService) {
     this.location = location;
   }
 
@@ -80,8 +82,7 @@ export class NavbarComponent implements OnInit,DoCheck {
     this.authenticationService.logout().subscribe(
       (res) => {
         console.log('logging out');
-        localStorage.removeItem('token');
-        localStorage.removeItem('currentUser');
+        this.localService.clearToken();
         this.isLogged = false;
         this.image = null;
         this.currentUser = null;

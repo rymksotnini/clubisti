@@ -7,11 +7,14 @@ import {
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {AuthenticationService} from '../_services/authentication.service';
+import {LocalService} from "../_services/local.service";
 
 @Injectable()
 export class AuthenticationInterceptor implements HttpInterceptor {
 
-  constructor(private authenticationService: AuthenticationService) {}
+  constructor(private authenticationService: AuthenticationService,
+              private localService: LocalService
+              ) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     // console.log('in interceptor', this.authenticationService.isLogged());
@@ -19,7 +22,7 @@ export class AuthenticationInterceptor implements HttpInterceptor {
       const newRequest = request.clone(
         {
           headers: request.headers.append(
-            'Authorization', 'Bearer '+localStorage.getItem('token'))
+            'Authorization', 'Bearer '+this.localService.getJsonValue('token'))
         }
       );
       // console.log('request',newRequest);
