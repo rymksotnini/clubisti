@@ -45,6 +45,15 @@ export class TestNgPrimeComponent implements OnInit {
     ];
   }
 
+  delete(category) {
+    this.crudService.delete(API_URL + CATEGORY, category.id).subscribe(res => {
+      console.log(res)
+      category.deleted = 1;
+    }, error => {
+      console.log(error)
+    });
+  }
+
   getCategoriesPagination(page) {
     let params: any;
     this._currentPage = page;
