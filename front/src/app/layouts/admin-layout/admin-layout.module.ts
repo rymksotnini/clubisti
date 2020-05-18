@@ -6,8 +6,9 @@ import {LandingComponent} from '../../pages/landing/landing.component';
 import {ProductsComponent} from '../../pages/products/products.component';
 import {UsersComponent} from '../../pages/users/users.component';
 import {NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
-import {MatSnackBarModule} from '@angular/material';
+import {MatSnackBarModule, MatSortModule, MatTableModule} from '@angular/material';
 import {NgZorroAntdModule} from 'ng-zorro-antd';
+
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import {NgZorroAntdModule} from 'ng-zorro-antd';
     RouterModule.forChild(AdminLayoutRoutes),
     NgbDropdownModule,
     MatSnackBarModule,
-    NgZorroAntdModule
+    NgZorroAntdModule,
+
   ],
   declarations: [
     LandingComponent,
