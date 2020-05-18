@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Category} from '../../../../_models/Category';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {CrudService} from '../../../../_services/crud.service';
@@ -18,7 +18,7 @@ export class CreateCategoryComponent implements OnInit {
   keys = Object.keys;
   categories = CategoryType;
   createCategory: FormGroup;
-
+  @Output() added = new EventEmitter<boolean>();
   constructor(private formBuilder: FormBuilder,
               private crudService: CrudService,
               private router: Router,
@@ -40,7 +40,8 @@ export class CreateCategoryComponent implements OnInit {
     this.crudService.post(API_URL + CATEGORY, this.createCategory.value).subscribe(
       (response) => {
         console.log(response);
-        this.categoryService.getCategoriesAPI();
+        this.added.emit(response);
+
       }, (error => console.log(error))
     );
   }

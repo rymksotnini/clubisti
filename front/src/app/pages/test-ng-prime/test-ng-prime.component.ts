@@ -1,14 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import {Car} from '../test-landing/test-landing.component';
 import {CrudService} from '../../_services/crud.service';
 import {API_URL, CATEGORY} from '../../_globals/global-variables';
-import {MatTableDataSource} from '@angular/material';
 import {Category} from '../../_models/Category';
-import { SelectItem } from 'primeng/api/selectitem';
-
-
+import {NzModalRef, NzModalService} from 'ng-zorro-antd';
+import {CreateCategoryComponent} from '../admin/category/create-category/create-category.component';
 
 
 @Component({
@@ -18,19 +13,13 @@ import { SelectItem } from 'primeng/api/selectitem';
 
 })
 export class TestNgPrimeComponent implements OnInit {
+  isVisible = false;
   private categories: Category[];
-  private _currentPage: number;
-  private _sizePage = 10;
   first = 0;
   cols: any[];
-  brands: SelectItem[];
 
-  colors: SelectItem[];
-
-  yearFilter: number;
-
-  yearTimeout: any;
-  constructor(private crudService: CrudService) { }
+  constructor(private crudService: CrudService,
+              private modal: NzModalService) { }
 
   ngOnInit() {
     this.getCategories();
@@ -43,6 +32,20 @@ export class TestNgPrimeComponent implements OnInit {
       { field: 'deleted', header: 'Status' },
       { field: 'action', header: '' }
     ];
+  }
+
+  createGategory(): void {
+    const modal: NzModalRef = this.modal.create({
+      nzTitle: 'Add category',
+      nzContent: CreateCategoryComponent,
+      nzFooter: [
+        {
+          label: 'Close',
+          shape: 'round',
+          onClick: () => modal.destroy()
+        }
+      ]
+    });
   }
 
   delete(category) {
@@ -67,6 +70,23 @@ export class TestNgPrimeComponent implements OnInit {
     this.first = 0;
   }
 
+  showModal(): void {
+    this.isVisible = true;
+  }
+
+  handleOk(): void {
+    console.log('Button ok clicked!');
+    this.isVisible = false;
+  }
+
+  handleCancel(): void {
+    console.log('Button cancel clicked!');
+    this.isVisible = false;
+  }
 
 
+  onAdd($event: any) {
+    console.log("event ", $event)
+    this.categories.push($event.data);
+  }
 }
