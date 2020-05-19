@@ -6,9 +6,9 @@ import {LandingComponent} from '../../pages/landing/landing.component';
 import {ProductsComponent} from '../../pages/products/products.component';
 import {UsersComponent} from '../../pages/users/users.component';
 import {NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
-import {MatSnackBarModule, MatSortModule, MatTableModule} from '@angular/material';
+import {MatSnackBarModule} from '@angular/material';
 import {NgZorroAntdModule} from 'ng-zorro-antd';
-
+import {ListCategoryComponent} from "../../pages/admin/category/list-category/list-category.component";
 
 @NgModule({
   imports: [
@@ -17,12 +17,12 @@ import {NgZorroAntdModule} from 'ng-zorro-antd';
     NgbDropdownModule,
     MatSnackBarModule,
     NgZorroAntdModule,
-
   ],
   declarations: [
     LandingComponent,
     ProductsComponent,
     UsersComponent,
+
   ]
 })
 

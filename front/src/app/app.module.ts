@@ -3,15 +3,11 @@ import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-
 import { BrowserModule } from '@angular/platform-browser';
-
 import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
-
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
-
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
@@ -28,7 +24,6 @@ import {FbAuthComponent} from './components/fb-auth/fb-auth.component';
 import {SharedModule} from './shared/shared.module';
 import { BadgesListComponent } from './pages/admin/badge/badges-list/badges-list.component';
 import { BadgesCreateComponent } from './pages/admin/badge/badges-create/badges-create.component';
-import { VariableComponent } from './pages/admin/variable/variable.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MatFormFieldModule, MatIconModule, MatPaginatorModule, MatSortModule, MatTableModule} from '@angular/material';
 import {MatInputModule} from '@angular/material';
@@ -75,8 +70,7 @@ import {MultiSelectModule} from 'primeng/multiselect';
     CharityUpdateComponent,
     FbAuthComponent,
     BadgesListComponent,
-    BadgesCreateComponent,
-    VariableComponent,
+    BadgesCreateComponent
 
   ],
   providers: [AuthenticationInterceptorProvider,
