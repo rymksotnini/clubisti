@@ -23,8 +23,7 @@ export class BadgesCreateComponent implements OnInit {
   ngOnInit() {
     this.createBadge = this.formBuilder.group({
       name: '',
-      lower_bond: 0,
-      upper_bond: 0
+      upperBond: 0
     });
   }
 

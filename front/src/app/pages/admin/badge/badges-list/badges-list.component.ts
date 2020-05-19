@@ -74,7 +74,7 @@ export class BadgesListComponent implements OnInit {
 
 
   onAdd($event: any) {
-    this.badges.push($event.data);
+    this.getBadge();
   }
 
 }
