@@ -178,9 +178,9 @@
                       <div ngbDropdownMenu *ngIf="rowData['status']!='DELETED'"class=" dropdown-menu-right dropdown-menu-arrow">
                         <a class="dropdown-item" (click)="pauseProject(rowData)" *ngIf="(rowData['status'] !='PAUSED') && rowData['status']!='DELETED' &&rowData['status'] !='TERMINATED'" >PAUSE</a>
                         <a class="dropdown-item" (click)="activateProject(rowData)"   *ngIf="rowData['status']!='ACTIVE'&& rowData['status']!='DELETED' && rowData['status']!='TERMINATED'">ACTIVATE</a>
-                        <a class="dropdown-item" (click)="showDeleteConfirm(rowData)" *ngIf="rowData['status']!='TERMINATED' && rowData['status']!='DELETED'">TERMINATE</a>
+                        <a class="dropdown-item" (click)="showTerminateConfirm(rowData)" *ngIf="rowData['status']!='TERMINATED' && rowData['status']!='DELETED'">TERMINATE</a>
                         <a class="dropdown-item" (click)="updateProject(rowData['id']) " *ngIf="rowData['status']!='DELETED' ">UPDATE</a>
-                        <a class="dropdown-item" (click)="deleteProject(rowData['id'])" *ngIf="rowData['status']!='DELETED'">DELETE</a>
+                        <a class="dropdown-item" (click)="showDeleteConfirm(rowData['id'])" *ngIf="rowData['status']!='DELETED'">DELETE</a>
                       </div>
                     </div>
 

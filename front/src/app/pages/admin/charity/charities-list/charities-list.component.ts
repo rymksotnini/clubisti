@@ -134,13 +134,25 @@ export class CharitiesListComponent implements OnInit {
     )
   }
 
-  showDeleteConfirm(project: Project): void {
+  showTerminateConfirm(project: Project): void {
     this.modalService.confirm({
       nzTitle: 'Are you sure you want to end this project?',
       nzContent: '<b style="color: red;"></b>',
       nzOkText: 'Yes',
       nzOkType: 'danger',
       nzOnOk: () => this.endProject(project),
+      nzCancelText: 'No',
+      nzOnCancel: () => console.log('Cancel')
+    });
+  }
+
+  showDeleteConfirm(id: number): void {
+    this.modalService.confirm({
+      nzTitle: 'Are you sure you want to delete this project?',
+      nzContent: '<b style="color: red;"></b>',
+      nzOkText: 'Yes',
+      nzOkType: 'danger',
+      nzOnOk: () => this.deleteProject(id),
       nzCancelText: 'No',
       nzOnCancel: () => console.log('Cancel')
     });
