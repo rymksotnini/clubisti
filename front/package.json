@@ -42,6 +42,8 @@
     "ngx-clipboard": "13.0.0",
     "ngx-toastr": "12.0.0",
     "nouislider": "13.1.1",
+    "primeicons": "^3.0.0-rc.1",
+    "primeng": "^9.0.6",
     "rxjs": "6.5.4",
     "secure-web-storage": "^1.0.2",
     "web3": "^1.2.7",
