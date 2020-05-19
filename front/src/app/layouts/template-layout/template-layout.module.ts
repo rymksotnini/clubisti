@@ -14,6 +14,7 @@ import {UpdateProfileComponent} from '../../pages/update-profile/update-profile.
 import {NgZorroAntdModule} from 'ng-zorro-antd';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {SharedModule} from "../../shared/shared.module";
+import {MatSelectCountryModule} from "@angular-material-extensions/select-country";
 
 
 
@@ -25,18 +26,19 @@ import {SharedModule} from "../../shared/shared.module";
     MapsComponent,
     UpdateProfileComponent
   ],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(TemplateLayoutRoutes),
-    FormsModule,
-    HttpClientModule,
-    NgbModule,
-    ClipboardModule,
-    NgbDropdownModule,
-    MatSnackBarModule,
-    NgZorroAntdModule,
-    SharedModule,
-    ReactiveFormsModule
-  ]
+    imports: [
+        CommonModule,
+        RouterModule.forChild(TemplateLayoutRoutes),
+        FormsModule,
+        HttpClientModule,
+        NgbModule,
+        ClipboardModule,
+        NgbDropdownModule,
+        MatSnackBarModule,
+        NgZorroAntdModule,
+        SharedModule,
+        ReactiveFormsModule,
+        MatSelectCountryModule
+    ]
 })
 export class TemplateLayoutModule { }
