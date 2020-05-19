@@ -118,25 +118,25 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-city">City</label>
                     <input formControlName="city" type="text" id="input-city" class="form-control form-control-alternative" placeholder="{{this.currentAddress?.city}}">
                   </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-6">
                   <div class="form-group">
                     <label class="form-control-label" for="input-postal-code">Postal code</label>
                     <input formControlName="postalCode" type="number" id="input-postal-code" class="form-control form-control-alternative" placeholder="{{this.currentAddress?.postal_code}}">
                   </div>
                 </div>
-                <div class="col-lg-2">
+              </div>
+              <div class="row">
+                <div class="col-md-12 ant-col-lg-offset-7">
                   <div class="form-group">
                     <label class="form-control-label" for="input-country">Country</label>
-                    <div class="bg-dark">
-                      <mat-select-country class="bg-red" id="input-country" (onCountrySelected)="setCountry($event)">
-                      </mat-select-country>
-                    </div>
+                    <mat-select-country id="input-country" (onCountrySelected)="setCountry($event)" appearance="outline" [placeHolder]="currentCountry.name">
+                    </mat-select-country>
                   </div>
                 </div>
               </div>
