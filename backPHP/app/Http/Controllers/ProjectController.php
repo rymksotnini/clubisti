@@ -226,11 +226,13 @@ class ProjectController extends Controller
 
         try {
             $project = Project::findOrFail($id);
+            $offer = Offer::findOrFail($project->offer->id);
 
+            $project->status = 'DELETED';
+            $offer->deleted = 1;
 
-            $project->isDeleted = 1;
-
-            $project->save();
+            $offer->save();
+            $offer->project()->save($project);
 
             return $project;
 
