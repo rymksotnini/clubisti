@@ -1,13 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {API_URL, BADGE, CATEGORY} from '../../../../_globals/global-variables';
-import {HttpParams} from '@angular/common/http';
+import {API_URL, BADGE} from '../../../../_globals/global-variables';
 import {CrudService} from '../../../../_services/crud.service';
-import {ActivatedRoute, Router} from '@angular/router';
-import {BadgeService} from '../../../../_services/badge.service';
 import {Badge} from '../../../../_models/badge';
-import {ListReq} from '../../../../_models/requests/ListReq';
-import {BadgesCreateComponent} from '../badges-create/badges-create.component';
-import {NzModalRef, NzModalService} from 'ng-zorro-antd';
+
+
 
 @Component({
   selector: 'app-badges-list',
@@ -15,52 +11,70 @@ import {NzModalRef, NzModalService} from 'ng-zorro-antd';
   styleUrls: ['./badges-list.component.css']
 })
 export class BadgesListComponent implements OnInit {
+  isVisible = false;
+  badges: Badge[];
+  first = 0;
+  cols: any[];
 
-
-
-  sort = 'createdAt,desc';
-  constructor(private crudService: CrudService,
-              private router: Router,
-              private route: ActivatedRoute,
-              private badgeService: BadgeService,
-              private modal: NzModalService
-  ) {
-
-  }
+  constructor(private crudService: CrudService) { }
 
   ngOnInit() {
-    this.badgeService.setCurrentPage(1);
-    this.badgeService.setSizePage(10);
-    this.badgeService.getBadgesAPI();
+    this.getBadge();
+    this.cols = [
+      { field: 'id', header: 'Id' },
+      { field: 'name', header: 'Name' },
+      { field: 'lowerBond', header: 'Lower bond' },
+      { field: 'upperBond', header: 'Upper bond' },
+      { field: 'createdAt', header: 'Created dAt' },
+      { field: 'updatedAt', header: 'Updated At' },
+      { field: 'deleted', header: 'Status' },
+      { field: 'action', header: '' }
+    ];
+    console.log(this.badges)
   }
 
 
-
-  paginate(page: number) {
-
-    this.badgeService.getBadgesPagination(page);
-  }
-
-  createCustomButtonModal(): void {
-    const modal: NzModalRef = this.modal.create({
-      nzTitle: 'Add badge',
-      nzContent: BadgesCreateComponent,
-      nzFooter: [
-        {
-          label: 'Close',
-          shape: 'round',
-          onClick: () => modal.destroy()
-        }
-      ]
-    });
-  }
-
-  delete(badge) {
-    this.crudService.delete(API_URL + BADGE, badge.id).subscribe(res => {
-      console.log(res);
-      badge.deleted = 1;
+  delete(category) {
+    this.crudService.delete(API_URL + BADGE, category.id).subscribe(res => {
+      category.deleted = 1;
     }, error => {
       console.log(error)
     });
   }
+
+  getBadge() {
+
+    this.crudService.getAll(API_URL + BADGE)
+      .toPromise()
+      .then(res => res.data as Badge[])
+      .then(data => { return data; })
+      .then(data => this.badges = data);
+
+
+
+  }
+
+  reset() {
+    this.first = 0;
+  }
+
+  showModal(): void {
+    this.isVisible = true;
+  }
+
+  handleOk(): void {
+    console.log('Button ok clicked!');
+    this.isVisible = false;
+  }
+
+  handleCancel(): void {
+    console.log('Button cancel clicked!');
+    this.isVisible = false;
+  }
+
+
+  onAdd($event: any) {
+    this.badges.push($event.data);
+  }
+
 }
