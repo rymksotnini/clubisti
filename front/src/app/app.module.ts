@@ -44,11 +44,16 @@ import { TestLandingComponent } from './pages/test-landing/test-landing.componen
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 
-
+import {TableModule} from 'primeng/table';
+import {PaginatorModule} from 'primeng/paginator';
+import {MultiSelectModule} from 'primeng/multiselect';
 
 // @ts-ignore
 @NgModule({
   imports: [
+    TableModule,
+    PaginatorModule,
+    MultiSelectModule,
     BrowserModule,
     NgZorroAntdModule,
     BrowserAnimationsModule,
