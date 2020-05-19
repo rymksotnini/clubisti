@@ -31,7 +31,7 @@ export class CharityUpdateComponent implements OnInit {
   test: any;
   project: Project;
   loading = false;
-  avatarUrl="assets/img/theme/team-4-800x800.jpg";
+  avatarUrl='assets/img/theme/team-4-800x800.jpg';
   loading1 = false;
   avatarUrl1: string;
   submitted = false;
@@ -87,6 +87,7 @@ export class CharityUpdateComponent implements OnInit {
      console.log(this.id);
     });
     const data = await this.http.get<any>(API_URL + CHARITY + '/' + this.id).toPromise();
+    console.log(data)
     this.project = data.data;
     console.log(this.project);
     this.initForm();

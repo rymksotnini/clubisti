@@ -137,7 +137,7 @@ export class CharitiesListComponent implements OnInit {
   showDeleteConfirm(project: Project): void {
     this.modalService.confirm({
       nzTitle: 'Are you sure you want to end this project?',
-      nzContent: '<b style="color: red;">The project supposed end date is</b>',
+      nzContent: '<b style="color: red;"></b>',
       nzOkText: 'Yes',
       nzOkType: 'danger',
       nzOnOk: () => this.endProject(project),
