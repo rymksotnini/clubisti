@@ -63,7 +63,6 @@ export class UpdateProfileComponent implements OnInit {
       street: '',
       street2: '',
       city: '',
-      country: '',
       postalCode: '',
     });
     // fetch current user image
@@ -77,7 +76,10 @@ export class UpdateProfileComponent implements OnInit {
       }
     )
   }
-
+  setCountry(country){
+    this.currentCountry.name=country.name;
+    console.log(this.currentCountry.name);
+  }
   initializeForm(){
     this.profileToCreate.controls['username'].setValue(this.currentUser.username);
     console.log('init'+this.profileToCreate.value.username);
@@ -90,11 +92,7 @@ export class UpdateProfileComponent implements OnInit {
       if (this.currentAddress){
         this.profileToCreate.controls['street'].setValue(this.currentAddress.street);
         this.profileToCreate.controls['street2'].setValue(this.currentAddress.street2);
-        this.profileToCreate.controls['city'].setValue(this.currentAddress.city);
         this.profileToCreate.controls['postalCode'].setValue(this.currentAddress.postal_code);
-        if(this.currentCountry){
-          this.profileToCreate.controls['country'].setValue(this.currentCountry.name);
-        }
       }
     }
   }
@@ -129,7 +127,7 @@ export class UpdateProfileComponent implements OnInit {
             postal_code: this.profileToCreate.value.postalCode,
             city: this.profileToCreate.value.city,
             country: {
-              name: this.profileToCreate.value.country
+              name: this.currentCountry.name
             }
           }
         }

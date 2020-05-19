@@ -43,6 +43,7 @@ import { VariableComponent } from './pages/admin/variable/variable.component';
 import { TestLandingComponent } from './pages/test-landing/test-landing.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
+import { MatSelectCountryModule } from '@angular-material-extensions/select-country';
 
 
 
@@ -62,6 +63,7 @@ import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
     AnonymousLayoutModule,
     SharedModule,
     FontAwesomeModule,
+    MatSelectCountryModule,
   ],
   declarations: [
     AppComponent,
