@@ -65,6 +65,18 @@ export class ListCategoryComponent implements OnInit {
     console.log(this.categories);
   }
 
+  showDeleteConfirm(category): void {
+    this.modal.confirm({
+      nzTitle: 'Are you sure you want to delete this badge?',
+      nzContent: '<b style="color: red;"></b>',
+      nzOkText: 'Yes',
+      nzOkType: 'danger',
+      nzOnOk: () => this.delete(category),
+      nzCancelText: 'No',
+      nzOnCancel: () => console.log('Cancel')
+    });
+  }
+
   reset() {
     this.first = 0;
   }

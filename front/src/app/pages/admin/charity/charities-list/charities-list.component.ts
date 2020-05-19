@@ -59,23 +59,6 @@ export class CharitiesListComponent implements OnInit {
 
   }
 
-  // getProjects() {
-  //   let params: any;
-  //   const selectedPage = this.currentPage ;
-  //   params = new HttpParams().set('page', selectedPage.toString())
-  //     .set('perPage', this.sizePage.toString());
-  //
-  //   this.crudService.getAllWithParams(API_URL+ CHARITY, params).subscribe(
-  //     (response) => {
-  //       this.projects = response;
-  //       console.log(this.projects);
-  //       this.currentPage = this.projects.meta.current_page;
-  //     },
-  //     (error =>  {
-  //       console.log(error);
-  //     })
-  //   );
-  // }
 
   getProjects() {
     this.crudService.getAll(API_URL + CHARITY).subscribe(
@@ -87,11 +70,7 @@ export class CharitiesListComponent implements OnInit {
             console.log(error);
           })
         );
-    // this.crudService.getAll(API_URL + CHARITY)
-    //   .toPromise()
-    //   .then(res => res.data as Project[])
-    //   .then(data => { return data; })
-    //   .then(cars => this.projects = cars);
+
 
   }
 

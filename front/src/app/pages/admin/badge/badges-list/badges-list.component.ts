@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {API_URL, BADGE} from '../../../../_globals/global-variables';
 import {CrudService} from '../../../../_services/crud.service';
 import {Badge} from '../../../../_models/badge';
+import {NzModalService} from "ng-zorro-antd";
 
 
 
@@ -16,7 +17,8 @@ export class BadgesListComponent implements OnInit {
   first = 0;
   cols: any[];
 
-  constructor(private crudService: CrudService) { }
+  constructor(private crudService: CrudService,
+              private modalService: NzModalService) { }
 
   ngOnInit() {
     this.getBadge();
@@ -34,9 +36,9 @@ export class BadgesListComponent implements OnInit {
   }
 
 
-  delete(category) {
-    this.crudService.delete(API_URL + BADGE, category.id).subscribe(res => {
-      category.deleted = 1;
+  delete(badge) {
+    this.crudService.delete(API_URL + BADGE, badge.id).subscribe(res => {
+      badge.deleted = 1;
     }, error => {
       console.log(error)
     });
@@ -70,6 +72,17 @@ export class BadgesListComponent implements OnInit {
   handleCancel(): void {
     console.log('Button cancel clicked!');
     this.isVisible = false;
+  }
+  showDeleteConfirm(badge): void {
+    this.modalService.confirm({
+      nzTitle: 'Are you sure you want to delete this badge?',
+      nzContent: '<b style="color: red;"></b>',
+      nzOkText: 'Yes',
+      nzOkType: 'danger',
+      nzOnOk: () => this.delete(badge),
+      nzCancelText: 'No',
+      nzOnCancel: () => console.log('Cancel')
+    });
   }
 
 
