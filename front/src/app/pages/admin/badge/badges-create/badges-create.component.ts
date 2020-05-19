@@ -3,7 +3,7 @@ import {API_URL, BADGE} from '../../../../_globals/global-variables';
 
 import {Router} from '@angular/router';
 import {CrudService} from '../../../../_services/crud.service';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-badges-create',
@@ -14,7 +14,8 @@ export class BadgesCreateComponent implements OnInit {
 
   @Output() added = new EventEmitter<boolean>();
   createBadge: FormGroup;
-
+  error = false;
+  msg: string;
   constructor(private formBuilder: FormBuilder,
               private crudService: CrudService,
               private router: Router
@@ -22,22 +23,33 @@ export class BadgesCreateComponent implements OnInit {
 
   ngOnInit() {
     this.createBadge = this.formBuilder.group({
-      name: '',
-      upperBond: 0
+      name:  ['',Validators.required],
+      upperBond: [0,Validators.required]
     });
   }
 
 
 
   onSubmit() {
+    if (this.createBadge.invalid) {
+      this.error = true;
+      this.msg = 'Fields are required';
+      return;
+    }
     console.log(this.createBadge.value);
 
     this.crudService.post(API_URL + BADGE, this.createBadge.value).subscribe(
       (response) => {
+        this.error = false;
         console.log(response);
         this.added.emit(response);
-        this.router.navigate(['/admin/badge']);
-      }, (error => console.log(error))
+      }, (error => {
+        console.log(error);
+        if( error.status === 404){
+          this.error = true;
+          this.msg = 'Invalid Upper bound';
+        }
+      })
     );
   }
 
