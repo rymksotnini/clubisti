@@ -40,7 +40,6 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     // admin, superAdmin
     Route::post('/badges', 'BadgeController@store');
     Route::put('/badges/{id}', 'BadgeController@update');
-    Route::delete('/badges/{id}', 'BadgeController@delete');
 
     /************************************************ Categories API ************************************************/
     // user, admin, superAdmin

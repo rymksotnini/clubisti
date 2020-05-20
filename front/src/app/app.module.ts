@@ -47,6 +47,7 @@ import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 import {TableModule} from 'primeng/table';
 import {PaginatorModule} from 'primeng/paginator';
 import {MultiSelectModule} from 'primeng/multiselect';
+import { BadgesUpdateComponent } from './pages/admin/badge/badges-update/badges-update.component';
 
 // @ts-ignore
 @NgModule({
@@ -83,6 +84,7 @@ import {MultiSelectModule} from 'primeng/multiselect';
     BadgesListComponent,
     BadgesCreateComponent,
     VariableComponent,
+    BadgesUpdateComponent,
 
   ],
   providers: [AuthenticationInterceptorProvider,

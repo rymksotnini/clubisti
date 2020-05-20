@@ -13,6 +13,8 @@ import {NzModalService} from "ng-zorro-antd";
 })
 export class BadgesListComponent implements OnInit {
   isVisible = false;
+  isVisible2 = false;
+  selected:Badge;
   badges: Badge[];
   first = 0;
   cols: any[];
@@ -29,7 +31,6 @@ export class BadgesListComponent implements OnInit {
       { field: 'upperBond', header: 'Upper bond' },
       { field: 'createdAt', header: 'Created dAt' },
       { field: 'updatedAt', header: 'Updated At' },
-      { field: 'deleted', header: 'Status' },
       { field: 'action', header: '' }
     ];
     console.log(this.badges)
@@ -43,6 +44,8 @@ export class BadgesListComponent implements OnInit {
       console.log(error)
     });
   }
+
+
 
   getBadge() {
 
@@ -63,15 +66,19 @@ export class BadgesListComponent implements OnInit {
   showModal(): void {
     this.isVisible = true;
   }
+  showModal2(badge): void {
+    this.selected = badge;
+    this.isVisible2 = true;
+  }
 
   handleOk(): void {
-    console.log('Button ok clicked!');
     this.isVisible = false;
+    this.isVisible2 = false;
   }
 
   handleCancel(): void {
-    console.log('Button cancel clicked!');
     this.isVisible = false;
+    this.isVisible2 = false;
   }
   showDeleteConfirm(badge): void {
     this.modalService.confirm({

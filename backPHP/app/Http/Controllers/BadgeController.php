@@ -28,7 +28,7 @@ class BadgeController extends Controller
     public function store(Request $request)
     {
         // test upper bound > 0
-       $exist= Badge::orderBy('upper_bond', 'desc')->first();
+       $exist= Badge::where('deleted', false)->orderBy('upper_bond', 'desc')->first();
         $badge = new Badge;
         // first badge lower bound = 0
         if(!$exist){
@@ -56,7 +56,7 @@ error_log("com");
         // new badge must start from last uperbound + 1
         $badge->name = $request->name;
         $badge->upper_bond = $request->upperBond;
-        $badge->lower_bond = $exist->upper_bond  +1;
+        $badge->lower_bond = $exist->upper_bond  + 1;
 
         $badge->save();
         return (new BadgeResource($exist))
@@ -71,7 +71,8 @@ error_log("com");
             'name' => 'required|max:255',
         ]);
         $badge = Badge::findOrFail($id);
-        $badge->update($request->all());
+        $badge->name = $request->name;
+        $badge->save();
 
         return (new BadgeResource($badge))
             ->response()
@@ -97,6 +98,8 @@ error_log("com");
 
         return response()->json(null, 204);
     }
+
+
 
 
 }
