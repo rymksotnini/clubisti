@@ -31,4 +31,11 @@ class Transaction extends Model
     {
         return $this->belongsTo(Offer::class);
     }
+    /**
+     * Get the complain for the transaction.
+     */
+    public function complains()
+    {
+        return $this->hasMany(Complain::class);
+    }
 }
