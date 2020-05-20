@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Account extends Model
 {
 
-    protected $fillable = ['account_number'];
+    protected $fillable = ['account_number', 'type'];
 
     /**
      * Get the organisation that owns the account.

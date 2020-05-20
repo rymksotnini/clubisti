@@ -11,8 +11,14 @@ use Illuminate\Http\Request;
 
 class AccountController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        error_log("heeeere");
+        if ($request->page  && $request->perPage){
+            return new AccountCollection(Account::paginate($request->perPage));
+        }else if ($request->page ){
+            return new AccountCollection(Account::paginate(3));
+        }
         return new AccountCollection(Account::get());
     }
 
@@ -42,8 +48,18 @@ class AccountController extends Controller
             ->setStatusCode(201);
     }
 
-
     public function delete($id)
+    {
+        $account = Account::findOrFail($id);
+        if($account) {
+            $account->deleted = true;
+            $account->save();
+        }
+
+        return response()->json(null, 204);
+    }
+
+    public function deleteFinal($id)
     {
         $account = Account::findOrFail($id);
         $account->delete();

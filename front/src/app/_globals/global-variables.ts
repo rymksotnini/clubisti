@@ -4,6 +4,7 @@ export const API_URL = environment.apiUrl + '/api';
 export const CHARITY = '/projects';
 export const IMAGE = '/image';
 export const CATEGORY = '/categories';
+export const ACCOUNT = '/accounts';
 export const PAUSE = '/pause';
 export const ACTIVATE = '/activate';
 export const TERNINATE = '/end';

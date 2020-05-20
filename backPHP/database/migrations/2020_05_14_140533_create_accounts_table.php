@@ -16,6 +16,7 @@ class CreateAccountsTable extends Migration
         Schema::create('accounts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('account_number');
+            $table->boolean('deleted')->default(false);
             $table->integer('organisation_id')->unsigned()->nullable();
             $table->integer('account_type_id')->unsigned()->nullable();
             $table->timestamps();
