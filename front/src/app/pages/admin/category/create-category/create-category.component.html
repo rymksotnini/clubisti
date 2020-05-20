@@ -1,6 +1,17 @@
 <form id=create-book-form [formGroup]="createCategory" >
   <div >
     <div class="form-group">
+      <alert *ngIf="error" class="alert-dismissible">
+        <div role="alert" class="alert alert-danger alert-dismissible">
+          <button aria-label="Close" class="close" type="button">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only">Close</span>
+          </button><span class=" alert-icon">
+                      <i class="fa fa-exclamation-triangle"></i>
+                    </span>
+          <span class=" alert-text">{{msg}}</span>
+        </div>
+      </alert>
       <label class="form-control-label" for="input-Name">Name</label>
       <input  formControlName= "name" type="text" id="input-Name" class="form-control form-control-alternative" placeholder="Name" >
     </div>

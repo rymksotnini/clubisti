@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Category} from '../../../../_models/Category';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CrudService} from '../../../../_services/crud.service';
 import {Router} from '@angular/router';
 import {API_URL, CATEGORY, CHARITY, IMAGE} from '../../../../_globals/global-variables';
@@ -15,6 +15,7 @@ import { Observable, Observer } from 'rxjs';
   styleUrls: ['./charity-create.component.css']
 })
 export class CharityCreateComponent implements OnInit {
+  submitted = false;
   isVisible = false;
   isConfirmLoading = false;
   date = null;
@@ -41,17 +42,18 @@ export class CharityCreateComponent implements OnInit {
   ngOnInit() {
     this.getCategories();
     this.createCharity = this.formBuilder.group({
-      name: '',
-      shortDescription: '',
-      longDescription: '',
-      amount: 0,
-      minDonationAmount: 0,
-      maxDonationAmount: 0,
-      categoriesIds: 1,
+      name: ['', Validators.required],
+      shortDescription: ['',Validators.required],
+      longDescription: ['',Validators.required],
+      amount: [0,Validators.required],
+      minDonationAmount: [0,Validators.required],
+      maxDonationAmount: [0,Validators.required],
+      categoriesIds: [1],
       date: []
     });
   }
 
+  get f() { return this.createCharity.controls; }
 
   getCategories() {
     this.crudService.getAll(API_URL + CATEGORY).subscribe(
@@ -76,6 +78,11 @@ export class CharityCreateComponent implements OnInit {
   }
 
   onSubmit() {
+
+      this.submitted = true;
+      if (this.createCharity.invalid) {
+        return;
+      }
     console.log(this.createCharity.value.categoriesIds);
    this.createCharity.value.categoriesIds = [this.createCharity.value.categoriesIds];
     console.log(this.createCharity.value.categoriesIds);

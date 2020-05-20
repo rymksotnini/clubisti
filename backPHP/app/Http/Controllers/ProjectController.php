@@ -21,7 +21,7 @@ class ProjectController extends Controller
         if ($request->page  && $request->perPage){
             return new ProjectCollection(Project::paginate($request->perPage));
         }else if ($request->page ){
-            return new ProjectCollection(Project::paginate(5));
+            return new ProjectCollection(Project::paginate(10));
         }
         return new ProjectCollection(Project::get());
     }
@@ -40,34 +40,10 @@ class ProjectController extends Controller
 
     }
 
-    public function getProjectWithRelationship($id){
-        $project = Project::findOrFail($id);
-        if($project) {
-            $offer = $project->offer;
-            error_log($offer->id);
-            $sql = $offer->categories()->toSql();
-            $categoties = $offer->categories()->get();
-            error_log($sql);
-            error_log($categoties);
-            if(!$offer){
-                return response()->json([
-                    'project' => json_encode($project)
-                ]);
-            }
-
-
-            return response()->json([
-                'project' => json_encode($project),
-                'offer'   => json_encode($offer),
-            ]);
-        }
-        return response()->json("non existent project",406);
-    }
 
 
     public function storeWithOffer(Request $request)
     {
-        error_log("in storeWithOffer");
         $project = new Project;
         $offer = new Offer;
         $offer->name = $request->name;
@@ -82,10 +58,8 @@ class ProjectController extends Controller
         $offer->long_description = $request->longDescription;
         $offer->save();
         $offer->project()->save($project);
-        error_log("wf");
         error_log($request->categoriesIds[0]);
         if ($request->categoriesIds){
-            error_log("in if ");
             $offer->categories()->sync($request->categoriesIds);
 
         }
@@ -101,15 +75,24 @@ class ProjectController extends Controller
             'name' => 'required|max:255',
         ]);
         $project = Project::findOrFail($id);
-        $project->name = $request->name;
-        $project->amount = $request->amount;
+        $offer = Offer::findOrFail($project->offer->id);
+        $offer->name = $request->name;
+        $offer->amount = $request->amount;
+        error_log("update:",$request->amount);
         $project->start_date = $request->startDate;
         $project->end_date = $request->endDate;
-        $project->short_description =  $request->shortDescription;
+        $offer->short_description =  $request->shortDescription;
         $project->max_donation_amount = $request->maxDonationAmount;
         $project->min_donation_amount = $request->minDonationAmount;
+        $offer->long_description = $request->longDescription;
+        $offer->save();
+        $offer->project()->save($project);
+        if ($request->categoriesIds){
+            $offer->categories()->sync($request->categoriesIds);
 
-        $project->save();
+        }
+
+
 
         return (new ProjectResource($project))
             ->response()
@@ -243,11 +226,13 @@ class ProjectController extends Controller
 
         try {
             $project = Project::findOrFail($id);
+            $offer = Offer::findOrFail($project->offer->id);
 
+            $project->status = 'DELETED';
+            $offer->deleted = 1;
 
-            $project->isDeleted = 1;
-
-            $project->save();
+            $offer->save();
+            $offer->project()->save($project);
 
             return $project;
 

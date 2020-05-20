@@ -45,11 +45,17 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 import { MatSelectCountryModule } from '@angular-material-extensions/select-country';
 
-
+import {TableModule} from 'primeng/table';
+import {PaginatorModule} from 'primeng/paginator';
+import {MultiSelectModule} from 'primeng/multiselect';
+import { BadgesUpdateComponent } from './pages/admin/badge/badges-update/badges-update.component';
 
 // @ts-ignore
 @NgModule({
   imports: [
+    TableModule,
+    PaginatorModule,
+    MultiSelectModule,
     BrowserModule,
     NgZorroAntdModule,
     BrowserAnimationsModule,
@@ -80,6 +86,7 @@ import { MatSelectCountryModule } from '@angular-material-extensions/select-coun
     BadgesListComponent,
     BadgesCreateComponent,
     VariableComponent,
+    BadgesUpdateComponent,
 
   ],
   providers: [AuthenticationInterceptorProvider,
