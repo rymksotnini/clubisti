@@ -40,7 +40,7 @@ export class AuthenticationService {
     return this.http.get(API_URL+'users'+this.getCurrentUser().id);
   }
   public logout(){
-    this.currentUser = null;
+    this.currentUser = new User();
     return this.http.post<any>(API_URL+'/logout', {observe: 'response' });
   }
   public isLogged(): boolean{
@@ -63,11 +63,10 @@ export class AuthenticationService {
 
   public getCurrentUser():User{
     const user :User = this.localService.getJsonValue('currentUser');
-    if (user==null){
+    if (user!=null){
       console.log('here');
-      return this.currentUser;
+      this.setCurrentUser(user);
     }
-    this.setCurrentUser(user);
     return this.currentUser;
   }
 

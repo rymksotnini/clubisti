@@ -43,6 +43,7 @@ import { VariableComponent } from './pages/admin/variable/variable.component';
 import { TestLandingComponent } from './pages/test-landing/test-landing.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
+import { MatSelectCountryModule } from '@angular-material-extensions/select-country';
 
 import {TableModule} from 'primeng/table';
 import {PaginatorModule} from 'primeng/paginator';
@@ -68,6 +69,7 @@ import { BadgesUpdateComponent } from './pages/admin/badge/badges-update/badges-
     AnonymousLayoutModule,
     SharedModule,
     FontAwesomeModule,
+    MatSelectCountryModule,
   ],
   declarations: [
     AppComponent,
