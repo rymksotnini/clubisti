@@ -50,6 +50,8 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::put('/categories/{id}', 'CategoryController@update');
     Route::delete('/categories/{id}', 'CategoryController@delete');
 
+
+
     /************************************************ Countries API ************************************************/
     // user, admin, superAdmin
     Route::get('/countries', ['middleware' => 'auth.role:admin,user', 'uses' => 'CountryController@index']);
@@ -121,6 +123,15 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     /************************************************ Image API ************************************************/
     Route::post("/image" , "ImageController@downloadImage");
     Route::get('/image/{id}', 'ImageController@uploadImage');
+
+    /************************************************ Complain API ************************************************/
+    // user, admin, superAdmin
+    Route::get('/complains', 'ComplainController@index');
+    Route::get('/complains/{id}', 'ComplainController@show');
+    // admin, superAdmin
+    Route::post('/complains', 'ComplainController@store');
+    Route::put('/complains/{id}', 'ComplainController@update');
+    Route::delete('/complains/{id}', 'ComplainController@delete');
 
     /************************************************ AccountType API ************************************************/
 // admin, superAdmin
