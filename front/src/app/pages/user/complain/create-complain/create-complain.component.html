@@ -1,0 +1,51 @@
+
+
+
+
+<div class="container" style="margin: 0.75rem">
+  <h2>Complain Form</h2>
+  <form id=create-book-form [formGroup]="createCategory" >
+    <div >
+      <div class="form-group">
+        <alert *ngIf="error" class="alert-dismissible">
+          <div role="alert" class="alert alert-danger alert-dismissible">
+            <button aria-label="Close" class="close" type="button">
+              <span aria-hidden="true">×</span>
+              <span class="sr-only">Close</span>
+            </button><span class=" alert-icon">
+                      <i class="fa fa-exclamation-triangle"></i>
+                    </span>
+            <span class=" alert-text">{{msg}}</span>
+          </div>
+        </alert>
+
+        <label class="form-control-label" for="reason">Reason</label>
+
+        <div class="custom-control custom-radio mb-3" id="reason">
+          <input name="custom-radio-2" class="custom-control-input" id="customRadio5" type="radio">
+          <label class="custom-control-label" for="customRadio5">Unchecked</label>
+        </div>
+        <div class="custom-control custom-radio mb-3">
+          <input name="custom-radio-2" class="custom-control-input" id="customRadio6" checked="" type="radio">
+          <label class="custom-control-label" for="customRadio6">Checked</label>
+        </div>
+
+
+        <label class="form-control-label" for="input-body">Body</label>
+        <textarea id="input-body" class="form-control form-control-alternative" rows="3" placeholder="Write a large text here ..."></textarea>
+
+      </div>
+    </div>
+  </form>
+
+  <div>
+
+    <button type="submit"
+            (click)="onSubmit()" class="btn btn-primary btn-sm">Small button</button>
+  </div>
+
+
+</div>
+
+
+

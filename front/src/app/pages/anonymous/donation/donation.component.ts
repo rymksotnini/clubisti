@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js';
 import {chartExample1, chartExample2, chartOptions, parseOptions} from "../../../variables/charts";
+import {NgbActiveModal, NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {CreateComplainComponent} from "../../user/complain/create-complain/create-complain.component";
 
 
 
@@ -17,7 +19,7 @@ export class DonationComponent implements OnInit {
   public clicked = true;
   public clicked1 = false;
 
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit() {
 
@@ -52,6 +54,12 @@ export class DonationComponent implements OnInit {
   public updateOptions() {
     this.salesChart.data.datasets[0].data = this.data;
     this.salesChart.update();
+  }
+
+  open() {
+    console.log("oepn")
+    const modalRef = this.modalService.open(CreateComplainComponent);
+    modalRef.componentInstance.transactionId = 1;
   }
 
 

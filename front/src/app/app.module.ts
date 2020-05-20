@@ -50,6 +50,8 @@ import {PaginatorModule} from 'primeng/paginator';
 import {MultiSelectModule} from 'primeng/multiselect';
 import { BadgesUpdateComponent } from './pages/admin/badge/badges-update/badges-update.component';
 import { DonationComponent } from './pages/anonymous/donation/donation.component';
+import { TestModalComponent } from './pages/test-modal/test-modal.component';
+import { CreateComplainComponent } from './pages/user/complain/create-complain/create-complain.component';
 
 // @ts-ignore
 @NgModule({
@@ -89,6 +91,8 @@ import { DonationComponent } from './pages/anonymous/donation/donation.component
     VariableComponent,
     BadgesUpdateComponent,
     DonationComponent,
+    TestModalComponent,
+    CreateComplainComponent,
 
   ],
   providers: [AuthenticationInterceptorProvider,
