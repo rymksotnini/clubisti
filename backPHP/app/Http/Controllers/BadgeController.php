@@ -39,7 +39,7 @@ class BadgeController extends Controller
             $badge->lower_bond = 0;
 
             $badge->save();
-            return (new BadgeResource($exist))
+            return (new BadgeResource($badge))
                 ->response()
                 ->setStatusCode(201);
         }
