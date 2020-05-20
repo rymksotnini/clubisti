@@ -4,7 +4,10 @@
       <!-- Card stats -->  <div class="container-fluid d-flex align-items-center">
       <div class="row">
         <div class="col-lg-7 col-md-10">
-          <button nz-button nzType="primary" (click)="createAccount()">Add account</button>
+          <button class="btn btn-success" (click)="createAccount()">
+            <i class="fas fa-plus"></i>
+            Add account
+          </button>
         </div>
       </div>
     </div>
@@ -13,7 +16,6 @@
 </div>
 <!-- Page content -->
 <div class="container-fluid mt--7">
-
   <!-- Table -->
   <div class="row">
     <div class="col-xl-12 order-xl-1">
@@ -39,7 +41,7 @@
                 <div class="media align-items-center">
 
                   <div class="media-body">
-                    <span class="mb-0 text-sm">{{account.getAccountNumber()}}</span>
+                    <span class="mb-0 text-sm">{{account.accountNumber}}</span>
                   </div>
                 </div>
               </th>
@@ -47,10 +49,10 @@
                 {{account.accountType.name}}
               </td>
               <td>
-                {{account.getCreatedAt() | date}}
+                {{account.createdAt | date}}
               </td>
               <td>
-                {{account.getUpdatedAt() | date}}
+                {{account.updatedAt| date}}
               </td>
               <td>
                 <span *ngIf="!account.deleted" class="badge badge-dot">
@@ -70,19 +72,14 @@
                   </div>
                 </div>
               </td>
-
-
-
             </tr>
-
             </tbody>
           </table>
         </div>
-        <div class="card-footer py-4" *ngIf="this.accountService.getAccounts()">
-          <nz-pagination [nzPageIndex]=this.accountService.getCurrentPage() [nzTotal]=this.accountService.getTotal()  [nzPageSize]=this.accountService.getSizePage() (nzPageIndexChange)="paginate($event)"></nz-pagination>
+        <div class="card-footer py-4" *ngIf="accountsRq">
+          <nz-pagination [nzPageIndex]=currentPage [nzTotal]=total  [nzPageSize]=pageSize (nzPageIndexChange)="paginate($event)"></nz-pagination>
         </div>
       </div>
     </div>
   </div>
-
 </div>

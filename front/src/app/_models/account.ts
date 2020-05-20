@@ -3,22 +3,39 @@ import {AccountType} from "./accountType";
 export class Account{
 
   private _id: number;
-  private account_number: string;
+  private _accountNumber: string;
   private _deleted: boolean;
-  private created_at: Date;
-  private updated_at: Date;
+  private _createdAt: Date;
+  private _updatedAt: Date;
   private _accountType: AccountType;
 
-  public getAccountNumber(): string{
-    return this.account_number;
-  }
-
-  public setAccountNumber(number: string){
-    this.account_number = number;
-  }
 
   public getCreatedAt():Date{
     return this.created_at;
+  }
+
+  get accountNumber(): string {
+    return this._accountNumber;
+  }
+
+  set accountNumber(value: string) {
+    this._accountNumber = value;
+  }
+
+  get createdAt(): Date {
+    return this._createdAt;
+  }
+
+  set createdAt(value: Date) {
+    this._createdAt = value;
+  }
+
+  get updatedAt(): Date {
+    return this._updatedAt;
+  }
+
+  set updatedAt(value: Date) {
+    this._updatedAt = value;
   }
 
   public getUpdatedAt():Date{

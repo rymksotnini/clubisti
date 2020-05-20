@@ -54,18 +54,7 @@ export class AccountsService {
     const selectedPage = this._currentPage;
     params = new HttpParams().set('page', selectedPage.toString())
       .set('perPage', this._sizePage.toString());
-
-    this.crudService.getAllWithParams(API_URL + ACCOUNT, params).subscribe(
-      (response) => {
-        this.accounts = response;
-        console.log(this.accounts);
-        this._currentPage = this.accounts.meta.current_page ;
-        this._total = response.meta.total;
-      },
-      (error =>  {
-        console.log(error);
-      })
-    );
+    return this.crudService.getAllWithParams(API_URL + ACCOUNT, params)
   }
 
   getAccountsPagination(page) {

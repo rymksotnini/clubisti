@@ -44,8 +44,8 @@ import { TestLandingComponent } from './pages/test-landing/test-landing.componen
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 import { MatSelectCountryModule } from '@angular-material-extensions/select-country';
-import { AccountsListComponent } from './pages/admin/account/accounts-list/accounts-list/accounts-list.component';
-import { AccountsCreateComponent } from './pages/admin/account/accounts-create/accounts-create/accounts-create.component';
+import { AccountsListComponent } from './pages/admin/account/accounts-list/accounts-list.component';
+import { AccountsCreateComponent } from './pages/admin/account/accounts-create/accounts-create.component';
 import { AccountsUpdateComponent } from './pages/admin/account/accounts-update/accounts-update/accounts-update.component';
 
 
