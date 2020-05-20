@@ -57,6 +57,7 @@ class UserController extends Controller
     public function delete($id)
     {
         $user = User::findOrFail($id);
+        auth()->logout();
         if($user) {
             $user->deleted = true;
             $user->save();
