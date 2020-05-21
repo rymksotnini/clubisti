@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\AccountType;
+use App\Models\AccountType;
 use App\Http\Resources\AccountCollection;
 use App\Http\Resources\Account as AccountResource;
 use App\Models\Account;
@@ -11,8 +11,14 @@ use Illuminate\Http\Request;
 
 class AccountController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        error_log("heeeere");
+        if ($request->page  && $request->perPage){
+            return new AccountCollection(Account::paginate($request->perPage));
+        }else if ($request->page ){
+            return new AccountCollection(Account::paginate(3));
+        }
         return new AccountCollection(Account::get());
     }
 
@@ -42,8 +48,18 @@ class AccountController extends Controller
             ->setStatusCode(201);
     }
 
-
     public function delete($id)
+    {
+        $account = Account::findOrFail($id);
+        if($account) {
+            $account->deleted = true;
+            $account->save();
+        }
+
+        return response()->json(null, 204);
+    }
+
+    public function deleteFinal($id)
     {
         $account = Account::findOrFail($id);
         $account->delete();
@@ -63,6 +79,7 @@ class AccountController extends Controller
         $account = Account::updateOrCreate(
             ['account_number' => $request->input('account.account_number')]
         );
+        //when updating account must delete
         $account->organisation()->associate($organization);
         $account->save();
 
