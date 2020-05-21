@@ -18,6 +18,7 @@ class Offer extends JsonResource
             'id'         => $this->id,
             'deleted'    => $this->deleted,
             'name'       => $this->name,
+            'amount'       => $this->amount,
             'shortDescription'       => $this->short_description,
             'longDescription' => $this->long_description,
             'categories'    => $this->categories,

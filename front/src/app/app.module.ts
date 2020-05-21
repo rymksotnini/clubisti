@@ -48,11 +48,17 @@ import { AccountsListComponent } from './pages/admin/account/accounts-list/accou
 import { AccountsCreateComponent } from './pages/admin/account/accounts-create/accounts-create.component';
 import { AccountsUpdateComponent } from './pages/admin/account/accounts-update/accounts-update/accounts-update.component';
 
-
+import {TableModule} from 'primeng/table';
+import {PaginatorModule} from 'primeng/paginator';
+import {MultiSelectModule} from 'primeng/multiselect';
+import { BadgesUpdateComponent } from './pages/admin/badge/badges-update/badges-update.component';
 
 // @ts-ignore
 @NgModule({
   imports: [
+    TableModule,
+    PaginatorModule,
+    MultiSelectModule,
     BrowserModule,
     NgZorroAntdModule,
     BrowserAnimationsModule,
@@ -86,6 +92,8 @@ import { AccountsUpdateComponent } from './pages/admin/account/accounts-update/a
     AccountsListComponent,
     AccountsCreateComponent,
     AccountsUpdateComponent,
+    BadgesUpdateComponent,
+
   ],
   providers: [AuthenticationInterceptorProvider,
     {provide: NZ_I18N, useValue: en_US}
