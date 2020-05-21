@@ -10,10 +10,6 @@ export class Account{
   private _accountType: AccountType;
 
 
-  public getCreatedAt():Date{
-    return this.created_at;
-  }
-
   get accountNumber(): string {
     return this._accountNumber;
   }
@@ -36,10 +32,6 @@ export class Account{
 
   set updatedAt(value: Date) {
     this._updatedAt = value;
-  }
-
-  public getUpdatedAt():Date{
-    return this.created_at;
   }
 
   get id(): number {

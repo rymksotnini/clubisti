@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\AccountType;
+use App\Models\AccountType;
 use App\Http\Resources\AccountCollection;
 use App\Http\Resources\Account as AccountResource;
 use App\Models\Account;
@@ -79,6 +79,7 @@ class AccountController extends Controller
         $account = Account::updateOrCreate(
             ['account_number' => $request->input('account.account_number')]
         );
+        //when updating account must delete
         $account->organisation()->associate($organization);
         $account->save();
 

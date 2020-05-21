@@ -58,18 +58,24 @@ export class AccountsListComponent implements OnInit {
   }
 
   createAccount(): void {
-    const modal: NzModalRef = this.modal.create({
+    const createModal: NzModalRef = this.modal.create({
       nzTitle: 'Add account',
       nzContent: AccountsCreateComponent,
-      nzFooter: [
-        {
-          label: 'Close',
-          shape: 'round',
-          onClick: () => modal.destroy()
-        }
-      ]
+      nzFooter: null
     });
   }
+
+  updateAccount(account:Account): void {
+    const modal: NzModalRef = this.modal.create({
+      nzTitle: 'Update account',
+      nzContent: AccountsCreateComponent,
+      nzComponentParams:{
+        id: account.id
+      },
+      nzFooter: null
+    });
+  }
+
   delete(account) {
     this.crudService.delete(API_URL + ACCOUNT, account.id).subscribe(res => {
       console.log(res);
