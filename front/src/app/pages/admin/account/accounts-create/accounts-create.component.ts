@@ -59,14 +59,28 @@ export class AccountsCreateComponent implements OnInit {
     const account = new Account();
     account.accountNumber=this.createAccount.value.accountNumber;
     console.log(account.accountNumber);
-    const json = {
-      account:{
-        account_number: account.accountNumber
-      },
-      accountType:{
-        name: accountType.name
-      }
-    };
+    let json;
+    if(this.id){
+      json = {
+        account:{
+          id: this.id,
+          account_number: account.accountNumber
+        },
+        accountType:{
+          name: accountType.name
+        }
+      };
+    }
+    else {
+      json = {
+        account:{
+          account_number: account.accountNumber
+        },
+        accountType:{
+          name: accountType.name
+        }
+      };
+    }
     console.log(json);
     this.crudService.post(API_URL + ACCOUNT_WITH_TYPE +'/' + CURRENT_ORGANIZATION, json).subscribe(
       (response) => {

@@ -75,10 +75,17 @@ class AccountController extends Controller
         if($request->input('organization')){
             $organization=$organization->update($request->input('organization'));
         }
-
-        $account = Account::updateOrCreate(
-            ['account_number' => $request->input('account.account_number')]
-        );
+        if($request->input('account.id')){
+            $account = Account::find($request->input('account.id'));
+            $account->update(
+                $request->input('account')
+            );
+        }
+        else{
+            $account = Account::create(
+                $request->input('account')
+            );
+        }
         //when updating account must delete
         $account->organisation()->associate($organization);
         $account->save();
