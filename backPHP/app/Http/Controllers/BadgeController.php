@@ -27,11 +27,43 @@ class BadgeController extends Controller
 
     public function store(Request $request)
     {
-        $badge = Badge::create($request->all());
+        // test upper bound > 0
+       $exist= Badge::where('deleted', false)->orderBy('upper_bond', 'desc')->first();
+        $badge = new Badge;
+        // first badge lower bound = 0
+        if(!$exist){
+            error_log("ee");
 
-        return (new BadgeResource($badge))
+            $badge->name = $request->name;
+            $badge->upper_bond = $request->upperBond;
+            $badge->lower_bond = 0;
+
+            $badge->save();
+            return (new BadgeResource($exist))
+                ->response()
+                ->setStatusCode(201);
+        }
+
+error_log("com");
+        error_log($request->upperBond);
+        error_log($exist->upper_bond);
+        // test upper bound > last upper bound
+        if ($request->upperBond <= $exist->upper_bond )
+            return response()->json([
+                'message' => 'Invalid Upper bound'], 404);
+
+
+        // new badge must start from last uperbound + 1
+        $badge->name = $request->name;
+        $badge->upper_bond = $request->upperBond;
+        $badge->lower_bond = $exist->upper_bond  + 1;
+
+        $badge->save();
+        return (new BadgeResource($exist))
             ->response()
             ->setStatusCode(201);
+
+
     }
 
     public function update(Request $request, $id) {
@@ -39,7 +71,8 @@ class BadgeController extends Controller
             'name' => 'required|max:255',
         ]);
         $badge = Badge::findOrFail($id);
-        $badge->update($request->all());
+        $badge->name = $request->name;
+        $badge->save();
 
         return (new BadgeResource($badge))
             ->response()
@@ -65,6 +98,8 @@ class BadgeController extends Controller
 
         return response()->json(null, 204);
     }
+
+
 
 
 }

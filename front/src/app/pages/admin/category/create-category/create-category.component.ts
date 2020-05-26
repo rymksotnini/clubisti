@@ -1,12 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {Category} from '../../../../_models/Category';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CrudService} from '../../../../_services/crud.service';
-import {Router} from '@angular/router';
-import {NzModalService} from 'ng-zorro-antd';
 import {CategoryType} from '../../../../_models/enum/CategoryType';
 import {API_URL, CATEGORY} from '../../../../_globals/global-variables';
-import {CategoriesService} from '../../../../_services/categories.service';
 
 @Component({
   selector: 'app-create-category',
@@ -18,29 +14,36 @@ export class CreateCategoryComponent implements OnInit {
   keys = Object.keys;
   categories = CategoryType;
   createCategory: FormGroup;
-
+  error = false;
+  msg: string;
+  @Output() added = new EventEmitter<boolean>();
   constructor(private formBuilder: FormBuilder,
               private crudService: CrudService,
-              private router: Router,
-              private categoryService: CategoriesService,
   ) { }
 
   ngOnInit() {
     this.createCategory = this.formBuilder.group({
-      name: '',
-      type: 'PROJECT'
+      name: ['',Validators.required],
+      type: ['PROJECT',Validators.required]
     });
   }
 
 
 
   onSubmit() {
+    if (this.createCategory.invalid) {
+      this.error = true;
+      this.msg = 'Fields are required';
+      return;
+    }
     console.log(this.createCategory.value);
 
     this.crudService.post(API_URL + CATEGORY, this.createCategory.value).subscribe(
       (response) => {
+        this.error = false;
         console.log(response);
-        this.categoryService.getCategoriesAPI();
+        this.added.emit(response);
+
       }, (error => console.log(error))
     );
   }

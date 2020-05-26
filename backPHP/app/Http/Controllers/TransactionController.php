@@ -57,14 +57,13 @@ class TransactionController extends Controller
         if($currentUser->profile->balance < (double)$request->input('transaction.amount')){
             return response()->json("current balance not sufficient",406);
         }
-        error_log(Transaction::all());
-        if(Transaction::all()->isEmpty()){
+        if(Transaction::where('offer_id',$request->input('offer.id'))->first()==null){
             error_log("hello1");
             $transaction=Transaction::create(["amount"=>$request->input('transaction.amount'),"newTotal"=>$request->input('transaction.amount')]);
         }
         else{
             error_log("hello2");
-            $lastTransaction = Transaction::latest()->first();
+            $lastTransaction = Transaction::where('offer_id',$request->input('offer.id'))->latest()->first();
             $transaction=Transaction::create(["amount"=>$request->input('transaction.amount'),"newTotal"=>(double)$request->input('transaction.amount')+$lastTransaction->newTotal]);
         }
         $currentProfile=$currentUser->profile;

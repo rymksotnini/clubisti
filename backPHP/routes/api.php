@@ -40,7 +40,6 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     // admin, superAdmin
     Route::post('/badges', 'BadgeController@store');
     Route::put('/badges/{id}', 'BadgeController@update');
-    Route::delete('/badges/{id}', 'BadgeController@delete');
 
     /************************************************ Categories API ************************************************/
     // user, admin, superAdmin
@@ -93,7 +92,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
 
     /************************************************ Projects API ************************************************/
     Route::get('/projects', 'ProjectController@index');
-    Route::get('/projects/{id}', 'ProjectController@getProjectWithRelationship');
+    Route::get('/projects/{id}', 'ProjectController@show');
     Route::post('/projects', 'ProjectController@storeWithOffer');
     Route::put('/projects/activate/{id}', 'ProjectController@activate');
     Route::put('/projects/pause/{id}', 'ProjectController@pause');

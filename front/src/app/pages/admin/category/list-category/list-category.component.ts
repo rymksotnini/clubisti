@@ -1,13 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {CrudService} from '../../../../_services/crud.service';
-import {ActivatedRoute, Router} from '@angular/router';
-import {HttpParams} from '@angular/common/http';
 import {API_URL, CATEGORY, USERS} from '../../../../_globals/global-variables';
-import {ListReq} from '../../../../_models/requests/ListReq';
 import {Category} from '../../../../_models/Category';
-import {CategoriesService} from '../../../../_services/categories.service';
 import {NzModalRef, NzModalService} from 'ng-zorro-antd';
-import {BadgesCreateComponent} from '../../badge/badges-create/badges-create.component';
 import {CreateCategoryComponent} from '../create-category/create-category.component';
 
 @Component({
@@ -18,27 +13,24 @@ import {CreateCategoryComponent} from '../create-category/create-category.compon
 export class ListCategoryComponent implements OnInit {
 
   isVisible = false;
+  categories: Category[];
+  first = 0;
+  cols: any[];
 
-  sort = 'createdAt,desc';
   constructor(private crudService: CrudService,
-              private router: Router,
-              private route: ActivatedRoute,
-              private categoryService: CategoriesService,
-              private modal: NzModalService
-  ) {
-
-  }
+              private modal: NzModalService) { }
 
   ngOnInit() {
-    this.categoryService.setCurrentPage(1);
-    this.categoryService.setSizePage(10);
-    this.categoryService.getCategoriesAPI();
-  }
-
-
-
-  paginate(page: number) {
-    this.categoryService.getCategoriesPagination(page);
+    this.getCategories();
+    this.cols = [
+      { field: 'id', header: 'Id' },
+      { field: 'name', header: 'Name' },
+      { field: 'type', header: 'Type' },
+      { field: 'createdAt', header: 'Created dAt' },
+      { field: 'updatedAt', header: 'Updated At' },
+      { field: 'deleted', header: 'Status' },
+      { field: 'action', header: '' }
+    ];
   }
 
   createGategory(): void {
@@ -54,14 +46,59 @@ export class ListCategoryComponent implements OnInit {
       ]
     });
   }
+
   delete(category) {
     this.crudService.delete(API_URL + CATEGORY, category.id).subscribe(res => {
-      console.log(res)
       category.deleted = 1;
     }, error => {
       console.log(error)
     });
   }
 
+  getCategories() {
+    this.crudService.getAll(API_URL + CATEGORY)
+      .toPromise()
+      .then(res => res.data as Category[])
+      .then(data => { return data; })
+      .then(cars => this.categories = cars);
+
+    console.log(this.categories);
+  }
+
+  showDeleteConfirm(category): void {
+    this.modal.confirm({
+      nzTitle: 'Are you sure you want to delete this badge?',
+      nzContent: '<b style="color: red;"></b>',
+      nzOkText: 'Yes',
+      nzOkType: 'danger',
+      nzOnOk: () => this.delete(category),
+      nzCancelText: 'No',
+      nzOnCancel: () => console.log('Cancel')
+    });
+  }
+
+  reset() {
+    this.first = 0;
+  }
+
+  showModal(): void {
+    this.isVisible = true;
+  }
+
+  handleOk(): void {
+    console.log('Button ok clicked!');
+    this.isVisible = false;
+  }
+
+  handleCancel(): void {
+    console.log('Button cancel clicked!');
+    this.isVisible = false;
+  }
+
+
+  onAdd($event: any) {
+    console.log("event ", $event)
+    this.categories.push($event.data);
+  }
 
 }

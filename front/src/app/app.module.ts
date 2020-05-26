@@ -43,13 +43,22 @@ import { VariableComponent } from './pages/admin/variable/variable.component';
 import { TestLandingComponent } from './pages/test-landing/test-landing.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
-import { HomeUserComponent } from './pages/home-user/home-user.component';
+import { MatSelectCountryModule } from '@angular-material-extensions/select-country';
+import { AccountsListComponent } from './pages/admin/account/accounts-list/accounts-list.component';
+import { AccountsCreateComponent } from './pages/admin/account/accounts-create/accounts-create.component';
+import { AccountsUpdateComponent } from './pages/admin/account/accounts-update/accounts-update/accounts-update.component';
 
-
+import {TableModule} from 'primeng/table';
+import {PaginatorModule} from 'primeng/paginator';
+import {MultiSelectModule} from 'primeng/multiselect';
+import { BadgesUpdateComponent } from './pages/admin/badge/badges-update/badges-update.component';
 
 // @ts-ignore
 @NgModule({
   imports: [
+    TableModule,
+    PaginatorModule,
+    MultiSelectModule,
     BrowserModule,
     NgZorroAntdModule,
     BrowserAnimationsModule,
@@ -63,6 +72,7 @@ import { HomeUserComponent } from './pages/home-user/home-user.component';
     AnonymousLayoutModule,
     SharedModule,
     FontAwesomeModule,
+    MatSelectCountryModule,
   ],
   declarations: [
     AppComponent,
@@ -79,7 +89,10 @@ import { HomeUserComponent } from './pages/home-user/home-user.component';
     BadgesListComponent,
     BadgesCreateComponent,
     VariableComponent,
-    HomeUserComponent,
+    AccountsListComponent,
+    AccountsCreateComponent,
+    AccountsUpdateComponent,
+    BadgesUpdateComponent,
 
   ],
   providers: [AuthenticationInterceptorProvider,

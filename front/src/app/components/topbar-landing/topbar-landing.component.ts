@@ -6,6 +6,7 @@ import {ImageService} from '../../_services/image.service';
 import {AuthenticationService} from '../../_services/authentication.service';
 import {ROUTES} from '../sidebar/sidebar.component';
 import {IMG_URL} from '../../_globals/global-variables';
+import {LocalService} from "../../_services/local.service";
 
 @Component({
   selector: 'app-topbar-landing',
@@ -26,6 +27,7 @@ export class TopbarLandingComponent implements OnInit, DoCheck {
     private element: ElementRef,
     private router: Router,
     private  authenticationService:AuthenticationService,
+    private localService: LocalService
     ) {
     this.location = location;
   }
@@ -57,8 +59,7 @@ export class TopbarLandingComponent implements OnInit, DoCheck {
     this.authenticationService.logout().subscribe(
       (res) => {
         console.log('logging out');
-        localStorage.removeItem('token');
-        localStorage.removeItem('currentUser');
+        this.localService.clearToken();
         this.connected = false;
         this.image = null;
         this.currentUser = null;
