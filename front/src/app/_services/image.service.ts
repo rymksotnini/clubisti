@@ -24,7 +24,10 @@ export class ImageService {
   }
 
   getImage(){
-    return this.http.get(API_URL+'/image/'+this.authenticationService.getCurrentUser().id);
+    if(this.authenticationService.getCurrentUser().id){
+      return this.http.get(API_URL+'/image/'+this.authenticationService.getCurrentUser().id);
+    }
+    return null;
   }
   getImageWithApi(api,id){
     return this.http.get(API_URL+api+'/'+id);

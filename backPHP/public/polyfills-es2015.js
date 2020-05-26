@@ -28,10 +28,10 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/@angular/localize/fesm2015/init.js ***!
   \*********************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-/**
- * @license Angular v9.0.6
+/* WEBPACK VAR INJECTION */(function(global) {/**
+ * @license Angular v9.1.9
  * (c) 2010-2020 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -229,6 +229,7 @@ function findEndOfBlock(cooked, raw) {
 _global.$localize = $localize;
 //# sourceMappingURL=init.js.map
 
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
@@ -1539,9 +1540,9 @@ module.exports = function (it) {
   !*** ./node_modules/core-js/internals/global.js ***!
   \**************************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-var check = function (it) {
+/* WEBPACK VAR INJECTION */(function(global) {var check = function (it) {
   return it && it.Math == Math && it;
 };
 
@@ -1555,6 +1556,7 @@ module.exports =
   // eslint-disable-next-line no-new-func
   Function('return this')();
 
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
@@ -3792,7 +3794,7 @@ __webpack_require__(/*! ../modules/esnext.reflect.metadata */ "./node_modules/co
 /*!*****************************************!*\
   !*** ./node_modules/tslib/tslib.es6.js ***!
   \*****************************************/
-/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet */
+/*! exports provided: __extends, __assign, __rest, __decorate, __param, __metadata, __awaiter, __generator, __createBinding, __exportStar, __values, __read, __spread, __spreadArrays, __await, __asyncGenerator, __asyncDelegator, __asyncValues, __makeTemplateObject, __importStar, __importDefault, __classPrivateFieldGet, __classPrivateFieldSet */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3805,6 +3807,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__metadata", function() { return __metadata; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__awaiter", function() { return __awaiter; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__generator", function() { return __generator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__createBinding", function() { return __createBinding; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__exportStar", function() { return __exportStar; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__values", function() { return __values; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__read", function() { return __read; });
@@ -3820,18 +3823,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldGet", function() { return __classPrivateFieldGet; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "__classPrivateFieldSet", function() { return __classPrivateFieldSet; });
 /*! *****************************************************************************
-Copyright (c) Microsoft Corporation. All rights reserved.
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use
-this file except in compliance with the License. You may obtain a copy of the
-License at http://www.apache.org/licenses/LICENSE-2.0
+Copyright (c) Microsoft Corporation.
 
-THIS CODE IS PROVIDED ON AN *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
-WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
-MERCHANTABLITY OR NON-INFRINGEMENT.
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
 
-See the Apache Version 2.0 License for specific language governing permissions
-and limitations under the License.
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
 /* global Reflect, Promise */
 
@@ -3924,8 +3927,13 @@ function __generator(thisArg, body) {
     }
 }
 
+function __createBinding(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}
+
 function __exportStar(m, exports) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+    for (var p in m) if (p !== "default" && !exports.hasOwnProperty(p)) exports[p] = m[p];
 }
 
 function __values(o) {
@@ -4036,6 +4044,37 @@ function __classPrivateFieldSet(receiver, privateMap, value) {
 
 /***/ }),
 
+/***/ "./node_modules/webpack/buildin/global.js":
+/*!***********************************!*\
+  !*** (webpack)/buildin/global.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+
 /***/ "./node_modules/zone.js/dist/zone-evergreen.js":
 /*!*****************************************************!*\
   !*** ./node_modules/zone.js/dist/zone-evergreen.js ***!
@@ -4043,7 +4082,7 @@ function __classPrivateFieldSet(receiver, privateMap, value) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
+/* WEBPACK VAR INJECTION */(function(global) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
  * @license Angular v0.10.2
  * (c) 2010-2019 Google LLC. https://angular.io/
  * License: MIT
@@ -6979,6 +7018,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 }));
 
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
@@ -7072,7 +7112,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ 2:
+/***/ 18:
 /*!***************************************************************************************************************************!*\
   !*** multi ./src/polyfills.ts ./node_modules/@angular-devkit/build-angular/src/angular-cli-files/models/jit-polyfills.js ***!
   \***************************************************************************************************************************/
@@ -7085,5 +7125,5 @@ module.exports = __webpack_require__(/*! C:\Users\rymou\Documents\clubisti\front
 
 /***/ })
 
-},[[2,"runtime"]]]);
+},[[18,"runtime"]]]);
 //# sourceMappingURL=polyfills-es2015.js.map

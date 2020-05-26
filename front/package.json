@@ -47,8 +47,9 @@
     "primeng": "^9.0.6",
     "rxjs": "6.5.4",
     "secure-web-storage": "^1.0.2",
+    "stacktrace-js": "^2.0.2",
     "svg-country-flags": "^1.2.7",
-    "web3": "^1.2.7",
+    "web3": "1.2.7",
     "zone.js": "0.10.2"
   },
   "devDependencies": {

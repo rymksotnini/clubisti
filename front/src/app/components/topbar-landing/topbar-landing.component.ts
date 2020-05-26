@@ -7,6 +7,7 @@ import {AuthenticationService} from '../../_services/authentication.service';
 import {ROUTES} from '../sidebar/sidebar.component';
 import {IMG_URL} from '../../_globals/global-variables';
 import {LocalService} from "../../_services/local.service";
+import {MoneyTransferService} from "../../_services/money-transfer.service";
 
 @Component({
   selector: 'app-topbar-landing',
@@ -20,6 +21,7 @@ export class TopbarLandingComponent implements OnInit, DoCheck {
   public listTitles: any[];
   public location: Location;
   public image;
+  public balance;
   currentUser: User;
   constructor(
     private imageService:ImageService,
@@ -27,7 +29,8 @@ export class TopbarLandingComponent implements OnInit, DoCheck {
     private element: ElementRef,
     private router: Router,
     private  authenticationService:AuthenticationService,
-    private localService: LocalService
+    private localService: LocalService,
+    private moneyTransferService: MoneyTransferService
     ) {
     this.location = location;
   }
@@ -38,23 +41,43 @@ export class TopbarLandingComponent implements OnInit, DoCheck {
     console.log(this.authenticationService.isLogged());
     this.connected = this.authenticationService.isLogged();
     this.currentUser = this.authenticationService.getCurrentUser();
-    this.imageService.getImage().subscribe(
-      (data) =>{
-        console.log('data: '+data);
-        console.log(IMG_URL + data);
-        this.image = IMG_URL + data;
-      },
-      error => {
-        console.log(error);
-        this.image = 'assets/img/theme/team-4-800x800.jpg';
-      }
-    )
+    console.log('houni');
+    if(this.authenticationService.isLogged()){
+      this.imageService.getImage().subscribe(
+        (data) =>{
+          console.log('data: '+data);
+          console.log(IMG_URL + data);
+          this.image = IMG_URL + data;
+        },
+        error => {
+          console.log(error);
+          this.image = 'assets/img/theme/team-4-800x800.jpg';
+        }
+      )
+    }
   }
 
   ngDoCheck() {
     this.connected = this.authenticationService.isLogged();
+    console.log('balance');
+    console.log(this.balance);
   }
 
+  init () {
+    const address1= this.moneyTransferService.createAccount().address;
+    this.moneyTransferService.initAccount(address1).
+    then(async (retAccount: any) => {
+      await this.moneyTransferService.getBal(address1).then((res)=>{
+        console.log('what?');
+        this.balance = res;
+        console.log(res);
+      }).catch((err)=>console.log('noooooooooooo'));
+      console.log('najahna');
+    }).catch((error) => {
+      console.log('fchilna');
+      console.log(error);
+    });
+  };
   logout(){
     this.authenticationService.logout().subscribe(
       (res) => {

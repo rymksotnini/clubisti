@@ -41,23 +41,20 @@ export class NavbarComponent implements OnInit,DoCheck {
     this.currentUser = this.authenticationService.getCurrentUser();
     console.log(this.currentUser);
     this.isLogged = this.authenticationService.isLogged();
-    this.imageService.getImage().subscribe(
-      (data) =>{
-        console.log('data: '+data);
-        console.log(IMG_URL + data);
-        this.image = IMG_URL + data; // 'https://clubisti.net/assets/img/'+ data | environment.apiUrl+'/assets/img/'+
-      },
-      error => {
-        console.log(error);
-        this.image = 'assets/img/theme/team-4-800x800.jpg';
-      }
-    );
-    // this.moneyTransferService.transferAmount().then(()=>{
-    //   console.log('success!!');
-    // },
-    //   (errors) => {
-    //   console.log(errors);
-    // });
+    console.log(this.isLogged);
+    if(this.isLogged===true){
+      this.imageService.getImage().subscribe(
+        (data) =>{
+          console.log('data: '+data);
+          console.log(IMG_URL + data);
+          this.image = IMG_URL + data; // 'https://clubisti.net/assets/img/'+ data | environment.apiUrl+'/assets/img/'+
+        },
+        error => {
+          console.log(error);
+          this.image = 'assets/img/theme/team-4-800x800.jpg';
+        }
+      );
+    }
   }
   getTitle(){
     let titlee = this.location.prepareExternalUrl(this.location.path());

@@ -1,67 +1,91 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
+import {environment} from '../../environments/environment';
 import {INFURA_URL} from '../_globals/global-variables';
+const tokenAbi = require('../../../truffle/build/contracts/MoneyTransfer1.json');
+const HDWalletProvider = require('@truffle/hdwallet-provider');
 const Web3 = require('web3');
 declare let require: any;
 declare let window: any;
-const tokenAbi = require('../../../truffle/build/contracts/MoneyTransfer.json');
+const mnemonic = environment.mnemonic.toString().trim();
+const provider = new HDWalletProvider(mnemonic, `https://ropsten.infura.io/v3/${environment.infuraApiKey}`);
+
+// const contract = require('@truffle/contract');
+// const transferContract = contract(tokenAbi);
 @Injectable({
   providedIn: 'root'
 })
 export class MoneyTransferService {
-  // private account: any = null;
-  // private account1: any = null;
-  // private account2: any = null;
-  // private web3: any;
-  // private web3Provider: any;
-  // private enable: any;
-  // constructor() {
-  //   // if (window.ethereum === undefined) {
-  //   //   console.log('Non-Ethereum browser detected. Install MetaMask');
-  //   // } else {
-  //   if (typeof window.web3 !== 'undefined') {
-  //     window.ethereum.enable().then(() => {
-  //       this.web3Provider = window.web3.currentProvider;
-  //     });
-  //   } else {
-  //     this.web3Provider = new Web3.providers.WebsocketProvider(INFURA_URL);
-  //   }
-  //   console.log('transfer.service :: constructor :: window.ethereum');
-  //   this.web3 = new Web3(this.web3Provider);
-  //   console.log('transfer.service :: constructor :: this.web3');
-  //   console.log(this.web3);
-  //   // }
-  // }
-  //
-  // public async getAccount(): Promise<any> { // make it simple back call for accounts
-  //   console.log('transfer.service :: getAccount :: start');
-  //   if (this.account == null) {
-  //     this.account = await new Promise((resolve, reject) => {
-  //       console.log('transfer.service :: getAccount :: eth');
-  //       console.log( this.web3.currentProvider);
-  //       this.web3.eth.getAccounts((err, retAccount) => {
-  //         console.log('transfer.service :: getAccount: retAccount');
-  //         console.log(retAccount);
-  //         if (retAccount.length > 0) {
-  //           this.account = retAccount[0];
-  //           console.log(this.account);
-  //           console.log('current account');
-  //           resolve(this.account);
-  //         } else {
-  //           console.log('accounts');
-  //           console.log(this.web3.eth.getAccounts());
-  //           // alert('transfer.service :: getAccount :: no accounts found.');
-  //           // reject('No accounts found.');
-  //         }
-  //         if (err != null) {
-  //           alert('transfer.service :: getAccount :: error retrieving account');
-  //           reject('Error retrieving account');
-  //         }
-  //       });
-  //     }) as Promise<any>;
-  //   }
-  //   return Promise.resolve(this.account);
-  // }
-  //
+  private account: any = null;
+  private account1: any = null;
+  private account2: any = null;
+  private web3: any;
+  private web3Provider: any;
+  private httpProvider;
+  private enable: any;
+  transferContract: any;
+  constructor() {
+    // if (window.ethereum === undefined) {
+    //   console.log('Non-Ethereum browser detected. Install MetaMask');
+    // } else {
+    if (typeof window.web3 !== 'undefined') {
+      window.ethereum.enable().then(() => {
+        this.web3Provider = window.web3.currentProvider;
+      });
+    } else {
+      Web3.providers.HttpProvider.prototype.sendAsync = Web3.providers.HttpProvider.prototype.send;
+      this.web3Provider = provider;
+      this.httpProvider= new Web3.providers.HttpProvider(INFURA_URL);
+      console.log(this.web3Provider);
+    }
+    console.log('transfer.service :: constructor :: window.ethereum');
+    this.web3 = new Web3(this.web3Provider);
+    console.log('transfer.service :: constructor :: this.web3');
+    console.log(this.web3);
+    this.artifactsToContract(tokenAbi)
+      .then((MetaCoinAbstraction) => {
+        this.transferContract = MetaCoinAbstraction;
+        this.transferContract.deployed().then(deployed => {
+          console.log('deployed');
+          console.log(deployed);
+          deployed.Transfer({}, (err, ev) => {
+          });
+        });
+      });
+  }
+
+  public async artifactsToContract(artifacts) {
+    if (!this.web3) {
+      const delay = new Promise(resolve => setTimeout(resolve, 100));
+      await delay;
+      return await this.artifactsToContract(artifacts);
+    }
+    const contract = require('@truffle/contract');
+    const contractAbstraction = contract(artifacts);
+    contractAbstraction.setProvider(this.httpProvider);
+    this.getAccount();
+    return contractAbstraction;
+  }
+
+  public async getAccount(): Promise<any> { // make it simple back call for accounts
+    console.log('transfer.service :: getAccount :: start');
+    console.log(this.web3.eth);
+    // this.web3.eth.getBalance('0x90b5B4F5a580a62848141114CaC48AC4ecF0B969', async (err, result) => {
+    //   if (err) {
+    //     console.log(err);
+    //     return;
+    //   }
+    //   const balance = this.web3.utils.fromWei(result, 'ether');
+    //   console.log(balance + ' ETH');
+    // });
+    if (this.account == null) {
+      const accs = await this.web3.eth.getAccounts();
+      if (accs.length>0){
+        this.account = accs[0];
+      }
+      console.log(accs);
+    }
+  }
+
   // public async getUserBalance(): Promise<any> {
   //   const account = await this.getAccount();
   //   console.log('transfer.service :: getUserBalance :: account');
@@ -84,24 +108,88 @@ export class MoneyTransferService {
   //     });
   //   }) as Promise<any>;
   // }
-  // transferAmount(/*value*/) {
-  //   this.account1=this.web3.eth.accounts.create();
-  //   this.account2=this.web3.eth.accounts.create();
-  //   console.log(this.account1);
-  //   console.log(this.account2);
+  async initAccount(address){
+    if (!this.transferContract) {
+      return;
+    }
+    try {
+      const deployedMetaCoin = await this.transferContract.deployed();
+      console.log(deployedMetaCoin);
+      console.log('deployed 1');
+      console.log(this.account);
+      console.log(address);
+      return await deployedMetaCoin.initializeAccount(address,{from: this.account});
+    } catch (e) {
+      console.log(e);
+    }
+    // const that = this;
+    // return new Promise((resolve, reject) => {
+    //   const contract = require('@truffle/contract');
+    //   const transferContract = contract(tokenAbi);
+    //   transferContract.setProvider(that.web3Provider);
+    //   transferContract.deployed().then((instance) => {
+    //     console.log(instance);
+    //     return instance.initializeAccount(
+    //       // this.account2.address,
+    //       address);
+    //   }).catch((error)=> {console.log('heeeeeeeere'); return reject(error);})
+    //   //   .then((amount) => {
+    //   //   if (amount) {
+    //   //     console.log(amount);
+    //   //     return resolve(amount);
+    //   //   }
+    //   // }).catch((error) => {
+    //   //   return reject(error);
+    //   // });
+    // });
+  }
+  createAccount(){
+    return this.web3.eth.accounts.create();
+  }
+  async getBal(address){
+    if (!this.transferContract) {
+      return;
+    }
+    try {
+      const deployedMetaCoin = await this.transferContract.deployed();
+      console.log(deployedMetaCoin);
+      console.log('deployed 2');
+      console.log(this.account);
+      console.log(address);
+      return await deployedMetaCoin.getBalance(address, {from: this.account});
+    } catch (e) {
+      console.log(e);
+    }
+    // const that = this;
+    // return new Promise((resolve, reject) => {
+    //   const contract = require('@truffle/contract');
+    //   const transferContract = contract(tokenAbi);
+    //   transferContract.setProvider(that.web3Provider);
+    //   transferContract.deployed().then((instance) => {
+    //     return instance.getBalance(
+    //       // this.account2.address,
+    //       address);
+    //   })
+    //     .then((amount) => {
+    //     if (amount) {
+    //       console.log(amount);
+    //       return resolve(amount);
+    //     }
+    //   }).catch((error) => {
+    //     return reject(error);
+    //   });
+    // });
+  }
+  // transferAmount(sender, receiver,amount) {
   //   return new Promise((resolve, reject) => {
-  //     console.log('transfer.service :: transferEther :: tokenAbi');
-  //     console.log(tokenAbi);
-  //     const contract = require('@truffle/contract');
-  //     const transferContract = contract(tokenAbi);
-  //     transferContract.setProvider(this.web3Provider);
-  //     console.log('transfer.service :: transferEther :: transferContract');
-  //     console.log(transferContract);
+  //     console.log('transfer amount');
   //     transferContract.deployed().then((instance) => {
   //       console.log('deploying...');
   //       return instance.sendCoin(
-  //         this.account2.address,
-  //         15);
+  //         sender,
+  //         receiver,
+  //       // this.account2.address,
+  //         amount);
   //     }).then((status) => {
   //       if (status) {
   //         return resolve({status: true});

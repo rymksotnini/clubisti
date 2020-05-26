@@ -7,7 +7,8 @@ export const environment = {
   // apiUrl: 'https://clubisti.net'
    apiUrl: 'http://localhost:8000',
   infuraApiKey:'6a8c7db8b8054008857455c6637a1156',
-  secretKey:'rNAcPnp7R02KZiAqVN5DmXNK4MlKoHzwAZ'
+  secretKey:'rNAcPnp7R02KZiAqVN5DmXNK4MlKoHzwAZ',
+  mnemonic:'5C2BD643C10BBA9C0C1CA6AE9584C836993E6137AEE488F24EBCDC2A86D50844'
 };
 
 /*
