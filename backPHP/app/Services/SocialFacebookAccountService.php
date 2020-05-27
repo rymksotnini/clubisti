@@ -22,6 +22,7 @@ class SocialFacebookAccountService
             ]);
             $user = User::whereEmail($providerUser->getEmail())->first();
             if (!$user) {
+                // add balance and badge
                 $user = User::create([
                     'email' => $providerUser->getEmail(),
                     'username' => $providerUser->getName(),

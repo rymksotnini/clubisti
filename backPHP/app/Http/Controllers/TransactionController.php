@@ -79,4 +79,9 @@ class TransactionController extends Controller
             ->response()
             ->setStatusCode(201);
     }
+
+    public function getPerUser($id){
+        $currentUser = User::findOrFail($id);
+        return new TransactionCollection($currentUser->transactions()->get());
+    }
 }

@@ -12,6 +12,7 @@ class AuthenticationController extends Controller
 {
     public function register(Request $request)
     {
+        // add badge and balance in creation of user
         error_log($request->json('email'));
         error_log($request->json('username'));
         error_log('000000');
