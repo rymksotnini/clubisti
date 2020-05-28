@@ -1,5 +1,6 @@
 <?php
 namespace App\Services;
+use App\Models\Badge;
 use App\Models\SocialFacebookAccount;
 use App\Models\User;
 use Laravel\Socialite\Contracts\User as ProviderUser;
@@ -30,6 +31,11 @@ class SocialFacebookAccountService
                     'first_name' => $providerUser->getName(),
                     'last_name' => $providerUser->getName()
                 ]);
+                // add first badge to user
+                $badge = Badge::find(1);
+                $profile=$user->profile()->create();
+                $profile->badge()->associate($badge);
+                $profile->save();
             }
             $account->user()->associate($user);
             $account->save();

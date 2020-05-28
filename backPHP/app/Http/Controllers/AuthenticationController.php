@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Badge;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,6 +30,11 @@ class AuthenticationController extends Controller
         error_log('2222222222');
         $user_id = auth()->id();
         error_log($user_id);
+        // add first badge to user
+        $badge = Badge::find(1);
+        $profile=$user->profile()->create();
+        $profile->badge()->associate($badge);
+        $profile->save();
         return $this->respondWithTokenAndUser($token,$user_id);
     }
     public function login(Request $request)
