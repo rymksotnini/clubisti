@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\TransactionCollection;
+use App\Models\Badge;
 use App\Models\Offer;
 use App\Models\User;
 use App\Models\Transaction;
@@ -67,7 +68,17 @@ class TransactionController extends Controller
             $transaction=Transaction::create(["amount"=>$request->input('transaction.amount'),"newTotal"=>(double)$request->input('transaction.amount')+$lastTransaction->newTotal]);
         }
         $currentProfile=$currentUser->profile;
-        $currentProfile->balance = $currentProfile->balance - (double)$request->input('transaction.amount'); //test it
+        $currentProfile->balance = $currentProfile->balance - (double)$request->input('transaction.amount');
+        $currentProfile->totalDonatedAmount = $currentProfile->totalDonatedAmount + (double)$request->input('transaction.amount'); //test it
+        //badge update
+        $currentBadge=$currentProfile->badge;
+        error_log($currentBadge->upper_bond);
+        error_log($currentProfile->totalDonatedAmount);
+        if ((double)$currentBadge->upper_bond < (double)$currentProfile->totalDonatedAmount) {
+            $badge = Badge::find($currentBadge->id + 1);
+            $currentProfile->badge()->associate($badge);
+        }
+        //end badge update
         $currentProfile->save();
         $transaction->account()->associate($currentAccount);
         $transaction->save();
@@ -79,4 +90,10 @@ class TransactionController extends Controller
             ->response()
             ->setStatusCode(201);
     }
+
+    public function getPerUser($id){
+        $currentUser = User::findOrFail($id);
+        return new TransactionCollection($currentUser->transactions()->get());
+    }
+
 }

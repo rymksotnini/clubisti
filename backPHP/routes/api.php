@@ -137,6 +137,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
 // user, admin, superAdmin
 Route::get('/transactions', 'TransactionController@index');
 Route::get('/transactions/{id}', 'TransactionController@show');
+Route::get('/users/transactions/{id}', 'TransactionController@getPerUser');
 Route::post('/transactions', 'TransactionController@store');
 Route::post('/donate', 'TransactionController@create');
 // admin, superAdmin
