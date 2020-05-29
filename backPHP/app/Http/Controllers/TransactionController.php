@@ -52,6 +52,7 @@ class TransactionController extends Controller
     }
 
     public function create(Request $request){
+        error_log($request);
         $currentUser = User::find($request->input('user.id'));
         $currentOffer = Offer::find($request->input('offer.id'));
         $currentAccount = User::find($request->input('account.id'));

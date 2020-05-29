@@ -60,26 +60,27 @@ export class CharityAmountComponent implements OnInit {
         account:{
           id:currentAccount.id
         }
-      }
+      };
+      this.crudService.post(API_URL + DONATE, this.json).subscribe(
+        (resp) => {
+          this.success = true;
+          this.textSuccess = 'Thank you for your contribution';
+          this.router.navigateByUrl('admin', { skipLocationChange: true }).then(() => {
+            this.router.navigate(['projects']);
+          });
+          console.log(resp);
+        }, (error =>{
+          console.log(error);
+          this.error = true;
+          if (error.error) {
+            this.textError = error.error;
+          }
+          else {
+            this.textError ='Error';
+          }
+        })
+      );
     });
-    this.crudService.post(API_URL + DONATE, this.json).subscribe(
-      (response) => {
-        this.success = true;
-        this.textSuccess = 'Thank you for your contribution';
-        this.router.navigateByUrl('admin', { skipLocationChange: true }).then(() => {
-          this.router.navigate(['projects']);
-        });
-        console.log(response);
-      }, (error =>{
-        this.error = true;
-        if (error.error) {
-          this.textError = error.error;
-        }
-        else {
-          this.textError ='Error';
-        }
-      })
-    );
   }
 
 }

@@ -19,4 +19,4 @@ export const INFURA_URL = 'https://ropsten.infura.io/v3/' + environment.infuraAp
 // export const IMG_URL = 'http://127.0.0.1:8887/';
 export const BADGE = '/badges';
 export const DONATE = '/donate';
-export const DEFAULT_ACCOUNT = '/accounts/default';
+export const DEFAULT_ACCOUNT = '/default';
