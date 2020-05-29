@@ -23,7 +23,9 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('/accounts/{id}', 'AccountController@show');
     Route::post('/accounts', 'AccountController@store');
     Route::put('/accounts/{id}', 'AccountController@update');
+    Route::put('/default/{id}', 'AccountController@setAccountAsDefault');
     Route::delete('/accounts/{id}', 'AccountController@delete');
+    Route::get('/default', 'AccountController@getDefault');
 
     /************************************************ Addresses API ************************************************/
     // user, admin, superAdmin

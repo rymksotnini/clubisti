@@ -29,6 +29,7 @@
             <tr>
               <th scope="col">Account Number</th>
               <th scope="col">Account Type</th>
+              <th scope="col">Default</th>
               <th scope="col">Created At</th>
               <th scope="col">Updated At</th>
               <th scope="col">Status</th>
@@ -47,6 +48,14 @@
               </th>
               <td>
                 {{account.accountType.name}}
+              </td>
+              <td>
+                <span *ngIf="!account.default">
+                  <i class="fa fa-star text-success"></i>
+                </span>
+                <span *ngIf="account.default">
+                  <i class="fa fa-star" style="color: gold"></i>
+                </span>
               </td>
               <td>
                 {{account.createdAt | date}}
@@ -70,6 +79,7 @@
                   <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
                     <a class="dropdown-item" (click)="delete(account)">Delete</a>
                     <a class="dropdown-item" (click)="updateAccount(account)">Update</a>
+                    <a class="dropdown-item" (click)="setAsDefault(account)">set as default</a>
                   </div>
                 </div>
               </td>

@@ -18,6 +18,7 @@ class Account extends JsonResource
             'id'         => $this->id,
             'accountNumber'       => $this->account_number,
             'deleted'       => $this->deleted,
+            'default'       => $this->default,
             'organisation'    => $this->organisation,
             'accountType'    => $this->accountType,
             'createdAt' => $this->created_at,

@@ -5,6 +5,7 @@ export class Account{
   private _id: number;
   private _accountNumber: string;
   private _deleted: boolean;
+  private _default: boolean;
   private _createdAt: Date;
   private _updatedAt: Date;
   private _accountType: AccountType;
@@ -49,5 +50,13 @@ export class Account{
 
   set deleted(value: boolean) {
     this._deleted = value;
+  }
+
+  get default(): boolean {
+    return this._default;
+  }
+
+  set default(value: boolean) {
+    this._default = value;
   }
 }
