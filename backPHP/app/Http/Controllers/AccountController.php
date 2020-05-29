@@ -79,6 +79,10 @@ class AccountController extends Controller
         $account = Account::updateOrCreate(
             ['account_number' => $request->input('account.account_number')]
         );
+        // set default if first account
+        if(count(Account::all())==1){
+            $account->default = true;
+        }
         //when updating account must delete
         $account->organisation()->associate($organization);
         $account->save();
@@ -92,4 +96,20 @@ class AccountController extends Controller
             ->setStatusCode(201);
     }
 
+    public function getDefault(){
+        error_log("here");
+        $defaultAccount = Account::where('default',true)->first();
+        error_log($defaultAccount->account_number);
+        return new AccountResource($defaultAccount);
+    }
+
+    public function setAccountAsDefault($id){
+        $newDefaultAccount = Account::find($id);
+        $oldDefaultAccount = Account::where('default',true)->first();
+        $newDefaultAccount->default = true;
+        $oldDefaultAccount->default = false;
+        $newDefaultAccount->save();
+        $oldDefaultAccount->save();
+        return response()->json(null, 201);
+    }
 }

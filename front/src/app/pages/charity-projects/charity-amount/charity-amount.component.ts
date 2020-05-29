@@ -3,7 +3,14 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 import {CrudService} from "../../../_services/crud.service";
 import {Router} from "@angular/router";
 import {AccountsService} from "../../../_services/accounts.service";
-import {ACCOUNT, ACCOUNT_WITH_TYPE, API_URL, CURRENT_ORGANIZATION, DONATE} from "../../../_globals/global-variables";
+import {
+  ACCOUNT,
+  ACCOUNT_WITH_TYPE,
+  API_URL,
+  CURRENT_ORGANIZATION,
+  DEFAULT_ACCOUNT,
+  DONATE
+} from "../../../_globals/global-variables";
 import {AccountType} from "../../../_models/accountType";
 import {Account} from "../../../_models/account";
 import {AuthenticationService} from "../../../_services/authentication.service";
@@ -21,6 +28,7 @@ export class CharityAmountComponent implements OnInit {
   textError = '';
   success = false;
   error = false;
+  json = null;
   @Input() id?: number;
   constructor(private formBuilder: FormBuilder,
               private crudService: CrudService,
@@ -37,21 +45,24 @@ export class CharityAmountComponent implements OnInit {
 
   onSubmit(){
     this.amount=this.donation.value.amount;
-    const json ={
-      transaction:{
-        amount:this.amount
-      },
-      user:{
-        id:this.authenticationService.getCurrentUser().id
-      },
-      offer:{
-        id:this.id
-      },
-      account:{
-        id:this.accountsService.getDefaultAccountID()
+    this.crudService.getAll(API_URL+DEFAULT_ACCOUNT).subscribe((response) =>{
+      const currentAccount:Account = response.data;
+      this.json ={
+        transaction:{
+          amount:this.amount
+        },
+        user:{
+          id:this.authenticationService.getCurrentUser().id
+        },
+        offer:{
+          id:this.id
+        },
+        account:{
+          id:currentAccount.id
+        }
       }
-    };
-    this.crudService.post(API_URL + DONATE, json).subscribe(
+    });
+    this.crudService.post(API_URL + DONATE, this.json).subscribe(
       (response) => {
         this.success = true;
         this.textSuccess = 'Thank you for your contribution';

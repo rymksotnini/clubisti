@@ -46,7 +46,6 @@ import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 import { MatSelectCountryModule } from '@angular-material-extensions/select-country';
 import { AccountsListComponent } from './pages/admin/account/accounts-list/accounts-list.component';
 import { AccountsCreateComponent } from './pages/admin/account/accounts-create/accounts-create.component';
-import { AccountsUpdateComponent } from './pages/admin/account/accounts-update/accounts-update/accounts-update.component';
 
 import {TableModule} from 'primeng/table';
 import {PaginatorModule} from 'primeng/paginator';
@@ -92,7 +91,6 @@ import { CharityAmountComponent } from './pages/charity-projects/charity-amount/
     VariableComponent,
     AccountsListComponent,
     AccountsCreateComponent,
-    AccountsUpdateComponent,
     BadgesUpdateComponent,
     CharityAmountComponent,
 
