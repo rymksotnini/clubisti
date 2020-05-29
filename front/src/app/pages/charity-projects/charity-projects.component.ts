@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {API_URL, CHARITY, IMG_URL} from "../../_globals/global-variables";
+import {API_URL, CHARITY, DONATE, IMG_URL} from "../../_globals/global-variables";
 import {Project} from "../../_models/Project";
 import {CrudService} from "../../_services/crud.service";
 
@@ -31,6 +31,8 @@ export class CharityProjectsComponent implements OnInit {
   }
 
   donate(project: Project) {
-    alert('donate to project: '+ project?.offer?.name)
+    console.log(project?.id);
+    alert('donate to project: '+ project?.offer?.id);
+    this.crudService.post(API_URL + DONATE, )
   }
 }
