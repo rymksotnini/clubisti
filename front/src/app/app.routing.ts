@@ -12,9 +12,11 @@ import {SharedModule} from "./shared/shared.module";
 import {TestLandingComponent} from "./pages/test-landing/test-landing.component";
 import {AuthGuard} from "./_guards/auth.guard";
 import {Role} from "./_models/enum/Role";
+import {HomeUserComponent} from "./pages/home-user/home-user.component";
 
 const routes: Routes =[
   { path: 'fblogin', component: FbAuthComponent },
+  { path: 'user-home', component: HomeUserComponent},
   {
     path: 'admin',
     component: AdminLayoutComponent,

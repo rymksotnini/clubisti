@@ -2,17 +2,98 @@
   <div class="position-relative">
     <!-- shape Hero -->
     <section class="section section-lg section-shaped pb-250">
-      <div class="shape shape-style-1 shape-clubisti3">
+      <div class="shape shape-style-1 shape-clubisti">
       </div>
       <div class="container py-lg-md d-flex">
+
         <div class="col px-0">
-          <div class="row">
-            <div class="col-lg-6">
-              <br>
-              <br>
-              <br>
-              <br>
-              <br>
+          <div class="row row-grid justify-content-between">
+            <div class="col-md-5 mt-lg-5">
+              <div class="row">
+                <div class="col-lg-6 col-sm-12 px-2 py-2">
+                  <div class="card card-stats">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-5 col-md-4">
+                          <div class="icon-big text-center icon-warning">
+                            <i class="fa fa-gift text-warning"> </i>
+                          </div>
+                        </div>
+                        <div class="col-7 col-md-8">
+                          <div class="numbers">
+                            <h2 class="card-title"><b>3,237 DT</b></h2>
+                            <p></p>
+                            <p class="card-category">Installments</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-sm-12 px-2 py-2">
+                  <div class="card card-stats upper bg-default">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-5 col-md-4">
+                          <div class="icon-big text-center icon-warning">
+                            <i class="tim-icons icon-coins text-white"> </i>
+                          </div>
+                        </div>
+                        <div class="col-7 col-md-8">
+                          <div class="numbers">
+                            <p class="card-title">3,653</p>
+                            <p></p>
+                            <p class="card-category">Commits</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6 col-sm-12 px-2 py-2">
+                  <div class="card card-stats">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-5 col-md-4">
+                          <div class="icon-big text-center icon-warning">
+                            <i class="fa fa-dollar-sign text-info"> </i>
+                          </div>
+                        </div>
+                        <div class="col-7 col-md-8">
+                          <div class="numbers">
+                            <h2 class="card-title"><b>593 DT</b></h2>
+                            <p></p>
+                            <p class="card-category">Credit</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-sm-12 px-2 py-2">
+                  <div class="card card-stats">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-5 col-md-4">
+                          <div class="icon-big text-center icon-warning">
+                            <i class="fa fa-gift text-success">
+                            </i>
+                          </div>
+                        </div>
+                        <div class="col-7 col-md-8">
+                          <div class="numbers">
+                            <h2 class="card-title"><b>10,783 DT</b></h2>
+                            <p></p>
+                            <p class="card-category">Donations</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -20,144 +101,50 @@
       <!-- SVG separator -->
       <div class="separator separator-bottom separator-skew">
         <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
-          <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+          <polygon class="fill-lighter" points="2560 0 2560 100 0 100"></polygon>
         </svg>
       </div>
     </section>
     <!-- 1st Hero Variation -->
   </div>
-  <section class="section section-lg pt-lg-0 mt--200">
+  <section class="section section-lg pt-lg-0 mt--150">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-12">
           <div class="row row-grid">
-            <div class="col-lg-3">
+            <div *ngFor="let project of projects" class="col-lg-3">
 
               <div class="card card-lift--hover shadow border-0">
-                <div style="background-color: #2dce89">
-                  test
-                  test
+                <div >
+                  <img [src]="project?.offer?.shortImagePath?(IMG_URL + project?.offer?.shortImagePath):'assets/img/default.jpg'" alt="event-cover-photo" >
                 </div>
-                <div class="card-body py-5">
-
-                  <div class="icon icon-shape icon-shape-success rounded-circle mb-4">
-                    <i class="ni ni-istanbul"></i>
-                  </div>
-                  <h6 class="text-success text-uppercase">Build Something</h6>
-                  <p class="description mt-3">Argon is a great free UI package based on Angular that includes the most important components and features.</p>
+                <div class="card-body">
+                  <h3 class="text-uppercase">{{project?.offer?.name}}</h3>
+                  <p class="description mt-3">{{project?.offer?.shortDescription}}</p>
                   <div>
-                    <span class="badge badge-pill badge-success">business</span>
-                    <span class="badge badge-pill badge-success">vision</span>
-                    <span class="badge badge-pill badge-success">success</span>
+                    <div class="progress-wrapper">
+                      <div class="progress-info">
+                        <div class="progress-label">
+                          <span>completion</span>
+                        </div>
+                        <div class="progress-percentage">
+                          <span>{{(project?.offer?.amount && project?.offer?.amount !==0)?(project?.lastUpdatedSum)*100/(project?.offer?.amount):0}}%</span>
+                        </div>
+                      </div>
+                      <ngb-progressbar type="primary" [value]="(project?.offer?.amount && project?.offer?.amount !==0)?(project?.lastUpdatedSum)*100/(project?.offer?.amount):0"></ngb-progressbar>
+                    </div>
                   </div>
-                  <a href="javascript:void(0)" class="btn btn-success mt-4">Learn more</a>
+                  <div class="row" style="width: 100%">
+                    <div class="col-lg-6">
+                      <a class="btn btn-danger mt-4" (click)="donate(project)">Donate</a>
+                    </div>
+                    <div class="col-lg-6">
+                      <a href="javascript:void(0)" class="btn btn-neutral mt-4">See Details</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-lg-3">
-              <div class="card card-lift--hover shadow border-0">
-                <div class="card-body py-5">
-                  <div class="icon icon-shape icon-shape-success rounded-circle mb-4">
-                    <i class="ni ni-istanbul"></i>
-                  </div>
-                  <h6 class="text-success text-uppercase">Build Something</h6>
-                  <p class="description mt-3">Argon is a great free UI package based on Angular that includes the most important components and features.</p>
-                  <div>
-                    <span class="badge badge-pill badge-success">business</span>
-                    <span class="badge badge-pill badge-success">vision</span>
-                    <span class="badge badge-pill badge-success">success</span>
-                  </div>
-                  <a href="javascript:void(0)" class="btn btn-success mt-4">Learn more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3">
-              <div class="card card-lift--hover shadow border-0">
-                <div class="card-body py-5">
-                  <div class="icon icon-shape icon-shape-success rounded-circle mb-4">
-                    <i class="ni ni-istanbul"></i>
-                  </div>
-                  <h6 class="text-success text-uppercase">Build Something</h6>
-                  <p class="description mt-3">Argon is a great free UI package based on Angular that includes the most important components and features.</p>
-                  <div>
-                    <span class="badge badge-pill badge-success">business</span>
-                    <span class="badge badge-pill badge-success">vision</span>
-                    <span class="badge badge-pill badge-success">success</span>
-                  </div>
-                  <a href="javascript:void(0)" class="btn btn-success mt-4">Learn more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3">
-              <div class="card card-lift--hover shadow border-0">
-                <div class="card-body py-5">
-                  <div class="icon icon-shape icon-shape-success rounded-circle mb-4">
-                    <i class="ni ni-istanbul"></i>
-                  </div>
-                  <h6 class="text-success text-uppercase">Build Something</h6>
-                  <p class="description mt-3">Argon is a great free UI package based on Angular that includes the most important components and features.</p>
-                  <div>
-                    <span class="badge badge-pill badge-success">business</span>
-                    <span class="badge badge-pill badge-success">vision</span>
-                    <span class="badge badge-pill badge-success">success</span>
-                  </div>
-                  <a href="javascript:void(0)" class="btn btn-success mt-4">Learn more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3">
-              <div class="card card-lift--hover shadow border-0">
-                <div class="card-body py-5">
-                  <div class="icon icon-shape icon-shape-success rounded-circle mb-4">
-                    <i class="ni ni-istanbul"></i>
-                  </div>
-                  <h6 class="text-success text-uppercase">Build Something</h6>
-                  <p class="description mt-3">Argon is a great free UI package based on Angular that includes the most important components and features.</p>
-                  <div>
-                    <span class="badge badge-pill badge-success">business</span>
-                    <span class="badge badge-pill badge-success">vision</span>
-                    <span class="badge badge-pill badge-success">success</span>
-                  </div>
-                  <a href="javascript:void(0)" class="btn btn-success mt-4">Learn more</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3">
-            <div class="card card-lift--hover shadow border-0">
-              <div class="card-body py-5">
-                <div class="icon icon-shape icon-shape-success rounded-circle mb-4">
-                  <i class="ni ni-istanbul"></i>
-                </div>
-                <h6 class="text-success text-uppercase">Build Something</h6>
-                <p class="description mt-3">Argon is a great free UI package based on Angular that includes the most important components and features.</p>
-                <div>
-                  <span class="badge badge-pill badge-success">business</span>
-                  <span class="badge badge-pill badge-success">vision</span>
-                  <span class="badge badge-pill badge-success">success</span>
-                </div>
-                <a href="javascript:void(0)" class="btn btn-success mt-4">Learn more</a>
-              </div>
-            </div>
-          </div>
-            <div class="col-lg-3">
-              <div class="card card-lift--hover shadow border-0">
-                <div class="card-body py-5">
-                  <div class="icon icon-shape icon-shape-success rounded-circle mb-4">
-                    <i class="ni ni-istanbul"></i>
-                  </div>
-                  <h6 class="text-success text-uppercase">Build Something</h6>
-                  <p class="description mt-3">Argon is a great free UI package based on Angular that includes the most important components and features.</p>
-                  <div>
-                    <span class="badge badge-pill badge-success">business</span>
-                    <span class="badge badge-pill badge-success">vision</span>
-                    <span class="badge badge-pill badge-success">success</span>
-                  </div>
-                  <a href="javascript:void(0)" class="btn btn-success mt-4">Learn more</a>
-                </div>
-              </div>
-            </div>
-
-
           </div>
         </div>
       </div>

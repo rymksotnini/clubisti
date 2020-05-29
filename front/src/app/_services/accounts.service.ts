@@ -75,4 +75,8 @@ export class AccountsService {
       })
     );
   }
+
+  getDefaultAccountID():string{
+    return '1';
+  }
 }
