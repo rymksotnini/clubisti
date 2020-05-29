@@ -55,8 +55,9 @@ class TransactionController extends Controller
         $currentUser = User::find($request->input('user.id'));
         $currentOffer = Offer::find($request->input('offer.id'));
         $currentAccount = User::find($request->input('account.id'));
+        $currentProject = $currentOffer->project;
         if($currentUser->profile->balance < (double)$request->input('transaction.amount')){
-            return response()->json("current balance not sufficient",406);
+            return response()->json("Current balance not sufficient",406);
         }
         if(Transaction::where('offer_id',$request->input('offer.id'))->first()==null){
             error_log("hello1");
@@ -69,7 +70,12 @@ class TransactionController extends Controller
         }
         $currentProfile=$currentUser->profile;
         $currentProfile->balance = $currentProfile->balance - (double)$request->input('transaction.amount');
-        $currentProfile->totalDonatedAmount = $currentProfile->totalDonatedAmount + (double)$request->input('transaction.amount'); //test it
+        $currentProfile->totalDonatedAmount = $currentProfile->totalDonatedAmount + (double)$request->input('transaction.amount');
+        $currentProject->last_updated_sum = $currentProject->last_updated_sum + (double)$request->input('transaction.amount');
+        if($currentProject->last_updated_sum >= $currentOffer->amount){
+            $currentProject->status = 'TERMINATED';
+        }
+        $currentProject->save();
         //badge update
         $currentBadge=$currentProfile->badge;
         error_log($currentBadge->upper_bond);

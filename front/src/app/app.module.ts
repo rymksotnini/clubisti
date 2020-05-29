@@ -52,6 +52,7 @@ import {TableModule} from 'primeng/table';
 import {PaginatorModule} from 'primeng/paginator';
 import {MultiSelectModule} from 'primeng/multiselect';
 import { BadgesUpdateComponent } from './pages/admin/badge/badges-update/badges-update.component';
+import { CharityAmountComponent } from './pages/charity-projects/charity-amount/charity-amount.component';
 
 // @ts-ignore
 @NgModule({
@@ -93,6 +94,7 @@ import { BadgesUpdateComponent } from './pages/admin/badge/badges-update/badges-
     AccountsCreateComponent,
     AccountsUpdateComponent,
     BadgesUpdateComponent,
+    CharityAmountComponent,
 
   ],
   providers: [AuthenticationInterceptorProvider,

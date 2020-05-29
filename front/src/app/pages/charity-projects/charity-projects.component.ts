@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {API_URL, CHARITY, DONATE, IMG_URL} from "../../_globals/global-variables";
 import {Project} from "../../_models/Project";
 import {CrudService} from "../../_services/crud.service";
+import {NzModalRef, NzModalService} from "ng-zorro-antd";
+import {AccountsCreateComponent} from "../admin/account/accounts-create/accounts-create.component";
+import {CharityAmountComponent} from "./charity-amount/charity-amount.component";
 
 @Component({
   selector: 'app-charity-projects',
@@ -11,7 +14,9 @@ import {CrudService} from "../../_services/crud.service";
 export class CharityProjectsComponent implements OnInit {
 
   public projects: Array<Project>=[];
-  constructor(private crudService: CrudService) { }
+  constructor(private crudService: CrudService,
+              private modal: NzModalService
+              ) { }
 
   IMG_URL = IMG_URL;
   ngOnInit(): void {
@@ -31,8 +36,13 @@ export class CharityProjectsComponent implements OnInit {
   }
 
   donate(project: Project) {
-    console.log(project?.id);
-    alert('donate to project: '+ project?.offer?.id);
-    this.crudService.post(API_URL + DONATE, )
+    const modal: NzModalRef = this.modal.create({
+      nzTitle: 'Insert your amount',
+      nzContent: CharityAmountComponent,
+      nzComponentParams:{
+        id: project?.offer?.id
+      },
+      nzFooter: null
+    });
   }
 }
