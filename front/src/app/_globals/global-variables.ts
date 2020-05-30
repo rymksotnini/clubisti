@@ -21,3 +21,5 @@ export const INFURA_URL = 'https://ropsten.infura.io/v3/' + environment.infuraAp
 export const BADGE = '/badges';
 export const DONATE = '/donate';
 export const DEFAULT_ACCOUNT = '/default';
+export const TRANSACTIONS = '/transactions';
+export const PROJECT = '/project';
