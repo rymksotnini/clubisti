@@ -88,7 +88,7 @@ export class UpdateProfileComponent implements OnInit {
     this.profileToCreate.controls['lastName'].setValue(this.currentUser.last_name);
     if (this.currentProfile){
       this.profileToCreate.controls['gender'].setValue(this.currentProfile.gender);
-      this.profileToCreate.controls['number'].setValue(this.currentProfile.phone_number);
+      this.profileToCreate.controls['number'].setValue(this.currentProfile.phoneNumber);
       if (this.currentAddress){
         this.profileToCreate.controls['street'].setValue(this.currentAddress.street);
         this.profileToCreate.controls['street2'].setValue(this.currentAddress.street2);

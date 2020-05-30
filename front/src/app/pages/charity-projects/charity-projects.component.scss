@@ -273,3 +273,49 @@
 .description {
   height:60px;
 }
+
+.btn-clubisti1 {
+  color: #FFFFFF;
+  background-color: #D23B29;
+  border-color: #ffffff;
+}
+
+.btn-clubisti1:hover,
+.btn-clubisti1:focus,
+.btn-clubisti1:active,
+.btn-clubisti1.active,
+.open .dropdown-toggle.btn-clubisti1 {
+  color: #FFFFFF;
+  background-color: #D96A76;
+  border-color: #ffffff;
+}
+
+.btn-clubisti1:active,
+.btn-clubisti1.active,
+.open .dropdown-toggle.btn-clubisti1 {
+  background-image: none;
+}
+
+.btn-clubisti1.disabled,
+.btn-clubisti1[disabled],
+fieldset[disabled] .btn-clubisti1,
+.btn-clubisti1.disabled:hover,
+.btn-clubisti1[disabled]:hover,
+fieldset[disabled] .btn-clubisti1:hover,
+.btn-clubisti1.disabled:focus,
+.btn-clubisti1[disabled]:focus,
+fieldset[disabled] .btn-clubisti1:focus,
+.btn-clubisti1.disabled:active,
+.btn-clubisti1[disabled]:active,
+fieldset[disabled] .btn-clubisti1:active,
+.btn-clubisti1.disabled.active,
+.btn-clubisti1[disabled].active,
+fieldset[disabled] .btn-clubisti1.active {
+  background-color: #D23B29;
+  border-color: #ffffff;
+}
+
+.btn-clubisti1 .badge {
+  color: #D23B29;
+  background-color: #FFFFFF;
+}

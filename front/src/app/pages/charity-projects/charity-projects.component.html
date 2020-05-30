@@ -21,7 +21,7 @@
                         </div>
                         <div class="col-7 col-md-8">
                           <div class="numbers">
-                            <h2 class="card-title "><b class="background-blue">3,237 DT</b></h2>
+                            <h2 class="card-title "><b class="background-blue">{{profile?.balance + profile?.totalDonatedAmount}} DT</b></h2>
                             <p></p>
                             <p class="card-category">Installments</p>
                           </div>
@@ -41,7 +41,7 @@
                         </div>
                         <div class="col-7 col-md-8">
                           <div class="icon-big text-center icon-warning">
-                            <h1 class="card-title"><b>Defender</b></h1>
+                            <h1 class="card-title"><b>{{profile?.badge? profile?.badge?.name: 'No Badge'}}</b></h1>
                           </div>
                         </div>
                       </div>
@@ -61,7 +61,7 @@
                         </div>
                         <div class="col-7 col-md-8">
                           <div class="numbers">
-                            <h2 class="card-title"><b class="background-blue">593 DT</b></h2>
+                            <h2 class="card-title"><b class="background-blue">{{profile?.balance}} DT</b></h2>
                             <p></p>
                             <p class="card-category">Credit</p>
                           </div>
@@ -82,7 +82,7 @@
                         </div>
                         <div class="col-7 col-md-8">
                           <div class="numbers">
-                            <h2 class="card-title"><b class="background-blue">10,783 DT</b></h2>
+                            <h2 class="card-title"><b class="background-blue">{{profile?.totalDonatedAmount}} DT</b></h2>
                             <p></p>
                             <p class="card-category">Donations</p>
                           </div>

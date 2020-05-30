@@ -52,6 +52,7 @@ import {PaginatorModule} from 'primeng/paginator';
 import {MultiSelectModule} from 'primeng/multiselect';
 import { BadgesUpdateComponent } from './pages/admin/badge/badges-update/badges-update.component';
 import { CharityAmountComponent } from './pages/charity-projects/charity-amount/charity-amount.component';
+import { ProjectDetailsComponent } from './pages/project-details/project-details.component';
 
 // @ts-ignore
 @NgModule({
