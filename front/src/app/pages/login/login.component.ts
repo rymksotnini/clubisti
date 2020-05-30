@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   user :User;
   error = false;
   textError = '';
-  redirectURL = environment.apiUrl + REDIRECT
+  redirectURL = environment.apiUrl + REDIRECT;
 
   constructor(private authenticationService: AuthenticationService, private router:Router) {}
 

@@ -17,6 +17,7 @@ class CreateAccountsTable extends Migration
             $table->increments('id');
             $table->string('account_number');
             $table->boolean('deleted')->default(false);
+            $table->boolean('default')->default(false);
             $table->integer('organisation_id')->unsigned()->nullable();
             $table->integer('account_type_id')->unsigned()->nullable();
             $table->timestamps();

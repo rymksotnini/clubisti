@@ -4,7 +4,7 @@ import {NzModalRef, NzModalService} from "ng-zorro-antd";
 import {ListReq} from "../../../../_models/requests/ListReq";
 import {CrudService} from "../../../../_services/crud.service";
 import {AccountsService} from "../../../../_services/accounts.service";
-import {ACCOUNT, API_URL} from "../../../../_globals/global-variables";
+import {ACCOUNT, API_URL, DEFAULT_ACCOUNT} from "../../../../_globals/global-variables";
 import {AccountsCreateComponent} from "../accounts-create/accounts-create.component";
 import {Account} from "../../../../_models/account";
 
@@ -85,5 +85,13 @@ export class AccountsListComponent implements OnInit {
     });
   }
 
-
+  setAsDefault(account:Account){
+    this.crudService.put(API_URL + DEFAULT_ACCOUNT + '/' + account.id,null).subscribe(
+      (res)=>{
+        this.router.navigateByUrl('admin', { skipLocationChange: true }).then(() => {
+          this.router.navigate(['admin/accounts']);
+        });
+      }
+    )
+  }
 }

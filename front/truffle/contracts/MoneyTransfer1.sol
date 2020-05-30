@@ -10,6 +10,7 @@ contract MoneyTransfer1 {
 
   function initializeAccount(address receiver) public{ //pass amount in method or not when thinking about e-dinar
     balances[receiver] = 10000;
+
   }
 
   function sendCoin(address sender, address receiver, uint amount) public returns(bool sufficient) {

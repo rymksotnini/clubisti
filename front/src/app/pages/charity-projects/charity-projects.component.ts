@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {API_URL, CHARITY, IMG_URL} from '../../_globals/global-variables';
-import {Project} from '../../_models/Project';
-import {CrudService} from '../../_services/crud.service';
-import {User} from '../../_models/user';
+import {API_URL, CHARITY, DONATE, IMG_URL} from "../../_globals/global-variables";
+import {Project} from "../../_models/Project";
+import {CrudService} from "../../_services/crud.service";
+import {NzModalRef, NzModalService} from "ng-zorro-antd";
+import {AccountsCreateComponent} from "../admin/account/accounts-create/accounts-create.component";
+import {CharityAmountComponent} from "./charity-amount/charity-amount.component";
 
 @Component({
   selector: 'app-charity-projects',
@@ -12,22 +14,20 @@ import {User} from '../../_models/user';
 export class CharityProjectsComponent implements OnInit {
 
   public projects: Array<Project>=[];
-  currentUser: User;
-  constructor(private crudService: CrudService) { }
+  constructor(private crudService: CrudService,
+              private modal: NzModalService
+              ) { }
 
   IMG_URL = IMG_URL;
   ngOnInit(): void {
     this.getProjects();
   }
 
-  getCurrentUser() {
-
-  }
-
   getProjects() {
     this.crudService.getAll(API_URL+ CHARITY).subscribe(
       (response) => {
         this.projects = response.data;
+        console.log(this.projects);
       },
       (error =>  {
         console.log(error);
@@ -36,6 +36,13 @@ export class CharityProjectsComponent implements OnInit {
   }
 
   donate(project: Project) {
-    alert('donate to project: '+ project?.offer?.name)
+    const modal: NzModalRef = this.modal.create({
+      nzTitle: 'Insert your amount',
+      nzContent: CharityAmountComponent,
+      nzComponentParams:{
+        id: project?.offer?.id
+      },
+      nzFooter: null
+    });
   }
 }
