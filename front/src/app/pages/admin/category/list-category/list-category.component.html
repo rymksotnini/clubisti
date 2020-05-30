@@ -7,8 +7,7 @@
       <div class="container-fluid d-flex align-items-center">
         <div class="row">
           <div class="col-lg-7 col-md-10">
-            <!--          <button nz-button nzType="primary" (click)="createGategory()">Add Category</button>-->
-            <button nz-button [nzType]="'primary'" (click)="showModal()"><span>Show Modal</span></button>
+            <button nz-button [nzType]="'primary'" (click)="showModal()"><span>Add Category</span></button>
             <nz-modal [(nzVisible)]="isVisible" nzTitle="The first Modal" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
               <app-create-category (added)="onAdd($event)"></app-create-category>
             </nz-modal>
