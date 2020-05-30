@@ -10,6 +10,8 @@ import {UsersComponent} from '../../pages/users/users.component';
 import {CharityUpdateComponent} from '../../pages/admin/charity/charity-update/charity-update.component';
 import {BadgesListComponent} from '../../pages/admin/badge/badges-list/badges-list.component';
 import {VariableComponent} from '../../pages/admin/variable/variable.component';
+import {AccountsListComponent} from "../../pages/admin/account/accounts-list/accounts-list.component";
+import {AccountsCreateComponent} from "../../pages/admin/account/accounts-create/accounts-create.component";
 
 export const AdminLayoutRoutes: Routes = [
   { path: 'landing',          component: LandingComponent },
@@ -24,4 +26,6 @@ export const AdminLayoutRoutes: Routes = [
   { path: 'charity/update/:id',          component: CharityUpdateComponent },
   { path: 'products',          component: ProductsComponent },
   {path: 'add-charity', component: CharityCreateComponent},
+  {path: 'accounts', component: AccountsListComponent},
+  {path: 'accounts-add', component: AccountsCreateComponent},
 ];

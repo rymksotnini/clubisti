@@ -1,68 +1,42 @@
 import {ProjectStatus} from './enum/ProjectStatus';
 import {Category} from './Category';
-import {Offer} from "./offer";
-
-
+import {Offer} from './offer';
 
 export class Project{
 
   private _id: number;
 
-  private _last_updated_sum: number;
+  private _lastUpdatedSum: number;
 
-  private _created_at: Date;
+  private _minDonationAmount: number;
 
-  private _updated_at: Date;
+  private _maxDonationAmount: number;
 
-  private _start_date: Date;
+  private _startDate: Date;
 
-  private _end_date: Date;
+  private _endDate: Date;
 
   private _status: string;
 
-  public offer: Offer;
+  private _offer: Offer;
 
 
-  private _min_donation_amount: number;
 
-  private _max_donation_amount: number;
-
-
-  constructor(id: number=null,  last_updated_sum: number=null,
-              max_donation_amount: number=null, min_donation_amount:number=null, status:  string=null, start_date: Date=null,
-              end_date=null  ) {
+  constructor(
+    id: number=null,
+    lastUpdatedSum: number=null,
+    maxDonationAmount: number=null,
+    minDonationAmount:number=null,
+    status:  string=null,
+    startDate: Date=null,
+    endDate: Date=null  ) {
     this._id = id;
-    this._last_updated_sum = last_updated_sum;
+    this._lastUpdatedSum = lastUpdatedSum;
     this._status = status;
-    this._min_donation_amount = min_donation_amount;
-    this._max_donation_amount = max_donation_amount;
-    this._end_date = end_date;
-    this._start_date = start_date;
-  }
-
-
-  get startDate(): Date {
-    return this._start_date;
-  }
-
-  set startDate(value: Date) {
-    this._start_date = value;
-  }
-
-  get endDate(): Date {
-    return this._end_date;
-  }
-
-  set endDate(value: Date) {
-    this._end_date = value;
-  }
-
-  get status(): string {
-    return this._status;
-  }
-
-  set status(value: string) {
-    this._status = value;
+    this._minDonationAmount = maxDonationAmount;
+    this._maxDonationAmount = maxDonationAmount;
+    this._endDate = endDate;
+    this._startDate = startDate;
   }
 
   get id(): number {
@@ -73,47 +47,59 @@ export class Project{
     this._id = value;
   }
 
-
-
   get lastUpdatedSum(): number {
-    return this._last_updated_sum;
+    return this._lastUpdatedSum;
   }
 
   set lastUpdatedSum(value: number) {
-    this._last_updated_sum = value;
-  }
-
-
-
-  get createdAt(): Date {
-    return this._created_at;
-  }
-
-  set createdAt(value: Date) {
-    this._created_at = value;
-  }
-
-  get updatedAt(): Date {
-    return this._updated_at;
-  }
-
-  set updatedAt(value: Date) {
-    this._updated_at = value;
+    this._lastUpdatedSum = value;
   }
 
   get minDonationAmount(): number {
-    return this._min_donation_amount;
+    return this._minDonationAmount;
   }
 
   set minDonationAmount(value: number) {
-    this._min_donation_amount = value;
+    this._minDonationAmount = value;
   }
 
   get maxDonationAmount(): number {
-    return this._max_donation_amount;
+    return this._maxDonationAmount;
   }
 
   set maxDonationAmount(value: number) {
-    this._max_donation_amount = value;
+    this._maxDonationAmount = value;
+  }
+
+  get startDate(): Date {
+    return this._startDate;
+  }
+
+  set startDate(value: Date) {
+    this._startDate = value;
+  }
+
+  get endDate(): Date {
+    return this._endDate;
+  }
+
+  set endDate(value: Date) {
+    this._endDate = value;
+  }
+
+  get status(): string {
+    return this._status;
+  }
+
+  set status(value: string) {
+    this._status = value;
+  }
+
+  get offer(): Offer {
+    return this._offer;
+  }
+
+  set offer(value: Offer) {
+    this._offer = value;
   }
 }

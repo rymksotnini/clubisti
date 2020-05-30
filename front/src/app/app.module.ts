@@ -44,6 +44,8 @@ import { TestLandingComponent } from './pages/test-landing/test-landing.componen
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 import { MatSelectCountryModule } from '@angular-material-extensions/select-country';
+import { AccountsListComponent } from './pages/admin/account/accounts-list/accounts-list.component';
+import { AccountsCreateComponent } from './pages/admin/account/accounts-create/accounts-create.component';
 
 import {TableModule} from 'primeng/table';
 import {PaginatorModule} from 'primeng/paginator';
@@ -52,6 +54,8 @@ import { BadgesUpdateComponent } from './pages/admin/badge/badges-update/badges-
 import { DonationComponent } from './pages/anonymous/donation/donation.component';
 import { TestModalComponent } from './pages/test-modal/test-modal.component';
 import { CreateComplainComponent } from './pages/user/complain/create-complain/create-complain.component';
+import { CharityAmountComponent } from './pages/charity-projects/charity-amount/charity-amount.component';
+import { ProjectDetailsComponent } from './pages/project-details/project-details.component';
 
 // @ts-ignore
 @NgModule({
@@ -89,7 +93,10 @@ import { CreateComplainComponent } from './pages/user/complain/create-complain/c
     BadgesListComponent,
     BadgesCreateComponent,
     VariableComponent,
+    AccountsListComponent,
+    AccountsCreateComponent,
     BadgesUpdateComponent,
+    CharityAmountComponent,
     DonationComponent,
     TestModalComponent,
     CreateComplainComponent,

@@ -1,13 +1,21 @@
+import {Address} from "./address";
+import {Badge} from "./badge";
+
 export class Profile {
 
   private _id: number;
-  private _phone_number: number;
+  private _balance: number;
+  private _totalDonatedAmount: number;
+  private _birthDate: Date;
   private _gender: string;
-  private _birth_date: Date;
-  private _image_url: string;
+  private _imageUrl: string;
+  private _phoneNumber: string;
+  private _badge: Badge;
+  private _address: Address;
   private _status: string;
-  private _badge=null;
-  private _address = null;
+  private _createdAt: Date;
+  private _updatedAt: Date;
+
 
   get id(): number {
     return this._id;
@@ -17,12 +25,28 @@ export class Profile {
     this._id = value;
   }
 
-  get phone_number(): number {
-    return this._phone_number;
+  get balance(): number {
+    return this._balance;
   }
 
-  set phone_number(value: number) {
-    this._phone_number = value;
+  set balance(value: number) {
+    this._balance = value;
+  }
+
+  get totalDonatedAmount(): number {
+    return this._totalDonatedAmount;
+  }
+
+  set totalDonatedAmount(value: number) {
+    this._totalDonatedAmount = value;
+  }
+
+  get birthDate(): Date {
+    return this._birthDate;
+  }
+
+  set birthDate(value: Date) {
+    this._birthDate = value;
   }
 
   get gender(): string {
@@ -33,20 +57,36 @@ export class Profile {
     this._gender = value;
   }
 
-  get birth_date(): Date {
-    return this._birth_date;
+  get imageUrl(): string {
+    return this._imageUrl;
   }
 
-  set birth_date(value: Date) {
-    this._birth_date = value;
+  set imageUrl(value: string) {
+    this._imageUrl = value;
   }
 
-  get image_url(): string {
-    return this._image_url;
+  get phoneNumber(): string {
+    return this._phoneNumber;
   }
 
-  set image_url(value: string) {
-    this._image_url = value;
+  set phoneNumber(value: string) {
+    this._phoneNumber = value;
+  }
+
+  get badge(): Badge {
+    return this._badge;
+  }
+
+  set badge(value: Badge) {
+    this._badge = value;
+  }
+
+  get address(): Address {
+    return this._address;
+  }
+
+  set address(value: Address) {
+    this._address = value;
   }
 
   get status(): string {
@@ -57,19 +97,19 @@ export class Profile {
     this._status = value;
   }
 
-  get badge(): any {
-    return this._badge;
+  get createdAt(): Date {
+    return this._createdAt;
   }
 
-  set badge(value: any) {
-    this._badge = value;
+  set createdAt(value: Date) {
+    this._createdAt = value;
   }
 
-  get address(): any {
-    return this._address;
+  get updatedAt(): Date {
+    return this._updatedAt;
   }
 
-  set address(value: any) {
-    this._address = value;
+  set updatedAt(value: Date) {
+    this._updatedAt = value;
   }
 }

@@ -1,22 +1,27 @@
-import {Category} from "./Category";
+import {Category} from './Category';
 
 export class Offer {
   private _id: number;
 
   private _name: string;
 
+  private _amount: number;
+
   private _shortDescription: string;
 
   private _longDescription: string;
 
-  private _amount: number;
+  private _createdAt: Date;
 
-  public created_at: Date;
+  private _updatedAt: Date;
 
-  public updated_at: Date;
+  private _deleted: boolean;
+
+  private _largeImagePath: string;
+
+  private _shortImagePath: string;
 
   private _categories: Category[];
-
 
   get id(): number {
     return this._id;
@@ -32,6 +37,14 @@ export class Offer {
 
   set name(value: string) {
     this._name = value;
+  }
+
+  get amount(): number {
+    return this._amount;
+  }
+
+  set amount(value: number) {
+    this._amount = value;
   }
 
   get shortDescription(): string {
@@ -50,14 +63,45 @@ export class Offer {
     this._longDescription = value;
   }
 
-  get amount(): number {
-    return this._amount;
+  get createdAt(): Date {
+    return this._createdAt;
   }
 
-  set amount(value: number) {
-    this._amount = value;
+  set createdAt(value: Date) {
+    this._createdAt = value;
   }
 
+  get updatedAt(): Date {
+    return this._updatedAt;
+  }
+
+  set updatedAt(value: Date) {
+    this._updatedAt = value;
+  }
+
+  get deleted(): boolean {
+    return this._deleted;
+  }
+
+  set deleted(value: boolean) {
+    this._deleted = value;
+  }
+
+  get largeImagePath(): string {
+    return this._largeImagePath;
+  }
+
+  set largeImagePath(value: string) {
+    this._largeImagePath = value;
+  }
+
+  get shortImagePath(): string {
+    return this._shortImagePath;
+  }
+
+  set shortImagePath(value: string) {
+    this._shortImagePath = value;
+  }
 
   get categories(): Category[] {
     return this._categories;

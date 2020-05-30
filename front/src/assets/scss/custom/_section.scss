@@ -362,8 +362,8 @@
       background-size: cover;
     }
 
-    &.shape-clubisti3 {
-      background: linear-gradient(150deg, #d1c2c2 15%, #aaaaaa 70%, #d1c2c2 94%);
+    &.shape-clubisti {
+      background: linear-gradient(150deg, shapes-clubisti-color("step-1-gradient-bg") 15%, shapes-clubisti-color("step-2-gradient-bg") 70%, shapes-clubisti-color("step-3-gradient-bg") 94%);
     }
 
     &.shape-light {

@@ -23,7 +23,9 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('/accounts/{id}', 'AccountController@show');
     Route::post('/accounts', 'AccountController@store');
     Route::put('/accounts/{id}', 'AccountController@update');
+    Route::put('/default/{id}', 'AccountController@setAccountAsDefault');
     Route::delete('/accounts/{id}', 'AccountController@delete');
+    Route::get('/default', 'AccountController@getDefault');
 
     /************************************************ Addresses API ************************************************/
     // user, admin, superAdmin
@@ -148,6 +150,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
 // user, admin, superAdmin
 Route::get('/transactions', 'TransactionController@index');
 Route::get('/transactions/{id}', 'TransactionController@show');
+Route::get('/users/transactions/{id}', 'TransactionController@getPerUser');
 Route::post('/transactions', 'TransactionController@store');
 Route::post('/donate', 'TransactionController@create');
 // admin, superAdmin
