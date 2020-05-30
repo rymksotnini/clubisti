@@ -7,6 +7,7 @@ import {ActivatedRoute} from "@angular/router";
 import {CrudService} from "../../../_services/crud.service";
 import {API_URL, CHARITY, PROJECT, TRANSACTIONS} from "../../../_globals/global-variables";
 import {Project} from "../../../_models/Project";
+import {Transaction} from "../../../_models/Transaction";
 
 
 
@@ -24,6 +25,7 @@ export class DonationComponent implements OnInit {
   public clicked1 = false;
   projectId: any;
   project: Project;
+  transactions: Transaction[];
 
   constructor(private modalService: NgbModal,
               private route: ActivatedRoute,
@@ -76,7 +78,8 @@ export class DonationComponent implements OnInit {
   getTransactions() {
     this.crudService.getAll(API_URL + TRANSACTIONS + PROJECT + '/' + this.projectId).subscribe(
       (response) => {
-        console.log(response)
+        this.transactions = response.data;
+        console.log(this.transactions)
       },
       (error =>  {
         console.log(error);
@@ -90,10 +93,17 @@ export class DonationComponent implements OnInit {
     this.salesChart.update();
   }
 
-  open() {
-    console.log("oepn")
+  open(id: number) {
     const modalRef = this.modalService.open(CreateComplainComponent);
-    modalRef.componentInstance.transactionId = 1;
+    modalRef.componentInstance.transactionId = id;
+  }
+
+  calculateSum(index: number){
+    let sum = 0;
+    for(let i=0; i<=index; i++){
+      sum += this.transactions[i].amount;
+    }
+    return sum
   }
 
 
