@@ -51,6 +51,9 @@ import {TableModule} from 'primeng/table';
 import {PaginatorModule} from 'primeng/paginator';
 import {MultiSelectModule} from 'primeng/multiselect';
 import { BadgesUpdateComponent } from './pages/admin/badge/badges-update/badges-update.component';
+import { DonationComponent } from './pages/anonymous/donation/donation.component';
+import { TestModalComponent } from './pages/test-modal/test-modal.component';
+import { CreateComplainComponent } from './pages/user/complain/create-complain/create-complain.component';
 import { CharityAmountComponent } from './pages/charity-projects/charity-amount/charity-amount.component';
 import { ProjectDetailsComponent } from './pages/project-details/project-details.component';
 
@@ -94,6 +97,9 @@ import { ProjectDetailsComponent } from './pages/project-details/project-details
     AccountsCreateComponent,
     BadgesUpdateComponent,
     CharityAmountComponent,
+    DonationComponent,
+    TestModalComponent,
+    CreateComplainComponent,
 
   ],
   providers: [AuthenticationInterceptorProvider,

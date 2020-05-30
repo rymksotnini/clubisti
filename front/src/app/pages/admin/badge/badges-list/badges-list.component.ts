@@ -94,6 +94,7 @@ export class BadgesListComponent implements OnInit {
 
 
   onAdd($event: any) {
+    console.log($event)
     this.getBadge();
   }
 

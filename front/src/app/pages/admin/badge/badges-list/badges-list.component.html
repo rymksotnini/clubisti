@@ -11,6 +11,7 @@
             <button nz-button [nzType]="'primary'" (click)="showModal()"><span>Add badge</span></button>
             <nz-modal [(nzVisible)]="isVisible" nzTitle="Add badge" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
               <app-badges-create (added)="onAdd($event)"></app-badges-create>
+
             </nz-modal>
             <nz-modal [(nzVisible)]="isVisible2" nzTitle="Update badge" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
               <app-badges-update  [badge]="selected" (added)="onAdd($event)"></app-badges-update>
