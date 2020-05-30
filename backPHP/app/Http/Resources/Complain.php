@@ -21,7 +21,7 @@ class Complain extends JsonResource
             'transaction'    => $this->transaction,
             'createdAt' => $this->created_at,
             'updatedAt' => $this->updated_at,
-            'deleted'    => $this->deleted,
+             'status'    => $this->status,
         ];
 
     }

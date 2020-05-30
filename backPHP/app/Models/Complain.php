@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Complain extends Model
 {
-    protected $fillable = ['reason', 'body', 'document'];
+    protected $fillable = ['reason', 'body','status' ,'document'];
 
     /**
      * Get the transaction that owns the complain.

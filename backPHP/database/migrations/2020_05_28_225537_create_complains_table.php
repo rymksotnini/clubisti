@@ -16,8 +16,10 @@ class CreateComplainsTable extends Migration
         Schema::create('complains', function (Blueprint $table) {
             $table->increments('id');
             $table->string('body');
-            $table->integer('reason');
-            $table->boolean('deleted')->default(false);
+            $table->string('reason');
+            $table->integer('transaction_id')->unsigned()->nullable();
+            $table->foreign('transaction_id')->references('id')->on('transactions');
+             $table->enum('status', ['PENDING', 'PROCESSING', 'ACCEPTED', 'REFUSED']);
             $table->timestamps();
         });
     }

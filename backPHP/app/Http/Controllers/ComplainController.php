@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Complain;
+use App\Models\Transaction;
+
 use App\Http\Resources\Complain as ComplainResource;
 use Illuminate\Http\Request;
 
@@ -18,11 +20,7 @@ class ComplainController extends Controller
         }
         return new ComplainCollection(Complain::get());
     }
-    public function indexPagination($page)
-    {
-        error_log("in pagination");
-        return new ComplainCollection(Complain::paginate($page));
-    }
+
 
     public function show($id)
     {
@@ -31,8 +29,12 @@ class ComplainController extends Controller
 
     public function store(Request $request)
     {
-        $complain = Complain::create($request->all());
-
+        $transaction = Transaction::findOrFail($request->transactionId);
+        $complain = new Complain;
+        $complain->body = $request->body;
+        $complain->reason = $request->reason;
+        $complain->status = "PENDING";
+        $transaction->complains()->save($complain);
         return (new ComplainResource($complain))
             ->response()
             ->setStatusCode(201);
