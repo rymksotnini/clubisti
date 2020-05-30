@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {CrudService} from "../../../_services/crud.service";
 import {Router} from "@angular/router";
@@ -30,6 +30,7 @@ export class CharityAmountComponent implements OnInit {
   error = false;
   json = null;
   @Input() id?: number;
+  @Output() saved: EventEmitter<any> = new EventEmitter();
   constructor(private formBuilder: FormBuilder,
               private crudService: CrudService,
               private router: Router,
@@ -65,9 +66,10 @@ export class CharityAmountComponent implements OnInit {
         (resp) => {
           this.success = true;
           this.textSuccess = 'Thank you for your contribution';
-          this.router.navigateByUrl('admin', { skipLocationChange: true }).then(() => {
-            this.router.navigate(['projects']);
-          });
+          this.saved.emit(null);
+          // this.router.navigateByUrl('admin', { skipLocationChange: true }).then(() => {
+          //   this.router.navigate(['projects']);
+          // });
           console.log(resp);
         }, (error =>{
           console.log(error);

@@ -57,5 +57,9 @@ export class CharityProjectsComponent implements OnInit {
       },
       nzFooter: null
     });
+    modal.afterClose.subscribe((res) => {
+      this.getProjects();
+      this.getUserProfile();
+    });
   }
 }
