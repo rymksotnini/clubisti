@@ -1,7 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CrudService} from '../../../../_services/crud.service';
-import {NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-create-complain',
@@ -13,10 +12,8 @@ export class CreateComplainComponent implements OnInit {
   msg: string;
   createCategory: FormGroup;
   @Input() transactionId;
-  @Output() added = new EventEmitter<boolean>();
   constructor(private formBuilder: FormBuilder,
-               private crudService: CrudService,
-              public activeModal: NgbActiveModal) { }
+               private crudService: CrudService) { }
 
   ngOnInit(): void {
     this.createCategory = this.formBuilder.group({

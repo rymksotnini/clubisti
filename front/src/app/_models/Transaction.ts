@@ -9,8 +9,8 @@ export class Transaction {
   private _user: User;
   private _offer: Offer;
   private _account: Account;
-  private _createdAt: number;
-  private _updatedAt: number;
+  private _createdAt: Date;
+  private _updatedAt: Date;
 
 
   get id(): number {
@@ -61,19 +61,20 @@ export class Transaction {
     this._account = value;
   }
 
-  get createdAt(): number {
+
+  get createdAt(): Date {
     return this._createdAt;
   }
 
-  set createdAt(value: number) {
+  set createdAt(value: Date) {
     this._createdAt = value;
   }
 
-  get updatedAt(): number {
+  get updatedAt(): Date {
     return this._updatedAt;
   }
 
-  set updatedAt(value: number) {
+  set updatedAt(value: Date) {
     this._updatedAt = value;
   }
 }
