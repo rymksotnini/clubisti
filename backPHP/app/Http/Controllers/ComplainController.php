@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Complain;
 use App\Models\Transaction;
+use App\Models\User;
 
 use App\Http\Resources\Complain as ComplainResource;
 use Illuminate\Http\Request;
@@ -30,11 +31,13 @@ class ComplainController extends Controller
     public function store(Request $request)
     {
         $transaction = Transaction::findOrFail($request->transactionId);
+        $user = User::findOrFail($request->userId);
         $complain = new Complain;
         $complain->body = $request->body;
         $complain->reason = $request->reason;
         $complain->status = "PENDING";
         $transaction->complains()->save($complain);
+        $user->complains()->save($complain);
         return (new ComplainResource($complain))
             ->response()
             ->setStatusCode(201);

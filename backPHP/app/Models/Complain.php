@@ -15,4 +15,8 @@ class Complain extends Model
     {
         return $this->belongsTo(Transaction::class);
     }
+    public function user()
+        {
+            return $this->belongsTo(User::class);
+        }
 }

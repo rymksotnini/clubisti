@@ -19,7 +19,10 @@ class CreateComplainsTable extends Migration
             $table->string('reason');
             $table->integer('transaction_id')->unsigned()->nullable();
             $table->foreign('transaction_id')->references('id')->on('transactions');
-             $table->enum('status', ['PENDING', 'PROCESSING', 'ACCEPTED', 'REFUSED']);
+            $table->unsignedBigInteger('user_id')->nullable();
+             $table->foreign('user_id')->references('id')->on('users')
+                            ->onDelete('cascade');
+            $table->enum('status', ['PENDING', 'PROCESSING', 'ACCEPTED', 'REFUSED']);
             $table->timestamps();
         });
     }

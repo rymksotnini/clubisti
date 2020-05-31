@@ -55,7 +55,7 @@ import { DonationComponent } from './pages/anonymous/donation/donation.component
 import { TestModalComponent } from './pages/test-modal/test-modal.component';
 import { CreateComplainComponent } from './pages/user/complain/create-complain/create-complain.component';
 import { CharityAmountComponent } from './pages/charity-projects/charity-amount/charity-amount.component';
-import { ProjectDetailsComponent } from './pages/project-details/project-details.component';
+
 
 // @ts-ignore
 @NgModule({

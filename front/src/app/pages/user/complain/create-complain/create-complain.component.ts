@@ -1,7 +1,8 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CrudService} from '../../../../_services/crud.service';
-import {API_URL, BADGE, COMPLAIN} from "../../../../_globals/global-variables";
+import {API_URL, COMPLAIN} from '../../../../_globals/global-variables';
+import {AuthenticationService} from "../../../../_services/authentication.service";
 
 @Component({
   selector: 'app-create-complain',
@@ -14,13 +15,16 @@ export class CreateComplainComponent implements OnInit {
   createComplain: FormGroup;
   @Input() transactionId;
   constructor(private formBuilder: FormBuilder,
-               private crudService: CrudService) { }
+               private crudService: CrudService,
+              private authentificationService: AuthenticationService) { }
 
   ngOnInit(): void {
     this.createComplain = this.formBuilder.group({
       reason: ['',Validators.required],
       body: ['',Validators.required],
-      transactionId: this.transactionId    });
+      transactionId: this.transactionId,
+      userId: this.authentificationService.getCurrentUser().id
+    });
   }
 
 
