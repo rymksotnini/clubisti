@@ -64,6 +64,7 @@ export class CharityAmountComponent implements OnInit {
       };
       this.crudService.post(API_URL + DONATE, this.json).subscribe(
         (resp) => {
+          this.error = false;
           this.success = true;
           this.textSuccess = 'Thank you for your contribution';
           this.saved.emit(null);
@@ -73,6 +74,7 @@ export class CharityAmountComponent implements OnInit {
           console.log(resp);
         }, (error =>{
           console.log(error);
+          this.success = false;
           this.error = true;
           if (error.error) {
             this.textError = error.error;

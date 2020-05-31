@@ -10,7 +10,7 @@
       "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
-          "styleext": "scss"
+          "style": "scss"
         }
       },
       "architect": {
@@ -95,7 +95,9 @@
               "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
               "node_modules/primeicons/primeicons.css",
               "src/assets/scss/nova-light-costume/theme.css",
-              "node_modules/primeng/resources/primeng.min.css"
+              "node_modules/primeng/resources/primeng.min.css",
+              "src/assets/scss/blk-design-system.scss",
+              "src/assets/scss/demo.css"
             ],
             "scripts": [],
             "assets": [
@@ -154,7 +156,7 @@
   "defaultProject": "argon-dashboard-angular",
   "schematics": {
     "@schematics/angular:component": {
-      "styleext": "scss"
+      "style": "scss"
     }
   },
   "cli": {

@@ -6,10 +6,12 @@ import {TestLandingComponent} from '../../pages/test-landing/test-landing.compon
 import {CharityProjectsComponent} from '../../pages/charity-projects/charity-projects.component';
 import {DonationComponent} from '../../pages/anonymous/donation/donation.component';
 import {TestModalComponent} from '../../pages/test-modal/test-modal.component';
+import {BuyCoinsComponent} from '../../pages/buy-coins/buy-coins.component';
 
 export const AnonymousLayoutRoutes: Routes = [
   { path: '',                   component: TestLandingComponent },
   { path: 'history',            component: DonationComponent },
   { path: 'dashboard',          component: DashboardComponent },
   { path: 'projects',           component: CharityProjectsComponent },
+  { path: 'buy-coins',           component: BuyCoinsComponent },
 ];
