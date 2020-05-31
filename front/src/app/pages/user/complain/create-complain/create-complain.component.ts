@@ -1,7 +1,10 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CrudService} from '../../../../_services/crud.service';
-import {API_URL, COMPLAIN} from '../../../../_globals/global-variables';
+import {API_URL, CHARITY, COMPLAIN, IMAGE} from '../../../../_globals/global-variables';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { UploadChangeParam } from 'ng-zorro-antd/upload';
+import {ImageService} from '../../../../_services/image.service';
 
 
 @Component({
@@ -13,9 +16,12 @@ export class CreateComplainComponent implements OnInit {
   error = false;
   msg: string;
   createComplain: FormGroup;
+  file: any;
   @Input() transactionId;
   success = false;
   constructor(private formBuilder: FormBuilder,
+              private msgService: NzMessageService,
+              private imageService:ImageService,
                private crudService: CrudService) { }
 
   ngOnInit(): void {
@@ -41,6 +47,13 @@ export class CreateComplainComponent implements OnInit {
         this.success = true;
         this.msg = ' Your complain will be processing soon';
         console.log(response);
+
+        if(this.file){
+          this.imageService.postImageWithApi(this.file, response.data.id, CHARITY + IMAGE).subscribe(data => {
+            console.log(data);
+          });
+        }
+
       }, (error => {
         console.log(error);
         if( error.status === 406){
@@ -50,6 +63,20 @@ export class CreateComplainComponent implements OnInit {
       })
     );
 
+  }
+
+  handleChange({ file, fileList }: UploadChangeParam): void {
+    const status = file.status;
+    if (status !== 'uploading') {
+      console.log(file, fileList);
+    }
+    if (status === 'done') {
+      this.msgService.success(`${file.name} file uploaded successfully.`);
+      this.file = file;
+
+    } else if (status === 'error') {
+      this.msgService.error(`${file.name} file upload failed.`);
+    }
   }
 
   closeAlert() {

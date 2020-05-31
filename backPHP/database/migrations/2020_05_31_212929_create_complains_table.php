@@ -23,6 +23,7 @@ class CreateComplainsTable extends Migration
              $table->foreign('user_id')->references('id')->on('users')
                             ->onDelete('cascade');
             $table->enum('status', ['PENDING', 'PROCESSING', 'ACCEPTED', 'REFUSED']);
+            $table->string('document')->nullable();
             $table->timestamps();
         });
     }

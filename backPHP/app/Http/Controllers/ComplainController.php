@@ -78,4 +78,60 @@ class ComplainController extends Controller
 
         return response()->json(null, 204);
     }
+
+    public function downloadImage(Request $request)
+        {
+            if ($request->hasFile('image') )
+            {
+
+                $transaction = Transaction::find($request->id);
+
+                if (!$transaction) {
+
+                     return response()->json("transaction not found",406);
+                }
+                $file = $request->file('image');
+                $extension = $file->getClientOriginalExtension();
+                $picture   = date('His').'-'.'TR.'.^$request->id.$extension;
+                if($transaction->document) {
+                    error_log("deleting...");
+                    error_log(public_path("img\\$transaction->document"));
+                    File::delete(public_path("img\\$transaction->document"));
+                }
+                $file->move(public_path('img'), $picture);
+                $transaction->document= $picture;
+
+
+                //save changes
+                $transaction->save();
+                return response()->json(["message" => "Document Uploaded Successfully"]);
+            }
+            else
+            {
+                return response()->json(["message" => "Select image first."]);
+            }
+        }
+
+        public function uploadImage(Request $request,$id){
+            error_log($id);
+            $transaction= Transaction::find($id);
+            if($transaction==null){
+                return response()->json("non existent transaction",406);
+            }
+            error_log($transaction);
+            error_log($transaction->document);
+            if($transaction->document==null){
+                return response()->json("non existent image",406);
+            }
+            return response()->json($transaction->document);
+        }
+
+
+
+
+
+
+
+
+
 }

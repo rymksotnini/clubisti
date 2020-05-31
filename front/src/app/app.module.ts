@@ -56,7 +56,6 @@ import { TestModalComponent } from './pages/test-modal/test-modal.component';
 import { CreateComplainComponent } from './pages/user/complain/create-complain/create-complain.component';
 import { CharityAmountComponent } from './pages/charity-projects/charity-amount/charity-amount.component';
 
-
 // @ts-ignore
 @NgModule({
   imports: [

@@ -22,6 +22,18 @@ export class ImageService {
       headers
     });
   }
+  postImageWithApi(fileData,id, api){
+    const myFormData = new FormData();
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'multipart/form-data');
+    headers.append('Accept', 'application/json');
+    myFormData.append('id', id);
+    myFormData.append('image', fileData);
+    console.log('formData: '+ myFormData.getAll('id_user'));
+    return this.http.post(api, myFormData, {
+      headers
+    });
+  }
 
   getImage(){
     return this.http.get(API_URL+'/image/'+this.authenticationService.getCurrentUser().id);

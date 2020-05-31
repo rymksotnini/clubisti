@@ -19,6 +19,7 @@ class Complain extends JsonResource
             'body'       => $this->body,
             'reason'    => $this->reason,
             'transaction'    => $this->transaction,
+            'document' => $this->document,
             'user'    => $this->user,
             'createdAt' => $this->created_at,
             'updatedAt' => $this->updated_at,
