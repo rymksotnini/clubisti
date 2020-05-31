@@ -9,11 +9,22 @@
       <div class="form-group">
         <alert *ngIf="error" class="alert-dismissible">
           <div role="alert" class="alert alert-danger alert-dismissible">
-            <button aria-label="Close" class="close" type="button">
+            <button aria-label="Close" (click)="closeAlert()" class="close" type="button">
               <span aria-hidden="true">×</span>
               <span class="sr-only">Close</span>
             </button><span class=" alert-icon">
                       <i class="fa fa-exclamation-triangle"></i>
+                    </span>
+            <span class=" alert-text">{{msg}}</span>
+          </div>
+        </alert>
+        <alert *ngIf="success" class="alert-dismissible">
+          <div  class="alert alert-success alert-dismissible" role="alert">
+            <button aria-label="Close" (click)="closeSuccess()" class="close" type="button">
+              <span aria-hidden="true">×</span>
+              <span class="sr-only">Close</span>
+            </button><span class=" success-icon">
+                      <i class="ni ni-like-2"></i>
                     </span>
             <span class=" alert-text">{{msg}}</span>
           </div>

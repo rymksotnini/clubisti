@@ -2,7 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CrudService} from '../../../../_services/crud.service';
 import {API_URL, COMPLAIN} from '../../../../_globals/global-variables';
-import {AuthenticationService} from "../../../../_services/authentication.service";
+
 
 @Component({
   selector: 'app-create-complain',
@@ -14,9 +14,9 @@ export class CreateComplainComponent implements OnInit {
   msg: string;
   createComplain: FormGroup;
   @Input() transactionId;
+  success = false;
   constructor(private formBuilder: FormBuilder,
-               private crudService: CrudService,
-              private authentificationService: AuthenticationService) { }
+               private crudService: CrudService) { }
 
   ngOnInit(): void {
     this.createComplain = this.formBuilder.group({
@@ -38,6 +38,8 @@ export class CreateComplainComponent implements OnInit {
     this.crudService.post(API_URL + COMPLAIN, this.createComplain.value).subscribe(
       (response) => {
         this.error = false;
+        this.success = true;
+        this.msg = ' Your complain will be processing soon';
         console.log(response);
       }, (error => {
         console.log(error);
@@ -48,5 +50,12 @@ export class CreateComplainComponent implements OnInit {
       })
     );
 
+  }
+
+  closeAlert() {
+    this.error = false;
+  }
+  closeSuccess() {
+    this.success = false;
   }
 }
