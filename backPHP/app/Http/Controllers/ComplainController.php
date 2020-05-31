@@ -6,6 +6,7 @@ use App\Models\Complain;
 use App\Models\Transaction;
 use App\Models\User;
 
+use Illuminate\Support\Facades\Auth;
 use App\Http\Resources\Complain as ComplainResource;
 use Illuminate\Http\Request;
 
@@ -31,7 +32,12 @@ class ComplainController extends Controller
     public function store(Request $request)
     {
         $transaction = Transaction::findOrFail($request->transactionId);
-        $user = User::findOrFail($request->userId);
+        $user = User::findOrFail(Auth::user()->id);
+        // check if reason AE and current user not the owner of the transaction return error
+        if (($transaction->user->id != $user->id) && ($request->reason == "AE")){
+        return response()->json("Only the initiate of transaction can post an amount error",406);
+
+        }
         $complain = new Complain;
         $complain->body = $request->body;
         $complain->reason = $request->reason;

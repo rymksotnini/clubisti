@@ -22,8 +22,7 @@ export class CreateComplainComponent implements OnInit {
     this.createComplain = this.formBuilder.group({
       reason: ['',Validators.required],
       body: ['',Validators.required],
-      transactionId: this.transactionId,
-      userId: this.authentificationService.getCurrentUser().id
+      transactionId: this.transactionId
     });
   }
 
@@ -42,9 +41,9 @@ export class CreateComplainComponent implements OnInit {
         console.log(response);
       }, (error => {
         console.log(error);
-        if( error.status === 404){
+        if( error.status === 406){
           this.error = true;
-          this.msg = 'Invalid Upper bound';
+          this.msg = error.error;
         }
       })
     );
