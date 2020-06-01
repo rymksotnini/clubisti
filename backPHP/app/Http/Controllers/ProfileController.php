@@ -50,4 +50,19 @@ class ProfileController extends Controller
         return response()->json(null, 204);
     }
 
+    public function setBalance(Request $request, $id){
+        $user = User::findOrFail($id);
+        $profile = $user->profile;
+        if($profile){
+            $profile->balance = $request->input('balance');
+        }
+        else{
+            $profile = Profile::create($request->input('balance'));
+            $profile->user()->associate($user);
+        }
+        $profile->save();
+        return (new ProfileResource($profile))
+            ->response()
+            ->setStatusCode(201);
+    }
 }

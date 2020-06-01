@@ -84,6 +84,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('/profiles', 'ProfileController@index');
     Route::get('/profiles/{id}', 'ProfileController@show');
     Route::post('/profiles', 'ProfileController@store');
+    Route::put('/profiles/balance/{id}', 'ProfileController@setBalance');
     Route::put('/profiles/{id}', 'ProfileController@update');
     Route::delete('/profiles/{id}', 'ProfileController@delete');
 

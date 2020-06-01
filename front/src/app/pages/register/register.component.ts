@@ -16,6 +16,7 @@ import {environment} from '../../../environments/environment';
 export class RegisterComponent implements OnInit {
   user :User;
   redirectURL = environment.apiUrl + REDIRECT;
+  errorText = '';
   error = false;
   accepted = false;
   constructor(private authenticationService: AuthenticationService, private router:Router) {}
@@ -41,6 +42,7 @@ export class RegisterComponent implements OnInit {
       console.log(this.user);
       this.authenticationService.signup(this.user).subscribe(
         (result)=> {
+          this.error = false;
           console.log('currently signing up...');
           this.authenticationService.savingToken(result);
           this.authenticationService.savingUser(result);
@@ -49,6 +51,7 @@ export class RegisterComponent implements OnInit {
       (error)=> {
           if( error.status === 406){
             this.error = true;
+            this.errorText = error.error;
           }
       }
       )
