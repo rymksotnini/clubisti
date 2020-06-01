@@ -3,16 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="39e5c940-559a-4f9c-bcec-9c8086df51a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ComplainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ComplainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/Profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/Profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/app/_globals/global-variables.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/_globals/global-variables.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/app/_models/Complain.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/_models/Complain.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/app/_models/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/_models/user.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/app/components/admin-sidebar/admin-sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/components/admin-sidebar/admin-sidebar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/app/layouts/admin-layout/admin-layout.routing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/layouts/admin-layout/admin-layout.routing.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../front/src/app/pages/admin/charity/charities-list/charities-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/pages/admin/charity/charities-list/charities-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/app/pages/user/complain/details-complain/details-complain.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/pages/user/complain/details-complain/details-complain.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/app/pages/user/complain/details-complain/details-complain.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/pages/user/complain/details-complain/details-complain.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/app/pages/user/complain/list-complain/list-complain.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/pages/user/complain/list-complain/list-complain.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/app/pages/user/complain/list-complain/list-complain.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/pages/user/complain/list-complain/list-complain.component.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,8 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ComplainController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="82" column="21" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
+            <state relative-caret-position="342">
+              <caret line="96" column="21" selection-start-line="96" selection-start-column="21" selection-end-line="96" selection-end-column="21" />
               <folding>
                 <element signature="e#40#82#0#PHP" expanded="true" />
               </folding>
@@ -40,29 +34,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Resources/Product.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Resources/Profile.php">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2020_05_31_212929_create_complains_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="50" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="54" />
+            <state relative-caret-position="374">
+              <caret line="24" column="63" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="70" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Resources/Address.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProjectController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="30" lean-forward="true" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+            <state relative-caret-position="119">
+              <caret line="158" column="4" selection-start-line="158" selection-start-column="4" selection-end-line="178" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -75,8 +60,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/ComplainController.php" />
         <option value="$PROJECT_DIR$/app/Http/Resources/Profile.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/ComplainController.php" />
       </list>
     </option>
   </component>
@@ -224,15 +209,13 @@
             <path>
               <item name="backPHP" type="b2602c69:ProjectViewProjectNode" />
               <item name="backPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="backPHP" type="b2602c69:ProjectViewProjectNode" />
               <item name="backPHP" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -241,6 +224,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -276,12 +260,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1591044894714</updated>
-      <workItem from="1591044895916" duration="4057000" />
+      <workItem from="1591044895916" duration="4139000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4057000" />
+    <option name="totallyTimeSpent" value="4139000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -347,16 +331,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ComplainController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="82" column="21" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
-          <folding>
-            <element signature="e#40#82#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Resources/Product.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -368,6 +342,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="50" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ProjectController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="158" column="4" selection-start-line="158" selection-start-column="4" selection-end-line="178" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ComplainController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="96" column="21" selection-start-line="96" selection-start-column="21" selection-end-line="96" selection-end-column="21" />
+          <folding>
+            <element signature="e#40#82#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_05_31_212929_create_complains_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="24" column="63" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="70" />
         </state>
       </provider>
     </entry>

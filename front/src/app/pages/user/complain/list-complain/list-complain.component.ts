@@ -31,10 +31,9 @@ export class ListComplainComponent implements OnInit {
     this.getComplains();
     this.cols = [
       { field: 'id', header: 'Id' },
-      { field: 'body', header: 'Body' },
       { field: 'reason', header: 'reason' },
-      { field: 'createdAt', header: 'Created dAt' },
-      { field: 'transaction.id', header: 'Transaction id' },
+      { field: 'createdAt', header: 'Send At' },
+      { field: 'transaction.amount', header: 'Amount' },
       { field: 'status', header: 'status' },
       { field: 'action', header: 'Controls' }
     ];

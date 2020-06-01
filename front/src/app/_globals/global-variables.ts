@@ -3,6 +3,8 @@ import {environment} from '../../environments/environment';
 export const API_URL = environment.apiUrl + '/api';
 export const CHARITY = '/projects';
 export const COMPLAIN = '/complains';
+export const REFUSE = '/refuse';
+export const PROCESS = '/process';
 export const IMAGE = '/image';
 export const CATEGORY = '/categories';
 export const ACCOUNT = '/accounts';

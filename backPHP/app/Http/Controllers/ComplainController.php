@@ -85,6 +85,36 @@ class ComplainController extends Controller
 
         }
 
+    public function refuse($id){
+
+        try {
+            $complain = Complain::findOrFail($id);
+            $complain->status = 'REFUSED';
+            $complain->save();
+            return $complain;
+
+        } catch (ModelNotFoundException $e) {
+            return response()->json([
+                'message' => 'Complain with id ' . $id . ' not found'], 404);
+        }
+
+    }
+
+    public function process($id){
+
+        try {
+            $complain = Complain::findOrFail($id);
+            $complain->status = 'PROCESSING';
+            $complain->save();
+            return $complain;
+
+        } catch (ModelNotFoundException $e) {
+            return response()->json([
+                'message' => 'Complain with id ' . $id . ' not found'], 404);
+        }
+
+    }
+
     public function delete($id)
     {
         $complain = Complain::findOrFail($id);

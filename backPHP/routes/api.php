@@ -127,13 +127,13 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('/image/{id}', 'ImageController@uploadImage');
 
     /************************************************ Complain API ************************************************/
-    // user, admin, superAdmin
     Route::get('/complains', 'ComplainController@index');
     Route::get('/complains/{id}', 'ComplainController@show');
     Route::get('/complains/details/{id}', 'ComplainController@showDetails');
     Route::post("/complains/image" , "ComplainController@downloadImage");
     Route::post("/complains/image/{id}" , "ComplainController@uploadImage");
-    // admin, superAdmin
+    Route::put('/complains/refuse/{id}', 'ProjectController@refuse');
+    Route::put('/complains/process/{id}', 'ProjectController@process');
     Route::post('/complains', 'ComplainController@store');
     Route::put('/complains/{id}', 'ComplainController@update');
     Route::delete('/complains/{id}', 'ComplainController@delete');

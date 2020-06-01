@@ -67,12 +67,16 @@
       <div class="card bg-secondary shadow">
         <div class="card-header bg-white border-0">
           <div class="row align-items-center">
-            <div class="col-8">
+            <div class="col-4">
               <h3 class="mb-0">Complain</h3>
               <h6 class="mb-0">Send at: {{complain?.created_at | date}} </h6>
               <h6 class="mb-0">From: {{complain?.user?.username }} </h6>
             </div>
-
+            <div class="col-8 text-right">
+              <button (click)="processing()" type="submit" class="btn btn-sm btn-primary">Processing</button>
+              <button (click)="accept()" type="submit" class="btn btn-sm btn-success">Accept</button>
+              <button (click)="decline()" type="submit" class="btn btn-sm  ant-btn-danger ">Decline</button>
+            </div>
           </div>
         </div>
         <div class="card-body">

@@ -36,4 +36,16 @@ export class DetailsComplainComponent implements OnInit {
     });
 
   }
+
+  accept() {
+
+  }
+
+  decline() {
+
+  }
+
+  processing() {
+
+  }
 }

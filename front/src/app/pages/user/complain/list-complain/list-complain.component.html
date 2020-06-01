@@ -20,7 +20,7 @@
     <div class="col">
       <div class="card shadow">
         <div class="card-header border-0">
-          <h3 class="mb-0">Projects</h3>
+          <h3 class="mb-0">Complains</h3>
         </div>
         <div class="table-responsive">
 
@@ -41,10 +41,10 @@
             <ng-template pTemplate="body" let-rowData let-columns="columns">
               <tr [pSelectableRow]="rowData">
 
-                <td *ngFor="let col of columns" [ngSwitch]="col.field" (click)="goToDetails(rowData['id'])">
+                <td *ngFor="let col of columns" [ngSwitch]="col.field" >
 
-                  <ng-container *ngSwitchCase="'transaction.id'">
-                    {{rowData['transaction'].id}}
+                  <ng-container *ngSwitchCase="'transaction.amount'">
+                    {{rowData['transaction'].amount}}
                   </ng-container>
 
                   <ng-container *ngSwitchCase="'createdAt'">
@@ -77,20 +77,7 @@
 <!--                  </ng-container>-->
 
                   <ng-container *ngSwitchCase="'action'">
-
-
-                    <div *ngIf="rowData['status']!='DELETED'" ngbDropdown placement="auto">
-                      <a class="btn btn-sm btn-icon-only text-light"  ngbDropdownToggle>
-                        <i class="fas fa-ellipsis-v"></i>
-                      </a>
-                      <div ngbDropdownMenu *ngIf="rowData['status']!='DELETED'"class=" dropdown-menu-right dropdown-menu-arrow">
-                        <a class="dropdown-item" (click)="pauseProject(rowData)" *ngIf="(rowData['status'] !='PAUSED') && rowData['status']!='DELETED' &&rowData['status'] !='TERMINATED'" >PAUSE</a>
-                        <a class="dropdown-item" (click)="activateProject(rowData)"   *ngIf="rowData['status']!='ACTIVE'&& rowData['status']!='DELETED' && rowData['status']!='TERMINATED'">ACTIVATE</a>
-                        <a class="dropdown-item" (click)="showTerminateConfirm(rowData)" *ngIf="rowData['status']!='TERMINATED' && rowData['status']!='DELETED'">TERMINATE</a>
-                        <a class="dropdown-item" (click)="updateProject(rowData['id']) " *ngIf="rowData['status']!='DELETED' ">UPDATE</a>
-                        <a class="dropdown-item" (click)="showDeleteConfirm(rowData['id'])" *ngIf="rowData['status']!='DELETED'">DELETE</a>
-                      </div>
-                    </div>
+                    <a (click)="goToDetails(rowData['id'])" class="btn btn-sm btn-info mr-4">Details</a>
 
                   </ng-container>
 
