@@ -16,6 +16,7 @@ export const USERS = '/users';
 export const USERS_PROFILE = '/users/profile';
 export const USERS_PROFILE2 = '/profiles';
 export const IMG_URL = environment.apiUrl + '/img/';
+export const DETAILS = '/details';
 export const CURRENT_ORGANIZATION = '1';
 export const INFURA_URL = 'https://ropsten.infura.io/v3/' + environment.infuraApiKey;
 // export const IMG_URL = 'http://127.0.0.1:8887/';

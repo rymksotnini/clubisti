@@ -2,12 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ComplainCollection;
+
+use App\Http\Resources\Offer as OfferResource;
 use App\Models\Complain;
 use App\Models\Transaction;
 use App\Models\User;
+use App\Models\Project;
+use App\Models\Offer;
+
+use App\Http\Resources\Complain as ComplainResource;
+
 
 use Illuminate\Support\Facades\Auth;
-use App\Http\Resources\Complain as ComplainResource;
+
 use Illuminate\Http\Request;
 
 class ComplainController extends Controller
@@ -31,7 +39,6 @@ class ComplainController extends Controller
 
     public function store(Request $request)
     {
-       error_log("ee");
         $transaction = Transaction::findOrFail($request->transactionId);
         $user = User::findOrFail(Auth::user()->id);
         // check if reason AE and current user not the owner of the transaction return error
@@ -61,6 +68,22 @@ class ComplainController extends Controller
             ->response()
             ->setStatusCode(201);
     }
+
+    // api return complain  with transaction , user, profile and offer
+     public function showDetails($id)
+        {
+           $complain = Complain::findOrFail($id);
+            $complain->transaction->offer->project;
+           $user = $complain->user;
+           $profile = $user->profile;
+           $address = $profile->address;
+           $address->country;
+
+            return response()->json([
+                'data' => $complain
+            ]);
+
+        }
 
     public function delete($id)
     {

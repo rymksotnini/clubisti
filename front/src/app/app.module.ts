@@ -59,6 +59,8 @@ import { NZ_ICONS } from 'ng-zorro-antd/icon';
 import { IconDefinition } from '@ant-design/icons-angular';
 import * as AllIcons from '@ant-design/icons-angular/icons';
 import {DragDropModule} from "@angular/cdk/drag-drop";
+import { ListComplainComponent } from './pages/user/complain/list-complain/list-complain.component';
+import { DetailsComplainComponent } from './pages/user/complain/details-complain/details-complain.component';
 
 const antDesignIcons = AllIcons as {
   [key: string]: IconDefinition;
@@ -110,6 +112,8 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     DonationComponent,
     TestModalComponent,
     CreateComplainComponent,
+    ListComplainComponent,
+    DetailsComplainComponent,
 
   ],
   providers: [AuthenticationInterceptorProvider,

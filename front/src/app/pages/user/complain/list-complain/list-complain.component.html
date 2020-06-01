@@ -24,7 +24,7 @@
         </div>
         <div class="table-responsive">
 
-          <p-table #tt class="table align-items-center table-flush"  [autoLayout]="true"  [rowHover]="true" [columns]="cols" [value]="projects" [paginator]="true" [rows]="10"   [rowsPerPageOptions]="[1,5,10]">
+          <p-table #tt class="table align-items-center table-flush"  [autoLayout]="true"  [rowHover]="true" [columns]="cols" [value]="complains" [paginator]="true" [rows]="10"   [rowsPerPageOptions]="[1,5,10]">
             <ng-template pTemplate="caption">
 
               <input type="text" pInputText size="50" placeholder="Search" (input)="tt.filterGlobal($event.target.value, 'contains')" style="width:auto">
@@ -41,52 +41,40 @@
             <ng-template pTemplate="body" let-rowData let-columns="columns">
               <tr [pSelectableRow]="rowData">
 
-                <td *ngFor="let col of columns" [ngSwitch]="col.field">
+                <td *ngFor="let col of columns" [ngSwitch]="col.field" (click)="goToDetails(rowData['id'])">
 
-                  <ng-container *ngSwitchCase="'offer.name'">
-                    {{rowData['offer'].name}}
+                  <ng-container *ngSwitchCase="'transaction.id'">
+                    {{rowData['transaction'].id}}
                   </ng-container>
 
-                  <ng-container *ngSwitchCase="'offer.amount'">
-                    {{rowData['offer'].amount}}
+                  <ng-container *ngSwitchCase="'createdAt'">
+                    {{rowData[col.field]| date}}
                   </ng-container>
 
-                  <ng-container *ngSwitchCase="'startDate'">
+
+                  <ng-container *ngSwitchCase="'updatedAt'">
                     {{rowData[col.field] | date}}
                   </ng-container>
 
-                  <ng-container *ngSwitchCase="'endDate'">
-                    {{rowData[col.field] | date}}
-                  </ng-container>
-
-                  <ng-container *ngSwitchCase="'offer.createdAt'">
-                    {{rowData['offer'].createdAt | date}}
-                  </ng-container>
-
-
-                  <ng-container *ngSwitchCase="'offer.updatedAt'">
-                    {{rowData['offer'].updatedAt | date}}
-                  </ng-container>
 
 
 
 
 
-
-                  <ng-container *ngSwitchCase="'status'">
-                    <span *ngIf="(rowData['status'] ==='PAUSED')"class="badge badge-dot">
-                  <i class="bg-success"></i> {{rowData['status']}}
-                </span>
-                    <span *ngIf="(rowData['status'] ==='ACTIVE')"class="badge badge-dot">
-                  <i class="bg-primary"></i> {{rowData['status']}}
-                </span>
-                    <span *ngIf="(rowData['status'] ==='DELETED')" class="badge badge-dot mr-4">
-                  <i class="bg-danger"></i> {{rowData['status']}}
-                </span>
-                    <span *ngIf="(rowData['status'] ==='TERMINATED')"class="badge badge-dot">
-                  <i class="bg-warning"></i> {{rowData['status']}}
-                </span>
-                  </ng-container>
+<!--                  <ng-container *ngSwitchCase="'status'">-->
+<!--                    <span *ngIf="(rowData['status'] ==='PAUSED')"class="badge badge-dot">-->
+<!--                  <i class="bg-success"></i> {{rowData['status']}}-->
+<!--                </span>-->
+<!--                    <span *ngIf="(rowData['status'] ==='ACTIVE')"class="badge badge-dot">-->
+<!--                  <i class="bg-primary"></i> {{rowData['status']}}-->
+<!--                </span>-->
+<!--                    <span *ngIf="(rowData['status'] ==='DELETED')" class="badge badge-dot mr-4">-->
+<!--                  <i class="bg-danger"></i> {{rowData['status']}}-->
+<!--                </span>-->
+<!--                    <span *ngIf="(rowData['status'] ==='TERMINATED')"class="badge badge-dot">-->
+<!--                  <i class="bg-warning"></i> {{rowData['status']}}-->
+<!--                </span>-->
+<!--                  </ng-container>-->
 
                   <ng-container *ngSwitchCase="'action'">
 
