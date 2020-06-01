@@ -56,25 +56,20 @@
                     {{rowData[col.field] | date}}
                   </ng-container>
 
-
-
-
-
-
-<!--                  <ng-container *ngSwitchCase="'status'">-->
-<!--                    <span *ngIf="(rowData['status'] ==='PAUSED')"class="badge badge-dot">-->
-<!--                  <i class="bg-success"></i> {{rowData['status']}}-->
-<!--                </span>-->
-<!--                    <span *ngIf="(rowData['status'] ==='ACTIVE')"class="badge badge-dot">-->
-<!--                  <i class="bg-primary"></i> {{rowData['status']}}-->
-<!--                </span>-->
-<!--                    <span *ngIf="(rowData['status'] ==='DELETED')" class="badge badge-dot mr-4">-->
-<!--                  <i class="bg-danger"></i> {{rowData['status']}}-->
-<!--                </span>-->
-<!--                    <span *ngIf="(rowData['status'] ==='TERMINATED')"class="badge badge-dot">-->
-<!--                  <i class="bg-warning"></i> {{rowData['status']}}-->
-<!--                </span>-->
-<!--                  </ng-container>-->
+                  <ng-container *ngSwitchCase="'status'">
+                    <span *ngIf="(rowData['status'] ==='ACCEPTED')" class="badge badge-dot">
+                  <i class="bg-success"></i> {{rowData['status']}}
+                </span>
+                    <span *ngIf="(rowData['status'] ==='PENDING')" class="badge badge-dot">
+                  <i class="bg-primary"></i> {{rowData['status']}}
+                </span>
+                    <span *ngIf="(rowData['status'] ==='REFUSED')" class="badge badge-dot mr-4">
+                  <i class="bg-danger"></i> {{rowData['status']}}
+                </span>
+                    <span *ngIf="(rowData['status'] ==='PROCESSING')" class="badge badge-dot">
+                  <i class="bg-warning"></i> {{rowData['status']}}
+                </span>
+                  </ng-container>
 
                   <ng-container *ngSwitchCase="'action'">
                     <a (click)="goToDetails(rowData['id'])" class="btn btn-sm btn-info mr-4">Details</a>
