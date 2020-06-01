@@ -11,7 +11,7 @@
     </span>
     <span class=" alert-text">{{this.textError}}</span>
   </div>
-    <a class="col-4 text-underline" style="padding-top: 5px" [routerLink]="['/buy-coins']">
+    <a *ngIf="showBuy" class="col-4 text-underline" style="padding-top: 5px" [routerLink]="['/buy-coins']">
       Buy now
     </a>
 </div>

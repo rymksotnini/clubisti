@@ -133,8 +133,8 @@
                     </div>
                   </div>
                   <div class="row" style="width: 100%">
-                    <div class="col-lg-6">
-                      <a class="btn btn-danger mt-4" (click)="donate(project)">Donate</a>
+                    <div  class="col-lg-6">
+                      <a *ngIf="project.status!='TERMINATED'" class="btn btn-danger mt-4" (click)="donate(project)">Donate</a>
                     </div>
                     <div class="col-lg-6">
                       <a href="javascript:void(0)" class="btn btn-neutral mt-4">See Details</a>
