@@ -13,6 +13,7 @@ export const REDIRECT = '/redirect';
 export const CALLBACK = '/callback';
 export const USERS = '/users';
 export const USERS_PROFILE = '/users/profile';
+export const CURRENT_PROFILE = '/profiles/current';
 export const USERS_PROFILE2 = '/profiles';
 export const IMG_URL = environment.apiUrl + '/img/';
 export const CURRENT_ORGANIZATION = '1';

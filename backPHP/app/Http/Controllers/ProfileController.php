@@ -7,6 +7,7 @@ use App\Http\Resources\Profile as ProfileResource;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -64,5 +65,11 @@ class ProfileController extends Controller
         return (new ProfileResource($profile))
             ->response()
             ->setStatusCode(201);
+    }
+
+    public function getProfile($id) {
+        $currentUser = User::findOrFail($id);
+        $currentProfile =$currentUser->profile;
+        return new ProfileResource($currentProfile);
     }
 }

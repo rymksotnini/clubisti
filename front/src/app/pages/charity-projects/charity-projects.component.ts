@@ -53,7 +53,7 @@ export class CharityProjectsComponent implements OnInit {
       nzTitle: 'Insert your amount',
       nzContent: CharityAmountComponent,
       nzComponentParams:{
-        project /*?.offer?.id*/
+        project
       },
       nzFooter: null
     });

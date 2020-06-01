@@ -5,8 +5,10 @@ import {User} from '../../_models/user';
 import {ImageService} from '../../_services/image.service';
 import {AuthenticationService} from '../../_services/authentication.service';
 import {ROUTES} from '../sidebar/sidebar.component';
-import {IMG_URL} from '../../_globals/global-variables';
+import {API_URL, CURRENT_PROFILE, IMG_URL} from '../../_globals/global-variables';
 import {LocalService} from "../../_services/local.service";
+import {CrudService} from "../../_services/crud.service";
+import {Profile} from "../../_models/profile";
 
 @Component({
   selector: 'app-topbar-landing',
@@ -20,6 +22,7 @@ export class TopbarLandingComponent implements OnInit, DoCheck {
   public listTitles: any[];
   public location: Location;
   public image;
+  public balance: number;
   currentUser: User;
   constructor(
     private imageService:ImageService,
@@ -27,7 +30,8 @@ export class TopbarLandingComponent implements OnInit, DoCheck {
     private element: ElementRef,
     private router: Router,
     private  authenticationService:AuthenticationService,
-    private localService: LocalService
+    private localService: LocalService,
+    private crudService: CrudService
     ) {
     this.location = location;
   }
@@ -47,6 +51,16 @@ export class TopbarLandingComponent implements OnInit, DoCheck {
       error => {
         console.log(error);
         this.image = 'assets/img/theme/team-4-800x800.jpg';
+      }
+    );
+    this.crudService.getOne(API_URL + CURRENT_PROFILE, this.authenticationService.getCurrentUser().id).subscribe(
+      (data) => {
+        const profile:Profile = data.data;
+        console.log(profile.balance);
+        this.balance = profile.balance;
+      },
+      (error) =>{
+        console.log(error);
       }
     )
   }
