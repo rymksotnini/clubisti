@@ -29,7 +29,7 @@ export class ImageService {
     headers.append('Accept', 'application/json');
     myFormData.append('id', id);
     myFormData.append('image', fileData);
-    console.log('formData: '+ myFormData.getAll('id_user'));
+    console.log('formData: '+ myFormData.getAll('image'));
     return this.http.post(api, myFormData, {
       headers
     });
@@ -50,7 +50,7 @@ export class ImageService {
     myFormData.append('id', id);
     myFormData.append('largeImage', largeImage);
     myFormData.append('shortImage', shortImage);
-    console.log('formData: '+ myFormData.getAll('id'));
+    console.log('formData: '+ myFormData.getAll('shortImage'));
     return this.http.post(API_URL+api, myFormData, {
       headers
     });

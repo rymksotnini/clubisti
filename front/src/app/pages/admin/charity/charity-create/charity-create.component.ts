@@ -67,16 +67,6 @@ export class CharityCreateComponent implements OnInit {
       })
     );
   }
-
-  fileEventShortFile(e){
-    this.shortImage = e.target.files[0];
-
-  }
-  fileEventLargeFile(e){
-    this.largeImage = e.target.files[0];
-
-  }
-
   onSubmit() {
 
       this.submitted = true;
@@ -95,6 +85,7 @@ export class CharityCreateComponent implements OnInit {
       (data) => {
         this.idOffer = data.data.offer.id;
         if(this.shortImage && this.largeImage){
+          console.log(this.shortImage)
           this.imageService.postImageProject(this.largeImage,this.shortImage,this.idOffer,CHARITY + IMAGE).subscribe(data => {
             console.log(data);
           });

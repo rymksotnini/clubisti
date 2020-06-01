@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { BrowserModule } from '@angular/platform-browser';
 
-import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
+import {NgZorroAntdModule, NZ_I18N, en_US, NzIconModule} from 'ng-zorro-antd';
 
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
@@ -55,6 +55,15 @@ import { DonationComponent } from './pages/anonymous/donation/donation.component
 import { TestModalComponent } from './pages/test-modal/test-modal.component';
 import { CreateComplainComponent } from './pages/user/complain/create-complain/create-complain.component';
 import { CharityAmountComponent } from './pages/charity-projects/charity-amount/charity-amount.component';
+import { NZ_ICONS } from 'ng-zorro-antd/icon';
+import { IconDefinition } from '@ant-design/icons-angular';
+import * as AllIcons from '@ant-design/icons-angular/icons';
+import {DragDropModule} from "@angular/cdk/drag-drop";
+
+const antDesignIcons = AllIcons as {
+  [key: string]: IconDefinition;
+};
+const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesignIcons[key])
 
 // @ts-ignore
 @NgModule({
@@ -74,7 +83,9 @@ import { CharityAmountComponent } from './pages/charity-projects/charity-amount/
     ReactiveFormsModule,
     AnonymousLayoutModule,
     SharedModule,
+    NzIconModule,
     FontAwesomeModule,
+    DragDropModule,
     MatSelectCountryModule,
   ],
   declarations: [
@@ -102,7 +113,8 @@ import { CharityAmountComponent } from './pages/charity-projects/charity-amount/
 
   ],
   providers: [AuthenticationInterceptorProvider,
-    {provide: NZ_I18N, useValue: en_US}
+    {provide: NZ_I18N, useValue: en_US},
+    { provide: NZ_ICONS, useValue: icons }
   ],
   bootstrap: [AppComponent]
 })

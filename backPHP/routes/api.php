@@ -130,6 +130,8 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     // user, admin, superAdmin
     Route::get('/complains', 'ComplainController@index');
     Route::get('/complains/{id}', 'ComplainController@show');
+    Route::post("/complains/image" , "ComplainController@downloadImage");
+    Route::post("/complains/image/{id}" , "ComplainController@uploadImage");
     // admin, superAdmin
     Route::post('/complains', 'ComplainController@store');
     Route::put('/complains/{id}', 'ComplainController@update');

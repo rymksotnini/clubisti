@@ -3,8 +3,9 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CrudService} from '../../../../_services/crud.service';
 import {API_URL, CHARITY, COMPLAIN, IMAGE} from '../../../../_globals/global-variables';
 import { NzMessageService } from 'ng-zorro-antd/message';
-import { UploadChangeParam } from 'ng-zorro-antd/upload';
+import {UploadChangeParam, UploadFile} from 'ng-zorro-antd/upload';
 import {ImageService} from '../../../../_services/image.service';
+import {Observable, Observer} from "rxjs";
 
 
 @Component({
@@ -17,6 +18,8 @@ export class CreateComplainComponent implements OnInit {
   msg: string;
   createComplain: FormGroup;
   file: any;
+  fileData: any;
+  imagePath = API_URL+ COMPLAIN + IMAGE;
   @Input() transactionId;
   success = false;
   constructor(private formBuilder: FormBuilder,
@@ -49,7 +52,7 @@ export class CreateComplainComponent implements OnInit {
         console.log(response);
 
         if(this.file){
-          this.imageService.postImageWithApi(this.file, response.data.id, CHARITY + IMAGE).subscribe(data => {
+          this.imageService.postImageWithApi(this.file, response.data.id, API_URL+ COMPLAIN + IMAGE).subscribe(data => {
             console.log(data);
           });
         }
@@ -63,7 +66,23 @@ export class CreateComplainComponent implements OnInit {
       })
     );
 
+
   }
+
+  beforeUpload = (file: UploadFile, _fileList: UploadFile[]) => {
+    return new Observable((observer: Observer<boolean>) => {
+      const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
+      const isLt2M = file.size! / 1024 / 1024 < 2;
+      if (!isLt2M) {
+        this.msgService.error('Image must smaller than 2MB!');
+        observer.complete();
+        return;
+      }
+      this.file = file;
+      observer.next(isJpgOrPng && isLt2M);
+      observer.complete();
+    });
+  };
 
   handleChange({ file, fileList }: UploadChangeParam): void {
     const status = file.status;
@@ -72,17 +91,23 @@ export class CreateComplainComponent implements OnInit {
     }
     if (status === 'done') {
       this.msgService.success(`${file.name} file uploaded successfully.`);
-      this.file = file;
 
     } else if (status === 'error') {
       this.msgService.error(`${file.name} file upload failed.`);
     }
   }
 
+
+
   closeAlert() {
     this.error = false;
   }
   closeSuccess() {
     this.success = false;
+  }
+
+
+  event(files: FileList) {
+    console.log(files.item(0));
   }
 }

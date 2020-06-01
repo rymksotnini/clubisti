@@ -31,6 +31,7 @@ class ComplainController extends Controller
 
     public function store(Request $request)
     {
+       error_log("ee");
         $transaction = Transaction::findOrFail($request->transactionId);
         $user = User::findOrFail(Auth::user()->id);
         // check if reason AE and current user not the owner of the transaction return error
@@ -81,29 +82,30 @@ class ComplainController extends Controller
 
     public function downloadImage(Request $request)
         {
+             error_log($request->id);
             if ($request->hasFile('image') )
             {
 
-                $transaction = Transaction::find($request->id);
+                $complain = Complain::find($request->id);
 
-                if (!$transaction) {
+                if (!$complain) {
 
                      return response()->json("transaction not found",406);
                 }
                 $file = $request->file('image');
                 $extension = $file->getClientOriginalExtension();
-                $picture   = date('His').'-'.'TR.'.^$request->id.$extension;
-                if($transaction->document) {
+                $picture   = date('His').'-'.'TR.'.$request->id.$extension;
+                if($complain->document) {
                     error_log("deleting...");
-                    error_log(public_path("img\\$transaction->document"));
-                    File::delete(public_path("img\\$transaction->document"));
+                    error_log(public_path("document\\complain\\$transaction->document"));
+                    File::delete(public_path("document\\complain\\$transaction->document"));
                 }
-                $file->move(public_path('img'), $picture);
-                $transaction->document= $picture;
+                $file->move(public_path('document\\complain'), $picture);
+                $complain->document= $picture;
 
 
                 //save changes
-                $transaction->save();
+                $complain->save();
                 return response()->json(["message" => "Document Uploaded Successfully"]);
             }
             else
@@ -114,13 +116,13 @@ class ComplainController extends Controller
 
         public function uploadImage(Request $request,$id){
             error_log($id);
-            $transaction= Transaction::find($id);
-            if($transaction==null){
+            $complain= Complain::find($id);
+            if($complain==null){
                 return response()->json("non existent transaction",406);
             }
-            error_log($transaction);
-            error_log($transaction->document);
-            if($transaction->document==null){
+            error_log($complain);
+            error_log($complain->document);
+            if($transaction->complain==null){
                 return response()->json("non existent image",406);
             }
             return response()->json($transaction->document);
