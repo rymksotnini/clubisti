@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {CrudService} from "../../../../_services/crud.service";
-import {API_URL, COMPLAIN, DETAILS, IMG_URL, USERS_PROFILE} from "../../../../_globals/global-variables";
+import {API_URL, CHARITY, COMPLAIN, DETAILS, IMG_URL, PAUSE, PROCESS, REFUSE, USERS_PROFILE} from '../../../../_globals/global-variables';
 import {Transaction} from "../../../../_models/Transaction";
 import {ImageService} from "../../../../_services/image.service";
 import {Complain} from '../../../../_models/Complain';
@@ -17,7 +17,8 @@ export class DetailsComplainComponent implements OnInit {
   complain: Complain;
   image:string;
   constructor(private route: ActivatedRoute,
-              private crudService:CrudService) {}
+              private crudService:CrudService,
+              private router: Router) {}
 
   ngOnInit(): void {
      this.route.params.subscribe(params => {
@@ -42,10 +43,22 @@ export class DetailsComplainComponent implements OnInit {
   }
 
   decline() {
-
+    this.crudService.update(API_URL + COMPLAIN + REFUSE, this.complain.id, {} ).subscribe(
+      (response) => {
+        this.router.navigate(['/admin/complains']);
+      }  , (error =>  {
+        console.log(error);
+      })
+    )
   }
 
   processing() {
-
+    this.crudService.update(API_URL + COMPLAIN + PROCESS, this.complain.id, {} ).subscribe(
+      (response) => {
+        this.router.navigate(['/admin/complains']);
+      }  , (error =>  {
+        console.log(error);
+      })
+    )
   }
 }
