@@ -2,32 +2,60 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {AnonymousLayoutRoutes} from './anonymous-layout.routing';
-import {HistoryComponent} from '../../pages/history/history.component';
+import {NgbDropdownModule, NgbProgressbarModule} from '@ng-bootstrap/ng-bootstrap';
+import {HomeDescriptionComponent} from './components/home/home-description/home-description.component';
+import {HomeDonationsComponent} from './components/home/home-donations/home-donations.component';
+import {HomeProjectsComponent} from './components/home/home-projects/home-projects.component';
+import {CharityAmountComponent} from './pages/charity/charity-amount/charity-amount.component';
+import {CharityProjectsComponent} from './pages/charity/charity-projects/charity-projects.component';
+import {CreateComplainComponent} from './pages/complain/create-complain/create-complain.component';
+import {DashboardComponent} from './pages/dashboard/dashboard.component';
+import {DonationComponent} from './pages/donation/donation.component';
+import {UpdateProfileComponent} from './pages/profile/update-profile/update-profile.component';
+import {UserProfileComponent} from './pages/profile/user-profile/user-profile.component';
+import {TestLandingComponent} from './pages/test-landing/test-landing.component';
+import {SharedModule} from '../../shared/shared.module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {NgZorroAntdModule} from 'ng-zorro-antd';
+import {MatSelectCountryModule} from '@angular-material-extensions/select-country';
+import {BuyCoinsComponent} from './pages/buy-coins/buy-coins.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
-
-import {DashboardComponent} from '../../pages/dashboard/dashboard.component';
-import {TestLandingComponent} from '../../pages/test-landing/test-landing.component';
-import {ComponentsModule} from '../../components/components.module';
-import {CharityProjectsComponent} from '../../pages/charity-projects/charity-projects.component';
-import {NgbProgressbarModule} from '@ng-bootstrap/ng-bootstrap';
-import {ProjectDetailsComponent} from '../../pages/project-details/project-details.component';
-import {BuyCoinsComponent} from '../../pages/buy-coins/buy-coins.component';
+import { ProjectDetailsComponent } from './pages/charity/project-details/project-details.component';
+import {RoundProgressModule} from "angular-svg-round-progressbar";
 
 
 @NgModule({
   declarations: [
-    DashboardComponent,
-    HistoryComponent,
-    TestLandingComponent,
+    HomeDescriptionComponent,
+    HomeDonationsComponent,
+    HomeProjectsComponent,
+    CharityAmountComponent,
     CharityProjectsComponent,
-    ProjectDetailsComponent,
-    BuyCoinsComponent
+    CreateComplainComponent,
+    DashboardComponent,
+    DonationComponent,
+    UpdateProfileComponent,
+    UserProfileComponent,
+    TestLandingComponent,
+    BuyCoinsComponent,
+    ProjectDetailsComponent
   ],
-    imports: [
-        CommonModule,
-        RouterModule.forChild(AnonymousLayoutRoutes),
-        ComponentsModule,
-        NgbProgressbarModule,
-    ]
+  imports: [
+    SharedModule,
+    CommonModule,
+    RouterModule.forChild(AnonymousLayoutRoutes),
+    NgbProgressbarModule,
+    ReactiveFormsModule,
+    NgZorroAntdModule,
+    MatSelectCountryModule,
+    NgbDropdownModule,
+    MatSnackBarModule,
+    FormsModule
+  ],
+  exports: [
+
+    RoundProgressModule
+  ]
 })
 export class AnonymousLayoutModule { }

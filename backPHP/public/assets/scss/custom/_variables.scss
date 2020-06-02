@@ -131,7 +131,10 @@ $theme-colors: map-merge((
   "white":        $white,
   "neutral":      $white,
   "dark":         $dark,
-  "darker":       $darker
+  "darker":       $darker,
+  "gray":       $gray-600,
+  "light":      $gray-400,
+  "lighter":    $gray-100,
 ), $theme-colors);
 
 $brand-colors: () !default;

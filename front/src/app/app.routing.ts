@@ -1,22 +1,20 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, } from '@angular/common';
-import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import {AnonymousLayoutComponent} from './layouts/anonymous-layout/anonymous-layout.component';
 import {TemplateLayoutComponent} from './layouts/template-layout/template-layout.component';
-import {FbAuthComponent} from './components/fb-auth/fb-auth.component';
-import {SharedModule} from "./shared/shared.module";
-import {TestLandingComponent} from "./pages/test-landing/test-landing.component";
-import {AuthGuard} from "./_guards/auth.guard";
-import {Role} from "./_models/enum/Role";
-import {HomeUserComponent} from "./pages/home-user/home-user.component";
+import {AuthGuard} from './_guards/auth.guard';
+import {Role} from './_models/enum/Role';
+import {SharedModule} from './shared/shared.module';
+import {FbAuthComponent} from './layouts/auth-layout/pages/fb-auth/fb-auth.component';
+import {MetaSenderComponent} from './meta/meta-sender/meta-sender.component';
 
-const routes: Routes =[
+
+const routes: Routes = [
   { path: 'fblogin', component: FbAuthComponent },
-  { path: 'user-home', component: HomeUserComponent},
+  { path: 'meta', component: MetaSenderComponent },
   {
     path: 'admin',
     component: AdminLayoutComponent,

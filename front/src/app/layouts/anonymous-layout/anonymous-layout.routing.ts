@@ -1,17 +1,21 @@
 import { Routes} from '@angular/router';
+import {TestLandingComponent} from './pages/test-landing/test-landing.component';
+import {DonationComponent} from './pages/donation/donation.component';
+import {DashboardComponent} from './pages/dashboard/dashboard.component';
+import {CharityProjectsComponent} from './pages/charity/charity-projects/charity-projects.component';
+import {UserProfileComponent} from './pages/profile/user-profile/user-profile.component';
+import {UpdateProfileComponent} from './pages/profile/update-profile/update-profile.component';
+import {BuyCoinsComponent} from './pages/buy-coins/buy-coins.component';
+import {ProjectDetailsComponent} from "./pages/charity/project-details/project-details.component";
 
-
-import {DashboardComponent} from '../../pages/dashboard/dashboard.component';
-import {TestLandingComponent} from '../../pages/test-landing/test-landing.component';
-import {CharityProjectsComponent} from '../../pages/charity-projects/charity-projects.component';
-import {DonationComponent} from '../../pages/anonymous/donation/donation.component';
-import {TestModalComponent} from '../../pages/test-modal/test-modal.component';
-import {BuyCoinsComponent} from '../../pages/buy-coins/buy-coins.component';
 
 export const AnonymousLayoutRoutes: Routes = [
   { path: '',                   component: TestLandingComponent },
+  { path: 'user-profile',   component: UserProfileComponent },
+  { path: 'update-profile',   component: UpdateProfileComponent },
   { path: 'history/project/:id',            component: DonationComponent },
   { path: 'dashboard',          component: DashboardComponent },
   { path: 'projects',           component: CharityProjectsComponent },
   { path: 'buy-coins',           component: BuyCoinsComponent },
+  { path: 'details/:id',         component: ProjectDetailsComponent}
 ];

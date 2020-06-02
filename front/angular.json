@@ -3,28 +3,27 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "argon-dashboard-angular": {
+    "clubisti": {
       "root": "",
-      "sourceRoot": "src",
-      "projectType": "application",
-      "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "architect": {
+      "sourceRoot": "src",
+      "projectType": "application",
+      "targets": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "../backPHP/public/",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
+            "polyfills": "src/polyfills.ts",
             "assets": [
-              "src/favicon.ico",
               "src/assets",
+              "src/favicon.ico",
               {
                 "glob": "**/*",
                 "input": "node_modules/svg-country-flags/svg",
@@ -47,12 +46,6 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -61,48 +54,53 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "argon-dashboard-angular:build"
+            "browserTarget": "clubisti:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "argon-dashboard-angular:build:production"
+              "browserTarget": "clubisti:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "argon-dashboard-angular:build"
+            "browserTarget": "clubisti:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/test.ts",
+            "karmaConfig": "./karma.conf.js",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
+            "scripts": [],
             "styles": [
+              "src/assets/scss/argon.scss",
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css",
               "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
               "node_modules/primeicons/primeicons.css",
               "src/assets/scss/nova-light-costume/theme.css",
-              "node_modules/primeng/resources/primeng.min.css",
-              "src/assets/scss/blk-design-system.scss",
-              "src/assets/scss/demo.css"
+              "node_modules/primeng/resources/primeng.min.css"
             ],
-            "scripts": [],
             "assets": [
-              "src/favicon.ico",
               "src/assets",
+              "src/favicon.ico",
               {
                 "glob": "**/*",
                 "input": "./node_modules/svg-country-flags/svg",
@@ -118,33 +116,29 @@
               "src/tsconfig.app.json",
               "src/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
     },
-    "argon-dashboard-angular-e2e": {
-      "root": "e2e/",
+    "clubisti-e2e": {
+      "root": "e2e",
+      "sourceRoot": "e2e",
       "projectType": "application",
-      "architect": {
+      "targets": {
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "argon-dashboard-angular:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "argon-dashboard-angular:serve:production"
-            }
+            "protractorConfig": "./protractor.conf.js",
+            "devServerTarget": "clubisti:serve"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": "e2e/tsconfig.e2e.json",
+            "tsConfig": [
+              "e2e/tsconfig.e2e.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]
@@ -153,13 +147,15 @@
       }
     }
   },
-  "defaultProject": "argon-dashboard-angular",
+  "defaultProject": "clubisti",
   "schematics": {
     "@schematics/angular:component": {
+      "prefix": "app",
       "style": "scss"
+    },
+    "@schematics/angular:directive": {
+      "prefix": "app"
     }
-  },
-  "cli": {
-    "analytics": false
   }
+
 }

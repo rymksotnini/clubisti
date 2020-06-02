@@ -1,0 +1,75 @@
+<main class="profile-page">
+  <section class="section-profile-cover section-shaped my-0">
+    <!-- Circles background -->
+    <div class="shape shape-style-1 shape-clubisti alpha-4">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <!-- SVG separator -->
+    <div class="separator separator-bottom separator-skew">
+      <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container row">
+      <div class="col-lg-10 offset-lg-2">
+        <div class="card card-profile shadow mt--300">
+          <div class="px-4">
+            <div class="row justify-content-center">
+              <div class="col-lg-1">
+              </div>
+              <div class="col-lg-10">
+
+                <div class="mt--100 card-profile-image2">
+                  <a href="javascript:void(0)">
+                    <img [src]="project?.offer?.largeImagePath?(IMG_URL + project?.offer?.largeImagePath):'assets/img/default.jpg'" style="width: 100%" >
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-1">
+              </div>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-lg-4">
+                <div class="progress-wrapper">
+                  <round-progress
+                    [current]="project?.lastUpdatedSum"
+                    [max]="project?.offer?.amount"
+                    [color]="'#C9392D'"
+                    [background]="'#eaeaea'"
+                    [radius]="125"
+                    [stroke]="20"
+                    [semicircle]="false"
+                    [rounded]="true"
+                    [clockwise]="true"
+                    [responsive]="false"
+                    [duration]="800"
+                    [animation]="'easeInOutQuart'"
+                    [animationDelay]="0"></round-progress>
+                  <div class="text bigNumber">{{project?.lastUpdatedSum}}/{{project?.offer?.amount}}</div>
+                </div>
+              </div>
+              <div class="col-lg-8">
+                <div class="text-center mt-5">
+                  <h1>{{project?.offer?.name | uppercase}}
+                    <span class="font-weight-light">, {{project?.offer?.categories[0]?.name}}</span>
+                  </h1>
+                  <p>An artist of considerable range, Ryan — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. An artist of considerable range.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+

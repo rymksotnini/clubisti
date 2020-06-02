@@ -82,11 +82,11 @@ export class User {
     this._deleted = value;
   }
 
-  get profile(): Profile {
+  get profile(): any {
     return this._profile;
   }
 
-  set profile(value: Profile) {
+  set profile(value: any) {
     this._profile = value;
   }
 
