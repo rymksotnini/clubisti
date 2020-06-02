@@ -95,8 +95,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::delete('/offers/{id}', 'OfferController@delete');
 
     /************************************************ Projects API ************************************************/
-    Route::get('/projects', 'ProjectController@index');
-    Route::get('/projects/{id}', 'ProjectController@show');
+
     Route::post('/projects', 'ProjectController@storeWithOffer');
     Route::put('/projects/activate/{id}', 'ProjectController@activate');
     Route::put('/projects/pause/{id}', 'ProjectController@pause');
@@ -171,3 +170,6 @@ Route::post('/fblogin', array('middleware' => 'cors','uses'=>'SocialAuthFacebook
 Route::get('/redirect', 'SocialAuthFacebookController@redirect');
 Route::get('/callback', 'SocialAuthFacebookController@callback');
 
+
+Route::get('/projects', 'ProjectController@index');
+Route::get('/projects/{id}', 'ProjectController@show');
