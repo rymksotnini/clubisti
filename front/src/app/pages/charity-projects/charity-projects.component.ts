@@ -6,6 +6,7 @@ import {NzModalRef, NzModalService} from 'ng-zorro-antd';
 import {CharityAmountComponent} from './charity-amount/charity-amount.component';
 import {AuthenticationService} from '../../_services/authentication.service';
 import {Profile} from "../../_models/profile";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-charity-projects',
@@ -19,7 +20,8 @@ export class CharityProjectsComponent implements OnInit {
   constructor(
     private crudService: CrudService,
     private modal: NzModalService,
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private router: Router
   ) { }
 
   IMG_URL = IMG_URL;
@@ -61,5 +63,10 @@ export class CharityProjectsComponent implements OnInit {
       this.getProjects();
       this.getUserProfile();
     });
+  }
+
+  details(id: number) {
+    console.log(id)
+    this.router.navigate(['/history/project/'+ id]);
   }
 }

@@ -10,7 +10,7 @@ import {BuyCoinsComponent} from '../../pages/buy-coins/buy-coins.component';
 
 export const AnonymousLayoutRoutes: Routes = [
   { path: '',                   component: TestLandingComponent },
-  { path: 'history',            component: DonationComponent },
+  { path: 'history/project/:id',            component: DonationComponent },
   { path: 'dashboard',          component: DashboardComponent },
   { path: 'projects',           component: CharityProjectsComponent },
   { path: 'buy-coins',           component: BuyCoinsComponent },

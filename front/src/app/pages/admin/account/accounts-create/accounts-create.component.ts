@@ -1,9 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {CategoryType} from "../../../../_models/enum/CategoryType";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {CrudService} from "../../../../_services/crud.service";
 import {Router} from "@angular/router";
-import {CategoriesService} from "../../../../_services/categories.service";
+
 import {
   ACCOUNT,
   ACCOUNT_WITH_TYPE,

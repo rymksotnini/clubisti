@@ -97,8 +97,7 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::delete('/offers/{id}', 'OfferController@delete');
 
     /************************************************ Projects API ************************************************/
-    Route::get('/projects', 'ProjectController@index');
-    Route::get('/projects/{id}', 'ProjectController@show');
+
     Route::post('/projects', 'ProjectController@storeWithOffer');
     Route::put('/projects/activate/{id}', 'ProjectController@activate');
     Route::put('/projects/pause/{id}', 'ProjectController@pause');
@@ -129,10 +128,13 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::get('/image/{id}', 'ImageController@uploadImage');
 
     /************************************************ Complain API ************************************************/
-    // user, admin, superAdmin
     Route::get('/complains', 'ComplainController@index');
     Route::get('/complains/{id}', 'ComplainController@show');
-    // admin, superAdmin
+    Route::get('/complains/details/{id}', 'ComplainController@showDetails');
+    Route::post("/complains/image" , "ComplainController@downloadImage");
+    Route::post("/complains/image/{id}" , "ComplainController@uploadImage");
+    Route::put('/complains/refuse/{id}', 'ComplainController@refuse');
+    Route::put('/complains/process/{id}', 'ComplainController@process');
     Route::post('/complains', 'ComplainController@store');
     Route::put('/complains/{id}', 'ComplainController@update');
     Route::delete('/complains/{id}', 'ComplainController@delete');
@@ -148,11 +150,12 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     /************************************************ AccountAndAccountType API ************************************************/
     Route::post('/accounts/accountTypes/{id}', 'AccountController@createOrUpdateWithAccountType');
 });
-/************************************************ Transaction API ************************************************/
+  /************************************************ Transaction API ************************************************/
 // user, admin, superAdmin
 Route::get('/transactions', 'TransactionController@index');
 Route::get('/transactions/{id}', 'TransactionController@show');
 Route::get('/users/transactions/{id}', 'TransactionController@getPerUser');
+Route::get('/transactions/project/{id}', 'TransactionController@getPerOffer');
 Route::post('/transactions', 'TransactionController@store');
 Route::post('/donate', 'TransactionController@create');
 // admin, superAdmin
@@ -169,3 +172,6 @@ Route::post('/fblogin', array('middleware' => 'cors','uses'=>'SocialAuthFacebook
 Route::get('/redirect', 'SocialAuthFacebookController@redirect');
 Route::get('/callback', 'SocialAuthFacebookController@callback');
 
+
+Route::get('/projects', 'ProjectController@index');
+Route::get('/projects/{id}', 'ProjectController@show');

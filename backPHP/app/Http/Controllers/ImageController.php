@@ -13,7 +13,7 @@ class ImageController extends Controller
     public function downloadImage(Request $request)
     {
 
-        error_log($request->id_user);
+
         if ($request->hasFile('image'))
         {
             $file = $request->file('image');
