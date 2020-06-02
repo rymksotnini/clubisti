@@ -60,6 +60,12 @@ class TransactionController extends Controller
         if($currentUser->profile->balance < (double)$request->input('transaction.amount')){
             return response()->json("Current balance not sufficient",406);
         }
+        $currentProfile=$currentUser->profile;
+        // test if total exceeds the amount of the offer
+        if($currentProject->last_updated_sum + (double)$request->input('transaction.amount')>$currentOffer->amount){
+            return response()->json("Offer requested amount exceeded",405);
+        }
+        // save transaction
         if(Transaction::where('offer_id',$request->input('offer.id'))->first()==null){
             error_log("hello1");
             $transaction=Transaction::create(["amount"=>$request->input('transaction.amount'),"newTotal"=>$request->input('transaction.amount')]);
@@ -69,11 +75,11 @@ class TransactionController extends Controller
             $lastTransaction = Transaction::where('offer_id',$request->input('offer.id'))->latest()->first();
             $transaction=Transaction::create(["amount"=>$request->input('transaction.amount'),"newTotal"=>(double)$request->input('transaction.amount')+$lastTransaction->newTotal]);
         }
-        $currentProfile=$currentUser->profile;
+        // modify profile accordingly
         $currentProfile->balance = $currentProfile->balance - (double)$request->input('transaction.amount');
         $currentProfile->totalDonatedAmount = $currentProfile->totalDonatedAmount + (double)$request->input('transaction.amount');
         $currentProject->last_updated_sum = $currentProject->last_updated_sum + (double)$request->input('transaction.amount');
-        if($currentProject->last_updated_sum >= $currentOffer->amount){
+        if($currentProject->last_updated_sum == $currentOffer->amount){
             $currentProject->status = 'TERMINATED';
         }
         $currentProject->save();
@@ -83,7 +89,9 @@ class TransactionController extends Controller
         error_log($currentProfile->totalDonatedAmount);
         if ((double)$currentBadge->upper_bond < (double)$currentProfile->totalDonatedAmount) {
             $badge = Badge::find($currentBadge->id + 1);
-            $currentProfile->badge()->associate($badge);
+            if ($badge){
+                $currentProfile->badge()->associate($badge);
+            }
         }
         //end badge update
         $currentProfile->save();

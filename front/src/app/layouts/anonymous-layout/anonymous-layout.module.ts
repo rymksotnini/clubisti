@@ -11,6 +11,7 @@ import {ComponentsModule} from '../../components/components.module';
 import {CharityProjectsComponent} from '../../pages/charity-projects/charity-projects.component';
 import {NgbProgressbarModule} from '@ng-bootstrap/ng-bootstrap';
 import {ProjectDetailsComponent} from '../../pages/project-details/project-details.component';
+import {BuyCoinsComponent} from '../../pages/buy-coins/buy-coins.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import {ProjectDetailsComponent} from '../../pages/project-details/project-detai
     TestLandingComponent,
     CharityProjectsComponent,
     ProjectDetailsComponent,
+    BuyCoinsComponent
   ],
     imports: [
         CommonModule,

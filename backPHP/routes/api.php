@@ -83,7 +83,9 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     /************************************************ Profiles API ************************************************/
     Route::get('/profiles', 'ProfileController@index');
     Route::get('/profiles/{id}', 'ProfileController@show');
+    Route::get('/profiles/current/{id}', 'ProfileController@getProfile');
     Route::post('/profiles', 'ProfileController@store');
+    Route::put('/profiles/balance/{id}', 'ProfileController@setBalance');
     Route::put('/profiles/{id}', 'ProfileController@update');
     Route::delete('/profiles/{id}', 'ProfileController@delete');
 

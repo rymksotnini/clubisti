@@ -7,6 +7,7 @@ use App\Http\Resources\Profile as ProfileResource;
 use App\Models\Profile;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -50,4 +51,25 @@ class ProfileController extends Controller
         return response()->json(null, 204);
     }
 
+    public function setBalance(Request $request, $id){
+        $user = User::findOrFail($id);
+        $profile = $user->profile;
+        if($profile){
+            $profile->balance = $request->input('balance');
+        }
+        else{
+            $profile = Profile::create($request->input('balance'));
+            $profile->user()->associate($user);
+        }
+        $profile->save();
+        return (new ProfileResource($profile))
+            ->response()
+            ->setStatusCode(201);
+    }
+
+    public function getProfile($id) {
+        $currentUser = User::findOrFail($id);
+        $currentProfile =$currentUser->profile;
+        return new ProfileResource($currentProfile);
+    }
 }
