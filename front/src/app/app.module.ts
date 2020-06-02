@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { BrowserModule } from '@angular/platform-browser';
 
-import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
+import {NgZorroAntdModule, NZ_I18N, en_US, NzIconModule} from 'ng-zorro-antd';
 
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
@@ -55,7 +55,17 @@ import { DonationComponent } from './pages/anonymous/donation/donation.component
 import { TestModalComponent } from './pages/test-modal/test-modal.component';
 import { CreateComplainComponent } from './pages/user/complain/create-complain/create-complain.component';
 import { CharityAmountComponent } from './pages/charity-projects/charity-amount/charity-amount.component';
-import { ProjectDetailsComponent } from './pages/project-details/project-details.component';
+import { NZ_ICONS } from 'ng-zorro-antd/icon';
+import { IconDefinition } from '@ant-design/icons-angular';
+import * as AllIcons from '@ant-design/icons-angular/icons';
+import {DragDropModule} from "@angular/cdk/drag-drop";
+import { ListComplainComponent } from './pages/user/complain/list-complain/list-complain.component';
+import { DetailsComplainComponent } from './pages/user/complain/details-complain/details-complain.component';
+
+const antDesignIcons = AllIcons as {
+  [key: string]: IconDefinition;
+};
+const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesignIcons[key])
 
 // @ts-ignore
 @NgModule({
@@ -75,7 +85,9 @@ import { ProjectDetailsComponent } from './pages/project-details/project-details
     ReactiveFormsModule,
     AnonymousLayoutModule,
     SharedModule,
+    NzIconModule,
     FontAwesomeModule,
+    DragDropModule,
     MatSelectCountryModule,
   ],
   declarations: [
@@ -100,10 +112,13 @@ import { ProjectDetailsComponent } from './pages/project-details/project-details
     DonationComponent,
     TestModalComponent,
     CreateComplainComponent,
+    ListComplainComponent,
+    DetailsComplainComponent,
 
   ],
   providers: [AuthenticationInterceptorProvider,
-    {provide: NZ_I18N, useValue: en_US}
+    {provide: NZ_I18N, useValue: en_US},
+    { provide: NZ_ICONS, useValue: icons }
   ],
   bootstrap: [AppComponent]
 })

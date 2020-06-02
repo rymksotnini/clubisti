@@ -9,7 +9,7 @@ import {TestModalComponent} from '../../pages/test-modal/test-modal.component';
 
 export const AnonymousLayoutRoutes: Routes = [
   { path: '',                   component: TestLandingComponent },
-  { path: 'history',            component: DonationComponent },
+  { path: 'history/project/:id',            component: DonationComponent },
   { path: 'dashboard',          component: DashboardComponent },
   { path: 'projects',           component: CharityProjectsComponent },
 ];

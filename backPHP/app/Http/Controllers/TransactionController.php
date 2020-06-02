@@ -103,4 +103,10 @@ class TransactionController extends Controller
         return new TransactionCollection($currentUser->transactions()->get());
     }
 
+     public function getPerOffer($id){
+            $offer = Offer::findOrFail($id);
+            if ( !$offer){ return response()->json("Project with id "+ $id+ " not found" ,406);}
+            return new TransactionCollection($offer->transactions()->get());
+        }
+
 }
