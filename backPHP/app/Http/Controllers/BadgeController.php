@@ -44,7 +44,7 @@ class BadgeController extends Controller
                 ->setStatusCode(201);
         }
 
-error_log("com");
+
         error_log($request->upperBond);
         error_log($exist->upper_bond);
         // test upper bound > last upper bound

@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use Carbon\Carbon;
 use Illuminate\Support\Str;
 use App\Models\Badge;
+use App\Mail\MailService;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,6 +13,12 @@ use Tymon\JWTAuth\Exceptions\JWTException;
 
 class AuthenticationController extends Controller
 {
+   public $service;
+     public function __construct( MailService $service)
+    {
+        $this->service = $service;
+    }
+
     public function register(Request $request)
     {
         // add badge and balance in creation of user
@@ -32,9 +40,10 @@ class AuthenticationController extends Controller
         $profile->save();
 
         // SEND EMAIL
+        $this->sendVerifyEmail($user);
 
 
-        return $this->respondWithTokenAndUser($token,$user_id);
+       return response()->json(['message' => 'Please verify your email'], 202);
     }
     public function login(Request $request)
     {
@@ -83,34 +92,38 @@ class AuthenticationController extends Controller
         ]);
     }
 
+
+
+      public function sendVerifyEmail($user){
+     $to_name = $user->username;
+     $to_email = $user->email;
+     $link = env('PROD_URL', 'http://localhost:8000')."/api/verify/".$user->email_verification_token;
+     error_log($link);
+     $data = array('name'=>$user->username, "verifyLink" => $link);
+
+    $this->service->sendTo($to_name, $to_email, $data, "emails.verifyEmail", "Email verification", "Email verification");
+
+    }
      public function VerifyEmail($token = null)
         {
+
+
         	if($token == null) {
-
             return response()->json(['error' => 'Invalid Login attempt'], 406);
-
 
         	}
-
            $user = User::where('email_verification_token',$token)->first();
-
            if($user == null ){
-
             return response()->json(['error' => 'Invalid Login attempt'], 406);
-
-
            }
 
-           $user->update([
-
-            'email_verified' => 1,
-            'email_verified_at' => Carbon::now(),
-            'email_verification_token' => ''
-
-           ]);
+           $user->email_verified = true;
+           $user->email_verified_at = Carbon::now();
+           $user->email_verification_token = '';
+           $user->save();
 
            	//redirect to login page
-           	return redirect()->away( env('PROD_URL', 'http://localhost:4200')  . "/#/login");
+           	return redirect()->away( env('FRONT_URL', 'http://localhost:4200')  . "/#/auth/login");
 
         }
 
