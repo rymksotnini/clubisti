@@ -59,6 +59,7 @@ class AuthenticationController extends Controller
         //check if email verified
 
        if($user->email_verified == 1){
+
        return $this->respondWithTokenAndUser($token,$user_id);
        }
          return response()->json(['error' => 'Email unverified'], 406);
@@ -86,9 +87,8 @@ class AuthenticationController extends Controller
         {
         	if($token == null) {
 
-        		session()->flash('message', 'Invalid Login attempt');
+            return response()->json(['error' => 'Invalid Login attempt'], 406);
 
-        		return redirect()->route('login');
 
         	}
 
@@ -96,9 +96,8 @@ class AuthenticationController extends Controller
 
            if($user == null ){
 
-           	session()->flash('message', 'Invalid Login attempt');
+            return response()->json(['error' => 'Invalid Login attempt'], 406);
 
-            return redirect()->route('login');
 
            }
 
@@ -110,9 +109,8 @@ class AuthenticationController extends Controller
 
            ]);
 
-           	session()->flash('message', 'Your account is activated, you can log in now');
-
-            return redirect()->route('login');
+           	//redirect to login page
+           	return redirect()->away( env('PROD_URL', 'http://localhost:4200')  . "/#/login");
 
         }
 
