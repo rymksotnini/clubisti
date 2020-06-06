@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Str;
 use App\Models\Badge;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -14,9 +14,7 @@ class AuthenticationController extends Controller
     public function register(Request $request)
     {
         // add badge and balance in creation of user
-        error_log($request->json('email'));
-        error_log($request->json('username'));
-        error_log('000000');
+
         $validator = Validator::make($request->all(), [
             'email' => 'required|string|email|max:255|unique:users',
             'password'=> 'required'
@@ -24,17 +22,18 @@ class AuthenticationController extends Controller
         if ($validator->fails()) {
             return response()->json("existent mail or invalid password",406);
         }
-        $user = User::create($request->all());
-        error_log('111111111');
+        $user = User::create($request->all() +   ['email_verification_token' => Str::random(32)]);
         $token = auth()->login($user);
-        error_log('2222222222');
         $user_id = auth()->id();
-        error_log($user_id);
         // add first badge to user
         $badge = Badge::find(1);
         $profile=$user->profile()->create();
         $profile->badge()->associate($badge);
         $profile->save();
+
+        // SEND EMAIL
+
+
         return $this->respondWithTokenAndUser($token,$user_id);
     }
     public function login(Request $request)
@@ -55,8 +54,14 @@ class AuthenticationController extends Controller
             return response()->json(['error' => 'could_not_create_token'], 500);
         }
         $user_id = auth()->id();
-        error_log($user_id);
-        return $this->respondWithTokenAndUser($token,$user_id);
+        $user = User::find($user_id);
+
+        //check if email verified
+
+       if($user->email_verified == 1){
+       return $this->respondWithTokenAndUser($token,$user_id);
+       }
+         return response()->json(['error' => 'Email unverified'], 406);
     }
 
     public function logout()
@@ -76,4 +81,40 @@ class AuthenticationController extends Controller
             'user' => json_encode(User::find($id))
         ]);
     }
-}
+
+     public function VerifyEmail($token = null)
+        {
+        	if($token == null) {
+
+        		session()->flash('message', 'Invalid Login attempt');
+
+        		return redirect()->route('login');
+
+        	}
+
+           $user = User::where('email_verification_token',$token)->first();
+
+           if($user == null ){
+
+           	session()->flash('message', 'Invalid Login attempt');
+
+            return redirect()->route('login');
+
+           }
+
+           $user->update([
+
+            'email_verified' => 1,
+            'email_verified_at' => Carbon::now(),
+            'email_verification_token' => ''
+
+           ]);
+
+           	session()->flash('message', 'Your account is activated, you can log in now');
+
+            return redirect()->route('login');
+
+        }
+
+    }
+
