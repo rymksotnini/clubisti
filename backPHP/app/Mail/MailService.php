@@ -40,7 +40,8 @@ class MailService extends Mailable
 
             $message->to($to_email, $to_name)
             ->subject($subject);
-            $message->from('haouari.wejdene2@gmail.com',$title);
+              $from = env('MAIL_EMAIL');
+            $message->from($from,$title);
             });
 
             }
