@@ -27,9 +27,35 @@ Route::get('/', function () {
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
-//Route::get('/api/redirect', array('middleware' => 'cors', 'uses' => 'SocialAuthFacebookController@redirect'));
-//Route::get('/api/callback', array('middleware' => 'cors', 'uses' => 'SocialAuthFacebookController@callback'));
-Route::get('/redirect', array('middleware' => 'web','uses' => 'SocialAuthFacebookController@redirect'));
-Route::get('/callback', array('uses' => 'SocialAuthFacebookController@callback'));
-Route::post('/logout', array( 'uses' => 'AuthenticationController@logout'));
+Route::get('send-mail', function () {
+
+    $details = [
+        'title' => 'Mail from ItSolutionStuff.com',
+        'body' => 'This is for testing email using smtp'
+    ];
+
+    \Mail::to('haouari.wejdene1@gmail.com')->send(new \App\Mail\MailService($details));
+
+    dd("Email is Sent.");
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

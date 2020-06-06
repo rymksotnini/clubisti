@@ -4,6 +4,7 @@ use App\Models\Badge;
 use App\Models\SocialFacebookAccount;
 use App\Models\User;
 use Laravel\Socialite\Contracts\User as ProviderUser;
+
 class SocialFacebookAccountService
 {
     public function createOrGetUser(ProviderUser $providerUser)
