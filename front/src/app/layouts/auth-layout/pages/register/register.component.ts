@@ -18,6 +18,8 @@ export class RegisterComponent implements OnInit {
   errorText = '';
   error = false;
   accepted = false;
+  success = false;
+  msg: any;
   constructor(private authenticationService: AuthenticationService, private router: Router) {}
 
 
@@ -42,10 +44,12 @@ export class RegisterComponent implements OnInit {
       this.authenticationService.signup(this.user).subscribe(
         (result) => {
           this.error = false;
-          console.log('currently signing up...');
-          this.authenticationService.savingToken(result);
-          this.authenticationService.savingUser(result);
-          this.router.navigate(['/dashboard']);
+          this.success = true;
+          this.msg = result.body.message;
+          console.log(result);
+          //this.authenticationService.savingToken(result);
+          //this.authenticationService.savingUser(result);
+          //this.router.navigate(['/dashboard']);
         },
         (error) => {
           if ( error.status === 406) {
@@ -56,5 +60,9 @@ export class RegisterComponent implements OnInit {
       );
     }
 
+  }
+
+  closeSuccess() {
+    this.success = false;
   }
 }

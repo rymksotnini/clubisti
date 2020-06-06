@@ -169,6 +169,7 @@ Route::post('/register', 'AuthenticationController@register');
 Route::post('/login', 'AuthenticationController@login');
 Route::post('/logout', 'AuthenticationController@logout');
 Route::post('/fblogin', array('middleware' => 'cors','uses'=>'SocialAuthFacebookController@login'));
+Route::get('/verify/{token}', 'AuthenticationController@VerifyEmail');
 
 /************************************************ Authentication FACEBOOK *****************************************/
 Route::get('/redirect', 'SocialAuthFacebookController@redirect');
