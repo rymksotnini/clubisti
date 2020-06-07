@@ -72,7 +72,10 @@ export class CharityAmountComponent implements OnInit {
             // this.router.navigateByUrl('admin', { skipLocationChange: true }).then(() => {
             //   this.router.navigate(['projects']);
             // });
-            console.log(resp);
+            if (!resp.data) {
+              // here we will call the blockchain
+              console.log(resp);
+            }
           }, (error => {
             console.log(error);
             this.success = false;
