@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\passwordResets;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use App\Models\Badge;
 use App\Mail\MailService;
@@ -30,7 +32,7 @@ class AuthenticationController extends Controller
         if ($validator->fails()) {
             return response()->json("existent mail or invalid password",406);
         }
-        $user = User::create($request->all() +   ['email_verification_token' => Str::random(32)]);
+        $user = User::create($request->all() + ['email_verification_token' => Str::random(32)]);
         $token = auth()->login($user);
         $user_id = auth()->id();
         // add first badge to user
@@ -126,6 +128,85 @@ class AuthenticationController extends Controller
            	return redirect()->away( env('FRONT_URL', 'http://localhost:4200')  . "/#/auth/login");
 
         }
+
+
+        public function resetPasswordEmail(Request $request){
+
+            $user = User::where('email', $request->email)->first();
+
+            if (!$user) {
+                return response()->json(['error' => 'User not found'], 406);
+            }
+            //Create token
+            $tokenData = Str::random(6);
+            //Create Password Reset Token
+            DB::table('password_resets')->insert([
+                'email' => $request->email,
+                'token' => $tokenData,
+                'created_at' => Carbon::now()
+            ]);
+
+            //Get the token just created above
+
+            error_log($tokenData);
+
+            // send Email with token
+            $this->sendResetPasswordEmail($user,$tokenData);
+
+            return response()->json(['message' => 'Please check your email'], 202);
+        }
+
+    public function verifyTokenReset(Request $request){
+
+        //Validate input
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email|exists:users,email',
+            'password' => 'required',
+             'token' => 'required' ]);
+
+    //check if payload is valid before moving on
+       if ($validator->fails()) {
+           return response()->json(['error' => 'Please complete the form'], 406);
+      }
+
+       //check token exit
+        $reset = passwordResets::where('token', $request->token)->first();
+
+        if (!$reset) {
+            return response()->json(['error' => 'Wrong code'], 406);
+        }
+        // check email match token
+        if ($reset->email != $request->email) {
+            return response()->json(['error' => 'Invalid Email'], 406);
+        }
+        $user = User::where('email', $reset->email)->first();
+
+        if (!$user) {
+            return response()->json(['error' => 'User Not found'], 406);
+        }
+
+        //update the new password
+        $user->password = $request->password;
+        $user->save();
+
+        //Delete the tokens
+        DB::table('password_resets')->where('email', $user->email)
+            ->delete();
+
+        return response()->json(['message' => 'Password Reset successfully'], 202);
+
+    }
+
+
+    public function sendResetPasswordEmail($user,$token){
+        $to_name = $user->username;
+        $to_email = $user->email;
+        $data = array('name'=>$user->username, "tokenData" => $token);
+        $this->service->sendTo($to_name, $to_email, $data, "emails.resetEmail", "Reset Password", "Clubisti");
+    }
+
+
+
 
     }
 
