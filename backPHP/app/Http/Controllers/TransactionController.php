@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\TransactionCollection;
 use App\Models\Badge;
+use App\Models\BlockchainTransactions;
 use App\Models\Offer;
 use App\Models\User;
 use App\Models\Transaction;
@@ -67,11 +68,9 @@ class TransactionController extends Controller
         }
         // save transaction
         if(Transaction::where('offer_id',$request->input('offer.id'))->first()==null){
-            error_log("hello1");
             $transaction=Transaction::create(["amount"=>$request->input('transaction.amount'),"newTotal"=>$request->input('transaction.amount')]);
         }
         else{
-            error_log("hello2");
             $lastTransaction = Transaction::where('offer_id',$request->input('offer.id'))->latest()->first();
             $transaction=Transaction::create(["amount"=>$request->input('transaction.amount'),"newTotal"=>(double)$request->input('transaction.amount')+$lastTransaction->newTotal]);
         }
@@ -85,8 +84,6 @@ class TransactionController extends Controller
         $currentProject->save();
         //badge update
         $currentBadge=$currentProfile->badge;
-        error_log($currentBadge->upper_bond);
-        error_log($currentProfile->totalDonatedAmount);
         if ((double)$currentBadge->upper_bond < (double)$currentProfile->totalDonatedAmount) {
             $badge = Badge::find($currentBadge->id + 1);
             if ($badge){
@@ -101,6 +98,11 @@ class TransactionController extends Controller
         $transaction->save();
         $transaction->user()->associate($currentUser);
         $transaction->save();
+        $lastTransaction = Transaction::all()->last();
+        error_log($lastTransaction->id);
+        BlockchainTransactions::create(["id_transaction"=>$lastTransaction->id,"amount"=>$lastTransaction->amount,"offer_id"=>$lastTransaction->offer_id,"user_id"=>$lastTransaction->user_id]);
+        $lastEncryptedTransaction = BlockchainTransactions::all()->last();
+        error_log($lastEncryptedTransaction->id_transaction);
         return (new TransactionResource($transaction))
             ->response()
             ->setStatusCode(201);
