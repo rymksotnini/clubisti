@@ -14,12 +14,12 @@ class CreateBlockchainTransactionsTable extends Migration
     public function up()
     {
         Schema::create('blockchain_transactions', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('id_transaction');
             $table->string('amount');
             $table->string('user_id');
             $table->string('offer_id');
             $table->timestamps();
-            $table->primary('id_transaction');
         });
     }
 
