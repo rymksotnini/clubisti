@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AuthLayoutRoutes } from './auth-layout.routing';
 import {FbAuthComponent} from './pages/fb-auth/fb-auth.component';
 import {LoginComponent} from './pages/login/login.component';
@@ -12,7 +12,8 @@ import { ResetPasswdCodeComponent } from './pages/reset-passwd/reset-passwd-code
   imports: [
     CommonModule,
     RouterModule.forChild(AuthLayoutRoutes),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
     // NgbModule
   ],
   declarations: [

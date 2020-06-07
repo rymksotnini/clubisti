@@ -137,6 +137,10 @@ class AuthenticationController extends Controller
             if (!$user) {
                 return response()->json(['error' => 'User not found'], 406);
             }
+
+            // Delete old token
+            DB::table('password_resets')->where('email', $request->email)
+                ->delete();
             //Create token
             $tokenData = Str::random(6);
             //Create Password Reset Token
