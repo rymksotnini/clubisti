@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-
+use Mail;
+use App\Mail\MailService as MailService;
 use App\Http\Resources\ProjectCollection;
 use App\Http\Resources\Project as ProjectResource;
 use App\Models\Project;
@@ -253,5 +254,30 @@ class ProjectController extends Controller
 
         return response()->json(null, 204);
     }
+
+
+
+
+
+    public function send(MailService $service){
+    $to_name = 'haouari wejdene';
+    $to_email = 'haouari.wejdene1@gmail.com';
+    $data = array('name'=>"wejdene", "body" => "bonjour cv ");
+
+    $service->sendTo($to_name, $to_email, $data, "emails.verifyEmail", "test", "title");
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

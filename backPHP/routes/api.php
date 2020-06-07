@@ -147,9 +147,11 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::put('/accountTypes/{id}', 'AccountTypeController@update');
     Route::delete('/accountTypes/{id}', 'AccountTypeController@delete');
 
-    /************************************************ AccountAndAccountType API ************************************************/
-    Route::post('/accounts/accountTypes/{id}', 'AccountController@createOrUpdateWithAccountType');
-});
+    /************************************************ AccountAndAccountType API ****************************************/
+
+    Route::post('/accounts/accountTypes/{id}', 'AccountController@createOrUpdateWithAccountType');});
+
+
   /************************************************ Transaction API ************************************************/
 // user, admin, superAdmin
 Route::get('/transactions', 'TransactionController@index');
@@ -167,11 +169,15 @@ Route::post('/register', 'AuthenticationController@register');
 Route::post('/login', 'AuthenticationController@login');
 Route::post('/logout', 'AuthenticationController@logout');
 Route::post('/fblogin', array('middleware' => 'cors','uses'=>'SocialAuthFacebookController@login'));
-
-/************************************************ Authentication FACEBOOK ************************************************/
+Route::get('/verify/{token}', 'AuthenticationController@VerifyEmail');
+Route::post('/reset', 'AuthenticationController@resetPasswordEmail');
+Route::post('/reset-code', 'AuthenticationController@verifyTokenReset');
+/************************************************ Authentication FACEBOOK *****************************************/
 Route::get('/redirect', 'SocialAuthFacebookController@redirect');
 Route::get('/callback', 'SocialAuthFacebookController@callback');
-
-
 Route::get('/projects', 'ProjectController@index');
 Route::get('/projects/{id}', 'ProjectController@show');
+Route::get('/sends', 'ProjectController@send');
+/**************************************************************************************************************/
+
+

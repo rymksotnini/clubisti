@@ -29,3 +29,5 @@ export const PROJECT = '/project';
 export const PROFILE_BALANCE = '/profiles/balance';
 export const REFUSE = '/refuse';
 export const PROCESS = '/process';
+export const RESET = '/reset';
+export const RESETCODE = '/reset-code';
