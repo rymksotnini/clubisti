@@ -31,12 +31,13 @@
                   </div>
                 </div>
                 <div class="col-lg-6 col-sm-12 px-2 py-2">
-                  <div class="card card-stats upper bg-default">
+                  <div class="card card-stats upper " [ngStyle]="{'background': profile?.badge?.color}">
                     <div class="card-body">
                       <div class="row">
                         <div class="col-5 col-md-4">
-                          <div class="icon-big text-center icon-warning">
-                            <i class="fa fa-football-ball text-white"> </i>
+
+                          <div class="icons">
+                            <img  class="icon"  src="assets/img/icons/{{profile?.badge?.icon}}">
                           </div>
                         </div>
                         <div class="col-7 col-md-8">
