@@ -100,9 +100,13 @@ class TransactionController extends Controller
         $transaction->save();
         $lastTransaction = Transaction::all()->last();
         error_log($lastTransaction->id);
+        // add to the blockchain transaction table
         BlockchainTransactions::create(["id_transaction"=>$lastTransaction->id,"amount"=>$lastTransaction->amount,"offer_id"=>$lastTransaction->offer_id,"user_id"=>$lastTransaction->user_id]);
-        $lastEncryptedTransaction = BlockchainTransactions::all()->last();
-        error_log($lastEncryptedTransaction->id_transaction);
+        if(BlockchainTransactions::all()->count()>=100){
+           $result = $this->prepareForBlockchain(BlockchainTransactions::orderBy('id')->get());
+           BlockchainTransactions::truncate();
+           return response()->json($result, 201);
+        }
         return (new TransactionResource($transaction))
             ->response()
             ->setStatusCode(201);
@@ -117,6 +121,18 @@ class TransactionController extends Controller
             $offer = Offer::findOrFail($id);
             if ( !$offer){ return response()->json("Project with id "+ $id+ " not found" ,406);}
             return new TransactionCollection($offer->transactions()->get());
+    }
+
+    /**
+     * prepare the bytes to be sent to angular and passed to the blockchain
+    **/
+    protected function prepareForBlockchain($transactions){
+        $result = "";
+        // idT,idU,idO,amount;
+        foreach ($transactions as  $transaction){
+            $result = $result.$transaction->id_transaction .",".$transaction->user_id.",".$transaction->offer_id.",".$transaction->amount. ";";
         }
+        return "0x".bin2hex($result);
+    }
 
 }
