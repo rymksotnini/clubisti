@@ -73,6 +73,8 @@ class BadgeController extends Controller
         ]);
         $badge = Badge::findOrFail($id);
         $badge->name = $request->name;
+        $badge->color = $request->color;
+        $badge->icon = $request->icon;
         $badge->save();
 
         return (new BadgeResource($badge))

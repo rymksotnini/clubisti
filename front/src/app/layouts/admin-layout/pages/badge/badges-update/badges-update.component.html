@@ -12,6 +12,13 @@
           <span class=" alert-text">{{msg}}</span>
         </div>
       </alert>
+      <div *ngIf="success" class="alert alert-success alert-dismissible fade show" role="alert">
+        <span class="alert-inner--icon"><i class="ni ni-like-2"></i></span>
+        <span class="alert-inner--text"> Badge updated successfully</span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
       <label class="form-control-label" for="input-Name">Name</label>
       <input  formControlName= "name" type="text" id="input-Name" class="form-control form-control-alternative" placeholder="Name" >
     </div>
@@ -26,12 +33,28 @@
       </div>
 
     </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="picker ">
+          <app-color-picker [color]="backgroundColor" [heading]="'Background'"
+                            (event)="setColor('background', $event)"></app-color-picker>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="picker ">
+          <app-icon-picker [icon]="icon" [heading]="'icon'"
+                           (event)="setIcon('icon', $event)"></app-icon-picker>
+        </div>
+      </div>
+    </div>
+
   </div>
 
 </form>
 <div >
   <button type="submit" (click)="onSubmit()" class="btn btn-info" form="create-book-form">
-    <i class="icon-feather-plus"></i>add badge</button>
+    <i class="icon-feather-plus"></i>Update badge</button>
 </div>
 
 
