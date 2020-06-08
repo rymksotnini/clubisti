@@ -16,8 +16,11 @@ export class BadgesUpdateComponent implements OnInit, OnChanges {
   @Output() added = new EventEmitter<boolean>();
   @Input() badge: Badge;
   createBadge: FormGroup;
+  public backgroundColor: string;
+  public icon: string;
   error = false;
   msg: string;
+  success = false;
   constructor(private formBuilder: FormBuilder,
               private crudService: CrudService,
               private router: Router
@@ -34,6 +37,8 @@ export class BadgesUpdateComponent implements OnInit, OnChanges {
   ngOnChanges() {
     console.log(this.badge);
     if (this.badge) {
+      this.icon = this.badge.icon;
+      this.backgroundColor = this.badge.color;
       this.createBadge = this.formBuilder.group({
         name:  [this.badge.name, Validators.required],
         upperBond: [this.badge.upperBond, Validators.required]
@@ -41,6 +46,17 @@ export class BadgesUpdateComponent implements OnInit, OnChanges {
     }
 
   }
+
+  public setColor(type: string, color: string) {
+
+    this.backgroundColor = color;
+  }
+
+  public setIcon(type: string, icon: string) {
+
+    this.icon = icon;
+  }
+
 
 
 
@@ -50,10 +66,13 @@ export class BadgesUpdateComponent implements OnInit, OnChanges {
       this.msg = 'Fields are required';
       return;
     }
+    this.createBadge.value.icon = this.icon;
+    this.createBadge.value.color = this.backgroundColor;
     console.log(this.createBadge.value);
     this.crudService.update(API_URL + BADGE, this.badge.id, this.createBadge.value).subscribe(
       (response) => {
         this.error = false;
+        this.success = true;
         this.added.emit(true);
       }, (error => {
         console.log(error);

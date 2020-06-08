@@ -26,6 +26,8 @@ import {PaginatorModule} from 'primeng/paginator';
 import {MultiSelectModule} from 'primeng/multiselect';
 import {DetailsComplainComponent} from './pages/complain/details-complain/details-complain.component';
 import {ListComplainComponent} from './pages/complain/list-complain/list-complain.component';
+import { ColorPickerComponent } from './components/color-picker/color-picker.component';
+import { IconPickerComponent } from './components/icon-picker/icon-picker.component';
 
 @NgModule({
   imports: [
@@ -44,7 +46,8 @@ import {ListComplainComponent} from './pages/complain/list-complain/list-complai
   ],
   exports: [
     AdminSidebarComponent,
-    NavbarComponent
+    NavbarComponent,
+    ColorPickerComponent
   ],
   declarations: [
     DetailsComplainComponent,
@@ -63,6 +66,8 @@ import {ListComplainComponent} from './pages/complain/list-complain/list-complai
     CharityCreateComponent,
     CharityUpdateComponent,
     UsersComponent,
+    ColorPickerComponent,
+    IconPickerComponent,
 
   ]
 })

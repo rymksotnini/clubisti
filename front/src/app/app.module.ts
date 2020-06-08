@@ -30,6 +30,9 @@ import {AnonymousLayoutComponent} from './layouts/anonymous-layout/anonymous-lay
 import {TemplateLayoutComponent} from './layouts/template-layout/template-layout.component';
 import {TopbarLandingComponent} from './shared/components/topbar-landing/topbar-landing.component';
 import {AuthenticationInterceptorProvider} from './_interceptors/authentication.interceptor';
+import { DefaultIconPipe } from './pipes/default-icon.pipe';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,10 +40,10 @@ import {AuthenticationInterceptorProvider} from './_interceptors/authentication.
     AuthLayoutComponent,
     AnonymousLayoutComponent,
     TemplateLayoutComponent,
-    TopbarLandingComponent
+    TopbarLandingComponent,
+    DefaultIconPipe,
 
-
-],
+  ],
   imports: [
     TableModule,
     MetaModule,
@@ -70,6 +73,9 @@ import {AuthenticationInterceptorProvider} from './_interceptors/authentication.
   ],
   providers: [AuthenticationInterceptorProvider,
     {provide: NZ_I18N, useValue: en_US}],
+  exports: [
+    DefaultIconPipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

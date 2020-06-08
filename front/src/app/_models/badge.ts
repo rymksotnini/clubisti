@@ -13,6 +13,8 @@ export class Badge {
   private _updated_at: Date;
 
   private _deleted: boolean;
+  private _icon: string;
+  private _color: string;
 
   get id(): number {
     return this._id;
@@ -20,6 +22,23 @@ export class Badge {
 
   set id(value: number) {
     this._id = value;
+  }
+
+
+  get icon(): string {
+    return this._icon;
+  }
+
+  set icon(value: string) {
+    this._icon = value;
+  }
+
+  get color(): string {
+    return this._color;
+  }
+
+  set color(value: string) {
+    this._color = value;
   }
 
   get name(): string {

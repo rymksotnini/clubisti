@@ -3719,7 +3719,7 @@ var AdminLoginComponent = /** @class */ (function () {
 
 /***/ "./src/app/layouts/admin-layout/pages/badge/badges-create/badges-create.component.css":
 /*!********************************************************************************************!*\
-  !*** ./src/app/layouts/admin-layout/pages/badge/badges-create/badges-create.component.css ***!
+  !*** ./src/app/layouts/admin-layout/pages/badge/badges-create/badges-create.component.scss ***!
   \********************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -3799,7 +3799,7 @@ var BadgesCreateComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-badges-create',
             template: Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! raw-loader!./badges-create.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/layouts/admin-layout/pages/badge/badges-create/badges-create.component.html")).default,
-            styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./badges-create.component.css */ "./src/app/layouts/admin-layout/pages/badge/badges-create/badges-create.component.css")).default]
+            styles: [Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"])(__webpack_require__(/*! ./badges-create.component.scss */ "./src/app/layouts/admin-layout/pages/badge/badges-create/badges-create.component.css")).default]
         }),
         Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"])("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormBuilder"],
             _services_crud_service__WEBPACK_IMPORTED_MODULE_4__["CrudService"],

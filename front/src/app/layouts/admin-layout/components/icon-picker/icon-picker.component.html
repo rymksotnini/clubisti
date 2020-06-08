@@ -1,0 +1,19 @@
+<div class="icon-picker">
+  <div class="summary-info" (click)="toggleIcons()">
+    <div class="info">
+      <p class="style">{{ heading }}</p>
+      <p class="style-value">{{ icon }}</p>
+    </div>
+
+    <div>   <img  class="icon" src="assets/img/icons/{{icon}}"></div>
+  </div>
+
+  <div *ngIf="show" class="opened">
+    <div class="icons">
+      <img  (click)="changeIcon(icon)" class="icon" *ngFor="let icon of defaultIcon" src="assets/img/icons/{{icon}}">
+    </div>
+    </div>
+
+
+  </div>
+

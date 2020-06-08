@@ -16,6 +16,8 @@ class CreateBadgesTable extends Migration
         Schema::create('badges', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('color');
+            $table->string('icon');
             $table->integer('lower_bond');
             $table->integer('upper_bond');
             $table->boolean('deleted')->default(false);

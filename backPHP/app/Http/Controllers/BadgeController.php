@@ -32,11 +32,11 @@ class BadgeController extends Controller
         $badge = new Badge;
         // first badge lower bound = 0
         if(!$exist){
-            error_log("ee");
-
             $badge->name = $request->name;
             $badge->upper_bond = $request->upperBond;
             $badge->lower_bond = 0;
+            $badge->color = $request->color;
+            $badge->icon = $request->icon;
 
             $badge->save();
             return (new BadgeResource($badge))
@@ -45,8 +45,7 @@ class BadgeController extends Controller
         }
 
 
-        error_log($request->upperBond);
-        error_log($exist->upper_bond);
+
         // test upper bound > last upper bound
         if ($request->upperBond <= $exist->upper_bond )
             return response()->json([
@@ -57,6 +56,8 @@ class BadgeController extends Controller
         $badge->name = $request->name;
         $badge->upper_bond = $request->upperBond;
         $badge->lower_bond = $exist->upper_bond  + 1;
+        $badge->color = $request->color;
+        $badge->icon = $request->icon;
 
         $badge->save();
         return (new BadgeResource($exist))
@@ -72,6 +73,8 @@ class BadgeController extends Controller
         ]);
         $badge = Badge::findOrFail($id);
         $badge->name = $request->name;
+        $badge->color = $request->color;
+        $badge->icon = $request->icon;
         $badge->save();
 
         return (new BadgeResource($badge))
