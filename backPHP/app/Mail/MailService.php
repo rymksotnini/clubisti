@@ -34,14 +34,14 @@ class MailService extends Mailable
             ->view('emails.verifyEmail');
     }
 
-     public function sendTo($to_name, $to_email, $data, $template, $subject, $title) {
+     public function sendTo($to_name, $to_email, $data, $template, $subject, $from) {
 
-            Mail::send($template, $data, function($message) use ($to_name, $to_email, $subject, $title) {
+            Mail::send($template, $data, function($message) use ($to_name, $to_email, $subject, $from) {
 
             $message->to($to_email, $to_name)
             ->subject($subject);
               $from = env('MAIL_EMAIL');
-            $message->from($from,$title);
+            $message->from($from,"Clubisti");
             });
 
             }
