@@ -37,6 +37,8 @@ class BadgeController extends Controller
             $badge->name = $request->name;
             $badge->upper_bond = $request->upperBond;
             $badge->lower_bond = 0;
+            $badge->color = $request->color;
+            $badge->icon = $request->icon;
 
             $badge->save();
             return (new BadgeResource($badge))
