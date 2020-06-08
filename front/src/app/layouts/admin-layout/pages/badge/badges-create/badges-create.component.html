@@ -3,7 +3,7 @@
     <div class="form-group">
       <alert *ngIf="error" class="alert-dismissible">
         <div role="alert" class="alert alert-danger alert-dismissible">
-          <button aria-label="Close" class="close" type="button">
+          <button (click)="closeError()" aria-label="Close" class="close" type="button">
             <span aria-hidden="true">×</span>
             <span class="sr-only">Close</span>
           </button><span class=" alert-icon">
@@ -12,6 +12,13 @@
           <span class=" alert-text">{{msg}}</span>
         </div>
       </alert>
+      <div *ngIf="success" class="alert alert-success alert-dismissible fade show" role="alert">
+        <span class="alert-inner--icon"><i class="ni ni-like-2"></i></span>
+        <span class="alert-inner--text"> Badge added successfully</span>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
       <label class="form-control-label" for="input-Name">Name</label>
       <input  formControlName= "name" type="text" id="input-Name" class="form-control form-control-alternative" placeholder="Name" >
     </div>
@@ -26,12 +33,24 @@
       </div>
 
     </div>
-
-
-    <div class="picker">
-      <app-icon-picker [color]="backgroundColor" [heading]="'icon'"
-                        (event)="setColor('background', $event)"></app-icon-picker>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="picker ">
+          <app-color-picker [color]="backgroundColor" [heading]="'Background'"
+                            (event)="setColor('background', $event)"></app-color-picker>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="picker ">
+          <app-icon-picker [icon]="icon" [heading]="'icon'"
+                           (event)="setIcon('icon', $event)"></app-icon-picker>
+        </div>
+      </div>
     </div>
+
+
+
+
   </div>
 
 </form>

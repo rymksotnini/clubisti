@@ -34,9 +34,9 @@ export class IconPickerComponent implements OnInit {
     'icon24.png',
     'icon25.png'
   ];
-  // title of color picker
+  // title of icon picker
   @Input() heading: string;
-  @Input() color: string;
+  @Input() icon: string;
   @Output() event = new EventEmitter();
   public show = false;
   constructor() { }
@@ -45,37 +45,22 @@ export class IconPickerComponent implements OnInit {
   }
 
   /**
-   * Change status of visibility to color picker
+   * Change status of visibility to icon picker
    */
-  public toggleColors() {
+  public toggleIcons() {
     this.show = !this.show;
   }
 
   /**
-   * Change color from default colors
-   * @param {string} color
+   * Change icon from default icons
+   * @param {string} icon
    */
-  public changeColor(color: string) {
-    this.color = color;
-    this.event.emit(this.color); // Return color
+  public changeIcon(icon: string) {
+    this.icon = icon;
+    this.event.emit(this.icon); // Return icon
     this.show = false;
   }
 
 
-  /**
-   * Change color from input
-   * @param {string} color
-   */
-  public changeColorManual(color: string) {
-    const isValid = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(color);
 
-    if (isValid) {
-      this.color = color;
-      this.event.emit(this.color); // Return color
-    }
-  }
-
-  changeIcon(icon: string) {
-
-  }
 }
