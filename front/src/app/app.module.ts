@@ -30,6 +30,7 @@ import {AnonymousLayoutComponent} from './layouts/anonymous-layout/anonymous-lay
 import {TemplateLayoutComponent} from './layouts/template-layout/template-layout.component';
 import {TopbarLandingComponent} from './shared/components/topbar-landing/topbar-landing.component';
 import {AuthenticationInterceptorProvider} from './_interceptors/authentication.interceptor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,8 @@ import {AuthenticationInterceptorProvider} from './_interceptors/authentication.
     AuthLayoutComponent,
     AnonymousLayoutComponent,
     TemplateLayoutComponent,
-    TopbarLandingComponent
+    TopbarLandingComponent,
+
 
 
 ],

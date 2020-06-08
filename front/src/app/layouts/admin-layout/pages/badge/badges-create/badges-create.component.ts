@@ -9,7 +9,7 @@ import {API_URL, BADGE} from '../../../../../_globals/global-variables';
 @Component({
   selector: 'app-badges-create',
   templateUrl: './badges-create.component.html',
-  styleUrls: ['./badges-create.component.css']
+  styleUrls: ['./badges-create.component.scss']
 })
 export class BadgesCreateComponent implements OnInit {
 
@@ -17,19 +17,24 @@ export class BadgesCreateComponent implements OnInit {
   createBadge: FormGroup;
   error = false;
   msg: string;
+  public backgroundColor: string;
   constructor(private formBuilder: FormBuilder,
               private crudService: CrudService,
               private router: Router
   ) { }
 
   ngOnInit() {
+    this.backgroundColor = '#fff';
     this.createBadge = this.formBuilder.group({
       name:  ['', Validators.required],
       upperBond: [0, Validators.required]
     });
   }
 
+  public setColor(type: string, color: string) {
 
+        this.backgroundColor = color;
+  }
 
   onSubmit() {
     if (this.createBadge.invalid) {

@@ -1,0 +1,27 @@
+<div class="color-picker">
+  <div class="summary-info" (click)="toggleColors()">
+    <div class="info">
+      <p class="style">{{ heading }}</p>
+      <p class="style-value">{{ color }}</p>
+    </div>
+
+    <div>   <img  class="icon" src="assets/img/icons/icon1.png"></div>
+  </div>
+
+  <div *ngIf="show" class="opened">
+    <div class="colors">
+      <img  class="icon" *ngFor="let icon of defaultIcon" src="assets/img/icons/{{icon}}">
+    </div>
+    </div>
+
+    <!--    <div class="hex-code">-->
+    <!--      <p>Hex Code</p>-->
+    <!--      <div class="g-input">-->
+    <!--        <input type="text" maxlength="7" [value]="color"-->
+    <!--          (keyup)="changeColorManual(paintInput.value)"-->
+    <!--          (keydown.enter)="toggleColors()"-->
+    <!--            #paintInput/>-->
+    <!--      </div>-->
+    <!--    </div>-->
+  </div>
+
