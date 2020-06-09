@@ -101,8 +101,8 @@
                   <ng-container *ngSwitchCase="'createdAt'">
                     {{rowData[col.field] | date}}
                   </ng-container>
-                  <ng-container *ngSwitchCase="'name'">
-                    {{rowData["offer"].name }}
+                  <ng-container *ngSwitchCase="'name'" >
+                    <div (click)="details(rowData)">{{rowData["offer"].name }}</div>
                   </ng-container>
                   <ng-container *ngSwitchCase="'action'">
 

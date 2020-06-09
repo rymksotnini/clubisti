@@ -56,10 +56,7 @@ export class HistoryComponent implements OnInit {
     console.log(this.currentUser.id)
     this.crudService.getAll(API_URL +  USERS + TRANSACTIONS  + '/' + 2).subscribe(
       (response) => {
-        console.log(response)
         this.transactions = response.data;
-        console.log("ee")
-        console.log(this.transactions);
       },
       (error =>  {
         console.log(error);
@@ -92,4 +89,7 @@ export class HistoryComponent implements OnInit {
   }
 
 
+  details(rowData) {
+    this.router.navigate(['/details/' + rowData.id]);
+  }
 }
