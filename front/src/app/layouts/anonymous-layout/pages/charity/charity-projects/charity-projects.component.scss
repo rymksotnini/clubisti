@@ -1,3 +1,17 @@
+.card-profile-image {
+  position: relative;
+
+  img {
+    max-width: 250px;
+    transform: translate(-20%,10%);
+    position: absolute;
+
+    &:hover {
+      transform: translate(-20%, 28%);
+    }
+  }
+}
+
 .card {
   form {
     label + .form-control {

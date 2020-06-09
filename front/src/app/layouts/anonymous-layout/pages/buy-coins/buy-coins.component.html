@@ -21,125 +21,21 @@
           <polygon class="fill-lighter" points="2560 0 2560 100 0 100"></polygon>
         </svg>
       </div>
+      <div class="float-right" style="margin-right: 50px;">
+        <button class="btn btn-icon" (click)="isLeftVisible = !isLeftVisible">
+          <i class="fas fa-arrow-alt-circle-right text-xl"></i>
+        </button>
+      </div>
+      <div class="float-left" style="margin-left: 50px;">
+        <button class="btn btn-icon" (click)="isLeftVisible = !isLeftVisible">
+          <i class="fas fa-arrow-alt-circle-left text-xl"></i>
+        </button>
+      </div>
     </section>
     <!-- 1st Hero Variation -->
+    <app-slide-panel [activePane]="isLeftVisible ? 'left' : 'right'">
+      <div leftPane><app-package></app-package></div>
+      <div rightPane><app-personalized></app-personalized></div>
+    </app-slide-panel>
   </div>
-  <section class="section section-lg section-coins pt-lg-0 mt--200">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4" style="margin-top: 20px;">
-          <div class="card card-coin card-plain" style="background-color:  #1f2251;box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.09)">
-            <div class="card-header">
-              <img class="img-center img-fluid" src="assets/img/clubisitiCoinBronze.png" />
-            </div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-12 text-center" >
-                  <h4 class="text-uppercase">Bronze package</h4>
-                  <span> Description </span>
-                  <hr class="line-primary" />
-                </div>
-              </div>
-              <div class="row">
-                <ul class="list-group">
-                  <li class="list-group-item">
-                    <label>
-                      <i class="fas fa-coins"> </i>
-                      Amount
-                    </label>
-                    100 coins
-                  </li>
-                  <li class="list-group-item">
-                    <label>
-                      <i class="fas fa-dollar-sign"> </i>
-                      Price
-                    </label>
-                    100 TND
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="card-footer text-center">
-              <button class="btn btn-primary btn-simple" (click)="buyNow(100)">Buy now</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4" >
-<!--          3276a8-->
-          <div class="card card-coin card-plain " style="background-color:  #1f2251;box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.09);">
-            <div class="card-header">
-              <img class="img-center img-fluid" src="assets/img/clubisitiCoin.png" />
-            </div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-12 text-center">
-                  <h4 class="text-uppercase">Golden package</h4>
-                  <span> Description </span>
-                  <hr class="line-success" />
-                </div>
-              </div>
-              <div class="row">
-                <ul class="list-group">
-                  <li class="list-group-item">
-                    <label>
-                      <i class="fas fa-coins"> </i>
-                      Amount
-                    </label>
-                    10 000 coins
-                  </li>
-                  <li class="list-group-item">
-                    <label>
-                      <i class="fas fa-dollar-sign"> </i>
-                      Price
-                    </label>
-                    10 000 TND
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="card-footer text-center">
-              <button class="btn btn-success btn-simple" (click)="buyNow(10000)">Buy now</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4" style="margin-top: 20px;">
-          <div class="card card-coin card-plain " style="background-color:  #1f2251;box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.09)">
-            <div class="card-header">
-              <img class="img-center img-fluid" src="assets/img/clubisitiCoinSilver.png" />
-            </div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-12 text-center">
-                  <h4 class="text-uppercase">Silver package</h4>
-                  <span> Description </span>
-                  <hr class="line-info" />
-                </div>
-              </div>
-              <div class="row">
-                <ul class="list-group">
-                  <li class="list-group-item">
-                    <label>
-                      <i class="fas fa-coins"> </i>
-                      Amount
-                    </label>
-                    1 000 coins
-                  </li>
-                  <li class="list-group-item">
-                    <label>
-                      <i class="fas fa-dollar-sign"> </i>
-                      Price
-                    </label>
-                    1 000 TND
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="card-footer text-center">
-              <button class="btn btn-info btn-simple" (click)="buyNow(1000)">Buy now</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>

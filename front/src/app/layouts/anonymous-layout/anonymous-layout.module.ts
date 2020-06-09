@@ -23,6 +23,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { ProjectDetailsComponent } from './pages/charity/project-details/project-details.component';
 import {RoundProgressModule} from "angular-svg-round-progressbar";
+import { PackageComponent } from './pages/buy-coins/package/package.component';
+import { PersonalizedComponent } from './pages/buy-coins/personalized/personalized.component';
+import { SlidePanelComponent } from './pages/buy-coins/slide-panel/slide-panel.component';
 
 
 @NgModule({
@@ -39,7 +42,10 @@ import {RoundProgressModule} from "angular-svg-round-progressbar";
     UserProfileComponent,
     TestLandingComponent,
     BuyCoinsComponent,
-    ProjectDetailsComponent
+    ProjectDetailsComponent,
+    PackageComponent,
+    PersonalizedComponent,
+    SlidePanelComponent
   ],
   imports: [
     SharedModule,
