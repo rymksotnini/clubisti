@@ -8,6 +8,7 @@ use App\Models\BlockchainTransactions;
 use App\Models\Offer;
 use App\Models\User;
 use App\Models\Transaction;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Resources\Transaction as TransactionResource;
 use Illuminate\Http\Request;
 
@@ -113,8 +114,12 @@ class TransactionController extends Controller
     }
 
     public function getPerUser($id){
-        $currentUser = User::findOrFail($id);
-        return new TransactionCollection($currentUser->transactions()->get());
+        // check connected id is the same $id
+        if (Auth::User()->id == $id){
+            $currentUser = User::findOrFail($id);
+            return new TransactionCollection($currentUser->transactions()->get());
+        }
+        return response()->json("Not Authorized", 406);
     }
 
      public function getPerOffer($id){

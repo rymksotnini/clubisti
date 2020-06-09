@@ -23,6 +23,11 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { ProjectDetailsComponent } from './pages/charity/project-details/project-details.component';
 import {RoundProgressModule} from "angular-svg-round-progressbar";
+import { HistoryComponent } from './pages/history/history.component';
+import {TableModule} from 'primeng/table';
+import {PaginatorModule} from 'primeng/paginator';
+import {MultiSelectModule} from 'primeng/multiselect';
+import {InputTextModule} from "primeng/inputtext";
 
 
 @NgModule({
@@ -39,7 +44,8 @@ import {RoundProgressModule} from "angular-svg-round-progressbar";
     UserProfileComponent,
     TestLandingComponent,
     BuyCoinsComponent,
-    ProjectDetailsComponent
+    ProjectDetailsComponent,
+    HistoryComponent
   ],
   imports: [
     SharedModule,
@@ -51,7 +57,9 @@ import {RoundProgressModule} from "angular-svg-round-progressbar";
     MatSelectCountryModule,
     NgbDropdownModule,
     MatSnackBarModule,
-    FormsModule
+    FormsModule,
+    TableModule,
+    InputTextModule
   ],
   exports: [
 
