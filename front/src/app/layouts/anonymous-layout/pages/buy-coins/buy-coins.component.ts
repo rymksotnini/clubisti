@@ -12,27 +12,10 @@ import {API_URL, PROFILE_BALANCE} from '../../../../_globals/global-variables';
 })
 export class BuyCoinsComponent implements OnInit {
 
-  constructor(private modal: NzModalService,
-              private crudService: CrudService,
-              private authenticationService: AuthenticationService,
-              private router: Router) { }
+  isLeftVisible = true;
+
+  constructor() { }
 
   ngOnInit(): void {
-    this.modal.closeAll();
-  }
-
-  buyNow(amount: number) {
-    const json = {
-      balance: amount
-    };
-    this.crudService.update(API_URL + PROFILE_BALANCE, this.authenticationService.getCurrentUser().id, json).subscribe(
-      (response) => {
-        console.log(response.body.data);
-        this.router.navigate(['/projects']);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
   }
 }

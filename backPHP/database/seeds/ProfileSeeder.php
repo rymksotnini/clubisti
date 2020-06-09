@@ -13,7 +13,10 @@ class ProfileSeeder extends Seeder
     public function run()
     {
         DB::table('profiles')->insert([
-            'user_id' => 1,
+            'user_id' => 1
+        ]);
+        DB::table('profiles')->insert([
+            'user_id' => 2,
             'badge_id' => 1
         ]);
     }
