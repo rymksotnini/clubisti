@@ -15,7 +15,7 @@ class BadgeSeeder extends Seeder
         DB::table('badges')->insert([
             'name' => 'Beginner',
             'icon' => 'icon1.png',
-            'color' => '#ffffff',
+            'color' => '#b7d5c4',
             'lower_bond' => '0',
             'upper_bond' => '100',
         ]);

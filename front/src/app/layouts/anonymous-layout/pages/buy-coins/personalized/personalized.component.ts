@@ -4,6 +4,7 @@ import {CrudService} from '../../../../../_services/crud.service';
 import {AuthenticationService} from '../../../../../_services/authentication.service';
 import {Router} from '@angular/router';
 import {API_URL, PROFILE_BALANCE} from '../../../../../_globals/global-variables';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-personalized',
@@ -12,18 +13,25 @@ import {API_URL, PROFILE_BALANCE} from '../../../../../_globals/global-variables
 })
 export class PersonalizedComponent implements OnInit {
 
+  balance: FormGroup;
+
   constructor(private modal: NzModalService,
+              private formBuilder: FormBuilder,
               private crudService: CrudService,
               private authenticationService: AuthenticationService,
               private router: Router) { }
 
   ngOnInit(): void {
     this.modal.closeAll();
+    this.balance = this.formBuilder.group({
+      amount: ''
+    });
   }
 
-  buyNow(amount: number) {
+  buyNow() {
+    console.log(this.balance.value.amount);
     const json = {
-      balance: amount
+      balance: this.balance.value.amount
     };
     this.crudService.update(API_URL + PROFILE_BALANCE, this.authenticationService.getCurrentUser().id, json).subscribe(
       (response) => {
