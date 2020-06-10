@@ -102,7 +102,7 @@ class TransactionController extends Controller
         error_log($lastTransaction->id);
         // add to the blockchain transaction table
         BlockchainTransactions::create(["id_transaction"=>$lastTransaction->id,"amount"=>$lastTransaction->amount,"offer_id"=>$lastTransaction->offer_id,"user_id"=>$lastTransaction->user_id]);
-        if(BlockchainTransactions::all()->count()>=100){
+        if(BlockchainTransactions::all()->count()>=5){
            $result = $this->prepareForBlockchain(BlockchainTransactions::orderBy('id')->get());
            BlockchainTransactions::truncate();
            return response()->json($result, 201);

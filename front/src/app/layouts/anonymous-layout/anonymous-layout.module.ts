@@ -26,6 +26,8 @@ import {RoundProgressModule} from "angular-svg-round-progressbar";
 import { PackageComponent } from './pages/buy-coins/package/package.component';
 import { PersonalizedComponent } from './pages/buy-coins/personalized/personalized.component';
 import { SlidePanelComponent } from './pages/buy-coins/slide-panel/slide-panel.component';
+import {UtilModule} from "../../util/util.module";
+import {Web3Service} from "../../util/web3.service";
 
 
 @NgModule({
@@ -57,10 +59,10 @@ import { SlidePanelComponent } from './pages/buy-coins/slide-panel/slide-panel.c
     MatSelectCountryModule,
     NgbDropdownModule,
     MatSnackBarModule,
-    FormsModule
+    FormsModule,
+    UtilModule
   ],
   exports: [
-
     RoundProgressModule
   ]
 })
