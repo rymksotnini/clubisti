@@ -102,10 +102,12 @@ class TransactionController extends Controller
         error_log($lastTransaction->id);
         // add to the blockchain transaction table
         BlockchainTransactions::create(["id_transaction"=>$lastTransaction->id,"amount"=>$lastTransaction->amount,"offer_id"=>$lastTransaction->offer_id,"user_id"=>$lastTransaction->user_id]);
-        if(BlockchainTransactions::all()->count()>=5){
+        if(BlockchainTransactions::all()->count()>=10){
            $result = $this->prepareForBlockchain(BlockchainTransactions::orderBy('id')->get());
+           $groupId = round((BlockchainTransactions::find(1)->id_transaction)/10) ;
+           error_log($groupId);
            BlockchainTransactions::truncate();
-           return response()->json($result, 201);
+           return response()->json(['result'=> $result,'groupId'=> $groupId], 201);
         }
         return (new TransactionResource($transaction))
             ->response()

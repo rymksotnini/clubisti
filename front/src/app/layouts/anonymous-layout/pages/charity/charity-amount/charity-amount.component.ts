@@ -166,7 +166,7 @@ export class CharityAmountComponent implements OnInit, OnChanges {
     this.setStatus('Initiating transaction... (please wait)');
     try {
       const deployedClubisti = await this.clubisti.deployed();
-      const transaction = await deployedClubisti.addDonation.sendTransaction(transactions, 1, {from: '0xeFF6747441Df90737e851150562599E65cFE0AFc'});
+      const transaction = await deployedClubisti.addDonation.sendTransaction(transactions.result, transactions.groupId, {from: '0xeFF6747441Df90737e851150562599E65cFE0AFc'});
 
       if (!transaction) {
         this.setStatus('Transaction failed!');
