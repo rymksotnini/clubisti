@@ -12,6 +12,8 @@ import {
 } from '../../../../../_globals/global-variables';
 import {CharityAmountComponent} from '../charity-amount/charity-amount.component';
 import {Router} from "@angular/router";
+import {ImageService} from "../../../../../_services/image.service";
+import {User} from "../../../../../_models/user";
 import {Contribution} from "../../../../../_models/contribution";
 import {ProjectsContribution} from "../../../../../_models/ProjectsContribution";
 
@@ -22,6 +24,9 @@ import {ProjectsContribution} from "../../../../../_models/ProjectsContribution"
 })
 export class CharityProjectsComponent implements OnInit {
 
+  image: string;
+  currentUser: User;
+  public projects: Array<Project> = [];
   public projects: Array<ProjectsContribution> = [];
   public contributions: Contribution[];
   profile: Profile;
@@ -30,15 +35,25 @@ export class CharityProjectsComponent implements OnInit {
     private crudService: CrudService,
     private modal: NzModalService,
     private authenticationService: AuthenticationService,
-    private router: Router
+    private router: Router,
+    private imageService: ImageService
   ) { }
 
   IMG_URL = IMG_URL;
   ngOnInit(): void {
+    this.imageService.getImage().subscribe(
+      (data) => {
+        this.image = IMG_URL + data; // 'https://clubisti.net/assets/img/'+ data | environment.apiUrl+'/assets/img/'+
+      },
+      error => {
+        console.log(error);
+        this.image = 'assets/img/theme/team-4-800x800.jpg';
+      }
+    );
+    this.currentUser = this.authenticationService.getCurrentUser();
     this.loggedIn = this.authenticationService.isLogged();
     this.getProjects();
     this.getUserProfile();
-
   }
 
   getProjects() {

@@ -1,0 +1,13 @@
+:host {
+  display: block;
+}
+
+.panes {
+  height: 100%;
+  width: 200%;
+
+  display: flex;
+  div {
+    flex: 1;
+  }
+}
