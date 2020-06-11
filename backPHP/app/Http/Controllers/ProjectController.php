@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Mail;
 use App\Mail\MailService as MailService;
 use App\Http\Resources\ProjectCollection;
@@ -40,6 +42,60 @@ class ProjectController extends Controller
         }
 
     }
+
+    public function showContribution()
+    {
+        if (Auth::user()){
+            $currentUserId = Auth::user()->id;
+            $transactions = DB::select( DB::raw("
+             SELECT offer_id as projectId,sum(amount) as contribution
+             FROM transactions
+             where user_id = :userId
+             GROUP BY offer_id;"), array(
+                'userId' => $currentUserId,
+            ));
+            $projects =Project::get();
+
+            foreach ($projects as $project) {
+                $counter = 0;
+                foreach ($transactions as $transaction){
+                    $counter = $counter + 1;
+                    if ($transaction->projectId == $project->id){
+                        $project->contribution = $transaction->contribution;
+                        break;
+                    }
+                    if ($counter >= count($transactions)) {
+                        $project->contribution = 0;
+                    }
+                }
+
+            }
+
+            return $projects;
+//        try {
+//            return new ProjectResource(Project::findOrFail($id));
+//
+//        } catch (ModelNotFoundException $e) {
+//            return response()->json([
+//                'message' => 'Page Not Found. If error persists, contact info@website.com'], 404);
+//        }
+
+        }else{
+            $projects =Project::get();
+
+            foreach ($projects as $project) {
+
+                        $project->contribution = 0;
+
+                }
+
+
+
+            return $projects;
+        }
+
+    }
+
 
 
 
@@ -253,19 +309,6 @@ class ProjectController extends Controller
         $project->delete();
 
         return response()->json(null, 204);
-    }
-
-
-
-
-
-    public function send(MailService $service){
-    $to_name = 'haouari wejdene';
-    $to_email = 'haouari.wejdene1@gmail.com';
-    $data = array('name'=>"wejdene", "body" => "bonjour cv ");
-
-    $service->sendTo($to_name, $to_email, $data, "emails.verifyEmail", "test", "title");
-
     }
 
 

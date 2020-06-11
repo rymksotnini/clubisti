@@ -4,9 +4,10 @@ import {Profile} from '../../../../../_models/profile';
 import {CrudService} from '../../../../../_services/crud.service';
 import {NzModalRef, NzModalService} from 'ng-zorro-antd';
 import {AuthenticationService} from '../../../../../_services/authentication.service';
-import {API_URL, CHARITY, IMG_URL, USERS_PROFILE2} from '../../../../../_globals/global-variables';
+import {API_URL, CHARITY, DONATION, IMG_URL, USERS_PROFILE2} from '../../../../../_globals/global-variables';
 import {CharityAmountComponent} from '../charity-amount/charity-amount.component';
 import {Router} from "@angular/router";
+import {Contribution} from "../../../../../_models/contribution";
 
 @Component({
   selector: 'app-charity-projects',
@@ -16,6 +17,7 @@ import {Router} from "@angular/router";
 export class CharityProjectsComponent implements OnInit {
 
   public projects: Array<Project> = [];
+  public contributions: Contribution[];
   profile: Profile;
   loggedIn: any;
   constructor(
@@ -30,6 +32,9 @@ export class CharityProjectsComponent implements OnInit {
     this.loggedIn = this.authenticationService.isLogged();
     this.getProjects();
     this.getUserProfile();
+    if (this.loggedIn){
+      this.getDonation();
+    }
   }
 
   getProjects() {
@@ -42,6 +47,19 @@ export class CharityProjectsComponent implements OnInit {
         console.log(error);
       })
     );
+  }
+
+  getDonation() {
+    this.crudService.getAll(API_URL + DONATION).subscribe(
+      (response) => {
+        this.contributions = response;
+        console.log(this.contributions);
+      },
+      (error =>  {
+        console.log(error);
+      })
+    );
+
   }
 
   getUserProfile() {

@@ -11,12 +11,27 @@ use App\Models\Transaction;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Resources\Transaction as TransactionResource;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TransactionController extends Controller
 {
     public function index()
     {
         return new TransactionCollection(Transaction::get());
+    }
+
+    public function indexGroupeBy()
+    {
+        $currentUserId = Auth::user()->id;
+        $tr = DB::select( DB::raw("
+             SELECT offer_id as projectId,sum(amount) as contribution
+             FROM transactions
+             where user_id = :userId
+             GROUP BY offer_id;"), array(
+            'userId' => $currentUserId,
+        ));
+       // $tr = Transaction::select('offer_id', 'amount')->where('user_id', 2)->groupBy('offer_id')->get();
+        return $tr;
     }
 
     public function store(Request $request)

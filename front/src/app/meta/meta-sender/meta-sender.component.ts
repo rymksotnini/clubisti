@@ -34,11 +34,13 @@ export class MetaSenderComponent implements OnInit {
 
     this.web3Service.artifactsToContract(clubisti_artifacts)
       .then((ClubistiAbstraction) => {
+        console.log("in artifact")
         this.clubisti = ClubistiAbstraction;
         this.clubisti.deployed().then(deployed => {
+          console.log("in artifact deployed")
           console.log(deployed);
           deployed.Transfer({}, (err, ev) => {
-            console.log('Transfer event came in transtra');
+            console.log('Transfer event came in transaction');
           });
         });
 
