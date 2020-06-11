@@ -3,7 +3,7 @@ import {environment} from '../../environments/environment';
 export const API_URL = environment.apiUrl + '/api';
 export const DETAILS = '/details';
 export const CHARITY = '/projects';
-export const DONATION = '/donation';
+export const  CONTRIBUTION = '/contributions';
 export const COMPLAIN = '/complains';
 export const IMAGE = '/image';
 export const CATEGORY = '/categories';

@@ -4,10 +4,16 @@ import {Profile} from '../../../../../_models/profile';
 import {CrudService} from '../../../../../_services/crud.service';
 import {NzModalRef, NzModalService} from 'ng-zorro-antd';
 import {AuthenticationService} from '../../../../../_services/authentication.service';
-import {API_URL, CHARITY, DONATION, IMG_URL, USERS_PROFILE2} from '../../../../../_globals/global-variables';
+import {
+  API_URL,
+  CONTRIBUTION,
+  IMG_URL,
+  USERS_PROFILE2
+} from '../../../../../_globals/global-variables';
 import {CharityAmountComponent} from '../charity-amount/charity-amount.component';
 import {Router} from "@angular/router";
 import {Contribution} from "../../../../../_models/contribution";
+import {ProjectsContribution} from "../../../../../_models/ProjectsContribution";
 
 @Component({
   selector: 'app-charity-projects',
@@ -16,7 +22,7 @@ import {Contribution} from "../../../../../_models/contribution";
 })
 export class CharityProjectsComponent implements OnInit {
 
-  public projects: Array<Project> = [];
+  public projects: Array<ProjectsContribution> = [];
   public contributions: Contribution[];
   profile: Profile;
   loggedIn: any;
@@ -32,13 +38,11 @@ export class CharityProjectsComponent implements OnInit {
     this.loggedIn = this.authenticationService.isLogged();
     this.getProjects();
     this.getUserProfile();
-    if (this.loggedIn){
-      this.getDonation();
-    }
+
   }
 
   getProjects() {
-    this.crudService.getAll(API_URL + CHARITY).subscribe(
+    this.crudService.getAll(API_URL + CONTRIBUTION).subscribe(
       (response) => {
         this.projects = response.data;
         console.log(this.projects);
@@ -49,18 +53,6 @@ export class CharityProjectsComponent implements OnInit {
     );
   }
 
-  getDonation() {
-    this.crudService.getAll(API_URL + DONATION).subscribe(
-      (response) => {
-        this.contributions = response;
-        console.log(this.contributions);
-      },
-      (error =>  {
-        console.log(error);
-      })
-    );
-
-  }
 
   getUserProfile() {
     if (this.authenticationService.getCurrentUser()) {

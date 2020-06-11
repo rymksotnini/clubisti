@@ -177,7 +177,7 @@ Route::get('/redirect', 'SocialAuthFacebookController@redirect');
 Route::get('/callback', 'SocialAuthFacebookController@callback');
 Route::get('/projects', 'ProjectController@index');
 Route::get('/donation', 'TransactionController@indexGroupeBy');
-Route::get('/test', 'ProjectController@showContribution');
+Route::get('/contributions', 'ProjectController@showContribution');
 Route::get('/projects/{id}', 'ProjectController@show');
 Route::get('/sends', 'ProjectController@send');
 /**************************************************************************************************************/
