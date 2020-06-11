@@ -6,6 +6,7 @@ import {CrudService} from '../../../../../_services/crud.service';
 import {AccountsService} from '../../../../../_services/accounts.service';
 import {AuthenticationService} from '../../../../../_services/authentication.service';
 import {API_URL, DEFAULT_ACCOUNT, DONATE} from '../../../../../_globals/global-variables';
+import {ProjectsContribution} from "../../../../../_models/ProjectsContribution";
 
 @Component({
   selector: 'app-charity-amount',
@@ -22,7 +23,7 @@ export class CharityAmountComponent implements OnInit {
   error = false;
   json = null;
   showBuy = false;
-  @Input() project?: Project;
+  @Input() project?: ProjectsContribution;
   @Output() saved: EventEmitter<any> = new EventEmitter();
   constructor(private formBuilder: FormBuilder,
               private crudService: CrudService,

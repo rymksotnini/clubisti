@@ -99,6 +99,10 @@
                     <i class="ni ni-single-02"></i>
                     <span>profile</span>
                   </a>
+                  <a *ngIf="connected" routerLinkActive="active" [routerLink]="['/history']" class="dropdown-item">
+                    <i class="ni ni-single-02"></i>
+                    <span>history</span>
+                  </a>
                   <div class="dropdown-divider"></div>
                   <a *ngIf="connected" (click)="logout()" class="dropdown-item">
                     <i class="ni ni-user-run"></i>

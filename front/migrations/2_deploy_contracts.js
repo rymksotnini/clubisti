@@ -2,12 +2,14 @@
 
 // var MetaCoin = artifacts.require("./MetaCoin.sol")
 
-//var Clubisti =  artifacts.require("./Clubisti.sol")
+var Clubisti =  artifacts.require("./Clubisti.sol")
 
-var test =  artifacts.require("./Test.sol");
+var Test =  artifacts.require("./Test.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(test)
+  deployer.deploy(Clubisti)
+  deployer.deploy(Test)
+
 
 };
 
