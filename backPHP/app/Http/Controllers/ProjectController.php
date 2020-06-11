@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ProjectMV;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Mail;
 use App\Mail\MailService as MailService;
 use App\Http\Resources\ProjectCollection;
+use App\Http\Resources\ProjectMVCollection;
 use App\Http\Resources\Project as ProjectResource;
+use App\Http\Resources\ProjectMV as ProjectMVResource;
 use App\Models\Project;
 use App\Models\Offer;
 use Illuminate\Http\Request;
@@ -71,14 +74,14 @@ class ProjectController extends Controller
 
             }
 
-            return $projects;
-//        try {
-//            return new ProjectResource(Project::findOrFail($id));
-//
-//        } catch (ModelNotFoundException $e) {
-//            return response()->json([
-//                'message' => 'Page Not Found. If error persists, contact info@website.com'], 404);
-//        }
+
+        try {
+            return new ProjectMVCollection($projects);
+
+        } catch (ModelNotFoundException $e) {
+            return response()->json([
+                'message' => 'Page Not Found. If error persists, contact info@website.com'], 404);
+        }
 
         }else{
             $projects =Project::get();
