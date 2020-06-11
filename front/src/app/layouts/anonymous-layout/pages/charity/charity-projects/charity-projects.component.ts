@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Project} from '../../../../../_models/Project';
 import {Profile} from '../../../../../_models/profile';
 import {CrudService} from '../../../../../_services/crud.service';
 import {NzModalRef, NzModalService} from 'ng-zorro-antd';
@@ -26,7 +25,6 @@ export class CharityProjectsComponent implements OnInit {
 
   image: string;
   currentUser: User;
-  public projects: Array<Project> = [];
   public projects: Array<ProjectsContribution> = [];
   public contributions: Contribution[];
   profile: Profile;
@@ -77,7 +75,7 @@ export class CharityProjectsComponent implements OnInit {
     }
   }
 
-  donate(project: Project) {
+  donate(project: ProjectsContribution) {
     if (!this.loggedIn) {
       this.router.navigate(['/auth/login'], { queryParams: { returnUrl: this.router.url }});
       return;
