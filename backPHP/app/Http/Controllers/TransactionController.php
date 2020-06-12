@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\TransactionCollection;
 use App\Models\Badge;
 use App\Models\BlockchainTransactions;
+use App\Models\Complain;
 use App\Models\Offer;
 use App\Models\User;
 use App\Models\Transaction;
@@ -131,9 +132,9 @@ class TransactionController extends Controller
     }
 
     public function verifyTransaction(Request $request,$id){
-        $verified = false;
         $localTransaction = Transaction::find($id);
         $transactionsString = $request->input('transactions');
+        $currentComplaint = Complain::findOrFail($request->input('complaint.id'));
         $transactionsString = explode("0x", $transactionsString);
         $transactionsString = $transactionsString[1];
         error_log($transactionsString);
@@ -149,7 +150,14 @@ class TransactionController extends Controller
                 $localTransactionString = $localTransaction->id_transaction .",".$localTransaction->user_id.",".$localTransaction->offer_id.",".$localTransaction->amount;
                 if (strcmp($transaction,$localTransactionString)==0){
                     $verified = true;
+                    $currentComplaint->status = "REFUSED";
                 }
+                else{
+                    $verified = false;
+                    $localTransaction->update($blockchainTransaction);
+                    $currentComplaint->status = "ACCEPTED";
+                }
+                $currentComplaint->save();
                 return response()->json(['verified'=> $verified,'localTransaction'=> $localTransaction,'blockchainTransaction'=>$blockchainTransaction], 201);
             }
         }
