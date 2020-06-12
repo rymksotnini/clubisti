@@ -46,7 +46,6 @@ import { DefaultIconPipe } from './pipes/default-icon.pipe';
   ],
   imports: [
     TableModule,
-    MetaModule,
     PaginatorModule,
     MultiSelectModule,
     SharedModule,
