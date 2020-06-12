@@ -39,10 +39,12 @@ contract Test {
 
   function getTransactions( uint id_transaction) public view returns (bytes  memory){
     return transactions[ id_transaction];
+  }
+
+  function reset() public{
 
 
   }
-
 
 }
 

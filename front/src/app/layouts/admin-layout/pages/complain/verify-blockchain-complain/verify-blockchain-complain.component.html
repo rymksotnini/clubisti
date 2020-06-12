@@ -16,12 +16,9 @@
       <div class="card bg-secondary shadow">
         <div class="card-header bg-white border-0">
           <div class="row align-items-center">
-            <div class="col-4">
+            <div class="col-8">
               <h3 class="mb-0">BlockChain Comparison</h3>
-              <h6 class="mb-0">Address account:  </h6>
-              <h6 class="mb-0">Minded  at: </h6>
-              <h6 class="mb-0">Minded  by: </h6>
-              <h6 class="mb-0">Block Number:  </h6>
+              <h6 class="mb-0">Address account: 0xeFF6747441Df90737e851150562599E65cFE0AFc  </h6>
             </div>
           </div>
         </div>
@@ -33,19 +30,19 @@
               <div class="row">
                 <div class="col-lg-3">
                   <label class="form-control-label" >Transaction Id</label>
-                  <input [disabled]="true"  class="form-control form-control-alternative"   type="text">
+                  <input [disabled]="true"  class="form-control form-control-alternative" value="{{responseBlockchain?.blockchainTransaction?.id}}"  type="text">
                 </div>
                 <div class="col-lg-3">
                   <label class="form-control-label" >User Id</label>
-                  <input [disabled]="true"  class="form-control form-control-alternative"   type="text">
+                  <input [disabled]="true"  class="form-control form-control-alternative"  value="{{responseBlockchain?.blockchainTransaction?.user.id}}" type="text">
                 </div>
                 <div class="col-lg-3">
                   <label class="form-control-label" >Project Id</label>
-                  <input [disabled]="true"  class="form-control form-control-alternative"   type="text">
+                  <input [disabled]="true"  class="form-control form-control-alternative" value="{{responseBlockchain?.blockchainTransaction?.offer.id}}"  type="text">
                 </div>
                 <div class="col-lg-3">
                   <label class="form-control-label" >Amount</label>
-                  <input [disabled]="true"  class="form-control form-control-alternative"   type="text">
+                  <input [disabled]="true"  class="form-control form-control-alternative" value="{{responseBlockchain?.blockchainTransaction?.amount}}"  type="text">
                 </div>
               </div>
             </div>
@@ -57,22 +54,22 @@
 
                 <div class="col-lg-4">
                   <label class="form-control-label" >User Id</label>
-                  <input [disabled]="true"  class="form-control form-control-alternative"   type="text">
+                  <input [disabled]="true"  class="form-control form-control-alternative"  value="{{responseBlockchain?.beforeUpdate?.user?.id}}" type="text">
                 </div>
                 <div class="col-lg-4">
                   <label class="form-control-label" >Project Id</label>
-                  <input [disabled]="true"  class="form-control form-control-alternative"   type="text">
+                  <input [disabled]="true"  class="form-control form-control-alternative "  value="{{responseBlockchain?.beforeUpdate?.offer?.id}}" type="text">
                 </div>
                 <div class="col-lg-4">
                   <label class="form-control-label" >Amount</label>
-                  <input [disabled]="true"  class="form-control form-control-alternative"   type="text">
+                  <input [disabled]="true"  class="form-control form-control-alternative " value="{{responseBlockchain?.beforeUpdate?.amount}}"  type="text">
                 </div>
               </div>
             </div>
             <hr class="my-4" />
             <label class="form-control-label" >NOTES</label>
-            <input [disabled]="true"  class="form-control form-control-alternative"   type="text">
-
+            <input [disabled]="true" *ngIf="! responseBlockchain?.verified" class="text-danger form-control form-control-alternative" value="The database is corrupted"  type="text">
+            <input [disabled]="true" *ngIf="responseBlockchain?.verified" class=" text-success form-control form-control-alternative" value="The database is coherent with Blockchain"  type="text">
           </form>
         </div>
       </div>
