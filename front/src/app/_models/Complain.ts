@@ -1,4 +1,5 @@
 import {Transaction} from './Transaction';
+import {User} from "./user";
 
 export class Complain {
   private _id: number;
@@ -8,6 +9,7 @@ export class Complain {
   private _createdAt: Date;
   private _updatedAt: Date;
   private _status: string;
+  private _user: User;
 
 
   get id(): number {
@@ -32,6 +34,15 @@ export class Complain {
 
   set reason(value: string) {
     this._reason = value;
+  }
+
+
+  get user(): User {
+    return this._user;
+  }
+
+  set user(value: User) {
+    this._user = value;
   }
 
   get transaction(): Transaction {

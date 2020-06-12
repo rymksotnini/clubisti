@@ -10,6 +10,7 @@ import {AccountsCreateComponent} from './pages/account/accounts-create/accounts-
 import {DashboardComponent} from '../anonymous-layout/pages/dashboard/dashboard.component';
 import {ListComplainComponent} from './pages/complain/list-complain/list-complain.component';
 import {DetailsComplainComponent} from './pages/complain/details-complain/details-complain.component';
+import {VerifyBlockchainComplainComponent} from "./pages/complain/verify-blockchain-complain/verify-blockchain-complain.component";
 
 
 
@@ -22,6 +23,7 @@ export const AdminLayoutRoutes: Routes = [
   { path: 'category',          component: ListCategoryComponent },
   { path: 'badge',          component: BadgesListComponent },
   { path: 'charity',          component: CharitiesListComponent },
+  { path: 'blockchain/:id',          component: VerifyBlockchainComplainComponent },
   { path: 'charity/update/:id',          component: CharityUpdateComponent },
   {path: 'add-charity', component: CharityCreateComponent},
   {path: 'accounts', component: AccountsListComponent},
