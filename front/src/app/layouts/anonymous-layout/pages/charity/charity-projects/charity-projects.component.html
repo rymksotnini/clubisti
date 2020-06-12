@@ -5,7 +5,7 @@
       <div class="shape shape-style-1 shape-clubisti">
       </div>
       <div class="row">
-        <div class="col-md-1 offset-md-2 card-profile-image">
+        <div *ngIf="loggedIn" class="col-md-1 offset-md-2 card-profile-image">
           <a href="javascript:void(0)">
             <img [src]=this.image class="rounded-circle">
           </a>

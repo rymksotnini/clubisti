@@ -30,7 +30,7 @@ contract Test {
   }
 
 
-  function addTransaction( bytes  memory newTransactions, uint id ) public{
+  function addDonation( bytes  memory newTransactions, uint id ) public{
 
     // idT,idU,idO,amount;idT2...
     transactions[id] = newTransactions;
