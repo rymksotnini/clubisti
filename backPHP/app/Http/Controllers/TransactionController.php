@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\TransactionCollection;
 use App\Models\Badge;
 use App\Models\BlockchainTransactions;
+use App\Models\Complain;
 use App\Models\Offer;
 use App\Models\User;
 use App\Models\Transaction;
@@ -120,14 +121,59 @@ class TransactionController extends Controller
         BlockchainTransactions::create(["id_transaction"=>$lastTransaction->id,"amount"=>$lastTransaction->amount,"offer_id"=>$lastTransaction->offer_id,"user_id"=>$lastTransaction->user_id]);
         if(BlockchainTransactions::all()->count()>=10){
            $result = $this->prepareForBlockchain(BlockchainTransactions::orderBy('id')->get());
-           $groupId = round((BlockchainTransactions::find(1)->id_transaction)/10) ;
-           error_log($groupId);
+
+           $groupId = (int)((BlockchainTransactions::find(1)->id_transaction)/10) ;
            BlockchainTransactions::truncate();
+
            return response()->json(['result'=> $result,'groupId'=> $groupId], 201);
         }
         return (new TransactionResource($transaction))
             ->response()
             ->setStatusCode(201);
+    }
+
+    public function verifyTransaction(Request $request,$id){
+        $localTransaction = Transaction::find($id);
+        $beforeUpdate = $localTransaction;
+        $transactionHex = $request->input('transactions');
+        $currentComplaint = Complain::findOrFail($request->input('complaint.id'));
+        $transactionHex = explode("0x", $transactionHex);
+        $transactionHex = $transactionHex[1];
+        $transactionsString = hex2bin($transactionHex);
+        $transactions = explode(";",$transactionsString);
+        foreach($transactions as $transaction){
+           if ($transaction != ""){
+
+               list($id_transaction, $user_id, $offer_id, $amount) = explode(",",$transaction);
+
+               if(strcmp($id,$id_transaction)==0){
+                   $blockchainTransaction = new Transaction();
+                   $blockchainTransaction->id = $id_transaction;
+                   $blockchainTransaction->user_id = $user_id;
+                   $blockchainTransaction->offer_id = $offer_id;
+                   $blockchainTransaction->amount = $amount;
+                   $localTransactionString = $localTransaction->id .",".$localTransaction->user_id.",".$localTransaction->offer_id.",".$localTransaction->amount;
+                   error_log($transaction);
+                   error_log($localTransactionString);
+                   if (strcmp($transaction,$localTransactionString)==0){
+                       $verified = true;
+                       $currentComplaint->status = "REFUSED";
+                   }
+                   else{
+                       $beforeUpdate = Transaction::find($id);
+                       $verified = false;
+                       $localTransaction->amount = $amount;
+                       $localTransaction->user_id = $user_id;
+                       $localTransaction->offer_id = $offer_id;
+                       $localTransaction->save();
+                       $currentComplaint->status = "ACCEPTED";
+                   }
+                   $currentComplaint->save();
+                   return response()->json(['verified'=> $verified,'beforeUpdate'=> new TransactionResource($beforeUpdate),'blockchainTransaction'=>new TransactionResource($blockchainTransaction)], 201);
+               }
+           }
+        }
+        return response()->json("transaction not existent in Blockchain", 405);
     }
 
     public function getPerUser($id){

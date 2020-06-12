@@ -17,12 +17,11 @@ const clubisti_artifacts = require('../../../../../../../build/contracts/Test.js
   templateUrl: './charity-amount.component.html',
   styleUrls: ['./charity-amount.component.css']
 })
-export class CharityAmountComponent implements OnInit, OnChanges {
+export class CharityAmountComponent implements OnInit {
 
   donation: FormGroup;
   amount: number;
   model = {
-    amount: 5,
     receiver: '',
     balance: 0,
     account: ''
@@ -50,10 +49,8 @@ export class CharityAmountComponent implements OnInit, OnChanges {
     this.donation = this.formBuilder.group({
       amount: ''
     });
-    console.log('thalit');
     // blockchain
     this.watchAccount();
-    console.log('1');
     this.web3Service.artifactsToContract(clubisti_artifacts)
       .then((ClubistiAbstraction) => {
         this.clubisti = ClubistiAbstraction;
@@ -63,27 +60,6 @@ export class CharityAmountComponent implements OnInit, OnChanges {
           //   console.log('Transfer event came in transtra');
           // });
         });
-        console.log('2');
-      });
-  }
-
-  ngOnChanges() {
-    this.donation = this.formBuilder.group({
-      amount: ''
-    });
-
-    // blockchain
-    this.watchAccount();
-    this.web3Service.artifactsToContract(clubisti_artifacts)
-      .then((ClubistiAbstraction) => {
-        this.clubisti = ClubistiAbstraction;
-        this.clubisti.deployed().then(deployed => {
-          console.log(deployed);
-          deployed.Transfer({}, (err, ev) => {
-            console.log('Transfer event came in transtra');
-          });
-        });
-
       });
   }
 

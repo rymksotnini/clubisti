@@ -23,7 +23,7 @@ export class DetailsComplainComponent implements OnInit {
   ngOnInit(): void {
      this.route.params.subscribe(params => {
       this.id = +params['id'];
-       this.crudService.getOne(API_URL +  COMPLAIN + DETAILS ,this.id).subscribe(
+       this.crudService.getOne(API_URL +  COMPLAIN + DETAILS , this.id).subscribe(
          (res) => {
            this.complain = res.data;
            console.log(this.complain);

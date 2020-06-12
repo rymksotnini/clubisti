@@ -69,14 +69,16 @@
           <div class="row align-items-center">
             <div class="col-4">
               <h3 class="mb-0">Complain</h3>
-              <h6 class="mb-0">Status: {{complain?.status }} </h6>
+              <h6 class="mb-0 text-success" *ngIf="complain?.status == 'REFUSED' ">Status: {{complain?.status }} </h6>
+              <h6 class="mb-0 text-danger" *ngIf="complain?.status == 'ACCEPTED' ">Status: {{complain?.status }} </h6>
+              <h6 class="mb-0 " *ngIf="complain?.status != 'ACCEPTED' && complain?.status != 'REFUSED'">Status: {{complain?.status }} </h6>
               <h6 class="mb-0">Send at: {{complain?.created_at | date}} </h6>
               <h6 class="mb-0">From: {{complain?.user?.username }} </h6>
             </div>
             <div class="col-8 text-right">
-              <button *ngIf="complain?.status != 'PROCESSING'" (click)="processing()" type="submit" class="btn btn-sm btn-primary">Processing</button>
-              <button *ngIf="complain?.status != 'ACCEPTED'" (click)="accept()" type="submit" class="btn btn-sm btn-success">Accept</button>
-              <button *ngIf="complain?.status != 'REFUSED'" (click)="decline()" type="submit" class="btn btn-sm  ant-btn-danger ">Decline</button>
+              <button *ngIf="complain?.status != 'PROCESSING' && complain?.status != 'ACCEPTED'" (click)="processing()" class="btn btn-sm btn-primary">Processing</button>
+              <button   [routerLink]="['/admin/blockchain', id]" class="btn btn-sm btn-success">Verify From BlockChain</button>
+              <button *ngIf="complain?.status != 'REFUSED' && complain?.status !=  'ACCEPTED'" (click)="decline()"  class="btn btn-sm  ant-btn-danger ">Decline</button>
             </div>
           </div>
         </div>

@@ -26,6 +26,7 @@ export const BADGE = '/badges';
 export const DONATE = '/donate';
 export const DEFAULT_ACCOUNT = '/default';
 export const TRANSACTIONS = '/transactions';
+export const VERIFY = '/verify';
 export const PROJECT = '/project';
 export const PROFILE_BALANCE = '/profiles/balance';
 export const REFUSE = '/refuse';

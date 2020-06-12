@@ -29,6 +29,7 @@ import {DetailsComplainComponent} from './pages/complain/details-complain/detail
 import {ListComplainComponent} from './pages/complain/list-complain/list-complain.component';
 import { ColorPickerComponent } from './components/color-picker/color-picker.component';
 import { IconPickerComponent } from './components/icon-picker/icon-picker.component';
+import { VerifyBlockchainComplainComponent } from './pages/complain/verify-blockchain-complain/verify-blockchain-complain.component';
 
 @NgModule({
   imports: [
@@ -70,6 +71,7 @@ import { IconPickerComponent } from './components/icon-picker/icon-picker.compon
     UsersComponent,
     ColorPickerComponent,
     IconPickerComponent,
+    VerifyBlockchainComplainComponent,
 
   ]
 })

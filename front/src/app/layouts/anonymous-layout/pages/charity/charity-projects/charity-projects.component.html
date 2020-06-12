@@ -125,16 +125,20 @@
                   <img [src]="project?.offer?.shortImagePath?(IMG_URL + project?.offer?.shortImagePath):'assets/img/default.jpg'" alt="event-cover-photo" >
                 </div>
                 <div class="card-body">
+                  <h3 class="text-center ">{{project?.offer?.name}}</h3>
+
+
+
                   <div class="row">
-                    <div class="col-lg-7">
-                      <h3 class="text-uppercase">{{project?.offer?.name}}</h3>
+                    <div class="col-lg-6">
+                      <h4 class="text"> {{project?.offer?.amount}} DT</h4>
+
                     </div>
-                    <div class="col-lg-5">
-                      <h3 class="text-uppercase">{{project?.offer?.amount}} DT</h3>
+                    <div class="col-lg-6">
+                      <h5 class="text-right"> {{project?.contribution}} DT</h5>
+
                     </div>
                   </div>
-
-                  <h5 class="text">Your contribution: {{project?.contribution}} DT</h5>
 
                   <h5>Description:</h5>
                   <p class="description ">{{project?.offer?.shortDescription}}</p>
