@@ -159,6 +159,7 @@ Route::get('/transactions/{id}', 'TransactionController@show');
 Route::get('/users/transactions/{id}', 'TransactionController@getPerUser');
 Route::get('/transactions/project/{id}', 'TransactionController@getPerOffer');
 Route::post('/transactions', 'TransactionController@store');
+Route::post('/transactions/verify/{id}', 'TransactionController@verifyTransaction');
 Route::post('/donate', 'TransactionController@create');
 // admin, superAdmin
 Route::put('/transactions/{id}', 'TransactionController@update');
