@@ -77,7 +77,10 @@ class ComplainController extends Controller
            $user = $complain->user;
            $profile = $user->profile;
            $address = $profile->address;
-           $address->country;
+           if ($address){
+               $address->country;
+           }
+
 
             return response()->json([
                 'data' => $complain
