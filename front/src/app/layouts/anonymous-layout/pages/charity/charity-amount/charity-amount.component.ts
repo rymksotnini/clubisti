@@ -6,7 +6,7 @@ import {CrudService} from '../../../../../_services/crud.service';
 import {AccountsService} from '../../../../../_services/accounts.service';
 import {AuthenticationService} from '../../../../../_services/authentication.service';
 import {API_URL, DEFAULT_ACCOUNT, DONATE} from '../../../../../_globals/global-variables';
-import {ProjectsContribution} from "../../../../../_models/ProjectsContribution";
+import {ProjectsContribution} from '../../../../../_models/ProjectsContribution';
 
 import {Web3Service} from '../../../../../util/web3.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
@@ -35,7 +35,6 @@ export class CharityAmountComponent implements OnInit, OnChanges {
   json = null;
   showBuy = false;
   clubisti: any;
-  @Input() project?: Project;
   @Input() project?: ProjectsContribution;
   @Output() saved: EventEmitter<any> = new EventEmitter();
   constructor(private formBuilder: FormBuilder,
