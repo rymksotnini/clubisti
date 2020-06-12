@@ -22,7 +22,10 @@ import {BuyCoinsComponent} from './pages/buy-coins/buy-coins.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { ProjectDetailsComponent } from './pages/charity/project-details/project-details.component';
-import {RoundProgressModule} from "angular-svg-round-progressbar";
+import {RoundProgressModule} from 'angular-svg-round-progressbar';
+import { HistoryComponent } from './pages/history/history.component';
+import {TableModule} from 'primeng/table';
+import {InputTextModule} from 'primeng/inputtext';
 import { PackageComponent } from './pages/buy-coins/package/package.component';
 import { PersonalizedComponent } from './pages/buy-coins/personalized/personalized.component';
 import { SlidePanelComponent } from './pages/buy-coins/slide-panel/slide-panel.component';
@@ -45,6 +48,8 @@ import {Web3Service} from "../../util/web3.service";
     TestLandingComponent,
     BuyCoinsComponent,
     ProjectDetailsComponent,
+    HistoryComponent,
+    ProjectDetailsComponent,
     PackageComponent,
     PersonalizedComponent,
     SlidePanelComponent
@@ -60,6 +65,8 @@ import {Web3Service} from "../../util/web3.service";
     NgbDropdownModule,
     MatSnackBarModule,
     FormsModule,
+    TableModule,
+    InputTextModule,
     UtilModule
   ],
   exports: [

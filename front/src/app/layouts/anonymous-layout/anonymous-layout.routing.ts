@@ -7,6 +7,7 @@ import {UserProfileComponent} from './pages/profile/user-profile/user-profile.co
 import {UpdateProfileComponent} from './pages/profile/update-profile/update-profile.component';
 import {BuyCoinsComponent} from './pages/buy-coins/buy-coins.component';
 import {ProjectDetailsComponent} from "./pages/charity/project-details/project-details.component";
+import {HistoryComponent} from "./pages/history/history.component";
 
 
 export const AnonymousLayoutRoutes: Routes = [
@@ -14,6 +15,7 @@ export const AnonymousLayoutRoutes: Routes = [
   { path: 'user-profile',   component: UserProfileComponent },
   { path: 'update-profile',   component: UpdateProfileComponent },
   { path: 'history/project/:id',            component: DonationComponent },
+  { path: 'history',            component: HistoryComponent },
   { path: 'dashboard',          component: DashboardComponent },
   { path: 'projects',           component: CharityProjectsComponent },
   { path: 'buy-coins',           component: BuyCoinsComponent },

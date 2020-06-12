@@ -1,14 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import {Project} from '../../../../../_models/Project';
 import {Profile} from '../../../../../_models/profile';
 import {CrudService} from '../../../../../_services/crud.service';
 import {NzModalRef, NzModalService} from 'ng-zorro-antd';
 import {AuthenticationService} from '../../../../../_services/authentication.service';
-import {API_URL, CHARITY, IMG_URL, USERS_PROFILE2} from '../../../../../_globals/global-variables';
+import {
+  API_URL,
+  CONTRIBUTION,
+  IMG_URL,
+  USERS_PROFILE2
+} from '../../../../../_globals/global-variables';
 import {CharityAmountComponent} from '../charity-amount/charity-amount.component';
 import {Router} from "@angular/router";
 import {ImageService} from "../../../../../_services/image.service";
 import {User} from "../../../../../_models/user";
+import {Contribution} from "../../../../../_models/contribution";
+import {ProjectsContribution} from "../../../../../_models/ProjectsContribution";
 
 @Component({
   selector: 'app-charity-projects',
@@ -19,7 +25,8 @@ export class CharityProjectsComponent implements OnInit {
 
   image: string;
   currentUser: User;
-  public projects: Array<Project> = [];
+  public projects: Array<ProjectsContribution> = [];
+  public contributions: Contribution[];
   profile: Profile;
   loggedIn: any;
   constructor(
@@ -48,7 +55,7 @@ export class CharityProjectsComponent implements OnInit {
   }
 
   getProjects() {
-    this.crudService.getAll(API_URL + CHARITY).subscribe(
+    this.crudService.getAll(API_URL + CONTRIBUTION).subscribe(
       (response) => {
         this.projects = response.data;
         console.log(this.projects);
@@ -59,6 +66,7 @@ export class CharityProjectsComponent implements OnInit {
     );
   }
 
+
   getUserProfile() {
     if (this.authenticationService.getCurrentUser()) {
       this.crudService.getOne(API_URL + USERS_PROFILE2, this.authenticationService.getCurrentUser().id).subscribe((resp) => {
@@ -67,7 +75,7 @@ export class CharityProjectsComponent implements OnInit {
     }
   }
 
-  donate(project: Project) {
+  donate(project: ProjectsContribution) {
     if (!this.loggedIn) {
       this.router.navigate(['/auth/login'], { queryParams: { returnUrl: this.router.url }});
       return;

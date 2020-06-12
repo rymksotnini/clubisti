@@ -4,11 +4,11 @@
 
 var Clubisti =  artifacts.require("./Clubisti.sol")
 
-var test =  artifacts.require("./Test.sol");
+var Test =  artifacts.require("./Test.sol");
 
 module.exports = function(deployer) {
-  deployer.deploy(test);
   deployer.deploy(Clubisti);
+  deployer.deploy(Test);
 };
 
 // smartContract.addTransaction("0x31303030302c31303030302c31303030302c3130303030",1019)
