@@ -130,6 +130,32 @@ class TransactionController extends Controller
             ->setStatusCode(201);
     }
 
+    public function verifyTransaction(Request $request,$id){
+        $verified = false;
+        $localTransaction = Transaction::find($id);
+        $transactionsString = $request->input('transactions');
+        $transactionsString = explode("0x", $transactionsString);
+        $transactionsString = $transactionsString[1];
+        error_log($transactionsString);
+        $transactions = explode(";",$transactionsString);
+        foreach($transactions as $transaction){
+            list($id_transaction, $user_id, $offer_id, $amount) = explode(",",$transaction);
+            if(strcmp($id,$id_transaction)==0){
+                $blockchainTransaction = new Transaction();
+                $blockchainTransaction->id_transaction = $id_transaction;
+                $blockchainTransaction->user_id = $user_id;
+                $blockchainTransaction->offer_id = $offer_id;
+                $blockchainTransaction->amount = $amount;
+                $localTransactionString = $localTransaction->id_transaction .",".$localTransaction->user_id.",".$localTransaction->offer_id.",".$localTransaction->amount;
+                if (strcmp($transaction,$localTransactionString)==0){
+                    $verified = true;
+                }
+                return response()->json(['verified'=> $verified,'localTransaction'=> $localTransaction,'blockchainTransaction'=>$blockchainTransaction], 201);
+            }
+        }
+        return response()->json("transaction not existent in Blockchain", 405);
+    }
+
     public function getPerUser($id){
         // check connected id is the same $id
         if (Auth::User()->id == $id){
