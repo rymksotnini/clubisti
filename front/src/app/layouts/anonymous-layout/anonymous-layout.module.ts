@@ -31,6 +31,8 @@ import { PersonalizedComponent } from './pages/buy-coins/personalized/personaliz
 import { SlidePanelComponent } from './pages/buy-coins/slide-panel/slide-panel.component';
 import {UtilModule} from "../../util/util.module";
 import {Web3Service} from "../../util/web3.service";
+import { ListComplaintComponent } from './pages/complain/list-complaint/list-complaint.component';
+import { DetailsComplaintComponent } from './pages/complain/details-complaint/details-complaint.component';
 
 
 @NgModule({
@@ -52,7 +54,9 @@ import {Web3Service} from "../../util/web3.service";
     ProjectDetailsComponent,
     PackageComponent,
     PersonalizedComponent,
-    SlidePanelComponent
+    SlidePanelComponent,
+    ListComplaintComponent,
+    DetailsComplaintComponent
   ],
   imports: [
     SharedModule,

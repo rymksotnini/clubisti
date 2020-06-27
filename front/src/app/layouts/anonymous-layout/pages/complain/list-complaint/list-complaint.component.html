@@ -3,9 +3,9 @@
     <div class="header-body">
       <!-- Card stats -->  <div class="container-fluid d-flex align-items-center">
       <div class="row">
-        <div class="col-lg-7 col-md-10">
-          <a [routerLink]="['/admin/add-charity']" class="btn btn-info">Add new project</a>
-        </div>
+
+
+
       </div>
     </div>
 
@@ -41,10 +41,14 @@
             <ng-template pTemplate="body" let-rowData let-columns="columns">
               <tr [pSelectableRow]="rowData">
 
-                <td *ngFor="let col of columns" [ngSwitch]="col.field" >
+                <td *ngFor="let col of columns" [ngSwitch]="col.field" (click)="goToDetails(rowData)">
 
                   <ng-container *ngSwitchCase="'transaction.amount'">
                     {{rowData['transaction'].amount}}
+                  </ng-container>
+
+                  <ng-container *ngSwitchCase="'user.username'">
+                    {{rowData['user'].username}}
                   </ng-container>
 
                   <ng-container *ngSwitchCase="'createdAt'">
@@ -71,11 +75,14 @@
                 </span>
                   </ng-container>
 
-                  <ng-container *ngSwitchCase="'action'">
-                    <a (click)="goToDetails(rowData['id'])" class="btn btn-sm btn-info mr-4">Details</a>
-
+                  <ng-container *ngSwitchCase="'reason'">
+                    <span *ngIf="(rowData['reason'] ==='AE')" >
+                Amount Error
+                </span>
+                    <span *ngIf="(rowData['reason'] ==='SE')">
+                  Sum Error
+                </span>
                   </ng-container>
-
 
                   <ng-container      *ngSwitchDefault>
                     {{rowData[col.field] }}

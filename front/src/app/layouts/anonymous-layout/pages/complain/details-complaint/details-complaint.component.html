@@ -1,0 +1,48 @@
+
+
+
+
+<div class="container" style="margin: 0.75rem">
+  <h3 class="mb-0">Complaint</h3>
+  <h6 class="mb-0 text-danger " *ngIf="complaint?.status == 'REFUSED' ">Status: {{complaint?.status }} </h6>
+  <h6 class="mb-0  text-success " *ngIf="complaint?.status == 'ACCEPTED' ">Status: {{complaint?.status }} </h6>
+  <h6 class="mb-0 " *ngIf="complaint?.status != 'ACCEPTED' && complaint?.status != 'REFUSED'">Status: {{complaint?.status }} </h6>
+  <h6 class="mb-0">Send at: {{complaint?.created_at | date}} </h6>
+  <h6 class="mb-0">From: {{complaint?.user?.username }} </h6>
+
+    <div>
+      <div>
+        <label class="form-control-label" >Reason</label>
+        <input  *ngIf="complaint?.reason == 'AE'" [disabled]="true" type="text"  class="form-control form-control-alternative"  value="Amount Error">
+        <input  *ngIf="complaint?.reason == 'SE'" [disabled]="true" type="text"  class="form-control form-control-alternative"  value="Sum Error">
+
+        <label class="form-control-label" >Amount</label>
+        <input  [disabled]="true" type="text"  class="form-control form-control-alternative"  [value]="complaint?.transaction?.amount">
+
+
+        <label class="form-control-label" (click)="projectDetails(complaint?.transaction?.offer?.id)"> Project Name</label>
+        <input  [disabled]="true" type="text"  class="form-control form-control-alternative"   [value]="complaint?.transaction?.offer?.name">
+
+
+
+
+
+        <label class="form-control-label" for="input-body">Body</label>
+        <textarea   id="input-body" [disabled]="true" class="form-control form-control-alternative"   [value]="complaint?.body"></textarea>
+
+      </div>
+
+    </div>
+
+
+  <div>
+
+  </div>
+
+
+
+
+</div>
+
+
+
