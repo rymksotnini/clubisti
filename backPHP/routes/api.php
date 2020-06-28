@@ -156,6 +156,9 @@ Route::group(['middleware' => ['jwt.verify']], function() {
 
     Route::apiResource('groups', 'GroupController');
     Route::post('groups/join', 'GroupController@join');
+    Route::post('groups/accept', 'GroupController@accept');
+    Route::post('groups/deny', 'GroupController@deny');
+    Route::post('groups/leave', 'GroupController@leave');
 
 });
 

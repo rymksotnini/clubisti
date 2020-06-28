@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\GroupCollection;
 use App\Mail\MailService;
-use App\Models\GroupsRequest;
+use App\Models\GroupsRequests;
 use App\Models\User;
 use App\Models\UsersGroup;
 use Carbon\Carbon;
@@ -230,5 +230,63 @@ class GroupController extends Controller
         //redirect to login page
         return redirect()->away( env('FRONT_URL', 'http://localhost:4200')  . "/#/groups");
 
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function accept(Request $request) {
+        $groups_request_id = $request->groups_request_id;
+        $groups_request = GroupsRequests::findOrFail($groups_request_id);
+        if($groups_request) {
+            $user = User::findOrFail($groups_request->USER_ID);
+            $group = DB::table('users_groups')
+                ->where('GRP_ID', $groups_request->GRP_ID)->first();
+            $user->GRP_JOIN = 'MEMBER_JOIN';
+            $user->GRP_ID = $group->GRP_ID;
+            $latestUser = DB::table('users')
+                ->where('GRP_ID', $group->GRP_ID)
+                ->orderBy('created_at', 'desc')
+                ->first();
+            $user->USER_GRP_ID = ($latestUser->USER_GRP_ID + 1);
+            $user->save();
+            $group->GRP_Activity = true;
+            $group->save();
+            $groups_request->delete();
+        }
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function deny(Request $request) {
+        $groups_request_id = $request->groups_request_id;
+        $groups_request = GroupsRequests::findOrFail($groups_request_id);
+        if($groups_request) {
+            $user = User::findOrFail($groups_request->USER_ID);
+            $group = DB::table('users_groups')
+                ->where('GRP_ID', $groups_request->GRP_ID)->first();
+            $user->GRP_JOIN = 'DENY_JOIN';
+            $user->save();
+            $group->GRP_Activity = true;
+            $group->save();
+            $groups_request->delete();
+        }
+    }
+
+    public function leave() {
+        $user = Auth::user();
+        $user->USER_GRP_ID = 0000;
+        $user->GRP_ID = null;
+        $user->GRP_JOIN = 'NO_JOIN';
+        $user->update(['USER_GRP_ID', 'GRP_ID', 'GRP_JOIN']);
+        $groups_request = DB::table('groups_requests')
+            ->where('USER_ID', $user->id)->delete();
     }
 }
