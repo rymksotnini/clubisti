@@ -2,8 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39e5c940-559a-4f9c-bcec-9c8086df51a0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/backPHP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/backPHP.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/GroupCollection.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/UsersGroup.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/emails/verifyGroupEmail.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/emails/verifyJoinGroupEmail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Group.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_13_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_13_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_06_27_170740_create_groups_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_06_27_170740_create_groups_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/scss/blk-design-system/bootstrap/_button-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/scss/blk-design-system/bootstrap/_button-group.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/scss/bootstrap/_button-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/scss/bootstrap/_button-group.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,12 +23,6 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>MyTestMail</find>
-      <find>sen</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -167,11 +171,27 @@
       <workItem from="1591044895916" duration="5831000" />
       <workItem from="1591438780225" duration="1642000" />
       <workItem from="1591440448992" duration="1614000" />
-      <workItem from="1593277133215" duration="1496000" />
+      <workItem from="1593277133215" duration="6934000" />
+      <workItem from="1593310949720" duration="250000" />
+      <workItem from="1593327983395" duration="23785000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="395" y="199" width="636" height="410" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593354725602">
+      <screen x="70" y="27" width="1296" height="741" />
+    </state>
+    <state x="395" y="199" width="636" height="410" key="#com.intellij.fileTypes.FileTypeChooser/70.27.1296.741@70.27.1296.741" timestamp="1593354725602" />
+    <state x="249" y="125" width="918" height="559" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1593289860181">
+      <screen x="70" y="27" width="1296" height="741" />
+    </state>
+    <state x="249" y="125" width="918" height="559" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/70.27.1296.741@70.27.1296.741" timestamp="1593289860181" />
+    <state x="451" y="155" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1593354605077">
+      <screen x="70" y="27" width="1296" height="741" />
+    </state>
+    <state x="451" y="155" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/70.27.1296.741@70.27.1296.741" timestamp="1593354605077" />
   </component>
 </project>
