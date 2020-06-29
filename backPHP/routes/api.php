@@ -187,9 +187,7 @@ Route::post('/fblogin', array('middleware' => 'cors','uses'=>'SocialAuthFacebook
 Route::get('/verify/{token}', 'AuthenticationController@VerifyEmail');
 Route::post('/reset', 'AuthenticationController@resetPasswordEmail');
 Route::post('/reset-code', 'AuthenticationController@verifyTokenReset');
-/************************************************ Authentication FACEBOOK *****************************************/
-Route::get('/redirect', 'SocialAuthFacebookController@redirect');
-Route::get('/callback', 'SocialAuthFacebookController@callback');
+
 Route::get('/projects', 'ProjectController@index');
 Route::get('/donation', 'TransactionController@indexGroupeBy');
 Route::get('/contributions', 'ProjectController@showContribution');

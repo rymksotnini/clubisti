@@ -41,6 +41,9 @@ Route::get('send-mail', function () {
 
 
 
+/************************************************ Authentication FACEBOOK *****************************************/
+Route::get('/redirect', 'SocialAuthFacebookController@redirect');
+Route::get('/callback', 'SocialAuthFacebookController@callback');
 
 
 
