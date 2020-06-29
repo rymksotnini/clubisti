@@ -33,6 +33,17 @@ import {MatInputModule} from "@angular/material/input";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatCardModule} from "@angular/material/card";
 import {MatListModule} from "@angular/material/list";
+import {RoundProgressModule} from 'angular-svg-round-progressbar';
+import { HistoryComponent } from './pages/history/history.component';
+import {TableModule} from 'primeng/table';
+import {InputTextModule} from 'primeng/inputtext';
+import { PackageComponent } from './pages/buy-coins/package/package.component';
+import { PersonalizedComponent } from './pages/buy-coins/personalized/personalized.component';
+import { SlidePanelComponent } from './pages/buy-coins/slide-panel/slide-panel.component';
+import {UtilModule} from "../../util/util.module";
+import {Web3Service} from "../../util/web3.service";
+import { ListComplaintComponent } from './pages/complain/list-complaint/list-complaint.component';
+import { DetailsComplaintComponent } from './pages/complain/details-complaint/details-complaint.component';
 
 
 @NgModule({
@@ -53,6 +64,14 @@ import {MatListModule} from "@angular/material/list";
     CreateGroupComponent,
     JoinGroupComponent,
     MyGroupComponent
+    ProjectDetailsComponent,
+    HistoryComponent,
+    ProjectDetailsComponent,
+    PackageComponent,
+    PersonalizedComponent,
+    SlidePanelComponent,
+    ListComplaintComponent,
+    DetailsComplaintComponent
   ],
   imports: [
     SharedModule,
@@ -72,9 +91,12 @@ import {MatListModule} from "@angular/material/list";
     MatTabsModule,
     MatCardModule,
     MatListModule
+    FormsModule,
+    TableModule,
+    InputTextModule,
+    UtilModule
   ],
   exports: [
-
     RoundProgressModule
   ]
 })

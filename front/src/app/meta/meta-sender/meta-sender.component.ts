@@ -34,11 +34,13 @@ export class MetaSenderComponent implements OnInit {
 
     this.web3Service.artifactsToContract(clubisti_artifacts)
       .then((ClubistiAbstraction) => {
+        console.log("in artifact")
         this.clubisti = ClubistiAbstraction;
         this.clubisti.deployed().then(deployed => {
+          console.log("in artifact deployed")
           console.log(deployed);
           deployed.Transfer({}, (err, ev) => {
-            console.log('Transfer event came in transtra');
+            console.log('Transfer event came in transaction');
           });
         });
 
@@ -72,7 +74,7 @@ export class MetaSenderComponent implements OnInit {
     this.setStatus('Initiating transaction... (please wait)');
     try {
       const deployedClubisti = await this.clubisti.deployed();
-      const transaction = await deployedClubisti.addTransaction.sendTransaction(1, 1, 1, 100, {from: "0xeFF6747441Df90737e851150562599E65cFE0AFc"});
+      const transaction = await deployedClubisti.addTransaction.sendTransaction(1, 1, 1, 100, {from: '0xeFF6747441Df90737e851150562599E65cFE0AFc'});
 
       if (!transaction) {
         this.setStatus('Transaction failed!');

@@ -24,10 +24,12 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {TableModule} from 'primeng/table';
 import {PaginatorModule} from 'primeng/paginator';
 import {MultiSelectModule} from 'primeng/multiselect';
+import {InputTextModule} from 'primeng/inputtext';
 import {DetailsComplainComponent} from './pages/complain/details-complain/details-complain.component';
 import {ListComplainComponent} from './pages/complain/list-complain/list-complain.component';
 import { ColorPickerComponent } from './components/color-picker/color-picker.component';
 import { IconPickerComponent } from './components/icon-picker/icon-picker.component';
+import { VerifyBlockchainComplainComponent } from './pages/complain/verify-blockchain-complain/verify-blockchain-complain.component';
 
 @NgModule({
   imports: [
@@ -42,6 +44,7 @@ import { IconPickerComponent } from './components/icon-picker/icon-picker.compon
     PaginatorModule,
     MultiSelectModule,
     ReactiveFormsModule,
+    InputTextModule,
     NgbCollapseModule
   ],
   exports: [
@@ -68,6 +71,7 @@ import { IconPickerComponent } from './components/icon-picker/icon-picker.compon
     UsersComponent,
     ColorPickerComponent,
     IconPickerComponent,
+    VerifyBlockchainComplainComponent,
 
   ]
 })

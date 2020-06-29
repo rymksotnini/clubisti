@@ -30,7 +30,7 @@ contract Test {
   }
 
 
-  function addTransaction( bytes  memory newTransactions, uint id ) public{
+  function addDonation( bytes  memory newTransactions, uint id ) public{
 
     // idT,idU,idO,amount;idT2...
     transactions[id] = newTransactions;
@@ -39,10 +39,12 @@ contract Test {
 
   function getTransactions( uint id_transaction) public view returns (bytes  memory){
     return transactions[ id_transaction];
+  }
+
+  function reset() public{
 
 
   }
-
 
 }
 

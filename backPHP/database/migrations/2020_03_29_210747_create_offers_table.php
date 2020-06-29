@@ -18,7 +18,7 @@ class CreateOffersTable extends Migration
             $table->boolean('deleted')->default(false);
             $table->string('name');
             $table->string('short_description');
-            $table->string('long_description');
+            $table->longText('long_description');
             $table->double('amount');
             $table->string('short_image_path')->nullable();
             $table->string('large_image_path')->nullable();

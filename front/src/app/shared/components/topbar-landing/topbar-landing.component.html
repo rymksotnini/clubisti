@@ -54,6 +54,14 @@
               <a [routerLink]="['/my-group']" class="dropdown-item">My Group</a>
             </div>
           </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link no-caret" data-toggle="dropdown" role="button" [routerLink]="['/complaints']">
+              <i class="ni ni-collection d-lg-none"></i>
+              <span class="nav-link-inner--text"> <strong>Complaints</strong></span>
+            </a>
+          </li>
+
         </ul>
         <ul class="navbar-nav align-items-lg-center ml-lg-auto">
           <li class="nav-item">
@@ -109,6 +117,10 @@
                   <a *ngIf="connected" routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">
                     <i class="ni ni-single-02"></i>
                     <span>profile</span>
+                  </a>
+                  <a *ngIf="connected" routerLinkActive="active" [routerLink]="['/history']" class="dropdown-item">
+                    <i class="ni ni-single-02"></i>
+                    <span>history</span>
                   </a>
                   <div class="dropdown-divider"></div>
                   <a *ngIf="connected" (click)="logout()" class="dropdown-item">

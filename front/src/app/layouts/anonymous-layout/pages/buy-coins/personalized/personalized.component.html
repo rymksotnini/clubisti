@@ -1,0 +1,31 @@
+<section class="section section-lg section-coins pt-lg-0 mt--200">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2" style="margin-top: 20px;">
+        <div class="card card-coin card-plain" style="background-color:  #1f2251;box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.09)">
+          <div class="card-header">
+            <img class="img-center img-fluid" src="assets/img/clubisitiCoin.png" />
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-12 text-center" >
+                <h4 class="text-uppercase">Personalize your balance</h4>
+              </div>
+            </div>
+            <form id=create-book-form [formGroup]="balance" >
+              <div class="col-md-8 offset-md-2">
+                <div class="form-group">
+                  <label class="form-control-label" for="amount">Amount</label>
+                  <input  formControlName= "amount" type="text" id="amount" class="form-control form-control-alternative">
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="card-footer text-center">
+            <button class="btn btn-primary btn-simple" (click)="buyNow()">Buy now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

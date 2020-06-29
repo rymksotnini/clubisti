@@ -21,12 +21,12 @@ export class Web3Service {
   public accountsObservable = new Subject<string[]>();
 
   constructor() {
-    window.addEventListener('load', (event) => {
+    console.log('ena tisna3t');
       this.bootstrapWeb3();
-    });
   }
 
   public bootstrapWeb3() {
+    console.log('ena fil bootstrap');
     // Checking if Web3 has been injected by the browser (Mist/MetaMask)
     if (typeof window.ethereum !== 'undefined') {
       console.log('hello!');
@@ -48,6 +48,7 @@ export class Web3Service {
 
   public async artifactsToContract(artifacts) {
     if (!this.web3) {
+      console.log('ena fi service');
       const delay = new Promise(resolve => setTimeout(resolve, 100));
       await delay;
       return await this.artifactsToContract(artifacts);

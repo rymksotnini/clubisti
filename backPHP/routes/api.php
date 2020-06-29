@@ -173,6 +173,7 @@ Route::get('/transactions/{id}', 'TransactionController@show');
 Route::get('/users/transactions/{id}', 'TransactionController@getPerUser');
 Route::get('/transactions/project/{id}', 'TransactionController@getPerOffer');
 Route::post('/transactions', 'TransactionController@store');
+Route::post('/transactions/verify/{id}', 'TransactionController@verifyTransaction');
 Route::post('/donate', 'TransactionController@create');
 // admin, superAdmin
 Route::put('/transactions/{id}', 'TransactionController@update');
@@ -190,6 +191,8 @@ Route::post('/reset-code', 'AuthenticationController@verifyTokenReset');
 Route::get('/redirect', 'SocialAuthFacebookController@redirect');
 Route::get('/callback', 'SocialAuthFacebookController@callback');
 Route::get('/projects', 'ProjectController@index');
+Route::get('/donation', 'TransactionController@indexGroupeBy');
+Route::get('/contributions', 'ProjectController@showContribution');
 Route::get('/projects/{id}', 'ProjectController@show');
 Route::get('/sends', 'ProjectController@send');
 /**************************************************************************************************************/
