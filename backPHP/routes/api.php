@@ -149,7 +149,21 @@ Route::group(['middleware' => ['jwt.verify']], function() {
 
     /************************************************ AccountAndAccountType API ****************************************/
 
-    Route::post('/accounts/accountTypes/{id}', 'AccountController@createOrUpdateWithAccountType');});
+    Route::post('/accounts/accountTypes/{id}', 'AccountController@createOrUpdateWithAccountType');
+
+    /************************************************ Groups API ************************************************/
+
+
+    Route::apiResource('groups', 'GroupController');
+    Route::post('groups/join', 'GroupController@join');
+    Route::post('groups/accept', 'GroupController@accept');
+    Route::post('groups/deny', 'GroupController@deny');
+    Route::post('groups/leave', 'GroupController@leave');
+    Route::get('groups/users/{id}', 'GroupController@users');
+    Route::get('groups/invitations/{id}', 'GroupController@invitations');
+    Route::get('me','AuthenticationController@getCurrentUser');
+
+});
 
 
   /************************************************ Transaction API ************************************************/
@@ -183,4 +197,5 @@ Route::get('/projects/{id}', 'ProjectController@show');
 Route::get('/sends', 'ProjectController@send');
 /**************************************************************************************************************/
 
-
+Route::get('groups/verify/{token}', 'GroupController@VerifyEmail');
+Route::get('/groups/verify_join/{token}', 'GroupController@VerifyJoinEmail');

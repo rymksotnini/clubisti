@@ -209,6 +209,9 @@ class AuthenticationController extends Controller
         $this->service->sendTo($to_name, $to_email, $data, "emails.resetEmail", "Reset Password", "Clubisti");
     }
 
+    public function getCurrentUser() {
+         return Auth::user();
+    }
 
 
 

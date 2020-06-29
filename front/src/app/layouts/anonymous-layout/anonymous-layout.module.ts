@@ -22,6 +22,16 @@ import {BuyCoinsComponent} from './pages/buy-coins/buy-coins.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { ProjectDetailsComponent } from './pages/charity/project-details/project-details.component';
+import { CreateGroupComponent } from './pages/create-group/create-group.component';
+import { JoinGroupComponent } from './pages/join-group/join-group.component';
+import { MyGroupComponent } from './pages/my-group/my-group.component';
+import {MatStepperModule} from "@angular/material/stepper";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatButtonModule} from "@angular/material/button";
+import {MatInputModule} from "@angular/material/input";
+import {MatTabsModule} from "@angular/material/tabs";
+import {MatCardModule} from "@angular/material/card";
+import {MatListModule} from "@angular/material/list";
 import {RoundProgressModule} from 'angular-svg-round-progressbar';
 import { HistoryComponent } from './pages/history/history.component';
 import {TableModule} from 'primeng/table';
@@ -50,6 +60,10 @@ import { DetailsComplaintComponent } from './pages/complain/details-complaint/de
     TestLandingComponent,
     BuyCoinsComponent,
     ProjectDetailsComponent,
+    CreateGroupComponent,
+    JoinGroupComponent,
+    MyGroupComponent,
+    ProjectDetailsComponent,
     HistoryComponent,
     ProjectDetailsComponent,
     PackageComponent,
@@ -68,6 +82,14 @@ import { DetailsComplaintComponent } from './pages/complain/details-complaint/de
     MatSelectCountryModule,
     NgbDropdownModule,
     MatSnackBarModule,
+    FormsModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule,
+    MatTabsModule,
+    MatCardModule,
+    MatListModule,
     FormsModule,
     TableModule,
     InputTextModule,

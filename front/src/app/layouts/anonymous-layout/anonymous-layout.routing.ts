@@ -7,6 +7,9 @@ import {UserProfileComponent} from './pages/profile/user-profile/user-profile.co
 import {UpdateProfileComponent} from './pages/profile/update-profile/update-profile.component';
 import {BuyCoinsComponent} from './pages/buy-coins/buy-coins.component';
 import {ProjectDetailsComponent} from "./pages/charity/project-details/project-details.component";
+import {CreateGroupComponent} from "./pages/create-group/create-group.component";
+import {JoinGroupComponent} from "./pages/join-group/join-group.component";
+import {MyGroupComponent} from "./pages/my-group/my-group.component";
 import {HistoryComponent} from "./pages/history/history.component";
 import {ListComplaintComponent} from "./pages/complain/list-complaint/list-complaint.component";
 
@@ -21,5 +24,8 @@ export const AnonymousLayoutRoutes: Routes = [
   { path: 'projects',           component: CharityProjectsComponent },
   { path: 'complaints',           component: ListComplaintComponent },
   { path: 'buy-coins',           component: BuyCoinsComponent },
-  { path: 'details/:id',         component: ProjectDetailsComponent}
+  { path: 'details/:id',         component: ProjectDetailsComponent},
+  { path: 'create-group',         component: CreateGroupComponent},
+  { path: 'join-group',         component: JoinGroupComponent},
+  { path: 'my-group',         component: MyGroupComponent}
 ];

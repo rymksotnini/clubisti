@@ -53,18 +53,18 @@ export class AuthenticationService {
 
   public setCurrentUser(currentUser:User){
     this.currentUser = new User();
-    this.currentUser.id =currentUser.id;
-    this.currentUser.username =currentUser.username;
-    this.currentUser.first_name = currentUser.first_name;
-    this.currentUser.last_name = currentUser.last_name;
-    this.currentUser.email = currentUser.email;
-    this.currentUser.role = currentUser.role;
+    this.currentUser = currentUser;
+    // this.currentUser.id =currentUser.id;
+    // this.currentUser.username =currentUser.username;
+    // this.currentUser.first_name = currentUser.first_name;
+    // this.currentUser.last_name = currentUser.last_name;
+    // this.currentUser.email = currentUser.email;
+    // this.currentUser.role = currentUser.role;
   }
 
   public getCurrentUser():User{
     const user :User = this.localService.getJsonValue('currentUser');
     if (user!=null){
-      console.log('here');
       this.setCurrentUser(user);
     }
     return this.currentUser;
@@ -72,13 +72,15 @@ export class AuthenticationService {
 
   public savingUser(result){
     this.currentUser = new User();
-    console.log('body',  result.body.user);
     this.localService.setJsonValue('currentUser',JSON.parse(result.body.user));
     this.setCurrentUser(JSON.parse(result.body.user));
-    console.log('current user last name ' + this.getCurrentUser().last_name);
   }
 
   public savingToken(result){
     this.localService.setJsonValue('token',result.body.token);
+  }
+
+  public getFullCurrentUser() {
+    return this.http.get<any>(API_URL+'/me');
   }
 }

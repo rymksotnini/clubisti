@@ -14,6 +14,9 @@ export class User {
   private _profile: Profile  = null;
   private _role = null;
   private _address = null;
+  private _GRP_JOIN: string;
+  private _GRP_ID: string;
+  private _USER_GRP_ID: number;
 
   constructor() {
   }

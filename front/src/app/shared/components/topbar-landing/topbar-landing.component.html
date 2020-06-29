@@ -37,11 +37,22 @@
               <span class="nav-link-inner--text"><strong>Projects</strong></span>
             </a>
           </li>
+<!--          <li class="nav-item dropdown">-->
+<!--            <a class="nav-link no-caret" data-toggle="dropdown" role="button" [routerLink]="['/history']">-->
+<!--              <i class="ni ni-collection d-lg-none"></i>-->
+<!--              <span class="nav-link-inner&#45;&#45;text"> <strong>Donations</strong></span>-->
+<!--            </a>-->
+<!--          </li>-->
           <li class="nav-item dropdown">
-            <a class="nav-link no-caret" data-toggle="dropdown" role="button" [routerLink]="['/history']">
+            <a class="nav-link no-caret" data-toggle="dropdown" role="button">
               <i class="ni ni-collection d-lg-none"></i>
-              <span class="nav-link-inner--text"> <strong>Donations</strong></span>
+              <span class="nav-link-inner--text"> <strong>Groups</strong></span>
             </a>
+            <div class="dropdown-menu">
+              <a [routerLink]="['/create-group']" class="dropdown-item">Create Group</a>
+              <a [routerLink]="['/join-group']" class="dropdown-item">Join Group</a>
+              <a [routerLink]="['/my-group']" class="dropdown-item">My Group</a>
+            </div>
           </li>
 
           <li class="nav-item dropdown">
@@ -103,7 +114,7 @@
                 </a>
                 <div class="dropdown-menu-arrow dropdown-menu-right" ngbDropdownMenu>
 
-                  <a *ngIf="connected" routerLinkActive="active" [routerLink]="['/template/user-profile']" class="dropdown-item">
+                  <a *ngIf="connected" routerLinkActive="active" [routerLink]="['/user-profile']" class="dropdown-item">
                     <i class="ni ni-single-02"></i>
                     <span>profile</span>
                   </a>

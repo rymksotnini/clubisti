@@ -77,4 +77,17 @@ class User extends Authenticatable implements JWTSubject
             $this->attributes['password'] = bcrypt($password);
         }
     }
+
+    /**
+     * Get the comments for the blog post.
+     */
+    public function groups()
+    {
+        return $this->hasMany(UsersGroup::class);
+    }
+
+    public function grp()
+    {
+        return $this->belongsTo(UsersGroup::class);
+    }
 }
