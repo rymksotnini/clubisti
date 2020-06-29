@@ -26,6 +26,8 @@
                   <h3 *ngIf="currentUser?.GRP_JOIN === 'DENY_JOIN'">Your last request to join {{group?.GRP_NAME}} wasn't accepted. </h3>
                   <h3 *ngIf="currentUser?.GRP_JOIN === 'WAIT_JOIN'">You have a pending group join request at {{group?.GRP_NAME}}. </h3>
                   <div *ngIf="currentUser.GRP_JOIN === 'CREATE_JOIN'">
+
+                    <h3> {{group?.GRP_NAME}}</h3>
                     <mat-tab-group>
 
                       <mat-tab label="All Users">

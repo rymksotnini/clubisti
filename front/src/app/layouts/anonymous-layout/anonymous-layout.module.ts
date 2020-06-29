@@ -22,7 +22,6 @@ import {BuyCoinsComponent} from './pages/buy-coins/buy-coins.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { ProjectDetailsComponent } from './pages/charity/project-details/project-details.component';
-import {RoundProgressModule} from "angular-svg-round-progressbar";
 import { CreateGroupComponent } from './pages/create-group/create-group.component';
 import { JoinGroupComponent } from './pages/join-group/join-group.component';
 import { MyGroupComponent } from './pages/my-group/my-group.component';
@@ -63,7 +62,7 @@ import { DetailsComplaintComponent } from './pages/complain/details-complaint/de
     ProjectDetailsComponent,
     CreateGroupComponent,
     JoinGroupComponent,
-    MyGroupComponent
+    MyGroupComponent,
     ProjectDetailsComponent,
     HistoryComponent,
     ProjectDetailsComponent,
@@ -90,7 +89,7 @@ import { DetailsComplaintComponent } from './pages/complain/details-complaint/de
     MatInputModule,
     MatTabsModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
     FormsModule,
     TableModule,
     InputTextModule,
