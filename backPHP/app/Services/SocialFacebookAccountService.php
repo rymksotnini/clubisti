@@ -3,6 +3,7 @@ namespace App\Services;
 use App\Models\Badge;
 use App\Models\SocialFacebookAccount;
 use App\Models\User;
+use Illuminate\Support\Str;
 use Laravel\Socialite\Contracts\User as ProviderUser;
 
 class SocialFacebookAccountService
@@ -30,7 +31,9 @@ class SocialFacebookAccountService
                     'username' => $providerUser->getName(),
                     'password' => md5(rand(1,10000)),
                     'first_name' => $providerUser->getName(),
-                    'last_name' => $providerUser->getName()
+                    'last_name' => $providerUser->getName(),
+                    'email_verified' => true,
+                    'email_verification_token' => ' ',
                 ]);
                 // add first badge to user
                 $badge = Badge::find(1);
