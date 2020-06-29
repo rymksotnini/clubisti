@@ -1,0 +1,85 @@
+<main class="profile-page">
+  <section class="section-profile-cover section-shaped my-0">
+    <!-- Circles background -->
+    <div class="shape shape-style-1 shape-clubisti alpha-4">
+
+    </div>
+    <!-- SVG separator -->
+    <div class="separator separator-bottom separator-skew">
+      <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container row">
+      <div class="col-lg-10 offset-lg-2">
+        <div class="card card-profile shadow mt--300">
+          <div class="px-4">
+            <div class="row justify-content-center">
+              <div class="col-lg-1">
+              </div>
+              <div class="col-lg-10">
+                <div class="container">
+                  <br>
+                  <h3 *ngIf="currentUser?.GRP_JOIN === 'NO_JOIN'">You are not part of any group</h3>
+                  <h3 *ngIf="currentUser?.GRP_JOIN === 'DENY_JOIN'">Your last request to join {{group?.GRP_NAME}} wasn't accepted. </h3>
+                  <h3 *ngIf="currentUser?.GRP_JOIN === 'WAIT_JOIN'">You have a pending group join request at {{group?.GRP_NAME}}. </h3>
+                  <div *ngIf="currentUser.GRP_JOIN === 'CREATE_JOIN'">
+                    <mat-tab-group>
+
+                      <mat-tab label="All Users">
+                        <mat-selection-list [multiple]="false">
+                          <mat-list-option *ngFor="let user of allGroupUsers">
+                            {{user?.username}}
+                          </mat-list-option>
+                        </mat-selection-list>
+                      </mat-tab>
+                      <mat-tab label="Pending Invitations">
+                        <mat-selection-list [multiple]="false">
+                          <mat-list-option *ngFor="let invitation of allPendingInvitations">
+                            <div class="row">
+                              <div class="col-sm-8">{{invitation?.USER_NAME}}</div>
+                              <div class="col-sm-2"><button mat-button color="warn" (click)="deny(invitation)">Deny</button></div>
+                              <div class="col-sm-2"><button mat-button color="primary" (click)="accept(invitation)">Accept</button></div>
+                            </div>
+                          </mat-list-option>
+                        </mat-selection-list>
+                      </mat-tab>
+                    </mat-tab-group>
+                  </div>
+                  <div *ngIf="currentUser.GRP_JOIN === 'MEMBER_JOIN'">                  <h3 *ngIf="currentUser?.GRP_JOIN === 'WAIT_JOIN'">You have a pending group join request at {{group?.GRP_NAME}}. </h3>
+
+                    <div class="row">
+                      <div class="col-sm-8">
+                        <h3>You are a member of th group {{group?.GRP_NAME}}. </h3>
+                      </div>
+                      <div class="col-sm-4">
+                        <button mat-button color="warn" (click)="leave()">Leave</button>
+                      </div>
+                    </div>
+
+                    <mat-tab-group>
+
+                      <mat-tab label="All Users">
+                        <mat-selection-list [multiple]="false">
+                          <mat-list-option *ngFor="let user of allGroupUsers">
+                            {{user?.username}}
+                          </mat-list-option>
+                        </mat-selection-list>
+                      </mat-tab>
+                    </mat-tab-group>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-1">
+              </div>
+            </div>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+

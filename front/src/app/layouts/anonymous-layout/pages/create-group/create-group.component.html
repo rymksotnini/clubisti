@@ -1,0 +1,96 @@
+<main class="profile-page">
+  <section class="section-profile-cover section-shaped my-0">
+    <!-- Circles background -->
+    <div class="shape shape-style-1 shape-clubisti alpha-4">
+
+    </div>
+    <!-- SVG separator -->
+    <div class="separator separator-bottom separator-skew">
+      <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+      </svg>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container row">
+      <div class="col-lg-10 offset-lg-2">
+        <div class="card card-profile shadow mt--300">
+          <div class="px-4">
+            <div class="row justify-content-center">
+              <div class="col-lg-1">
+              </div>
+              <div class="col-lg-10">
+                <div class="container">
+                  <br>
+                  <h3>Create a new Group</h3>
+                  <mat-horizontal-stepper [linear]="true" #stepper>
+                    <mat-step >
+                      <form >
+                        <ng-template matStepLabel>Authorization</ng-template>
+                          <p>You have the rights to create or be part of only 1 (One) Group.</p>
+                        <p>Will you Continue ?</p>
+                        <div>
+                          <button mat-button [routerLink]="'/'" >Back</button>
+                          <button mat-button matStepperNext>Next</button>
+                        </div>
+                      </form>
+                    </mat-step>
+                    <mat-step >
+                      <ng-template matStepLabel>Informations</ng-template>
+                      <form [formGroup]="secondFormGroup">
+                        <div class="form-group">
+                          <label for="exampleInputName">Name</label>
+                          <input class="form-control" id="exampleInputName" aria-describedby="name" placeholder="Enter Name" required formControlName="name">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputDEscription">Description</label>
+                          <textarea class="form-control" id="exampleInputDescription" aria-describedby="name" placeholder="Enter Description" required  formControlName="description">
+                          </textarea>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Password</label>
+                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"  required formControlName="password">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputRepeatPassword">Repeat Password</label>
+                          <input type="password" class="form-control" id="exampleInputRepeatPassword" placeholder="Password" required>
+                        </div>
+
+                        <div>
+                          <button mat-button matStepperPrevious>Back</button>
+                          <button mat-button matStepperNext type="submit" (click)="submit()">Next</button>
+                        </div>
+                      </form>
+                    </mat-step>
+                    <mat-step>
+                      <ng-template matStepLabel>Done</ng-template>
+                      <p>You are nearly done.</p>
+                      <p>Name: {{secondFormGroup?.value?.name}}</p>
+                      <p>Description: {{secondFormGroup?.value?.description}}</p>
+                      <div>
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext (click)="save()">Save</button>
+                      </div>
+                    </mat-step>
+                    <mat-step>
+                      <ng-template matStepLabel></ng-template>
+                      <p>{{message}}</p>
+<!--                      <div>-->
+<!--                        <button mat-button matStepperPrevious>Back</button>-->
+<!--                        <button mat-button (click)="stepper.save()">Save</button>-->
+<!--                      </div>-->
+                    </mat-step>
+                  </mat-horizontal-stepper>
+                </div>
+              </div>
+              <div class="col-lg-1">
+              </div>
+            </div>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+

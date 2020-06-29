@@ -23,6 +23,16 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { ProjectDetailsComponent } from './pages/charity/project-details/project-details.component';
 import {RoundProgressModule} from "angular-svg-round-progressbar";
+import { CreateGroupComponent } from './pages/create-group/create-group.component';
+import { JoinGroupComponent } from './pages/join-group/join-group.component';
+import { MyGroupComponent } from './pages/my-group/my-group.component';
+import {MatStepperModule} from "@angular/material/stepper";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatButtonModule} from "@angular/material/button";
+import {MatInputModule} from "@angular/material/input";
+import {MatTabsModule} from "@angular/material/tabs";
+import {MatCardModule} from "@angular/material/card";
+import {MatListModule} from "@angular/material/list";
 
 
 @NgModule({
@@ -39,7 +49,10 @@ import {RoundProgressModule} from "angular-svg-round-progressbar";
     UserProfileComponent,
     TestLandingComponent,
     BuyCoinsComponent,
-    ProjectDetailsComponent
+    ProjectDetailsComponent,
+    CreateGroupComponent,
+    JoinGroupComponent,
+    MyGroupComponent
   ],
   imports: [
     SharedModule,
@@ -51,7 +64,14 @@ import {RoundProgressModule} from "angular-svg-round-progressbar";
     MatSelectCountryModule,
     NgbDropdownModule,
     MatSnackBarModule,
-    FormsModule
+    FormsModule,
+    MatStepperModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule,
+    MatTabsModule,
+    MatCardModule,
+    MatListModule
   ],
   exports: [
 

@@ -3,9 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="39e5c940-559a-4f9c-bcec-9c8086df51a0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthenticationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthenticationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GroupController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GroupController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/GroupsRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/GroupsRequests.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../front/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../front/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/app/_globals/global-variables.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/_globals/global-variables.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/app/_models/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/_models/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/app/_services/authentication.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/_services/authentication.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/app/layouts/anonymous-layout/anonymous-layout.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/layouts/anonymous-layout/anonymous-layout.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/app/layouts/anonymous-layout/anonymous-layout.routing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/layouts/anonymous-layout/anonymous-layout.routing.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../front/src/app/shared/components/topbar-landing/topbar-landing.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../front/src/app/shared/components/topbar-landing/topbar-landing.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +175,13 @@
       <workItem from="1593277133215" duration="6934000" />
       <workItem from="1593310949720" duration="250000" />
       <workItem from="1593327983395" duration="29496000" />
-      <workItem from="1593366280711" duration="2474000" />
+      <workItem from="1593366280711" duration="2569000" />
+      <workItem from="1593415941021" duration="743000" />
+      <workItem from="1593431769721" duration="2856000" />
+      <workItem from="1593435029236" duration="353000" />
+      <workItem from="1593438537484" duration="1107000" />
+      <workItem from="1593442463746" duration="143000" />
+      <workItem from="1593446029340" duration="302000" />
     </task>
     <servers />
   </component>

@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use App\Http\Resources\Group as GroupResource;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 class GroupController extends Controller
@@ -24,24 +25,30 @@ class GroupController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return GroupCollection
      */
     public function index()
     {
-        return new GroupCollection(UsersGroup::get());
+        return new GroupCollection(UsersGroup::where('group_email_verified', '=', true)->get());
     }
 
     public function join(Request $request)
     {
-        error_log('Im here');
         $request->validate([
             'GRP_ID' => 'required|max:255',
+            'GRP_PASSWORD' => 'required|max:255'
         ]);
         $user = Auth::user();
         if($user->GRP_JOIN != 'NO_JOIN' && $user->GRP_JOIN != 'DENY_JOIN') {
             abort(406, 'User Already a part of a group');
         }
-        $group = UsersGroup::where('GRP_ID', '=', $request->GRP_ID)->firstOrFail();
+        $group = UsersGroup::where('GRP_ID', '=', $request->GRP_ID)->first();
+        if(!$group) {
+            abort(406, 'Wrong Group ID');
+        }
+        if (!Hash::check($request->GRP_PASSWORD, $group->GRP_PASSWORD)) {
+            abort(406, 'Wrong Group Password');
+        }
 
         $user->group_email_verification_token = Str::random(32);
         $user->update(['group_email_verification_token']);
@@ -72,7 +79,7 @@ class GroupController extends Controller
             'GRP_NAME' => $request->GRP_NAME,
             'GRP_Desc' => $request->GRP_Desc,
             'CREATOR_ID' => $user->id,
-            'GRP_PASSWORD' => $request->GRP_PASSWORD,
+            'GRP_PASSWORD' =>Hash::make($request->GRP_PASSWORD),
             'GRP_ID' => $GRP_ID,
             'GRP_Activity' => true,
             'group_email_verification_token' => Str::random(32)
@@ -117,7 +124,15 @@ class GroupController extends Controller
      */
     public function show($id)
     {
-        //
+        return UsersGroup::where('GRP_ID',$id)->first();
+    }
+
+    public function users($id) {
+        return User::where('GRP_ID',$id)->where('GRP_JOIN', 'MEMBER_JOIN')->get();
+    }
+
+    public function invitations($id) {
+        return GroupsRequests::where('GRP_ID',$id)->get();
     }
 
     /**
@@ -192,9 +207,10 @@ class GroupController extends Controller
         $user->group_email_verified_at = Carbon::now();
         $user->group_email_verification_token = '';
         $user->GRP_JOIN = 'WAIT_JOIN';
+        $user->GRP_ID = $group->GRP_ID;
         $user->save();
 
-        $group_request = GroupsRequest::create([
+        $group_request = GroupsRequests::create([
             'GRP_ID' => $group->GRP_ID,
             'USER_ID' => $user->id,
             'USER_NAME' => $user->username
@@ -253,8 +269,6 @@ class GroupController extends Controller
                 ->first();
             $user->USER_GRP_ID = ($latestUser->USER_GRP_ID + 1);
             $user->save();
-            $group->GRP_Activity = true;
-            $group->save();
             $groups_request->delete();
         }
     }
@@ -267,15 +281,16 @@ class GroupController extends Controller
      */
     public function deny(Request $request) {
         $groups_request_id = $request->groups_request_id;
-        $groups_request = GroupsRequests::findOrFail($groups_request_id);
+        $groups_request = GroupsRequests::find($groups_request_id);
+        if(!$groups_request) {
+            abort(406, 'Group Request Wrong');
+        }
         if($groups_request) {
             $user = User::findOrFail($groups_request->USER_ID);
             $group = DB::table('users_groups')
                 ->where('GRP_ID', $groups_request->GRP_ID)->first();
             $user->GRP_JOIN = 'DENY_JOIN';
             $user->save();
-            $group->GRP_Activity = true;
-            $group->save();
             $groups_request->delete();
         }
     }

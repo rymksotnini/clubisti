@@ -159,6 +159,9 @@ Route::group(['middleware' => ['jwt.verify']], function() {
     Route::post('groups/accept', 'GroupController@accept');
     Route::post('groups/deny', 'GroupController@deny');
     Route::post('groups/leave', 'GroupController@leave');
+    Route::get('groups/users/{id}', 'GroupController@users');
+    Route::get('groups/invitations/{id}', 'GroupController@invitations');
+    Route::get('me','AuthenticationController@getCurrentUser');
 
 });
 
